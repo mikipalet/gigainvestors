@@ -1,3 +1,4 @@
+import {withShareDenominator} from './share-check';
 import {composePriceStory,retainStoryTimestamp} from './price-story/compose';
 import {memoAtPrice} from './owner-memo';
 import {consistentValuation} from './return-model';
@@ -51,9 +52,10 @@ function emptyFunnel(): FunnelCounts {
   };
 }
 
-export function buildOutput({ analyses, holdersByTicker, investorNames, fx, prices = {}, priceHistories = {}, previousDossiers = {}, capShares = {}, universe = analyses.length }: {
+export function buildOutput({ analyses, holdersByTicker, investorNames, fx, prices = {}, priceHistories = {}, previousDossiers = {}, issuerContradictions = {}, capShares = {}, universe = analyses.length }: {
   analyses: Analysis[];
   previousDossiers?: Record<string,Dossier>;
+  issuerContradictions?: Record<string,import('./share-check').ShareObservation[]>;
   capShares?: Record<string,number>;
   holdersByTicker: Record<string, string[]>;
   investorNames: Record<string, string>;
@@ -73,7 +75,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
   const westernFunnel: PublishedFunnel = { ...emptyFunnel(), byCountry: {} };
   const funnel: PublishedFunnel = { ...emptyFunnel(), byCountry: {} };
   for (const original of sorted) {
-    const analysis = isFindable(original) && shortHistory(original) ? {...original,status:"insufficient_data" as const,valuation:null} : original;
+    let analysis = isFindable(original) && shortHistory(original) ? {...original,status:"insufficient_data" as const,valuation:null} : original;
     if (!isFindable(analysis)) {
       if (shortHistory(analysis) && !missingInvestmentNav(analysis)) {
         const dossier: Dossier={...analysis,methodVersion:METHOD_VERSION,w:null,b:false,holders:[],series:analysis.series??{}};
@@ -100,12 +102,21 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
         || answer.kind === "choice" && question.id === "revenue_model" && answer.value === "recurring";
       if (applies) { g.add(question.tag); tags[question.tag] = question.id === "revenue_model" ? "Recurring revenue" : question.label; }
     }
-    const valuation = tradingValuation(analysis, usdRate);
+    let valuation = tradingValuation(analysis, usdRate);
     const requiredMos = analysis.valuation?.method === 'nav' ? valuationMargin(analysis.valuation,'stable') : analysis.requiredMos ?? T.price.requiredMos.stable;
     const t = analysis.status !== "scored" ? "UUUUU" : outcomes.map(test => test.result === "unclear" && test.pending ? "C" : test.result[0].toUpperCase()).join("");
-    const dataQualityFlags = valuationFlags({price:prices[analysis.id]?.[0]??null, mid:valuation?.perShare.mid??null, assumptions:analysis.valuation?.assumptions??[], cap:company.marketCapUsd, shares:capShares[analysis.id]??analysis.valuation?.shares, usdRate:usdRate(company.currency),corroborated:analysis.valuation?.shareSources===2});
+    let dataQualityFlags = valuationFlags({price:prices[analysis.id]?.[0]??null, mid:valuation?.perShare.mid??null, assumptions:analysis.valuation?.assumptions??[], cap:company.marketCapUsd, shares:capShares[analysis.id]??analysis.valuation?.shares, usdRate:usdRate(company.currency),corroborated:analysis.valuation?.shareSources===2});
+    const contradiction=dataQualityFlags.length?(issuerContradictions[analysis.id]??[]):[];
+    if(contradiction.length)dataQualityFlags.push(...contradiction.map(o=>`Issuer filing contradicts valuation shares by more than 2%: ${o.url} (${o.date}: ${o.shares})`));
+    const retained=!!(previousDossiers[analysis.id]?.valuation&&analysis.valuation&&dataQualityFlags.length&&!contradiction.length);
+    if(retained){
+      analysis={...analysis,valuation:{...withShareDenominator(analysis.valuation!,previousDossiers[analysis.id].valuation!.shares),publishedShareReview:true,shareReviewReasons:dataQualityFlags,
+        assumptions:[...analysis.valuation!.assumptions,'Previously published share basis retained; independent share observations differ and await reconciliation.']}};
+      valuation=tradingValuation(analysis,usdRate);
+      dataQualityFlags=[];
+    }
     const returnInputs = buyReturnInputs(analysis.valuation, company.currency);
-    let price = publishedBuyPrice({ businessChanged: analysis.thesis?.changed, st: analysis.status === 'scored' ? 's' : 'i', t, m: requiredMos, buyReturnInputs: returnInputs, shareSources:analysis.valuation?.shareSources,
+    let price = publishedBuyPrice({ businessChanged: analysis.thesis?.changed, st: analysis.status === 'scored' ? 's' : 'i', t, m: requiredMos, buyReturnInputs: returnInputs, shareSources:analysis.valuation?.shareSources, publishedShareReview:analysis.valuation?.publishedShareReview,
       v: valuation ? [valuation.perShare.low, valuation.perShare.mid, valuation.perShare.high] : null, dataQualityFlags }, prices[analysis.id]);
     const prior=previousDossiers[analysis.id];
     const priceTestFreeze=price.result==='unclear'&&prior?.tests.price&&['pass','fail'].includes(prior.tests.price.result)
@@ -148,7 +159,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
     const returns=dossierReturn(analysis);
     const row: IndexRow = {
       methodVersion: METHOD_VERSION, priceTestFreeze,
-      w, exchange: company.exchange, shareSources: analysis.valuation?.shareSources, buyReturnInputs: price.dataQualityFlags.length ? null : returnInputs,
+      w, exchange: company.exchange, publishedShareReview:analysis.valuation?.publishedShareReview, shareSources: analysis.valuation?.shareSources, buyReturnInputs: price.dataQualityFlags.length ? null : returnInputs,
       historyYears: analysis.historyCoverage?.years ?? analysis.tests.understandable.metrics.historyYears ?? undefined,
       b: price.b, businessChanged: analysis.thesis?.changed || undefined,
       thesisReason: analysis.thesis?.changed ? analysis.thesis.reason : undefined,

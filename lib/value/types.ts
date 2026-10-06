@@ -199,6 +199,10 @@ export interface TestOutcome {
 }
 
 export interface Valuation {
+  retainedPublishedAt?: string;
+  retainedPublishedReason?: string;
+  publishedShareReview?: boolean;
+  shareReviewReasons?: string[];
   balanceSheet?: {end:string;filed:string|null;source:string;basis:string;filingDateAssumed?:boolean};
   shareBasis?:'listing-ADS'|'effective-common';
   capitalReturns?: { excludingGoodwill: number | null; includingAcquisitions: number | null; observations: number; basis: "owner_earnings" };
@@ -295,6 +299,7 @@ export interface Dossier extends Analysis {
 
 // Compact index row. t = one char per quality test in QUALITY_TESTS order: P F C (checking) U N.
 export interface IndexRow {
+  publishedShareReview?: boolean;
   priceTestFreeze?: PriceTestFreeze;
   methodVersion?: string; // Absent only in legacy publications.
   businessChanged?: boolean;

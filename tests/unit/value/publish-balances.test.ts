@@ -27,3 +27,13 @@ it('reprices bound research without reopening an unrelated capitalization check'
  publishBalances(files,prices,{},p=>p==='verdict-freeze.json'?{ids:['KO.US']}:read(p));
  expect(files).toEqual(frozen);
 });
+it('replaces a cached valuation based on a partial quarter with the complete annual balance',async()=>{
+ const {refreshBalanceValuation}=await import('@/lib/value/refresh-balance-valuation');
+ const years=makeYears({from:2015}),a=structuredClone(base);
+ a.valuation=valueCompany({years,kind:'operating',currency:'USD',bondYield:.04,cyclical:false}).valuation!;
+ a.valuation.balanceSheet={end:'2026-06-30',filed:'2026-08-01',source:'partial cached quarter',basis:'filed'};
+ const raw={General:{CurrencyCode:'USD'},Financials:{Balance_Sheet:{quarterly:{'2026-06-30':{filing_date:'2026-08-01',cash:40}}}}};
+ const read=(p:string):any=>p.startsWith('fundamentals/')?{years}:p.startsWith('analysis/inputs/')?{memoYears:years}:p.startsWith('raw/eodhd/')?raw:null;
+ const next=refreshBalanceValuation(a,read,'2026-10-06');
+ expect(next.valuation?.balanceSheet?.end).toBe('2025-12-31');expect(next.valuation?.netDebt).toBe(0);
+});

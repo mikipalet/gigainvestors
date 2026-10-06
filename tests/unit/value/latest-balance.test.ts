@@ -19,11 +19,12 @@ describe('filed balance sheet',()=>{
   expect(latestBalanceAt(balanceSheets(raw),'2018-05-10','USD',annual)).toBeNull();
   expect(latestBalanceAt(balanceSheets(raw),'2018-06-30','EUR',annual)).toBeNull();
  });
- it('does not fill a missing new cash figure with old cash',()=>{
+ it('falls back to the complete annual statement without splicing fields',()=>{
   const missing=structuredClone(raw) as any;delete missing.Financials.Balance_Sheet.quarterly['2018-03-31'].cashAndShortTermInvestments;
   const years=makeYears();years.at(-1)!.end='2017-12-31';
   const balance=latestBalanceAt(balanceSheets(missing),'2018-06-30','USD',years.at(-1)!);
-  expect(valueCompany({years,kind:'operating',currency:'USD',bondYield:.04,cyclical:false,balance}).valuation).toBeNull();
+  expect(balance).toBeNull();
+  expect(valueCompany({years,kind:'operating',currency:'USD',bondYield:.04,cyclical:false,balance}).valuation?.balanceSheet?.end).toBe('2017-12-31');
  });
  it('does not treat carried annual fields on a TTM row as a new balance',()=>{
   const years=makeYears(),ttm={...years.at(-1)!,end:'2030-03-31'};
@@ -66,4 +67,17 @@ it('ignores date-only vendor placeholders when selecting the latest actual balan
  placeholder.Financials.Balance_Sheet.quarterly['2018-06-30']={filing_date:'2018-07-15',currency_symbol:'USD',totalAssets:null,cashAndShortTermInvestments:null,shortLongTermDebtTotal:null};
  const annual=makeYears().at(-1)!;annual.end='2017-12-31';
  expect(latestBalanceAt(balanceSheets(placeholder),'2018-08-01','USD',annual)?.end).toBe('2018-03-31');
+});
+
+it('selects the most recent complete interim instead of the partial newest quarter',()=>{
+ const annual=makeYears().at(-1)!;annual.end='2017-12-31';
+ const next=structuredClone(raw) as any;
+ next.Financials.Balance_Sheet.quarterly['2018-06-30']={filing_date:'2018-08-01',currency_symbol:'USD',cash:100,totalAssets:35000e6};
+ expect(latestBalanceAt(balanceSheets(next),'2018-09-01','USD',annual)?.end).toBe('2018-03-31');
+});
+it('requires equity and both intangible components for a financial balance',()=>{
+ const annual=makeYears().at(-1)!;annual.end='2017-12-31';
+ const next=structuredClone(raw) as any;
+ next.Financials.Balance_Sheet.quarterly['2018-03-31'].totalStockholderEquity=5e9;
+ expect(latestBalanceAt(balanceSheets(next),'2018-09-01','USD',annual,'bank')).toBeNull();
 });

@@ -1,0 +1,792 @@
+[
+  {
+    "id": "MAS.US",
+    "path": "tests.accounting.rawMetrics.goodwillIntangiblesToEquity",
+    "before": 11.04,
+    "frozen": false,
+    "live": 11.04,
+    "candidate": 11.04,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "MAS.US",
+    "path": "series.bookValuePerShare[2015]",
+    "before": 0.21700879765395895,
+    "frozen": false,
+    "live": 0.21700879765395895,
+    "candidate": null,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": false
+  },
+  {
+    "id": "MAS.US",
+    "path": "series.bookValuePerShare[2017]",
+    "before": 0.4308176100628931,
+    "frozen": false,
+    "live": 0.4308176100628931,
+    "candidate": null,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": false
+  },
+  {
+    "id": "MAS.US",
+    "path": "series.bookValuePerShare[2018]",
+    "before": 0.2247557003257329,
+    "frozen": false,
+    "live": 0.2247557003257329,
+    "candidate": null,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": false
+  },
+  {
+    "id": "MAS.US",
+    "path": "series.bookValuePerShare[2021]",
+    "before": 0.3107569721115538,
+    "frozen": false,
+    "live": 0.3107569721115538,
+    "candidate": null,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": false
+  },
+  {
+    "id": "MAS.US",
+    "path": "series.bookValuePerShare[2023]",
+    "before": 0.5132743362831859,
+    "frozen": false,
+    "live": 0.5132743362831859,
+    "candidate": null,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": false
+  },
+  {
+    "id": "MAS.US",
+    "path": "series.bookValuePerShare[2025]",
+    "before": 0.35714285714285715,
+    "frozen": false,
+    "live": 0.35714285714285715,
+    "candidate": null,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": false
+  },
+  {
+    "id": "DVA.US",
+    "path": "tests.accounting.rawMetrics.goodwillIntangiblesToEquity",
+    "before": 6.70490780973612,
+    "frozen": false,
+    "live": 6.70490780973612,
+    "candidate": 6.70490780973612,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "DVA.US",
+    "path": "series.bookValuePerShare[2025]",
+    "before": 15.265704697898135,
+    "frozen": false,
+    "live": 15.265704697898135,
+    "candidate": null,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": false
+  },
+  {
+    "id": "TPG.US",
+    "path": "series.totalRoic[2022]",
+    "before": -0.20372303876551798,
+    "frozen": false,
+    "live": -0.20372303876551798,
+    "candidate": -0.20372303876551798,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "STLAM.MI",
+    "path": "tests.moat.series.totalRoic[2019]",
+    "before": -0.15455034403276205,
+    "frozen": false,
+    "live": -0.15455034403276205,
+    "candidate": -0.15455034403276205,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "STLAM.MI",
+    "path": "tests.moat.series.totalRoic[2021]",
+    "before": 0.326061964349644,
+    "frozen": false,
+    "live": 0.326061964349644,
+    "candidate": 0.326061964349644,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "STLAM.MI",
+    "path": "series.totalRoic[2019]",
+    "before": -0.15455034403276205,
+    "frozen": false,
+    "live": -0.15455034403276205,
+    "candidate": -0.15455034403276205,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "STLAM.MI",
+    "path": "series.totalRoic[2021]",
+    "before": 0.326061964349644,
+    "frozen": false,
+    "live": 0.326061964349644,
+    "candidate": 0.326061964349644,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "CL.US",
+    "path": "series.bookValuePerShare[2016]",
+    "before": 0.019036954087346025,
+    "frozen": false,
+    "live": 0.019036954087346025,
+    "candidate": null,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": false
+  },
+  {
+    "id": "CL.US",
+    "path": "series.bookValuePerShare[2017]",
+    "before": 0.27510472093286537,
+    "frozen": false,
+    "live": 0.27510472093286537,
+    "candidate": null,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": false
+  },
+  {
+    "id": "CL.US",
+    "path": "series.bookValuePerShare[2018]",
+    "before": 0.22722029988465975,
+    "frozen": false,
+    "live": 0.22722029988465975,
+    "candidate": null,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": false
+  },
+  {
+    "id": "IIIN.US",
+    "path": "tests.management.series.marketCap[2016]",
+    "before": 512579500,
+    "frozen": false,
+    "live": 512579500,
+    "candidate": 512579500,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "IIIN.US",
+    "path": "series.marketCap[2016]",
+    "before": 512579500,
+    "frozen": false,
+    "live": 512579500,
+    "candidate": 512579500,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "PLXS.US",
+    "path": "tests.management.series.marketCap[2016]",
+    "before": 1562029380,
+    "frozen": false,
+    "live": 1562029380,
+    "candidate": 1562029380,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "PLXS.US",
+    "path": "series.marketCap[2016]",
+    "before": 1562029380,
+    "frozen": false,
+    "live": 1562029380,
+    "candidate": 1562029380,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "LYV.US",
+    "path": "series.bookValuePerShare[2020]",
+    "before": 0.6524040928776347,
+    "frozen": false,
+    "live": 0.6524040928776347,
+    "candidate": null,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": false
+  },
+  {
+    "id": "LYV.US",
+    "path": "series.bookValuePerShare[2021]",
+    "before": 1.6240676960362894,
+    "frozen": false,
+    "live": 1.6240676960362894,
+    "candidate": null,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": false
+  },
+  {
+    "id": "LYV.US",
+    "path": "series.bookValuePerShare[2022]",
+    "before": 3.301699878407151,
+    "frozen": false,
+    "live": 3.301699878407151,
+    "candidate": null,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": false
+  },
+  {
+    "id": "LYV.US",
+    "path": "series.bookValuePerShare[2023]",
+    "before": 6.347388291287904,
+    "frozen": false,
+    "live": 6.347388291287904,
+    "candidate": null,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": false
+  },
+  {
+    "id": "LDOS.US",
+    "path": "tests.economics.rawMetrics.roiic",
+    "before": 3.599059378224247,
+    "frozen": false,
+    "live": 3.599059378224247,
+    "candidate": 3.599059378224247,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "LDOS.US",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr",
+    "before": 0.05991067781833692,
+    "frozen": false,
+    "live": 0.05991067781833692,
+    "candidate": 0.05991067781833692,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "LDOS.US",
+    "path": "tests.management.rawMetrics.shareCagr",
+    "before": 0.05991067781833692,
+    "frozen": false,
+    "live": 0.05991067781833692,
+    "candidate": 0.05991067781833692,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "BE.US",
+    "path": "series.bookValuePerShare[2018]",
+    "before": 0.8110548809928292,
+    "frozen": false,
+    "live": 0.8110548809928292,
+    "candidate": null,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": false
+  },
+  {
+    "id": "KMB.US",
+    "path": "series.bookValuePerShare[2015]",
+    "before": 0.10973936899862825,
+    "frozen": false,
+    "live": 0.10973936899862825,
+    "candidate": null,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": false
+  },
+  {
+    "id": "KMB.US",
+    "path": "series.bookValuePerShare[2016]",
+    "before": 0.3253615127919911,
+    "frozen": false,
+    "live": 0.3253615127919911,
+    "candidate": null,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": false
+  },
+  {
+    "id": "AVBH.US",
+    "path": "tests.management.rawMetrics.retainedBookRatio",
+    "before": 1.0032267095332643,
+    "frozen": false,
+    "live": 1.0032267095332643,
+    "candidate": 1.0032267095332643,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "TRMB.US",
+    "path": "tests.management.rawMetrics.nonAcquisitionShareCagr",
+    "before": -0.0067795366288400105,
+    "frozen": false,
+    "live": -0.0067795366288400105,
+    "candidate": -0.0067795366288400105,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "TRMB.US",
+    "path": "tests.management.rawMetrics.shareCagr",
+    "before": -0.0067795366288400105,
+    "frozen": false,
+    "live": -0.0067795366288400105,
+    "candidate": -0.0067795366288400105,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "SANM.US",
+    "path": "tests.management.series.marketCap[2016]",
+    "before": 2178460550,
+    "frozen": false,
+    "live": 2178460550,
+    "candidate": 2178460550,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "SANM.US",
+    "path": "series.marketCap[2016]",
+    "before": 2178460550,
+    "frozen": false,
+    "live": 2178460550,
+    "candidate": 2178460550,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "HCA.US",
+    "path": "series.bookValuePerShare[2021]",
+    "before": 4.720719806732653,
+    "frozen": false,
+    "live": 4.720719806732653,
+    "candidate": null,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": false
+  },
+  {
+    "id": "HCA.US",
+    "path": "series.bookValuePerShare[2023]",
+    "before": 3.9087563517290715,
+    "frozen": false,
+    "live": 3.9087563517290715,
+    "candidate": null,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": false
+  },
+  {
+    "id": "HCA.US",
+    "path": "series.bookValuePerShare[2024]",
+    "before": 2.173827895499589,
+    "frozen": false,
+    "live": 2.173827895499589,
+    "candidate": null,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": false
+  },
+  {
+    "id": "KLIC.US",
+    "path": "tests.management.series.marketCap[2016]",
+    "before": 937934840,
+    "frozen": false,
+    "live": 937934840,
+    "candidate": 937934840,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "KLIC.US",
+    "path": "series.marketCap[2016]",
+    "before": 937934840,
+    "frozen": false,
+    "live": 937934840,
+    "candidate": 937934840,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "GH.US",
+    "path": "tests.management.rawMetrics.cumulativeNetIncome",
+    "before": -2936214000,
+    "frozen": false,
+    "live": -2936214000,
+    "candidate": -2936214000,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "RMNI.US",
+    "path": "tests.economics.rawMetrics.nwcToRevenueChange",
+    "before": -0.02027496834685788,
+    "frozen": false,
+    "live": -0.02027496834685788,
+    "candidate": -0.02027496834685788,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "RMNI.US",
+    "path": "tests.economics.rawMetrics.nwcToRevenueEnd",
+    "before": 0.2976706094987895,
+    "frozen": false,
+    "live": 0.2976706094987895,
+    "candidate": 0.2976706094987895,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "RMNI.US",
+    "path": "tests.management.rawMetrics.acquisitionSpend",
+    "before": 0,
+    "frozen": false,
+    "live": 0,
+    "candidate": 0,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "RMNI.US",
+    "path": "tests.management.rawMetrics.cumulativeNetIncome",
+    "before": 8495835,
+    "frozen": false,
+    "live": 8495835,
+    "candidate": 8495835,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "RMNI.US",
+    "path": "valuation.capitalReturns.includingAcquisitions",
+    "before": -0.01996268779144011,
+    "frozen": false,
+    "live": -0.01996268779144011,
+    "candidate": -0.01996268779144011,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "RFL.US",
+    "path": "tests.economics.rawMetrics.roiic",
+    "before": -0.3386237580039744,
+    "frozen": false,
+    "live": -0.3386237580039744,
+    "candidate": -0.3386237580039744,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "MCK.US",
+    "path": "series.bookValuePerShare[2021]",
+    "before": 9.538258575197888,
+    "frozen": false,
+    "live": 9.538258575197888,
+    "candidate": null,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": false
+  },
+  {
+    "id": "DELL.US",
+    "path": "series.bookValuePerShare[2020]",
+    "before": 10.408560311284047,
+    "frozen": false,
+    "live": 10.408560311284047,
+    "candidate": null,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": false
+  },
+  {
+    "id": "FLG.US",
+    "path": "tests.moat.series.efficiencyRatio[2016]",
+    "before": 0.45475709618033794,
+    "frozen": false,
+    "live": 0.45475709618033794,
+    "candidate": 0.45475709618033794,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "FLG.US",
+    "path": "tests.moat.series.efficiencyRatio[2017]",
+    "before": 0.47622993236977523,
+    "frozen": false,
+    "live": 0.47622993236977523,
+    "candidate": 0.47622993236977523,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "FLG.US",
+    "path": "tests.moat.series.efficiencyRatio[2018]",
+    "before": 0.4869507274934903,
+    "frozen": false,
+    "live": 0.4869507274934903,
+    "candidate": 0.4869507274934903,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "FLG.US",
+    "path": "tests.moat.series.efficiencyRatio[2019]",
+    "before": 0.4908741594620557,
+    "frozen": false,
+    "live": 0.4908741594620557,
+    "candidate": 0.4908741594620557,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "FLG.US",
+    "path": "tests.accounting.series.loanGrowth[2016]",
+    "before": 0.04515802974386851,
+    "frozen": false,
+    "live": 0.04515802974386851,
+    "candidate": 0.04515802974386851,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "FLG.US",
+    "path": "tests.accounting.series.loanGrowth[2017]",
+    "before": 0.027011641171583278,
+    "frozen": false,
+    "live": 0.027011641171583278,
+    "candidate": 0.027011641171583278,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "FLG.US",
+    "path": "tests.accounting.series.loanGrowth[2018]",
+    "before": 0.046460017904822015,
+    "frozen": false,
+    "live": 0.046460017904822015,
+    "candidate": 0.046460017904822015,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "FLG.US",
+    "path": "tests.accounting.series.loanGrowth[2019]",
+    "before": 0.04350410367542068,
+    "frozen": false,
+    "live": 0.04350410367542068,
+    "candidate": 0.04350410367542068,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "FLG.US",
+    "path": "tests.accounting.series.loanGrowth[2020]",
+    "before": 0.022600280641376536,
+    "frozen": false,
+    "live": 0.022600280641376536,
+    "candidate": 0.022600280641376536,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "FLG.US",
+    "path": "tests.accounting.series.depositGrowth[2016]",
+    "before": 0.01622221570254334,
+    "frozen": false,
+    "live": 0.01622221570254334,
+    "candidate": 0.01622221570254334,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "FLG.US",
+    "path": "tests.accounting.series.depositGrowth[2017]",
+    "before": 0.007416945425218202,
+    "frozen": false,
+    "live": 0.007416945425218202,
+    "candidate": 0.007416945425218202,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "FLG.US",
+    "path": "tests.accounting.series.depositGrowth[2018]",
+    "before": 0.057118331719879345,
+    "frozen": false,
+    "live": 0.057118331719879345,
+    "candidate": 0.057118331719879345,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "FLG.US",
+    "path": "tests.accounting.series.depositGrowth[2019]",
+    "before": 0.029017342430852855,
+    "frozen": false,
+    "live": 0.029017342430852855,
+    "candidate": 0.029017342430852855,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "FLG.US",
+    "path": "tests.accounting.series.depositGrowth[2020]",
+    "before": 0.02463482794335259,
+    "frozen": false,
+    "live": 0.02463482794335259,
+    "candidate": 0.02463482794335259,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "FLG.US",
+    "path": "tests.accounting.rawMetrics.depositCagr",
+    "before": 0.08788167261721758,
+    "frozen": false,
+    "live": 0.08788167261721758,
+    "candidate": 0.08788167261721758,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "FLG.US",
+    "path": "series.efficiencyRatio[2016]",
+    "before": 0.45475709618033794,
+    "frozen": false,
+    "live": 0.45475709618033794,
+    "candidate": 0.45475709618033794,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "FLG.US",
+    "path": "series.efficiencyRatio[2017]",
+    "before": 0.47622993236977523,
+    "frozen": false,
+    "live": 0.47622993236977523,
+    "candidate": 0.47622993236977523,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "FLG.US",
+    "path": "series.efficiencyRatio[2018]",
+    "before": 0.4869507274934903,
+    "frozen": false,
+    "live": 0.4869507274934903,
+    "candidate": 0.4869507274934903,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "FLG.US",
+    "path": "series.efficiencyRatio[2019]",
+    "before": 0.4908741594620557,
+    "frozen": false,
+    "live": 0.4908741594620557,
+    "candidate": 0.4908741594620557,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "FLG.US",
+    "path": "series.loanGrowth[2016]",
+    "before": 0.04515802974386851,
+    "frozen": false,
+    "live": 0.04515802974386851,
+    "candidate": 0.04515802974386851,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "FLG.US",
+    "path": "series.loanGrowth[2017]",
+    "before": 0.027011641171583278,
+    "frozen": false,
+    "live": 0.027011641171583278,
+    "candidate": 0.027011641171583278,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "FLG.US",
+    "path": "series.loanGrowth[2018]",
+    "before": 0.046460017904822015,
+    "frozen": false,
+    "live": 0.046460017904822015,
+    "candidate": 0.046460017904822015,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "FLG.US",
+    "path": "series.loanGrowth[2019]",
+    "before": 0.04350410367542068,
+    "frozen": false,
+    "live": 0.04350410367542068,
+    "candidate": 0.04350410367542068,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "FLG.US",
+    "path": "series.loanGrowth[2020]",
+    "before": 0.022600280641376536,
+    "frozen": false,
+    "live": 0.022600280641376536,
+    "candidate": 0.022600280641376536,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "FLG.US",
+    "path": "series.depositGrowth[2016]",
+    "before": 0.01622221570254334,
+    "frozen": false,
+    "live": 0.01622221570254334,
+    "candidate": 0.01622221570254334,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "FLG.US",
+    "path": "series.depositGrowth[2017]",
+    "before": 0.007416945425218202,
+    "frozen": false,
+    "live": 0.007416945425218202,
+    "candidate": 0.007416945425218202,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "FLG.US",
+    "path": "series.depositGrowth[2018]",
+    "before": 0.057118331719879345,
+    "frozen": false,
+    "live": 0.057118331719879345,
+    "candidate": 0.057118331719879345,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "FLG.US",
+    "path": "series.depositGrowth[2019]",
+    "before": 0.029017342430852855,
+    "frozen": false,
+    "live": 0.029017342430852855,
+    "candidate": 0.029017342430852855,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  },
+  {
+    "id": "FLG.US",
+    "path": "series.depositGrowth[2020]",
+    "before": 0.02463482794335259,
+    "frozen": false,
+    "live": 0.02463482794335259,
+    "candidate": 0.02463482794335259,
+    "liveMatchesAudit": true,
+    "restoredOrRefreshed": true
+  }
+]

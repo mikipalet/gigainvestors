@@ -1,0 +1,5156 @@
+[
+  {
+    "id": "BMI.US",
+    "report": {
+      "id": "BMI.US",
+      "kind": "10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/9092/000119312526054739/bmi-20251231.htm",
+      "filed": "2026-02-17",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "risk",
+        "mdna",
+        "capital",
+        "notes",
+        "auditor",
+        "compensation"
+      ]
+    },
+    "inputYearsBefore": [
+      2023,
+      2024,
+      2025
+    ],
+    "inputYearsAfter": [
+      1996,
+      1997,
+      1998,
+      1999,
+      2000,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "changedAnnualInputs": [
+      {
+        "fy": 2023,
+        "field": "sharesOutstanding",
+        "before": 29456000,
+        "after": 37221098,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000009092.json#0000950170-25-020889",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2023-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2023,
+        "field": "marketCap",
+        "before": null,
+        "after": 5745820898.26,
+        "provenance": {
+          "source": "prices-history/BMI.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2023-12-31",
+            "price month: 2023-12",
+            "close: 154.37",
+            "capitalization shares: 37221098",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2024,
+        "field": "sharesOutstanding",
+        "before": 29534000,
+        "after": 37221098,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/9092/000119312526054739/bmi-20251231.htm#000119312526054739",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2024-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2024,
+        "field": "marketCap",
+        "before": null,
+        "after": 7895339307.76,
+        "provenance": {
+          "source": "prices-history/BMI.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2024-12-31",
+            "price month: 2024-12",
+            "close: 212.12",
+            "capitalization shares: 37221098",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2025,
+        "field": "sharesOutstanding",
+        "before": 29569496,
+        "after": 37221098,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/9092/000119312526054739/bmi-20251231.htm#000119312526054739",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2025-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2025,
+        "field": "marketCap",
+        "before": null,
+        "after": 6491731702.18,
+        "provenance": {
+          "source": "prices-history/BMI.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2025-12-31",
+            "price month: 2025-12",
+            "close: 174.41",
+            "capitalization shares: 37221098",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      }
+    ],
+    "qualityChanges": [
+      {
+        "id": "BMI.US",
+        "tests": {
+          "understandable": [
+            "na",
+            "pass"
+          ],
+          "moat": [
+            "na",
+            "pass"
+          ],
+          "economics": [
+            "na",
+            "pass"
+          ],
+          "management": [
+            "na",
+            "pass"
+          ],
+          "accounting": [
+            "na",
+            "pass"
+          ]
+        },
+        "frozen": false,
+        "reasons": {
+          "understandable": [
+            "2 revenue declines in the last 10 years (informational)"
+          ],
+          "moat": [],
+          "economics": [],
+          "management": [
+            "$1 retained earnings test: 2016 to 2025 (9 years)",
+            "buybacks leaned toward cheaper years (informational)",
+            "ROIC first 3 years vs last 3 years: 14.9% vs 54.7%"
+          ],
+          "accounting": []
+        }
+      }
+    ],
+    "buyChanges": [],
+    "numericNulls": [],
+    "removedNumericFields": [],
+    "valuationNulls": [],
+    "latestValuationBalance": null
+  },
+  {
+    "id": "BOKF.US",
+    "report": {
+      "id": "BOKF.US",
+      "kind": "10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/875357/000087535726000013/bokf-20251231.htm",
+      "filed": "2026-02-18",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "risk",
+        "mdna",
+        "capital",
+        "notes",
+        "auditor",
+        "compensation"
+      ]
+    },
+    "inputYearsBefore": [
+      1996,
+      1997,
+      1998,
+      1999,
+      2000,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "inputYearsAfter": [
+      1996,
+      1997,
+      1998,
+      1999,
+      2000,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "changedAnnualInputs": [
+      {
+        "fy": 2009,
+        "field": "sharesOutstanding",
+        "before": 67488000,
+        "after": 70312086,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000875357.json#0000875357-11-000007",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2009-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2010,
+        "field": "sharesOutstanding",
+        "before": 67831734,
+        "after": 70815563,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000875357.json#0000875357-12-000010",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2010-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2011,
+        "field": "sharesOutstanding",
+        "before": 68039000,
+        "after": 71533354,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000875357.json#0000875357-13-000008",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2011-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2012,
+        "field": "sharesOutstanding",
+        "before": 67964940,
+        "after": 72415346,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000875357.json#0000875357-14-000005",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2012-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2013,
+        "field": "sharesOutstanding",
+        "before": 68206000,
+        "after": 73163275,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000875357.json#0000875357-15-000005",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2013-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2014,
+        "field": "sharesOutstanding",
+        "before": 68544770,
+        "after": 74003754,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000875357.json#0000875357-16-000044",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2014-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2015,
+        "field": "sharesOutstanding",
+        "before": 67691658,
+        "after": 74530364,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000875357.json#0000875357-17-000007",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2015-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2016,
+        "field": "sharesOutstanding",
+        "before": 65143898,
+        "after": 74993407,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000875357.json#0000875357-18-000013",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2016-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2016,
+        "field": "marketCap",
+        "before": 5409549289.92,
+        "after": 6227452517.280001,
+        "provenance": {
+          "source": "prices-history/BOKF.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2016-12-31",
+            "price month: 2016-12",
+            "close: 83.04",
+            "capitalization shares: 74993407",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2017,
+        "field": "sharesOutstanding",
+        "before": 64806284,
+        "after": 75147686,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000875357.json#0000875357-19-000011",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2017-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2017,
+        "field": "marketCap",
+        "before": 5982916138.879999,
+        "after": 6937634371.5199995,
+        "provenance": {
+          "source": "prices-history/BOKF.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2017-12-31",
+            "price month: 2017-12",
+            "close: 92.32",
+            "capitalization shares: 75147686",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2018,
+        "field": "sharesOutstanding",
+        "before": 66662273,
+        "after": 75711492,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000875357.json#0000875357-20-000017",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2018-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2018,
+        "field": "marketCap",
+        "before": 4888344479.09,
+        "after": 5551923708.36,
+        "provenance": {
+          "source": "prices-history/BOKF.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2018-12-31",
+            "price month: 2018-12",
+            "close: 73.33",
+            "capitalization shares: 75711492",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2019,
+        "field": "sharesOutstanding",
+        "before": 70802612,
+        "after": 75758597,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000875357.json#0000875357-21-000013",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2019-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2019,
+        "field": "marketCap",
+        "before": 6188148288.8,
+        "after": 6621301377.8,
+        "provenance": {
+          "source": "prices-history/BOKF.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2019-12-31",
+            "price month: 2019-12",
+            "close: 87.4",
+            "capitalization shares: 75758597",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2020,
+        "field": "sharesOutstanding",
+        "before": 69844172,
+        "after": 75995205,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000875357.json#0000875357-22-000013",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2020-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2020,
+        "field": "marketCap",
+        "before": 4782928898.56,
+        "after": 5204151638.400001,
+        "provenance": {
+          "source": "prices-history/BOKF.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2020-12-31",
+            "price month: 2020-12",
+            "close: 68.48",
+            "capitalization shares: 75995205",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2021,
+        "field": "sharesOutstanding",
+        "before": 68594322,
+        "after": 76254029,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000875357.json#0000875357-23-000009",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2021-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2021,
+        "field": "marketCap",
+        "before": 7236015027.78,
+        "after": 8044037519.21,
+        "provenance": {
+          "source": "prices-history/BOKF.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2021-12-31",
+            "price month: 2021-12",
+            "close: 105.49",
+            "capitalization shares: 76254029",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2022,
+        "field": "sharesOutstanding",
+        "before": 67212735,
+        "after": 76423345,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000875357.json#0000875357-24-000008",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2022-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2022,
+        "field": "marketCap",
+        "before": 6976009765.650001,
+        "after": 7931978977.55,
+        "provenance": {
+          "source": "prices-history/BOKF.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2022-12-31",
+            "price month: 2022-12",
+            "close: 103.79",
+            "capitalization shares: 76423345",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2023,
+        "field": "sharesOutstanding",
+        "before": 65652000,
+        "after": 76593292,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000875357.json#0000875357-25-000013",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2023-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2023,
+        "field": "marketCap",
+        "before": 5623056884.85,
+        "after": 6560215459.8,
+        "provenance": {
+          "source": "prices-history/BOKF.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2023-12-31",
+            "price month: 2023-12",
+            "close: 85.65",
+            "capitalization shares: 76593292",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2024,
+        "field": "sharesOutstanding",
+        "before": 63745000,
+        "after": 64121299,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/875357/000087535726000013/bokf-20251231.htm#000087535726000013",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2024-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2024,
+        "field": "marketCap",
+        "before": 6785664617.6,
+        "after": 6825712278.55,
+        "provenance": {
+          "source": "prices-history/BOKF.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2024-12-31",
+            "price month: 2024-12",
+            "close: 106.45",
+            "capitalization shares: 64121299",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2025,
+        "field": "sharesOutstanding",
+        "before": 60916929,
+        "after": 60620507,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/875357/000087535726000013/bokf-20251231.htm#000087535726000013",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2025-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2025,
+        "field": "marketCap",
+        "before": 7418247845.559999,
+        "after": 7181105259.219999,
+        "provenance": {
+          "source": "prices-history/BOKF.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2025-12-31",
+            "price month: 2025-12",
+            "close: 118.46",
+            "capitalization shares: 60620507",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      }
+    ],
+    "qualityChanges": [
+      {
+        "id": "BOKF.US",
+        "tests": {
+          "accounting": [
+            "pass",
+            "fail"
+          ]
+        },
+        "frozen": false,
+        "reasons": {
+          "accounting": [
+            "credit provisions persistently exceed same-year peers"
+          ]
+        }
+      }
+    ],
+    "buyChanges": [],
+    "numericNulls": [],
+    "removedNumericFields": [],
+    "valuationNulls": [],
+    "latestValuationBalance": {
+      "end": "2026-06-30",
+      "filed": "2026-08-04",
+      "source": "https://eodhd.com/api/fundamentals/BOKF.US#Financials.Balance_Sheet.quarterly.2026-06-30",
+      "basis": "filed"
+    }
+  },
+  {
+    "id": "CFG-PH.US",
+    "report": {
+      "id": "CFG-PH.US",
+      "kind": "10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/759944/000075994426000028/cfg-20251231.htm",
+      "filed": "2026-02-12",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "risk",
+        "mdna",
+        "capital",
+        "notes",
+        "auditor",
+        "compensation"
+      ]
+    },
+    "inputYearsBefore": [
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "inputYearsAfter": [
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "changedAnnualInputs": [
+      {
+        "fy": 2024,
+        "field": "sharesOutstanding",
+        "before": 453510000,
+        "after": 440543381,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/759944/000075994426000028/cfg-20251231.htm#000075994426000028",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2024-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2024,
+        "field": "marketCap",
+        "before": 11791266370,
+        "after": 11454127906,
+        "provenance": {
+          "source": "prices-history/CFG-PH.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2024-12-31",
+            "price month: 2024-12",
+            "close: 26",
+            "capitalization shares: 440543381",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2025,
+        "field": "sharesOutstanding",
+        "before": 435472000,
+        "after": 429242174,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/759944/000075994426000028/cfg-20251231.htm#000075994426000028",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2025-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2025,
+        "field": "marketCap",
+        "before": 11512070761.85,
+        "after": 11310531284.900002,
+        "provenance": {
+          "source": "prices-history/CFG-PH.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2025-12-31",
+            "price month: 2025-12",
+            "close: 26.35",
+            "capitalization shares: 429242174",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      }
+    ],
+    "qualityChanges": [
+      {
+        "id": "CFG-PH.US",
+        "tests": {
+          "moat": [
+            "pass",
+            "fail"
+          ]
+        },
+        "frozen": false,
+        "reasons": {
+          "moat": [
+            "Tangible common book per share",
+            "Parent-total proxy for preferred equity and common earnings",
+            "median return on common equity below threshold"
+          ]
+        }
+      }
+    ],
+    "buyChanges": [
+      {
+        "id": "CFG-PH.US",
+        "before": {
+          "b": true,
+          "v": [
+            47.0959390756952,
+            58.86992384461899,
+            78.4932317928253
+          ],
+          "m": 0.35,
+          "t": "PPPPP"
+        },
+        "after": {
+          "b": false,
+          "v": [
+            46.53393910089801,
+            58.167423876122506,
+            77.55656516816332
+          ],
+          "m": 0.35,
+          "t": "PFPPP"
+        }
+      }
+    ],
+    "numericNulls": [],
+    "removedNumericFields": [
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.understandable.series.shares[0][0]",
+        "before": 2017,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.understandable.series.shares[0][1]",
+        "before": 493788000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.understandable.series.shares[1][0]",
+        "before": 2018,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.understandable.series.shares[1][1]",
+        "before": 469103000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.understandable.series.shares[2][0]",
+        "before": 2019,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.understandable.series.shares[2][1]",
+        "before": 436501000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.understandable.series.shares[3][0]",
+        "before": 2020,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.understandable.series.shares[3][1]",
+        "before": 428881000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.understandable.series.shares[4][0]",
+        "before": 2021,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.understandable.series.shares[4][1]",
+        "before": 426868000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.understandable.series.shares[5][0]",
+        "before": 2022,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.understandable.series.shares[5][1]",
+        "before": 495478000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.understandable.series.shares[6][0]",
+        "before": 2023,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.understandable.series.shares[6][1]",
+        "before": 468159000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.understandable.series.shares[7][0]",
+        "before": 2024,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.understandable.series.shares[7][1]",
+        "before": 444837000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.understandable.series.shares[8][0]",
+        "before": 2025,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.understandable.series.shares[8][1]",
+        "before": 435472400,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.understandable.series.shares[9][0]",
+        "before": 2026,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.understandable.series.shares[9][1]",
+        "before": 431880346.25,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.understandable.series.netIncome[2026]",
+        "before": 2126000000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.understandable.series.commonRoe[2026]",
+        "before": 0.08119772371386014,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.understandable.provisional.fy",
+        "before": 2026,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.shares[0][0]",
+        "before": 2017,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.shares[0][1]",
+        "before": 493788000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.shares[1][0]",
+        "before": 2018,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.shares[1][1]",
+        "before": 469103000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.shares[2][0]",
+        "before": 2019,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.shares[2][1]",
+        "before": 436501000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.shares[3][0]",
+        "before": 2020,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.shares[3][1]",
+        "before": 428881000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.shares[4][0]",
+        "before": 2021,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.shares[4][1]",
+        "before": 426868000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.shares[5][0]",
+        "before": 2022,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.shares[5][1]",
+        "before": 495478000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.shares[6][0]",
+        "before": 2023,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.shares[6][1]",
+        "before": 468159000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.shares[7][0]",
+        "before": 2024,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.shares[7][1]",
+        "before": 444837000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.shares[8][0]",
+        "before": 2025,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.shares[8][1]",
+        "before": 435472400,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.shares[9][0]",
+        "before": 2026,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.shares[9][1]",
+        "before": 431880346.25,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.roe[2026]",
+        "before": 0.11905028558629185,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.netIncome[0][0]",
+        "before": 2017,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.netIncome[0][1]",
+        "before": 1652000000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.netIncome[1][0]",
+        "before": 2018,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.netIncome[1][1]",
+        "before": 1721000000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.netIncome[2][0]",
+        "before": 2019,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.netIncome[2][1]",
+        "before": 1791000000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.netIncome[3][0]",
+        "before": 2020,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.netIncome[3][1]",
+        "before": 1057000000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.netIncome[4][0]",
+        "before": 2021,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.netIncome[4][1]",
+        "before": 2319000000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.netIncome[5][0]",
+        "before": 2022,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.netIncome[5][1]",
+        "before": 2073000000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.netIncome[6][0]",
+        "before": 2023,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.netIncome[6][1]",
+        "before": 1608000000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.netIncome[7][0]",
+        "before": 2024,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.netIncome[7][1]",
+        "before": 1509000000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.netIncome[8][0]",
+        "before": 2025,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.netIncome[8][1]",
+        "before": 1831000000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.netIncome[9][0]",
+        "before": 2026,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.series.netIncome[9][1]",
+        "before": 2126000000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.moat.provisional.fy",
+        "before": 2026,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.shares[0][0]",
+        "before": 2017,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.shares[0][1]",
+        "before": 493788000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.shares[1][0]",
+        "before": 2018,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.shares[1][1]",
+        "before": 469103000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.shares[2][0]",
+        "before": 2019,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.shares[2][1]",
+        "before": 436501000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.shares[3][0]",
+        "before": 2020,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.shares[3][1]",
+        "before": 428881000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.shares[4][0]",
+        "before": 2021,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.shares[4][1]",
+        "before": 426868000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.shares[5][0]",
+        "before": 2022,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.shares[5][1]",
+        "before": 495478000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.shares[6][0]",
+        "before": 2023,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.shares[6][1]",
+        "before": 468159000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.shares[7][0]",
+        "before": 2024,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.shares[7][1]",
+        "before": 444837000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.shares[8][0]",
+        "before": 2025,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.shares[8][1]",
+        "before": 435472400,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.shares[9][0]",
+        "before": 2026,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.shares[9][1]",
+        "before": 431880346.25,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.bookPlusDividendReturn[2026]",
+        "before": 0.05085518932723754,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.bookPerShare[2026]",
+        "before": 41.349415770039805,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.dividendsPerShare[2026]",
+        "before": 2.1232732815055715,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.netIncome[0][0]",
+        "before": 2017,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.netIncome[0][1]",
+        "before": 1652000000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.netIncome[1][0]",
+        "before": 2018,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.netIncome[1][1]",
+        "before": 1721000000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.netIncome[2][0]",
+        "before": 2019,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.netIncome[2][1]",
+        "before": 1791000000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.netIncome[3][0]",
+        "before": 2020,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.netIncome[3][1]",
+        "before": 1057000000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.netIncome[4][0]",
+        "before": 2021,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.netIncome[4][1]",
+        "before": 2319000000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.netIncome[5][0]",
+        "before": 2022,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.netIncome[5][1]",
+        "before": 2073000000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.netIncome[6][0]",
+        "before": 2023,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.netIncome[6][1]",
+        "before": 1608000000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.netIncome[7][0]",
+        "before": 2024,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.netIncome[7][1]",
+        "before": 1509000000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.netIncome[8][0]",
+        "before": 2025,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.netIncome[8][1]",
+        "before": 1831000000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.netIncome[9][0]",
+        "before": 2026,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.series.netIncome[9][1]",
+        "before": 2126000000,
+        "frozen": false
+      },
+      {
+        "id": "CFG-PH.US",
+        "path": "tests.economics.provisional.fy",
+        "before": 2026,
+        "frozen": false
+      }
+    ],
+    "valuationNulls": [],
+    "latestValuationBalance": {
+      "end": "2026-06-30",
+      "filed": "2026-08-03",
+      "source": "https://eodhd.com/api/fundamentals/CFG-PH.US#Financials.Balance_Sheet.quarterly.2026-06-30",
+      "basis": "filed"
+    }
+  },
+  {
+    "id": "DVA.US",
+    "report": {
+      "id": "DVA.US",
+      "kind": "10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/dva-20251231.htm",
+      "filed": "2026-02-11",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "risk",
+        "mdna",
+        "capital",
+        "notes",
+        "auditor",
+        "compensation"
+      ]
+    },
+    "inputYearsBefore": [
+      1996,
+      1997,
+      1998,
+      1999,
+      2000,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "inputYearsAfter": [
+      1996,
+      1997,
+      1998,
+      1999,
+      2000,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "changedAnnualInputs": [
+      {
+        "fy": 2008,
+        "field": "sharesOutstanding",
+        "before": 211879450,
+        "after": 207507346,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000927066.json#0001193125-10-040773",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Fiscal end 2008-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Post-filing split factor 2; current listing units"
+          ]
+        }
+      },
+      {
+        "fy": 2009,
+        "field": "sharesOutstanding",
+        "before": 208335370,
+        "after": 206125396,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000927066.json#0001193125-11-046882",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Fiscal end 2009-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Post-filing split factor 2; current listing units"
+          ]
+        }
+      },
+      {
+        "fy": 2010,
+        "field": "sharesOutstanding",
+        "before": 206118342,
+        "after": 192003070,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000927066.json#0001193125-12-077942",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Fiscal end 2010-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Post-filing split factor 2; current listing units"
+          ]
+        }
+      },
+      {
+        "fy": 2011,
+        "field": "sharesOutstanding",
+        "before": 193064220,
+        "after": 187282726,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000927066.json#0001193125-13-085450",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Fiscal end 2011-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Post-filing split factor 2; current listing units"
+          ]
+        }
+      },
+      {
+        "fy": 2012,
+        "field": "sharesOutstanding",
+        "before": 195942160,
+        "after": 210997150,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000927066.json#0001193125-14-062565",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2012-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2013,
+        "field": "sharesOutstanding",
+        "before": 214763887,
+        "after": 213163248,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000927066.json#0001564590-15-001035",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2013-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2014,
+        "field": "sharesOutstanding",
+        "before": 216927681,
+        "after": 215640968,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000927066.json#0001564590-16-013587",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2014-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2015,
+        "field": "sharesOutstanding",
+        "before": 216251807,
+        "after": 209754247,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000927066.json#0001564590-17-002409",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2015-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2016,
+        "field": "sharesOutstanding",
+        "before": 204904656,
+        "after": 194554491,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000927066.json#0000927066-18-000030",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2016-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2016,
+        "field": "marketCap",
+        "before": 13154878915.2,
+        "after": 12490398322.2,
+        "provenance": {
+          "source": "prices-history/DVA.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2016-12-31",
+            "price month: 2016-12",
+            "close: 64.2",
+            "capitalization shares: 194554491",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2017,
+        "field": "sharesOutstanding",
+        "before": 191348533,
+        "after": 182462278,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000927066.json#0000927066-19-000025",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2017-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2017,
+        "field": "marketCap",
+        "before": 13824931509.25,
+        "after": 13182899585.5,
+        "provenance": {
+          "source": "prices-history/DVA.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2017-12-31",
+            "price month: 2017-12",
+            "close: 72.25",
+            "capitalization shares: 182462278",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2018,
+        "field": "sharesOutstanding",
+        "before": 172364581,
+        "after": 166387307,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000927066.json#0000927066-20-000014",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2018-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2018,
+        "field": "marketCap",
+        "before": 8869902900,
+        "after": 8562290818.22,
+        "provenance": {
+          "source": "prices-history/DVA.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2018-12-31",
+            "price month: 2018-12",
+            "close: 51.46",
+            "capitalization shares: 166387307",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2019,
+        "field": "sharesOutstanding",
+        "before": 153812064,
+        "after": 125843000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000927066.json#0000927066-21-000008",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2019-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2019,
+        "field": "marketCap",
+        "before": 11540514360,
+        "after": 9442000290,
+        "provenance": {
+          "source": "prices-history/DVA.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2019-12-31",
+            "price month: 2019-12",
+            "close: 75.03",
+            "capitalization shares: 125843000",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2020,
+        "field": "sharesOutstanding",
+        "before": 122623000,
+        "after": 109933000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000927066.json#0000927066-22-000012",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2020-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2020,
+        "field": "marketCap",
+        "before": 14395940200,
+        "after": 12906134200,
+        "provenance": {
+          "source": "prices-history/DVA.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2020-12-31",
+            "price month: 2020-12",
+            "close: 117.4",
+            "capitalization shares: 109933000",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2021,
+        "field": "sharesOutstanding",
+        "before": 109948000,
+        "after": 97289000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000927066.json#0000927066-23-000011",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2021-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2021,
+        "field": "marketCap",
+        "before": 12507684480,
+        "after": 11067596640,
+        "provenance": {
+          "source": "prices-history/DVA.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2021-12-31",
+            "price month: 2021-12",
+            "close: 113.76",
+            "capitalization shares: 97289000",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2022,
+        "field": "sharesOutstanding",
+        "before": 95834000,
+        "after": 90411000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000927066.json#0000927066-24-000013",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2022-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2022,
+        "field": "marketCap",
+        "before": 7155924780,
+        "after": 6750989370,
+        "provenance": {
+          "source": "prices-history/DVA.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2022-12-31",
+            "price month: 2022-12",
+            "close: 74.67",
+            "capitalization shares: 90411000",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2023,
+        "field": "sharesOutstanding",
+        "before": 93182000,
+        "after": 88824000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000927066.json#0000927066-25-000012",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2023-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2023,
+        "field": "marketCap",
+        "before": 9761746320,
+        "after": 9305202240,
+        "provenance": {
+          "source": "prices-history/DVA.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2023-12-31",
+            "price month: 2023-12",
+            "close: 104.76",
+            "capitalization shares: 88824000",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2024,
+        "field": "sharesOutstanding",
+        "before": 87274000,
+        "after": 80536000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/dva-20251231.htm#000092706626000012",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2024-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2024,
+        "field": "marketCap",
+        "before": 13051826700.000002,
+        "after": 12044158800,
+        "provenance": {
+          "source": "prices-history/DVA.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2024-12-31",
+            "price month: 2024-12",
+            "close: 149.55",
+            "capitalization shares: 80536000",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2025,
+        "field": "sharesOutstanding",
+        "before": 88100000,
+        "after": 68549000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/927066/000092706626000012/dva-20251231.htm#000092706626000012",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2025-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2025,
+        "field": "marketCap",
+        "before": 8621294850,
+        "after": 7787851890,
+        "provenance": {
+          "source": "prices-history/DVA.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2025-12-31",
+            "price month: 2025-12",
+            "close: 113.61",
+            "capitalization shares: 68549000",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      }
+    ],
+    "qualityChanges": [
+      {
+        "id": "DVA.US",
+        "tests": {
+          "management": [
+            "pass",
+            "fail"
+          ]
+        },
+        "frozen": false,
+        "reasons": {
+          "management": [
+            "$1 retained earnings test: 2016 to 2025 (9 years)",
+            "potential debt-funded buybacks (informational)",
+            "buybacks leaned toward cheaper years (informational)",
+            "ROIC first 3 years vs last 3 years: 20.3% vs 39.5%",
+            "market cap gain below cumulative retained earnings"
+          ]
+        }
+      }
+    ],
+    "buyChanges": [],
+    "numericNulls": [
+      {
+        "id": "DVA.US",
+        "path": "tests.accounting.rawMetrics.goodwillIntangiblesToEquity",
+        "before": 6.70490780973612,
+        "frozen": false
+      },
+      {
+        "id": "DVA.US",
+        "path": "series.bookValuePerShare[2025]",
+        "before": 15.265704697898135,
+        "frozen": false
+      }
+    ],
+    "removedNumericFields": [
+      {
+        "id": "DVA.US",
+        "path": "tests.accounting.metrics.goodwillIntangiblesToEquity",
+        "before": 6.70490780973612,
+        "frozen": false
+      }
+    ],
+    "valuationNulls": [],
+    "latestValuationBalance": {
+      "end": "2026-06-30",
+      "filed": "2026-08-04",
+      "source": "https://eodhd.com/api/fundamentals/DVA.US#Financials.Balance_Sheet.quarterly.2026-06-30",
+      "basis": "filed"
+    }
+  },
+  {
+    "id": "GL.US",
+    "report": {
+      "id": "GL.US",
+      "kind": "10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/320335/000032033526000090/gl-20251231.htm",
+      "filed": "2026-02-25",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "risk",
+        "mdna",
+        "capital",
+        "notes",
+        "auditor",
+        "compensation"
+      ]
+    },
+    "inputYearsBefore": [
+      1996,
+      1997,
+      1998,
+      1999,
+      2000,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "inputYearsAfter": [
+      1996,
+      1997,
+      1998,
+      1999,
+      2000,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "changedAnnualInputs": [
+      {
+        "fy": 2018,
+        "field": "sharesOutstanding",
+        "before": 115249000,
+        "after": 121218183,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320335.json#0000320335-20-000008",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2018-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2018,
+        "field": "marketCap",
+        "before": 8589504467.09,
+        "after": 9034391178.99,
+        "provenance": {
+          "source": "prices-history/GL.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2018-12-31",
+            "price month: 2018-12",
+            "close: 74.53",
+            "capitalization shares: 121218183",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2019,
+        "field": "sharesOutstanding",
+        "before": 111381000,
+        "after": 117218183,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320335.json#0000320335-21-000010",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2019-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2019,
+        "field": "marketCap",
+        "before": 11722876562.5,
+        "after": 12337213760.75,
+        "provenance": {
+          "source": "prices-history/GL.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2019-12-31",
+            "price month: 2019-12",
+            "close: 105.25",
+            "capitalization shares: 117218183",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2020,
+        "field": "sharesOutstanding",
+        "before": 107224594,
+        "after": 113218183,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320335.json#0000320335-22-000006",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2020-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2020,
+        "field": "marketCap",
+        "before": 10182047446.24,
+        "after": 10751198657.679998,
+        "provenance": {
+          "source": "prices-history/GL.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2020-12-31",
+            "price month: 2020-12",
+            "close: 94.96",
+            "capitalization shares: 113218183",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2021,
+        "field": "sharesOutstanding",
+        "before": 103170132,
+        "after": 109218183,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320335.json#0000320335-23-000008",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2021-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2021,
+        "field": "marketCap",
+        "before": 9669104771.039999,
+        "after": 10235928110.76,
+        "provenance": {
+          "source": "prices-history/GL.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2021-12-31",
+            "price month: 2021-12",
+            "close: 93.72",
+            "capitalization shares: 109218183",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2022,
+        "field": "sharesOutstanding",
+        "before": 98984644,
+        "after": 105218183,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320335.json#0000320335-24-000006",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2022-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2022,
+        "field": "marketCap",
+        "before": 11932598834.199999,
+        "after": 12684051960.65,
+        "provenance": {
+          "source": "prices-history/GL.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2022-12-31",
+            "price month: 2022-12",
+            "close: 120.55",
+            "capitalization shares: 105218183",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2023,
+        "field": "sharesOutstanding",
+        "before": 96363841,
+        "after": 102218183,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320335.json#0000320335-25-000013",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2023-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2023,
+        "field": "marketCap",
+        "before": 11729406726.52,
+        "after": 12441997234.76,
+        "provenance": {
+          "source": "prices-history/GL.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2023-12-31",
+            "price month: 2023-12",
+            "close: 121.72",
+            "capitalization shares: 102218183",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2024,
+        "field": "sharesOutstanding",
+        "before": 84749000,
+        "after": 97218183,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/320335/000032033526000090/gl-20251231.htm#000032033526000090",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2024-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2024,
+        "field": "marketCap",
+        "before": 9999041781.44,
+        "after": 10841771768.16,
+        "provenance": {
+          "source": "prices-history/GL.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2024-12-31",
+            "price month: 2024-12",
+            "close: 111.52",
+            "capitalization shares: 97218183",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2025,
+        "field": "sharesOutstanding",
+        "before": 80851063,
+        "after": 92218183,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/320335/000032033526000090/gl-20251231.htm#000032033526000090",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2025-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2025,
+        "field": "marketCap",
+        "before": 11541945381.12,
+        "after": 12897635074.380001,
+        "provenance": {
+          "source": "prices-history/GL.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2025-12-31",
+            "price month: 2025-12",
+            "close: 139.86",
+            "capitalization shares: 92218183",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      }
+    ],
+    "qualityChanges": [],
+    "buyChanges": [
+      {
+        "id": "GL.US",
+        "before": {
+          "b": false,
+          "v": null,
+          "m": 0.35,
+          "t": "PPPPP"
+        },
+        "after": {
+          "b": true,
+          "v": [
+            219.81805155656687,
+            274.77256444570855,
+            366.3634192609446
+          ],
+          "m": 0.35,
+          "t": "PPPPP"
+        }
+      }
+    ],
+    "numericNulls": [],
+    "removedNumericFields": [],
+    "valuationNulls": [],
+    "latestValuationBalance": {
+      "end": "2026-06-30",
+      "filed": "2026-08-05",
+      "source": "https://eodhd.com/api/fundamentals/GL.US#Financials.Balance_Sheet.quarterly.2026-06-30",
+      "basis": "filed"
+    }
+  },
+  {
+    "id": "HCI.US",
+    "report": {
+      "id": "HCI.US",
+      "kind": "10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1400810/000119312526076743/hci-20251231.htm",
+      "filed": "2026-02-26",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "risk",
+        "mdna",
+        "capital",
+        "notes",
+        "auditor",
+        "compensation"
+      ]
+    },
+    "inputYearsBefore": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "inputYearsAfter": [
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "changedAnnualInputs": [
+      {
+        "fy": 2020,
+        "field": "sharesOutstanding",
+        "before": 9694000,
+        "after": 7785617,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001400810.json#0000950170-22-003351",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2020-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2020,
+        "field": "marketCap",
+        "before": null,
+        "after": 407187769.09999996,
+        "provenance": {
+          "source": "prices-history/HCI.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2020-12-31",
+            "price month: 2020-12",
+            "close: 52.3",
+            "capitalization shares: 7785617",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2021,
+        "field": "sharesOutstanding",
+        "before": 8580000,
+        "after": 10131399,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001400810.json#0000950170-23-007271",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2021-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2021,
+        "field": "marketCap",
+        "before": null,
+        "after": 846377072.46,
+        "provenance": {
+          "source": "prices-history/HCI.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2021-12-31",
+            "price month: 2021-12",
+            "close: 83.54",
+            "capitalization shares: 10131399",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2022,
+        "field": "sharesOutstanding",
+        "before": 8817000,
+        "after": 8598682,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001400810.json#0000950170-24-028620",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2022-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2022,
+        "field": "marketCap",
+        "before": null,
+        "after": 340421820.38000005,
+        "provenance": {
+          "source": "prices-history/HCI.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2022-12-31",
+            "price month: 2022-12",
+            "close: 39.59",
+            "capitalization shares: 8598682",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2023,
+        "field": "sharesOutstanding",
+        "before": 11044000,
+        "after": 9738183,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001400810.json#0000950170-25-029999",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2023-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2023,
+        "field": "marketCap",
+        "before": null,
+        "after": 851117194.2,
+        "provenance": {
+          "source": "prices-history/HCI.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2023-12-31",
+            "price month: 2023-12",
+            "close: 87.4",
+            "capitalization shares: 9738183",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2024,
+        "field": "sharesOutstanding",
+        "before": 12686000,
+        "after": 10767184,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1400810/000119312526076743/hci-20251231.htm#000119312526076743",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2024-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2024,
+        "field": "marketCap",
+        "before": null,
+        "after": 1254699951.52,
+        "provenance": {
+          "source": "prices-history/HCI.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2024-12-31",
+            "price month: 2024-12",
+            "close: 116.53",
+            "capitalization shares: 10767184",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2025,
+        "field": "sharesOutstanding",
+        "before": 12883000,
+        "after": 12992147,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1400810/000119312526076743/hci-20251231.htm#000119312526076743",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2025-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2025,
+        "field": "marketCap",
+        "before": null,
+        "after": 2490464658.43,
+        "provenance": {
+          "source": "prices-history/HCI.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2025-12-31",
+            "price month: 2025-12",
+            "close: 191.69",
+            "capitalization shares: 12992147",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      }
+    ],
+    "qualityChanges": [
+      {
+        "id": "HCI.US",
+        "tests": {
+          "understandable": [
+            "na",
+            "pass"
+          ],
+          "moat": [
+            "na",
+            "pass"
+          ],
+          "economics": [
+            "na",
+            "pass"
+          ],
+          "management": [
+            "na",
+            "pass"
+          ],
+          "accounting": [
+            "na",
+            "pass"
+          ]
+        },
+        "frozen": false,
+        "reasons": {
+          "understandable": [],
+          "moat": [
+            "Common book per share",
+            "Parent-total proxy for preferred equity",
+            "Underwriting economics assessed through return on tangible common equity"
+          ],
+          "economics": [
+            "Common book per share",
+            "Parent-total proxy for preferred equity"
+          ],
+          "management": [
+            "Common book per share",
+            "Parent-total proxy for preferred equity"
+          ],
+          "accounting": []
+        }
+      }
+    ],
+    "buyChanges": [],
+    "numericNulls": [],
+    "removedNumericFields": [],
+    "valuationNulls": [],
+    "latestValuationBalance": {
+      "end": "2026-06-30",
+      "filed": "2026-08-07",
+      "source": "https://eodhd.com/api/fundamentals/HCI.US#Financials.Balance_Sheet.quarterly.2026-06-30",
+      "basis": "filed"
+    }
+  },
+  {
+    "id": "HON.US",
+    "report": {
+      "id": "HON.US",
+      "kind": "10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/773840/000077384026000013/hon-20251231.htm",
+      "filed": "2026-02-17",
+      "period": "2025-12-31",
+      "sections": [
+        "notes",
+        "auditor",
+        "business",
+        "compensation"
+      ]
+    },
+    "inputYearsBefore": [
+      1996,
+      1997,
+      1998,
+      1999,
+      2000,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "inputYearsAfter": [
+      1996,
+      1997,
+      1998,
+      1999,
+      2000,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "changedAnnualInputs": [
+      {
+        "fy": 2010,
+        "field": "sharesOutstanding",
+        "before": 390450000,
+        "after": 746590500,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000773840.json#0000930413-13-000907",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Fiscal end 2010-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Post-filing split factor 0.9535; current listing units"
+          ]
+        }
+      },
+      {
+        "fy": 2011,
+        "field": "sharesOutstanding",
+        "before": 395800000,
+        "after": 738676450,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000773840.json#0000930413-14-000634",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Fiscal end 2011-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Post-filing split factor 0.9535; current listing units"
+          ]
+        }
+      },
+      {
+        "fy": 2012,
+        "field": "sharesOutstanding",
+        "before": 395950000,
+        "after": 746399800,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000773840.json#0000930413-15-000621",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Fiscal end 2012-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Post-filing split factor 0.9535; current listing units"
+          ]
+        }
+      },
+      {
+        "fy": 2013,
+        "field": "sharesOutstanding",
+        "before": 398650000,
+        "after": 747353300,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000773840.json#0000930413-16-005457",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Fiscal end 2013-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Post-filing split factor 0.9535; current listing units"
+          ]
+        }
+      },
+      {
+        "fy": 2014,
+        "field": "sharesOutstanding",
+        "before": 397600000,
+        "after": 745827700,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000773840.json#0000930413-17-000391",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Fiscal end 2014-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Post-filing split factor 0.9535; current listing units"
+          ]
+        }
+      },
+      {
+        "fy": 2015,
+        "field": "sharesOutstanding",
+        "before": 394650000,
+        "after": 734576400,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000773840.json#0000930413-18-000292",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Fiscal end 2015-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Post-filing split factor 0.9535; current listing units"
+          ]
+        }
+      },
+      {
+        "fy": 2016,
+        "field": "sharesOutstanding",
+        "before": 387650000,
+        "after": 725422800,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000773840.json#0000930413-19-000366",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Fiscal end 2016-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Post-filing split factor 0.9535; current listing units"
+          ]
+        }
+      },
+      {
+        "fy": 2016,
+        "field": "marketCap",
+        "before": 81137119337.83951,
+        "after": 79619657412.90894,
+        "provenance": {
+          "source": "prices-history/HON.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2016-12-31",
+            "price month: 2016-12",
+            "close: 109.75621032714844",
+            "capitalization shares: 725422800",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2017,
+        "field": "sharesOutstanding",
+        "before": 386050000,
+        "after": 715983150,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000773840.json#0000773840-20-000009",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Fiscal end 2017-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Post-filing split factor 0.9535; current listing units"
+          ]
+        }
+      },
+      {
+        "fy": 2017,
+        "field": "marketCap",
+        "before": 106964433369.14368,
+        "after": 104027448538.90686,
+        "provenance": {
+          "source": "prices-history/HON.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2017-12-31",
+            "price month: 2017-12",
+            "close: 145.29315185546875",
+            "capitalization shares: 715983150",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2018,
+        "field": "sharesOutstanding",
+        "before": 376500000,
+        "after": 695673600,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000773840.json#0000773840-21-000015",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Fiscal end 2018-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Post-filing split factor 0.9535; current listing units"
+          ]
+        }
+      },
+      {
+        "fy": 2018,
+        "field": "marketCap",
+        "before": 93766599052.89459,
+        "after": 90852736612.20703,
+        "provenance": {
+          "source": "prices-history/HON.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2018-12-31",
+            "price month: 2018-12",
+            "close: 130.59678649902344",
+            "capitalization shares: 695673600",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2019,
+        "field": "sharesOutstanding",
+        "before": 365150000,
+        "after": 678033850,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000773840.json#0000773840-22-000018",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Fiscal end 2019-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Post-filing split factor 0.9535; current listing units"
+          ]
+        }
+      },
+      {
+        "fy": 2019,
+        "field": "marketCap",
+        "before": 121831388519.65103,
+        "after": 118628372417.25845,
+        "provenance": {
+          "source": "prices-history/HON.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2019-12-31",
+            "price month: 2019-12",
+            "close: 174.95936584472656",
+            "capitalization shares: 678033850",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2020,
+        "field": "sharesOutstanding",
+        "before": 355600000,
+        "after": 664398800,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000773840.json#0000773840-23-000013",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Fiscal end 2020-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Post-filing split factor 0.9535; current listing units"
+          ]
+        }
+      },
+      {
+        "fy": 2020,
+        "field": "marketCap",
+        "before": 142575153575.1587,
+        "after": 139688367563.51318,
+        "provenance": {
+          "source": "prices-history/HON.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2020-12-31",
+            "price month: 2020-12",
+            "close: 210.24777221679688",
+            "capitalization shares: 664398800",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2021,
+        "field": "sharesOutstanding",
+        "before": 350200000,
+        "after": 652956800,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000773840.json#0000773840-24-000014",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Fiscal end 2021-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Post-filing split factor 0.9535; current listing units"
+          ]
+        }
+      },
+      {
+        "fy": 2021,
+        "field": "marketCap",
+        "before": 137644111354.90723,
+        "after": 134578365870.70312,
+        "provenance": {
+          "source": "prices-history/HON.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2021-12-31",
+            "price month: 2021-12",
+            "close: 206.1060791015625",
+            "capitalization shares: 652956800",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2022,
+        "field": "sharesOutstanding",
+        "before": 341550000,
+        "after": 636556600,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000773840.json#0000773840-25-000010",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Fiscal end 2022-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Post-filing split factor 0.9535; current listing units"
+          ]
+        }
+      },
+      {
+        "fy": 2022,
+        "field": "marketCap",
+        "before": 137972036999.89243,
+        "after": 134841358367.92297,
+        "provenance": {
+          "source": "prices-history/HON.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2022-12-31",
+            "price month: 2022-12",
+            "close: 211.82933044433594",
+            "capitalization shares: 636556600",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2023,
+        "field": "sharesOutstanding",
+        "before": 334100000,
+        "after": 621491300,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/773840/000077384026000013/hon-20251231.htm#000077384026000013",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Fiscal end 2023-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Post-filing split factor 0.9535; current listing units"
+          ]
+        }
+      },
+      {
+        "fy": 2023,
+        "field": "marketCap",
+        "before": 132071842773.6435,
+        "after": 128830330918.67828,
+        "provenance": {
+          "source": "prices-history/HON.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2023-12-31",
+            "price month: 2023-12",
+            "close: 207.29225158691406",
+            "capitalization shares: 621491300",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2024,
+        "field": "sharesOutstanding",
+        "before": 327650000,
+        "after": 619584300,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/773840/000077384026000013/hon-20251231.htm#000077384026000013",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Fiscal end 2024-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Post-filing split factor 0.9535; current listing units"
+          ]
+        }
+      },
+      {
+        "fy": 2024,
+        "field": "marketCap",
+        "before": 139515283644.78455,
+        "after": 138344317583.36792,
+        "provenance": {
+          "source": "prices-history/HON.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2024-12-31",
+            "price month: 2024-12",
+            "close: 223.28570556640625",
+            "capitalization shares: 619584300",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2025,
+        "field": "sharesOutstanding",
+        "before": 321400000,
+        "after": 605758550,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/773840/000077384026000013/hon-20251231.htm#000077384026000013",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "derived",
+          "inputs": [
+            "Fiscal end 2025-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)",
+            "Post-filing split factor 0.9535; current listing units"
+          ]
+        }
+      },
+      {
+        "fy": 2025,
+        "field": "marketCap",
+        "before": 125403855226.94702,
+        "after": 123940680189.29596,
+        "provenance": {
+          "source": "prices-history/HON.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2025-12-31",
+            "price month: 2025-12",
+            "close: 204.60409545898438",
+            "capitalization shares: 605758550",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      }
+    ],
+    "qualityChanges": [
+      {
+        "id": "HON.US",
+        "tests": {
+          "management": [
+            "fail",
+            "pass"
+          ]
+        },
+        "frozen": false,
+        "reasons": {
+          "management": [
+            "$1 retained earnings test: 2016 to 2025 (9 years)",
+            "potential debt-funded buybacks (informational)",
+            "buybacks leaned toward cheaper years (informational)",
+            "ROIC first 3 years vs last 3 years: 77.0% vs 37.0%"
+          ]
+        }
+      }
+    ],
+    "buyChanges": [],
+    "numericNulls": [],
+    "removedNumericFields": [],
+    "valuationNulls": [],
+    "latestValuationBalance": {
+      "end": "2026-06-30",
+      "filed": "2026-07-23",
+      "source": "https://eodhd.com/api/fundamentals/HON.US#Financials.Balance_Sheet.quarterly.2026-06-30",
+      "basis": "filed"
+    }
+  },
+  {
+    "id": "INMD.US",
+    "report": {
+      "id": "INMD.US",
+      "kind": "10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/885988/000088598812000006/form10k2011.htm",
+      "filed": "2012-03-06",
+      "period": "2011-12-31",
+      "sections": [
+        "business",
+        "risk",
+        "mdna",
+        "capital",
+        "notes",
+        "auditor",
+        "compensation"
+      ]
+    },
+    "inputYearsBefore": [
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "inputYearsAfter": [
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "changedAnnualInputs": [],
+    "qualityChanges": [],
+    "buyChanges": [
+      {
+        "id": "INMD.US",
+        "before": {
+          "b": false,
+          "v": null,
+          "m": 0.35,
+          "t": "PPPPP"
+        },
+        "after": {
+          "b": true,
+          "v": [
+            21.01720530342566,
+            22.732279257781574,
+            25.015406479566906
+          ],
+          "m": 0.35,
+          "t": "PPPPP"
+        }
+      }
+    ],
+    "numericNulls": [],
+    "removedNumericFields": [],
+    "valuationNulls": [],
+    "latestValuationBalance": {
+      "end": "2026-06-30",
+      "filed": "2026-08-05",
+      "source": "https://eodhd.com/api/fundamentals/INMD.US#Financials.Balance_Sheet.quarterly.2026-06-30",
+      "basis": "filed"
+    }
+  },
+  {
+    "id": "LAMR.US",
+    "report": {
+      "id": "LAMR.US",
+      "kind": "10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1090425/000109042526000008/lamr-20251231.htm",
+      "filed": "2026-02-20",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "risk",
+        "mdna",
+        "capital",
+        "notes",
+        "auditor",
+        "compensation"
+      ]
+    },
+    "inputYearsBefore": [
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "inputYearsAfter": [
+      1996,
+      1997,
+      1998,
+      1999,
+      2000,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "changedAnnualInputs": [],
+    "qualityChanges": [
+      {
+        "id": "LAMR.US",
+        "tests": {
+          "management": [
+            "pass",
+            "fail"
+          ]
+        },
+        "frozen": false,
+        "reasons": {
+          "management": [
+            "$1 retained earnings test: 2016 to 2025 (9 years)",
+            "potential debt-funded buybacks (informational)",
+            "buybacks leaned toward cheaper years (informational)",
+            "ROIC first 3 years vs last 3 years: 24.5% vs 14.9%",
+            "acquisition spending exceeds half of ten-year net income with low and deteriorating ROIC"
+          ]
+        }
+      }
+    ],
+    "buyChanges": [],
+    "numericNulls": [],
+    "removedNumericFields": [],
+    "valuationNulls": [],
+    "latestValuationBalance": {
+      "end": "2026-06-30",
+      "filed": "2026-08-06",
+      "source": "https://eodhd.com/api/fundamentals/LAMR.US#Financials.Balance_Sheet.quarterly.2026-06-30",
+      "basis": "filed"
+    }
+  },
+  {
+    "id": "NMIH.US",
+    "report": {
+      "id": "NMIH.US",
+      "kind": "10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1547903/000154790326000011/nmih-20251231.htm",
+      "filed": "2026-02-12",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "risk",
+        "mdna",
+        "capital",
+        "notes",
+        "auditor",
+        "compensation"
+      ]
+    },
+    "inputYearsBefore": [
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "inputYearsAfter": [
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "changedAnnualInputs": [
+      {
+        "fy": 2016,
+        "field": "sharesOutstanding",
+        "before": 60829372,
+        "after": 59145161,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001547903.json#0001547903-18-000038",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2016-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2016,
+        "field": "marketCap",
+        "before": 647828850,
+        "after": 629895964.65,
+        "provenance": {
+          "source": "prices-history/NMIH.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2016-12-31",
+            "price month: 2016-12",
+            "close: 10.65",
+            "capitalization shares: 59145161",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2017,
+        "field": "sharesOutstanding",
+        "before": 62186000,
+        "after": 60517512,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001547903.json#0001547903-19-000017",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2017-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2017,
+        "field": "marketCap",
+        "before": 1057162000,
+        "after": 1028797704,
+        "provenance": {
+          "source": "prices-history/NMIH.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2017-12-31",
+            "price month: 2017-12",
+            "close: 17",
+            "capitalization shares: 60517512",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2018,
+        "field": "sharesOutstanding",
+        "before": 67652000,
+        "after": 66318849,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001547903.json#0001547903-20-000018",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2018-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2018,
+        "field": "marketCap",
+        "before": 1207588200,
+        "after": 1183791454.65,
+        "provenance": {
+          "source": "prices-history/NMIH.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2018-12-31",
+            "price month: 2018-12",
+            "close: 17.85",
+            "capitalization shares: 66318849",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2019,
+        "field": "sharesOutstanding",
+        "before": 69721000,
+        "after": 68358074,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001547903.json#0001547903-21-000055",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2019-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2019,
+        "field": "marketCap",
+        "before": 2313342780,
+        "after": 2268120895.32,
+        "provenance": {
+          "source": "prices-history/NMIH.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2019-12-31",
+            "price month: 2019-12",
+            "close: 33.18",
+            "capitalization shares: 68358074",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2020,
+        "field": "sharesOutstanding",
+        "before": 79263000,
+        "after": 85163039,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001547903.json#0001547903-22-000060",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2020-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2020,
+        "field": "marketCap",
+        "before": 1795306950,
+        "after": 1928942833.35,
+        "provenance": {
+          "source": "prices-history/NMIH.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2020-12-31",
+            "price month: 2020-12",
+            "close: 22.65",
+            "capitalization shares: 85163039",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2021,
+        "field": "sharesOutstanding",
+        "before": 86885000,
+        "after": 85792849,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001547903.json#0001547903-23-000036",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2021-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2021,
+        "field": "marketCap",
+        "before": 1898437250.0000002,
+        "after": 1874573750.65,
+        "provenance": {
+          "source": "prices-history/NMIH.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2021-12-31",
+            "price month: 2021-12",
+            "close: 21.85",
+            "capitalization shares: 85792849",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2022,
+        "field": "sharesOutstanding",
+        "before": 85999000,
+        "after": 83549879,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001547903.json#0001547903-24-000035",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2022-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2022,
+        "field": "marketCap",
+        "before": 1797379099.9999998,
+        "after": 1746192471.1,
+        "provenance": {
+          "source": "prices-history/NMIH.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2022-12-31",
+            "price month: 2022-12",
+            "close: 20.9",
+            "capitalization shares: 83549879",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2023,
+        "field": "sharesOutstanding",
+        "before": 83854000,
+        "after": 80881280,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001547903.json#0001547903-25-000026",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2023-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2023,
+        "field": "marketCap",
+        "before": 2488786720,
+        "after": 2400556390.4,
+        "provenance": {
+          "source": "prices-history/NMIH.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2023-12-31",
+            "price month: 2023-12",
+            "close: 29.68",
+            "capitalization shares: 80881280",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2024,
+        "field": "sharesOutstanding",
+        "before": 81273000,
+        "after": 78600726,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1547903/000154790326000011/nmih-20251231.htm#000154790326000011",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2024-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2024,
+        "field": "marketCap",
+        "before": 2987595480,
+        "after": 2889362687.7599998,
+        "provenance": {
+          "source": "prices-history/NMIH.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2024-12-31",
+            "price month: 2024-12",
+            "close: 36.76",
+            "capitalization shares: 78600726",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2025,
+        "field": "sharesOutstanding",
+        "before": 79038000,
+        "after": 76285242,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1547903/000154790326000011/nmih-20251231.htm#000154790326000011",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2025-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2025,
+        "field": "marketCap",
+        "before": 3223960020,
+        "after": 3111675021.18,
+        "provenance": {
+          "source": "prices-history/NMIH.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2025-12-31",
+            "price month: 2025-12",
+            "close: 40.79",
+            "capitalization shares: 76285242",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      }
+    ],
+    "qualityChanges": [
+      {
+        "id": "NMIH.US",
+        "tests": {
+          "management": [
+            "fail",
+            "pass"
+          ]
+        },
+        "frozen": false,
+        "reasons": {
+          "management": [
+            "Common book per share",
+            "Parent-total proxy for preferred equity"
+          ]
+        }
+      }
+    ],
+    "buyChanges": [
+      {
+        "id": "NMIH.US",
+        "before": {
+          "b": false,
+          "v": null,
+          "m": 0.35,
+          "t": "PPPFP"
+        },
+        "after": {
+          "b": true,
+          "v": [
+            63.679860841674376,
+            79.59982605209295,
+            106.13310140279059
+          ],
+          "m": 0.35,
+          "t": "PPPPP"
+        }
+      }
+    ],
+    "numericNulls": [],
+    "removedNumericFields": [],
+    "valuationNulls": [],
+    "latestValuationBalance": {
+      "end": "2026-06-30",
+      "filed": "2026-07-31",
+      "source": "https://eodhd.com/api/fundamentals/NMIH.US#Financials.Balance_Sheet.quarterly.2026-06-30",
+      "basis": "filed"
+    }
+  },
+  {
+    "id": "NOVT.US",
+    "report": {
+      "id": "NOVT.US",
+      "kind": "10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1076930/000119312526064230/novt-20251231.htm",
+      "filed": "2026-02-23",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "risk",
+        "mdna",
+        "capital",
+        "notes",
+        "auditor",
+        "compensation"
+      ]
+    },
+    "inputYearsBefore": [
+      1998,
+      1999,
+      2000,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "inputYearsAfter": [
+      1998,
+      1999,
+      2000,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "changedAnnualInputs": [
+      {
+        "fy": 2011,
+        "field": "sharesOutstanding",
+        "before": 33589000,
+        "after": 33478000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001076930.json#0001193125-13-112072",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2011-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2012,
+        "field": "sharesOutstanding",
+        "before": 33936000,
+        "after": 33796000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001076930.json#0001193125-14-098040",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2012-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2013,
+        "field": "sharesOutstanding",
+        "before": 34396000,
+        "after": 33991000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001076930.json#0001564590-15-001413",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2013-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2014,
+        "field": "sharesOutstanding",
+        "before": 34352000,
+        "after": 34219000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001076930.json#0001564590-16-013893",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2014-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2015,
+        "field": "sharesOutstanding",
+        "before": 34827000,
+        "after": 34345000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001076930.json#0001564590-17-003421",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2015-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2016,
+        "field": "sharesOutstanding",
+        "before": 34914000,
+        "after": 34458000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001076930.json#0001564590-18-003687",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2016-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2016,
+        "field": "marketCap",
+        "before": 733194000,
+        "after": 723618000,
+        "provenance": {
+          "source": "prices-history/NOVT.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2016-12-31",
+            "price month: 2016-12",
+            "close: 21",
+            "capitalization shares: 34458000",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2017,
+        "field": "sharesOutstanding",
+        "before": 35280000,
+        "after": 34595000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001076930.json#0001564590-19-004717",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2017-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2017,
+        "field": "marketCap",
+        "before": 1764000000,
+        "after": 1729750000,
+        "provenance": {
+          "source": "prices-history/NOVT.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2017-12-31",
+            "price month: 2017-12",
+            "close: 50",
+            "capitalization shares: 34595000",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2018,
+        "field": "sharesOutstanding",
+        "before": 35473000,
+        "after": 34886000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001076930.json#0001564590-20-006601",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2018-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2018,
+        "field": "marketCap",
+        "before": 2234799000,
+        "after": 2197818000,
+        "provenance": {
+          "source": "prices-history/NOVT.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2018-12-31",
+            "price month: 2018-12",
+            "close: 63",
+            "capitalization shares: 34886000",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2019,
+        "field": "sharesOutstanding",
+        "before": 35546000,
+        "after": 35052000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001076930.json#0001564590-21-009673",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2019-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2019,
+        "field": "marketCap",
+        "before": 3143688240,
+        "after": 3099998880,
+        "provenance": {
+          "source": "prices-history/NOVT.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2019-12-31",
+            "price month: 2019-12",
+            "close: 88.44",
+            "capitalization shares: 35052000",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2020,
+        "field": "sharesOutstanding",
+        "before": 35654000,
+        "after": 35163000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001076930.json#0001564590-22-007880",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2020-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2020,
+        "field": "marketCap",
+        "before": 4215015880,
+        "after": 4156969860,
+        "provenance": {
+          "source": "prices-history/NOVT.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2020-12-31",
+            "price month: 2020-12",
+            "close: 118.22",
+            "capitalization shares: 35163000",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2021,
+        "field": "sharesOutstanding",
+        "before": 35781000,
+        "after": 35601000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001076930.json#0000950170-23-005365",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2021-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2021,
+        "field": "marketCap",
+        "before": 6309263730,
+        "after": 6277524330,
+        "provenance": {
+          "source": "prices-history/NOVT.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2021-12-31",
+            "price month: 2021-12",
+            "close: 176.33",
+            "capitalization shares: 35601000",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2022,
+        "field": "sharesOutstanding",
+        "before": 35909000,
+        "after": 35711000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001076930.json#0000950170-24-021689",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2022-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2022,
+        "field": "marketCap",
+        "before": 4878955830,
+        "after": 4852053570,
+        "provenance": {
+          "source": "prices-history/NOVT.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2022-12-31",
+            "price month: 2022-12",
+            "close: 135.87",
+            "capitalization shares: 35711000",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2023,
+        "field": "sharesOutstanding",
+        "before": 36031000,
+        "after": 35814000,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001076930.json#0000950170-25-026131",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2023-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2023,
+        "field": "marketCap",
+        "before": 6067980710,
+        "after": 6031435740,
+        "provenance": {
+          "source": "prices-history/NOVT.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2023-12-31",
+            "price month: 2023-12",
+            "close: 168.41",
+            "capitalization shares: 35814000",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2024,
+        "field": "sharesOutstanding",
+        "before": 36124000,
+        "after": 35938000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1076930/000119312526064230/novt-20251231.htm#000119312526064230",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2024-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2024,
+        "field": "marketCap",
+        "before": 5518663480,
+        "after": 5490248260,
+        "provenance": {
+          "source": "prices-history/NOVT.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2024-12-31",
+            "price month: 2024-12",
+            "close: 152.77",
+            "capitalization shares: 35938000",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2025,
+        "field": "sharesOutstanding",
+        "before": 36702000,
+        "after": 35671000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1076930/000119312526064230/novt-20251231.htm#000119312526064230",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2025-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2025,
+        "field": "marketCap",
+        "before": 4367170980,
+        "after": 4244492290,
+        "provenance": {
+          "source": "prices-history/NOVT.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2025-12-31",
+            "price month: 2025-12",
+            "close: 118.99",
+            "capitalization shares: 35671000",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      }
+    ],
+    "qualityChanges": [
+      {
+        "id": "NOVT.US",
+        "tests": {
+          "accounting": [
+            "pass",
+            "fail"
+          ]
+        },
+        "frozen": false,
+        "reasons": {
+          "accounting": [
+            "restructuring or one-time charges in at least three of five years",
+            "stock compensation exceeds 15% of operating cash flow"
+          ]
+        }
+      }
+    ],
+    "buyChanges": [],
+    "numericNulls": [],
+    "removedNumericFields": [],
+    "valuationNulls": [],
+    "latestValuationBalance": {
+      "end": "2026-06-30",
+      "filed": "2026-08-05",
+      "source": "https://eodhd.com/api/fundamentals/NOVT.US#Financials.Balance_Sheet.quarterly.2026-06-30",
+      "basis": "filed"
+    }
+  },
+  {
+    "id": "NTB.US",
+    "report": {
+      "id": "NTB.US",
+      "kind": "20-F",
+      "url": "https://www.sec.gov/Archives/edgar/data/1653242/000165324226000006/ntb-20251231.htm",
+      "filed": "2026-02-18",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "mdna",
+        "capital",
+        "risk",
+        "compensation",
+        "notes",
+        "auditor"
+      ]
+    },
+    "inputYearsBefore": [
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "inputYearsAfter": [
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "changedAnnualInputs": [],
+    "qualityChanges": [],
+    "buyChanges": [
+      {
+        "id": "NTB.US",
+        "before": {
+          "b": false,
+          "v": null,
+          "m": 0.35,
+          "t": "PPPPP"
+        },
+        "after": {
+          "b": true,
+          "v": [
+            79.64968406236753,
+            99.56210507795939,
+            132.74947343727916
+          ],
+          "m": 0.35,
+          "t": "PPPPP"
+        }
+      }
+    ],
+    "numericNulls": [],
+    "removedNumericFields": [],
+    "valuationNulls": [],
+    "latestValuationBalance": {
+      "end": "2026-06-30",
+      "filed": "2026-08-14",
+      "source": "https://eodhd.com/api/fundamentals/NTB.US#Financials.Balance_Sheet.quarterly.2026-06-30",
+      "basis": "filed"
+    }
+  },
+  {
+    "id": "SBSI.US",
+    "report": {
+      "id": "SBSI.US",
+      "kind": "10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/705432/000070543226000034/sbsi-20251231.htm",
+      "filed": "2026-02-27",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "risk",
+        "mdna",
+        "capital",
+        "notes",
+        "auditor",
+        "compensation"
+      ]
+    },
+    "inputYearsBefore": [
+      1996,
+      1997,
+      1998,
+      1999,
+      2000,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "inputYearsAfter": [
+      1996,
+      1997,
+      1998,
+      1999,
+      2000,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "changedAnnualInputs": [],
+    "qualityChanges": [
+      {
+        "id": "SBSI.US",
+        "tests": {
+          "accounting": [
+            "pass",
+            "fail"
+          ]
+        },
+        "frozen": false,
+        "reasons": {
+          "accounting": [
+            "credit provisions persistently exceed same-year peers"
+          ]
+        }
+      }
+    ],
+    "buyChanges": [],
+    "numericNulls": [],
+    "removedNumericFields": [],
+    "valuationNulls": [],
+    "latestValuationBalance": {
+      "end": "2026-06-30",
+      "filed": "2026-07-24",
+      "source": "https://eodhd.com/api/fundamentals/SBSI.US#Financials.Balance_Sheet.quarterly.2026-06-30",
+      "basis": "filed"
+    }
+  },
+  {
+    "id": "VCTR.US",
+    "report": {
+      "id": "VCTR.US",
+      "kind": "10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1570827/000119312526077057/vctr-20251231.htm",
+      "filed": "2026-02-26",
+      "period": "2025-12-31",
+      "sections": [
+        "business",
+        "risk",
+        "mdna",
+        "capital",
+        "notes",
+        "auditor",
+        "compensation"
+      ]
+    },
+    "inputYearsBefore": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "inputYearsAfter": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "changedAnnualInputs": [
+      {
+        "fy": 2016,
+        "field": "sharesOutstanding",
+        "before": 71217606,
+        "after": 54785792,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001570827.json#0001047469-18-002299",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2016-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2021,
+        "field": "sharesOutstanding",
+        "before": 74151000,
+        "after": 68662779,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001570827.json#0000950170-23-006124",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2021-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2021,
+        "field": "marketCap",
+        "before": 2708736030,
+        "after": 2508251316.87,
+        "provenance": {
+          "source": "prices-history/VCTR.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2021-12-31",
+            "price month: 2021-12",
+            "close: 36.53",
+            "capitalization shares: 68662779",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2022,
+        "field": "sharesOutstanding",
+        "before": 72266000,
+        "after": 67325534,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001570827.json#0000950170-24-022869",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2022-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2022,
+        "field": "marketCap",
+        "before": 1938896779.9999998,
+        "after": 1806344077.2199998,
+        "provenance": {
+          "source": "prices-history/VCTR.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2022-12-31",
+            "price month: 2022-12",
+            "close: 26.83",
+            "capitalization shares: 67325534",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2023,
+        "field": "sharesOutstanding",
+        "before": 68214000,
+        "after": 64254714,
+        "provenance": {
+          "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001570827.json#0000950170-25-029770",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2023-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2023,
+        "field": "marketCap",
+        "before": 2349290160,
+        "after": 2212932350.16,
+        "provenance": {
+          "source": "prices-history/VCTR.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2023-12-31",
+            "price month: 2023-12",
+            "close: 34.44",
+            "capitalization shares: 64254714",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2024,
+        "field": "sharesOutstanding",
+        "before": 65928000,
+        "after": 63653000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1570827/000119312526077057/vctr-20251231.htm#000119312526077057",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2024-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2024,
+        "field": "marketCap",
+        "before": 4315646880,
+        "after": 4166725379.9999995,
+        "provenance": {
+          "source": "prices-history/VCTR.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2024-12-31",
+            "price month: 2024-12",
+            "close: 65.46",
+            "capitalization shares: 63653000",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      },
+      {
+        "fy": 2025,
+        "field": "sharesOutstanding",
+        "before": 66376000,
+        "after": 64150000,
+        "provenance": {
+          "source": "https://www.sec.gov/Archives/edgar/data/1570827/000119312526077057/vctr-20251231.htm#000119312526077057",
+          "field": "us-gaap:CommonStockSharesOutstanding",
+          "method": "reported",
+          "inputs": [
+            "Fiscal end 2025-12-31",
+            "Fiscal-end common shares outstanding",
+            "Source unit shares; decimals unspecified (precision only)"
+          ]
+        }
+      },
+      {
+        "fy": 2025,
+        "field": "marketCap",
+        "before": 4187661840,
+        "after": 4047223500,
+        "provenance": {
+          "source": "prices-history/VCTR.US",
+          "field": "fiscal-end close \u00d7 capitalization shares / reporting-to-trading FX",
+          "method": "derived",
+          "inputs": [
+            "fiscal end: 2025-12-31",
+            "price month: 2025-12",
+            "close: 63.09",
+            "capitalization shares: 64150000",
+            "Reported fiscal-end shares",
+            "FX: 1"
+          ]
+        }
+      }
+    ],
+    "qualityChanges": [
+      {
+        "id": "VCTR.US",
+        "tests": {
+          "accounting": [
+            "pass",
+            "fail"
+          ]
+        },
+        "frozen": false,
+        "reasons": {
+          "accounting": [
+            "restructuring or one-time charges in at least three of five years",
+            "stock compensation exceeds 15% of operating cash flow"
+          ]
+        }
+      }
+    ],
+    "buyChanges": [],
+    "numericNulls": [],
+    "removedNumericFields": [],
+    "valuationNulls": [],
+    "latestValuationBalance": {
+      "end": "2026-06-30",
+      "filed": "2026-08-06",
+      "source": "https://eodhd.com/api/fundamentals/VCTR.US#Financials.Balance_Sheet.quarterly.2026-06-30",
+      "basis": "filed"
+    }
+  }
+]

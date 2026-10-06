@@ -3,7 +3,7 @@ import transactions from './reviewed-perimeter-transactions.json';
 import reviewed from './reviewed-interim-balances.json';
 import {availableOn} from './quarterly-inputs';
 import {sameCurrency} from './currency';
-import type {Year} from './types';
+import type {Year, Kind} from './types';
 
 export interface BalanceSheet {
  filingDateAssumed?:boolean;
@@ -38,8 +38,14 @@ export function balanceSheets(raw:unknown):BalanceSheet[] {
   }}];
  }));
 }
-export function latestBalanceAt(rows:BalanceSheet[],cutoff:string,currency:string,annual:Year):BalanceSheet|null {
- return rows.filter(r=>r.end>annual.end&&r.end<cutoff&&r.filed<cutoff&&r.filed>=r.end&&!!r.currency&&sameCurrency(r.currency,currency))
+/** Completeness is method-specific. Select an entire statement, never fill a
+ * newer statement's unknown components with amounts from a different date. */
+export function completeBalance(values:Pick<Year,'cash'|'totalDebt'|'equity'|'goodwill'|'intangibles'>,kind:Kind='operating'):boolean {
+ const required=kind==='operating'?[values.cash,values.totalDebt]:[values.equity,values.goodwill,values.intangibles];
+ return required.every(v=>v!==null&&v!==undefined&&Number.isFinite(v));
+}
+export function latestBalanceAt(rows:BalanceSheet[],cutoff:string,currency:string,annual:Year,kind:Kind='operating'):BalanceSheet|null {
+ return rows.filter(r=>completeBalance(r.values,kind)&&(!completeBalance(annual,kind)||r.end>annual.end)&&r.end<cutoff&&r.filed<cutoff&&r.filed>=r.end&&!!r.currency&&sameCurrency(r.currency,currency))
   .sort((a,b)=>a.end.localeCompare(b.end)||a.filed.localeCompare(b.filed)).at(-1)??null;
 }
 
@@ -59,4 +65,24 @@ export function balanceSheetsFor(id:string,raw:unknown):BalanceSheet[] {
   rows.push({...base,end:t.closed,filed:[base.filed,t.filed].sort().at(-1)!,source:t.source,basis:'pro-forma',assumption:t.assumption,annualEarningsAdjustment:t.annualEarningsAdjustment,earningsThrough:t.baseEnd,values:{...base.values,cash:base.values.cash+t.cashChange,totalDebt:base.values.totalDebt+t.debtChange,totalAssets:base.values.totalAssets===null?null:base.values.totalAssets+t.assetsChange,goodwill:null,intangibles:null}});
  }
  return rows;
+}
+
+/** Exact instant/currency issuer facts supersede overloaded vendor financial
+ * balance fields (for example deferred policy costs labelled intangibles). */
+export function correctFinancialBalances(rows:BalanceSheet[],facts:unknown,cutoff:string):BalanceSheet[]{
+ const data=obj(facts),tags=obj(obj(data.facts)['us-gaap']);
+ const concepts={equity:'StockholdersEquity',goodwill:'Goodwill',intangibles:'IntangibleAssetsNetExcludingGoodwill'} as const;
+ return rows.map(row=>{
+  if(row.basis!=='filed')return row;
+  const values={...row.values},sources:string[]=[];let filed=row.filed;
+  for(const [field,concept]of Object.entries(concepts)as Array<[keyof typeof concepts,string]>){
+   const observations=obj(obj(tags[concept]).units)[row.currency];
+   if(!Array.isArray(observations))continue;
+   const fact=observations.filter(f=>!f.start&&f.end===row.end&&f.filed>=row.end&&f.filed<cutoff&&['10-Q','10-K','20-F','40-F'].includes(f.form)&&Number.isFinite(f.val)&&typeof f.accn==='string').sort((a,b)=>b.filed.localeCompare(a.filed))[0];
+   if(!fact)continue;
+   values[field]=fact.val;filed=filed>fact.filed?filed:fact.filed;
+   sources.push(`https://data.sec.gov/api/xbrl/companyfacts/CIK${String(data.cik).padStart(10,'0')}.json#${fact.accn} (${concept})`);
+  }
+  return sources.length?{...row,values,filed,source:[row.source,...sources].join('; ')}:row;
+ });
 }

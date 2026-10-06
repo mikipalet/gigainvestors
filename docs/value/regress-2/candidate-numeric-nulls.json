@@ -1,0 +1,134 @@
+[
+  {
+    "id": "MAS.US",
+    "path": "series.bookValuePerShare[2015]",
+    "before": 0.21700879765395895,
+    "frozen": false
+  },
+  {
+    "id": "MAS.US",
+    "path": "series.bookValuePerShare[2017]",
+    "before": 0.4308176100628931,
+    "frozen": false
+  },
+  {
+    "id": "MAS.US",
+    "path": "series.bookValuePerShare[2018]",
+    "before": 0.2247557003257329,
+    "frozen": false
+  },
+  {
+    "id": "MAS.US",
+    "path": "series.bookValuePerShare[2021]",
+    "before": 0.3107569721115538,
+    "frozen": false
+  },
+  {
+    "id": "MAS.US",
+    "path": "series.bookValuePerShare[2023]",
+    "before": 0.5132743362831859,
+    "frozen": false
+  },
+  {
+    "id": "MAS.US",
+    "path": "series.bookValuePerShare[2025]",
+    "before": 0.35714285714285715,
+    "frozen": false
+  },
+  {
+    "id": "DVA.US",
+    "path": "series.bookValuePerShare[2025]",
+    "before": 15.265704697898135,
+    "frozen": false
+  },
+  {
+    "id": "CL.US",
+    "path": "series.bookValuePerShare[2016]",
+    "before": 0.019036954087346025,
+    "frozen": false
+  },
+  {
+    "id": "CL.US",
+    "path": "series.bookValuePerShare[2017]",
+    "before": 0.27510472093286537,
+    "frozen": false
+  },
+  {
+    "id": "CL.US",
+    "path": "series.bookValuePerShare[2018]",
+    "before": 0.22722029988465975,
+    "frozen": false
+  },
+  {
+    "id": "LYV.US",
+    "path": "series.bookValuePerShare[2020]",
+    "before": 0.6524040928776347,
+    "frozen": false
+  },
+  {
+    "id": "LYV.US",
+    "path": "series.bookValuePerShare[2021]",
+    "before": 1.6240676960362894,
+    "frozen": false
+  },
+  {
+    "id": "LYV.US",
+    "path": "series.bookValuePerShare[2022]",
+    "before": 3.301699878407151,
+    "frozen": false
+  },
+  {
+    "id": "LYV.US",
+    "path": "series.bookValuePerShare[2023]",
+    "before": 6.347388291287904,
+    "frozen": false
+  },
+  {
+    "id": "BE.US",
+    "path": "series.bookValuePerShare[2018]",
+    "before": 0.8110548809928292,
+    "frozen": false
+  },
+  {
+    "id": "KMB.US",
+    "path": "series.bookValuePerShare[2015]",
+    "before": 0.10973936899862825,
+    "frozen": false
+  },
+  {
+    "id": "KMB.US",
+    "path": "series.bookValuePerShare[2016]",
+    "before": 0.3253615127919911,
+    "frozen": false
+  },
+  {
+    "id": "HCA.US",
+    "path": "series.bookValuePerShare[2021]",
+    "before": 4.720719806732653,
+    "frozen": false
+  },
+  {
+    "id": "HCA.US",
+    "path": "series.bookValuePerShare[2023]",
+    "before": 3.9087563517290715,
+    "frozen": false
+  },
+  {
+    "id": "HCA.US",
+    "path": "series.bookValuePerShare[2024]",
+    "before": 2.173827895499589,
+    "frozen": false
+  },
+  {
+    "id": "MCK.US",
+    "path": "series.bookValuePerShare[2021]",
+    "before": 9.538258575197888,
+    "frozen": false
+  },
+  {
+    "id": "DELL.US",
+    "path": "series.bookValuePerShare[2020]",
+    "before": 10.408560311284047,
+    "frozen": false
+  }
+]

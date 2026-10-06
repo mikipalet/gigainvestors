@@ -1,0 +1,16 @@
+[
+  {
+    "id": "EXR.US",
+    "publishedShares": 221052600,
+    "filing": [
+      {
+        "source": "issuer:sec-cover",
+        "shares": 211269558,
+        "date": "2026-07-24",
+        "basis": "all-ordinary-outstanding",
+        "url": "https://www.sec.gov/Archives/edgar/data/1289490/000128949026000053/0001289490-26-000053-index.html"
+      }
+    ],
+    "disagreement": 0.04630597087726196
+  }
+]

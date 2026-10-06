@@ -16,7 +16,7 @@ export function publishBalances(files:Record<string,any>,prices:PriceMap,_fx:Rec
  for(const [file,rows]of Object.entries(files))if(/^index\/[A-Z]{2}\.json$/.test(file))for(const row of rows as IndexRow[])indexes.set(row.id,row);
  const changed=new Map<string,IndexRow>();
  for(const [file,shard] of Object.entries(files))if(/^dossiers\/\d{3}\.json$/.test(file))for(const d of Object.values(shard) as Dossier[]){
-  if(frozen.has(d.id))continue;
+  if(frozen.has(d.id)||d.valuation?.retainedPublishedAt)continue;
   let next=refreshBalanceValuation(d,read,new Date().toISOString().slice(0,10));
   const row=indexes.get(d.id);if(next===d||!row)continue;
   const v=next.valuation,range=v?.perShareTrading??(v?.currency===d.company.currency?v.perShare:null);

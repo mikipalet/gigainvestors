@@ -5,7 +5,7 @@ import {makeYears} from './synthetic';
 it('uses current tangible equity with the original return history and shares',()=>{
  const years=makeYears({from:2015});
  const raw={Financials:{Balance_Sheet:{quarterly:{'2026-06-30':{filing_date:'2026-08-01',currency_symbol:'USD',totalStockholderEquity:800,goodWill:30,intangibleAssets:20,commonStockSharesOutstanding:999}}}}};
- const balance=latestBalanceAt(balanceSheets(raw),'2026-10-05','USD',years.at(-1)!);
+ const balance=latestBalanceAt(balanceSheets(raw),'2026-10-05','USD',years.at(-1)!,'bank');
  const before=valueCompany({years,kind:'bank',currency:'USD',bondYield:.04,cyclical:false}).valuation!;
  const after=valueCompany({years,kind:'bank',currency:'USD',bondYield:.04,cyclical:false,balance}).valuation!;
  expect(after.shares).toBe(before.shares);expect(after.normalized).toBe(75);
@@ -34,4 +34,18 @@ it('does not erase a TTM lease charge when the new balance omits lease obligatio
  const result=valueCompany({years,ttm,balance,kind:'operating',currency:'USD',bondYield:.04,cyclical:false}).valuation!;
  expect(result.normalized).toBe(30);
  expect(result.assumptions.join(' ')).toContain('annual lease estimate retained');
+});
+it('uses an older complete annual balance when the latest annual balance is partial',()=>{
+ const years=makeYears({from:2015});years.at(-1)!.totalDebt=null;
+ const v=valueCompany({years,kind:'operating',currency:'USD',bondYield:.04,cyclical:false}).valuation!;
+ expect(v).not.toBeNull();expect(v.balanceSheet?.end).toBe('2024-12-31');
+});
+it('reconciles financial balance components to exact-period issuer facts',async()=>{
+ const {correctFinancialBalances}=await import('@/lib/value/latest-balance');
+ const rows=balanceSheets({General:{CurrencyCode:'USD'},Financials:{Balance_Sheet:{quarterly:{'2026-06-30':{filing_date:'2026-08-01',totalStockholderEquity:100,goodWill:10,intangibleAssets:200}}}}});
+ const facts={cik:1,facts:{'us-gaap':{IntangibleAssetsNetExcludingGoodwill:{units:{USD:[{end:'2026-06-30',val:5,filed:'2026-08-01',form:'10-Q',accn:'0000000001-26-000001'}]}}}}};
+ const next=correctFinancialBalances(rows,facts,'2026-10-06');
+ expect(next[0].values.intangibles).toBe(5);expect(next[0].source).toContain('0000000001-26-000001');
+ expect(rows[0].values.intangibles).toBe(200);
+ expect(correctFinancialBalances(rows,facts,'2026-08-01')[0].values.intangibles).toBe(200);
 });

@@ -1,0 +1,3515 @@
+{
+  "candidateStates": 128,
+  "liveStates": 112,
+  "companies": [
+    "/s/ALSN.US",
+    "/s/CFRUY.US",
+    "/s/FCN.US",
+    "/s/MCD.US",
+    "/s/NFLX.US"
+  ],
+  "viewports": [
+    "1728x970",
+    "390x844"
+  ],
+  "rawFailedStates": 108,
+  "counts": {
+    "ownerChrome": 231,
+    "ownerWhitespace": 81,
+    "preExisting": 20
+  },
+  "newFindings": [],
+  "original42": [
+    {
+      "path": "/s/ALSN.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-3-In_depth__.png",
+      "issue": "overlapping text: \"2016\" / \"Gross margin\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping text: \"2016\" / \"Gross margin\""
+      ]
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-3-In_depth__.png",
+      "issue": "overlapping text: \"2016\" / \"return on capital\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping text: \"2016\" / \"return on capital\""
+      ]
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-3-In_depth__.png",
+      "issue": "overlapping text: \"2021\" / \"Gross margin\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping text: \"2021\" / \"Gross margin\""
+      ]
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "overlapping text: \"We are the world\u2019s largest man\" / \"Annual report\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping text: \"We are the world\u2019s largest man\" / \"Annual report\""
+      ]
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "overlapping text: \"We are the world\u2019s largest man\" / \"\u00b7\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping text: \"We are the world\u2019s largest man\" / \"\u00b7\""
+      ]
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "overlapping text: \"We are the world\u2019s largest man\" / \"2025\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping text: \"We are the world\u2019s largest man\" / \"2025\""
+      ]
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "overlapping text: \"We are the world\u2019s largest man\" / \"\u2197\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping text: \"We are the world\u2019s largest man\" / \"\u2197\""
+      ]
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "overlapping text: \"We are the world\u2019s largest man\" / \"Annual report\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping text: \"We are the world\u2019s largest man\" / \"Annual report\""
+      ]
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "overlapping text: \"We are the world\u2019s largest man\" / \"\u00b7\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping text: \"We are the world\u2019s largest man\" / \"\u00b7\""
+      ]
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "overlapping text: \"\u201d\" / \"2025\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping text: \"\u201d\" / \"2025\""
+      ]
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-3-In_depth__.png",
+      "issue": "overlapping text: \"2016\" / \"Gross margin\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping text: \"2016\" / \"Gross margin\""
+      ]
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-3-In_depth__.png",
+      "issue": "overlapping text: \"2016\" / \"return on capital\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping text: \"2016\" / \"return on capital\""
+      ]
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-3-In_depth__.png",
+      "issue": "overlapping text: \"2021\" / \"Gross margin\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping text: \"2021\" / \"Gross margin\""
+      ]
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "overlapping text: \"Our Economic Consulting segmen\" / \"Annual report\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping text: \"Our Economic Consulting segmen\" / \"Annual report\""
+      ]
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "overlapping text: \"Our Economic Consulting segmen\" / \"\u00b7\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping text: \"Our Economic Consulting segmen\" / \"\u00b7\""
+      ]
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "overlapping text: \"Our Economic Consulting segmen\" / \"2025\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping text: \"Our Economic Consulting segmen\" / \"2025\""
+      ]
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "overlapping text: \"Our Economic Consulting segmen\" / \"\u2197\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping text: \"Our Economic Consulting segmen\" / \"\u2197\""
+      ]
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "overlapping text: \"turnaround & restructuring, co\" / \"Annual report\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping text: \"turnaround & restructuring, co\" / \"Annual report\""
+      ]
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "overlapping text: \"turnaround & restructuring, co\" / \"\u00b7\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping text: \"turnaround & restructuring, co\" / \"\u00b7\""
+      ]
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "overlapping text: \"turnaround & restructuring, co\" / \"2025\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping text: \"turnaround & restructuring, co\" / \"2025\""
+      ]
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "overlapping text: \"turnaround & restructuring, co\" / \"\u2197\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping text: \"turnaround & restructuring, co\" / \"\u2197\""
+      ]
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-3-In_depth__.png",
+      "issue": "overlapping text: \"2016\" / \"Gross margin\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping text: \"2016\" / \"Gross margin\""
+      ]
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-3-In_depth__.png",
+      "issue": "overlapping text: \"2016\" / \"return on capital\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping text: \"2016\" / \"return on capital\""
+      ]
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-3-In_depth__.png",
+      "issue": "overlapping text: \"2016\" / \"Gross margin\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping text: \"2016\" / \"Gross margin\""
+      ]
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-3-In_depth__.png",
+      "issue": "overlapping text: \"2017\" / \"return on capital\"",
+      "disposition": "changed chart/year combination: fixed; related collision exists on live",
+      "liveIssues": [
+        "overlapping text: \"2016\" / \"Gross margin\"",
+        "raster empty area 15.3% > 15%",
+        "text below 13px: \"Close\" (12px)",
+        "text below 13px: \"\u00d7\" (12px)"
+      ]
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "overlapping chart labels: \"0.0%\" / \"2017 \u2013 LTM to Jun 2026\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping chart labels: \"0.0%\" / \"2017 \u2013 LTM to Jun 2026\""
+      ]
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-2-In_depth__.png",
+      "issue": "overlapping text: \"2017\" / \"Gross margin\"",
+      "disposition": "new addition: caption spacing fixed",
+      "liveIssues": []
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-2-In_depth__.png",
+      "issue": "overlapping text: \"2017\" / \"return on capital\"",
+      "disposition": "new addition: caption spacing fixed",
+      "liveIssues": []
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "More \u2197",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_ALSN_US-3-More__.png",
+      "issue": "overlapping text: \"2016\" / \"Gross margin\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping text: \"2016\" / \"Gross margin\""
+      ]
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "More \u2197",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_ALSN_US-3-More__.png",
+      "issue": "overlapping text: \"2016\" / \"return on capital\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping text: \"2016\" / \"return on capital\""
+      ]
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "More \u2197",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_FCN_US-3-More__.png",
+      "issue": "overlapping text: \"2016\" / \"Gross margin\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping text: \"2016\" / \"Gross margin\""
+      ]
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "More \u2197",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_FCN_US-3-More__.png",
+      "issue": "overlapping text: \"2016\" / \"return on capital\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping text: \"2016\" / \"return on capital\""
+      ]
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_FCN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "overlapping chart labels: \"5%\" / \"2017 \u2013 LTM to Jun 2026\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping chart labels: \"5%\" / \"2017 \u2013 LTM to Jun 2026\""
+      ]
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "More \u2197",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_NFLX_US-3-More__.png",
+      "issue": "overlapping text: \"2016\" / \"Gross margin\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping text: \"2016\" / \"Gross margin\""
+      ]
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "More \u2197",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_NFLX_US-3-More__.png",
+      "issue": "overlapping text: \"2016\" / \"return on capital\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping text: \"2016\" / \"return on capital\""
+      ]
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open Predictable profits evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_NFLX_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "overlapping chart labels: \"0%\" / \"2017 \u2013 LTM to Jun 2026\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping chart labels: \"0%\" / \"2017 \u2013 LTM to Jun 2026\""
+      ]
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "More \u2197",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_MCD_US-3-More__.png",
+      "issue": "overlapping text: \"2016\" / \"Gross margin\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping text: \"2016\" / \"Gross margin\""
+      ]
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "More \u2197",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_MCD_US-3-More__.png",
+      "issue": "overlapping text: \"2017\" / \"return on capital\"",
+      "disposition": "changed chart/year combination: fixed; related collision exists on live",
+      "liveIssues": [
+        "overlapping text: \"2016\" / \"Gross margin\"",
+        "text below 13px: \"Close\" (12px)"
+      ]
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open Predictable profits evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_MCD_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "overlapping chart labels: \"30%\" / \"2017 \u2013 LTM to Jun 2026\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping chart labels: \"30%\" / \"2017 \u2013 LTM to Jun 2026\""
+      ]
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_MCD_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "overlapping chart labels: \"0.0%\" / \"2017 \u2013 LTM to Jun 2026\"",
+      "disposition": "pre-existing: exact live finding",
+      "liveIssues": [
+        "overlapping chart labels: \"0.0%\" / \"2017 \u2013 LTM to Jun 2026\""
+      ]
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "More \u2197",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_CFRUY_US-2-More__.png",
+      "issue": "overlapping text: \"2017\" / \"Gross margin\"",
+      "disposition": "new addition: caption spacing fixed",
+      "liveIssues": []
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "More \u2197",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_CFRUY_US-2-More__.png",
+      "issue": "overlapping text: \"2017\" / \"return on capital\"",
+      "disposition": "new addition: caption spacing fixed",
+      "liveIssues": []
+    }
+  ],
+  "findings": [
+    {
+      "path": "/s/ALSN.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-0-page.png",
+      "issue": "text below 13px: \"In depth\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-0-page.png",
+      "issue": "text below 13px: \"\u2197\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-0-page.png",
+      "issue": "text below 13px: \"GigaInvestors\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-0-page.png",
+      "issue": "text below 13px: \"GigaValue\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-0-page.png",
+      "issue": "text below 13px: \"Search\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-0-page.png",
+      "issue": "text below 13px: \"/\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-0-page.png",
+      "issue": "text below 13px: \"Method\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-0-page.png",
+      "issue": "text below 13px: \"Newsletter\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-0-page.png",
+      "issue": "text below 13px: \"Agent API\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-0-page.png",
+      "issue": "text below 13px: \"Contact\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Price story: Price needs cash profits to grow 5.3% a year for ten years \u00b7 \"Allison outlines $5.575B\u2013$5.925B 2026 sales target following Dana Off-Highway acquisition integration\" (seekingalpha.com, Feb 2026) \u00b7 sales -6.7%",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-1-Price_story__Price_needs_cash_profits_to_grow_5_3__a_year_for_ten_years____Allison_outlines__5_575B__5_925B_2026_sales_target_following_Dana_Off_Highway_acquisition_integration___seekingalpha_com__Feb_2026____sales__6_7_.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Price story: Price needs cash profits to grow 5.3% a year for ten years \u00b7 \"Allison outlines $5.575B\u2013$5.925B 2026 sales target following Dana Off-Highway acquisition integration\" (seekingalpha.com, Feb 2026) \u00b7 sales -6.7%",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-1-Price_story__Price_needs_cash_profits_to_grow_5_3__a_year_for_ten_years____Allison_outlines__5_575B__5_925B_2026_sales_target_following_Dana_Off_Highway_acquisition_integration___seekingalpha_com__Feb_2026____sales__6_7_.png",
+      "issue": "raster empty area 28.2% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open all 2 holders",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-2-Open_all_2_holders.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open all 2 holders",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-2-Open_all_2_holders.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open all 2 holders",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-2-Open_all_2_holders.png",
+      "issue": "raster empty area 26.1% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-3-In_depth__.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-3-In_depth__.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "overlapping text: \"We are the world\u2019s largest man\" / \"Annual report\"",
+      "disposition": "preExisting"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "overlapping text: \"We are the world\u2019s largest man\" / \"\u00b7\"",
+      "disposition": "preExisting"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "overlapping text: \"We are the world\u2019s largest man\" / \"2025\"",
+      "disposition": "preExisting"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "overlapping text: \"We are the world\u2019s largest man\" / \"\u2197\"",
+      "disposition": "preExisting"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "raster empty area 15.2% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "overlapping text: \"We are the world\u2019s largest man\" / \"Annual report\"",
+      "disposition": "preExisting"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "overlapping text: \"We are the world\u2019s largest man\" / \"\u00b7\"",
+      "disposition": "preExisting"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "overlapping text: \"\u201d\" / \"2025\"",
+      "disposition": "preExisting"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "raster empty area 20.8% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Cash for owners evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-6-Open_Cash_for_owners_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Cash for owners evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-6-Open_Cash_for_owners_evidence.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Value created per $1 kept evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-7-Open_Value_created_per__1_kept_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Value created per $1 kept evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-7-Open_Value_created_per__1_kept_evidence.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Value created per $1 kept evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-7-Open_Value_created_per__1_kept_evidence.png",
+      "issue": "raster empty area 19.2% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Honest profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-8-Open_Honest_profits_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Honest profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-8-Open_Honest_profits_evidence.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Honest profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-8-Open_Honest_profits_evidence.png",
+      "issue": "raster empty area 22.3% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open valuation",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-9-Open_valuation.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open valuation",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-9-Open_valuation.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open valuation",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-9-Open_valuation.png",
+      "issue": "raster empty area 33.6% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open valuation",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-9-Open_valuation.png",
+      "issue": "empty block 202px tall spans over half panel",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Method",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-10-Method.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Method",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-10-Method.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Method",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-10-Method.png",
+      "issue": "bottom empty area 14.5% >= 8%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Method",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-10-Method.png",
+      "issue": "raster empty area 25.7% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Method",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_ALSN_US-10-Method.png",
+      "issue": "empty block 154px tall spans over half panel",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-0-page.png",
+      "issue": "text below 13px: \"In depth\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-0-page.png",
+      "issue": "text below 13px: \"\u2197\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-0-page.png",
+      "issue": "text below 13px: \"GigaInvestors\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-0-page.png",
+      "issue": "text below 13px: \"GigaValue\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-0-page.png",
+      "issue": "text below 13px: \"Search\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-0-page.png",
+      "issue": "text below 13px: \"/\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-0-page.png",
+      "issue": "text below 13px: \"Method\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-0-page.png",
+      "issue": "text below 13px: \"Newsletter\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-0-page.png",
+      "issue": "text below 13px: \"Agent API\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-0-page.png",
+      "issue": "text below 13px: \"Contact\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Price story: Down 40% since Aug 2024 \u00b7 sales +3.6%",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-1-Price_story__Down_40__since_Aug_2024___sales__3_6_.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Price story: Down 40% since Aug 2024 \u00b7 sales +3.6%",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-1-Price_story__Down_40__since_Aug_2024___sales__3_6_.png",
+      "issue": "raster empty area 39.1% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open all 1 holder",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-2-Open_all_1_holder.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open all 1 holder",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-2-Open_all_1_holder.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open all 1 holder",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-2-Open_all_1_holder.png",
+      "issue": "raster empty area 29.1% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open all 1 holder",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-2-Open_all_1_holder.png",
+      "issue": "empty block 168px tall spans over half panel",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-3-In_depth__.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-3-In_depth__.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "overlapping text: \"Our Economic Consulting segmen\" / \"Annual report\"",
+      "disposition": "preExisting"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "overlapping text: \"Our Economic Consulting segmen\" / \"\u00b7\"",
+      "disposition": "preExisting"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "overlapping text: \"Our Economic Consulting segmen\" / \"2025\"",
+      "disposition": "preExisting"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "overlapping text: \"Our Economic Consulting segmen\" / \"\u2197\"",
+      "disposition": "preExisting"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "overlapping text: \"turnaround & restructuring, co\" / \"Annual report\"",
+      "disposition": "preExisting"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "overlapping text: \"turnaround & restructuring, co\" / \"\u00b7\"",
+      "disposition": "preExisting"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "overlapping text: \"turnaround & restructuring, co\" / \"2025\"",
+      "disposition": "preExisting"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "overlapping text: \"turnaround & restructuring, co\" / \"\u2197\"",
+      "disposition": "preExisting"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "raster empty area 21.4% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Cash for owners evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-6-Open_Cash_for_owners_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Cash for owners evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-6-Open_Cash_for_owners_evidence.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Value created per $1 kept evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-7-Open_Value_created_per__1_kept_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Value created per $1 kept evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-7-Open_Value_created_per__1_kept_evidence.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Value created per $1 kept evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-7-Open_Value_created_per__1_kept_evidence.png",
+      "issue": "raster empty area 19.9% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Honest profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-8-Open_Honest_profits_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Honest profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-8-Open_Honest_profits_evidence.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Honest profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-8-Open_Honest_profits_evidence.png",
+      "issue": "raster empty area 19.8% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open valuation",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-9-Open_valuation.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open valuation",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-9-Open_valuation.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open valuation",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-9-Open_valuation.png",
+      "issue": "raster empty area 33.4% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open valuation",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-9-Open_valuation.png",
+      "issue": "empty block 202px tall spans over half panel",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Method",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-10-Method.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Method",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-10-Method.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Method",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-10-Method.png",
+      "issue": "bottom empty area 14.5% >= 8%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Method",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-10-Method.png",
+      "issue": "raster empty area 25.7% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Method",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_FCN_US-10-Method.png",
+      "issue": "empty block 154px tall spans over half panel",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-0-page.png",
+      "issue": "text below 13px: \"In depth\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-0-page.png",
+      "issue": "text below 13px: \"\u2197\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-0-page.png",
+      "issue": "text below 13px: \"GigaInvestors\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-0-page.png",
+      "issue": "text below 13px: \"GigaValue\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-0-page.png",
+      "issue": "text below 13px: \"Search\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-0-page.png",
+      "issue": "text below 13px: \"/\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-0-page.png",
+      "issue": "text below 13px: \"Method\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-0-page.png",
+      "issue": "text below 13px: \"Newsletter\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-0-page.png",
+      "issue": "text below 13px: \"Agent API\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-0-page.png",
+      "issue": "text below 13px: \"Contact\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Price story: Down 50% since Jun 2025 \u00b7 \"Netflix Stock Sinks After Third-Quarter Revenue Guidance Misses Estimates\" (finance.yahoo.com, Jul 2026) \u00b7 sales +7.1%",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-1-Price_story__Down_50__since_Jun_2025____Netflix_Stock_Sinks_After_Third_Quarter_Revenue_Guidance_Misses_Estimates___finance_yahoo_com__Jul_2026____sales__7_1_.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Price story: Down 50% since Jun 2025 \u00b7 \"Netflix Stock Sinks After Third-Quarter Revenue Guidance Misses Estimates\" (finance.yahoo.com, Jul 2026) \u00b7 sales +7.1%",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-1-Price_story__Down_50__since_Jun_2025____Netflix_Stock_Sinks_After_Third_Quarter_Revenue_Guidance_Misses_Estimates___finance_yahoo_com__Jul_2026____sales__7_1_.png",
+      "issue": "raster empty area 35.0% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open all 11 holders",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-2-Open_all_11_holders.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open all 11 holders",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-2-Open_all_11_holders.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open all 11 holders",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-2-Open_all_11_holders.png",
+      "issue": "text below 13px: \"\u2190 Previous\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open all 11 holders",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-2-Open_all_11_holders.png",
+      "issue": "text below 13px: \"Next \u2192\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open all 11 holders",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-2-Open_all_11_holders.png",
+      "issue": "raster empty area 29.5% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-3-In_depth__.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-3-In_depth__.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open Cash for owners evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-6-Open_Cash_for_owners_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open Cash for owners evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-6-Open_Cash_for_owners_evidence.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open Value created per $1 kept evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-7-Open_Value_created_per__1_kept_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open Value created per $1 kept evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-7-Open_Value_created_per__1_kept_evidence.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open Value created per $1 kept evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-7-Open_Value_created_per__1_kept_evidence.png",
+      "issue": "raster empty area 24.0% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open Honest profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-8-Open_Honest_profits_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open Honest profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-8-Open_Honest_profits_evidence.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open Honest profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-8-Open_Honest_profits_evidence.png",
+      "issue": "raster empty area 23.9% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open valuation",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-9-Open_valuation.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open valuation",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-9-Open_valuation.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open valuation",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-9-Open_valuation.png",
+      "issue": "raster empty area 33.6% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open valuation",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-9-Open_valuation.png",
+      "issue": "empty block 202px tall spans over half panel",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Method",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-10-Method.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Method",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-10-Method.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Method",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-10-Method.png",
+      "issue": "bottom empty area 14.5% >= 8%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Method",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-10-Method.png",
+      "issue": "raster empty area 25.7% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Method",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_NFLX_US-10-Method.png",
+      "issue": "empty block 154px tall spans over half panel",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-0-page.png",
+      "issue": "text below 13px: \"In depth\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-0-page.png",
+      "issue": "text below 13px: \"\u2197\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-0-page.png",
+      "issue": "text below 13px: \"GigaInvestors\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-0-page.png",
+      "issue": "text below 13px: \"GigaValue\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-0-page.png",
+      "issue": "text below 13px: \"Search\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-0-page.png",
+      "issue": "text below 13px: \"/\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-0-page.png",
+      "issue": "text below 13px: \"Method\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-0-page.png",
+      "issue": "text below 13px: \"Newsletter\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-0-page.png",
+      "issue": "text below 13px: \"Agent API\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-0-page.png",
+      "issue": "text below 13px: \"Contact\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Price story: Down 32% since Feb 2026 \u00b7 \"McDonald\u2019s CEO says low traffic and high inflation are here to stay\" (finance.yahoo.com, Sep 2026) \u00b7 sales +3%",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-1-Price_story__Down_32__since_Feb_2026____McDonald_s_CEO_says_low_traffic_and_high_inflation_are_here_to_stay___finance_yahoo_com__Sep_2026____sales__3_.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Price story: Down 32% since Feb 2026 \u00b7 \"McDonald\u2019s CEO says low traffic and high inflation are here to stay\" (finance.yahoo.com, Sep 2026) \u00b7 sales +3%",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-1-Price_story__Down_32__since_Feb_2026____McDonald_s_CEO_says_low_traffic_and_high_inflation_are_here_to_stay___finance_yahoo_com__Sep_2026____sales__3_.png",
+      "issue": "raster empty area 33.7% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open all 7 holders",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-2-Open_all_7_holders.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open all 7 holders",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-2-Open_all_7_holders.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open all 7 holders",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-2-Open_all_7_holders.png",
+      "issue": "raster empty area 29.8% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-3-In_depth__.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-3-In_depth__.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "overlapping chart labels: \"0.0%\" / \"2017 \u2013 LTM to Jun 2026\"",
+      "disposition": "preExisting"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "raster empty area 16.4% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open Cash for owners evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-6-Open_Cash_for_owners_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open Cash for owners evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-6-Open_Cash_for_owners_evidence.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open Cash for owners evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-6-Open_Cash_for_owners_evidence.png",
+      "issue": "raster empty area 16.6% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open Value created per $1 kept evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-7-Open_Value_created_per__1_kept_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open Value created per $1 kept evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-7-Open_Value_created_per__1_kept_evidence.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open Value created per $1 kept evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-7-Open_Value_created_per__1_kept_evidence.png",
+      "issue": "raster empty area 22.9% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open Honest profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-8-Open_Honest_profits_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open Honest profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-8-Open_Honest_profits_evidence.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open Honest profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-8-Open_Honest_profits_evidence.png",
+      "issue": "raster empty area 22.1% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open valuation",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-9-Open_valuation.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open valuation",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-9-Open_valuation.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open valuation",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-9-Open_valuation.png",
+      "issue": "raster empty area 33.4% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open valuation",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-9-Open_valuation.png",
+      "issue": "empty block 202px tall spans over half panel",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Method",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-10-Method.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Method",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-10-Method.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Method",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-10-Method.png",
+      "issue": "bottom empty area 14.5% >= 8%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Method",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-10-Method.png",
+      "issue": "raster empty area 25.7% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Method",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_MCD_US-10-Method.png",
+      "issue": "empty block 154px tall spans over half panel",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-0-page.png",
+      "issue": "text below 13px: \"In depth\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-0-page.png",
+      "issue": "text below 13px: \"\u2197\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-0-page.png",
+      "issue": "text below 13px: \"GigaInvestors\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-0-page.png",
+      "issue": "text below 13px: \"GigaValue\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-0-page.png",
+      "issue": "text below 13px: \"Search\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-0-page.png",
+      "issue": "text below 13px: \"/\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-0-page.png",
+      "issue": "text below 13px: \"Method\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-0-page.png",
+      "issue": "text below 13px: \"Newsletter\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-0-page.png",
+      "issue": "text below 13px: \"Agent API\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "page",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-0-page.png",
+      "issue": "text below 13px: \"Contact\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Price story: Price needs cash profits to grow 13.9% a year for ten years \u00b7 sales +4.8%",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-1-Price_story__Price_needs_cash_profits_to_grow_13_9__a_year_for_ten_years___sales__4_8_.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Price story: Price needs cash profits to grow 13.9% a year for ten years \u00b7 sales +4.8%",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-1-Price_story__Price_needs_cash_profits_to_grow_13_9__a_year_for_ten_years___sales__4_8_.png",
+      "issue": "raster empty area 39.0% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-2-In_depth__.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-2-In_depth__.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "In depth \u2197",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-2-In_depth__.png",
+      "issue": "raster empty area 37.5% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-3-Open_Predictable_profits_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Open Predictable profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-3-Open_Predictable_profits_evidence.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-4-Open_Lasting_advantage_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-4-Open_Lasting_advantage_evidence.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Open Cash for owners evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-5-Open_Cash_for_owners_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Open Cash for owners evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-5-Open_Cash_for_owners_evidence.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Open Cash for owners evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-5-Open_Cash_for_owners_evidence.png",
+      "issue": "raster empty area 15.2% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Open Value created per $1 kept evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-6-Open_Value_created_per__1_kept_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Open Value created per $1 kept evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-6-Open_Value_created_per__1_kept_evidence.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Open Value created per $1 kept evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-6-Open_Value_created_per__1_kept_evidence.png",
+      "issue": "raster empty area 23.9% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Open Honest profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-7-Open_Honest_profits_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Open Honest profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-7-Open_Honest_profits_evidence.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Open Honest profits evidence",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-7-Open_Honest_profits_evidence.png",
+      "issue": "raster empty area 23.2% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Open valuation",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-8-Open_valuation.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Open valuation",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-8-Open_valuation.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Open valuation",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-8-Open_valuation.png",
+      "issue": "raster empty area 33.5% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Open valuation",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-8-Open_valuation.png",
+      "issue": "empty block 202px tall spans over half panel",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Method",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-9-Method.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Method",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-9-Method.png",
+      "issue": "text below 13px: \"\u00d7\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Method",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-9-Method.png",
+      "issue": "bottom empty area 14.5% >= 8%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Method",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-9-Method.png",
+      "issue": "raster empty area 25.7% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Method",
+      "width": 1728,
+      "height": 970,
+      "file": "1728x970-_s_CFRUY_US-9-Method.png",
+      "issue": "empty block 154px tall spans over half panel",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_ALSN_US-0-page.png",
+      "issue": "text below 13px: \"GigaInvestors\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_ALSN_US-0-page.png",
+      "issue": "text below 13px: \"GigaValue\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_ALSN_US-0-page.png",
+      "issue": "text below 13px: \"Search\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_ALSN_US-0-page.png",
+      "issue": "text below 13px: \"Method\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_ALSN_US-0-page.png",
+      "issue": "text below 13px: \"Newsletter\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_ALSN_US-0-page.png",
+      "issue": "text below 13px: \"Agent API\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_ALSN_US-0-page.png",
+      "issue": "text below 13px: \"Contact\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Price story: Price needs cash profits to grow 5.3% a year for ten years \u00b7 \"Allison outlines $5.575B\u2013$5.925B 2026 sales target following Dana Off-Highway acquisition integration\" (seekingalpha.com, Feb 2026) \u00b7 sales -6.7%",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_ALSN_US-1-Price_story__Price_needs_cash_profits_to_grow_5_3__a_year_for_ten_years____Allison_outlines__5_575B__5_925B_2026_sales_target_following_Dana_Off_Highway_acquisition_integration___seekingalpha_com__Feb_2026____sales__6_7_.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Price story: Price needs cash profits to grow 5.3% a year for ten years \u00b7 \"Allison outlines $5.575B\u2013$5.925B 2026 sales target following Dana Off-Highway acquisition integration\" (seekingalpha.com, Feb 2026) \u00b7 sales -6.7%",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_ALSN_US-1-Price_story__Price_needs_cash_profits_to_grow_5_3__a_year_for_ten_years____Allison_outlines__5_575B__5_925B_2026_sales_target_following_Dana_Off_Highway_acquisition_integration___seekingalpha_com__Feb_2026____sales__6_7_.png",
+      "issue": "raster empty area 23.5% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open all 2 holders",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_ALSN_US-2-Open_all_2_holders.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open all 2 holders",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_ALSN_US-2-Open_all_2_holders.png",
+      "issue": "raster empty area 25.8% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "More \u2197",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_ALSN_US-3-More__.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_ALSN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_ALSN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "raster empty area 19.6% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_ALSN_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_ALSN_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "raster empty area 18.2% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Cash for owners evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_ALSN_US-6-Open_Cash_for_owners_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Value created per $1 kept evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_ALSN_US-7-Open_Value_created_per__1_kept_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Value created per $1 kept evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_ALSN_US-7-Open_Value_created_per__1_kept_evidence.png",
+      "issue": "raster empty area 16.1% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open Honest profits evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_ALSN_US-8-Open_Honest_profits_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open valuation",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_ALSN_US-9-Open_valuation.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Open valuation",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_ALSN_US-9-Open_valuation.png",
+      "issue": "raster empty area 15.4% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/ALSN.US",
+      "state": "Method",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_ALSN_US-10-Method.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_FCN_US-0-page.png",
+      "issue": "text below 13px: \"GigaInvestors\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_FCN_US-0-page.png",
+      "issue": "text below 13px: \"GigaValue\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_FCN_US-0-page.png",
+      "issue": "text below 13px: \"Search\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_FCN_US-0-page.png",
+      "issue": "text below 13px: \"Method\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_FCN_US-0-page.png",
+      "issue": "text below 13px: \"Newsletter\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_FCN_US-0-page.png",
+      "issue": "text below 13px: \"Agent API\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_FCN_US-0-page.png",
+      "issue": "text below 13px: \"Contact\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Price story: Down 40% since Aug 2024 \u00b7 sales +3.6%",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_FCN_US-1-Price_story__Down_40__since_Aug_2024___sales__3_6_.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Price story: Down 40% since Aug 2024 \u00b7 sales +3.6%",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_FCN_US-1-Price_story__Down_40__since_Aug_2024___sales__3_6_.png",
+      "issue": "raster empty area 29.0% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open all 1 holder",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_FCN_US-2-Open_all_1_holder.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open all 1 holder",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_FCN_US-2-Open_all_1_holder.png",
+      "issue": "raster empty area 28.6% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "More \u2197",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_FCN_US-3-More__.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_FCN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "overlapping chart labels: \"5%\" / \"2017 \u2013 LTM to Jun 2026\"",
+      "disposition": "preExisting"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_FCN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Predictable profits evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_FCN_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "raster empty area 19.4% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_FCN_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_FCN_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "raster empty area 18.8% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Cash for owners evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_FCN_US-6-Open_Cash_for_owners_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Value created per $1 kept evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_FCN_US-7-Open_Value_created_per__1_kept_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Value created per $1 kept evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_FCN_US-7-Open_Value_created_per__1_kept_evidence.png",
+      "issue": "raster empty area 16.1% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open Honest profits evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_FCN_US-8-Open_Honest_profits_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open valuation",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_FCN_US-9-Open_valuation.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Open valuation",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_FCN_US-9-Open_valuation.png",
+      "issue": "raster empty area 15.3% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/FCN.US",
+      "state": "Method",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_FCN_US-10-Method.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_NFLX_US-0-page.png",
+      "issue": "text below 13px: \"GigaInvestors\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_NFLX_US-0-page.png",
+      "issue": "text below 13px: \"GigaValue\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_NFLX_US-0-page.png",
+      "issue": "text below 13px: \"Search\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_NFLX_US-0-page.png",
+      "issue": "text below 13px: \"Method\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_NFLX_US-0-page.png",
+      "issue": "text below 13px: \"Newsletter\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_NFLX_US-0-page.png",
+      "issue": "text below 13px: \"Agent API\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_NFLX_US-0-page.png",
+      "issue": "text below 13px: \"Contact\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Price story: Down 50% since Jun 2025 \u00b7 \"Netflix Stock Sinks After Third-Quarter Revenue Guidance Misses Estimates\" (finance.yahoo.com, Jul 2026) \u00b7 sales +7.1%",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_NFLX_US-1-Price_story__Down_50__since_Jun_2025____Netflix_Stock_Sinks_After_Third_Quarter_Revenue_Guidance_Misses_Estimates___finance_yahoo_com__Jul_2026____sales__7_1_.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Price story: Down 50% since Jun 2025 \u00b7 \"Netflix Stock Sinks After Third-Quarter Revenue Guidance Misses Estimates\" (finance.yahoo.com, Jul 2026) \u00b7 sales +7.1%",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_NFLX_US-1-Price_story__Down_50__since_Jun_2025____Netflix_Stock_Sinks_After_Third_Quarter_Revenue_Guidance_Misses_Estimates___finance_yahoo_com__Jul_2026____sales__7_1_.png",
+      "issue": "raster empty area 28.4% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open all 11 holders",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_NFLX_US-2-Open_all_11_holders.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open all 11 holders",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_NFLX_US-2-Open_all_11_holders.png",
+      "issue": "text below 13px: \"\u2190 Previous\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open all 11 holders",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_NFLX_US-2-Open_all_11_holders.png",
+      "issue": "text below 13px: \"Next \u2192\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open all 11 holders",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_NFLX_US-2-Open_all_11_holders.png",
+      "issue": "raster empty area 25.1% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "More \u2197",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_NFLX_US-3-More__.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open Predictable profits evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_NFLX_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "overlapping chart labels: \"0%\" / \"2017 \u2013 LTM to Jun 2026\"",
+      "disposition": "preExisting"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open Predictable profits evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_NFLX_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open Predictable profits evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_NFLX_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "raster empty area 19.0% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_NFLX_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_NFLX_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "raster empty area 18.8% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open Cash for owners evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_NFLX_US-6-Open_Cash_for_owners_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open Value created per $1 kept evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_NFLX_US-7-Open_Value_created_per__1_kept_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open Value created per $1 kept evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_NFLX_US-7-Open_Value_created_per__1_kept_evidence.png",
+      "issue": "raster empty area 16.8% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open Honest profits evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_NFLX_US-8-Open_Honest_profits_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open valuation",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_NFLX_US-9-Open_valuation.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Open valuation",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_NFLX_US-9-Open_valuation.png",
+      "issue": "raster empty area 16.0% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/NFLX.US",
+      "state": "Method",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_NFLX_US-10-Method.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_MCD_US-0-page.png",
+      "issue": "text below 13px: \"GigaInvestors\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_MCD_US-0-page.png",
+      "issue": "text below 13px: \"GigaValue\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_MCD_US-0-page.png",
+      "issue": "text below 13px: \"Search\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_MCD_US-0-page.png",
+      "issue": "text below 13px: \"Method\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_MCD_US-0-page.png",
+      "issue": "text below 13px: \"Newsletter\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_MCD_US-0-page.png",
+      "issue": "text below 13px: \"Agent API\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_MCD_US-0-page.png",
+      "issue": "text below 13px: \"Contact\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Price story: Down 32% since Feb 2026 \u00b7 \"McDonald\u2019s CEO says low traffic and high inflation are here to stay\" (finance.yahoo.com, Sep 2026) \u00b7 sales +3%",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_MCD_US-1-Price_story__Down_32__since_Feb_2026____McDonald_s_CEO_says_low_traffic_and_high_inflation_are_here_to_stay___finance_yahoo_com__Sep_2026____sales__3_.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Price story: Down 32% since Feb 2026 \u00b7 \"McDonald\u2019s CEO says low traffic and high inflation are here to stay\" (finance.yahoo.com, Sep 2026) \u00b7 sales +3%",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_MCD_US-1-Price_story__Down_32__since_Feb_2026____McDonald_s_CEO_says_low_traffic_and_high_inflation_are_here_to_stay___finance_yahoo_com__Sep_2026____sales__3_.png",
+      "issue": "raster empty area 31.2% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open all 7 holders",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_MCD_US-2-Open_all_7_holders.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open all 7 holders",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_MCD_US-2-Open_all_7_holders.png",
+      "issue": "raster empty area 22.1% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "More \u2197",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_MCD_US-3-More__.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open Predictable profits evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_MCD_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "overlapping chart labels: \"30%\" / \"2017 \u2013 LTM to Jun 2026\"",
+      "disposition": "preExisting"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open Predictable profits evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_MCD_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open Predictable profits evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_MCD_US-4-Open_Predictable_profits_evidence.png",
+      "issue": "raster empty area 19.5% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_MCD_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "overlapping chart labels: \"0.0%\" / \"2017 \u2013 LTM to Jun 2026\"",
+      "disposition": "preExisting"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_MCD_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_MCD_US-5-Open_Lasting_advantage_evidence.png",
+      "issue": "raster empty area 18.8% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open Cash for owners evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_MCD_US-6-Open_Cash_for_owners_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open Value created per $1 kept evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_MCD_US-7-Open_Value_created_per__1_kept_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open Value created per $1 kept evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_MCD_US-7-Open_Value_created_per__1_kept_evidence.png",
+      "issue": "raster empty area 16.5% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open Honest profits evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_MCD_US-8-Open_Honest_profits_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open valuation",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_MCD_US-9-Open_valuation.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Open valuation",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_MCD_US-9-Open_valuation.png",
+      "issue": "raster empty area 15.1% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/MCD.US",
+      "state": "Method",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_MCD_US-10-Method.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_CFRUY_US-0-page.png",
+      "issue": "text below 13px: \"GigaInvestors\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_CFRUY_US-0-page.png",
+      "issue": "text below 13px: \"GigaValue\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_CFRUY_US-0-page.png",
+      "issue": "text below 13px: \"Search\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_CFRUY_US-0-page.png",
+      "issue": "text below 13px: \"Method\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_CFRUY_US-0-page.png",
+      "issue": "text below 13px: \"Newsletter\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_CFRUY_US-0-page.png",
+      "issue": "text below 13px: \"Agent API\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "page",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_CFRUY_US-0-page.png",
+      "issue": "text below 13px: \"Contact\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Price story: Price needs cash profits to grow 13.9% a year for ten years \u00b7 sales +4.8%",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_CFRUY_US-1-Price_story__Price_needs_cash_profits_to_grow_13_9__a_year_for_ten_years___sales__4_8_.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Price story: Price needs cash profits to grow 13.9% a year for ten years \u00b7 sales +4.8%",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_CFRUY_US-1-Price_story__Price_needs_cash_profits_to_grow_13_9__a_year_for_ten_years___sales__4_8_.png",
+      "issue": "raster empty area 28.6% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "More \u2197",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_CFRUY_US-2-More__.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Open Predictable profits evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_CFRUY_US-3-Open_Predictable_profits_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Open Predictable profits evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_CFRUY_US-3-Open_Predictable_profits_evidence.png",
+      "issue": "raster empty area 22.3% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_CFRUY_US-4-Open_Lasting_advantage_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Open Lasting advantage evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_CFRUY_US-4-Open_Lasting_advantage_evidence.png",
+      "issue": "raster empty area 20.8% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Open Cash for owners evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_CFRUY_US-5-Open_Cash_for_owners_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Open Value created per $1 kept evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_CFRUY_US-6-Open_Value_created_per__1_kept_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Open Value created per $1 kept evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_CFRUY_US-6-Open_Value_created_per__1_kept_evidence.png",
+      "issue": "raster empty area 19.1% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Open Honest profits evidence",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_CFRUY_US-7-Open_Honest_profits_evidence.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Open valuation",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_CFRUY_US-8-Open_valuation.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Open valuation",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_CFRUY_US-8-Open_valuation.png",
+      "issue": "raster empty area 16.3% > 15%",
+      "disposition": "ownerWhitespace"
+    },
+    {
+      "path": "/s/CFRUY.US",
+      "state": "Method",
+      "width": 390,
+      "height": 844,
+      "file": "390x844-_s_CFRUY_US-9-Method.png",
+      "issue": "text below 13px: \"Close\" (12px)",
+      "disposition": "ownerChrome"
+    }
+  ],
+  "pass": true
+}

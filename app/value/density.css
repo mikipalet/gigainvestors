@@ -1014,3 +1014,6 @@
  .value-page dialog[data-side-panel] .compact-company-list[data-historical=true] table{height:auto;flex:none}
  .value-page .compact-company-list[data-historical=true] tbody,.value-page .compact-company-list[data-historical=true] tbody tr{flex:none}
 }
+/* Fiscal-year glyphs extend below the SVG baseline. Keep the following
+   caption outside that text box at both desktop and mobile sizes. */
+.value-page .memo-evidence .mini-series figcaption{margin-top:8px}

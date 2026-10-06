@@ -1,3 +1,6 @@
+import {applyPublicationContinuity} from '../publication-continuity';
+import {issuerShareContradictions,issuerFilingShareObservations} from '../../../lib/value/publication-continuity';
+import {refreshBalanceValuation} from '../../../lib/value/refresh-balance-valuation';
 import {publishBalances} from '../publish-balances';
 import {readRetiredIssuerAliases,reviewedIssuerAliases} from '../retired-issuer-aliases';
 import {reconcileIssuers} from '../issuer-publication';
@@ -232,7 +235,7 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
   if(additionsOnly&&commit)throw Error('Additions-only publication requires local --out');
   const release=readCoverageRelease();
   const preserveBaseline=additionsOnly||Boolean(release);
-  const freeze=readVerdictFreeze(previousDossiers ? path.dirname(previousDossiers) : repo,{all:additionsOnly});
+  const freeze=readVerdictFreeze(previousDossiers ? path.dirname(previousDossiers) : repo,{all:additionsOnly,captureAll:true});
   // Read the fetched snapshot before replacing meta.json or creating an orphan commit.
   const metaFile = path.join(repo, "meta.json");
   const previous = existsSync(metaFile) ? JSON.parse(readFileSync(metaFile, "utf8")) : null;
@@ -286,21 +289,33 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
   }
   const quotes=readPrices(path.join(repo,'prices')), rate=createUsdRate({rates:fx});
   const capShares:Record<string,number>={},capitalization:Array<ReturnType<typeof publicationCapitalization>['evidence']>=[];
+  const priorDossiers:Record<string,Dossier>={};
+  const priorDirectory=previousDossiers??directory;
+  if(additionsOnly)Object.assign(priorDossiers,freeze.dossiers);
+  else if(existsSync(priorDirectory))for(const file of readdirSync(priorDirectory).filter(f=>/^\d{3}\.json$/.test(f)))Object.assign(priorDossiers,JSON.parse(readFileSync(path.join(priorDirectory,file),'utf8')));
+  const issuerContradictions:Record<string,import('../../../lib/value/share-check').ShareObservation[]>={};
   rows=rows.map(a=>{
     if(freeze.ids.has(a.id))return a;
     const f=readCorpusJson<import('../../../lib/value/types').Fundamentals>(`fundamentals/${a.id}.json`);
     const issuerShares=issuerShareObservations.filter(observation=>observation.id===a.id);
+    const prior=priorDossiers[a.id];
+    if(!a.valuation&&prior?.valuation){
+      const reason=a.valuationReason;
+      a=refreshBalanceValuation({...a,valuation:prior.valuation},readCorpusJson,new Date().toISOString().slice(0,10));
+      if(!a.valuation)a={...a,valuation:{...prior.valuation,retainedPublishedAt:prior.valuation.retainedPublishedAt??prior.asOf,retainedPublishedReason:reason??'Refreshed valuation unavailable',assumptions:[...prior.valuation.assumptions,`Previously published valuation from ${prior.asOf} retained pending review of refreshed inputs.`]}};
+    }
+    const date=quotes[a.id]?.[1]??new Date().toISOString().slice(0,10);
+    const filingShares=prior?.valuation&&a.valuation?.shareSources!==2?issuerFilingShareObservations(readCorpusJson(`raw/eodhd/${a.id}.json`),readCorpusJson(`raw/sec-companyfacts/${a.id}.json`),date):[];
+    const contradictions=issuerShareContradictions(prior?.valuation??a.valuation,[...issuerShares,...filingShares],date,f?.splits);
+    if(contradictions.length)issuerContradictions[a.id]=contradictions;
     const result=publicationCapitalization(a,readCorpusJson(`raw/eodhd/${a.id}.json`),quotes[a.id],rate(a.company.currency),f?.splits,issuerShares);
     capitalization.push(result.evidence);
     if(result.capShares)capShares[a.id]=result.capShares;
     return result.analysis;
   });
   writeCorpusJson('staging/publication-capitalization.json',capitalization);
-  const priorDossiers:Record<string,Dossier>={};
-  const priorDirectory=previousDossiers??directory;
-  if(additionsOnly)Object.assign(priorDossiers,freeze.dossiers);
-  else if(existsSync(priorDirectory))for(const file of readdirSync(priorDirectory).filter(f=>/^\d{3}\.json$/.test(f)))Object.assign(priorDossiers,JSON.parse(readFileSync(path.join(priorDirectory,file),'utf8')));
-  const { files, unresolved } = buildOutput({ previousDossiers:priorDossiers, capShares, priceHistories, analyses: rows, universe: universe.length, holdersByTicker, investorNames, fx, prices: readPrices(path.join(repo, "prices")) });
+  writeCorpusJson('staging/issuer-share-contradictions.json',issuerContradictions);
+  const { files, unresolved } = buildOutput({ previousDossiers:priorDossiers, issuerContradictions, capShares, priceHistories, analyses: rows, universe: universe.length, holdersByTicker, investorNames, fx, prices: readPrices(path.join(repo, "prices")) });
   // A partial vendor response must not silently delete an existing member.
   // Membership removals are explicit in the universe; missing evidence is not.
   const previousDirectory = previousDossiers ?? directory;
@@ -384,6 +399,10 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
     if(release.held.some(({id})=>emitted[id]))throw Error('Held coverage addition reached publication');
   }
   if(!additionsOnly)publishBalances(files,readPrices(path.join(repo,'prices')),fx);
+  if(!additionsOnly){
+    applyPublicationContinuity(files,freeze,readPrices(path.join(repo,'prices')));
+    reconcileIssuers(files,holdersByTicker,investorNames);
+  }
   fillPublishedLogos(files);
   forwardFiles(repo, files, universe, readPrices(path.join(repo, 'prices')), new Date().toISOString().slice(0,10));
   publishViews(files);

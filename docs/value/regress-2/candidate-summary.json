@@ -1,0 +1,475 @@
+{
+  "baseline": 3899,
+  "candidate": 3915,
+  "missing": [],
+  "added": [
+    "CFRUY.US",
+    "DVDCF.US",
+    "FLMNF.US",
+    "FLUIF.US",
+    "HEINY.US",
+    "HKHHF.US",
+    "HKHHY.US",
+    "KNCRF.US",
+    "MTRBF.US",
+    "OGC.US",
+    "PEYUF.US",
+    "PHJMF.US",
+    "PIFYF.US",
+    "PUIGF.US",
+    "RTLLF.US",
+    "ZLDSF.US"
+  ],
+  "changedTests": 183,
+  "qualityChanges": [
+    {
+      "id": "DVA.US",
+      "before": true,
+      "after": false,
+      "tests": {
+        "management": [
+          "pass",
+          "fail"
+        ]
+      },
+      "frozen": false
+    },
+    {
+      "id": "SBSI.US",
+      "before": true,
+      "after": false,
+      "tests": {
+        "accounting": [
+          "pass",
+          "fail"
+        ]
+      },
+      "frozen": false
+    },
+    {
+      "id": "BMI.US",
+      "before": false,
+      "after": true,
+      "tests": {
+        "understandable": [
+          "na",
+          "pass"
+        ],
+        "moat": [
+          "na",
+          "pass"
+        ],
+        "economics": [
+          "na",
+          "pass"
+        ],
+        "management": [
+          "na",
+          "pass"
+        ],
+        "accounting": [
+          "na",
+          "pass"
+        ]
+      },
+      "frozen": false
+    },
+    {
+      "id": "NFLX.US",
+      "before": false,
+      "after": true,
+      "tests": {
+        "understandable": [
+          "fail",
+          "pass"
+        ]
+      },
+      "frozen": false
+    },
+    {
+      "id": "HON.US",
+      "before": false,
+      "after": true,
+      "tests": {
+        "management": [
+          "fail",
+          "pass"
+        ]
+      },
+      "frozen": false
+    },
+    {
+      "id": "NMIH.US",
+      "before": false,
+      "after": true,
+      "tests": {
+        "management": [
+          "fail",
+          "pass"
+        ]
+      },
+      "frozen": false
+    },
+    {
+      "id": "LAMR.US",
+      "before": true,
+      "after": false,
+      "tests": {
+        "management": [
+          "pass",
+          "fail"
+        ]
+      },
+      "frozen": false
+    },
+    {
+      "id": "HCI.US",
+      "before": false,
+      "after": true,
+      "tests": {
+        "understandable": [
+          "na",
+          "pass"
+        ],
+        "moat": [
+          "na",
+          "pass"
+        ],
+        "economics": [
+          "na",
+          "pass"
+        ],
+        "management": [
+          "na",
+          "pass"
+        ],
+        "accounting": [
+          "na",
+          "pass"
+        ]
+      },
+      "frozen": false
+    },
+    {
+      "id": "VCTR.US",
+      "before": true,
+      "after": false,
+      "tests": {
+        "accounting": [
+          "pass",
+          "fail"
+        ]
+      },
+      "frozen": false
+    },
+    {
+      "id": "1209.HK",
+      "before": false,
+      "after": true,
+      "tests": {
+        "understandable": [
+          "fail",
+          "pass"
+        ]
+      },
+      "frozen": false
+    },
+    {
+      "id": "NOVT.US",
+      "before": true,
+      "after": false,
+      "tests": {
+        "accounting": [
+          "pass",
+          "fail"
+        ]
+      },
+      "frozen": false
+    },
+    {
+      "id": "BOKF.US",
+      "before": true,
+      "after": false,
+      "tests": {
+        "accounting": [
+          "pass",
+          "fail"
+        ]
+      },
+      "frozen": false
+    }
+  ],
+  "numericNullFields": 22,
+  "numericNullCompanies": 9,
+  "numericRemovedFields": 0,
+  "valuationNulls": [
+    "EXR.US"
+  ],
+  "buyChanges": [
+    {
+      "id": "FDJU.PA",
+      "before": {
+        "b": true,
+        "v": [
+          27.793668656830615,
+          32.00903544852957,
+          36.60283614467411
+        ],
+        "m": 0.35,
+        "t": "PPPPP"
+      },
+      "after": {
+        "b": false,
+        "v": [
+          25.764979342725656,
+          29.980346134424614,
+          34.57414683056915
+        ],
+        "m": 0.35,
+        "t": "PPPPP"
+      }
+    },
+    {
+      "id": "ALSN.US",
+      "before": {
+        "b": true,
+        "v": [
+          108.98839358894946,
+          151.0182565972158,
+          174.45986706921735
+        ],
+        "m": 0.15,
+        "t": "PPPPP"
+      },
+      "after": {
+        "b": false,
+        "v": [
+          95.54995369770381,
+          137.57981670597013,
+          161.0214271779717
+        ],
+        "m": 0.5,
+        "t": "PPPPP"
+      }
+    },
+    {
+      "id": "FCN.US",
+      "before": {
+        "b": true,
+        "v": [
+          127.6623765873837,
+          179.43074267684204,
+          209.5755551532103
+        ],
+        "m": 0.25,
+        "t": "PPPPP"
+      },
+      "after": {
+        "b": false,
+        "v": [
+          123.89434452112165,
+          175.66271061057995,
+          205.80752308694824
+        ],
+        "m": 0.35,
+        "t": "PPPPP"
+      }
+    }
+  ],
+  "unfrozen": {
+    "changedTests": 183,
+    "qualityChanges": [
+      {
+        "id": "DVA.US",
+        "before": true,
+        "after": false,
+        "tests": {
+          "management": [
+            "pass",
+            "fail"
+          ]
+        },
+        "frozen": false
+      },
+      {
+        "id": "SBSI.US",
+        "before": true,
+        "after": false,
+        "tests": {
+          "accounting": [
+            "pass",
+            "fail"
+          ]
+        },
+        "frozen": false
+      },
+      {
+        "id": "BMI.US",
+        "before": false,
+        "after": true,
+        "tests": {
+          "understandable": [
+            "na",
+            "pass"
+          ],
+          "moat": [
+            "na",
+            "pass"
+          ],
+          "economics": [
+            "na",
+            "pass"
+          ],
+          "management": [
+            "na",
+            "pass"
+          ],
+          "accounting": [
+            "na",
+            "pass"
+          ]
+        },
+        "frozen": false
+      },
+      {
+        "id": "NFLX.US",
+        "before": false,
+        "after": true,
+        "tests": {
+          "understandable": [
+            "fail",
+            "pass"
+          ]
+        },
+        "frozen": false
+      },
+      {
+        "id": "HON.US",
+        "before": false,
+        "after": true,
+        "tests": {
+          "management": [
+            "fail",
+            "pass"
+          ]
+        },
+        "frozen": false
+      },
+      {
+        "id": "NMIH.US",
+        "before": false,
+        "after": true,
+        "tests": {
+          "management": [
+            "fail",
+            "pass"
+          ]
+        },
+        "frozen": false
+      },
+      {
+        "id": "LAMR.US",
+        "before": true,
+        "after": false,
+        "tests": {
+          "management": [
+            "pass",
+            "fail"
+          ]
+        },
+        "frozen": false
+      },
+      {
+        "id": "HCI.US",
+        "before": false,
+        "after": true,
+        "tests": {
+          "understandable": [
+            "na",
+            "pass"
+          ],
+          "moat": [
+            "na",
+            "pass"
+          ],
+          "economics": [
+            "na",
+            "pass"
+          ],
+          "management": [
+            "na",
+            "pass"
+          ],
+          "accounting": [
+            "na",
+            "pass"
+          ]
+        },
+        "frozen": false
+      },
+      {
+        "id": "VCTR.US",
+        "before": true,
+        "after": false,
+        "tests": {
+          "accounting": [
+            "pass",
+            "fail"
+          ]
+        },
+        "frozen": false
+      },
+      {
+        "id": "1209.HK",
+        "before": false,
+        "after": true,
+        "tests": {
+          "understandable": [
+            "fail",
+            "pass"
+          ]
+        },
+        "frozen": false
+      },
+      {
+        "id": "NOVT.US",
+        "before": true,
+        "after": false,
+        "tests": {
+          "accounting": [
+            "pass",
+            "fail"
+          ]
+        },
+        "frozen": false
+      },
+      {
+        "id": "BOKF.US",
+        "before": true,
+        "after": false,
+        "tests": {
+          "accounting": [
+            "pass",
+            "fail"
+          ]
+        },
+        "frozen": false
+      }
+    ],
+    "numericNullFields": 22,
+    "numericNullCompanies": [
+      "BE.US",
+      "CL.US",
+      "DELL.US",
+      "DVA.US",
+      "HCA.US",
+      "KMB.US",
+      "LYV.US",
+      "MAS.US",
+      "MCK.US"
+    ],
+    "valuationNulls": [
+      "EXR.US"
+    ]
+  }
+}

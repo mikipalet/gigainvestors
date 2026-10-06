@@ -1,3 +1,4 @@
+import {completeBalance} from './latest-balance';
 import type {BalanceSheet} from './latest-balance';
 import {ownerCash} from './owner-cash';
 import type {CurrentCommonBalance} from './types';
@@ -83,7 +84,8 @@ export function valueCompany({ years, kind, industry, bondYield, cyclical, curre
   if (!latest || (!(latest.dilutedShares && latest.dilutedShares > 0) && !fallback)) return { valuation: null, reason: "no share count" };
   // Keep interim book and its common denominator on the same reporting date.
   // This changes the economic basis, never manufactures an independent vote.
-  const datedBalance=balance && balance.end>latest.end && balance.end<cutoff && balance.filed<cutoff && balance.filed>=balance.end && balance.currency===currency ? balance : null;
+  const annualBalance=[...ys].reverse().find(y=>completeBalance(y,kind))??latest;
+  const datedBalance=balance && completeBalance(balance.values,kind) && balance.end>annualBalance.end && balance.end<cutoff && balance.filed<cutoff && balance.filed>=balance.end && balance.currency===currency ? balance : null;
   const observation=currentCommonBalance;
   const reviewedBalance=kind!=='operating'&&observation&&observation.basis==='effective-common'
     &&observation.currency===currency&&(observation.end>=latest.end||observation.authoritative===true)&&observation.end<cutoff
@@ -107,10 +109,10 @@ export function valueCompany({ years, kind, industry, bondYield, cyclical, curre
   if (postSplit) assumptions.push('share count adjusted for post-year split/bonus');
   if (corrected) assumptions.push(`share count corrected to current ${shares}`);
   const stock = reviewedBalance ? null : datedBalance;
-  const currentBalance = stock ? {...latest,cashExclusion:undefined,clientAssets:null,currentAssets:null,currentLiabilities:null,shortTermDebt:null,...stock.values,tangibleEquity:undefined} : reviewedBalance ? {...latest,end:reviewedBalance.end,equity:reviewedBalance.commonEquity,minorityInterest:0,preferredEquity:0,goodwill:reviewedBalance.goodwillAndIntangibles,intangibles:0,tangibleEquity:reviewedBalance.commonEquity-reviewedBalance.goodwillAndIntangibles} : latest;
-  if(!reviewedBalance) assumptions.push(stock ? `${stock.basis} balance sheet ${stock.end}, ${stock.filingDateAssumed?'assumed available (90-day fallback)':'filed'} ${stock.filed}; source: ${stock.source}` : `balance sheet ${latest.end}; latest annual report`);
+  const currentBalance = stock ? {...latest,cashExclusion:undefined,clientAssets:null,currentAssets:null,currentLiabilities:null,shortTermDebt:null,...stock.values,tangibleEquity:undefined} : reviewedBalance ? {...latest,end:reviewedBalance.end,equity:reviewedBalance.commonEquity,minorityInterest:0,preferredEquity:0,goodwill:reviewedBalance.goodwillAndIntangibles,intangibles:0,tangibleEquity:reviewedBalance.commonEquity-reviewedBalance.goodwillAndIntangibles} : annualBalance;
+  if(!reviewedBalance) assumptions.push(stock ? `${stock.basis} balance sheet ${stock.end}, ${stock.filingDateAssumed?'assumed available (90-day fallback)':'filed'} ${stock.filed}; source: ${stock.source}` : `balance sheet ${annualBalance.end}; most recent complete annual report`);
   if(ttm && (reviewedBalance?.end ?? stock?.end ?? latest.end) < ttm.end) assumptions.push('balance sheet predates TTM; newer balance-sheet coverage unavailable');
-  const balanceSheet = reviewedBalance ? {end:reviewedBalance.end,filed:reviewedBalance.filed??null,source:reviewedBalance.source,basis:reviewedBalance.basis} : {...(stock?.filingDateAssumed?{filingDateAssumed:true}:{}),end:stock?.end??latest.end,filed:stock?.filed??null,source:stock?.source??'annual fundamentals',basis:stock?.basis??'annual'};
+  const balanceSheet = reviewedBalance ? {end:reviewedBalance.end,filed:reviewedBalance.filed??null,source:reviewedBalance.source,basis:reviewedBalance.basis} : {...(stock?.filingDateAssumed?{filingDateAssumed:true}:{}),end:stock?.end??annualBalance.end,filed:stock?.filed??null,source:stock?.source??'annual fundamentals',basis:stock?.basis??'annual'};
   const priorRevenue = ys.find(y => y.fy === latest.fy - 3)?.revenue;
   const trailing = ttm && ttm.end > latest.end && (!ttm.currency || !currency || ttm.currency === currency) ? ttm : null;
   if (trailing?.sbc === null) assumptions.push('TTM stock compensation not reported; assumed zero');

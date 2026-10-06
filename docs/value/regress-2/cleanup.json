@@ -1,0 +1,21 @@
+{
+  "complete": true,
+  "removed": [
+    "/Users/miki/data/regress/run2/corpus",
+    "/Users/miki/data/regress/run2/prepare.sh",
+    "/Users/miki/data/regress/run2/harness-bin",
+    "/Users/miki/data/regress/run2/candidate-final",
+    "/Users/miki/data/regress/run2/storage",
+    "/Users/miki/data/regress/run2/check-issuer.py",
+    "/Users/miki/data/regress/run2/baseline",
+    "/Users/miki/data/regress/run2/tmp",
+    "/mnt/HC_Volume_107024928/regress/repo/node_modules",
+    "/mnt/HC_Volume_107024928/regress/repo/.next",
+    "/Users/miki/data/regress/tmp"
+  ],
+  "retained": "source worktree, review evidence and release bundle only",
+  "freeBytes": {
+    "/": 15708389376,
+    "/Users/miki/data": 148420206592
+  }
+}

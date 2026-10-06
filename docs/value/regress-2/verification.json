@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "unitFiles": 250,
+  "unitPassed": 2428,
+  "unitSkipped": 1,
+  "build": "PASS including TypeScript",
+  "ordinaryPublishOut": "PASS",
+  "realPublish": "PASS; production invariants, local bare remote and stub Blob",
+  "localPostPublish": "PASS; quarter-back and 2018Q3; receipt cleared",
+  "blobFiles": 6251,
+  "blobBytes": 211205070,
+  "blobVersion": "dbf9e2c706ee3b878e396df217f5951291052fe2224e09a2201ea286a86fd1cf",
+  "realCommit": "2bfd37c8f7e4b031384eeeca05632583da4f6df6",
+  "numericMissingRestored": 6209,
+  "unexplainedNulls": 0,
+  "explicitNullsRestored": 57,
+  "primaryExplainedNulls": 22,
+  "minimumFreeBytes": {
+    "/": 7768199168,
+    "/Users/miki/data": 114251218944
+  },
+  "sourceBindings": 571351,
+  "liveArchiveUnchangedFiles": 6258,
+  "isolation": {
+    "interfaces": [
+      "lo"
+    ],
+    "sourceCorpusReadOnly": true,
+    "externalRoutes": 0
+  },
+  "externalTransport": false,
+  "sourceImplementationUnchangedDuringFinalGates": true,
+  "candidateCoreFilesMatchRealPublish": 2175,
+  "excludedRunClockOnlyPriceStoryTimestamps": 3701
+}

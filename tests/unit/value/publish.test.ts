@@ -1032,7 +1032,7 @@ it('replaces a dated vendor cap with the current quote times supported issuer sh
  expect(JSON.parse(readFileSync(path.join(repo,'index/US.json'),'utf8'))[0].mc).toBe(6000);
 });
 
-it('keeps only the live price test through unresolved shares and later quote refreshes',async()=>{
+it('retains published shares, preserves unapproved Buy changes, and still reprices later quotes',async()=>{
  const a=analysis();a.company.marketCapUsd=null;
  const repo=directory();mkdirSync(path.join(repo,'prices'));writeFileSync(path.join(repo,'prices/US.json'),JSON.stringify({[a.id]:[50,'2026-10-01']}));
  const run=()=>publishSnapshot({repo,analyses:[a],universe:[a.company],partial:false,commit:false,holdersByTicker:{},investorNames:{}});
@@ -1041,11 +1041,12 @@ it('keeps only the live price test through unresolved shares and later quote ref
  a.valuation!.assumptions=['current share sources disagree by more than 1.5x; share count not corrected'];run();
  expect(read().b).toBe(true);
  a.tests.moat.result='fail';run();
- expect(read().tests.price).toEqual(old);expect(read().tests.moat.result).toBe('fail');expect(read().b).toBe(false);
- expect(read().priceTestFreeze.asOf).toBe('2026-09-29');
+ expect(read().tests.price).toEqual(old);expect(read().tests.moat.result).toBe('pass');expect(read().b).toBe(true);
+ expect(read().valuation.publishedShareReview).toBe(true);
+ expect(read().priceTestFreeze).toBeUndefined();
  const {refreshPublishedBuyPrices}=await import('@/lib/value/refresh-buy-prices');
  writeFileSync(path.join(repo,'prices/US.json'),JSON.stringify({[a.id]:[500,'2026-10-02']}));refreshPublishedBuyPrices(repo);
- expect(read().tests.price).toEqual(old);expect(read().b).toBe(false);
+ expect(read().tests.price.result).toBe('fail');expect(read().b).toBe(false);
  // Resolving the evidence resumes calculation; a freeze is not permanent.
  a.valuation!.assumptions=[];run();expect(read().tests.price.result).toBe('fail');expect(read().priceTestFreeze).toBeUndefined();
 });

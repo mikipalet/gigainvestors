@@ -1,0 +1,1249 @@
+[
+  {
+    "id": "GL.US",
+    "factFile": "raw/sec-companyfacts/GL.US.json",
+    "observations": [
+      {
+        "end": "2025-12-31",
+        "field": "cashAndShortTermInvestments",
+        "value": 18048757000.0,
+        "matches": []
+      },
+      {
+        "end": "2025-12-31",
+        "field": "cash",
+        "value": 144704000.0,
+        "matches": [
+          {
+            "concept": "us-gaap:Cash",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 144704000,
+              "accn": "0000320335-26-000216",
+              "fy": 2026,
+              "fp": "Q2",
+              "form": "10-Q",
+              "filed": "2026-08-05",
+              "frame": "CY2025Q4I"
+            }
+          },
+          {
+            "concept": "us-gaap:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 144704000,
+              "accn": "0000320335-26-000090",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-25"
+            }
+          },
+          {
+            "concept": "us-gaap:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 144704000,
+              "accn": "0000320335-26-000169",
+              "fy": 2026,
+              "fp": "Q1",
+              "form": "10-Q",
+              "filed": "2026-05-07"
+            }
+          },
+          {
+            "concept": "us-gaap:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 144704000,
+              "accn": "0000320335-26-000216",
+              "fy": 2026,
+              "fp": "Q2",
+              "form": "10-Q",
+              "filed": "2026-08-05",
+              "frame": "CY2025Q4I"
+            }
+          }
+        ]
+      },
+      {
+        "end": "2025-12-31",
+        "field": "shortLongTermDebtTotal",
+        "value": 2625449000.0,
+        "matches": [
+          {
+            "concept": "us-gaap:DebtLongtermAndShorttermCombinedAmount",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 2625449000,
+              "accn": "0000320335-26-000090",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-25"
+            }
+          },
+          {
+            "concept": "us-gaap:DebtLongtermAndShorttermCombinedAmount",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 2625449000,
+              "accn": "0000320335-26-000169",
+              "fy": 2026,
+              "fp": "Q1",
+              "form": "10-Q",
+              "filed": "2026-05-07"
+            }
+          },
+          {
+            "concept": "us-gaap:DebtLongtermAndShorttermCombinedAmount",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 2625449000,
+              "accn": "0000320335-26-000216",
+              "fy": 2026,
+              "fp": "Q2",
+              "form": "10-Q",
+              "filed": "2026-08-05",
+              "frame": "CY2025Q4I"
+            }
+          }
+        ]
+      },
+      {
+        "end": "2025-12-31",
+        "field": "totalStockholderEquity",
+        "value": 5974579000.0,
+        "matches": [
+          {
+            "concept": "us-gaap:StockholdersEquity",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 5974579000,
+              "accn": "0000320335-26-000090",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-25"
+            }
+          },
+          {
+            "concept": "us-gaap:StockholdersEquity",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 5974579000,
+              "accn": "0000320335-26-000169",
+              "fy": 2026,
+              "fp": "Q1",
+              "form": "10-Q",
+              "filed": "2026-05-07"
+            }
+          },
+          {
+            "concept": "us-gaap:StockholdersEquity",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 5974579000,
+              "accn": "0000320335-26-000216",
+              "fy": 2026,
+              "fp": "Q2",
+              "form": "10-Q",
+              "filed": "2026-08-05",
+              "frame": "CY2025Q4I"
+            }
+          }
+        ]
+      },
+      {
+        "end": "2025-12-31",
+        "field": "goodWill",
+        "value": 490446000.0,
+        "matches": [
+          {
+            "concept": "us-gaap:Goodwill",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 490446000,
+              "accn": "0000320335-26-000090",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-25"
+            }
+          },
+          {
+            "concept": "us-gaap:Goodwill",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 490446000,
+              "accn": "0000320335-26-000169",
+              "fy": 2026,
+              "fp": "Q1",
+              "form": "10-Q",
+              "filed": "2026-05-07"
+            }
+          },
+          {
+            "concept": "us-gaap:Goodwill",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 490446000,
+              "accn": "0000320335-26-000216",
+              "fy": 2026,
+              "fp": "Q2",
+              "form": "10-Q",
+              "filed": "2026-08-05",
+              "frame": "CY2025Q4I"
+            }
+          }
+        ]
+      },
+      {
+        "end": "2025-12-31",
+        "field": "intangibleAssets",
+        "value": 6999136000.0,
+        "matches": [
+          {
+            "concept": "us-gaap:DeferredPolicyAcquisitionCosts",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 6999136000,
+              "accn": "0000320335-26-000090",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-25"
+            }
+          },
+          {
+            "concept": "us-gaap:DeferredPolicyAcquisitionCosts",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 6999136000,
+              "accn": "0000320335-26-000169",
+              "fy": 2026,
+              "fp": "Q1",
+              "form": "10-Q",
+              "filed": "2026-05-07"
+            }
+          },
+          {
+            "concept": "us-gaap:DeferredPolicyAcquisitionCosts",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 6999136000,
+              "accn": "0000320335-26-000216",
+              "fy": 2026,
+              "fp": "Q2",
+              "form": "10-Q",
+              "filed": "2026-08-05",
+              "frame": "CY2025Q4I"
+            }
+          }
+        ]
+      },
+      {
+        "end": "2025-12-31",
+        "field": "commonStockSharesOutstanding",
+        "value": 80851063.0,
+        "matches": []
+      },
+      {
+        "end": "2026-06-30",
+        "field": "cashAndShortTermInvestments",
+        "value": 455381000.0,
+        "matches": []
+      },
+      {
+        "end": "2026-06-30",
+        "field": "cash",
+        "value": 257054000.0,
+        "matches": [
+          {
+            "concept": "us-gaap:Cash",
+            "unit": "USD",
+            "fact": {
+              "end": "2026-06-30",
+              "val": 257054000,
+              "accn": "0000320335-26-000216",
+              "fy": 2026,
+              "fp": "Q2",
+              "form": "10-Q",
+              "filed": "2026-08-05",
+              "frame": "CY2026Q2I"
+            }
+          },
+          {
+            "concept": "us-gaap:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
+            "unit": "USD",
+            "fact": {
+              "end": "2026-06-30",
+              "val": 257054000,
+              "accn": "0000320335-26-000216",
+              "fy": 2026,
+              "fp": "Q2",
+              "form": "10-Q",
+              "filed": "2026-08-05",
+              "frame": "CY2026Q2I"
+            }
+          }
+        ]
+      },
+      {
+        "end": "2026-06-30",
+        "field": "shortLongTermDebtTotal",
+        "value": 2943249000.0,
+        "matches": [
+          {
+            "concept": "us-gaap:DebtLongtermAndShorttermCombinedAmount",
+            "unit": "USD",
+            "fact": {
+              "end": "2026-06-30",
+              "val": 2943249000,
+              "accn": "0000320335-26-000216",
+              "fy": 2026,
+              "fp": "Q2",
+              "form": "10-Q",
+              "filed": "2026-08-05",
+              "frame": "CY2026Q2I"
+            }
+          }
+        ]
+      },
+      {
+        "end": "2026-06-30",
+        "field": "totalStockholderEquity",
+        "value": 6155815000.0,
+        "matches": [
+          {
+            "concept": "us-gaap:StockholdersEquity",
+            "unit": "USD",
+            "fact": {
+              "end": "2026-06-30",
+              "val": 6155815000,
+              "accn": "0000320335-26-000216",
+              "fy": 2026,
+              "fp": "Q2",
+              "form": "10-Q",
+              "filed": "2026-08-05",
+              "frame": "CY2026Q2I"
+            }
+          }
+        ]
+      },
+      {
+        "end": "2026-06-30",
+        "field": "goodWill",
+        "value": 490446000.0,
+        "matches": [
+          {
+            "concept": "us-gaap:Goodwill",
+            "unit": "USD",
+            "fact": {
+              "end": "2026-06-30",
+              "val": 490446000,
+              "accn": "0000320335-26-000216",
+              "fy": 2026,
+              "fp": "Q2",
+              "form": "10-Q",
+              "filed": "2026-08-05",
+              "frame": "CY2026Q2I"
+            }
+          }
+        ]
+      },
+      {
+        "end": "2026-06-30",
+        "field": "commonStockSharesOutstanding",
+        "value": 79801180.0,
+        "matches": []
+      }
+    ]
+  },
+  {
+    "id": "NMIH.US",
+    "factFile": "raw/sec-companyfacts/NMIH.US.json",
+    "observations": [
+      {
+        "end": "2025-12-31",
+        "field": "cashAndShortTermInvestments",
+        "value": 448365000.0,
+        "matches": []
+      },
+      {
+        "end": "2025-12-31",
+        "field": "cash",
+        "value": 43937000.0,
+        "matches": [
+          {
+            "concept": "us-gaap:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 43937000,
+              "accn": "0001547903-26-000011",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-12"
+            }
+          },
+          {
+            "concept": "us-gaap:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 43937000,
+              "accn": "0001547903-26-000029",
+              "fy": 2026,
+              "fp": "Q1",
+              "form": "10-Q",
+              "filed": "2026-05-01"
+            }
+          },
+          {
+            "concept": "us-gaap:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 43937000,
+              "accn": "0001547903-26-000038",
+              "fy": 2026,
+              "fp": "Q2",
+              "form": "10-Q",
+              "filed": "2026-07-31",
+              "frame": "CY2025Q4I"
+            }
+          }
+        ]
+      },
+      {
+        "end": "2025-12-31",
+        "field": "shortLongTermDebtTotal",
+        "value": 417031000.0,
+        "matches": [
+          {
+            "concept": "us-gaap:SecuredDebt",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 417031000,
+              "accn": "0001547903-26-000011",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-12"
+            }
+          },
+          {
+            "concept": "us-gaap:SecuredDebt",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 417031000,
+              "accn": "0001547903-26-000029",
+              "fy": 2026,
+              "fp": "Q1",
+              "form": "10-Q",
+              "filed": "2026-05-01"
+            }
+          },
+          {
+            "concept": "us-gaap:SecuredDebt",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 417031000,
+              "accn": "0001547903-26-000038",
+              "fy": 2026,
+              "fp": "Q2",
+              "form": "10-Q",
+              "filed": "2026-07-31",
+              "frame": "CY2025Q4I"
+            }
+          }
+        ]
+      },
+      {
+        "end": "2025-12-31",
+        "field": "totalStockholderEquity",
+        "value": 2591986000.0,
+        "matches": [
+          {
+            "concept": "us-gaap:StockholdersEquity",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 2591986000,
+              "accn": "0001547903-26-000011",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-12"
+            }
+          },
+          {
+            "concept": "us-gaap:StockholdersEquity",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 2591986000,
+              "accn": "0001547903-26-000029",
+              "fy": 2026,
+              "fp": "Q1",
+              "form": "10-Q",
+              "filed": "2026-05-01"
+            }
+          },
+          {
+            "concept": "us-gaap:StockholdersEquity",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 2591986000,
+              "accn": "0001547903-26-000038",
+              "fy": 2026,
+              "fp": "Q2",
+              "form": "10-Q",
+              "filed": "2026-07-31",
+              "frame": "CY2025Q4I"
+            }
+          }
+        ]
+      },
+      {
+        "end": "2025-12-31",
+        "field": "goodWill",
+        "value": 3244000.0,
+        "matches": [
+          {
+            "concept": "us-gaap:Goodwill",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 3244000,
+              "accn": "0001547903-26-000011",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-12",
+              "frame": "CY2025Q4I"
+            }
+          }
+        ]
+      },
+      {
+        "end": "2025-12-31",
+        "field": "intangibleAssets",
+        "value": 64762000.0,
+        "matches": []
+      },
+      {
+        "end": "2025-12-31",
+        "field": "commonStockSharesOutstanding",
+        "value": 78208000.0,
+        "matches": []
+      },
+      {
+        "end": "2026-06-30",
+        "field": "cashAndShortTermInvestments",
+        "value": 72122000.0,
+        "matches": [
+          {
+            "concept": "us-gaap:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
+            "unit": "USD",
+            "fact": {
+              "end": "2026-06-30",
+              "val": 72122000,
+              "accn": "0001547903-26-000038",
+              "fy": 2026,
+              "fp": "Q2",
+              "form": "10-Q",
+              "filed": "2026-07-31",
+              "frame": "CY2026Q2I"
+            }
+          }
+        ]
+      },
+      {
+        "end": "2026-06-30",
+        "field": "cash",
+        "value": 72122000.0,
+        "matches": [
+          {
+            "concept": "us-gaap:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
+            "unit": "USD",
+            "fact": {
+              "end": "2026-06-30",
+              "val": 72122000,
+              "accn": "0001547903-26-000038",
+              "fy": 2026,
+              "fp": "Q2",
+              "form": "10-Q",
+              "filed": "2026-07-31",
+              "frame": "CY2026Q2I"
+            }
+          }
+        ]
+      },
+      {
+        "end": "2026-06-30",
+        "field": "shortLongTermDebtTotal",
+        "value": 418021000.0,
+        "matches": [
+          {
+            "concept": "us-gaap:SecuredDebt",
+            "unit": "USD",
+            "fact": {
+              "end": "2026-06-30",
+              "val": 418021000,
+              "accn": "0001547903-26-000038",
+              "fy": 2026,
+              "fp": "Q2",
+              "form": "10-Q",
+              "filed": "2026-07-31",
+              "frame": "CY2026Q2I"
+            }
+          }
+        ]
+      },
+      {
+        "end": "2026-06-30",
+        "field": "totalStockholderEquity",
+        "value": 2705196000.0,
+        "matches": [
+          {
+            "concept": "us-gaap:StockholdersEquity",
+            "unit": "USD",
+            "fact": {
+              "end": "2026-06-30",
+              "val": 2705196000,
+              "accn": "0001547903-26-000038",
+              "fy": 2026,
+              "fp": "Q2",
+              "form": "10-Q",
+              "filed": "2026-07-31",
+              "frame": "CY2026Q2I"
+            }
+          }
+        ]
+      },
+      {
+        "end": "2026-06-30",
+        "field": "intangibleAssets",
+        "value": 3634000.0,
+        "matches": [
+          {
+            "concept": "us-gaap:IntangibleAssetsNetIncludingGoodwill",
+            "unit": "USD",
+            "fact": {
+              "end": "2026-06-30",
+              "val": 3634000,
+              "accn": "0001547903-26-000038",
+              "fy": 2026,
+              "fp": "Q2",
+              "form": "10-Q",
+              "filed": "2026-07-31",
+              "frame": "CY2026Q2I"
+            }
+          }
+        ]
+      },
+      {
+        "end": "2026-06-30",
+        "field": "commonStockSharesOutstanding",
+        "value": 76585000.0,
+        "matches": []
+      }
+    ]
+  },
+  {
+    "id": "NTB.US",
+    "factFile": "raw/sec-companyfacts/NTB.US.json",
+    "observations": [
+      {
+        "end": "2025-12-31",
+        "field": "cashAndShortTermInvestments",
+        "value": 5093985000.0,
+        "matches": []
+      },
+      {
+        "end": "2025-12-31",
+        "field": "cash",
+        "value": 1708936000.0,
+        "matches": [
+          {
+            "concept": "us-gaap:CashAndCashEquivalentsAtCarryingValue",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 1708936000,
+              "accn": "0001653242-26-000006",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "20-F",
+              "filed": "2026-02-18",
+              "frame": "CY2025Q4I"
+            }
+          },
+          {
+            "concept": "us-gaap:DueFromBanks",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 1708936000,
+              "accn": "0001653242-26-000006",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "20-F",
+              "filed": "2026-02-18",
+              "frame": "CY2025Q4I"
+            }
+          }
+        ]
+      },
+      {
+        "end": "2025-12-31",
+        "field": "shortLongTermDebtTotal",
+        "value": 38724999.0,
+        "matches": []
+      },
+      {
+        "end": "2025-12-31",
+        "field": "totalStockholderEquity",
+        "value": 1141851000.0,
+        "matches": [
+          {
+            "concept": "us-gaap:StockholdersEquity",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 1141851000,
+              "accn": "0001653242-26-000006",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "20-F",
+              "filed": "2026-02-18",
+              "frame": "CY2025Q4I"
+            }
+          }
+        ]
+      },
+      {
+        "end": "2025-12-31",
+        "field": "goodWill",
+        "value": 25385000.0,
+        "matches": [
+          {
+            "concept": "us-gaap:Goodwill",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 25385000,
+              "accn": "0001653242-26-000006",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "20-F",
+              "filed": "2026-02-18",
+              "frame": "CY2025Q4I"
+            }
+          }
+        ]
+      },
+      {
+        "end": "2025-12-31",
+        "field": "intangibleAssets",
+        "value": 61412000.0,
+        "matches": [
+          {
+            "concept": "us-gaap:OtherIntangibleAssetsNet",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 61412000,
+              "accn": "0001653242-26-000006",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "20-F",
+              "filed": "2026-02-18",
+              "frame": "CY2025Q4I"
+            }
+          }
+        ]
+      },
+      {
+        "end": "2025-12-31",
+        "field": "commonStockSharesOutstanding",
+        "value": 41439000.0,
+        "matches": []
+      },
+      {
+        "end": "2026-06-30",
+        "field": "cashAndShortTermInvestments",
+        "value": 7971000000.0,
+        "matches": []
+      },
+      {
+        "end": "2026-06-30",
+        "field": "cash",
+        "value": 1441000000.0,
+        "matches": []
+      },
+      {
+        "end": "2026-06-30",
+        "field": "shortLongTermDebtTotal",
+        "value": 39086000.0,
+        "matches": []
+      },
+      {
+        "end": "2026-06-30",
+        "field": "totalStockholderEquity",
+        "value": 1149000000.0,
+        "matches": []
+      },
+      {
+        "end": "2026-06-30",
+        "field": "goodWill",
+        "value": 27284000.0,
+        "matches": []
+      },
+      {
+        "end": "2026-06-30",
+        "field": "intangibleAssets",
+        "value": 91272000.0,
+        "matches": []
+      },
+      {
+        "end": "2026-06-30",
+        "field": "commonStockSharesOutstanding",
+        "value": 40447000.0,
+        "matches": []
+      }
+    ]
+  },
+  {
+    "id": "INMD.US",
+    "factFile": "raw/sec-companyfacts/INMD.US.json",
+    "observations": [
+      {
+        "end": "2025-12-31",
+        "field": "cashAndShortTermInvestments",
+        "value": 555334000.0,
+        "matches": []
+      },
+      {
+        "end": "2025-12-31",
+        "field": "cash",
+        "value": 302543000.0,
+        "matches": []
+      },
+      {
+        "end": "2025-12-31",
+        "field": "shortLongTermDebtTotal",
+        "value": 13235000.0,
+        "matches": []
+      },
+      {
+        "end": "2025-12-31",
+        "field": "totalStockholderEquity",
+        "value": 683198000.0,
+        "matches": []
+      },
+      {
+        "end": "2025-12-31",
+        "field": "commonStockSharesOutstanding",
+        "value": 64081999.0,
+        "matches": []
+      },
+      {
+        "end": "2026-06-30",
+        "field": "cashAndShortTermInvestments",
+        "value": 501115000.0,
+        "matches": []
+      },
+      {
+        "end": "2026-06-30",
+        "field": "cash",
+        "value": 396173000.0,
+        "matches": []
+      },
+      {
+        "end": "2026-06-30",
+        "field": "shortLongTermDebtTotal",
+        "value": 4451000.0,
+        "matches": []
+      },
+      {
+        "end": "2026-06-30",
+        "field": "totalStockholderEquity",
+        "value": 629134000.0,
+        "matches": []
+      },
+      {
+        "end": "2026-06-30",
+        "field": "commonStockSharesOutstanding",
+        "value": 59378000.0,
+        "matches": []
+      }
+    ]
+  },
+  {
+    "id": "CFG-PH.US",
+    "factFile": "raw/sec-companyfacts/CFG.US.json",
+    "observations": [
+      {
+        "end": "2025-12-31",
+        "field": "cashAndShortTermInvestments",
+        "value": 49385000000.0,
+        "matches": []
+      },
+      {
+        "end": "2025-12-31",
+        "field": "cash",
+        "value": 12727000000.0,
+        "matches": [
+          {
+            "concept": "us-gaap:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 12727000000,
+              "accn": "0000759944-26-000028",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-12"
+            }
+          },
+          {
+            "concept": "us-gaap:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 12727000000,
+              "accn": "0000759944-26-000101",
+              "fy": 2026,
+              "fp": "Q1",
+              "form": "10-Q",
+              "filed": "2026-05-04"
+            }
+          },
+          {
+            "concept": "us-gaap:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 12727000000,
+              "accn": "0000759944-26-000148",
+              "fy": 2026,
+              "fp": "Q2",
+              "form": "10-Q",
+              "filed": "2026-08-03",
+              "frame": "CY2025Q4I"
+            }
+          }
+        ]
+      },
+      {
+        "end": "2025-12-31",
+        "field": "shortLongTermDebtTotal",
+        "value": 11282000000.0,
+        "matches": []
+      },
+      {
+        "end": "2025-12-31",
+        "field": "totalStockholderEquity",
+        "value": 26317000000.0,
+        "matches": [
+          {
+            "concept": "us-gaap:StockholdersEquity",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 26317000000,
+              "accn": "0000759944-26-000028",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-12"
+            }
+          },
+          {
+            "concept": "us-gaap:StockholdersEquity",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 26317000000,
+              "accn": "0000759944-26-000101",
+              "fy": 2026,
+              "fp": "Q1",
+              "form": "10-Q",
+              "filed": "2026-05-04"
+            }
+          },
+          {
+            "concept": "us-gaap:StockholdersEquity",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 26317000000,
+              "accn": "0000759944-26-000148",
+              "fy": 2026,
+              "fp": "Q2",
+              "form": "10-Q",
+              "filed": "2026-08-03",
+              "frame": "CY2025Q4I"
+            }
+          }
+        ]
+      },
+      {
+        "end": "2025-12-31",
+        "field": "goodWill",
+        "value": 8187000000.0,
+        "matches": [
+          {
+            "concept": "us-gaap:Goodwill",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 8187000000,
+              "accn": "0000759944-26-000028",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-12"
+            }
+          },
+          {
+            "concept": "us-gaap:Goodwill",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 8187000000,
+              "accn": "0000759944-26-000101",
+              "fy": 2026,
+              "fp": "Q1",
+              "form": "10-Q",
+              "filed": "2026-05-04"
+            }
+          },
+          {
+            "concept": "us-gaap:Goodwill",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 8187000000,
+              "accn": "0000759944-26-000148",
+              "fy": 2026,
+              "fp": "Q2",
+              "form": "10-Q",
+              "filed": "2026-08-03",
+              "frame": "CY2025Q4I"
+            }
+          }
+        ]
+      },
+      {
+        "end": "2025-12-31",
+        "field": "intangibleAssets",
+        "value": 115000000.0,
+        "matches": [
+          {
+            "concept": "us-gaap:FiniteLivedIntangibleAssetsNet",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 115000000,
+              "accn": "0000759944-26-000028",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-12",
+              "frame": "CY2025Q4I"
+            }
+          },
+          {
+            "concept": "us-gaap:OtherIntangibleAssetsNet",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 115000000,
+              "accn": "0000759944-26-000028",
+              "fy": 2025,
+              "fp": "FY",
+              "form": "10-K",
+              "filed": "2026-02-12"
+            }
+          },
+          {
+            "concept": "us-gaap:OtherIntangibleAssetsNet",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 115000000,
+              "accn": "0000759944-26-000101",
+              "fy": 2026,
+              "fp": "Q1",
+              "form": "10-Q",
+              "filed": "2026-05-04"
+            }
+          },
+          {
+            "concept": "us-gaap:OtherIntangibleAssetsNet",
+            "unit": "USD",
+            "fact": {
+              "end": "2025-12-31",
+              "val": 115000000,
+              "accn": "0000759944-26-000148",
+              "fy": 2026,
+              "fp": "Q2",
+              "form": "10-Q",
+              "filed": "2026-08-03",
+              "frame": "CY2025Q4I"
+            }
+          }
+        ]
+      },
+      {
+        "end": "2025-12-31",
+        "field": "commonStockSharesOutstanding",
+        "value": 435472350.0,
+        "matches": []
+      },
+      {
+        "end": "2026-06-30",
+        "field": "cashAndShortTermInvestments",
+        "value": 12760000000.0,
+        "matches": [
+          {
+            "concept": "us-gaap:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
+            "unit": "USD",
+            "fact": {
+              "end": "2026-06-30",
+              "val": 12760000000,
+              "accn": "0000759944-26-000148",
+              "fy": 2026,
+              "fp": "Q2",
+              "form": "10-Q",
+              "filed": "2026-08-03",
+              "frame": "CY2026Q2I"
+            }
+          }
+        ]
+      },
+      {
+        "end": "2026-06-30",
+        "field": "cash",
+        "value": 12760000000.0,
+        "matches": [
+          {
+            "concept": "us-gaap:CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents",
+            "unit": "USD",
+            "fact": {
+              "end": "2026-06-30",
+              "val": 12760000000,
+              "accn": "0000759944-26-000148",
+              "fy": 2026,
+              "fp": "Q2",
+              "form": "10-Q",
+              "filed": "2026-08-03",
+              "frame": "CY2026Q2I"
+            }
+          }
+        ]
+      },
+      {
+        "end": "2026-06-30",
+        "field": "shortLongTermDebtTotal",
+        "value": 16349000000.0,
+        "matches": []
+      },
+      {
+        "end": "2026-06-30",
+        "field": "totalStockholderEquity",
+        "value": 26183000000.0,
+        "matches": [
+          {
+            "concept": "us-gaap:StockholdersEquity",
+            "unit": "USD",
+            "fact": {
+              "end": "2026-06-30",
+              "val": 26183000000,
+              "accn": "0000759944-26-000148",
+              "fy": 2026,
+              "fp": "Q2",
+              "form": "10-Q",
+              "filed": "2026-08-03",
+              "frame": "CY2026Q2I"
+            }
+          }
+        ]
+      },
+      {
+        "end": "2026-06-30",
+        "field": "goodWill",
+        "value": 8220000000.0,
+        "matches": [
+          {
+            "concept": "us-gaap:Goodwill",
+            "unit": "USD",
+            "fact": {
+              "end": "2026-06-30",
+              "val": 8220000000,
+              "accn": "0000759944-26-000148",
+              "fy": 2026,
+              "fp": "Q2",
+              "form": "10-Q",
+              "filed": "2026-08-03",
+              "frame": "CY2026Q2I"
+            }
+          }
+        ]
+      },
+      {
+        "end": "2026-06-30",
+        "field": "intangibleAssets",
+        "value": 105000000.0,
+        "matches": [
+          {
+            "concept": "us-gaap:OtherIntangibleAssetsNet",
+            "unit": "USD",
+            "fact": {
+              "end": "2026-06-30",
+              "val": 105000000,
+              "accn": "0000759944-26-000148",
+              "fy": 2026,
+              "fp": "Q2",
+              "form": "10-Q",
+              "filed": "2026-08-03",
+              "frame": "CY2026Q2I"
+            }
+          }
+        ]
+      },
+      {
+        "end": "2026-06-30",
+        "field": "commonStockSharesOutstanding",
+        "value": 426681848.0,
+        "matches": []
+      }
+    ]
+  }
+]

@@ -13,14 +13,14 @@ import type {Dossier, IndexRow, StoreMeta, SnapshotRow, PublishedFunnel, FunnelC
 type Files = Record<string, any>;
 
 /** Capture the live rows before writeOutput removes/replaces their containing files. */
-export function readVerdictFreeze(repo: string, {all=false}:{all?:boolean}={}) {
+export function readVerdictFreeze(repo: string, {all=false,captureAll=false}:{all?:boolean;captureAll?:boolean}={}) {
   const config = readCorpusJson<{version:number;ids:string[]}>('verdict-freeze.json');
   if (config && (config.version !== 1 || !Array.isArray(config.ids) || config.ids.some(id => typeof id !== 'string' || !validCompanyId(id, 'publish')) || new Set(config.ids).size !== config.ids.length)) throw Error('Invalid verdict-freeze.json');
   const aliasesFile=path.join(repo,'aliases.json');
   const aliases=existsSync(aliasesFile)?JSON.parse(readFileSync(aliasesFile,'utf8')):{};
   const ids = new Set([...(config?.ids ?? []),...unchangedCoverageBaselineIds().filter(id=>!aliases[id])]), previous: Files = {}, dossiers: Record<string,Dossier> = {};
-  if (!ids.size&&!all) return {ids, previous, dossiers};
-  for (const dir of ['dossiers','index','search','history']) {
+  if (!ids.size&&!all&&!captureAll) return {ids, previous, dossiers};
+  for (const dir of ['dossiers','index','search','history','prices']) {
     if (!existsSync(path.join(repo,dir))) continue;
     for (const file of readdirSync(path.join(repo,dir)).filter(f=>f.endsWith('.json'))) previous[`${dir}/${file}`] = JSON.parse(readFileSync(path.join(repo,dir,file),'utf8'));
   }

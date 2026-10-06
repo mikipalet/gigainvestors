@@ -1,0 +1,133 @@
+{
+  "baselineDossiers": 3899,
+  "candidateDossiers": 3915,
+  "missing": [],
+  "added": [
+    "CFRUY.US",
+    "DVDCF.US",
+    "FLMNF.US",
+    "FLUIF.US",
+    "HEINY.US",
+    "HKHHF.US",
+    "HKHHY.US",
+    "KNCRF.US",
+    "MTRBF.US",
+    "OGC.US",
+    "PEYUF.US",
+    "PHJMF.US",
+    "PIFYF.US",
+    "PUIGF.US",
+    "RTLLF.US",
+    "ZLDSF.US"
+  ],
+  "freezeCount": 151,
+  "freezeChanges": [],
+  "numericResolution": [
+    {
+      "kind": "candidate-numeric-removed",
+      "cells": 6209,
+      "presentInLive": 6209,
+      "restoredOrRefreshed": 6209
+    },
+    {
+      "kind": "candidate-numeric-nulls",
+      "cells": 79,
+      "presentInLive": 79,
+      "restoredOrRefreshed": 57
+    }
+  ],
+  "buyChanges": [
+    {
+      "id": "FDJU.PA",
+      "before": {
+        "b": true,
+        "v": [
+          27.793668656830615,
+          32.00903544852957,
+          36.60283614467411
+        ],
+        "m": 0.35
+      },
+      "after": {
+        "b": false,
+        "v": [
+          25.764979342725656,
+          29.980346134424614,
+          34.57414683056915
+        ],
+        "m": 0.35
+      },
+      "approved": true
+    },
+    {
+      "id": "ALSN.US",
+      "before": {
+        "b": true,
+        "v": [
+          108.98839358894946,
+          151.0182565972158,
+          174.45986706921735
+        ],
+        "m": 0.15
+      },
+      "after": {
+        "b": false,
+        "v": [
+          95.54995369770381,
+          137.57981670597013,
+          161.0214271779717
+        ],
+        "m": 0.5
+      },
+      "approved": true
+    },
+    {
+      "id": "FCN.US",
+      "before": {
+        "b": true,
+        "v": [
+          127.6623765873837,
+          179.43074267684204,
+          209.5755551532103
+        ],
+        "m": 0.25
+      },
+      "after": {
+        "b": false,
+        "v": [
+          123.89434452112165,
+          175.66271061057995,
+          205.80752308694824
+        ],
+        "m": 0.35
+      },
+      "approved": true
+    }
+  ],
+  "shareReviewCount": 189,
+  "valuationLosses": [
+    "EXR.US"
+  ],
+  "retainedUnresolvedValuations": [
+    {
+      "id": "LPP.WAR",
+      "asOf": "2026-10-04T10:30:53.399Z",
+      "reason": "owner earnings not positive"
+    },
+    {
+      "id": "FG.US",
+      "asOf": "2026-10-04T20:15:54.475Z",
+      "reason": "book value not positive"
+    },
+    {
+      "id": "WN.TO",
+      "asOf": "2026-10-04T10:29:24.742Z",
+      "reason": "owner earnings not positive"
+    },
+    {
+      "id": "IBS.LS",
+      "asOf": "2026-10-04T10:34:25.643Z",
+      "reason": "owner earnings not positive"
+    }
+  ]
+}

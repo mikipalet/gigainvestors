@@ -821,7 +821,7 @@
 .value-page .compact-company-list .historical-context{font-size:14px;line-height:18px}
 
 /* Measure the rows without the panel's height distribution. */
-.value-page dialog[data-side-panel] .compact-company-list[data-measuring=true] table{height:auto;flex:none}
+.value-page dialog[data-side-panel] .compact-company-list:is([data-measuring=true],[data-partial=true]) table{height:auto;flex:none}
 .value-page .compact-company-list[data-measuring=true] tbody,.value-page .compact-company-list[data-measuring=true] tbody tr{flex:none}
 @media(min-width:768px){
 .value-page dialog[data-side-panel]:has(.compact-company-list){width:min(432px,100vw)}

@@ -22,12 +22,15 @@ function GainBar({value,domain,legacy}:{value:number;domain:[number,number];lega
 }
 /** Every list surface uses the same rows and quality definition as the home shelf. */
 export function CompanyList({entries}:{entries:ResultEntry[]}) {
- const list=useRef<HTMLDivElement>(null),measuredPage=useRef(''),loaded=useRef(false),scheduleFit=useRef(()=>{});
+ const list=useRef<HTMLDivElement>(null),measuredPage=useRef(''),loaded=useRef(false),scheduleFit=useRef(()=>{}),pageSize=useRef(10),fullPageFont=useRef('16px');
  const [ready,setReady]=useState(false);
  useEffect(()=>{
   const root=list.current;if(!root)return;let frame=0,active=true;let timer:ReturnType<typeof setTimeout>|null=null;
   const measure=()=>{
-   if(!active)return;if(innerWidth<768){root.style.removeProperty('--list-font');setReady(loaded.current);return;}
+   if(!active)return;
+   // A short last page keeps the full-page type and row height instead of stretching to fill the drawer.
+   const partial=root.querySelectorAll('[data-company-row]').length<pageSize.current;root.dataset.partial=String(partial);
+   if(innerWidth<768){root.style.removeProperty('--list-font');setReady(loaded.current);return;}
    root.style.setProperty('--list-font','16px');
    const textFits=()=>[...root.querySelectorAll('tbody th,tbody td')].every(cell=>{
     const bounds=cell.getBoundingClientRect(),walker=document.createTreeWalker(cell,NodeFilter.SHOW_TEXT);
@@ -50,11 +53,12 @@ export function CompanyList({entries}:{entries:ResultEntry[]}) {
     if(used>available)break;rows++;
    }
    if(rows<rendered.length){delete root.dataset.measuring;setReady(false);setSize(Math.max(1,rows));return;}
+   if(partial){root.style.setProperty('--list-font',fullPageFont.current);delete root.dataset.measuring;setReady(loaded.current);return;}
    // A table can paint into the footer without increasing the root scrollHeight.
    const tableFits=()=>{const table=root.querySelector('table'),nav=root.querySelector('nav');return !table||!nav||table.getBoundingClientRect().bottom<=nav.getBoundingClientRect().top-7;};
    let low=16,high=24;
    for(let i=0;i<7;i++){const mid=(low+high)/2;root.style.setProperty('--list-font',`${mid}px`);if(root.scrollHeight<=root.clientHeight+1&&tableFits()&&textFits())low=mid;else high=mid;}
-   root.style.setProperty('--list-font',`${low}px`);delete root.dataset.measuring;setReady(loaded.current);
+   fullPageFont.current=`${low}px`;root.style.setProperty('--list-font',fullPageFont.current);delete root.dataset.measuring;setReady(loaded.current);
   };
   // Paint the drawer controls before fitting its loaded rows. Coalesce all refits.
   const fit=()=>{if(frame||timer!==null||!active)return;frame=requestAnimationFrame(()=>{frame=0;timer=setTimeout(()=>{timer=null;measure();},0);});};
@@ -65,6 +69,7 @@ export function CompanyList({entries}:{entries:ResultEntry[]}) {
   return()=>{active=false;scheduleFit.current=()=>{};observer.disconnect();resize.disconnect();cancelAnimationFrame(frame);if(timer!==null)clearTimeout(timer);};
  },[]);
  const [sort,setSort]=useState<Column>('return'),[direction,setDirection]=useState(-1),[page,setPage]=useState(0),[size,setSize]=useState(10);
+ pageSize.current=size;
  useEffect(()=>{const resize=()=>{setReady(false);setSize(Math.max(3,Math.floor((window.innerHeight-120)/(window.innerWidth<768?60:55))));scheduleFit.current();};resize();window.addEventListener('resize',resize);return()=>window.removeEventListener('resize',resize);},[]);
  const companies=useMemo(()=>mainCompanies(entries).sort((a,b)=>{
   if(sort==='name')return direction*a.name.localeCompare(b.name);

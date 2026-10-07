@@ -76,5 +76,5 @@
  /* WebKit does not shrink a 100%-height table in a flex column for its footer. */
  .value-page dialog[data-side-panel] .compact-company-list {display:grid;grid-template-rows:minmax(0,1fr) auto;row-gap:8px}
  .value-page dialog[data-side-panel] .compact-company-list nav {margin-top:0}
- .value-page dialog[data-side-panel] .compact-company-list[data-measuring=true] table {align-self:start}
+ .value-page dialog[data-side-panel] .compact-company-list:is([data-measuring=true],[data-partial=true]) table {align-self:start}
 }

@@ -1,0 +1,129 @@
+NOT
+
+All valuation and price rules have now been reviewed. The audit found a genuine duplicate stock-compensation charge and a normalization rule that can anchor growing businesses to their much smaller past size. None of the two proposed numerical corrections, or their combination, passed your frozen ship rule. They are rejected for this release without retuning. Method remains **3.5.0**, with no numerical rule or threshold changes. The code corrects cash-conversion presentation and inaccurate method explanations.
+
+**GOOGL:** the live 0.75× economics result is five-year owner earnings divided by five-year profit, not the median annual ratio. The annual median is 0.77× and the latest annual ratio 0.81×; these numbers are mathematically consistent. The old labels and annual pass marks were misleading. Both tile and drawer now distinguish “Five-year totals,” “Annual median,” and the latest dated observation; the chart shows annual context without pretending each year decides the five-year rule. Its live failing economics verdict, approximately $115/share value and non-buy remain. Correcting the duplicate expense alone would give approximately 0.99× conversion, all five quality passes and $151 value; combined with the scale correction, approximately $219. Those are rejected experiments, not release values or approvals.
+
+**NVDA:** all five quality tests pass, but valuation uses approximately $26.65bn normalized owner earnings versus $113.68bn in the latest annual period. Raw operating-margin variation of 0.400 also exceeds the 0.35 cyclical boundary, excludes the compounder tier and imposes a 50% safety discount despite improving margins. The current-scale experiment gives about $80/share; adding the expense correction gives about $90, versus $25 live. It remains a non-buy at the supplied $239 price in every experiment. The release retains its live valuation and verdict.
+
+**Why NOT:** the ordinary publisher fails its issuer-alias invariant after dropping published canonical dossiers RACE.MI and STLAM.MI; the REAL publisher also fails the logo/valuation coverage safeguards, as detailed below. In addition, concurrent activity changed 1,309 live source files after this task bound its independent snapshot. The archive matched at the initial check; by the final check its commit had advanced independently from the bound commit, which is another binding failure. The failed candidate also exposes 33 comparable valuations becoming unavailable under existing publication calculations. These blockers make the bundle unsuitable for installation. No external push, live publication, runner pause, lock access, live-corpus write or EODHD acquisition occurred. Controller commands refuse a NOT bundle.
+
+The accounting finding is not disproved by the historical return gate. A lower portfolio return does not make charging an expense twice correct. This task honors your performance-based ship restriction and records that the accounting defect remains unresolved.
+
+**What each valuation rule does, and what was wrong**
+
+| Rule | Plain-language purpose | Finding and release decision |
+| --- | --- | --- |
+| Owner-earnings bridge / maintenance versus growth capex | Estimate money owners can withdraw after maintaining competitive capacity. | Asset-to-sales estimates can confuse capacity investment and upkeep; working-capital treatment differs between NI and cash-flow paths. No evidenced replacement upkeep fraction; unchanged. |
+| Stock compensation | Charge employee equity compensation as a real expense. | **Wrong on the NI path:** NI already includes the cost and the bridge subtracts it again. OCF adds it back, so OCF must subtract it. Correction tested and rejected by ship gate; defect explicitly documented. |
+| Leases and parent ownership | Leave only cash attributable to common owners after lease obligations. | Cash repayments or a 20%-of-liability proxy can mismatch lease accounting and overlap OCF deductions; no reliable issuer-wide replacement established. |
+| min(median, latest, TTM) normalization | Avoid capitalizing a peak or ignoring deterioration. | **Stale scale bias:** five-year dollar median penalizes expansion; any low latest/TTM year can dominate. TTM also deducts full capex rather than estimated maintenance. Current-scale correction tested and rejected. |
+| Growth estimate / 8% cap | Limit forecasts to growth supported by per-share results and reinvestment returns. | The minimum of noisy growth estimates can force zero; acquisition proxy is imperfect. No evidence justifies raising caps to fit today's prices. |
+| Compounder tier / 12% cap | Recognize durable, high-return reinvestment when quality and a long positive record support it. | Hard eligibility gates and raw margin variability exclude some improving firms; SBC distortion feeds eligibility. No post-outcome relaxation. |
+| Revenue-decline override | Stop extrapolating near-term expansion through an observed three-year decline. | One trough can set growth to zero, after which the terminal fade rises to 3%; unchanged and disclosed. |
+| Forecast fade / terminal | Reduce confidence in distant growth and value the continuing business. | Terminal cash supplies about half of current operating value; 3% terminal growth can exceed depressed explicit growth. Financial growth can remain 6% perpetually. No calibrated replacement shipped. |
+| Required return | Compare owner cash with a bond alternative, adding four points and imposing a 10% floor. | Country/currency mismatches and present-day yields in historical inputs limit validity; NAV uses fixed 10%. No new rate fitting. |
+| Safety discount / MOS | Leave room for model error: 25/35/50%, or 15% for qualified compounders, with leverage floors. | Raw variability can punish steady improvement and adds conservatism on top of suppressed earnings. No evidenced tier change shipped. |
+| Expected-return hurdle | Require the same forecast's IRR to clear the opportunity-cost return. | With positive cash flows and consistent modeling, a positive MOS usually already clears that IRR; chiefly a consistency gate, not independent predictive evidence. |
+| Excess cash | Add distributable cash beyond a 2%-of-revenue operating reserve. | Fixed reserve may miss company needs; interest in NI can overlap the cash asset credit. GOOGL's large credit needs source scrutiny; no invented balance correction. |
+| Net debt | Match after-interest equity cash to equity valuation and raise caution for leverage. | Avoids subtracting debt twice, but maturity/refinancing/principal needs are not modeled. Lower normalized earnings also inflate debt years. |
+| Financial book-value path | Value common capital by sustainable distributable ROE, retention and growth. | Current book contrasts with stale operating earnings; perpetual 6% growth, end-equity ROE and regulatory-capital simplifications can favor finance. Existing 4×-book payout haircut now described accurately in IRR copy. |
+| Holding-company NAV path | Value future realization of net assets plus reinvested dividends. | Classification and realization assumptions remain; method text corrected to describe discounted ten-year realization and both 85% price gates. |
+| Cyclicals | Use through-cycle earning power and larger safety discounts. | Numeric margin variability can conflate secular improvement with cyclicality; historical numeric path lacks some current filing judgements. No return-fitted exception. |
+| Economics conversion ≥0.80 | Require five years of modeled owner cash to support reported profit. | Numerator inherits the duplicate SBC charge and upkeep estimation; ratio weights profit, not years equally. Threshold stays 0.80; display now identifies the actual aggregate. |
+
+Each rule's one-sentence Buffett/Munger principle, source path and failure modes are in the frozen [audit inventory](/Users/miki/data/value-rules/research/valuation/audit-inventory.md). These are our operational rules, not numerical prescriptions attributed to Buffett or Munger. Primary principles: [1986 owner earnings](https://www.berkshirehathaway.com/letters/1986.html), [1992 cash flows, growth and safety](https://www.berkshirehathaway.com/letters/1992.html), [2015 stock compensation](https://www.berkshirehathaway.com/letters/2015ltr.pdf).
+
+**Frozen protocol and evidence**
+
+Phase 1 was written and SHA-256 frozen at 08:57:09 UTC on 2026-10-07 before production changes. Candidate principles and parameters were frozen at 08:59:20; implementation at 09:00:20; evaluation source at 09:04:16, before the one-time return evaluation. Seals are under `research/valuation/*freeze.json`. No economic parameters were retuned after evaluation.
+
+The SBC candidate uses an accounting identity with no fitted parameter. The scale candidate uses median five-year owner margin × current annual revenue only for already quality-passing operating firms with existing 8-observation and 20% ROIC / 15% total-capital-return hurdles, five positive consecutive owner-earnings years and positive revenue. It retains latest/TTM downside caps, all growth/MOS rules and raw cyclicality. The combined candidate cannot rescue a failing component. Exact prior declarations and bridge rules are in [protocol.json](/Users/miki/data/value-rules/research/valuation/protocol.json).
+
+Historical replay covers 2,058 identities and 99,691 company-quarter records: 93,961 paired, 5,572 reporting/trading-currency mismatches and 158 unavailable snapshots. Unpaired decisions are held identically across portfolio arms. Training signals run US 2005Q1–2015Q3 with returns ending 2015-12-31. International is tested in both periods; later signals run 2016Q1–2026Q2 through 2026-09-30. **Every US 2016–2026 result is CONTAMINATED**, including raw files whose period field is “later.” Three/five-year outcomes mature entirely inside their split.
+
+Portfolios use the earlier corrected research-1 protocol: next local close, adjusted daily returns and USD FX, equal weights, 10bp entry and exit costs, missing allocations held as zero-yield cash. This is a retrospective surviving/restated corpus with current bond yields, classifications, some retrospective filing judgements, missing failures/delistings and imperfect corporate actions/FX. It is not a prospective tradable performance claim. Repeated company-quarter horizons are dependent; no independent-observation significance claim is made. Missing international allocations materially limit inference and are listed in every gate row.
+
+**Fixed ship result**
+
+Each required US-training and international scope must have CAGR no more than 0.25 percentage point below baseline, drawdown no more than 2 points worse, and no majority of losing matured 3y outcomes among new buy records. All candidates pass the recorded loser-majority test but fail one or more performance gates. Positive drawdown deltas below mean improvement; negative mean deterioration.
+
+| Scope | Period | Candidate | CAGR Δ pp | Drawdown Δ pp | Ship gate |
+| --- | --- | --- | --- | --- | --- |
+| US | 2005–2015 | sbc_once | +0.218 | -0.672 | PASS |
+| US | 2005–2015 | current_scale | +0.775 | -0.357 | PASS |
+| US | 2005–2015 | combined | +0.061 | -2.184 | FAIL |
+| US | 2016–2026 CONTAMINATED | sbc_once | -1.280 | +4.594 | Diagnostic only |
+| US | 2016–2026 CONTAMINATED | current_scale | +4.180 | +5.047 | PASS |
+| US | 2016–2026 CONTAMINATED | combined | -0.747 | +7.216 | Diagnostic only |
+| Western_nonUS | 2005–2015 | sbc_once | -0.714 | -0.842 | FAIL |
+| Western_nonUS | 2005–2015 | current_scale | +1.086 | +2.159 | PASS |
+| Western_nonUS | 2005–2015 | combined | +1.723 | +8.011 | PASS |
+| Western_nonUS | 2016–2026 | sbc_once | -0.399 | +0.621 | FAIL |
+| Western_nonUS | 2016–2026 | current_scale | -0.327 | +2.979 | FAIL |
+| Western_nonUS | 2016–2026 | combined | -1.443 | +2.119 | FAIL |
+| all_nonUS | 2005–2015 | sbc_once | -0.613 | -0.900 | FAIL |
+| all_nonUS | 2005–2015 | current_scale | +1.359 | +1.818 | PASS |
+| all_nonUS | 2005–2015 | combined | +1.921 | +7.995 | PASS |
+| all_nonUS | 2016–2026 | sbc_once | -0.295 | -0.535 | FAIL |
+| all_nonUS | 2016–2026 | current_scale | -0.019 | +0.000 | PASS |
+| all_nonUS | 2016–2026 | combined | -0.484 | -0.535 | FAIL |
+
+SBC fails international CAGR tolerances, including −0.714pp Western training. Current-scale passes US training and international training but fails Western later CAGR by −0.327pp, beyond the allowed −0.25pp. The combined version also worsens US-training drawdown by 2.184pp and fails later international CAGR. The combined version is rejected independently and because its components failed. No rejected rule is present in production.
+
+New-buy outcomes include below-cohort-median and top-decile counts, unique-company counts and company-averaged losses—not only the majority-loss pass flag—in `outputs/new-buy-summary.csv`. Missing outcomes are never wins. Required Western later newly qualifying observations lost money in 11/23 SBC cases, 7/30 scale cases and 18/53 combined cases. The comprehensive all-non-US portfolios have hundreds of missing allocations (baseline 417 later, scale 445), so passing that broader scope does not rescue the failing Western result.
+
+**Predictive value and iconic cases**
+
+In US training, mean within-quarter Spearman correlation of price/value with 3y/5y returns is −0.0077 / +0.0361; expected return is +0.0079 / −0.0263. The direction reverses at five years. International relationships mostly favor cheaper/higher-estimated-return stocks, but are small. Full horizons, quintiles, hit rates and denominators are in `baseline-predictiveness.csv`, `quarter-correlations.csv` and `correlation-summary.csv`; the frozen phase-1 report prints all correlation tables. This does not validate precise intrinsic values.
+
+Available-history buys: GOOGL 0, NVDA 0, MSFT 0, META 0, V 0, MA 0, COST 0, ASML 0, LVMH 0; Apple 5, all later-US **CONTAMINATED**. Microsoft passed price in ten training quarters but failed the combined quality screen. These are counts in available history, not lifetime claims. A positive modeled value always implies some positive buy price, so “never at any realistic price” is an empirical selectivity problem, not a mathematical impossibility. `iconic-buy-frequency.csv` supplies every company/period denominator and price/value ratio.
+
+The opposite failure also exists: baseline buys lost 73.26% over three years for Jupiter Asset Management (2019Q3), 59.03% for Morgan Stanley (2007Q3), 52.74% for Globe Life (2006Q1) and 51.91% for Continental (2019Q3). All passed the then-modeled quality screen. The 269 negative 3y/5y records in `losing-buys.csv` are not 269 independent businesses. A subsequent loss does not prove a business was knowably weak at entry. The supplementary path comparison groups by listing venue, not archived country; see `audit-addendum.md` rather than mistaking it for the country-based ship test.
+
+Current operating values use growth with median 0%, versus 6% for financials. Of 2,147 operating valuations, 351 start below half their latest annual owner earnings; median terminal contribution is 49.86%. The single-outlier exposure is asymmetric by construction: the median rejects one unusually high year, but a low latest/complete-TTM result always binds the minimum. Candidate checks explicitly retain downturn caps. No generic relaxation was inferred from NVDA alone.
+
+**Every current experimental and release change**
+
+The same-input diagnostic evaluated 3,914 current companies; 457190.KO lacks persisted inputs. Baseline diagnostics can differ from the live published record because the ordinary current analysis also uses balance/source corrections; these discrepancies are recorded, not silently treated as rule effects. `current-experimental-changes.csv` enumerates every changed quality mask, valuation, price verdict and buy across each rejected candidate, with reasons. `rejected-experimental-buy-proposals.json` retains every hypothetical buy flip as unapproved and rejected; it is separate from actual release proposals. No hypothetical candidate row enters the release.
+
+| Rejected candidate | Changed rows | Quality | Value | Price verdict | Buy proposals |
+| --- | --- | --- | --- | --- | --- |
+| sbc_once | 1607 | 167 | 1564 | 154 | 7 |
+| current_scale | 115 | 0 | 115 | 9 | 4 |
+| combined | 1633 | 167 | 1590 | 161 | 10 |
+
+All 21 experimental buy-flip records are rejected and unapproved; records can repeat a company across candidates.
+
+Failed ordinary-export comparison (diagnostic only): 3,915 → 3,913 dossiers; 8 quality changes, 311 valuation/MOS changes, 11 price-verdict changes and **0 buy changes**. Every actual changed row, observed valuation-input differences and reasons are in [current-release-changes.json](/Users/miki/data/value-rules/docs/value/rules-5/evidence/current-release-changes.json) and its CSV companion. There are 5 actual proposed transitions held at the complete live record and zero approved flips; detailed evidence is in `proposed-buy-approvals.json`. All 151 legacy frozen dossiers remain identical.
+
+| Quality change | Before → after | Existing publication reasons |
+| --- | --- | --- |
+| CNU.AU | PFFPP → PFFFP | ROIC first 3 years vs last 3 years: 3.9% vs 3.2%; Per-share earnings: 0.19 to 0.01 (three-year endpoint medians); per-share value declined or ends nonpositive |
+| EC.US | PFFFP → PFFPP | potential debt-funded buybacks (informational); ROIC first 3 years vs last 3 years: 12.9% vs 13.6%; Per-share earnings: 1190.70 to 6732.62 (three-year endpoint medians) |
+| EDV.LSE | FFPPP → FFPFP | buybacks unrelated to price (informational); ROIC first 3 years vs last 3 years: 5.0% vs 7.8%; Per-share earnings: -0.26 to -0.85 (three-year endpoint medians); per-share value declined or ends nonpositive |
+| KEP1.F | PFFFP → PFFPP | potential debt-funded buybacks (informational); ROIC first 3 years vs last 3 years: 3.8% vs 4.6%; Per-share earnings: 0.25 to 0.53 (three-year endpoint medians) |
+| SNZ.AU | FFFFP → FFFPP | ROIC first 3 years vs last 3 years: 1.3% vs 0.3%; Per-share earnings: 0.66 to 1.44 (three-year endpoint medians) |
+| SPK.AU | FFFFP → FFFPP | ROIC first 3 years vs last 3 years: 15.6% vs 10.0%; Per-share earnings: -0.00 to 0.17 (three-year endpoint medians) |
+| U1O.F | PFPFP → PFPPP | ROIC first 3 years vs last 3 years: 2.5% vs 4.0%; Per-share earnings: 0.57 to 0.57 (three-year endpoint medians) |
+| WIT.US | PPPFP → PPPPP | ROIC first 3 years vs last 3 years: 37.7% vs 69.9%; Per-share earnings: 6.54 to 12.52 (three-year endpoint medians) |
+
+All 311 valuation changes (271 changed ranges, seven newly available, 33 removed), all 11 price-verdict changes and all 317 changed identities are enumerated in the linked JSON/CSV. These are existing source/publication differences, not effects of the presentation patch, and are not approved for installation by this report. Missing canonicals RACE.MI/STLAM.MI are separately recorded as coverage losses.
+
+**Release verification and delivery**
+
+The browser targets are GOOGL, NVDA, MSFT, AAPL and COST at 1728×970 and 390×844. All five have changed conversion presentation; they are not represented as shipped numerical verdict changes. The baseline browser uses the original 800a816 source and archive; the candidate uses the edited source and ordinary exported store. Both raw strict findings and their exact comparison are retained, including pre-existing findings rather than claiming a clean raw gate.
+
+Full unit suite: **2,490 passed, 1 skipped across 258 files**. All 24 focused presentation/cross-surface tests passed after the final copy edit. Production build and TypeScript passed; an interrupted rebuild is retained separately from the successful run. Full ordinary analysis returned exit 1 for expected cache refusals: 38,279 jobs, 0 written, 38268 unchanged, 11 refusals retained byte-identically, zero fresh provider calls.
+
+Ordinary `publish --out`: **FAIL: Publish invariant: invalid issuer alias RACE.US -> RACE.MI**. The **REAL publisher without --out**, with a local bare remote and stub Blob: **FAIL: CRITICAL: publication coverage invariant: valuation 2434->2407, drop=27, tolerance=24.34; ids=BBWI.US,BGEO.LSE,BI0.F,BWA.US,CDEVY.US,CLILF.US,CPAMF.US,CRI.US,DY.US,EBO.AU,EC.US,FRLOF.US,FRW.AU,GIGNF.US,GM.US,GPOR.US,GRBK.US,GTX.US,KN.US,KSPI.US,M2L.F,MAPGF.US,MKL.US,NK7.F,OCA.AU,RACE.MI,RH.US,SCRPF.US,T6W.F,TBCG.LSE,U1O.F,VEM.F,WING.US,WIT.US**. Post-publication validation: **BLOCKED by failed REAL publication**. The local remote stayed at the bound archive commit and no Blob files were uploaded. The two failed snapshots matched across 2,175 index/dossier/search files after removing only run-clock story timestamps; matching invalid snapshots remain invalid. The calibration stage did run on the real path. No invariant was bypassed and no fake success receipt was created.
+
+Browser comparison: 130 candidate and 130 original states; 30 quality-surface audits and 10 price-surface audits; 0 new layout findings, 0 new semantic findings. 16 unchanged semantic findings are detailed in `browser-comparison.json`; raw flags and screenshots remain in the evidence archive. The first UI run found 58 new clipped-text findings after annual marks activated a list layout. The final version keeps those four-column annual histories tabular and uses a concise formula note; the failed run is retained separately. This passes the final comparison gate, not the raw strict gate: legacy issues include hidden price-math tables and different fiscal share observations in NVDA/AAPL. All five economics surfaces pass the updated aggregate/annual checks at both sizes. The ten final economics screenshots are retained in [evidence/screenshots](/Users/miki/data/value-rules/docs/value/rules-5/evidence/screenshots), and full raw runs are in the bundle. Browser targets are present in the failed export; this UI check does not turn that export into a valid complete release.
+
+Source binding: 788,742 files and 6,278 published archive files, archive commit `21e6ab4decccd7832b507e43347993dabc5926af`. Integrity recheck found **1,309 changed live source files**: 1,127 share checks, 175 share histories, four share covers and three usage/budget records. At follow-up 295 share checks had changed from verified to pending. Final archive recheck: 0 changed files, commit match False (final commit `c6b12018c04a6a70bdaa41cd58844c2f941062cd`). This blocks installation independently of the publisher failure. Isolation receipts confirm loopback only, zero external routes and a read-only live-corpus mount. Known-secret scanning found zero exposed values. Minimum recorded free bytes: `{'/': 8642220032, '/Users/miki/data': 14210838528}`.
+
+The new bundle is `/Users/miki/data/value-rules/release-bundle-rules-5/`; the owner's existing `release-bundle/` and controller backups are untouched. The manifest is bound to the final code commit and stays NOT because publication failed and the source drifted. `approved-verdict-changes.json` is empty; proposal files confer no approval. `controller-commands.md` provides exact-hash installation checks and the controller-only procedure, but must not be executed against this NOT bundle. Resolve the canonical coverage loss and investigate the removed comparable values, then run a fresh proof against idle source inputs before release; weakening the source guard is not an alternative.
+
+Disposable task corpus, baseline/candidate stores, copied engines, local remote/Blob, temporary files and build output are deleted after packaging. Raw research replays and immutable engine sources are retained in the checksummed `research/valuation/outputs/replay-evidence.tar.gz`; release evidence/screenshots and candidate/overlay artifacts are retained in the new bundle. Cleanup receipt records removed paths and final disk space. No owner-created copy or backup was removed.
+
+Commit subject: `value: valuation rules reviewed`. The final commit hash is recorded in the external bundle manifest and owner delivery receipt to avoid self-referential committed hashes. Reproduction instructions and all data limitations are in `research/valuation/README.md`.

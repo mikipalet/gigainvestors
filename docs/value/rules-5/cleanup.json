@@ -1,0 +1,25 @@
+{
+  "complete": true,
+  "removed": [
+    "/Users/miki/data/value-rules/.audit/rules-5/corpus",
+    "/Users/miki/data/value-rules/.audit/rules-5/baseline",
+    "/Users/miki/data/value-rules/.audit/rules-5/baseline-code",
+    "/Users/miki/data/value-rules/.audit/rules-5/candidate-final",
+    "/Users/miki/data/value-rules/.audit/rules-5/storage",
+    "/Users/miki/data/value-rules/.audit/rules-5/tmp",
+    "/Users/miki/data/value-rules/.audit/rules-5/harness-bin",
+    "/Users/miki/data/value-rules/.audit/rules-5/sbc_once",
+    "/Users/miki/data/value-rules/.audit/rules-5/current_scale",
+    "/Users/miki/data/value-rules/.audit/rules-5/combined",
+    "/Users/miki/data/value-rules/.audit/rules-5/replay",
+    "/Users/miki/data/value-rules/.audit/rules-5/harness.env",
+    "/Users/miki/data/value-rules/.next",
+    "/Users/miki/data/value-rules/research/valuation/outputs/baseline",
+    "/Users/miki/data/value-rules/research/valuation/outputs/candidate"
+  ],
+  "retained": "Original owner release-bundle, controller-backup, controller-runner-paused.resumed.json, tmp and dependency symlink are untouched. New release-bundle-rules-5 and committed evidence retained.",
+  "freeBytes": {
+    "/": 8872620032,
+    "/Users/miki/data": 139880849408
+  }
+}

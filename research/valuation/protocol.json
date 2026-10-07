@@ -1,0 +1,31 @@
+{
+  "baseline": "800a816",
+  "method_target_if_rules_ship": "3.6.0",
+  "audit": "phase-1-report.md",
+  "candidates": {
+    "sbc_once": {
+      "principle": "Employee stock compensation is a real cost and must be charged exactly once, whether the bridge starts from net income or operating cash flow.",
+      "rule": "On the NI+D&A bridge remove the second subtraction of stock compensation; on the OCF bridge retain the SBC subtraction. Retain maintenance investment, leases, parent allocation, dilution and SBC/OCF accounting checks. Bridge disclosure charges zero additional SBC when it is already in NI, and explicitly names that basis.",
+      "parameters": "Accounting identity; no fitted parameter."
+    },
+    "current_scale": {
+      "principle": "For an established high-return business, normalize profitability through the cycle at the business's current scale instead of treating its smaller past size as a permanent earnings ceiling.",
+      "rule": "For v2 operating companies with all five quality tests passing, at least eight finite ten-year ROIC observations with median >=20%, and at least eight finite owner-earnings returns on total capital with median >=15%, require five complete consecutive positive owner-earnings observations with positive finite revenue. Normalize with median of those five owner-earnings/revenue margins multiplied by latest annual revenue, still capped by latest annual OE and available complete newer TTM OE. Otherwise retain min(5y median dollar OE, latest, TTM). Scale the median-margin observation's bridge components by latest revenue / that observation's revenue so the bridge exactly reconciles. Apply existing financing adjustment after selection. Raw variability and commodity classification continue to determine compounder exclusion and MOS; this normalization does not confer compounder status. Current sales are annual, never an optimistic extrapolation of TTM growth.",
+      "parameters": "Existing five-year normalization window, eight-observation minimum and 20%/15% capital-return hurdles. Median normal profitability times current scale is an accounting dimensional identity. No new return-fitted cutoffs."
+    },
+    "combined": {"principle": "A correct expense basis and a current business scale should be evaluated together only when each individually passes.","rule":"Both candidates together; cannot rescue a rejected component."}
+  },
+  "presentation": "Show the five-year ratio of totals as the decisive cash-conversion measure; annual median and latest are explicitly annual context, chart point labels are annual, and no individual annual row claims to decide the aggregate test. No threshold change.",
+  "unchanged": "All growth caps/estimates, fade/terminal, discount rate, MOS/leverage thresholds, financial and NAV formulas, .80 economics bar, quality rules other than the SBC numerator's consequences.",
+  "ship": {
+    "required_scopes": ["US_train", "Western_nonUS_train", "Western_nonUS_later", "all_nonUS_train", "all_nonUS_later"],
+    "diagnostic_scopes": ["US_later_CONTAMINATED"],
+    "cagr_change_min_pp": -0.25,
+    "drawdown_change_min_pp": -2,
+    "loser_dominance": "In EACH required scope/period, negative matured three-year total returns must not exceed half of observed NEWLY QUALIFYING BUY company-quarter records. Report missing outcomes, unique company counts, below-median/top-decile counts and unique-company averaged outcomes separately. Zero new buys is vacuous parity. Unobserved buys do not count as successes.",
+    "combination": "Every component and combined portfolio/new-buy gate must pass. No retuning after evaluation."
+  },
+  "measurement": "Same research-1 corrected portfolios: next local close after quarterly signal, dividend-adjusted daily returns, USD FX, equal weights, 10bp entry and exit, cash for missing allocations, zero cash yield. Train 2005Q1–2015Q3 ending2015-12-31, later2016Q1–2026Q2 ending2026-09-30. 3y/5y predictive cohorts mature entirely inside split. Preserve stored rows identically in both arms for the5,572 currency mismatches and158 unavailable snapshots; no fabricated FX.",
+  "approval": "Zero approved buy changes. List proposals with evidence; production continuity preserves full live records for any unapproved flip. Proposed is not approved.",
+  "restrictions": "No subagents, push, live publication, EODHD acquisition, daily-runner lock access or writes to live corpus. Copies deleted at end. Stop and commit below4GiB on / or ~/data."
+}

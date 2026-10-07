@@ -1,0 +1,89 @@
+▲ Next.js 16.3.3 (webpack)
+✓ Running next.config.ts took 46ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 95s
+  Running TypeScript ...
+  Finished TypeScript in 10.2s ...
+  Collecting page data using 15 workers ...
+  Generating static pages using 15 workers (0/222) ...
+  Generating static pages using 15 workers (55/222) 
+  Generating static pages using 15 workers (110/222) 
+  Generating static pages using 15 workers (166/222) 
+✓ Generating static pages using 15 workers (222/222) in 7.5s
+  Finalizing page optimization ...
+  Collecting build traces ...
+
+Route (app)                    Revalidate  Expire
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /.well-known/x402
+├   /[code]
+│ ├ ● /AIM
+│ ├ ● /JIM
+│ ├ ● /vg
+│ └ ● [+80 more paths]
+├ ○ /about
+├ ƒ /api/confirm
+├ ƒ /api/confirm-unsubscribe
+├ ƒ /api/inbound
+├ ƒ /api/newsletter-stats
+├ ƒ /api/resend-webhook
+├ ○ /api/search                        1d      1y
+├ ƒ /api/subscribe
+├ ƒ /api/unsubscribe
+├ ƒ /api/v1/[[...path]]
+├ ƒ /api/value/data/[...path]
+├ ƒ /api/value/logo
+├ ƒ /api/value/revalidate
+├ ○ /apple-icon.png
+├ ƒ /data/v/[...path]
+├ ○ /icon.svg
+├ ƒ /llms-full.txt
+├ ƒ /llms.txt
+├ ƒ /mcp
+├ ƒ /mcp.json
+├ ƒ /md/[...path]
+├ ƒ /md/home
+├ ƒ /md/i/[code]
+├   /md/issue/[issue]
+│ └ ● /md/issue/2026-q2
+├ ○ /md/missing
+├   /md/page/[slug]
+│ ├ ● /md/page/about
+│ └ ● /md/page/privacy
+├ ƒ /md/s/[ticker]
+├ ○ /munger
+├ ○ /newsletter
+├   /newsletter/[issue]
+│ └ ● /newsletter/2026-q2
+├ ○ /opengraph-image.png
+├ ○ /privacy
+├ ƒ /robots.txt
+├   /s/[ticker]
+│ ├ ● /s/AAPL                          1d      1y
+│ ├ ● /s/PLX.PA                        1d      1y
+│ ├ ● /s/7203.JP                       1d      1y
+│ └ ● [+5 more paths]
+├ ƒ /sitemap.xml
+├ ƒ /sitemaps/[part]
+├ ○ /unsubscribe
+├ ○ /value                             1d      1y
+├ ƒ /value/[id]
+├ ○ /value/forward                     1d      1y
+├ ○ /value/method
+├ ● /value/quarter/[quarter]
+├ ○ /value/sitemap.xml                 1d      1y
+└   /value/year/[year]
+  ├ ● /value/year/2005                 1d      1y
+  ├ ● /value/year/2006                 1d      1y
+  ├ ● /value/year/2007                 1d      1y
+  └ ● [+19 more paths]
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+

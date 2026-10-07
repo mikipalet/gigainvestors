@@ -58,8 +58,9 @@ export function auditTestSurfaces(d:Dossier,t:TestOutcome,tile:SurfaceSnapshot,d
  const summary=seriesSummary(m.series,m.chartBetter??(t.key==='understandable'?'higher':m.better),Infinity);
  if(summary&&!window){
   const format=m.chartFormat==='index'?'count':m.chartFormat==='ratio'?'x':m.chartFormat??(t.key==='understandable'&&m.id==='opMarginCv'?'pct':m.format);
-  const fmt=(n:number)=>formatMetric({value:n,format,currency,returnRatio:isCapitalReturn(m.chart)});
-  const wanted=[fmt(summary.median),fmt(summary.worst),fmt(summary.latest)];
+  const fmt=(n:number|null)=>formatMetric({value:n,format,currency,returnRatio:isCapitalReturn(m.chart)});
+  const wanted=m.id==='oeToNi'?[fmt(m.value),fmt(summary.median),fmt(summary.latest)]:[fmt(summary.median),fmt(summary.worst),fmt(summary.latest)];
+  if(m.id==='oeToNi'){same(tile.stats.slice(0,2).map(r=>r[0]),['Five-year totals','Annual median'],`${where} aggregate and annual labels`);same(drawer.stats.slice(0,2),tile.stats.slice(0,2),`${where} aggregate conversion basis`);}
   same(tile.stats.slice(0,3).map(r=>r[1]),wanted,`${where} tile median/worst/latest`);
   same(drawer.stats.slice(0,3).map(r=>r[1]),wanted,`${where} drawer median/worst/latest`);
  }
@@ -90,7 +91,7 @@ export function auditTestSurfaces(d:Dossier,t:TestOutcome,tile:SurfaceSnapshot,d
    expected.push(['Window',`${first[0]}–${yearLabel(last[0])}`]);same(drawer.stats,expected,`${where} financial accounting context`);
   }
  }else if(summary){
-  const bar=m.id==='opMarginCv'&&t.metrics.opMarginRecoveredDip===1?'Recovered dip; adjusted CV ≤ 0.35':m.id==='opMarginCv'&&t.metrics.opMarginImproving===1?'Steady or improving':m.id==='opMarginCv'?`CV ≤ ${fmt(m.threshold,'x')}`:m.chartThreshold===null?'Over the window':`${(m.chartBetter??m.better)==='higher'?'≥':'<'} ${fmt(m.chartThreshold??m.threshold)}`;
+  const bar=m.id==='oeToNi'?`≥ ${fmt(m.threshold)} (5y totals)`:m.id==='opMarginCv'&&t.metrics.opMarginRecoveredDip===1?'Recovered dip; adjusted CV ≤ 0.35':m.id==='opMarginCv'&&t.metrics.opMarginImproving===1?'Steady or improving':m.id==='opMarginCv'?`CV ≤ ${fmt(m.threshold,'x')}`:m.chartThreshold===null?'Over the window':`${(m.chartBetter??m.better)==='higher'?'≥':'<'} ${fmt(m.chartThreshold??m.threshold)}`;
   same(drawer.stats.slice(3),[['Passing bar',bar],['Window',`${m.series.filter(p=>p[1]!=null&&Number.isFinite(p[1]))[0]?.[0]}–${yearLabel(m.series.filter(p=>p[1]!=null&&Number.isFinite(p[1])).at(-1)?.[0])}`]],`${where} threshold and observation count`);
  }else{
   same(drawer.stats,[[m.label,fmt(m.value,m.format)],['Passing bar',fmt(m.threshold,m.format)],['Years',String(table.rows.length)]],`${where} scalar drawer numbers`);

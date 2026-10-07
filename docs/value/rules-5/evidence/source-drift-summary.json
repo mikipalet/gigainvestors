@@ -1,0 +1,15 @@
+{
+  "snapshotRecheckMismatches": 1309,
+  "categories": {
+    "enrichment-v7": 1306,
+    "price-story": 2,
+    "usage": 1
+  },
+  "shareCheckStatusTransitionsObservedAtFollowup": {
+    "verified \u2192 pending": 295,
+    "verified \u2192 verified": 705,
+    "pending \u2192 pending": 127
+  },
+  "interpretation": "Concurrent live writes were not made by this task. Semantic share-check changes invalidate installation against the old snapshot. No automatic rebind or weakening of source hashes.",
+  "archiveMismatches": []
+}

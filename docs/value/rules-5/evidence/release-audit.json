@@ -1,0 +1,19 @@
+{
+  "baselineDossiers": 3915,
+  "candidateDossiers": 3913,
+  "indexedBefore": 3910,
+  "indexedAfter": 3908,
+  "missing": [
+    "RACE.MI",
+    "STLAM.MI"
+  ],
+  "added": [],
+  "changes": 317,
+  "qualityChanges": 8,
+  "valuationChanges": 311,
+  "priceChanges": 11,
+  "buyChanges": [],
+  "frozenRecords": 151,
+  "frozenRecordChanges": [],
+  "approvedBuyChanges": []
+}

@@ -1,0 +1,15 @@
+{
+  "ordinaryExit": 1,
+  "ordinaryFailure": "Publish invariant: invalid issuer alias RACE.US -> RACE.MI",
+  "realExit": 1,
+  "realCoverageFailures": [
+    "CRITICAL: publication coverage invariant: logos 3885->3883, drop=2, tolerance=0; ids=RACE.MI,STLAM.MI",
+    "CRITICAL: publication coverage invariant: valuation 2434->2407, drop=27, tolerance=24.34; ids=BBWI.US,BGEO.LSE,BI0.F,BWA.US,CDEVY.US,CLILF.US,CPAMF.US,CRI.US,DY.US,EBO.AU,EC.US,FRLOF.US,FRW.AU,GIGNF.US,GM.US,GPOR.US,GRBK.US,GTX.US,KN.US,KSPI.US,M2L.F,MAPGF.US,MKL.US,NK7.F,OCA.AU,RACE.MI,RH.US,SCRPF.US,T6W.F,TBCG.LSE,U1O.F,VEM.F,WING.US,WIT.US"
+  ],
+  "missingCanonicalDossiers": [
+    "RACE.MI",
+    "STLAM.MI"
+  ],
+  "sourceDrift": 1309,
+  "disposition": "NOT; preserve guards and full failed evidence. No production publication-policy change in this review."
+}

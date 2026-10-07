@@ -1,0 +1,137 @@
+US train baseline 7.9812 -51.8214 missing 0
+US train sbc_once 8.1994 -52.4933 missing 0
+US train current_scale 8.7562 -52.1784 missing 0
+US train combined 8.0425 -54.0058 missing 0
+US later baseline 18.9969 -38.1425 missing 0
+US later sbc_once 17.7169 -33.5488 missing 0
+US later current_scale 23.1773 -33.0959 missing 0
+US later combined 18.2496 -30.9263 missing 0
+Western_nonUS train baseline -1.6571 -67.57 missing 2
+Western_nonUS train sbc_once -2.3707 -68.4118 missing 2
+Western_nonUS train current_scale -0.5713 -65.4108 missing 2
+Western_nonUS train combined 0.0662 -59.5588 missing 2
+Western_nonUS later baseline 15.1236 -51.0649 missing 0
+Western_nonUS later sbc_once 14.7249 -50.4444 missing 0
+Western_nonUS later current_scale 14.7962 -48.0856 missing 0
+Western_nonUS later combined 13.6808 -48.9454 missing 0
+all_nonUS train baseline -1.7985 -65.3096 missing 44
+all_nonUS train sbc_once -2.4114 -66.2101 missing 44
+all_nonUS train current_scale -0.4391 -63.4914 missing 55
+all_nonUS train combined 0.1226 -57.3146 missing 54
+all_nonUS later baseline 8.8691 -25.3936 missing 417
+all_nonUS later sbc_once 8.5742 -25.9289 missing 419
+all_nonUS later current_scale 8.8498 -25.3936 missing 445
+all_nonUS later combined 8.3852 -25.9289 missing 446
+{
+  "accepted": {
+    "sbc_once": false,
+    "current_scale": false,
+    "combined": false
+  },
+  "failures": [
+    {
+      "scope": "US",
+      "period": "train",
+      "variant": "combined",
+      "required": true,
+      "cagr_change_pp": 0.06132337080000383,
+      "drawdown_change_pp": -2.184313633030488,
+      "performance_pass": false,
+      "not_loser_dominated": true,
+      "passes": false,
+      "missing_baseline": 0,
+      "missing_candidate": 0
+    },
+    {
+      "scope": "Western_nonUS",
+      "period": "train",
+      "variant": "sbc_once",
+      "required": true,
+      "cagr_change_pp": -0.7136908010316301,
+      "drawdown_change_pp": -0.8418005245430571,
+      "performance_pass": false,
+      "not_loser_dominated": true,
+      "passes": false,
+      "missing_baseline": 2,
+      "missing_candidate": 2
+    },
+    {
+      "scope": "Western_nonUS",
+      "period": "later",
+      "variant": "sbc_once",
+      "required": true,
+      "cagr_change_pp": -0.3986941376243003,
+      "drawdown_change_pp": 0.620505994493481,
+      "performance_pass": false,
+      "not_loser_dominated": true,
+      "passes": false,
+      "missing_baseline": 0,
+      "missing_candidate": 0
+    },
+    {
+      "scope": "Western_nonUS",
+      "period": "later",
+      "variant": "current_scale",
+      "required": true,
+      "cagr_change_pp": -0.32743292353332176,
+      "drawdown_change_pp": 2.9792671639133905,
+      "performance_pass": false,
+      "not_loser_dominated": true,
+      "passes": false,
+      "missing_baseline": 0,
+      "missing_candidate": 0
+    },
+    {
+      "scope": "Western_nonUS",
+      "period": "later",
+      "variant": "combined",
+      "required": true,
+      "cagr_change_pp": -1.4427876091878566,
+      "drawdown_change_pp": 2.1194679598340316,
+      "performance_pass": false,
+      "not_loser_dominated": true,
+      "passes": false,
+      "missing_baseline": 0,
+      "missing_candidate": 0
+    },
+    {
+      "scope": "all_nonUS",
+      "period": "train",
+      "variant": "sbc_once",
+      "required": true,
+      "cagr_change_pp": -0.6129117246898241,
+      "drawdown_change_pp": -0.9004747105306965,
+      "performance_pass": false,
+      "not_loser_dominated": true,
+      "passes": false,
+      "missing_baseline": 44,
+      "missing_candidate": 44
+    },
+    {
+      "scope": "all_nonUS",
+      "period": "later",
+      "variant": "sbc_once",
+      "required": true,
+      "cagr_change_pp": -0.2948936813419234,
+      "drawdown_change_pp": -0.5353026631932378,
+      "performance_pass": false,
+      "not_loser_dominated": true,
+      "passes": false,
+      "missing_baseline": 417,
+      "missing_candidate": 419
+    },
+    {
+      "scope": "all_nonUS",
+      "period": "later",
+      "variant": "combined",
+      "required": true,
+      "cagr_change_pp": -0.4838824179183687,
+      "drawdown_change_pp": -0.5353026631932378,
+      "performance_pass": false,
+      "not_loser_dominated": true,
+      "passes": false,
+      "missing_baseline": 417,
+      "missing_candidate": 446
+    }
+  ]
+}

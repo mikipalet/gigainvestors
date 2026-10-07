@@ -36,7 +36,7 @@ export function tileMetric(test:TestOutcome,kind:Kind,netIncome:Series=[]):TileM
    const income=new Map(netIncome),end=Math.max(...(test.series.ownerEarnings??[]).map(p=>p[0]));
    const series:Series=(test.series.ownerEarnings??[]).filter(([fy])=>fy>end-5&&income.has(fy)).map(([fy,oe])=>[fy,oe===null||!income.get(fy)?null:oe/income.get(fy)!]);
    if(m.oeToNi==null && m.ownerEarningsTotal!=null)return {...metric('ownerEarningsTotal','Owner earnings, five-year total','money',0,'higher',m.consolidatedCashConversion?[]:(test.series.ownerEarnings??[]).slice(-5),'Owner earnings · five years'),chartFormat:'money'};
-   return metric('oeToNi',m.consolidatedCashConversion?'consolidated cash / profit':'owner cash / profit','x',T.economics.oeToNi,'higher',m.consolidatedCashConversion?[]:series,'Annual owner cash / profit · five years');
+   return {...metric('oeToNi',m.consolidatedCashConversion?'consolidated cash / profit':'owner cash / profit','x',T.economics.oeToNi,'higher',m.consolidatedCashConversion?[]:series,'Annual owner cash / profit'),chartThreshold:null};
   }
   case 'management':
    if(m.retainedEarnings!=null&&m.marketCapGain!=null&&m.retainedEarnings<=0)return metric('marketCapGain','Market value gained','money',m.retainedEarnings,'higher');

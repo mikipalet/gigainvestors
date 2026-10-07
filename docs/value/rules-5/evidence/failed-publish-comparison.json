@@ -1,0 +1,9 @@
+{
+  "failedSnapshotsOnly": true,
+  "comparedCoreFiles": 2175,
+  "differentCoreFiles": [],
+  "ignored": "priceStory.asOf run-clock timestamps only",
+  "ordinaryExit": "1",
+  "realExit": "1",
+  "interpretation": "A matching failed snapshot is still NOT publishable. Both production guards and all failure logs remain authoritative."
+}

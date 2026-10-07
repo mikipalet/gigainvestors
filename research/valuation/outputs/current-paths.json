@@ -1,0 +1,26 @@
+{
+  "owner_earnings": {
+    "n": 2147,
+    "quality": 322,
+    "buy": 18,
+    "growth_median": 0,
+    "discount_median": 0.1,
+    "mos_median": 0.5
+  },
+  "book_value": {
+    "n": 280,
+    "quality": 60,
+    "buy": 8,
+    "growth_median": 0.06,
+    "discount_median": 0.1,
+    "mos_median": 0.35
+  },
+  "nav": {
+    "n": 7,
+    "quality": 1,
+    "buy": 1,
+    "growth_median": 0.12,
+    "discount_median": 0.1,
+    "mos_median": 0.290151693453055
+  }
+}

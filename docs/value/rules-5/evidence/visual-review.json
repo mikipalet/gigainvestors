@@ -1,0 +1,13 @@
+{
+  "inspected": [
+    "GOOGL.US",
+    "NVDA.US"
+  ],
+  "viewports": [
+    "1728x970",
+    "390x844"
+  ],
+  "surfaces": "Final economics drawer screenshots, with desktop tile visible",
+  "findings": "Aggregate/annual/latest labels readable; annual rows carry no pass/fail symbols. Desktop evidence fits; mobile uses the existing vertical scroll. No new clipping observed.",
+  "browserComparisonPassed": true
+}

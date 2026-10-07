@@ -1,0 +1,53 @@
+{
+  "complete": true,
+  "passed": false,
+  "releaseReady": false,
+  "status": "NOT",
+  "method": "3.5.0",
+  "baselineCode": "800a81697a704e8a25f197bed751f9f32facfa1d",
+  "baselineArchive": "21e6ab4decccd7832b507e43347993dabc5926af",
+  "dossiers": 3913,
+  "unitSuite": "2490 passed, 1 skipped",
+  "build": "PASS including TypeScript",
+  "ordinaryExport": "FAIL: Publish invariant: invalid issuer alias RACE.US -> RACE.MI",
+  "realPublishHarness": "FAIL: CRITICAL: publication coverage invariant: valuation 2434->2407, drop=27, tolerance=24.34; ids=BBWI.US,BGEO.LSE,BI0.F,BWA.US,CDEVY.US,CLILF.US,CPAMF.US,CRI.US,DY.US,EBO.AU,EC.US,FRLOF.US,FRW.AU,GIGNF.US,GM.US,GPOR.US,GRBK.US,GTX.US,KN.US,KSPI.US,M2L.F,MAPGF.US,MKL.US,NK7.F,OCA.AU,RACE.MI,RH.US,SCRPF.US,T6W.F,TBCG.LSE,U1O.F,VEM.F,WING.US,WIT.US",
+  "localPostPublish": "BLOCKED by failed REAL publication",
+  "browser": "zero new findings against original 800a816 UI; raw legacy findings retained",
+  "gateExits": {
+    "unit-final-isolated": "0",
+    "build-candidate": "0",
+    "publish-out-final": "1",
+    "publish-real": "1",
+    "post-check": "blocked",
+    "release-audit": "1",
+    "presentation-final": "0"
+  },
+  "missingCanonicalDossiers": [
+    "RACE.MI",
+    "STLAM.MI"
+  ],
+  "sourceDriftCount": 1309,
+  "sourceDriftBlocksInstallation": true,
+  "liveArchiveChanges": [],
+  "liveArchiveCommitMatches": false,
+  "localRemoteUnchanged": true,
+  "blobFilesUploaded": 0,
+  "sourceBindings": 788742,
+  "liveArchiveFiles": 6278,
+  "minimumFreeBytes": {
+    "/": 8642220032,
+    "/Users/miki/data": 14210838528
+  },
+  "isolation": {
+    "interfaces": [
+      "lo"
+    ],
+    "sourceCorpusReadOnly": true,
+    "externalRoutes": 0
+  },
+  "externalTransport": false,
+  "economicRulesChanged": false,
+  "sealedFilesVerified": 978,
+  "ownerBuyApproval": "Zero approved; five proposed transitions held at complete live records",
+  "buyChanges": []
+}

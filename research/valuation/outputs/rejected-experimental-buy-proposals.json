@@ -1,0 +1,1070 @@
+[
+  {
+    "id": "TTD.US",
+    "variant": "combined",
+    "baseline_quality": "PPFPP",
+    "candidate_quality": "PPPPP",
+    "baseline_value": null,
+    "candidate_value": 17.20068051691762,
+    "baseline_price": "unclear",
+    "candidate_price": "pass",
+    "baseline_buy": false,
+    "candidate_buy": true,
+    "reason": "Both rejected experiments",
+    "disposition": "REJECTED \u2014 does not ship",
+    "baseline_matches_live_quality": true,
+    "baseline_value_difference_from_live": null,
+    "approved": false,
+    "live": {
+      "quality": "PPFPP",
+      "buy": false,
+      "conversion": -0.8961181698297591
+    },
+    "quote": [
+      11.92,
+      "2026-10-06"
+    ],
+    "newConversion": 1.0210515496901282,
+    "requiredMargin": 0.15,
+    "expectedReturn": 0.1381079967387192,
+    "evidence": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [],
+      "economics": [],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 47.8% vs 24.5%"
+      ],
+      "accounting": [
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "ACN.US",
+    "variant": "sbc_once",
+    "baseline_quality": "PPPPP",
+    "candidate_quality": "PPPPP",
+    "baseline_value": 210.941268812845,
+    "candidate_value": 280.29705881628064,
+    "baseline_price": "unclear",
+    "candidate_price": "pass",
+    "baseline_buy": false,
+    "candidate_buy": true,
+    "reason": "Charge SBC once",
+    "disposition": "REJECTED \u2014 does not ship",
+    "baseline_matches_live_quality": true,
+    "baseline_value_difference_from_live": -8.910730421437876,
+    "approved": false,
+    "live": {
+      "quality": "PPPPP",
+      "buy": false,
+      "value": {
+        "currency": "USD",
+        "fxRate": 1,
+        "low": 155.89619304370305,
+        "mid": 219.85199923428289,
+        "high": 255.5225198792713
+      },
+      "conversion": 0.8725094298913357
+    },
+    "quote": [
+      193.4,
+      "2026-10-06"
+    ],
+    "newConversion": 1.1311872348856022,
+    "requiredMargin": 0.15,
+    "expectedReturn": 0.13268076234757398,
+    "evidence": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ],
+      "economics": [],
+      "management": [
+        "$1 retained earnings test: 2017 to 2026 (9 years)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 45.6% vs 145.6%"
+      ],
+      "accounting": [
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "ACN.US",
+    "variant": "current_scale",
+    "baseline_quality": "PPPPP",
+    "candidate_quality": "PPPPP",
+    "baseline_value": 210.941268812845,
+    "candidate_value": 238.47273793447917,
+    "baseline_price": "unclear",
+    "candidate_price": "pass",
+    "baseline_buy": false,
+    "candidate_buy": true,
+    "reason": "Current annual scale",
+    "disposition": "REJECTED \u2014 does not ship",
+    "baseline_matches_live_quality": true,
+    "baseline_value_difference_from_live": -8.910730421437876,
+    "approved": false,
+    "live": {
+      "quality": "PPPPP",
+      "buy": false,
+      "value": {
+        "currency": "USD",
+        "fxRate": 1,
+        "low": 155.89619304370305,
+        "mid": 219.85199923428289,
+        "high": 255.5225198792713
+      },
+      "conversion": 0.8725094298913357
+    },
+    "quote": [
+      193.4,
+      "2026-10-06"
+    ],
+    "newConversion": 0.8686669166104365,
+    "requiredMargin": 0.15,
+    "expectedReturn": 0.11714352056999211,
+    "evidence": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ],
+      "economics": [],
+      "management": [
+        "$1 retained earnings test: 2017 to 2026 (9 years)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 45.6% vs 145.6%"
+      ],
+      "accounting": [
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "ACN.US",
+    "variant": "combined",
+    "baseline_quality": "PPPPP",
+    "candidate_quality": "PPPPP",
+    "baseline_value": 210.941268812845,
+    "candidate_value": 317.7536588973136,
+    "baseline_price": "unclear",
+    "candidate_price": "pass",
+    "baseline_buy": false,
+    "candidate_buy": true,
+    "reason": "Both rejected experiments",
+    "disposition": "REJECTED \u2014 does not ship",
+    "baseline_matches_live_quality": true,
+    "baseline_value_difference_from_live": -8.910730421437876,
+    "approved": false,
+    "live": {
+      "quality": "PPPPP",
+      "buy": false,
+      "value": {
+        "currency": "USD",
+        "fxRate": 1,
+        "low": 155.89619304370305,
+        "mid": 219.85199923428289,
+        "high": 255.5225198792713
+      },
+      "conversion": 0.8725094298913357
+    },
+    "quote": [
+      193.4,
+      "2026-10-06"
+    ],
+    "newConversion": 1.1311872348856022,
+    "requiredMargin": 0.15,
+    "expectedReturn": 0.1464646921157321,
+    "evidence": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ],
+      "economics": [],
+      "management": [
+        "$1 retained earnings test: 2017 to 2026 (9 years)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 45.6% vs 145.6%"
+      ],
+      "accounting": [
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "ITRN.US",
+    "variant": "sbc_once",
+    "baseline_quality": "PPPPP",
+    "candidate_quality": "PPPPP",
+    "baseline_value": 54.45870892641629,
+    "candidate_value": 63.525309942346006,
+    "baseline_price": "unclear",
+    "candidate_price": "pass",
+    "baseline_buy": false,
+    "candidate_buy": true,
+    "reason": "Charge SBC once",
+    "disposition": "REJECTED \u2014 does not ship",
+    "baseline_matches_live_quality": true,
+    "baseline_value_difference_from_live": 0,
+    "approved": false,
+    "live": {
+      "quality": "PPPPP",
+      "buy": false,
+      "value": {
+        "currency": "USD",
+        "fxRate": 1,
+        "low": 42.02287752608768,
+        "mid": 54.45870892641629,
+        "high": 62.94142185620789
+      },
+      "conversion": 1.2298066126495377
+    },
+    "quote": [
+      52.17,
+      "2026-10-06"
+    ],
+    "newConversion": 1.0541380118975376,
+    "requiredMargin": 0.15,
+    "expectedReturn": 0.115825772698955,
+    "evidence": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [],
+      "economics": [],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 50.0% vs 72.8%"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "ITRN.US",
+    "variant": "combined",
+    "baseline_quality": "PPPPP",
+    "candidate_quality": "PPPPP",
+    "baseline_value": 54.45870892641629,
+    "candidate_value": 66.7343356761663,
+    "baseline_price": "unclear",
+    "candidate_price": "pass",
+    "baseline_buy": false,
+    "candidate_buy": true,
+    "reason": "Both rejected experiments",
+    "disposition": "REJECTED \u2014 does not ship",
+    "baseline_matches_live_quality": true,
+    "baseline_value_difference_from_live": 0,
+    "approved": false,
+    "live": {
+      "quality": "PPPPP",
+      "buy": false,
+      "value": {
+        "currency": "USD",
+        "fxRate": 1,
+        "low": 42.02287752608768,
+        "mid": 54.45870892641629,
+        "high": 62.94142185620789
+      },
+      "conversion": 1.2298066126495377
+    },
+    "quote": [
+      52.17,
+      "2026-10-06"
+    ],
+    "newConversion": 1.0541380118975376,
+    "requiredMargin": 0.15,
+    "expectedReturn": 0.12024740102315012,
+    "evidence": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [],
+      "economics": [],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 50.0% vs 72.8%"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "FDS.US",
+    "variant": "sbc_once",
+    "baseline_quality": "PPPPP",
+    "candidate_quality": "PPPPP",
+    "baseline_value": 288.0639543747451,
+    "candidate_value": 330.75707412933957,
+    "baseline_price": "unclear",
+    "candidate_price": "pass",
+    "baseline_buy": false,
+    "candidate_buy": true,
+    "reason": "Charge SBC once",
+    "disposition": "REJECTED \u2014 does not ship",
+    "baseline_matches_live_quality": true,
+    "baseline_value_difference_from_live": -8.32840101529274,
+    "approved": false,
+    "live": {
+      "quality": "PPPPP",
+      "buy": false,
+      "value": {
+        "currency": "USD",
+        "fxRate": 1,
+        "low": 205.90836849870476,
+        "mid": 296.39235539003784,
+        "high": 346.85862443886055
+      },
+      "conversion": 1.0264464663425663
+    },
+    "quote": [
+      272.01,
+      "2026-10-06"
+    ],
+    "newConversion": 1.1593765953590918,
+    "requiredMargin": 0.15,
+    "expectedReturn": 0.11482112429455149,
+    "evidence": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [],
+      "economics": [],
+      "management": [
+        "$1 retained earnings test: 2017 to 2026 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 132.0% vs 29.2%"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "FDS.US",
+    "variant": "combined",
+    "baseline_quality": "PPPPP",
+    "candidate_quality": "PPPPP",
+    "baseline_value": 288.0639543747451,
+    "candidate_value": 344.0326399398091,
+    "baseline_price": "unclear",
+    "candidate_price": "pass",
+    "baseline_buy": false,
+    "candidate_buy": true,
+    "reason": "Both rejected experiments",
+    "disposition": "REJECTED \u2014 does not ship",
+    "baseline_matches_live_quality": true,
+    "baseline_value_difference_from_live": -8.32840101529274,
+    "approved": false,
+    "live": {
+      "quality": "PPPPP",
+      "buy": false,
+      "value": {
+        "currency": "USD",
+        "fxRate": 1,
+        "low": 205.90836849870476,
+        "mid": 296.39235539003784,
+        "high": 346.85862443886055
+      },
+      "conversion": 1.0264464663425663
+    },
+    "quote": [
+      272.01,
+      "2026-10-06"
+    ],
+    "newConversion": 1.1593765953590918,
+    "requiredMargin": 0.15,
+    "expectedReturn": 0.1181457326690506,
+    "evidence": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [],
+      "economics": [],
+      "management": [
+        "$1 retained earnings test: 2017 to 2026 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 132.0% vs 29.2%"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "CRUS.US",
+    "variant": "sbc_once",
+    "baseline_quality": "PPPPP",
+    "candidate_quality": "PPPPP",
+    "baseline_value": 130.89527138572572,
+    "candidate_value": 166.45980974339065,
+    "baseline_price": "unclear",
+    "candidate_price": "pass",
+    "baseline_buy": false,
+    "candidate_buy": true,
+    "reason": "Charge SBC once",
+    "disposition": "REJECTED \u2014 does not ship",
+    "baseline_matches_live_quality": true,
+    "baseline_value_difference_from_live": 0,
+    "approved": false,
+    "live": {
+      "quality": "PPPPP",
+      "buy": false,
+      "value": {
+        "currency": "USD",
+        "fxRate": 1,
+        "low": 95.06511363862808,
+        "mid": 130.89527138572572,
+        "high": 150.8790767312877
+      },
+      "conversion": 0.8256894282741895
+    },
+    "quote": [
+      118.87,
+      "2026-10-06"
+    ],
+    "newConversion": 1.0903754073558707,
+    "requiredMargin": 0.15,
+    "expectedReturn": 0.13055988068251645,
+    "evidence": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [],
+      "economics": [],
+      "management": [
+        "$1 retained earnings test: 2017 to 2026 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 27.9% vs 28.8%"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "CRUS.US",
+    "variant": "combined",
+    "baseline_quality": "PPPPP",
+    "candidate_quality": "PPPPP",
+    "baseline_value": 130.89527138572572,
+    "candidate_value": 174.44686977037966,
+    "baseline_price": "unclear",
+    "candidate_price": "pass",
+    "baseline_buy": false,
+    "candidate_buy": true,
+    "reason": "Both rejected experiments",
+    "disposition": "REJECTED \u2014 does not ship",
+    "baseline_matches_live_quality": true,
+    "baseline_value_difference_from_live": 0,
+    "approved": false,
+    "live": {
+      "quality": "PPPPP",
+      "buy": false,
+      "value": {
+        "currency": "USD",
+        "fxRate": 1,
+        "low": 95.06511363862808,
+        "mid": 130.89527138572572,
+        "high": 150.8790767312877
+      },
+      "conversion": 0.8256894282741895
+    },
+    "quote": [
+      118.87,
+      "2026-10-06"
+    ],
+    "newConversion": 1.0903754073558707,
+    "requiredMargin": 0.15,
+    "expectedReturn": 0.13559327953616485,
+    "evidence": {
+      "understandable": [
+        "3 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [],
+      "economics": [],
+      "management": [
+        "$1 retained earnings test: 2017 to 2026 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 27.9% vs 28.8%"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "SIQ.AU",
+    "variant": "current_scale",
+    "baseline_quality": "PPPPP",
+    "candidate_quality": "PPPPP",
+    "baseline_value": 10.666141067056417,
+    "candidate_value": 13.173056014799151,
+    "baseline_price": "fail",
+    "candidate_price": "pass",
+    "baseline_buy": false,
+    "candidate_buy": true,
+    "reason": "Current annual scale",
+    "disposition": "REJECTED \u2014 does not ship",
+    "baseline_matches_live_quality": true,
+    "baseline_value_difference_from_live": 0,
+    "approved": false,
+    "live": {
+      "quality": "PPPPP",
+      "buy": false,
+      "value": {
+        "currency": "AUD",
+        "fxRate": 1,
+        "low": 8.250828402806949,
+        "mid": 10.666141067056417,
+        "high": 12.153225309980142
+      },
+      "conversion": 0.9330651604086811
+    },
+    "quote": [
+      11.09,
+      "2026-10-06"
+    ],
+    "newConversion": 0.9330651604086811,
+    "requiredMargin": 0.15,
+    "expectedReturn": 0.11548066352705921,
+    "evidence": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ],
+      "economics": [],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: 87.2% vs 214.4%"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "SIQ.AU",
+    "variant": "combined",
+    "baseline_quality": "PPPPP",
+    "candidate_quality": "PPPPP",
+    "baseline_value": 10.666141067056417,
+    "candidate_value": 13.172968577834933,
+    "baseline_price": "fail",
+    "candidate_price": "pass",
+    "baseline_buy": false,
+    "candidate_buy": true,
+    "reason": "Both rejected experiments",
+    "disposition": "REJECTED \u2014 does not ship",
+    "baseline_matches_live_quality": true,
+    "baseline_value_difference_from_live": 0,
+    "approved": false,
+    "live": {
+      "quality": "PPPPP",
+      "buy": false,
+      "value": {
+        "currency": "AUD",
+        "fxRate": 1,
+        "low": 8.250828402806949,
+        "mid": 10.666141067056417,
+        "high": 12.153225309980142
+      },
+      "conversion": 0.9330651604086811
+    },
+    "quote": [
+      11.09,
+      "2026-10-06"
+    ],
+    "newConversion": 0.9370787694905688,
+    "requiredMargin": 0.15,
+    "expectedReturn": 0.1154800368162735,
+    "evidence": {
+      "understandable": [
+        "1 revenue decline in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ],
+      "economics": [],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: 87.2% vs 214.4%"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "ADBE.US",
+    "variant": "sbc_once",
+    "baseline_quality": "PPPPP",
+    "candidate_quality": "PPPPP",
+    "baseline_value": 242.69539330983005,
+    "candidate_value": 331.5002799482648,
+    "baseline_price": "unclear",
+    "candidate_price": "pass",
+    "baseline_buy": false,
+    "candidate_buy": true,
+    "reason": "Charge SBC once",
+    "disposition": "REJECTED \u2014 does not ship",
+    "baseline_matches_live_quality": true,
+    "baseline_value_difference_from_live": 0,
+    "approved": false,
+    "live": {
+      "quality": "PPPPP",
+      "buy": false,
+      "value": {
+        "currency": "USD",
+        "fxRate": 1,
+        "low": 170.44550537318943,
+        "mid": 242.69539330983005,
+        "high": 282.99183037705035
+      },
+      "conversion": 0.8105863662622761
+    },
+    "quote": [
+      238.12,
+      "2026-10-06"
+    ],
+    "newConversion": 1.1012420566146737,
+    "requiredMargin": 0.15,
+    "expectedReturn": 0.127188807300621,
+    "evidence": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ],
+      "economics": [],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 16.5% vs 26.8%"
+      ],
+      "accounting": [
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "ADBE.US",
+    "variant": "current_scale",
+    "baseline_quality": "PPPPP",
+    "candidate_quality": "PPPPP",
+    "baseline_value": 242.69539330983005,
+    "candidate_value": 290.2307757595876,
+    "baseline_price": "unclear",
+    "candidate_price": "pass",
+    "baseline_buy": false,
+    "candidate_buy": true,
+    "reason": "Current annual scale",
+    "disposition": "REJECTED \u2014 does not ship",
+    "baseline_matches_live_quality": true,
+    "baseline_value_difference_from_live": 0,
+    "approved": false,
+    "live": {
+      "quality": "PPPPP",
+      "buy": false,
+      "value": {
+        "currency": "USD",
+        "fxRate": 1,
+        "low": 170.44550537318943,
+        "mid": 242.69539330983005,
+        "high": 282.99183037705035
+      },
+      "conversion": 0.8105863662622761
+    },
+    "quote": [
+      238.12,
+      "2026-10-06"
+    ],
+    "newConversion": 0.8105863662622761,
+    "requiredMargin": 0.15,
+    "expectedReturn": 0.11527405837498358,
+    "evidence": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ],
+      "economics": [],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 16.5% vs 26.8%"
+      ],
+      "accounting": [
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "ADBE.US",
+    "variant": "combined",
+    "baseline_quality": "PPPPP",
+    "candidate_quality": "PPPPP",
+    "baseline_value": 242.69539330983005,
+    "candidate_value": 403.0563212375923,
+    "baseline_price": "unclear",
+    "candidate_price": "pass",
+    "baseline_buy": false,
+    "candidate_buy": true,
+    "reason": "Both rejected experiments",
+    "disposition": "REJECTED \u2014 does not ship",
+    "baseline_matches_live_quality": true,
+    "baseline_value_difference_from_live": 0,
+    "approved": false,
+    "live": {
+      "quality": "PPPPP",
+      "buy": false,
+      "value": {
+        "currency": "USD",
+        "fxRate": 1,
+        "low": 170.44550537318943,
+        "mid": 242.69539330983005,
+        "high": 282.99183037705035
+      },
+      "conversion": 0.8105863662622761
+    },
+    "quote": [
+      238.12,
+      "2026-10-06"
+    ],
+    "newConversion": 1.1012420566146737,
+    "requiredMargin": 0.15,
+    "expectedReturn": 0.14751502923017645,
+    "evidence": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ],
+      "economics": [],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "potential debt-funded buybacks (informational)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 16.5% vs 26.8%"
+      ],
+      "accounting": [
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  },
+  {
+    "id": "BR.US",
+    "variant": "sbc_once",
+    "baseline_quality": "PPPPP",
+    "candidate_quality": "PPPPP",
+    "baseline_value": 188.43839958604175,
+    "candidate_value": 201.68438472398813,
+    "baseline_price": "unclear",
+    "candidate_price": "pass",
+    "baseline_buy": false,
+    "candidate_buy": true,
+    "reason": "Charge SBC once",
+    "disposition": "REJECTED \u2014 does not ship",
+    "baseline_matches_live_quality": true,
+    "baseline_value_difference_from_live": 0,
+    "approved": false,
+    "live": {
+      "quality": "PPPPP",
+      "buy": false,
+      "value": {
+        "currency": "USD",
+        "fxRate": 1,
+        "low": 129.8815771500561,
+        "mid": 188.43839958604175,
+        "high": 221.09770713012213
+      },
+      "conversion": 1.3610763127675123
+    },
+    "quote": [
+      158.66,
+      "2026-10-06"
+    ],
+    "newConversion": 1.4600949994780248,
+    "requiredMargin": 0.15,
+    "expectedReturn": 0.11812363961194547,
+    "evidence": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [],
+      "economics": [],
+      "management": [
+        "$1 retained earnings test: 2017 to 2026 (9 years)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 59.5% vs 46.7%"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "BR.US",
+    "variant": "current_scale",
+    "baseline_quality": "PPPPP",
+    "candidate_quality": "PPPPP",
+    "baseline_value": 188.43839958604175,
+    "candidate_value": 216.1981376942682,
+    "baseline_price": "unclear",
+    "candidate_price": "pass",
+    "baseline_buy": false,
+    "candidate_buy": true,
+    "reason": "Current annual scale",
+    "disposition": "REJECTED \u2014 does not ship",
+    "baseline_matches_live_quality": true,
+    "baseline_value_difference_from_live": 0,
+    "approved": false,
+    "live": {
+      "quality": "PPPPP",
+      "buy": false,
+      "value": {
+        "currency": "USD",
+        "fxRate": 1,
+        "low": 129.8815771500561,
+        "mid": 188.43839958604175,
+        "high": 221.09770713012213
+      },
+      "conversion": 1.3610763127675123
+    },
+    "quote": [
+      158.66,
+      "2026-10-06"
+    ],
+    "newConversion": 1.3610763127675123,
+    "requiredMargin": 0.15,
+    "expectedReturn": 0.12415583269691793,
+    "evidence": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [],
+      "economics": [],
+      "management": [
+        "$1 retained earnings test: 2017 to 2026 (9 years)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 59.5% vs 46.7%"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "BR.US",
+    "variant": "combined",
+    "baseline_quality": "PPPPP",
+    "candidate_quality": "PPPPP",
+    "baseline_value": 188.43839958604175,
+    "candidate_value": 231.41896917485943,
+    "baseline_price": "unclear",
+    "candidate_price": "pass",
+    "baseline_buy": false,
+    "candidate_buy": true,
+    "reason": "Both rejected experiments",
+    "disposition": "REJECTED \u2014 does not ship",
+    "baseline_matches_live_quality": true,
+    "baseline_value_difference_from_live": 0,
+    "approved": false,
+    "live": {
+      "quality": "PPPPP",
+      "buy": false,
+      "value": {
+        "currency": "USD",
+        "fxRate": 1,
+        "low": 129.8815771500561,
+        "mid": 188.43839958604175,
+        "high": 221.09770713012213
+      },
+      "conversion": 1.3610763127675123
+    },
+    "quote": [
+      158.66,
+      "2026-10-06"
+    ],
+    "newConversion": 1.4600949994780248,
+    "requiredMargin": 0.15,
+    "expectedReturn": 0.13044141170571566,
+    "evidence": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [],
+      "economics": [],
+      "management": [
+        "$1 retained earnings test: 2017 to 2026 (9 years)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 59.5% vs 46.7%"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "NTES.US",
+    "variant": "sbc_once",
+    "baseline_quality": "PPPPP",
+    "candidate_quality": "PPPPP",
+    "baseline_value": 156.46621627946226,
+    "candidate_value": 167.89784472189191,
+    "baseline_price": "unclear",
+    "candidate_price": "pass",
+    "baseline_buy": false,
+    "candidate_buy": true,
+    "reason": "Charge SBC once",
+    "disposition": "REJECTED \u2014 does not ship",
+    "baseline_matches_live_quality": true,
+    "baseline_value_difference_from_live": 0,
+    "approved": false,
+    "live": {
+      "quality": "PPPPP",
+      "buy": false,
+      "value": {
+        "currency": "USD",
+        "fxRate": 0.14915,
+        "low": 121.93747441693995,
+        "mid": 156.46621627946226,
+        "high": 176.57236463060005
+      },
+      "conversion": 0.8775682569599071
+    },
+    "quote": [
+      119.07,
+      "2026-10-06"
+    ],
+    "newConversion": 1.0081846296388275,
+    "requiredMargin": 0.15,
+    "expectedReturn": 0.14175656364081146,
+    "evidence": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ],
+      "economics": [],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: 118.6% vs 147.5%"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "NTES.US",
+    "variant": "combined",
+    "baseline_quality": "PPPPP",
+    "candidate_quality": "PPPPP",
+    "baseline_value": 156.46621627946226,
+    "candidate_value": 179.0971774036331,
+    "baseline_price": "unclear",
+    "candidate_price": "pass",
+    "baseline_buy": false,
+    "candidate_buy": true,
+    "reason": "Both rejected experiments",
+    "disposition": "REJECTED \u2014 does not ship",
+    "baseline_matches_live_quality": true,
+    "baseline_value_difference_from_live": 0,
+    "approved": false,
+    "live": {
+      "quality": "PPPPP",
+      "buy": false,
+      "value": {
+        "currency": "USD",
+        "fxRate": 0.14915,
+        "low": 121.93747441693995,
+        "mid": 156.46621627946226,
+        "high": 176.57236463060005
+      },
+      "conversion": 0.8775682569599071
+    },
+    "quote": [
+      119.07,
+      "2026-10-06"
+    ],
+    "newConversion": 1.0081846296388275,
+    "requiredMargin": 0.15,
+    "expectedReturn": 0.15116365209342686,
+    "evidence": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ],
+      "economics": [],
+      "management": [
+        "$1 retained earnings test: 2016 to 2025 (9 years)",
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: 118.6% vs 147.5%"
+      ],
+      "accounting": []
+    }
+  },
+  {
+    "id": "INTU.US",
+    "variant": "combined",
+    "baseline_quality": "PPFPP",
+    "candidate_quality": "PPPPP",
+    "baseline_value": 98.03352677643821,
+    "candidate_value": 390.92691483157415,
+    "baseline_price": "fail",
+    "candidate_price": "pass",
+    "baseline_buy": false,
+    "candidate_buy": true,
+    "reason": "Both rejected experiments",
+    "disposition": "REJECTED \u2014 does not ship",
+    "baseline_matches_live_quality": true,
+    "baseline_value_difference_from_live": 0,
+    "approved": false,
+    "live": {
+      "quality": "PPFPP",
+      "buy": false,
+      "value": {
+        "currency": "USD",
+        "fxRate": 1,
+        "low": 89.22483296335419,
+        "mid": 98.03352677643821,
+        "high": 109.75976667527507
+      },
+      "conversion": 0.6168601716304897
+    },
+    "quote": [
+      289.81,
+      "2026-10-06"
+    ],
+    "newConversion": 1.1837455830388692,
+    "requiredMargin": 0.15,
+    "expectedReturn": 0.12509374826245556,
+    "evidence": {
+      "understandable": [
+        "0 revenue declines in the last 10 years (informational)"
+      ],
+      "moat": [
+        "Years with nonpositive invested capital use equity plus debt and leases; positive earnings with no positive capital are shown above 100%."
+      ],
+      "economics": [],
+      "management": [
+        "$1 retained earnings test: 2017 to 2026 (9 years)",
+        "buybacks leaned toward cheaper years (informational)",
+        "ROIC first 3 years vs last 3 years: 40.7% vs 50.4%"
+      ],
+      "accounting": [
+        "stock compensation exceeds 15% of operating cash flow"
+      ]
+    }
+  }
+]

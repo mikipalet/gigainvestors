@@ -1,0 +1,996 @@
+[
+  {
+    "id": "NTB.US",
+    "before": {
+      "b": false,
+      "v": null,
+      "m": 0.35,
+      "t": "PPPPP"
+    },
+    "proposed": {
+      "b": true,
+      "v": [
+        79.64968406236753,
+        99.56210507795939,
+        132.74947343727916
+      ],
+      "m": 0.35,
+      "t": "PPPPP"
+    },
+    "approved": false,
+    "disposition": "Held at the complete live record; no economic rule change selected",
+    "name": "Bank of N.T. Butterfield & Son Ltd",
+    "methodVersion": "3.5.0",
+    "qualityEvidence": {
+      "understandable": {
+        "result": "pass",
+        "reasons": [
+          "ROE coefficient of variation is informational; returns use fiscal-end equity, not reported average adjusted capital"
+        ],
+        "metrics": {
+          "historyYears": 10,
+          "positiveIncomeYears": 10,
+          "requiredPositiveYears": 9,
+          "roeCv": 0.2378654859899393
+        }
+      },
+      "moat": {
+        "result": "pass",
+        "reasons": [
+          "Tangible common book per share",
+          "Parent-total proxy for preferred equity"
+        ],
+        "metrics": {
+          "roeMedian": 0.2120106089183446,
+          "returnThreshold": 0.12,
+          "tangibleReturn": 1,
+          "roeSecondLowest": 0.16557439921541195,
+          "efficiencyMedian": null,
+          "combinedProfitableYears": null,
+          "combinedReportedYears": 0,
+          "floatGrowth": null
+        }
+      },
+      "economics": {
+        "result": "pass",
+        "reasons": [
+          "Tangible common book per share",
+          "Parent-total proxy for preferred equity"
+        ],
+        "metrics": {
+          "bookReturnCagr": 0.14769098966601923,
+          "bookReturnYears": 10,
+          "bookStartPerShare": 14.761151808144566,
+          "bookEndPerShare": 24.87396265560166
+        }
+      },
+      "management": {
+        "result": "pass",
+        "reasons": [
+          "Tangible common book per share",
+          "Parent-total proxy for preferred equity"
+        ],
+        "metrics": {
+          "shareCagr": -0.01098347200686245,
+          "shareCagr5": -0.03162319705774719,
+          "shareCagrExCrisis": -0.01098347200686245,
+          "shareCagr5ExCrisis": -0.03162319705774719,
+          "crisisRecapitalizations": 0,
+          "retainedBookRatio": 3.072123426697364,
+          "retainedBookGain": 10.112810847457093,
+          "retainedPerShare": 3.291798356659356
+        }
+      },
+      "accounting": {
+        "result": "pass",
+        "reasons": [
+          "Restatement status not reported; no known restatement is not an audit assurance",
+          "Peer credit-loss comparison unavailable",
+          "Loan/deposit growth comparison unavailable"
+        ],
+        "metrics": {
+          "financialRedFlags": 0,
+          "loanCagr": null,
+          "depositCagr": 0.03295010814750565,
+          "restatementYears": 0,
+          "loanGrowthExcessYears": 2,
+          "peerLossExcessYears": null,
+          "adverseReserveYears": null
+        }
+      }
+    },
+    "valuationEvidence": {
+      "version": 2,
+      "currency": "USD",
+      "balanceSheet": {
+        "end": "2026-06-30",
+        "filed": "2026-08-14",
+        "source": "https://eodhd.com/api/fundamentals/NTB.US#Financials.Balance_Sheet.quarterly.2026-06-30",
+        "basis": "filed"
+      },
+      "discountRate": 0.1,
+      "terminalGrowth": 0.03,
+      "bondYield": 0.05314,
+      "shares": 42416000,
+      "assumptions": [
+        "filed balance sheet 2026-06-30, filed 2026-08-14; source: https://eodhd.com/api/fundamentals/NTB.US#Financials.Balance_Sheet.quarterly.2026-06-30",
+        "TTM ending 2026-06-30; zero-growth rule compares TTM revenue with FY2022 revenue",
+        "growth set to zero when latest revenue is below three years earlier",
+        "sustainable tangible ROE: ten-year median capped at 25%; at least five finite observations",
+        "growth = sustainable ROE \u00d7 median dividend retention, capped at 6%; residual earnings distributable",
+        "expected return is the IRR of the same perpetual distributable earnings; the 4x book cap at the required rate is a fixed payout haircut",
+        "returns use net income divided by tangible equity",
+        "valuation uses tangible book value per share",
+        "cash and debt are included in book value",
+        "equity bond yield uses median net income",
+        "Local 10-year yield: EODHD latest (US10Y.GBOND, observed 2026-10-07; checked 2026-10-07)",
+        "Bond yield flags: second-source-confirmed"
+      ],
+      "financialReturn": {
+        "roe": 0.21199070472386738,
+        "retention": 0.5815409027959697,
+        "payout": 0.7169687223873604,
+        "cashPerShare": 3.6924252578857226
+      },
+      "method": "book_value",
+      "normalized": 24.293757072802716,
+      "growth": 0.06,
+      "netCash": 0,
+      "perShare": {
+        "low": 73.84850515771444,
+        "mid": 92.31063144714304,
+        "high": 123.08084192952403
+      },
+      "equityBondYield": 0.08808469259609963,
+      "bridge": [
+        {
+          "label": "tangible book value per share",
+          "value": 24.293757072802716
+        },
+        {
+          "label": "normalized return on tangible equity",
+          "value": 0.21199070472386738
+        },
+        {
+          "label": "justified price to book",
+          "value": 3.7997676180966837
+        }
+      ],
+      "perShareTrading": {
+        "currency": "USD",
+        "fxRate": 1,
+        "low": 73.84850515771444,
+        "mid": 92.31063144714304,
+        "high": 123.08084192952403
+      },
+      "bondSource": "EODHD latest",
+      "bondFlags": [
+        "second-source-confirmed"
+      ]
+    },
+    "analysisSha256": "83bfd31c556c7a0defd09761f167e99bc959751ea5f6fc927e59f55a74d71b8c"
+  },
+  {
+    "id": "CFG-PH.US",
+    "before": {
+      "b": true,
+      "v": [
+        47.0959390756952,
+        58.86992384461899,
+        78.4932317928253
+      ],
+      "m": 0.35,
+      "t": "PPPPP"
+    },
+    "proposed": {
+      "b": false,
+      "v": [
+        46.53393910089801,
+        58.167423876122506,
+        77.55656516816332
+      ],
+      "m": 0.35,
+      "t": "PFPPP"
+    },
+    "approved": false,
+    "disposition": "Held at the complete live record; no economic rule change selected",
+    "name": "Citizens Financial Group, Inc",
+    "methodVersion": "3.5.0",
+    "qualityEvidence": {
+      "understandable": {
+        "result": "pass",
+        "reasons": [
+          "ROE coefficient of variation is informational; returns use fiscal-end equity, not reported average adjusted capital"
+        ],
+        "metrics": {
+          "historyYears": 10,
+          "positiveIncomeYears": 10,
+          "requiredPositiveYears": 9,
+          "roeCv": 0.21201347083708433
+        }
+      },
+      "moat": {
+        "result": "fail",
+        "reasons": [
+          "Tangible common book per share",
+          "Parent-total proxy for preferred equity and common earnings",
+          "median return on common equity below threshold"
+        ],
+        "metrics": {
+          "roeMedian": 0.11692195842227801,
+          "returnThreshold": 0.12,
+          "tangibleReturn": 1,
+          "roeSecondLowest": 0.08781512605042016,
+          "efficiencyMedian": null,
+          "combinedProfitableYears": null,
+          "combinedReportedYears": 0,
+          "floatGrowth": null
+        }
+      },
+      "economics": {
+        "result": "pass",
+        "reasons": [
+          "Tangible common book per share",
+          "Parent-total proxy for preferred equity and common earnings"
+        ],
+        "metrics": {
+          "bookReturnCagr": 0.11236131301977204,
+          "bookReturnYears": 10,
+          "bookStartPerShare": 22.32422361185496,
+          "bookEndPerShare": 41.234566727395276
+        }
+      },
+      "management": {
+        "result": "pass",
+        "reasons": [
+          "Tangible common book per share",
+          "Parent-total proxy for preferred equity and common earnings"
+        ],
+        "metrics": {
+          "shareCagr": -0.019185029676844656,
+          "shareCagr5": 0.003707581976841734,
+          "shareCagrExCrisis": -0.019185029676844656,
+          "shareCagr5ExCrisis": 0.003707581976841734,
+          "crisisRecapitalizations": 0,
+          "retainedBookRatio": 4.043237761283147,
+          "retainedBookGain": 18.910343115540314,
+          "retainedPerShare": 4.677029705405946
+        }
+      },
+      "accounting": {
+        "result": "pass",
+        "reasons": [
+          "Restatement status not reported; no known restatement is not an audit assurance",
+          "Peer credit-loss comparison unavailable",
+          "Loan/deposit growth comparison unavailable"
+        ],
+        "metrics": {
+          "financialRedFlags": 0,
+          "loanCagr": null,
+          "depositCagr": null,
+          "restatementYears": 0,
+          "loanGrowthExcessYears": null,
+          "peerLossExcessYears": null,
+          "adverseReserveYears": null
+        }
+      }
+    },
+    "valuationEvidence": {
+      "version": 2,
+      "currency": "USD",
+      "balanceSheet": {
+        "end": "2026-06-30",
+        "filed": "2026-08-03",
+        "source": "https://eodhd.com/api/fundamentals/CFG-PH.US#Financials.Balance_Sheet.quarterly.2026-06-30",
+        "basis": "filed"
+      },
+      "discountRate": 0.1,
+      "terminalGrowth": 0.03,
+      "bondYield": 0.05314,
+      "shares": 436890731,
+      "assumptions": [
+        "filed balance sheet 2026-06-30, filed 2026-08-03; source: https://eodhd.com/api/fundamentals/CFG-PH.US#Financials.Balance_Sheet.quarterly.2026-06-30",
+        "TTM ending 2026-06-30; zero-growth rule compares TTM revenue with FY2022 revenue",
+        "growth set to zero when latest revenue is below three years earlier",
+        "sustainable tangible ROE: ten-year median capped at 25%; at least five finite observations",
+        "growth = sustainable ROE \u00d7 median dividend retention, capped at 6%; residual earnings distributable",
+        "expected return is the IRR of the same perpetual distributable earnings; the 4x book cap at the required rate is a fixed payout haircut",
+        "returns use net income divided by tangible equity",
+        "valuation uses tangible book value per share",
+        "cash and debt are included in book value",
+        "equity bond yield uses median net income",
+        "Local 10-year yield: EODHD latest (US10Y.GBOND, observed 2026-10-07; checked 2026-10-07)",
+        "Bond yield flags: second-source-confirmed"
+      ],
+      "financialReturn": {
+        "roe": 0.11692195842227801,
+        "retention": 0.5944564436590413,
+        "payout": 0.48683719628350197,
+        "cashPerShare": 2.3266969550449006
+      },
+      "method": "book_value",
+      "normalized": 40.875209137819866,
+      "growth": 0.06,
+      "netCash": 0,
+      "perShare": {
+        "low": 46.53393910089801,
+        "mid": 58.167423876122506,
+        "high": 77.55656516816332
+      },
+      "equityBondYield": 0.1491088223460858,
+      "bridge": [
+        {
+          "label": "tangible book value per share",
+          "value": 40.875209137819866
+        },
+        {
+          "label": "normalized return on tangible equity",
+          "value": 0.11692195842227801
+        },
+        {
+          "label": "justified price to book",
+          "value": 1.42304896055695
+        }
+      ],
+      "perShareTrading": {
+        "currency": "USD",
+        "fxRate": 1,
+        "low": 46.53393910089801,
+        "mid": 58.167423876122506,
+        "high": 77.55656516816332
+      },
+      "bondSource": "EODHD latest",
+      "bondFlags": [
+        "second-source-confirmed"
+      ]
+    },
+    "analysisSha256": "592f7573201e84db21ab988108a1d1d950eeb5ea5ad65ef644d0a4dbfe017b2f"
+  },
+  {
+    "id": "001800.KO",
+    "before": {
+      "b": false,
+      "v": [
+        44998.20250452077,
+        47907.39037855468,
+        51780.136513859965
+      ],
+      "m": 0.35,
+      "t": "PFPPP"
+    },
+    "proposed": {
+      "b": true,
+      "v": [
+        44998.20250452077,
+        47907.39037855468,
+        51780.136513859965
+      ],
+      "m": 0.35,
+      "t": "PPPPP"
+    },
+    "approved": false,
+    "disposition": "Held at the complete live record; no economic rule change selected",
+    "name": "ORION Holdings Corp",
+    "methodVersion": "3.5.0",
+    "qualityEvidence": {
+      "understandable": {
+        "result": "pass",
+        "reasons": [
+          "0 revenue declines in the last 10 years (informational)"
+        ],
+        "metrics": {
+          "historyYears": 10,
+          "revenueDeclines": 0,
+          "lossYears": 0,
+          "opMarginCv": 0.23824163685037844
+        }
+      },
+      "moat": {
+        "result": "pass",
+        "reasons": [],
+        "metrics": {
+          "roicMedian": 0.28125105294279784,
+          "roicSecondLowest": 0.1350790917601776,
+          "grossMarginDrop": 0.025329031391134182,
+          "grossMarginTypical": 0.38684451909354667,
+          "grossMarginRecent": 0.3615154877024125,
+          "capitalFallbackYears": 0,
+          "capexToRevenue": 0.061856493200789515,
+          "totalRoicMedian": 0.1352170942817307
+        }
+      },
+      "economics": {
+        "result": "pass",
+        "reasons": [],
+        "metrics": {
+          "oeToNi": 1.9571578479477234,
+          "consolidatedCashConversion": 0,
+          "ownerEarningsTotal": 1088578661664,
+          "netIncomeTotal": 556203815040,
+          "roiic": 1.000001,
+          "nwcToRevenueTrend": -0.1257472513111216,
+          "nwcToRevenueChange": null,
+          "nwcToRevenueEnd": null
+        }
+      },
+      "management": {
+        "result": "pass",
+        "reasons": [
+          "$1 retained earnings test: 2017 to 2025 (8 years)",
+          "buybacks leaned toward cheaper years (informational)",
+          "ROIC first 3 years vs last 3 years: 13.5% vs 74.0%"
+        ],
+        "metrics": {
+          "nonAcquisitionShareCagr": null,
+          "nonAcquisitionShareCagr5": 2.7799203187184318e-05,
+          "marketCapGain": -360730758850,
+          "retainedEarnings": -2032242198000,
+          "shareCagr": null,
+          "shareCagr5": 2.7799203187184318e-05,
+          "retainedStartFy": 2017,
+          "retainedEndFy": 2025,
+          "perShareValueGrowth": 0.13585197510320457,
+          "perShareValueChange": 1074.5563611797,
+          "perShareStart": 936.4436445545296,
+          "perShareEnd": 2011.0000057342295,
+          "buybackYieldSpearman": 1,
+          "averageBuybackYield": 0.0004107094428421024,
+          "buybackYears": 2,
+          "debtFundedBuybacks": 0,
+          "acquisitionSpend": null,
+          "cumulativeNetIncome": null,
+          "roicFirst3Median": 0.1350790917601776,
+          "roicLast3Median": 0.7402758393747522
+        }
+      },
+      "accounting": {
+        "result": "pass",
+        "reasons": [],
+        "metrics": {
+          "accruals": -0.06357009516528274,
+          "dsri": 0.9606941870181271,
+          "restructuringYears": 0,
+          "sbcToOcf": -4.5721178270518374e-05,
+          "cashBacked": 1,
+          "ocfToNi": 4.248813897937542,
+          "redFlags": 0,
+          "goodwillIntangiblesToEquity": 0.44300911205245985
+        }
+      }
+    },
+    "valuationEvidence": {
+      "version": 2,
+      "currency": "KRW",
+      "balanceSheet": {
+        "filingDateAssumed": true,
+        "end": "2026-06-30",
+        "filed": "2026-09-28",
+        "source": "https://eodhd.com/api/fundamentals/001800.KO#Financials.Balance_Sheet.quarterly.2026-06-30",
+        "basis": "filed"
+      },
+      "discountRate": 0.1,
+      "terminalGrowth": 0.03,
+      "bondYield": 0.043899999999999995,
+      "shares": 60165015,
+      "assumptions": [
+        "filed balance sheet 2026-06-30, assumed available (90-day fallback) 2026-09-28; source: https://eodhd.com/api/fundamentals/001800.KO#Financials.Balance_Sheet.quarterly.2026-06-30",
+        "TTM stock compensation not reported; assumed zero",
+        "TTM ending 2026-06-30; zero-growth rule compares TTM revenue with FY2022 revenue",
+        "growth set to zero when latest revenue is below three years earlier",
+        "equity owner earnings are after interest; debt is reflected in leverage risk, never deducted a second time",
+        "only cash above 2% of revenue is added to equity value",
+        "growth estimates unavailable; using zero growth",
+        "organic growth proxy unavailable",
+        "operating growth capped at 8%",
+        "Compounder tier uses annual owner earnings / (equity + debt + leases not already in debt \u2212 excess cash); requires ten-year median return on capital including goodwill and acquired intangibles of at least 15%; quality results are unchanged",
+        "owner earnings normalized over 5 years",
+        "growth capex uses trailing five-year PPE to revenue",
+        "owner earnings use the 5-year median capped at latest-year owner earnings and complete newer TTM owner earnings",
+        "maintenance capex floored at the smaller of capex and D&A",
+        "bridge components use TTM owner earnings; full TTM capex deducted; selected balance-sheet lease liabilities used",
+        "lease payments estimated at 20% of lease liabilities",
+        "Local 10-year yield: EODHD latest (KR10Y.GBOND, observed 2026-10-07; checked 2026-10-07)"
+      ],
+      "tier": "standard",
+      "capitalReturns": {
+        "excludingGoodwill": 0.28125105294279784,
+        "includingAcquisitions": 0.1352170942817307,
+        "observations": 9,
+        "basis": "owner_earnings"
+      },
+      "netDebt": -1234912229910,
+      "leverage": "normal",
+      "riskFlags": [],
+      "method": "owner_earnings",
+      "normalized": 116126136948,
+      "growth": 0,
+      "netCash": 1437653726188,
+      "perShare": {
+        "low": 44991.9477073177,
+        "mid": 47900.731201194954,
+        "high": 51772.93902073767
+      },
+      "equityBondYield": 0.09346863357090901,
+      "bridge": [
+        {
+          "label": "net income",
+          "value": 140366367090
+        },
+        {
+          "label": "+ D&A",
+          "value": 295887509210
+        },
+        {
+          "label": "\u2212 maintenance capex",
+          "value": -312464533290
+        },
+        {
+          "label": "\u2212 stock compensation",
+          "value": 0
+        },
+        {
+          "label": "\u2212 estimated lease payments",
+          "value": -7663206062
+        },
+        {
+          "label": "= owner earnings",
+          "value": 116126136948
+        },
+        {
+          "label": "\u00d7 PV factor",
+          "value": 12.437290372361232
+        },
+        {
+          "label": "+ excess cash",
+          "value": 1437653726188
+        },
+        {
+          "label": "\u00f7 shares",
+          "value": 60165015
+        }
+      ],
+      "perShareTrading": {
+        "currency": "KRW",
+        "fxRate": 1,
+        "low": 44991.9477073177,
+        "mid": 47900.731201194954,
+        "high": 51772.93902073767
+      },
+      "bondSource": "EODHD latest",
+      "bondFlags": []
+    },
+    "analysisSha256": "2d918580c54b2b70bd5ea3ad8ab57c4177e507bfdc8761cbc555e94830608e79"
+  },
+  {
+    "id": "000786.SHE",
+    "before": {
+      "b": true,
+      "v": [
+        23.530973027599693,
+        30.95762408939952,
+        35.87135455072787
+      ],
+      "m": 0.25,
+      "t": "PPPPP"
+    },
+    "proposed": {
+      "b": false,
+      "v": [
+        23.530973027599693,
+        30.95762408939952,
+        35.87135455072787
+      ],
+      "m": 0.25,
+      "t": "PFPPP"
+    },
+    "approved": false,
+    "disposition": "Held at the complete live record; no economic rule change selected",
+    "name": "Beijing New Building Materials Public Ltd Co",
+    "methodVersion": "3.5.0",
+    "qualityEvidence": {
+      "understandable": {
+        "result": "pass",
+        "reasons": [
+          "2 revenue declines in the last 10 years (informational)"
+        ],
+        "metrics": {
+          "historyYears": 10,
+          "revenueDeclines": 2,
+          "lossYears": 0,
+          "opMarginCv": 0.18525034054912137
+        }
+      },
+      "moat": {
+        "result": "fail",
+        "reasons": [
+          "Recent gross margin fell 4.7pp below the typical margin (limit 4pp)"
+        ],
+        "metrics": {
+          "roicMedian": 0.18930404687483815,
+          "roicSecondLowest": 0.13843874034472228,
+          "grossMarginDrop": 0.04695597666535606,
+          "grossMarginTypical": 0.3173046626156125,
+          "grossMarginRecent": 0.27034868595025646,
+          "capitalFallbackYears": 0,
+          "capexToRevenue": 0.0761653701046332,
+          "totalRoicMedian": 0.17314910624948612
+        }
+      },
+      "economics": {
+        "result": "pass",
+        "reasons": [],
+        "metrics": {
+          "oeToNi": 0.9551602140995488,
+          "consolidatedCashConversion": 0,
+          "ownerEarningsTotal": 15984077469.301998,
+          "netIncomeTotal": 16734446466,
+          "roiic": 0.1835720767316004,
+          "nwcToRevenueTrend": 0.010863977424958062,
+          "nwcToRevenueChange": 0.07698451208888654,
+          "nwcToRevenueEnd": 0.14858360162321585
+        }
+      },
+      "management": {
+        "result": "pass",
+        "reasons": [
+          "$1 retained earnings test: 2016 to 2025 (9 years)",
+          "buybacks unrelated to price (informational)",
+          "ROIC first 3 years vs last 3 years: 20.5% vs 20.0%"
+        ],
+        "metrics": {
+          "nonAcquisitionShareCagr": 0.018049953894462067,
+          "nonAcquisitionShareCagr5": 0.00024589984732203973,
+          "marketCapGain": 27659631033,
+          "retainedEarnings": 16597601850,
+          "shareCagr": 0.018049953894462067,
+          "shareCagr5": 0.00024589984732203973,
+          "retainedStartFy": 2016,
+          "retainedEndFy": 2025,
+          "perShareValueGrowth": 0.12257699688780166,
+          "perShareValueChange": 1.258736778492692,
+          "perShareStart": 0.8270785104334676,
+          "perShareEnd": 2.0858152889261596,
+          "buybackYieldSpearman": null,
+          "averageBuybackYield": null,
+          "buybackYears": 0,
+          "debtFundedBuybacks": 0,
+          "acquisitionSpend": 4563076549,
+          "cumulativeNetIncome": 26018064744,
+          "roicFirst3Median": 0.20537681574114897,
+          "roicLast3Median": 0.19989167517214507
+        }
+      },
+      "accounting": {
+        "result": "pass",
+        "reasons": [],
+        "metrics": {
+          "accruals": -0.03706788447931218,
+          "dsri": 1.1378250915564103,
+          "restructuringYears": 0,
+          "sbcToOcf": 0,
+          "cashBacked": 1,
+          "ocfToNi": 1.4602661806310742,
+          "redFlags": 0,
+          "goodwillIntangiblesToEquity": 0.22048222552952565
+        }
+      }
+    },
+    "valuationEvidence": {
+      "version": 2,
+      "currency": "CNY",
+      "balanceSheet": {
+        "filingDateAssumed": true,
+        "end": "2026-06-30",
+        "filed": "2026-09-28",
+        "source": "https://eodhd.com/api/fundamentals/000786.SHE#Financials.Balance_Sheet.quarterly.2026-06-30",
+        "basis": "filed"
+      },
+      "discountRate": 0.1,
+      "terminalGrowth": 0.03,
+      "bondYield": 0.016978,
+      "shares": 1691203200,
+      "assumptions": [
+        "filed balance sheet 2026-06-30, assumed available (90-day fallback) 2026-09-28; source: https://eodhd.com/api/fundamentals/000786.SHE#Financials.Balance_Sheet.quarterly.2026-06-30",
+        "TTM stock compensation not reported; assumed zero",
+        "TTM ending 2026-06-30; zero-growth rule compares TTM revenue with FY2022 revenue",
+        "growth set to zero when latest revenue is below three years earlier",
+        "TTM owner earnings unavailable: quarterly NI, D&A or capex incomplete; annual normalization retained",
+        "equity owner earnings are after interest; debt is reflected in leverage risk, never deducted a second time",
+        "only cash above 2% of revenue is added to equity value",
+        "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years",
+        "operating growth capped at 8%",
+        "Compounder tier uses annual owner earnings / (equity + debt + leases not already in debt \u2212 excess cash); requires ten-year median return on capital including goodwill and acquired intangibles of at least 15%; quality results are unchanged",
+        "owner earnings normalized over 5 years",
+        "growth capex uses trailing five-year PPE to revenue",
+        "owner earnings use the 5-year median capped at latest-year owner earnings and complete newer TTM owner earnings",
+        "maintenance capex floored at the smaller of capex and D&A",
+        "bridge components use the latest owner earnings observation",
+        "lease payments estimated at 20% of lease liabilities",
+        "Local 10-year yield: EODHD latest (CN10Y.GBOND, observed 2026-10-02; checked 2026-10-07)"
+      ],
+      "tier": "standard",
+      "capitalReturns": {
+        "excludingGoodwill": 0.18930404687483815,
+        "includingAcquisitions": 0.17314910624948612,
+        "observations": 10,
+        "basis": "owner_earnings"
+      },
+      "netDebt": -3764491726.1400003,
+      "leverage": "normal",
+      "riskFlags": [],
+      "method": "owner_earnings",
+      "normalized": 2804952972.206,
+      "growth": 0.05990021701790976,
+      "netCash": 3951312542.3258004,
+      "perShare": {
+        "low": 23.684481197120522,
+        "mid": 31.159581237584753,
+        "high": 36.105367227078155
+      },
+      "equityBondYield": 0.0664218932357202,
+      "bridge": [
+        {
+          "label": "net income",
+          "value": 2906380291
+        },
+        {
+          "label": "+ D&A",
+          "value": 1118145661
+        },
+        {
+          "label": "\u2212 maintenance capex",
+          "value": -1192476187
+        },
+        {
+          "label": "\u2212 stock compensation",
+          "value": 0
+        },
+        {
+          "label": "\u2212 estimated lease payments",
+          "value": -27096792.794
+        },
+        {
+          "label": "= owner earnings",
+          "value": 2804952972.206
+        },
+        {
+          "label": "\u00d7 PV factor",
+          "value": 17.37849847764133
+        },
+        {
+          "label": "+ excess cash",
+          "value": 3951312542.3258004
+        },
+        {
+          "label": "\u00f7 shares",
+          "value": 1691203200
+        }
+      ],
+      "perShareTrading": {
+        "currency": "CNY",
+        "fxRate": 1,
+        "low": 23.684481197120522,
+        "mid": 31.159581237584753,
+        "high": 36.105367227078155
+      },
+      "bondSource": "EODHD latest",
+      "bondFlags": []
+    },
+    "analysisSha256": "d093b223d1fd672c0b0b35278364e2825c89cd768ef3eb50ea13e7e9889adee4"
+  },
+  {
+    "id": "IPS.PA",
+    "before": {
+      "b": true,
+      "v": [
+        47.22764710184408,
+        52.94189844163409,
+        60.54877903874361
+      ],
+      "m": 0.25,
+      "t": "PPPPP"
+    },
+    "proposed": {
+      "b": false,
+      "v": [
+        47.22764710184408,
+        52.94189844163409,
+        60.54877903874361
+      ],
+      "m": 0.25,
+      "t": "PFPPP"
+    },
+    "approved": false,
+    "disposition": "Held at the complete live record; no economic rule change selected",
+    "name": "Ipsos SA",
+    "methodVersion": "3.5.0",
+    "qualityEvidence": {
+      "understandable": {
+        "result": "pass",
+        "reasons": [
+          "5 revenue declines in the last 10 years (informational)"
+        ],
+        "metrics": {
+          "historyYears": 10,
+          "revenueDeclines": 5,
+          "lossYears": 0,
+          "opMarginCv": 0.13680194194363876
+        }
+      },
+      "moat": {
+        "result": "fail",
+        "reasons": [
+          "Recent gross margin fell 45.0pp below the typical margin (limit 4pp)"
+        ],
+        "metrics": {
+          "roicMedian": 0.5698677079697421,
+          "roicSecondLowest": 0.37951111441345725,
+          "grossMarginDrop": 0.4504681338238886,
+          "grossMarginTypical": 0.6501675849300337,
+          "grossMarginRecent": 0.1996994511061451,
+          "capitalFallbackYears": 0,
+          "capexToRevenue": 0.022186682704408156,
+          "totalRoicMedian": 0.08363569185076304
+        }
+      },
+      "economics": {
+        "result": "pass",
+        "reasons": [],
+        "metrics": {
+          "oeToNi": 0.9609274395610411,
+          "consolidatedCashConversion": 0,
+          "ownerEarningsTotal": 912769600,
+          "netIncomeTotal": 949884000,
+          "roiic": 1.000001,
+          "nwcToRevenueTrend": -0.008778875367141144,
+          "nwcToRevenueChange": -0.053629752658222174,
+          "nwcToRevenueEnd": 0.1526248703971931
+        }
+      },
+      "management": {
+        "result": "pass",
+        "reasons": [
+          "$1 retained earnings test: 2016 to 2025 (9 years)",
+          "buybacks unrelated to price (informational)",
+          "ROIC first 3 years vs last 3 years: 57.5% vs 56.4%"
+        ],
+        "metrics": {
+          "nonAcquisitionShareCagr": -0.004816645042365897,
+          "nonAcquisitionShareCagr5": -0.0054883496979325486,
+          "marketCapGain": 155596317.5,
+          "retainedEarnings": 150137000,
+          "shareCagr": -0.004816645042365897,
+          "shareCagr5": -0.0054883496979325486,
+          "retainedStartFy": 2016,
+          "retainedEndFy": 2025,
+          "perShareValueGrowth": 0.0758917275975659,
+          "perShareValueChange": 1.8889825869716672,
+          "perShareStart": 2.3750402701711897,
+          "perShareEnd": 4.264022857142857,
+          "buybackYieldSpearman": -0.3333333333333333,
+          "averageBuybackYield": 0.018154614620531657,
+          "buybackYears": 8,
+          "debtFundedBuybacks": 0,
+          "acquisitionSpend": 563960000,
+          "cumulativeNetIncome": 1507091000,
+          "roicFirst3Median": 0.5752925335495819,
+          "roicLast3Median": 0.5644428823899023
+        }
+      },
+      "accounting": {
+        "result": "pass",
+        "reasons": [],
+        "metrics": {
+          "accruals": -0.03688258288542111,
+          "dsri": 0.9507597687895679,
+          "restructuringYears": 0,
+          "sbcToOcf": 0.06561359660084978,
+          "cashBacked": 1,
+          "ocfToNi": 1.6085413640237791,
+          "redFlags": 0,
+          "goodwillIntangiblesToEquity": 1.0838358538041841
+        }
+      }
+    },
+    "valuationEvidence": {
+      "version": 2,
+      "currency": "EUR",
+      "balanceSheet": {
+        "filingDateAssumed": true,
+        "end": "2026-06-30",
+        "filed": "2026-09-28",
+        "source": "https://eodhd.com/api/fundamentals/IPS.PA#Financials.Balance_Sheet.quarterly.2026-06-30",
+        "basis": "filed"
+      },
+      "discountRate": 0.1,
+      "terminalGrowth": 0.03,
+      "bondYield": 0.048255,
+      "shares": 43750000,
+      "assumptions": [
+        "filed balance sheet 2026-06-30, assumed available (90-day fallback) 2026-09-28; source: https://eodhd.com/api/fundamentals/IPS.PA#Financials.Balance_Sheet.quarterly.2026-06-30",
+        "complete newer TTM unavailable; zero-growth rule uses latest annual revenue",
+        "growth set to zero when latest revenue is below three years earlier",
+        "equity owner earnings are after interest; debt is reflected in leverage risk, never deducted a second time",
+        "only cash above 2% of revenue is added to equity value",
+        "revenue CAGR reduced by acquisition proxy share of positive assets added over ten years",
+        "operating growth capped at 8%",
+        "Compounder tier uses annual owner earnings / (equity + debt + leases not already in debt \u2212 excess cash); requires ten-year median return on capital including goodwill and acquired intangibles of at least 15%; quality results are unchanged",
+        "owner earnings normalized over 5 years",
+        "growth capex uses trailing five-year PPE to revenue",
+        "owner earnings use the 5-year median capped at latest-year owner earnings and complete newer TTM owner earnings",
+        "maintenance capex floored at the smaller of capex and D&A",
+        "bridge components use the latest owner earnings observation",
+        "lease payments estimated at 20% of lease liabilities",
+        "Local 10-year yield: EODHD latest (FR10Y.GBOND, observed 2026-10-07; checked 2026-10-07)"
+      ],
+      "tier": "standard",
+      "capitalReturns": {
+        "excludingGoodwill": 0.5698677079697421,
+        "includingAcquisitions": 0.08363569185076304,
+        "observations": 10,
+        "basis": "owner_earnings"
+      },
+      "netDebt": 350765000,
+      "leverage": "normal",
+      "riskFlags": [],
+      "method": "owner_earnings",
+      "normalized": 157234400,
+      "growth": 0,
+      "netCash": 239827720,
+      "perShare": {
+        "low": 44.764313480400176,
+        "mid": 50.18051678454845,
+        "high": 57.390632226519905
+      },
+      "equityBondYield": 0.1049016095404887,
+      "bridge": [
+        {
+          "label": "net income",
+          "value": 186551000
+        },
+        {
+          "label": "+ D&A",
+          "value": 101273000
+        },
+        {
+          "label": "\u2212 maintenance capex",
+          "value": -83088000
+        },
+        {
+          "label": "\u2212 stock compensation",
+          "value": -19689000
+        },
+        {
+          "label": "\u2212 estimated lease payments",
+          "value": -27812600
+        },
+        {
+          "label": "= owner earnings",
+          "value": 157234400
+        },
+        {
+          "label": "\u00d7 PV factor",
+          "value": 12.437290372361232
+        },
+        {
+          "label": "+ excess cash",
+          "value": 239827720
+        },
+        {
+          "label": "\u00f7 shares",
+          "value": 43750000
+        }
+      ],
+      "perShareTrading": {
+        "currency": "EUR",
+        "fxRate": 1,
+        "low": 44.764313480400176,
+        "mid": 50.18051678454845,
+        "high": 57.390632226519905
+      },
+      "bondSource": "EODHD latest",
+      "bondFlags": []
+    },
+    "analysisSha256": "5415fa142aadc399053dbf230f448f42547c398930ec9e31de5fdcfe744f72f7"
+  }
+]

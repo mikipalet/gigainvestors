@@ -1,0 +1,36 @@
+{
+  "frozenAt": "2026-10-07T08:57:09.579996+00:00",
+  "baseline": "800a81697a704e8a25f197bed751f9f32facfa1d",
+  "files": {
+    "phase-1-report.md": "980ad054bbe751a0aa611008efbdf2ee13db53861510a33de08009e26665fa8a",
+    "audit-inventory.md": "6287a4d1ea845382d253aff797ace909bbc8100c41640be441d44e1c2b7ce99e",
+    "plan.md": "5574aa15d2d52702aa65de222b88ba11994cacefeda9f81a4496ef03c9dcdf81",
+    "replay.ts": "14c8ee17e360253dda8d84eb8aecc5e6c30b3895212b935d3dde5a2219095374",
+    "current-audit.ts": "48859211ca76e088bb7763b1aa3fe9c424bbac9c468367a4909ae3570984ab52",
+    "audit.py": "24883d114cf9d2690f4fbe3fe181828a96b8d9cf00bc34a8ad9ab28319f0dcf3",
+    "freeze-audit.py": "f0c3bc9c641509764c56aa538fa894d56da4a766450c1f6e582592cdc1576328",
+    "outputs/audit.log": "67d9972f585d69ed5897dd5693de6a3c7f3912e8c3a7d785894212fc0d52e353",
+    "outputs/baseline-predictiveness.csv": "f8289e7a20ac02520a38d37d1dbb6d633ef86315f73063921039077e3bf736d4",
+    "outputs/path-outcomes.csv": "cd1632e3c1273851cc4e2ee4316ef6f9537b9f5ecb4ae29ff775119fc52230f0",
+    "outputs/losing-buys.csv": "f4616ba0f06b72767435c0fe85492af9c6c331b5f9547ee25c36c38baefc77bd",
+    "outputs/baseline.log": "6bb4e912ffb24b71518087f93f08e289eb57446ca44802ed7cf69dcb55326ee1",
+    "outputs/quarter-correlations.csv": "da0752eda403304623a317c1bac24328495ad1d1500e1d61d7f0175d5efcf6c6",
+    "outputs/return-labels.json.gz": "81c43f533b10098a994687c53263f6cedd590c05f703f4c59e41ce5900ac26e4",
+    "outputs/correlation-summary.csv": "f479a9df842a3907dad5cea1d7ffb7b84e4cf0046e53a92ef30ee706db9fe99f",
+    "outputs/current-audit.json.gz": "c9ef3b09eb43e3069b16bec254098a62e0e045862ecd15a3913f8ba3f6a2184a",
+    "outputs/baseline-summary.json": "6e15c83e12163b732ac46127c46e6c593b6c8525fa7bf07b7a3cf0d3d84b4518",
+    "outputs/coverage.json": "e1290be28f8d0816ed8b1c88228b2ce4f21e45cae6ac26bbc67272ce31ef93a8",
+    "outputs/current-paths.json": "d8549cb3c8906d90f15b1846757c193601579bda99ed620bbd14cf2235c4d106",
+    "outputs/iconic-buy-frequency.csv": "69a0969e926a0faafb996ed2528078a97562a586db46b010affe4f68eb516e3e"
+  },
+  "production": {
+    "lib/value/valuation.ts": "181a9dfcc9e5e9f86cd98c8a2c6b028a81a25887f1c0885a6059751e44e9ffc5",
+    "lib/value/owner-earnings.ts": "921969fe06b1c9e48dcc53dcf9b5996f03d29db573af9d822c717ae4fba7a2ce",
+    "lib/value/config.ts": "ee23b362ac26ec41d250faf537502b027e06c6117e42c8d21b9f0928dfa59832",
+    "lib/value/return-model.ts": "6a06ae0b2df20324aa884ade8de1608a6611c577d94ba82e07e9e8289a44c6d8",
+    "lib/value/tests/economics.ts": "71f025b336919d41f10be62f71cb92ca26e3ee3934b2195c52a875d8ce92398e",
+    "lib/value/buy-price.ts": "b8d14854f5a908e0a8837ebdcb9538df1194f0b3fe8eb706221104c1e0ac1600",
+    "lib/value/investment-nav.ts": "b2af685b12581f08a5b4e043bcac5d259385e4199e2b0443d065fb7e632d583f"
+  },
+  "productionDiff": ""
+}

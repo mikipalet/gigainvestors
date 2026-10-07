@@ -1,5 +1,6 @@
 import { enrichedCompany } from "./enrichment";
 import { readCorpusJson, readJsonl } from "./corpus";
+import { shardOf } from "./shard";
 import type { Company } from "./types";
 import type {HeldMembership} from './held-universe';
 
@@ -8,7 +9,17 @@ export function universeCompanies(): Company[] {
  const snapshot=readCorpusJson<{memberships?:Record<string,string[]>;supplementalCompanies?:Company[]}>('index-membership/latest.json');
  const held=readCorpusJson<HeldMembership>('held-membership/latest.json');
  const heldIds=new Set(held?.companies.map(c=>c.id));
- return [...new Map([...(held?.companies??[]),...(snapshot?.supplementalCompanies??[]),...readJsonl<Company>('universe.jsonl')].map(c=>[c.id,c])).values()]
+ const companies=new Map([...(held?.companies??[]),...(snapshot?.supplementalCompanies??[]),...readJsonl<Company>('universe.jsonl')].map(c=>[c.id,c]));
+ // A published issuer may have moved to its primary listing after the raw
+ // universe was captured. Retain its known metadata only while current index
+ // membership still includes that canonical identity.
+ const aliases=readCorpusJson<Record<string,string>>('publish-repo/aliases.json')??{};
+ for(const id of new Set(Object.values(aliases))){
+  if(companies.has(id)||!snapshot?.memberships?.[id]?.length||!validCompanyId(id,'companies'))continue;
+  const dossier=readCorpusJson<Record<string,{company:Company}>>(`publish-repo/dossiers/${shardOf(id)}.json`)?.[id];
+  if(dossier?.company?.id===id)companies.set(id,dossier.company);
+ }
+ return [...companies.values()]
    .map(c=>({...c,...(snapshot?{indexes:snapshot.memberships?.[c.id]??[]}:{}),...(heldIds.has(c.id)?{heldBySuperinvestors:true}:{})}));
 }
 

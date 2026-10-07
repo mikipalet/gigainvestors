@@ -22,12 +22,12 @@ it.each(['missing', 'gap', 'stale', 'currency'])('W1 rejects %s quarterly window
   if (mode === 'currency') raw.Financials.Cash_Flow.quarterly['2026-03-31'].currency_symbol = 'CAD';
   expect((normalizeEodhd(raw, 'TEST.US').fundamentals as any).ttm ?? null).toBeNull();
 });
-it('W1 caps earnings at TTM, reconciles the bridge and uses TTM revenue for zero growth', () => {
+it('W1 applies median margin to TTM revenue, reconciles the bridge and retains zero growth', () => {
   const years = makeYears({ from: 2015, overrides: (_, i) => ({ revenue: 1000 * 1.1 ** i, netIncome: 100 * 1.1 ** i }) });
   const ttm = { ...years.at(-1)!, end: '2026-06-30', revenue: 900, netIncome: 40, da: 20, capex: 24, sbc: 4, ocf: 60 };
   const v = value(years, { ttm });
-  expect(v.normalized).toBe(32); expect(v.growth).toBe(0);
-  expect(v.bridge.slice(0, v.bridge.findIndex(r => r.label === '= owner earnings')).reduce((s, r) => s + r.value, 0)).toBe(32);
+  expect(v.normalized).toBe(90); expect(v.growth).toBe(0);
+  expect(v.bridge.slice(0, v.bridge.findIndex(r => r.label === '= owner earnings')).reduce((s, r) => s + r.value, 0)).toBe(90);
   expect(v.assumptions.join(' ')).toContain('TTM');
 });
 it('W2 caps growth at eight percent and discounts acquisition-led revenue growth', () => {
@@ -71,11 +71,11 @@ it('W4 requires reported SharesStats for small price-corroborated share adjustme
   const years = makeYears({ from: 2015 });
   expect(value(years, { currentShares: 14.5, reportedShares: false, priceHistory: [['2026-04', 100], ['2026-05', 69]] }).shares).toBe(10);
 });
-it('W1 records unknown trailing SBC and rejects trailing losses', () => {
+it('W1 records unknown trailing SBC without making a trailing loss a normalization cap', () => {
   const years = makeYears();
   const ttm = { ...years.at(-1)!, end: '2024-06-30', sbc: null };
   expect(value(years, { ttm }).assumptions).toContain('TTM stock compensation not reported; assumed zero');
-  expect(value(years, { ttm: { ...ttm, netIncome: -1 } })).toBeNull();
+  expect(value(years, { ttm: { ...ttm, netIncome: -1 } }).normalized).toBe(100);
 });
 it('W1 retains reported SBC when another quarter omits it', () => {
   const raw = quarterly();
@@ -92,5 +92,5 @@ it('W1 uses complete TTM revenue for zero growth even when D&A or OCF is unrepor
   const v = value(years, { ttm });
   expect(v.growth).toBe(0);
   expect(v.normalized).toBeGreaterThan(40);
-  expect(v.assumptions).toContain('TTM owner earnings unavailable: quarterly NI, D&A or capex incomplete; annual normalization retained');
+  expect(v.assumptions).toContain('TTM owner earnings unavailable; complete TTM revenue still supplies current scale when reported');
 });

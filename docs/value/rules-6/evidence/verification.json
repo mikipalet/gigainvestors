@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "method": "3.6.0",
+  "baselineCode": "8ed2c83",
+  "baselineArchive": "c6b12018c04a6a70bdaa41cd58844c2f941062cd",
+  "dossiers": 3915,
+  "unitSuite": "PASS",
+  "build": "PASS including TypeScript",
+  "ordinaryExport": "PASS",
+  "realPublishHarness": "PASS, local bare remote and stub Blob only",
+  "localPostPublish": "PASS",
+  "browser": "zero new findings; legacy findings retained",
+  "blobFiles": 6270,
+  "blobBytes": 215861567,
+  "blobVersion": "d7cf836f96e4084b63bccb4a488bb56083f3cbc218bb6186e3fe7909dca399c4",
+  "realLocalCommit": "660c250537cf8a58adb28f27c516e4cfc3ac927c",
+  "candidateCoreFilesMatchRealPublish": 2175,
+  "sourceBindings": 789963,
+  "liveArchiveFiles": 6278,
+  "minimumFreeBytes": {
+    "/": 8190296064,
+    "/Users/miki/data": 72669253632
+  },
+  "isolation": {
+    "interfaces": [
+      "lo"
+    ],
+    "sourceCorpusReadOnly": true,
+    "externalRoutes": 0
+  },
+  "externalTransport": false,
+  "approvedBuyChanges": 0,
+  "proposedBuyChanges": 26,
+  "ownerOverride": "Accounting correctness ships regardless of historical performance gates",
+  "productionGuardsUnchanged": [
+    "scripts/value/publication-coverage.ts",
+    "scripts/value/publish-invariants.ts",
+    "lib/value/publication-capitalization.ts",
+    "lib/value/config.ts"
+  ]
+}

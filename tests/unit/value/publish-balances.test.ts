@@ -37,3 +37,17 @@ it('replaces a cached valuation based on a partial quarter with the complete ann
  const next=refreshBalanceValuation(a,read,'2026-10-06');
  expect(next.valuation?.balanceSheet?.end).toBe('2025-12-31');expect(next.valuation?.netDebt).toBe(0);
 });
+it('keeps a comparable foreign-currency valuation when refreshing a balance without cached trading fields',()=>{
+ const years=makeYears({from:2015}),a=structuredClone(base);
+ a.valuation=valueCompany({years,kind:'operating',currency:'EUR',bondYield:.04,cyclical:false}).valuation;
+ a.company.currency='USD';a.company.marketCapUsd=null;a.requiredMos=.25;
+ const prices={'KO.US':[100,'2026-10-05'] as [number,string]};
+ const {files}=buildOutput({analyses:[a],prices,fx:{EUR:1.2},holdersByTicker:{},investorNames:{}});
+ const raw={General:{CurrencyCode:'EUR'},Financials:{Balance_Sheet:{quarterly:{'2026-06-30':{filing_date:'2026-08-01',currency_symbol:'EUR',cash:40,shortLongTermDebtTotal:700}}}}};
+ const read=(p:string):any=>p==='verdict-freeze.json'?{ids:[]}:p.startsWith('fundamentals/')?{years}:p.startsWith('analysis/inputs/')?{memoYears:years}:p.startsWith('raw/eodhd/')?raw:null;
+ publishBalances(files,prices,{EUR:1.2},read);
+ const d=(files[`dossiers/${shardOf(a.id)}.json`] as any)[a.id],row=(files['index/US.json'] as any[])[0];
+ expect(row.v?.[1]).toBeCloseTo(d.valuation.perShare.mid*1.2);
+ expect(d.valuation.perShareTrading?.fxRate).toBe(1.2);
+ expect(row.buyReturnInputs).not.toBeNull();
+});

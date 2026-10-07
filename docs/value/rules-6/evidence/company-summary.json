@@ -1,0 +1,462 @@
+[
+  {
+    "id": "GOOGL.US",
+    "before": {
+      "quality": "PPFPP",
+      "qualityTests": {
+        "understandable": "pass",
+        "moat": "pass",
+        "economics": "fail",
+        "management": "pass",
+        "accounting": "pass",
+        "price": "fail"
+      },
+      "value": [
+        86.52453623639269,
+        115.41883768101438,
+        132.24404126535438
+      ],
+      "normalized": 60657000000,
+      "normalizedCurrency": "USD",
+      "margin": 0.25,
+      "buyPrice": 86.56412826076078,
+      "price": 347.68,
+      "quote": [
+        347.68,
+        "2026-10-06"
+      ],
+      "buy": false,
+      "expectedReturn": 0.051282300587726204,
+      "filingSource": {
+        "id": "GOOGL.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+        "filed": "2026-02-05",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes",
+          "auditor",
+          "compensation"
+        ]
+      },
+      "method": "3.5.0",
+      "valuationMethod": "owner_earnings"
+    },
+    "released": {
+      "quality": "PPPPP",
+      "qualityTests": {
+        "understandable": "pass",
+        "moat": "pass",
+        "economics": "pass",
+        "management": "pass",
+        "accounting": "pass",
+        "price": "fail"
+      },
+      "value": [
+        170.51859187809976,
+        239.9869142362074,
+        278.731969211569
+      ],
+      "normalized": 127534047357.56448,
+      "normalizedCurrency": "USD",
+      "margin": 0.15,
+      "buyPrice": 203.9888771007763,
+      "price": 347.68,
+      "quote": [
+        347.68,
+        "2026-10-06"
+      ],
+      "buy": false,
+      "expectedReturn": 0.07786217673089438,
+      "filingSource": {
+        "id": "GOOGL.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+        "filed": "2026-02-05",
+        "period": "2025-12-31",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes",
+          "auditor",
+          "compensation"
+        ]
+      },
+      "method": "3.6.0",
+      "valuationMethod": "owner_earnings"
+    },
+    "heldProposal": null
+  },
+  {
+    "id": "NVDA.US",
+    "before": {
+      "quality": "PPPPP",
+      "qualityTests": {
+        "understandable": "pass",
+        "moat": "pass",
+        "economics": "pass",
+        "management": "pass",
+        "accounting": "pass",
+        "price": "fail"
+      },
+      "value": [
+        18.868461548660797,
+        25.29814284347939,
+        29.04215780003
+      ],
+      "normalized": 26650000000,
+      "normalizedCurrency": "USD",
+      "margin": 0.5,
+      "buyPrice": 12.649071421739695,
+      "price": 239.24,
+      "quote": [
+        239.24,
+        "2026-10-06"
+      ],
+      "buy": false,
+      "expectedReturn": 0.036695149016216996,
+      "filingSource": {
+        "id": "NVDA.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+        "filed": "2026-02-25",
+        "period": "2026-01-25",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes",
+          "auditor",
+          "compensation"
+        ]
+      },
+      "method": "3.5.0",
+      "valuationMethod": "owner_earnings"
+    },
+    "released": {
+      "quality": "PPPPP",
+      "qualityTests": {
+        "understandable": "pass",
+        "moat": "pass",
+        "economics": "pass",
+        "management": "pass",
+        "accounting": "pass",
+        "price": "fail"
+      },
+      "value": [
+        87.91558499719434,
+        123.94306706195233,
+        144.9219345224613
+      ],
+      "normalized": 150181557253.53732,
+      "normalizedCurrency": "USD",
+      "margin": 0.5,
+      "buyPrice": 61.97153353097617,
+      "price": 239.24,
+      "quote": [
+        239.24,
+        "2026-10-06"
+      ],
+      "buy": false,
+      "expectedReturn": 0.06658647112709182,
+      "filingSource": {
+        "id": "NVDA.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+        "filed": "2026-02-25",
+        "period": "2026-01-25",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes",
+          "auditor",
+          "compensation"
+        ]
+      },
+      "method": "3.6.0",
+      "valuationMethod": "owner_earnings"
+    },
+    "heldProposal": null
+  },
+  {
+    "id": "MSFT.US",
+    "before": {
+      "quality": "PPFPP",
+      "qualityTests": {
+        "understandable": "pass",
+        "moat": "pass",
+        "economics": "fail",
+        "management": "pass",
+        "accounting": "pass",
+        "price": "fail"
+      },
+      "value": [
+        138.25016978601286,
+        193.45712659942757,
+        225.604236625182
+      ],
+      "normalized": 70626797511.15979,
+      "normalizedCurrency": "USD",
+      "margin": 0.25,
+      "buyPrice": 145.0928449495707,
+      "price": 529.3,
+      "quote": [
+        529.3,
+        "2026-10-06"
+      ],
+      "buy": false,
+      "expectedReturn": 0.05560867269164893,
+      "filingSource": {
+        "id": "MSFT.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+        "filed": "2026-07-29",
+        "period": "2026-06-30",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "compensation"
+        ]
+      },
+      "method": "3.5.0",
+      "valuationMethod": "owner_earnings"
+    },
+    "released": {
+      "quality": "PPPPP",
+      "qualityTests": {
+        "understandable": "pass",
+        "moat": "pass",
+        "economics": "pass",
+        "management": "pass",
+        "accounting": "pass",
+        "price": "fail"
+      },
+      "value": [
+        221.67591456651058,
+        319.0376263926547,
+        373.339857239014
+      ],
+      "normalized": 108525489372.18425,
+      "normalizedCurrency": "USD",
+      "margin": 0.15,
+      "buyPrice": 271.1819824337565,
+      "price": 529.3,
+      "quote": [
+        529.3,
+        "2026-10-06"
+      ],
+      "buy": false,
+      "expectedReturn": 0.07258204002083651,
+      "filingSource": {
+        "id": "MSFT.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+        "filed": "2026-07-29",
+        "period": "2026-06-30",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "compensation"
+        ]
+      },
+      "method": "3.6.0",
+      "valuationMethod": "owner_earnings"
+    },
+    "heldProposal": null
+  },
+  {
+    "id": "AAPL.US",
+    "before": {
+      "quality": "PPPPP",
+      "qualityTests": {
+        "understandable": "pass",
+        "moat": "pass",
+        "economics": "pass",
+        "management": "pass",
+        "accounting": "pass",
+        "price": "fail"
+      },
+      "value": [
+        88.91389079340476,
+        126.23576887456737,
+        147.65969956249123
+      ],
+      "normalized": 86973000000,
+      "normalizedCurrency": "USD",
+      "margin": 0.15,
+      "buyPrice": 107.30040354338226,
+      "price": 333.63,
+      "quote": [
+        333.63,
+        "2026-10-06"
+      ],
+      "buy": false,
+      "expectedReturn": 0.05685325987175119,
+      "filingSource": {
+        "id": "AAPL.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+        "filed": "2025-10-31",
+        "period": "2025-09-27",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes",
+          "auditor",
+          "compensation"
+        ]
+      },
+      "method": "3.5.0",
+      "valuationMethod": "owner_earnings"
+    },
+    "released": {
+      "quality": "PPPPP",
+      "qualityTests": {
+        "understandable": "pass",
+        "moat": "pass",
+        "economics": "pass",
+        "management": "pass",
+        "accounting": "pass",
+        "price": "fail"
+      },
+      "value": [
+        121.74451110681862,
+        175.77023225136475,
+        205.95621069399698
+      ],
+      "normalized": 118817375490.82275,
+      "normalizedCurrency": "USD",
+      "margin": 0.15,
+      "buyPrice": 149.40469741366002,
+      "price": 333.63,
+      "quote": [
+        333.63,
+        "2026-10-06"
+      ],
+      "buy": false,
+      "expectedReturn": 0.06745266234245834,
+      "filingSource": {
+        "id": "AAPL.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+        "filed": "2025-10-31",
+        "period": "2025-09-27",
+        "sections": [
+          "business",
+          "risk",
+          "mdna",
+          "capital",
+          "notes",
+          "auditor",
+          "compensation"
+        ]
+      },
+      "method": "3.6.0",
+      "valuationMethod": "owner_earnings"
+    },
+    "heldProposal": null
+  },
+  {
+    "id": "COST.US",
+    "before": {
+      "quality": "PPPPP",
+      "qualityTests": {
+        "understandable": "pass",
+        "moat": "pass",
+        "economics": "pass",
+        "management": "pass",
+        "accounting": "pass",
+        "price": "fail"
+      },
+      "value": [
+        219.5898745562918,
+        304.5610837850641,
+        351.95267265805364
+      ],
+      "normalized": 5653942770.179259,
+      "normalizedCurrency": "USD",
+      "margin": 0.15,
+      "buyPrice": 258.87692121730447,
+      "price": 935.68,
+      "quote": [
+        935.68,
+        "2026-10-06"
+      ],
+      "buy": false,
+      "expectedReturn": 0.05182043641152689,
+      "filingSource": {
+        "id": "COST.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/909832/000090983225000101/cost-20250831.htm",
+        "filed": "2025-10-08",
+        "period": "2025-08-31",
+        "sections": [
+          "notes",
+          "auditor",
+          "business",
+          "compensation"
+        ]
+      },
+      "method": "3.5.0",
+      "valuationMethod": "owner_earnings"
+    },
+    "released": {
+      "quality": "PPPPP",
+      "qualityTests": {
+        "understandable": "pass",
+        "moat": "pass",
+        "economics": "pass",
+        "management": "pass",
+        "accounting": "pass",
+        "price": "fail"
+      },
+      "value": [
+        290.0917478681958,
+        407.4074270717215,
+        472.838724185549
+      ],
+      "normalized": 7806128008.318867,
+      "normalizedCurrency": "USD",
+      "margin": 0.15,
+      "buyPrice": 346.2963130109633,
+      "price": 935.68,
+      "quote": [
+        935.68,
+        "2026-10-06"
+      ],
+      "buy": false,
+      "expectedReturn": 0.05991183608208639,
+      "filingSource": {
+        "id": "COST.US",
+        "kind": "10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/909832/000090983225000101/cost-20250831.htm",
+        "filed": "2025-10-08",
+        "period": "2025-08-31",
+        "sections": [
+          "notes",
+          "auditor",
+          "business",
+          "compensation"
+        ]
+      },
+      "method": "3.6.0",
+      "valuationMethod": "owner_earnings"
+    },
+    "heldProposal": null
+  }
+]

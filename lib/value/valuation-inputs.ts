@@ -84,15 +84,21 @@ export function trailingInputs(raw: unknown, latest: Year | undefined, cutoff = 
       && latest.currency && !sameCurrency(row.currency_symbol, latest.currency))) return null;
     const row = {
       revenue: number(income.totalRevenue), netIncome: number(income.netIncome),
+      totalNetIncome: number(income.netIncomeIncludingNoncontrollingInterests), leaseCash: number(cash.leasePayments),
       da: number(income.depreciationAndAmortization) ?? number(income.reconciledDepreciation) ?? number(cash.depreciation),
       capex: number(cash.capitalExpenditures), sbc: number(cash.stockBasedCompensation), ocf: number(cash.totalCashFromOperatingActivities),
     };
     return { ...row, capex: row.capex === null ? null : Math.abs(row.capex) };
   });
   if (quarters.some(row => row === null)) return null;
-  const totals = Object.fromEntries(['revenue', 'netIncome', 'da', 'capex', 'sbc', 'ocf'].map(key => [key,
+  const totals = Object.fromEntries(['revenue', 'netIncome', 'totalNetIncome', 'leaseCash', 'da', 'capex', 'sbc', 'ocf'].map(key => [key,
     (key === 'sbc' ? quarters.every(row => row!.sbc === null)
       : quarters.some(row => row![key as keyof typeof row] === null)) ? null
       : quarters.reduce((sum, row) => sum + (row![key as keyof typeof row] ?? 0), 0)]));
-  return { ...latest, ...totals, sbcIncomplete: quarters.some(row => row!.sbc === null), end: ends[3] };
+  const result = { ...latest, ...totals, sbcIncomplete: quarters.some(row => row!.sbc === null), end: ends[3] };
+  delete result.maintenanceCapexJudgement; delete result.disclosedMaintenanceCapex;
+  delete result.marginOperatingIncomeJudgement; delete result.acquisitionIssuanceJudgement;
+  if (latest.totalNetIncome === undefined && quarters.every(row => row!.totalNetIncome === null)) delete result.totalNetIncome;
+  result.leaseCashIncomplete = (latest.leaseCash ?? 0) > 0 && totals.leaseCash === null;
+  return result;
 }

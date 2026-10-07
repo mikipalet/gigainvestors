@@ -1,0 +1,20 @@
+[
+  {
+    "file": "lib/value/owner-earnings.ts",
+    "shippingSha256": "519b53f260e525737832eb8a30993c8b7378762cb65b4da4f28bd87159ac1c19",
+    "replaySha256": "519b53f260e525737832eb8a30993c8b7378762cb65b4da4f28bd87159ac1c19",
+    "identical": true
+  },
+  {
+    "file": "lib/value/valuation.ts",
+    "shippingSha256": "2097c00d4499c30c8912ec31fe383385152fad536890d5c799363c844fce9397",
+    "replaySha256": "2097c00d4499c30c8912ec31fe383385152fad536890d5c799363c844fce9397",
+    "identical": true
+  },
+  {
+    "file": "lib/value/valuation-inputs.ts",
+    "shippingSha256": "5bcfd9d4d346167683ced2ba1ec58db0a4284234b0a0932083817f76326591a8",
+    "replaySha256": "5bcfd9d4d346167683ced2ba1ec58db0a4284234b0a0932083817f76326591a8",
+    "identical": true
+  }
+]

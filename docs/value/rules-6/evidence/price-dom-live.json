@@ -1,0 +1,162 @@
+[
+  {
+    "id": "GOOGL.US",
+    "width": 1728,
+    "height": 970,
+    "arm": "live",
+    "passed": true,
+    "strictVisibleError": "AssertionError [ERR_ASSERTION]: GOOGL.US price math: expected $86.56",
+    "actualHiddenMath": [
+      {
+        "display": "none",
+        "visible": false,
+        "text": "Price & return mathValue range$86.52 – $132.24Buy price$115.42 × (1 − 25.0%) = $86.56Discount to value1 − 347.68 / 115.42 = -201.2%Return / yearAbout 5.1% a year at today's price (needs 10.0%)Cash-flow inputsOwner cash USD 4.96/share; 8.0% growth for 5 years, then fades to 3.0%; excess cash USD 19.10/share today.Required return10.0% / year"
+      }
+    ],
+    "checks": "Full unchanged auditPriceSurfaces: visible header/drawer, model inputs, seven key numbers, annual table, chart windows, every price/value observation and index range"
+  },
+  {
+    "id": "NVDA.US",
+    "width": 1728,
+    "height": 970,
+    "arm": "live",
+    "passed": true,
+    "strictVisibleError": "AssertionError [ERR_ASSERTION]: NVDA.US price math: expected $12.65",
+    "actualHiddenMath": [
+      {
+        "display": "none",
+        "visible": false,
+        "text": "Price & return mathValue range$18.87 – $29.04Buy price$25.30 × (1 − 50.0%) = $12.65Discount to value1 − 239.24 / 25.30 = -845.7%Return / yearAbout 3.7% a year at today's price (needs 10.0%)Cash-flow inputsOwner cash USD 1.10/share; 8.0% growth for 5 years, then fades to 3.0%; excess cash USD 3.86/share today.Required return10.0% / year"
+      }
+    ],
+    "checks": "Full unchanged auditPriceSurfaces: visible header/drawer, model inputs, seven key numbers, annual table, chart windows, every price/value observation and index range"
+  },
+  {
+    "id": "MSFT.US",
+    "width": 1728,
+    "height": 970,
+    "arm": "live",
+    "passed": true,
+    "strictVisibleError": "AssertionError [ERR_ASSERTION]: MSFT.US price math: expected $145.09",
+    "actualHiddenMath": [
+      {
+        "display": "none",
+        "visible": false,
+        "text": "Price & return mathValue range$138.25 – $225.60Buy price$193.46 × (1 − 25.0%) = $145.09Discount to value1 − 529.30 / 193.46 = -173.6%Return / yearAbout 5.6% a year at today's price (needs 10.0%)Cash-flow inputsOwner cash USD 9.48/share; 8.0% growth for 5 years, then fades to 3.0%; excess cash USD 9.42/share today.Required return10.0% / year"
+      }
+    ],
+    "checks": "Full unchanged auditPriceSurfaces: visible header/drawer, model inputs, seven key numbers, annual table, chart windows, every price/value observation and index range"
+  },
+  {
+    "id": "AAPL.US",
+    "width": 1728,
+    "height": 970,
+    "arm": "live",
+    "passed": true,
+    "strictVisibleError": "AssertionError [ERR_ASSERTION]: AAPL.US price math: expected $107.30",
+    "actualHiddenMath": [
+      {
+        "display": "none",
+        "visible": false,
+        "text": "Price & return mathValue range$88.91 – $147.66Buy price$126.24 × (1 − 15.0%) = $107.30Discount to value1 − 333.63 / 126.24 = -164.3%Return / yearAbout 5.7% a year at today's price (needs 10.0%)Cash-flow inputsOwner cash USD 5.96/share; 11.3% growth fades over 10 years to 3.0%; excess cash USD 3.64/share today.Required return10.0% / year"
+      }
+    ],
+    "checks": "Full unchanged auditPriceSurfaces: visible header/drawer, model inputs, seven key numbers, annual table, chart windows, every price/value observation and index range"
+  },
+  {
+    "id": "COST.US",
+    "width": 1728,
+    "height": 970,
+    "arm": "live",
+    "passed": true,
+    "strictVisibleError": "AssertionError [ERR_ASSERTION]: COST.US price math: expected $258.88",
+    "actualHiddenMath": [
+      {
+        "display": "none",
+        "visible": false,
+        "text": "Price & return mathValue range$219.59 – $351.95Buy price$304.56 × (1 − 15.0%) = $258.88Discount to value1 − 935.68 / 304.56 = -207.2%Return / yearAbout 5.2% a year at today's price (needs 10.0%)Cash-flow inputsOwner cash USD 12.76/share; 12.0% growth fades over 10 years to 3.0%; excess cash USD 34.38/share today.Required return10.0% / year"
+      }
+    ],
+    "checks": "Full unchanged auditPriceSurfaces: visible header/drawer, model inputs, seven key numbers, annual table, chart windows, every price/value observation and index range"
+  },
+  {
+    "id": "GOOGL.US",
+    "width": 390,
+    "height": 844,
+    "arm": "live",
+    "passed": true,
+    "strictVisibleError": "AssertionError [ERR_ASSERTION]: GOOGL.US price math: expected $86.56",
+    "actualHiddenMath": [
+      {
+        "display": "none",
+        "visible": false,
+        "text": "Price & return mathValue range$86.52 – $132.24Buy price$115.42 × (1 − 25.0%) = $86.56Discount to value1 − 347.68 / 115.42 = -201.2%Return / yearAbout 5.1% a year at today's price (needs 10.0%)Cash-flow inputsOwner cash USD 4.96/share; 8.0% growth for 5 years, then fades to 3.0%; excess cash USD 19.10/share today.Required return10.0% / year"
+      }
+    ],
+    "checks": "Full unchanged auditPriceSurfaces: visible header/drawer, model inputs, seven key numbers, annual table, chart windows, every price/value observation and index range"
+  },
+  {
+    "id": "NVDA.US",
+    "width": 390,
+    "height": 844,
+    "arm": "live",
+    "passed": true,
+    "strictVisibleError": "AssertionError [ERR_ASSERTION]: NVDA.US price math: expected $12.65",
+    "actualHiddenMath": [
+      {
+        "display": "none",
+        "visible": false,
+        "text": "Price & return mathValue range$18.87 – $29.04Buy price$25.30 × (1 − 50.0%) = $12.65Discount to value1 − 239.24 / 25.30 = -845.7%Return / yearAbout 3.7% a year at today's price (needs 10.0%)Cash-flow inputsOwner cash USD 1.10/share; 8.0% growth for 5 years, then fades to 3.0%; excess cash USD 3.86/share today.Required return10.0% / year"
+      }
+    ],
+    "checks": "Full unchanged auditPriceSurfaces: visible header/drawer, model inputs, seven key numbers, annual table, chart windows, every price/value observation and index range"
+  },
+  {
+    "id": "MSFT.US",
+    "width": 390,
+    "height": 844,
+    "arm": "live",
+    "passed": true,
+    "strictVisibleError": "AssertionError [ERR_ASSERTION]: MSFT.US price math: expected $145.09",
+    "actualHiddenMath": [
+      {
+        "display": "none",
+        "visible": false,
+        "text": "Price & return mathValue range$138.25 – $225.60Buy price$193.46 × (1 − 25.0%) = $145.09Discount to value1 − 529.30 / 193.46 = -173.6%Return / yearAbout 5.6% a year at today's price (needs 10.0%)Cash-flow inputsOwner cash USD 9.48/share; 8.0% growth for 5 years, then fades to 3.0%; excess cash USD 9.42/share today.Required return10.0% / year"
+      }
+    ],
+    "checks": "Full unchanged auditPriceSurfaces: visible header/drawer, model inputs, seven key numbers, annual table, chart windows, every price/value observation and index range"
+  },
+  {
+    "id": "AAPL.US",
+    "width": 390,
+    "height": 844,
+    "arm": "live",
+    "passed": true,
+    "strictVisibleError": "AssertionError [ERR_ASSERTION]: AAPL.US price math: expected $107.30",
+    "actualHiddenMath": [
+      {
+        "display": "none",
+        "visible": false,
+        "text": "Price & return mathValue range$88.91 – $147.66Buy price$126.24 × (1 − 15.0%) = $107.30Discount to value1 − 333.63 / 126.24 = -164.3%Return / yearAbout 5.7% a year at today's price (needs 10.0%)Cash-flow inputsOwner cash USD 5.96/share; 11.3% growth fades over 10 years to 3.0%; excess cash USD 3.64/share today.Required return10.0% / year"
+      }
+    ],
+    "checks": "Full unchanged auditPriceSurfaces: visible header/drawer, model inputs, seven key numbers, annual table, chart windows, every price/value observation and index range"
+  },
+  {
+    "id": "COST.US",
+    "width": 390,
+    "height": 844,
+    "arm": "live",
+    "passed": true,
+    "strictVisibleError": "AssertionError [ERR_ASSERTION]: COST.US price math: expected $258.88",
+    "actualHiddenMath": [
+      {
+        "display": "none",
+        "visible": false,
+        "text": "Price & return mathValue range$219.59 – $351.95Buy price$304.56 × (1 − 15.0%) = $258.88Discount to value1 − 935.68 / 304.56 = -207.2%Return / yearAbout 5.2% a year at today's price (needs 10.0%)Cash-flow inputsOwner cash USD 12.76/share; 12.0% growth fades over 10 years to 3.0%; excess cash USD 34.38/share today.Required return10.0% / year"
+      }
+    ],
+    "checks": "Full unchanged auditPriceSurfaces: visible header/drawer, model inputs, seven key numbers, annual table, chart windows, every price/value observation and index range"
+  }
+]

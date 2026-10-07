@@ -22,3 +22,9 @@ export function readRetiredIssuerAliases(repo:string):Record<string,string>{
  if(existsSync(dir))for(const f of readdirSync(dir).filter(f=>/^\d{3}\.json$/.test(f)))for(const id of Object.keys(JSON.parse(readFileSync(path.join(dir,f),'utf8'))))ids.add(id);
  return retiredIssuerAliases(aliases,ids);
 }
+
+/** Release membership follows the already-published issuer identity, including
+ * reviewed dynamic aliases which do not belong to the static registry. */
+export function releaseCanonicalIds(ids:string[], retired:Readonly<Record<string,string>>):Set<string> {
+ return new Set(ids.map(id=>retired[id]??reviewedIssuerAliases[id]??id));
+}

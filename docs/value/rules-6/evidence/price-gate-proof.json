@@ -1,0 +1,119 @@
+{
+  "rows": 3910,
+  "buys": 27,
+  "frozenBuys": 0,
+  "examples": [
+    {
+      "id": "GOOGL.US",
+      "quality": "PPPPP",
+      "buy": false,
+      "quote": [
+        347.68,
+        "2026-10-06"
+      ],
+      "value": [
+        170.51859187809976,
+        239.9869142362074,
+        278.731969211569
+      ],
+      "requiredMargin": 0.15,
+      "buyCeiling": 203.9888771007763,
+      "gate": {
+        "result": "fail",
+        "mos": -0.44874565809782263,
+        "dataQualityFlags": [],
+        "b": false
+      }
+    },
+    {
+      "id": "NVDA.US",
+      "quality": "PPPPP",
+      "buy": false,
+      "quote": [
+        239.24,
+        "2026-10-06"
+      ],
+      "value": [
+        87.91558499719434,
+        123.94306706195233,
+        144.9219345224613
+      ],
+      "requiredMargin": 0.5,
+      "buyCeiling": 61.97153353097617,
+      "gate": {
+        "result": "fail",
+        "mos": -0.9302410830322367,
+        "dataQualityFlags": [],
+        "b": false
+      }
+    },
+    {
+      "id": "MSFT.US",
+      "quality": "PPPPP",
+      "buy": false,
+      "quote": [
+        529.3,
+        "2026-10-06"
+      ],
+      "value": [
+        221.67591456651058,
+        319.0376263926547,
+        373.339857239014
+      ],
+      "requiredMargin": 0.15,
+      "buyCeiling": 271.1819824337565,
+      "gate": {
+        "result": "fail",
+        "mos": -0.6590519619418349,
+        "dataQualityFlags": [],
+        "b": false
+      }
+    },
+    {
+      "id": "AAPL.US",
+      "quality": "PPPPP",
+      "buy": false,
+      "quote": [
+        333.63,
+        "2026-10-06"
+      ],
+      "value": [
+        121.74451110681862,
+        175.77023225136475,
+        205.95621069399698
+      ],
+      "requiredMargin": 0.15,
+      "buyCeiling": 149.40469741366002,
+      "gate": {
+        "result": "fail",
+        "mos": -0.8981029707173842,
+        "dataQualityFlags": [],
+        "b": false
+      }
+    },
+    {
+      "id": "COST.US",
+      "quality": "PPPPP",
+      "buy": false,
+      "quote": [
+        935.68,
+        "2026-10-06"
+      ],
+      "value": [
+        290.0917478681958,
+        407.4074270717215,
+        472.838724185549
+      ],
+      "requiredMargin": 0.15,
+      "buyCeiling": 346.2963130109633,
+      "gate": {
+        "result": "fail",
+        "mos": -1.2966689800558777,
+        "dataQualityFlags": [],
+        "b": false
+      }
+    }
+  ],
+  "errors": [],
+  "pass": true
+}

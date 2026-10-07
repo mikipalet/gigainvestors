@@ -1,0 +1,175 @@
+[
+  {
+    "id": "AZN.US",
+    "reason": "Cached reading unavailable or changed: AZN.US",
+    "retained": [],
+    "absent": [
+      "analysis/AZN.US.json",
+      "analysis/inputs/AZN.US.json",
+      "analysis/fingerprints/AZN.US.json"
+    ]
+  },
+  {
+    "id": "AEM.US",
+    "reason": "Cached reading unavailable or changed: AEM.US",
+    "retained": [],
+    "absent": [
+      "analysis/AEM.US.json",
+      "analysis/inputs/AEM.US.json",
+      "analysis/fingerprints/AEM.US.json"
+    ]
+  },
+  {
+    "id": "AERO.US",
+    "reason": "Cached reading unavailable or changed: AERO.US",
+    "retained": [
+      {
+        "file": "analysis/AERO.US.json",
+        "sha256": "f5c3734668fad5ca157bd6e25295efbfe8b9343936ce56e7496666b3dd5459ca"
+      },
+      {
+        "file": "analysis/inputs/AERO.US.json",
+        "sha256": "9aa08df021d0f3a70096e713e9c3fba9a1ee821417bdefb8518b19437d1c29a0"
+      },
+      {
+        "file": "analysis/fingerprints/AERO.US.json",
+        "sha256": "0c57f9d5d4cfbc857aaeb19b408ffe59bd3202e2d4ca12c2da54cd5fa03cacaa"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "ABEV.US",
+    "reason": "Cached reading unavailable or changed: ABEV.US",
+    "retained": [],
+    "absent": [
+      "analysis/ABEV.US.json",
+      "analysis/inputs/ABEV.US.json",
+      "analysis/fingerprints/ABEV.US.json"
+    ]
+  },
+  {
+    "id": "AEG.US",
+    "reason": "Cached reading unavailable or changed: AEG.US",
+    "retained": [
+      {
+        "file": "analysis/AEG.US.json",
+        "sha256": "ffec2ed0a0c367e2a5a48c9c91a4ef924a92f37018aee37d07c70c1f65c95c93"
+      },
+      {
+        "file": "analysis/inputs/AEG.US.json",
+        "sha256": "5da5e68380bfa28d09efcb0e264a06dd999b505b3d097b2117881f58a6d92e4d"
+      },
+      {
+        "file": "analysis/fingerprints/AEG.US.json",
+        "sha256": "ecaefc955b33d1fa2559d2dbb3175f366f07b2f76b091f42c1f076d851d1a2e0"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "BUD.US",
+    "reason": "Cached reading unavailable or changed: BUD.US",
+    "retained": [],
+    "absent": [
+      "analysis/BUD.US.json",
+      "analysis/inputs/BUD.US.json",
+      "analysis/fingerprints/BUD.US.json"
+    ]
+  },
+  {
+    "id": "DCI.US",
+    "reason": "Cached reading unavailable or changed: DCI.US",
+    "retained": [
+      {
+        "file": "analysis/DCI.US.json",
+        "sha256": "f2a73946120b7a296b18be59c6438ad5ea1022cdedd68a46ddf36a1e9fffdef2"
+      },
+      {
+        "file": "analysis/inputs/DCI.US.json",
+        "sha256": "5ba8efe876a717b8533e40634f383d4b59525fde34d7091f870056a8df14a16e"
+      },
+      {
+        "file": "analysis/fingerprints/DCI.US.json",
+        "sha256": "d9c1a0272a7f335395261c17a9be2c7bd79e8468cf1b1218d14ea5b5ce221867"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "LITE.US",
+    "reason": "Cached reading unavailable or changed: LITE.US",
+    "retained": [
+      {
+        "file": "analysis/LITE.US.json",
+        "sha256": "1f5929f733842a18ca52d96cf65ab8a15507200293314f3f797dd6ed52f0ac9d"
+      },
+      {
+        "file": "analysis/inputs/LITE.US.json",
+        "sha256": "510d14dd013e5c3c3152cf39fb4aa5ed2aecbbe2eac54cbd4ca6a40199305936"
+      },
+      {
+        "file": "analysis/fingerprints/LITE.US.json",
+        "sha256": "bd25439581ce6a80d73ad1e98eb06e753371813bafd194a6b35e4a8d62aeee1d"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "SNDK.US",
+    "reason": "Cached reading unavailable or changed: SNDK.US",
+    "retained": [
+      {
+        "file": "analysis/SNDK.US.json",
+        "sha256": "4d94c8d45d285dab64ec170ebe3c6a586e35d68041160f87cfa8d00ee7c4ec2c"
+      },
+      {
+        "file": "analysis/inputs/SNDK.US.json",
+        "sha256": "3a4c479f6f921dd2c05cac8ca95397fc0034e7860352b282ac03df8fc3a833a9"
+      },
+      {
+        "file": "analysis/fingerprints/SNDK.US.json",
+        "sha256": "295dd34f26b34d0874523a1ad45186de1b53f59e6d0ad02d03014dac4a45a8d4"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "MBLY.US",
+    "reason": "Cached reading unavailable or changed: MBLY.US",
+    "retained": [
+      {
+        "file": "analysis/MBLY.US.json",
+        "sha256": "e73e9cc5cd986ef0f63ce9502e84a1a76228a2a02f1f7171e55bd404acc7c064"
+      },
+      {
+        "file": "analysis/inputs/MBLY.US.json",
+        "sha256": "33ff9c6cda6dc43c8b851993adea4ff8baeba53b55e1894069a7e0efbda3de20"
+      },
+      {
+        "file": "analysis/fingerprints/MBLY.US.json",
+        "sha256": "ed84af55c1edaf2f5952cb6901413dd6f083339c708960d52b84c2ed4a48efd0"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "ZNTL.US",
+    "reason": "Cached reading unavailable or changed: ZNTL.US",
+    "retained": [
+      {
+        "file": "analysis/ZNTL.US.json",
+        "sha256": "20feec35685838ff048a01da5c89467a9f459f5fc0182c1766f31f2ef745859f"
+      },
+      {
+        "file": "analysis/inputs/ZNTL.US.json",
+        "sha256": "95a9eae0684e72c9786bce0f980c1ce060624169e0e8ce00e5a21b6a0c4deaf7"
+      },
+      {
+        "file": "analysis/fingerprints/ZNTL.US.json",
+        "sha256": "24c597481225ccaf4619f50b8168177bccb6301625368a7a5a593e01e0b235c8"
+      }
+    ],
+    "absent": []
+  }
+]

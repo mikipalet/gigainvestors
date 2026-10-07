@@ -1,0 +1,108 @@
+{
+  "personallyReviewed": true,
+  "reviewedAt": "2026-10-07T12:32:31.323000+00:00",
+  "viewports": [
+    "1728x970",
+    "390x844"
+  ],
+  "companies": [
+    "GOOGL.US",
+    "NVDA.US",
+    "MSFT.US",
+    "AAPL.US",
+    "COST.US"
+  ],
+  "observations": [
+    "Five-year-total cash conversion remains distinct from annual median and latest figures.",
+    "Final valuation drawers show current-scale normalization, scaled bridge estimates, SBC already expensed at zero additional charge, and current shares.",
+    "Mobile valuation drawers remain scrollable; normalization and every bridge row are readable.",
+    "GOOGL and MSFT quality headlines show all five passes; NVDA, AAPL and COST retain their quality verdicts."
+  ],
+  "limitations": [
+    "Existing owner chrome and whitespace exceptions remain.",
+    "Unchanged legacy Method-table overflow and six dated quality-series discrepancies are preserved and recorded by the comparison.",
+    "Ten hidden price-math visibility failures remain recorded; full independent actual-DOM arithmetic audits pass for both arms."
+  ],
+  "screenshots": [
+    {
+      "file": "browser/1728x970-_s_AAPL_US-6-Open_Cash_for_owners_evidence.png",
+      "sha256": "74404af9a9230231c744881f7671c30f42f5e674cc33162fdc162c59d5776766"
+    },
+    {
+      "file": "browser/1728x970-_s_COST_US-6-Open_Cash_for_owners_evidence.png",
+      "sha256": "1bc32a87e662257433f2345d83c5202b3a413c40d5259d03e74dfbe996f84108"
+    },
+    {
+      "file": "browser/1728x970-_s_GOOGL_US-6-Open_Cash_for_owners_evidence.png",
+      "sha256": "a26843c7234a96a61241d64e50ba110a489c86b4ca41b01ef1fc11d74fe293ac"
+    },
+    {
+      "file": "browser/1728x970-_s_MSFT_US-6-Open_Cash_for_owners_evidence.png",
+      "sha256": "d7c75e95796f97667282c6256b6672435c898914119a9efb73bd7bb58fe8d701"
+    },
+    {
+      "file": "browser/1728x970-_s_NVDA_US-6-Open_Cash_for_owners_evidence.png",
+      "sha256": "4e92f5033d34c476bad30fef17cbc3efcdd141d6a42572834456f635f5a40ac6"
+    },
+    {
+      "file": "browser/390x844-_s_AAPL_US-6-Open_Cash_for_owners_evidence.png",
+      "sha256": "2fb8e6f7a8b80f37a9370d364464c6f5f98d54ea8f0e6b628c503ee9b56d452a"
+    },
+    {
+      "file": "browser/390x844-_s_COST_US-6-Open_Cash_for_owners_evidence.png",
+      "sha256": "aefb9b76f0e0082716ac77583b840d4f6251bf32ac875483413df1a439e43fe9"
+    },
+    {
+      "file": "browser/390x844-_s_GOOGL_US-6-Open_Cash_for_owners_evidence.png",
+      "sha256": "ffae8972ee04efa85c6d31885bd4e02d5dfc6ccd67baeba34aedbf2c948fd58f"
+    },
+    {
+      "file": "browser/390x844-_s_MSFT_US-6-Open_Cash_for_owners_evidence.png",
+      "sha256": "acbe2212ac2f2bdd3e7d22de35af2e11be9287bf628946d0515e66e1f391ec31"
+    },
+    {
+      "file": "browser/390x844-_s_NVDA_US-6-Open_Cash_for_owners_evidence.png",
+      "sha256": "7c979e58fddb9ccd0ba6e0a80fd0b31b9cf9f42d9ee7b07ceb8344036895f3b5"
+    },
+    {
+      "file": "semantics-candidate/AAPL.US-1728-normalization.png",
+      "sha256": "4a153e21d03fe915d68366c8ebe6733ff465d503c35a4080767df417178d9b99"
+    },
+    {
+      "file": "semantics-candidate/AAPL.US-390-normalization.png",
+      "sha256": "0542ab94759f7e2f6fac5ab66df54753f93721e5f54d8ff6d7f1fa0a7fb7b4cc"
+    },
+    {
+      "file": "semantics-candidate/COST.US-1728-normalization.png",
+      "sha256": "39a64b73622510ae19ab65a67b92498956bb5e00f50fdadc06dc5392e8474478"
+    },
+    {
+      "file": "semantics-candidate/COST.US-390-normalization.png",
+      "sha256": "6e7c635fc4301a71484f50ace97843e7ece783a452de017c178cb153b17f4c00"
+    },
+    {
+      "file": "semantics-candidate/GOOGL.US-1728-normalization.png",
+      "sha256": "25c88bc8304da8d821381f3d6565cb6cccf280fdac893d959da51c13d6dd4849"
+    },
+    {
+      "file": "semantics-candidate/GOOGL.US-390-normalization.png",
+      "sha256": "26db90be7cfb88fda14a8b7481bf4403173dfedba13128d8b3701dfc72494f2e"
+    },
+    {
+      "file": "semantics-candidate/MSFT.US-1728-normalization.png",
+      "sha256": "c36684752c2c4549b498671111bb9becf063b50d13a70e6f088e7fb0cf56b609"
+    },
+    {
+      "file": "semantics-candidate/MSFT.US-390-normalization.png",
+      "sha256": "3458237dccad67382448720274187375f53912ec4cea4d113f6dd8dee4c4fbee"
+    },
+    {
+      "file": "semantics-candidate/NVDA.US-1728-normalization.png",
+      "sha256": "e5889ac3d651340d8711ca3dfb6a1467630fe8f71dffdb90d5989b92d357c06c"
+    },
+    {
+      "file": "semantics-candidate/NVDA.US-390-normalization.png",
+      "sha256": "a3ef040eb1f9f70311d556ddf45c56ac6f6583b09e1e71b7289c67cfc03edfe5"
+    }
+  ]
+}

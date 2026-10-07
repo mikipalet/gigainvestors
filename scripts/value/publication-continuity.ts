@@ -1,3 +1,4 @@
+import {shardOf} from '../../lib/value/shard';
 import {readCorpusJson,writeCorpusJson} from '../../lib/value/corpus';
 import {retainPublishedNumbers} from '../../lib/value/retain-published-numbers';
 import {applyVerdictFreeze,type readVerdictFreeze} from './verdict-freeze';
@@ -33,7 +34,12 @@ export function applyPublicationContinuity(files:Record<string,any>,baseline:Ret
   const before=priorRows.get(row.id);if(!before||before.b===row.b||approved.some((a:ApprovedVerdictChange)=>a.id===row.id))continue;
   const oldPrice=baseline.previous[`prices/${before.c}.json`]?.[row.id];
   if(!isDeepStrictEqual(oldPrice,prices[row.id])&&publishedBuyPrice(before,prices[row.id]).b===row.b)continue;
-  ids.add(row.id);transitions.push({id:row.id,before:{b:before.b,v:before.v,m:before.m,t:before.t},proposed:{b:row.b,v:row.v,m:row.m,t:row.t}});
+  ids.add(row.id);
+  // Bind approval evidence before complete-record preservation replaces the
+  // candidate. Analysis alone may predate balance, FX and share reconciliation.
+  const dossierFile=`dossiers/${shardOf(row.id)}.json`;
+  transitions.push({id:row.id,before:{b:before.b,v:before.v,m:before.m,t:before.t},proposed:{b:row.b,v:row.v,m:row.m,t:row.t},
+   evidence:structuredClone({before:{dossier:baseline.previous[dossierFile]?.[row.id],index:before,price:oldPrice},proposed:{dossier:files[dossierFile]?.[row.id],index:row,price:prices[row.id]}})});
  }
  const dossiers:Record<string,Dossier>={};
  for(const [file,shard]of Object.entries(baseline.previous))if(file.startsWith('dossiers/'))for(const [id,d]of Object.entries(shard))if(ids.has(id))dossiers[id]=d as Dossier;

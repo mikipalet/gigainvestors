@@ -1,0 +1,21 @@
+{
+  "complete": true,
+  "removed": [
+    "/Users/miki/data/value-rules/.audit/rules-6/corpus",
+    "/Users/miki/data/value-rules/.audit/rules-6/baseline",
+    "/Users/miki/data/value-rules/.audit/rules-6/baseline-code",
+    "/Users/miki/data/value-rules/.audit/rules-6/candidate-final",
+    "/Users/miki/data/value-rules/.audit/rules-6/storage",
+    "/Users/miki/data/value-rules/.audit/rules-6/tmp",
+    "/Users/miki/data/value-rules/.audit/rules-6/harness-bin",
+    "/Users/miki/data/value-rules/.audit/rules-6/engines",
+    "/Users/miki/data/value-rules/.audit/rules-6/research",
+    "/Users/miki/data/value-rules/.audit/rules-6/harness.env",
+    "/Users/miki/data/value-rules/.next"
+  ],
+  "retained": "Original owner bundles, controller-backup, controller-runner-paused.resumed.json, tmp and dependency target untouched. New release-bundle-rules-6 and compact evidence retained.",
+  "freeBytes": {
+    "/": 8246669312,
+    "/Users/miki/data": 138976776192
+  }
+}

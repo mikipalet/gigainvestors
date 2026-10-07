@@ -126,8 +126,8 @@ describe("metric arithmetic", () => {
 });
 
 describe("owner earnings", () => {
-  it("subtracts maintenance and stock compensation", () => {
-    expect(ownerEarningsSeries(makeYears({ n: 1, overrides: { capex: 40, sbc: 5 } }))).toEqual([[2013, 75]]);
+  it("subtracts maintenance with stock compensation already expensed", () => {
+    expect(ownerEarningsSeries(makeYears({ n: 1, overrides: { capex: 40, sbc: 5 } }))).toEqual([[2013, 80]]);
   });
   it("uses trailing five-year PPE intensity for growth capex", () => {
     const years = makeYears({ n: 6, overrides: (_, i) => ({ revenue: i === 5 ? 1200 : 1000, ppe: i === 0 ? 9000 : i === 5 ? 240 : 200, capex: 100 }) });

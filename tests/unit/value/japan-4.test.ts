@@ -39,8 +39,8 @@ it('J7 allocates consolidated cash-flow adjustments and net cash using recorded 
  const y=yearsFromEdinet(read('S100XUA2')).at(-1)!;
  expect(y).toMatchObject({totalNetIncome:12540000000,minorityInterest:73116000000,equity:80152000000});
  const bridge=ownerEarningsBridge([y])[0];
- // Parent NI + (D&A - full capex - SBC - lease cash) * 9297 / 12540.
- expect(bridge.value).toBeCloseTo(7020940191.38756,0);
+ // Parent NI + (D&A - full capex - lease cash; SBC remains expensed in NI) * 9297 / 12540.
+ expect(bridge.value).toBeCloseTo(y.netIncome! + (y.da! - y.capex! - y.leaseCash!) * 9297 / 12540,0);
  const v=valueCompany({years:makeYears({overrides:(base)=>({...y,fy:base.fy,end:base.end})}),kind:'operating',bondYield:.02,cyclical:false}).valuation!;
  expect(v.netCash).toBeCloseTo(Math.max(0,y.cash!-.02*y.revenue!)*9297/12540,0);
  expect(v.netDebt).toBeCloseTo(-56349902870.8134,0);
@@ -77,7 +77,7 @@ it('J5 accepts a treasury-share explanation and a matching price move, but flags
 it('J7 keeps small minorities unchanged and refuses material minorities with an invalid allocation denominator',()=>{
  const y=yearsFromEdinet(read('S100XUA2')).at(-1)!;
  const small={...y,minorityInterest:1,totalNetIncome:null};
- expect(ownerEarningsBridge([small])[0].value).toBe(6227000000);
+ expect(ownerEarningsBridge([small])[0].value).toBe(6625000000);
  expect(ownerEarningsBridge([{...y,totalNetIncome:0}])[0].value).toBeNull();
 });
 it('J7 retains parent-only equity when a later summary omits minority facts',async()=>{
@@ -86,7 +86,7 @@ it('J7 retains parent-only equity when a later summary omits minority facts',asy
  const summary=rows.filter(r=>r.element.includes('SummaryOfBusinessResults')||r.element.endsWith('DEI'));
  expect(mergeYears(original,yearsFromEdinet(summary)).at(-1)?.equity).toBe(80152000000);
 });
-it('J8 limits owner earnings using a weaker recorded RS Technologies H1 without changing the annual observation',async()=>{
+it('J8 uses current revenue scale from recorded RS Technologies H1 without changing the annual observation',async()=>{
  const {trailingFromEdinet}=await import('../../../lib/value/japan/interim');
  const annual=yearsFromEdinet(read('S100XUA2')).at(-1)!;
  const ttm=trailingFromEdinet(read('S100YWML'),annual,{periodStart:'2026-01-01',periodEnd:'2026-06-30'})!;
@@ -94,7 +94,7 @@ it('J8 limits owner earnings using a weaker recorded RS Technologies H1 without 
  const years=makeYears({overrides:base=>({...annual,fy:base.fy,end:`${base.fy}-12-31`})});
  ttm.end='2026-06-30';
  const value=valueCompany({years,ttm,kind:'operating',bondYield:.02,cyclical:false}).valuation!;
- expect(value.normalized).toBeLessThan(7020940192);
+ expect(value.normalized).toBeCloseTo(ownerEarningsBridge(years).at(-1)!.value! / annual.revenue! * ttm.revenue!, 0);
  expect(value.assumptions.some(a=>a.startsWith('TTM ending 2026-06-30'))).toBe(true);
 });
 it('J5 does not treat an old split note in H1 as evidence for a new unexplained share jump',async()=>{

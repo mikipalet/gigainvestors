@@ -1,8 +1,9 @@
+import {cachedPublicationShares} from '../../../lib/value/cached-publication-shares';
 import {applyPublicationContinuity} from '../publication-continuity';
 import {issuerShareContradictions,issuerFilingShareObservations} from '../../../lib/value/publication-continuity';
 import {refreshBalanceValuation} from '../../../lib/value/refresh-balance-valuation';
 import {publishBalances} from '../publish-balances';
-import {readRetiredIssuerAliases,reviewedIssuerAliases} from '../retired-issuer-aliases';
+import {readRetiredIssuerAliases,reviewedIssuerAliases,releaseCanonicalIds} from '../retired-issuer-aliases';
 import {reconcileIssuers} from '../issuer-publication';
 import {fillPublishedLogos} from '../../../lib/value/logo-fill';
 import {readCoverageRelease,additionInputProblems,assertAdditionBinding} from '../coverage-release';
@@ -482,7 +483,10 @@ export function loadAnalyses(companies: Company[]): Analysis[] {
         const customer=numericMemo(analysis,years,null).find(l=>l.question===2);
         analysis.ownerMemo={...analysis.ownerMemo,lines:analysis.ownerMemo.lines.flatMap(l=>l.question===2&&l.basis==='computed'?customer?[customer]:[]:[l])};
       }
-      analyses.push(applyThesis(applyShareCheck(years&&!memoYears?withCapitalReturns(analysis,applyAdjustments(years,readCorpusJson(`judgement/${company.id}.json`),judgementTrust,analysis.reportingCurrency??company.currency).years):analysis,readCorpusJson<ShareCheck>(`enrichment-v7/share-checks/${company.id}.json`)),readCorpusJson<ThesisResult>(`thesis/${company.id}.json`)));
+      const recordedShareCheck=readCorpusJson<ShareCheck>(`enrichment-v7/share-checks/${company.id}.json`);
+      const shareCheck=company.exchange==='US'&&company.country==='US'&&!analysis.valuation?.shareBasis
+        ? cachedPublicationShares(readCorpusJson(`raw/eodhd/${company.id}.json`),readCorpusJson(`raw/sec-companyfacts/${company.id}.json`),recordedShareCheck,new Date().toISOString().slice(0,10)) : recordedShareCheck;
+      analyses.push(applyThesis(applyShareCheck(years&&!memoYears?withCapitalReturns(analysis,applyAdjustments(years,readCorpusJson(`judgement/${company.id}.json`),judgementTrust,analysis.reportingCurrency??company.currency).years):analysis,shareCheck),readCorpusJson<ThesisResult>(`thesis/${company.id}.json`)));
     } catch (error) {
       console.warn(`publish: skipped analysis/${company.id}.json: ${error instanceof Error ? error.message : "unreadable analysis"}`);
     }
@@ -519,8 +523,8 @@ export default async function publish(options: { only?: string[]; limit?: number
   const membership = readCorpusJson<{ complete: boolean; memberships: Record<string, string[]>; supplementalCompanies?: Company[] }>("index-membership/latest.json");
   if (!membership || (!membership.complete && !(out && options.force))) throw new Error("Run index-membership and resolve its coverage report before publish (incomplete snapshots may only be inspected with --out --force)");
   const release=readCoverageRelease();
-  const releasedIds=release?new Set([...release.baselineIds,...release.additionIds].map(id=>reviewedIssuerAliases[id]??id)):null;
   const retired=readRetiredIssuerAliases(corpusPath('publish-repo'));
+  const releasedIds=release?releaseCanonicalIds([...release.baselineIds,...release.additionIds],retired):null;
   const companies = universeCompanies().filter(c=>!retired[c.id]&&!reviewedIssuerAliases[c.id]).filter(c=>!releasedIds||releasedIds.has(c.id)).map(company=>({...mergeCompany(company,readCorpusJson<Partial<Company>>(`companies/${company.id}.json`)??{}),indexes:company.indexes,heldBySuperinvestors:company.heldBySuperinvestors})).filter(company => inPublicationScope(company) && !companyExclusion(company));
   if (!companies.length) throw new Error("Run the universe stage before publish");
   // Selection only needs IDs; do not retain a second full baseline while building output.

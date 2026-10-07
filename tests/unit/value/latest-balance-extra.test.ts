@@ -1,4 +1,5 @@
 import {expect,it} from 'vitest';
+import {trailingOwnerEarnings} from '@/lib/value/owner-earnings';
 import {valueCompany} from '@/lib/value/valuation';
 import {balanceSheets,latestBalanceAt} from '@/lib/value/latest-balance';
 import {makeYears} from './synthetic';
@@ -18,7 +19,7 @@ it('uses TTM revenue for the reserve and current leases only in the trailing bri
  const raw={Financials:{Balance_Sheet:{quarterly:{'2026-06-30':{filing_date:'2026-08-01',currency_symbol:'USD',cash:100,shortLongTermDebtTotal:200,capitalLeaseObligations:150}}}}};
  const balance=latestBalanceAt(balanceSheets(raw),'2026-10-05','USD',years.at(-1)!);
  const result=valueCompany({years,ttm,balance,kind:'operating',currency:'USD',bondYield:.04,cyclical:false}).valuation!;
- expect(result.netCash).toBe(60);expect(result.normalized).toBe(20);
+ expect(result.netCash).toBe(60);expect(result.normalized).toBe(200);expect(trailingOwnerEarnings(years,{...ttm,leaseLiabilities:150}).leaseCashCost).toBe(30);
  expect(years.at(-1)!.cash).toBe(100);expect(ttm.leaseLiabilities).toBe(100);
 });
 it('keeps the established same-statement debt-component mapping for interims',()=>{
@@ -32,8 +33,8 @@ it('does not erase a TTM lease charge when the new balance omits lease obligatio
  const raw={Financials:{Balance_Sheet:{quarterly:{'2026-06-30':{filing_date:'2026-08-01',currency_symbol:'USD',cash:100,shortLongTermDebtTotal:200}}}}};
  const balance=latestBalanceAt(balanceSheets(raw),'2026-10-05','USD',years.at(-1)!);
  const result=valueCompany({years,ttm,balance,kind:'operating',currency:'USD',bondYield:.04,cyclical:false}).valuation!;
- expect(result.normalized).toBe(30);
- expect(result.assumptions.join(' ')).toContain('annual lease estimate retained');
+ expect(result.normalized).toBe(100);
+ expect(trailingOwnerEarnings(years,ttm).leaseCashCost).toBe(20);
 });
 it('uses an older complete annual balance when the latest annual balance is partial',()=>{
  const years=makeYears({from:2015});years.at(-1)!.totalDebt=null;

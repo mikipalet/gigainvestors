@@ -21,7 +21,7 @@ const positive=(n:number|null|undefined):n is number=>typeof n==='number'&&Numbe
 const compact=(n:number|null)=>n===null||!Number.isFinite(n)?null:Number(n.toFixed(6));
 export const QUARTER_ASSUMPTIONS=[
  'Calendar-quarter close; quality uses annual reports plus a reconciled four-quarter provisional LTM where each test has complete inputs. LTM-only verdict changes need two consecutive quarterly confirmations; annual replacements and missing-field fallback apply immediately. All statements must be filed strictly before quarter end, with a 90-day fallback for unknown filing dates.',
- 'Valuation uses the existing annual normalization capped by filed trailing owner earnings: four consecutive quarters, two consecutive halves, otherwise the last annual report. Expected return is the IRR of the same valuation.',
+ 'Operating valuation uses the five-year median owner-earnings margin at current revenue: complete filed trailing revenue from four consecutive quarters or two consecutive halves, otherwise latest annual revenue. Expected return is the IRR of the same valuation.',
  'Stored judgement is restricted to annual periods and evidence filed before quarter end. Current report readings and current share-count overrides are excluded.',
  'Cached financials may be restated. Current issuer classification, bond yields, FX and surviving universe are retained; this is not a vintage point-in-time backtest.',
  'Monthly close series are not interpolated; cached split bases may differ. Realized price gains exclude dividends.',

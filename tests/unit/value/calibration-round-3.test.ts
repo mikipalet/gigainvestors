@@ -29,7 +29,7 @@ it.each(["bank", "insurer"] as const)("C5 skips working capital for a %s, keepin
   const result = economics({ years, kind });
   expect(result.numeric).toBe("pass");
   expect(result.reasons.join(" ")).not.toMatch(/working capital/);
-  years.forEach(y => { y.sbc = 80; });
+  years.forEach(y => { y.capex = 100; }); // Real maintenance spending, not a duplicate SBC charge.
   expect(economics({ years, kind }).numeric).toBe("fail");
 });
 

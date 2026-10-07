@@ -1,0 +1,793 @@
+{
+  "passed": true,
+  "baselineArchive": "c6b12018c04a6a70bdaa41cd58844c2f941062cd",
+  "canonicalIdentities": [
+    {
+      "id": "RACE.MI",
+      "alias": "RACE.US",
+      "canonicalDossierPresent": true,
+      "indexes": [
+        "Euro Stoxx 50",
+        "STOXX Europe 600",
+        "FTSE MIB"
+      ]
+    },
+    {
+      "id": "STLAM.MI",
+      "alias": "STLA.US",
+      "canonicalDossierPresent": true,
+      "indexes": [
+        "STOXX Europe 600",
+        "CAC 40",
+        "SBF 120",
+        "FTSE MIB"
+      ]
+    }
+  ],
+  "canonicalRootCause": "Raw universe omitted published primary-listing identities and release filtering mapped only static aliases; recover currently indexed canonical metadata and honor existing dynamic aliases",
+  "coverageRootCause": "Rules-5 used a stale bound snapshot (documented source drift), plus canonical membership, refreshed FX and cached share-evidence omissions; fresh baseline and corrected ordinary computations pass unchanged production guards",
+  "previousValuationLosses": [
+    {
+      "id": "BBWI.US",
+      "liveValue": [
+        36.31821777453691,
+        40.897030557174084,
+        46.99240159405947
+      ],
+      "candidateValue": [
+        47.886167880126315,
+        54.0443129024931,
+        62.242110146488656
+      ],
+      "realValue": [
+        47.886167880126315,
+        54.0443129024931,
+        62.242110146488656
+      ],
+      "restored": true,
+      "rootCause": "Cached SEC/current-vendor share agreement was not applied at publication for non-audited quality outcomes",
+      "shareSources": 2,
+      "currency": "USD",
+      "tradingCurrency": "USD"
+    },
+    {
+      "id": "BGEO.LSE",
+      "liveValue": [
+        19424.23621763466,
+        24280.295272043324,
+        32373.72702939109
+      ],
+      "candidateValue": [
+        19353.517977142616,
+        24191.89747142827,
+        32255.863295237687
+      ],
+      "realValue": [
+        19353.517977142616,
+        24191.89747142827,
+        32255.863295237687
+      ],
+      "restored": true,
+      "rootCause": "Balance refresh discarded the reporting-to-trading FX conversion despite available bound FX observations",
+      "shareSources": 2,
+      "currency": "GEL",
+      "tradingCurrency": "GBX"
+    },
+    {
+      "id": "BI0.F",
+      "liveValue": [
+        0.3914689629970567,
+        0.4432873799418411,
+        0.5122686842266991
+      ],
+      "candidateValue": [
+        0.7648542919763156,
+        0.8681612844226311,
+        1.0056848040679
+      ],
+      "realValue": [
+        0.7648542919763156,
+        0.8681612844226311,
+        1.0056848040679
+      ],
+      "restored": true,
+      "rootCause": "Balance refresh discarded the reporting-to-trading FX conversion despite available bound FX observations",
+      "shareSources": 2,
+      "currency": "SGD",
+      "tradingCurrency": "EUR"
+    },
+    {
+      "id": "BWA.US",
+      "liveValue": [
+        34.736328775018016,
+        38.1487628579344,
+        42.69143644204834
+      ],
+      "candidateValue": [
+        43.86883580993937,
+        48.45435344468082,
+        54.558650061899634
+      ],
+      "realValue": [
+        43.86883580993937,
+        48.45435344468082,
+        54.558650061899634
+      ],
+      "restored": true,
+      "rootCause": "Cached SEC/current-vendor share agreement was not applied at publication for non-audited quality outcomes",
+      "shareSources": 2,
+      "currency": "USD",
+      "tradingCurrency": "USD"
+    },
+    {
+      "id": "CDEVY.US",
+      "liveValue": [
+        4.738515555479999,
+        5.156822915259392,
+        5.713678739324512
+      ],
+      "candidateValue": [
+        3.8839340622619276,
+        4.1844133116906255,
+        4.584414928069854
+      ],
+      "realValue": [
+        3.8839340622619276,
+        4.1844133116906255,
+        4.584414928069854
+      ],
+      "restored": true,
+      "rootCause": "Balance refresh discarded the reporting-to-trading FX conversion despite available bound FX observations",
+      "shareSources": 2,
+      "currency": "SGD",
+      "tradingCurrency": "USD"
+    },
+    {
+      "id": "CLILF.US",
+      "liveValue": [
+        0.6216890259960327,
+        0.6747565918282095,
+        0.7454007782422168
+      ],
+      "candidateValue": [
+        1.4242459971706445,
+        1.5879686288013872,
+        1.805918179110349
+      ],
+      "realValue": [
+        1.4242459971706445,
+        1.5879686288013872,
+        1.805918179110349
+      ],
+      "restored": true,
+      "rootCause": "Balance refresh discarded the reporting-to-trading FX conversion despite available bound FX observations",
+      "shareSources": 2,
+      "currency": "SGD",
+      "tradingCurrency": "USD"
+    },
+    {
+      "id": "CPAMF.US",
+      "liveValue": [
+        0.7135865957724936,
+        0.8110537605975484,
+        0.9408032309787779
+      ],
+      "candidateValue": [
+        0.8426571625612628,
+        0.9579203376057119,
+        1.1113600723442751
+      ],
+      "realValue": [
+        0.8426571625612628,
+        0.9579203376057119,
+        1.1113600723442751
+      ],
+      "restored": true,
+      "rootCause": "Balance refresh discarded the reporting-to-trading FX conversion despite available bound FX observations",
+      "shareSources": 2,
+      "currency": "SGD",
+      "tradingCurrency": "USD"
+    },
+    {
+      "id": "CRI.US",
+      "liveValue": [
+        39.34625031073361,
+        42.458115630601974,
+        46.60066843672243
+      ],
+      "candidateValue": [
+        87.49811541644623,
+        97.33137654686388,
+        110.42153286855516
+      ],
+      "realValue": [
+        87.49811541644623,
+        97.33137654686388,
+        110.42153286855516
+      ],
+      "restored": true,
+      "rootCause": "Cached SEC/current-vendor share agreement was not applied at publication for non-audited quality outcomes",
+      "shareSources": 2,
+      "currency": "USD",
+      "tradingCurrency": "USD"
+    },
+    {
+      "id": "DY.US",
+      "liveValue": [
+        74.310860347304,
+        83.60788457922699,
+        95.98419584649983
+      ],
+      "candidateValue": [
+        130.29950165284427,
+        147.33934022005633,
+        170.02297971491396
+      ],
+      "realValue": [
+        130.29950165284427,
+        147.33934022005633,
+        170.02297971491396
+      ],
+      "restored": true,
+      "rootCause": "Cached SEC/current-vendor share agreement was not applied at publication for non-audited quality outcomes",
+      "shareSources": 2,
+      "currency": "USD",
+      "tradingCurrency": "USD"
+    },
+    {
+      "id": "EBO.AU",
+      "liveValue": [
+        6.653851063162094,
+        7.571271699519474,
+        8.792553162849591
+      ],
+      "candidateValue": [
+        8.810528164237809,
+        10.025307436925411,
+        11.6424363186798
+      ],
+      "realValue": [
+        8.810528164237809,
+        10.025307436925411,
+        11.6424363186798
+      ],
+      "restored": true,
+      "rootCause": "Balance refresh discarded the reporting-to-trading FX conversion despite available bound FX observations",
+      "shareSources": 2,
+      "currency": "NZD",
+      "tradingCurrency": "AUD"
+    },
+    {
+      "id": "EC.US",
+      "liveValue": [
+        23.925982815617324,
+        27.05128849049101,
+        31.21173325999018
+      ],
+      "candidateValue": [
+        36.02912604096875,
+        40.82319064271413,
+        47.20510750842319
+      ],
+      "realValue": [
+        36.02912604096875,
+        40.82319064271413,
+        47.20510750842319
+      ],
+      "restored": true,
+      "rootCause": "Cached SEC/current-vendor share agreement was not applied at publication for non-audited quality outcomes",
+      "shareSources": 2,
+      "currency": "COP",
+      "tradingCurrency": "USD"
+    },
+    {
+      "id": "FRLOF.US",
+      "liveValue": [
+        0.36941380178544775,
+        0.4171973629945885,
+        0.4808074184521709
+      ],
+      "candidateValue": [
+        0.36941380178544775,
+        0.4171973629945885,
+        0.4808074184521709
+      ],
+      "realValue": [
+        0.36941380178544775,
+        0.4171973629945885,
+        0.4808074184521709
+      ],
+      "restored": true,
+      "rootCause": "Balance refresh discarded the reporting-to-trading FX conversion despite available bound FX observations",
+      "shareSources": 2,
+      "currency": "SGD",
+      "tradingCurrency": "USD"
+    },
+    {
+      "id": "FRW.AU",
+      "liveValue": [
+        2.7176480261476916,
+        3.0923522925757623,
+        3.591163150631332
+      ],
+      "candidateValue": [
+        3.8402113704244316,
+        4.369692587505861,
+        5.074544396999189
+      ],
+      "realValue": [
+        3.8402113704244316,
+        4.369692587505861,
+        5.074544396999189
+      ],
+      "restored": true,
+      "rootCause": "Balance refresh discarded the reporting-to-trading FX conversion despite available bound FX observations",
+      "shareSources": 2,
+      "currency": "NZD",
+      "tradingCurrency": "AUD"
+    },
+    {
+      "id": "GIGNF.US",
+      "liveValue": [
+        0.24922261444991478,
+        0.2577412904984891,
+        0.2690814552363851
+      ],
+      "candidateValue": [
+        0.5820154189388296,
+        0.6364189492727182,
+        0.7088415878132076
+      ],
+      "realValue": [
+        0.5820154189388296,
+        0.6364189492727182,
+        0.7088415878132076
+      ],
+      "restored": true,
+      "rootCause": "Balance refresh discarded the reporting-to-trading FX conversion despite available bound FX observations",
+      "shareSources": null,
+      "currency": "SGD",
+      "tradingCurrency": "USD"
+    },
+    {
+      "id": "GM.US",
+      "liveValue": [
+        38.35189115924982,
+        40.662792636755356,
+        43.73909267428827
+      ],
+      "candidateValue": [
+        71.6613915051674,
+        78.24077169147091,
+        86.9993222878887
+      ],
+      "realValue": [
+        71.6613915051674,
+        78.24077169147091,
+        86.9993222878887
+      ],
+      "restored": true,
+      "rootCause": "Cached SEC/current-vendor share agreement was not applied at publication for non-audited quality outcomes",
+      "shareSources": 2,
+      "currency": "USD",
+      "tradingCurrency": "USD"
+    },
+    {
+      "id": "GPOR.US",
+      "liveValue": [
+        130.46993921419997,
+        148.0600815690716,
+        171.4762921315885
+      ],
+      "candidateValue": [
+        196.20463105790154,
+        222.847711781605,
+        258.31530355397007
+      ],
+      "realValue": [
+        196.20463105790154,
+        222.847711781605,
+        258.31530355397007
+      ],
+      "restored": true,
+      "rootCause": "Cached SEC/current-vendor share agreement was not applied at publication for non-audited quality outcomes",
+      "shareSources": 2,
+      "currency": "USD",
+      "tradingCurrency": "USD"
+    },
+    {
+      "id": "GRBK.US",
+      "liveValue": [
+        89.24185546080274,
+        126.580864358569,
+        148.32343624757854
+      ],
+      "candidateValue": [
+        99.53481652007838,
+        141.26543099964147,
+        165.565242700019
+      ],
+      "realValue": [
+        99.53481652007838,
+        141.26543099964147,
+        165.565242700019
+      ],
+      "restored": true,
+      "rootCause": "Cached SEC/current-vendor share agreement was not applied at publication for non-audited quality outcomes",
+      "shareSources": 2,
+      "currency": "USD",
+      "tradingCurrency": "USD"
+    },
+    {
+      "id": "GTX.US",
+      "liveValue": [
+        17.047582461410858,
+        19.34192459688362,
+        22.396180637728317
+      ],
+      "candidateValue": [
+        21.13282605106857,
+        23.98527654833786,
+        27.782493200465485
+      ],
+      "realValue": [
+        21.13282605106857,
+        23.98527654833786,
+        27.782493200465485
+      ],
+      "restored": true,
+      "rootCause": "Cached SEC/current-vendor share agreement was not applied at publication for non-audited quality outcomes",
+      "shareSources": 2,
+      "currency": "USD",
+      "tradingCurrency": "USD"
+    },
+    {
+      "id": "KN.US",
+      "liveValue": [
+        2.90346546702871,
+        3.2459750846275526,
+        3.7019280362055946
+      ],
+      "candidateValue": [
+        7.06239930409703,
+        7.976582033589267,
+        9.19355315608152
+      ],
+      "realValue": [
+        7.06239930409703,
+        7.976582033589267,
+        9.19355315608152
+      ],
+      "restored": true,
+      "rootCause": "Cached SEC/current-vendor share agreement was not applied at publication for non-audited quality outcomes",
+      "shareSources": 2,
+      "currency": "USD",
+      "tradingCurrency": "USD"
+    },
+    {
+      "id": "KSPI.US",
+      "liveValue": [
+        89.85070660176162,
+        98.31787436061907,
+        109.5894706393524
+      ],
+      "candidateValue": [
+        270.5202506533008,
+        303.89779985904795,
+        348.33039764561954
+      ],
+      "realValue": [
+        270.5202506533008,
+        303.89779985904795,
+        348.33039764561954
+      ],
+      "restored": true,
+      "rootCause": "Balance refresh discarded the reporting-to-trading FX conversion despite available bound FX observations",
+      "shareSources": null,
+      "currency": "KZT",
+      "tradingCurrency": "USD"
+    },
+    {
+      "id": "M2L.F",
+      "liveValue": [
+        0.5563951127932948,
+        0.6303231282007211,
+        0.7287369977604443
+      ],
+      "candidateValue": [
+        0.8126664654199756,
+        0.921937614433864,
+        1.067400691542432
+      ],
+      "realValue": [
+        0.8126664654199756,
+        0.921937614433864,
+        1.067400691542432
+      ],
+      "restored": true,
+      "rootCause": "Balance refresh discarded the reporting-to-trading FX conversion despite available bound FX observations",
+      "shareSources": 2,
+      "currency": "SGD",
+      "tradingCurrency": "EUR"
+    },
+    {
+      "id": "MAPGF.US",
+      "liveValue": [
+        0.5202878418428375,
+        0.5854783966492781,
+        0.6722608528249182
+      ],
+      "candidateValue": [
+        0.5843223543440335,
+        0.6583418688987502,
+        0.7568775432316247
+      ],
+      "realValue": [
+        0.5843223543440335,
+        0.6583418688987502,
+        0.7568775432316247
+      ],
+      "restored": true,
+      "rootCause": "Balance refresh discarded the reporting-to-trading FX conversion despite available bound FX observations",
+      "shareSources": null,
+      "currency": "SGD",
+      "tradingCurrency": "USD"
+    },
+    {
+      "id": "MKL.US",
+      "liveValue": [
+        674.6596957108792,
+        843.3246196385988,
+        1124.4328261847982
+      ],
+      "candidateValue": [
+        688.710634156403,
+        860.8882926955037,
+        1147.851056927338
+      ],
+      "realValue": [
+        688.710634156403,
+        860.8882926955037,
+        1147.851056927338
+      ],
+      "restored": true,
+      "rootCause": "Cached SEC/current-vendor share agreement was not applied at publication for non-audited quality outcomes",
+      "shareSources": 2,
+      "currency": "USD",
+      "tradingCurrency": "USD"
+    },
+    {
+      "id": "NK7.F",
+      "liveValue": [
+        12.528431093250434,
+        14.218203111924359,
+        16.467648090461406
+      ],
+      "candidateValue": [
+        20.702907899574846,
+        23.519881977387385,
+        27.269871990227834
+      ],
+      "realValue": [
+        20.702907899574846,
+        23.519881977387385,
+        27.269871990227834
+      ],
+      "restored": true,
+      "rootCause": "Balance refresh discarded the reporting-to-trading FX conversion despite available bound FX observations",
+      "shareSources": null,
+      "currency": "NZD",
+      "tradingCurrency": "EUR"
+    },
+    {
+      "id": "OCA.AU",
+      "liveValue": [
+        0.023295198110936773,
+        0.02477463539576049,
+        0.026744080228927287
+      ],
+      "candidateValue": [
+        0.20341900216265746,
+        0.229737000044609,
+        0.26477183760048445
+      ],
+      "realValue": [
+        0.20341900216265746,
+        0.229737000044609,
+        0.26477183760048445
+      ],
+      "restored": true,
+      "rootCause": "Balance refresh discarded the reporting-to-trading FX conversion despite available bound FX observations",
+      "shareSources": 2,
+      "currency": "NZD",
+      "tradingCurrency": "AUD"
+    },
+    {
+      "id": "RH.US",
+      "liveValue": [
+        29.16043532852677,
+        32.7873119509002,
+        37.615454040963805
+      ],
+      "candidateValue": [
+        75.22169509776971,
+        85.18156893804694,
+        98.4402736326934
+      ],
+      "realValue": [
+        75.22169509776971,
+        85.18156893804694,
+        98.4402736326934
+      ],
+      "restored": true,
+      "rootCause": "Cached SEC/current-vendor share agreement was not applied at publication for non-audited quality outcomes",
+      "shareSources": 2,
+      "currency": "USD",
+      "tradingCurrency": "USD"
+    },
+    {
+      "id": "SCRPF.US",
+      "liveValue": [
+        2.9390388429381966,
+        3.2519580203526885,
+        3.6685198195446094
+      ],
+      "candidateValue": [
+        2.865326150815911,
+        3.168081959036758,
+        3.571114158054802
+      ],
+      "realValue": [
+        2.865326150815911,
+        3.168081959036758,
+        3.571114158054802
+      ],
+      "restored": true,
+      "rootCause": "Balance refresh discarded the reporting-to-trading FX conversion despite available bound FX observations",
+      "shareSources": null,
+      "currency": "SGD",
+      "tradingCurrency": "USD"
+    },
+    {
+      "id": "T6W.F",
+      "liveValue": [
+        0.2808418395682819,
+        0.3129721232385917,
+        0.355744346036948
+      ],
+      "candidateValue": [
+        0.40304766595794034,
+        0.4520485498951689,
+        0.5172791201131418
+      ],
+      "realValue": [
+        0.40304766595794034,
+        0.4520485498951689,
+        0.5172791201131418
+      ],
+      "restored": true,
+      "rootCause": "Balance refresh discarded the reporting-to-trading FX conversion despite available bound FX observations",
+      "shareSources": 2,
+      "currency": "THB",
+      "tradingCurrency": "EUR"
+    },
+    {
+      "id": "TBCG.LSE",
+      "liveValue": [
+        9786.404382611307,
+        12233.005478264133,
+        16310.67397101884
+      ],
+      "candidateValue": [
+        9750.774806707901,
+        12188.468508384876,
+        16251.291344513163
+      ],
+      "realValue": [
+        9750.774806707901,
+        12188.468508384876,
+        16251.291344513163
+      ],
+      "restored": true,
+      "rootCause": "Balance refresh discarded the reporting-to-trading FX conversion despite available bound FX observations",
+      "shareSources": 2,
+      "currency": "GEL",
+      "tradingCurrency": "GBX"
+    },
+    {
+      "id": "U1O.F",
+      "liveValue": [
+        5.247331390336252,
+        5.850108341614162,
+        6.65253232026073
+      ],
+      "candidateValue": [
+        5.289755214471903,
+        5.8987676700694305,
+        6.709492427593502
+      ],
+      "realValue": [
+        5.289755214471903,
+        5.8987676700694305,
+        6.709492427593502
+      ],
+      "restored": true,
+      "rootCause": "Balance refresh discarded the reporting-to-trading FX conversion despite available bound FX observations",
+      "shareSources": 2,
+      "currency": "SGD",
+      "tradingCurrency": "EUR"
+    },
+    {
+      "id": "VEM.F",
+      "liveValue": [
+        8.599670853660498,
+        9.422392078600222,
+        10.517608538409313
+      ],
+      "candidateValue": [
+        8.808119462070499,
+        9.660742438019255,
+        10.795764470955021
+      ],
+      "realValue": [
+        8.808119462070499,
+        9.660742438019255,
+        10.795764470955021
+      ],
+      "restored": true,
+      "rootCause": "Balance refresh discarded the reporting-to-trading FX conversion despite available bound FX observations",
+      "shareSources": null,
+      "currency": "SGD",
+      "tradingCurrency": "EUR"
+    },
+    {
+      "id": "WING.US",
+      "liveValue": [
+        26.302433853307917,
+        35.848209445486454,
+        41.406731703470406
+      ],
+      "candidateValue": [
+        58.08904277796478,
+        82.83517504161966,
+        96.6370090637562
+      ],
+      "realValue": [
+        58.08904277796478,
+        82.83517504161966,
+        96.6370090637562
+      ],
+      "restored": true,
+      "rootCause": "Cached SEC/current-vendor share agreement was not applied at publication for non-audited quality outcomes",
+      "shareSources": 2,
+      "currency": "USD",
+      "tradingCurrency": "USD"
+    },
+    {
+      "id": "WIT.US",
+      "liveValue": [
+        2.026535458926352,
+        2.453468886346729,
+        2.798275475449543
+      ],
+      "candidateValue": [
+        2.2753101496129635,
+        2.7674397961894375,
+        3.1649011658875392
+      ],
+      "realValue": [
+        2.2753101496129635,
+        2.7674397961894375,
+        3.1649011658875392
+      ],
+      "restored": true,
+      "rootCause": "Cached SEC/current-vendor share agreement was not applied at publication for non-audited quality outcomes",
+      "shareSources": 2,
+      "currency": "INR",
+      "tradingCurrency": "USD"
+    }
+  ],
+  "all33Restored": true,
+  "productionCoverageProof": "logo-coverage-proof.json",
+  "guardsWeakened": false
+}

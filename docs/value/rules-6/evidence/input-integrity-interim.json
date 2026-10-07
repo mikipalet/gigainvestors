@@ -1,0 +1,15 @@
+{
+  "startedAt": "2026-10-07T11:40:09.418114+00:00",
+  "completedAt": "2026-10-07T11:46:47.927535+00:00",
+  "archiveCommit": "c6b12018c04a6a70bdaa41cd58844c2f941062cd",
+  "bindingOutsideNightlyWindow": true,
+  "sourceFiles": 789963,
+  "sourceMismatches": [],
+  "sourceAdditions": [],
+  "archiveFiles": 6278,
+  "archiveMismatches": [],
+  "finalVerificationReadOnly": true,
+  "preliminaryUnitRunException": "Initial unit invocation lacked the read-only namespace; all final tests use it. Full source hashes are checked here.",
+  "holdAndRunnerLock": "never opened or modified",
+  "seconds": 398.5094165802002
+}

@@ -108,3 +108,16 @@ it('spends a limited report run on Western access first, then market cap',async(
  expect(readCorpusJson('reports/BIG.TW/meta.json')).toBeNull();
  expect(readCorpusJson('reports/SMALL.AS/meta.json')).toBeNull();
 });
+
+it('retains published canonical issuers still in current membership when raw universe has only aliases', async()=>{
+ const {shardOf}=await import('@/lib/value/shard');
+ appendJsonl('universe.jsonl',company('RACE.US'));
+ writeCorpusJson('index-membership/latest.json',{memberships:{'RACE.MI':['FTSE MIB']}});
+ writeCorpusJson('publish-repo/aliases.json',{'RACE.US':'RACE.MI','OLD.US':'OLD.MI'});
+ for(const id of ['RACE.MI','OLD.MI']){
+  const file=`publish-repo/dossiers/${shardOf(id)}.json`;
+  writeCorpusJson(file,{...(readCorpusJson<Record<string,unknown>>(file)??{}),[id]:{company:{...company(id),exchange:'MI'}}});
+ }
+ expect(loadCompanies({only:['RACE.MI']})).toMatchObject([{id:'RACE.MI',exchange:'MI',indexes:['FTSE MIB']}]);
+ expect(loadCompanies({only:['OLD.MI']})).toEqual([]);
+});

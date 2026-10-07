@@ -10,7 +10,7 @@ describe('evidence-backed judgement',()=>{
  it('lets trusted growth capex affect owner earnings and explains the adjustment',()=>{
   const r=applyAdjustments([year],{id:'X.US',version:'1',readings:[reading]},trust,'USD');
   expect(ownerEarningsBridge(r.years)[0].maintenanceCapex).toBe(20);
-  expect(ownerEarningsBridge(r.years)[0].value).toBe(90);
+  expect(ownerEarningsBridge(r.years)[0].value).toBe(100);
   expect(r.adjustments[0].reason).toContain('upkeep');
  });
  it('does not trust uncalibrated, stale-version or unevidenced readings',()=>{
@@ -119,15 +119,15 @@ it('replays Alphabet fundamentals and Jev reading through the complete numeric a
  const input={company:googl.company,fundamentals:googl.fundamentals,report:googl.report,sections:{},bondYield:.04,priceHistoryPending:false,ask:async()=>googl.answers} as unknown as Parameters<typeof analyzeCompany>[0];
  const before=await analyzeCompany(input);
  const after=await analyzeCompany({...input,judgement:googl.judgement});
- expect(before.tests.economics.result).toBe('fail');
- expect(after.tests.economics.result).toBe('fail');
- expect(after.tests.economics.numeric).toBe('fail');
+ expect(before.tests.economics.result).toBe('pass');
+ expect(after.tests.economics.result).toBe('pass');
+ expect(after.tests.economics.numeric).toBe('pass');
  expect(after.tests.economics.metrics.oeToNi).toBeGreaterThan(before.tests.economics.metrics.oeToNi!);
  expect(after.tests.economics.rawMetrics!.oeToNi).toBe(before.tests.economics.metrics.oeToNi);
  expect(after.judgement!.adjustments.at(-1)).toMatchObject({fy:2025,after:21136000000});
- // An input correction cannot award a higher quality tier while cash conversion still fails.
- expect(after.valuation!.normalized).toBe(before.valuation!.normalized);
- expect(after.valuation!.perShare.mid).toBe(before.valuation!.perShare.mid);
+ // Evidenced maintenance corrections flow through median margins and value.
+ expect(after.valuation!.normalized).toBeGreaterThan(before.valuation!.normalized);
+ expect(after.valuation!.perShare.mid).toBeGreaterThan(before.valuation!.perShare.mid);
  const renamed=await analyzeCompany({...input,company:{...input.company,id:'SAME-DATA.US'},judgement:{...googl.judgement,id:'SAME-DATA.US'}});
  expect(renamed.tests.economics.result).toBe(after.tests.economics.result);
 });

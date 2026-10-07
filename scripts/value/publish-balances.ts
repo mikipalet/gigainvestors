@@ -1,3 +1,5 @@
+import {createUsdRate} from '../../lib/value/fx';
+import {sameCurrency} from '../../lib/value/currency';
 import {readCorpusJson} from '../../lib/value/corpus';
 import {refreshBalanceValuation} from '../../lib/value/refresh-balance-valuation';
 import {publishedBuyPrice} from '../../lib/value/buy-price';
@@ -10,7 +12,8 @@ import type {Dossier,IndexRow,PriceMap} from '../../lib/value/types';
 
 /** Reprice the already-bound publication: do not repeat unrelated company/cap
  * checks on preserved research. Explicit second-source freezes remain binding. */
-export function publishBalances(files:Record<string,any>,prices:PriceMap,_fx:Record<string,number>,read:(file:string)=>any=readCorpusJson):void {
+export function publishBalances(files:Record<string,any>,prices:PriceMap,fx:Record<string,number>,read:(file:string)=>any=readCorpusJson):void {
+ const usdRate=createUsdRate({rates:fx});
  const frozen=new Set<string>(read('verdict-freeze.json')?.ids??[]);
  const indexes=new Map<string,IndexRow>();
  for(const [file,rows]of Object.entries(files))if(/^index\/[A-Z]{2}\.json$/.test(file))for(const row of rows as IndexRow[])indexes.set(row.id,row);
@@ -19,7 +22,18 @@ export function publishBalances(files:Record<string,any>,prices:PriceMap,_fx:Rec
   if(frozen.has(d.id)||d.valuation?.retainedPublishedAt)continue;
   let next=refreshBalanceValuation(d,read,new Date().toISOString().slice(0,10));
   const row=indexes.get(d.id);if(next===d||!row)continue;
-  const v=next.valuation,range=v?.perShareTrading??(v?.currency===d.company.currency?v.perShare:null);
+  let v=next.valuation;
+  // Balance refresh retains reporting units. Reapply the same bound FX inputs
+  // used by buildOutput; absence of a cached conversion is not lost valuation.
+  if(v && (!v.perShareTrading || !sameCurrency(v.perShareTrading.currency,d.company.currency))){
+   const from=usdRate(v.currency),to=usdRate(d.company.currency);
+   const fxRate=sameCurrency(v.currency,d.company.currency)?1:from!==null&&to!==null?from/to:null;
+   if(fxRate!==null&&Number.isFinite(fxRate)&&fxRate>0){
+    v={...v,perShareTrading:{currency:d.company.currency,fxRate,low:v.perShare.low*fxRate,mid:v.perShare.mid*fxRate,high:v.perShare.high*fxRate}};
+    next={...next,valuation:v};
+   }
+  }
+  const range=v?.perShareTrading&&sameCurrency(v.perShareTrading.currency,d.company.currency)?v.perShareTrading:sameCurrency(v?.currency??'',d.company.currency)?v?.perShare:null;
   const candidate:IndexRow={...row,v:range?[range.low,range.mid,range.high]:null,m:next.requiredMos,buyReturnInputs:buyReturnInputs(v,d.company.currency),priceTestFreeze:undefined};
   const price=publishedBuyPrice(candidate,prices[d.id]);
   candidate.b=price.b;

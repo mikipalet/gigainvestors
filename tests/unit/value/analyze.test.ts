@@ -66,7 +66,7 @@ it("restricts contradictions to their own test and uses commodity answers for cy
   const result = await analyzeCompany(args);
   expect(result.tests.moat.result).toBe("pass");
   expect(result.tests.moat.jev.every(a => QUESTIONS.find(q => q.id === a.q)?.test === "moat")).toBe(true);
-  expect(result.valuation!.assumptions).toContain("owner earnings normalized over 5 years");
+  expect(result.valuation!.assumptions.join(' ')).toContain('five-year median owner-earnings margin');
 });
 it("caches bond yields per day, preserves concurrent countries, and converts FX minor units", async () => {
   vi.stubGlobal("fetch", async (url: string) => {
@@ -284,7 +284,7 @@ it("marks operating margin CV above 0.35 as cyclical without commodity exposure"
   args.fundamentals.years = makeYears({ overrides: (_, i) => ({ operatingIncome: i % 2 ? 50 : 200 }) });
   const result = await analyzeCompany(args);
   expect(result.tests.understandable.metrics.opMarginCv).toBeGreaterThan(0.35);
-  expect(result.valuation!.assumptions).toContain("owner earnings normalized over 5 years");
+  expect(result.valuation!.assumptions.join(' ')).toContain('five-year median owner-earnings margin');
 });
 
 it("uses a commodity cutoff independent of the evidence threshold", async () => {
@@ -297,7 +297,7 @@ it("uses a commodity cutoff independent of the evidence threshold", async () => 
     args.fundamentals.years = makeYears();
     args.ask = async () => answers().map(a => a.q === "commodity" ? { ...a, value: 0.6 } : a);
     const result = await analyzeCompany(args);
-    expect(result.valuation!.assumptions).toContain("owner earnings normalized over 5 years");
+    expect(result.valuation!.assumptions.join(' ')).toContain('five-year median owner-earnings margin');
   } finally { Object.assign(T.jev, { evidence: original }); }
 });
 
@@ -329,7 +329,7 @@ it.each([
   args.fundamentals.years = makeYears();
   const result = await analyzeCompany({ ...args, ask: askCompany, sections: { business: "business", risk: "risktext" } });
   expect(result.tests.understandable.jev.find(a => a.q === "commodity")?.value).toBeCloseTo(mean);
-  expect(result.valuation!.assumptions).toContain(`owner earnings normalized over ${window} years`);
+  expect(result.valuation!.assumptions.join(' ')).toContain('five-year median owner-earnings margin');
 });
 
 it("calibrates BHC.US through the BHC.TO primary analysis", async () => {

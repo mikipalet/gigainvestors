@@ -7,7 +7,7 @@ import { valueInvestmentHolding } from './investment-nav';
 import { parentShare } from "./parent-share";
 import { T } from "./config";
 import { financialBvps, tangibleEquity, cagr, clamp, investment, last, mean, median, nopat, present, ratio, roe, roic, returnOnTotalCapital, roiic, sum, withZeroDefaults } from "./metrics";
-import { ownerEarningsBridge } from "./owner-earnings";
+import { ownerEarningsBridge, trailingOwnerEarnings } from "./owner-earnings";
 import type { Kind, Valuation, Year, PriceHistory, Volatility } from "./types";
 
 
@@ -158,22 +158,24 @@ export function valueCompany({ years, kind, industry, bondYield, cyclical, curre
   }
 
   const history = ownerEarningsBridge(ys), window = 5;
-  const recent = history.filter(row => row.year.fy > latest.fy - window).filter((row): row is typeof row & { value: number; maintenanceCapex: number } => row.value !== null && row.maintenanceCapex !== null);
-  if (recent.length < window) return { valuation: null, reason: "insufficient owner earnings history" };
-  const medianEarnings = median(recent.map(row => row.value))!;
-  const latestRow = recent.at(-1)!;
-  // Full trailing capex is conservative and avoids treating a partial fiscal interval as annual growth capex.
+  const recent = history.filter(row => row.year.fy > latest.fy - window).filter((row): row is typeof row & { value: number; maintenanceCapex: number } => row.value !== null && Number.isFinite(row.value) && row.maintenanceCapex !== null && row.year.revenue !== null && Number.isFinite(row.year.revenue) && row.year.revenue > 0);
+  if (recent.length !== window || recent.some((row,i) => i > 0 && row.year.fy !== recent[i-1].year.fy+1)) return { valuation: null, reason: "insufficient owner earnings history" };
+  if (currentRevenue === null || !Number.isFinite(currentRevenue) || currentRevenue <= 0) return {valuation:null,reason:"current revenue not positive"};
+  const ordered = [...recent].sort((a,b) => a.value/a.year.revenue! - b.value/b.year.revenue!);
+  const marginRow = ordered[Math.floor(window/2)];
+  const medianMargin = marginRow.value / marginRow.year.revenue!;
+  const bridgeScale = currentRevenue / marginRow.year.revenue!;
   const currentLeases = stock?.values.leaseLiabilities;
-  if(trailing?.leaseDepreciationIncluded && stock && currentLeases == null && (trailing.leaseLiabilities??0)>0)assumptions.push('Quarterly lease obligations absent; annual lease estimate retained in TTM owner earnings');
-  const ttmRow = trailing ? ownerEarningsBridge([currentLeases != null ? {...trailing,leaseLiabilities:currentLeases} : trailing])[0] : null;
-  if (ttmRow && ttmRow.value === null) assumptions.push('TTM owner earnings unavailable: quarterly NI, D&A or capex incomplete; annual normalization retained');
+  const ttmRow = trailing ? trailingOwnerEarnings(ys, currentLeases != null ? {...trailing,leaseLiabilities:currentLeases} : trailing) : null;
+  if (ttmRow && ttmRow.value === null) assumptions.push('TTM owner earnings unavailable; complete TTM revenue still supplies current scale when reported');
   const financingAdjustment = stock?.annualEarningsAdjustment && (trailing?.end??latest.end) <= (stock.earningsThrough??'') ? stock.annualEarningsAdjustment : 0;
   if(stock?.assumption)assumptions.push(stock.assumption);
   if(stock?.annualEarningsAdjustment && !financingAdjustment)assumptions.push('Newer earnings overlap the closing financing; reconcile actual interest before applying any further pro-forma charge');
-  const normalized = Math.min(medianEarnings, latestRow.value, ttmRow?.value ?? Infinity) + financingAdjustment;
-  if (normalized <= 0) return { valuation: null, reason: "owner earnings not positive" };
+  const normalized = medianMargin * currentRevenue + financingAdjustment;
+  if (!Number.isFinite(normalized) || normalized <= 0) return { valuation: null, reason: "owner earnings not positive" };
   if (currentBalance.cash === null || currentBalance.totalDebt === null) return { valuation: null, reason: "net cash unavailable" };
-  const allocation = parentShare({...currentBalance,netIncome:trailing?.netIncome??latest.netIncome,totalNetIncome:trailing?.totalNetIncome??latest.totalNetIncome});
+  const allocationIncome = trailing?.netIncome != null && trailing.totalNetIncome != null ? trailing : latest;
+  const allocation = parentShare({...currentBalance,netIncome:allocationIncome.netIncome,totalNetIncome:allocationIncome.totalNetIncome});
   if (allocation === null) return { valuation: null, reason: "Parent share of consolidated earnings unavailable with material minority interests" };
   if (version === 2 && (currentRevenue === null || currentRevenue < 0)) return {valuation:null,reason:'operating cash reserve unavailable'};
   const eligible = version === 2 ? ownerCash(currentBalance,industry) : {cash:currentBalance.cash,reason:null};
@@ -210,25 +212,28 @@ export function valueCompany({ years, kind, industry, bondYield, cyclical, curre
   if (!estimates.length && tier !== 'compounder') assumptions.push("growth estimates unavailable; using zero growth");
   assumptions.push(organicGrowth === null ? 'organic growth proxy unavailable' : 'revenue CAGR reduced by acquisition proxy share of positive assets added over ten years', tier === 'compounder' ? 'durable compounder: winsorised ten-year per-share owner-earnings CAGR capped at 12%, fading to 3% over ten years' : 'operating growth capped at 8%');
   assumptions.push('Compounder tier uses annual owner earnings / (equity + debt + leases not already in debt − excess cash); requires ten-year median return on capital including goodwill and acquired intangibles of at least 15%; quality results are unchanged');
-  assumptions.push(`owner earnings normalized over ${window} years`, "growth capex uses trailing five-year PPE to revenue", `owner earnings use the ${window}-year median capped at latest-year owner earnings and complete newer TTM owner earnings`, "maintenance capex floored at the smaller of capex and D&A",
-    ttmRow?.value === normalized - financingAdjustment ? "bridge components use TTM owner earnings; full TTM capex deducted; selected balance-sheet lease liabilities used" : normalized - financingAdjustment < medianEarnings ? "bridge components use the latest owner earnings observation" : "bridge components use the median owner earnings observation");
+  assumptions.push(`Owner earnings = five-year median owner-earnings margin × ${trailing?.revenue != null ? 'complete TTM' : 'latest annual'} revenue; applied to every operating business`,
+    `Normalized bridge scales FY${marginRow.year.fy} margin components to current revenue; estimates, not reported current-year cash flows`,
+    "Stock compensation charged once: already expensed in net income; deducted from operating cash flow",
+    "growth capex uses trailing five-year PPE to revenue; maintenance capex floored at the smaller of capex and D&A",
+    "Five years may not span a full economic cycle; revenue-decline override and cyclical safety discount retained");
+  if (ttmRow) assumptions.push('TTM maintenance uses annual capacity context and revenue expansion since the latest annual report; overlapping twelve-month windows; annual maintenance judgements are not carried forward');
   if (recent.some(row => row.year.leaseCash != null)) assumptions.push("Reported capitalized lease repayments charged in owner earnings; corresponding lease obligations excluded from debt");
-  if (recent.some(row => row.leaseCashCost > 0 && row.year.leaseCash == null)) assumptions.push("lease payments estimated at 20% of lease liabilities");
-  if (recent.some(row=>row.cashFlowBasis)) assumptions.push("Cash-flow owner earnings deduct all capital spending");
-  const ordered = [...recent].sort((a, b) => a.value - b.value);
-  const center = Math.floor(ordered.length / 2);
-  const representative = ttmRow?.value === normalized - financingAdjustment ? [ttmRow as typeof latestRow] : normalized - financingAdjustment < medianEarnings ? [latestRow] : ordered.length % 2 ? [ordered[center]] : ordered.slice(center - 1, center + 1);
+  if (recent.some(row => row.leaseCashCost > 0 && row.year.leaseCash == null)) assumptions.push("lease payments estimated at 20% of lease liabilities; cash-flow classification and ROU maintenance overlap require issuer evidence");
+  if (recent.some(row=>row.cashFlowBasis)) assumptions.push("Cash-flow fallback deducts all capex when maintenance inputs are unavailable");
+  assumptions.push("NI bridge does not estimate required working-capital reinvestment; OCF includes reported working-capital changes", "Cash-specific after-tax interest is not separately attributed; excess-cash income overlap remains a model limitation");
+  const representative = [marginRow];
   return { reason: null, valuation: { ...common, tier, capitalReturns, netDebt, leverage, riskFlags, method: "owner_earnings", normalized, growth, netCash,
     perShare: { low: (pv(growth / 2, discountRate + 0.01) + netCash) / shares, mid: (midPv + netCash) / shares, high: (pv(growth, highRate) + netCash) / shares },
     equityBondYield: ratio(normalized, latest.marketCap),
     bridge: [
-      ...(representative.some(row=>row.cashFlowBasis) ? [{ label: "cash before maintenance investment", value: mean(representative.map(row=>row.cashFlowBasis ? row.year.ocf! * row.allocation! : row.year.netIncome! + row.year.da! * row.allocation!))! }] : [
-        { label: "net income", value: mean(representative.map(row => row.year.netIncome!))! },
-        { label: "+ D&A", value: mean(representative.map(row => row.year.da! * row.allocation!))! },
+      ...(representative.some(row=>row.cashFlowBasis) ? [{ label: "cash before maintenance investment", value: mean(representative.map(row=>row.cashFlowBasis ? row.year.ocf! * row.allocation! : row.year.netIncome! + row.year.da! * row.allocation!))! * bridgeScale }] : [
+        { label: "net income", value: mean(representative.map(row => row.year.netIncome!))! * bridgeScale },
+        { label: "+ D&A", value: mean(representative.map(row => row.year.da! * row.allocation!))! * bridgeScale },
       ]),
-      { label: "− maintenance capex", value: -mean(representative.map(row => row.maintenanceCapex * row.allocation!))! },
-      { label: "− stock compensation", value: -mean(representative.map(row => (row.year.sbc ?? 0) * row.allocation!))! },
-      ...(representative.some(row => row.leaseCashCost > 0) ? [{ label: representative.some(row => row.year.leaseCash != null) ? "− lease payments" : "− estimated lease payments", value: -mean(representative.map(row => row.leaseCashCost * row.allocation!))! }] : []),
+      { label: "− maintenance capex", value: -mean(representative.map(row => row.maintenanceCapex * row.allocation!))! * bridgeScale },
+      { label: marginRow.cashFlowBasis ? "− stock compensation" : "Stock compensation already expensed", value: -mean(representative.map(row => (row.cashFlowBasis ? row.year.sbc ?? 0 : 0) * row.allocation!))! * bridgeScale },
+      ...(representative.some(row => row.leaseCashCost > 0) ? [{ label: representative.some(row => row.year.leaseCash != null) ? "− lease payments" : "− estimated lease payments", value: -mean(representative.map(row => row.leaseCashCost * row.allocation!))! * bridgeScale }] : []),
       ...(financingAdjustment ? [{label:"− pro-forma financing cost",value:financingAdjustment}] : []),
       { label: "= owner earnings", value: normalized },
       { label: "× PV factor", value: midPv / normalized },

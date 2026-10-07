@@ -1,0 +1,449 @@
+[
+  {
+    "id": "BBWI.US",
+    "contradictions": [
+      {
+        "source": "issuer:sec-cover",
+        "shares": 201645313,
+        "date": "2026-08-21",
+        "basis": "all-ordinary-outstanding",
+        "url": "https://www.sec.gov/Archives/edgar/data/701985/000070198526000029/0000701985-26-000029-index.html"
+      }
+    ],
+    "cap": {
+      "id": "BBWI.US",
+      "reason": "Same-date or large capitalization conflict requires review"
+    },
+    "analysisValue": 42.388683670764934,
+    "shareSources": 2,
+    "unresolved": [],
+    "beforeValue": 42.388683670764934,
+    "afterValue": 54.0443129024931,
+    "index": [
+      [
+        {
+          "methodVersion": "3.6.0",
+          "w": "BBWI.US",
+          "exchange": "US",
+          "shareSources": 2,
+          "buyReturnInputs": {
+            "cashPerShare": 4.600712999633309,
+            "growth": 0,
+            "requiredReturn": 0.1,
+            "model": {
+              "cashNow": 3.222489976744463,
+              "annual": [
+                4.08624558920707,
+                4.08624558920707,
+                4.08624558920707,
+                4.08624558920707,
+                4.08624558920707,
+                4.110763062742312,
+                4.16009221949522,
+                4.234973879446134,
+                4.336613252552841,
+                4.466711650129426
+              ],
+              "terminalCash": 4.600712999633309,
+              "terminalGrowth": 0.03
+            }
+          },
+          "historyYears": 30,
+          "b": false,
+          "returnInfo": {
+            "label": "22.9%",
+            "note": "Ten-year median owner earnings / total capital including goodwill and acquired intangibles",
+            "sort": 0.2291392146056474
+          },
+          "fy": 2027,
+          "m": 0.35,
+          "r": [
+            0.202,
+            0.2,
+            0.144,
+            -0.0522,
+            0.322,
+            0.516,
+            0.237,
+            0.268,
+            0.267,
+            0.222
+          ],
+          "id": "BBWI.US",
+          "n": "Bath & Body Works Inc.",
+          "lg": "/api/value/logo?asset=0e8ad3be494b04fe6c42064883d23a0f029f08eee7163e0a9c79856ba9cc4490",
+          "c": "US",
+          "s": "Consumer Cyclical",
+          "k": "operating",
+          "mc": 3520727040,
+          "v": [
+            47.886167880126315,
+            54.0443129024931,
+            62.242110146488656
+          ],
+          "cur": "USD",
+          "t": "FPFFP",
+          "g": [
+            "brand"
+          ],
+          "h": 0,
+          "st": "s"
+        }
+      ]
+    ]
+  },
+  {
+    "id": "BGEO.LSE",
+    "contradictions": [],
+    "cap": {
+      "id": "BGEO.LSE",
+      "reason": "Minor-unit vendor cap",
+      "priorCap": 7589911436.0831995,
+      "cap": 7589911372.934184,
+      "currentShares": 42950957,
+      "valuationShares": 43022496,
+      "quote": [
+        13320,
+        "2026-10-06"
+      ],
+      "usdRate": 0.0132666,
+      "updated": "2026-10-06",
+      "balanceDate": "2026-06-30",
+      "balanceShares": 43050787,
+      "splitFactor": 1
+    },
+    "analysisValue": 832.2725859513124,
+    "shareSources": 2,
+    "unresolved": [],
+    "beforeValue": 832.2725859513124,
+    "afterValue": 832.2725859513124,
+    "index": [
+      [
+        {
+          "methodVersion": "3.6.0",
+          "w": "BGEO.LSE",
+          "exchange": "LSE",
+          "shareSources": 2,
+          "buyReturnInputs": {
+            "cashPerShare": 967.675898857131,
+            "growth": 0.06,
+            "requiredReturn": 0.1,
+            "model": {
+              "cashNow": 0,
+              "annual": [],
+              "terminalCash": 967.675898857131,
+              "terminalGrowth": 0.06
+            }
+          },
+          "historyYears": 21,
+          "b": false,
+          "returnInfo": {
+            "label": "ROE 26.0%",
+            "note": "Return on tangible equity, the denominator used by the published model",
+            "sort": 0.2597732626431468
+          },
+          "fy": 2026,
+          "m": 0.35,
+          "r": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "id": "BGEO.LSE",
+          "n": "Lion Finance Group PLC",
+          "lg": "/api/value/logo?asset=021c4bef30bb10e3eabc860736ef70d887ea10d0cfbff84060810b49eab8d406",
+          "c": "GB",
+          "s": "Financial Services",
+          "k": "bank",
+          "mc": 7589911372.934184,
+          "v": [
+            19353.517977142616,
+            24191.89747142827,
+            32255.863295237687
+          ],
+          "cur": "GBX",
+          "t": "PPPFP",
+          "g": [
+            "brand"
+          ],
+          "h": 0,
+          "st": "s"
+        }
+      ]
+    ]
+  },
+  {
+    "id": "DY.US",
+    "contradictions": [
+      {
+        "source": "issuer:sec-cover",
+        "shares": 30160957,
+        "date": "2026-08-24",
+        "basis": "all-ordinary-outstanding",
+        "url": "https://www.sec.gov/Archives/edgar/data/67215/000006721526000043/0000067215-26-000043-index.html"
+      }
+    ],
+    "cap": {
+      "id": "DY.US",
+      "reason": "Same-date or large capitalization conflict requires review"
+    },
+    "analysisValue": 81.56316561995921,
+    "shareSources": 2,
+    "unresolved": [],
+    "beforeValue": 81.56316561995921,
+    "afterValue": 147.33934022005633,
+    "index": [
+      [
+        {
+          "methodVersion": "3.6.0",
+          "w": "DY.US",
+          "exchange": "US",
+          "shareSources": 2,
+          "buyReturnInputs": {
+            "cashPerShare": 12.730360607469969,
+            "growth": 0,
+            "requiredReturn": 0.1,
+            "model": {
+              "cashNow": 6.713282340477459,
+              "annual": [
+                11.30680828937508,
+                11.30680828937508,
+                11.30680828937508,
+                11.30680828937508,
+                11.30680828937508,
+                11.37464913911133,
+                11.511144928780666,
+                11.718345537498719,
+                11.999585830398688,
+                12.359573405310648
+              ],
+              "terminalCash": 12.730360607469969,
+              "terminalGrowth": 0.03
+            }
+          },
+          "historyYears": 10,
+          "b": false,
+          "returnInfo": {
+            "label": "7.9%",
+            "note": "Ten-year median owner earnings / total capital including goodwill and acquired intangibles",
+            "sort": 0.07893810032651274
+          },
+          "fy": 2027,
+          "m": 0.5,
+          "r": [
+            0.0805,
+            0.0414,
+            0.0356,
+            0.0799,
+            0.117,
+            0.0468,
+            0.078,
+            0.0954,
+            0.0845,
+            0.0648
+          ],
+          "id": "DY.US",
+          "n": "Dycom Industries Inc",
+          "lg": "/api/value/logo?asset=d86c10a611d7f99de1a2c8a809cd7104bb7a1f47e1eb369383db87da5c24d9cd",
+          "c": "US",
+          "s": "Industrials",
+          "k": "operating",
+          "mc": 8276468224,
+          "v": [
+            130.29950165284427,
+            147.33934022005633,
+            170.02297971491396
+          ],
+          "cur": "USD",
+          "t": "FFPPP",
+          "g": [],
+          "h": 0,
+          "st": "s"
+        }
+      ]
+    ]
+  },
+  {
+    "id": "GM.US",
+    "contradictions": [
+      {
+        "source": "issuer:sec-cover",
+        "shares": 877451541,
+        "date": "2026-07-10",
+        "basis": "all-ordinary-outstanding",
+        "url": "https://www.sec.gov/Archives/edgar/data/1467858/000146785826000051/0001467858-26-000051-index.html"
+      }
+    ],
+    "cap": {
+      "id": "GM.US",
+      "reason": "Current and dated balance shares do not reconcile within 2%"
+    },
+    "analysisValue": 45.0906920631449,
+    "shareSources": 2,
+    "unresolved": [],
+    "beforeValue": 45.0906920631449,
+    "afterValue": 78.24077169147091,
+    "index": [
+      [
+        {
+          "methodVersion": "3.6.0",
+          "w": "GM.US",
+          "exchange": "US",
+          "shareSources": 2,
+          "buyReturnInputs": {
+            "cashPerShare": 4.915415249675722,
+            "growth": 0,
+            "requiredReturn": 0.1,
+            "model": {
+              "cashNow": 23.94258716106124,
+              "annual": [
+                4.36575676089977,
+                4.36575676089977,
+                4.36575676089977,
+                4.36575676089977,
+                4.36575676089977,
+                4.391951301465169,
+                4.444654717082751,
+                4.524658501990241,
+                4.633250306038007,
+                4.772247815219147
+              ],
+              "terminalCash": 4.915415249675722,
+              "terminalGrowth": 0.03
+            }
+          },
+          "historyYears": 26,
+          "b": false,
+          "returnInfo": {
+            "label": "-0.3%",
+            "note": "Ten-year median owner earnings / total capital including goodwill and acquired intangibles",
+            "sort": -0.0030462997782734463
+          },
+          "fy": 2026,
+          "m": 0.5,
+          "r": [
+            -0.0953,
+            -0.147,
+            -0.0286,
+            -0.0252,
+            -0.00969,
+            0.0331,
+            0.051,
+            0.0308,
+            0.0036,
+            0.00891
+          ],
+          "id": "GM.US",
+          "n": "General Motors Company",
+          "lg": "/api/value/logo?asset=02659dc627be10cc8c60f71f7b8fefcdd61e9132d60ecbb2c4c11de016a4cb2f",
+          "c": "US",
+          "s": "Consumer Cyclical",
+          "k": "operating",
+          "mc": 70397935616,
+          "v": [
+            71.6613915051674,
+            78.24077169147091,
+            86.9993222878887
+          ],
+          "cur": "USD",
+          "t": "FFFFP",
+          "g": [
+            "brand"
+          ],
+          "h": 0,
+          "st": "s"
+        }
+      ]
+    ]
+  },
+  {
+    "id": "WIT.US",
+    "contradictions": [],
+    "cap": {
+      "id": "WIT.US",
+      "reason": "ADR or class-share basis requires explicit reconciliation"
+    },
+    "analysisValue": 264.90834104350085,
+    "shareSources": 2,
+    "unresolved": [],
+    "beforeValue": 264.90834104350085,
+    "afterValue": 300.40933328701914,
+    "index": [
+      [
+        {
+          "methodVersion": "3.6.0",
+          "w": "WIT.US",
+          "exchange": "US",
+          "shareSources": 2,
+          "buyReturnInputs": {
+            "cashPerShare": 0.26330088806213764,
+            "growth": 0.0718745788707468,
+            "requiredReturn": 0.1,
+            "model": {
+              "cashNow": 0.39744971246638583,
+              "annual": [
+                0.16685615555812908,
+                0.17807253466575163,
+                0.18921437590383794,
+                0.20017298871912934,
+                0.21083493371621004,
+                0.22108381464352214,
+                0.23080225962727302,
+                0.23987404906593768,
+                0.2481863399586555,
+                0.2556319301574152
+              ],
+              "terminalCash": 0.26330088806213764,
+              "terminalGrowth": 0.03
+            }
+          },
+          "historyYears": 27,
+          "b": true,
+          "returnInfo": {
+            "label": "25.6%",
+            "note": "Ten-year median owner earnings / total capital including goodwill and acquired intangibles",
+            "sort": 0.2555728383200123
+          },
+          "fy": 2027,
+          "m": 0.15,
+          "r": [
+            0.253,
+            0.229,
+            0.291,
+            0.289,
+            0.344,
+            0.258,
+            0.221,
+            0.243,
+            0.277,
+            0.249
+          ],
+          "id": "WIT.US",
+          "n": "Wipro Limited ADR",
+          "lg": "/api/value/logo?asset=9a82c266d88b48bf221e3b33896d14d6676d0ef4b9b3f4a7a64107707de17fe5",
+          "c": "US",
+          "s": "Technology",
+          "k": "operating",
+          "mc": 16719909888,
+          "v": [
+            2.450149559176534,
+            3.1152447861863886,
+            3.5797586350868422
+          ],
+          "cur": "USD",
+          "t": "PPPPP",
+          "g": [],
+          "h": 0,
+          "st": "s"
+        }
+      ]
+    ]
+  }
+]

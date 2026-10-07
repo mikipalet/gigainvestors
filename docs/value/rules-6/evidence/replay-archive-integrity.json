@@ -1,0 +1,9 @@
+{
+  "sha256": "0de4fb8a3f484f1638c9bf13b7397468f75bc0c56a0244aaed8f28ac96fa6a77",
+  "files": 8449,
+  "bytes": 189307162,
+  "extractAt": "repository root",
+  "replayInputs": 2058,
+  "reproduction": "All selected replay inputs included; set REPLAY_INPUT_ROOT to the extracted research directory, which contains inputs/replay only if copied there; otherwise use the included replay fallback with REPLAY_INPUT_ROOT=/nonexistent",
+  "engines": "Frozen sources included, no rules-5 regeneration required"
+}

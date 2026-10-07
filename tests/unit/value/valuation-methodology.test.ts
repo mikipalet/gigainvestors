@@ -18,12 +18,12 @@ it('V1 uses depreciation as the floor when capex exceeds D&A', () => {
   const years = makeYears({ n: 2, overrides: (_, i) => ({ revenue: i ? 2000 : 1000, ppe: 1000, da: 20, capex: 50 }) });
   expect(ownerEarningsBridge(years)[1].maintenanceCapex).toBe(20);
 });
-it.each([false, true])('V2 caps the %s cyclical median at latest earnings and reconciles its bridge', cyclical => {
+it.each([false, true])('V2 uses the %s cyclical median margin without a latest-earnings cap', cyclical => {
   const years = makeYears({ overrides: (_, i) => ({ netIncome: i === 10 ? 8.95e9 : 26.5e9, da: 0, capex: 0 }) });
   const v = value(years, { cyclical });
-  expect(v.normalized).toBe(8.95e9);
-  expect(v.bridge.slice(0, v.bridge.findIndex(r => r.label === '= owner earnings')).reduce((s, r) => s + r.value, 0)).toBe(8.95e9);
-  expect(v.assumptions.join(' ')).toContain('capped at latest-year owner earnings');
+  expect(v.normalized).toBe(26.5e9);
+  expect(v.bridge.slice(0, v.bridge.findIndex(r => r.label === '= owner earnings')).reduce((s, r) => s + r.value, 0)).toBe(26.5e9);
+  expect(v.assumptions.join(' ')).toContain('five-year median owner-earnings margin');
 });
 it('V2 stops positive decade growth when revenue has declined over the latest three years', () => {
   const years = makeYears({ overrides: (_, i) => ({ revenue: i === 10 ? 1800 : 1000 + i * 200, netIncome: 100 * 1.1 ** i, ppe: 0, capex: 20, da: 0 }) });
@@ -35,7 +35,7 @@ it('V3 subtracts JB Hi-Fi estimated lease cash from every applicable year', () =
   const years = makeYears({ overrides: { netIncome: 489.9e6, da: 273.8e6, capex: 87.5e6, leaseLiabilities: 705e6, leaseDepreciationIncluded: true } });
   const v = value(years);
   expect(v.normalized).toBeCloseTo(535.2e6);
-  expect(v.assumptions).toContain('lease payments estimated at 20% of lease liabilities');
+  expect(v.assumptions.join(' ')).toContain('lease payments estimated at 20% of lease liabilities');
   expect(v.bridge.find(r => r.label === '− estimated lease payments')?.value).toBe(-141e6);
 });
 it('V3 leaves US GAAP lease liabilities out of the IFRS adjustment', () => {
@@ -91,10 +91,10 @@ it('V3 renders the lease deduction in both the valuation table and reconciled wa
 it.each([[797649000, 1160000000], [68191400, 80510294]])('V4 retains %s when the current %s count is below the stated 1.5x threshold', (old, current) => {
   expect(value(makeYears({ overrides: { dilutedShares: old } }), { currentShares: current }).shares).toBe(old);
 });
-it('V2 rejects a loss in the latest year even with a positive median', () => {
+it('V2 retains a loss year in the positive through-cycle median', () => {
   const years = makeYears();
   years.at(-1)!.netIncome = -1;
-  expect(valueCompany({ years, kind: 'operating', bondYield: 0.04, cyclical: false }).valuation).toBeNull();
+  expect(valueCompany({ years, kind: 'operating', bondYield: 0.04, cyclical: false }).valuation?.normalized).toBe(100);
 });
 it('V4 corrects financial per-share book value without rewriting historical shares', () => {
   const years = makeYears();

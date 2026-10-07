@@ -12,9 +12,12 @@ export function Bridge({ valuation: v }: { valuation: Valuation }) {
   const pvFactor = component(/PV factor/i) ?? (v.normalized ? (v.perShare.mid * v.shares - v.netCash) / v.normalized : null);
   const rows = v.method === 'owner_earnings' ? [
     ['Net income', amount(component(/^net income$/i))],
+    ['Cash before maintenance investment', amount(component(/^cash before maintenance investment$/i))],
     ['+ D&A', amount(component(/D&A/i))],
     ['− Maintenance capex', deduction(/maintenance capex/i)],
-    ['− Stock compensation', deduction(/stock compensation/i)],
+    [component(/already expensed/i) !== null ? 'Stock compensation already expensed' : '− Stock compensation', deduction(/stock compensation/i)],
+    ...(component(/^− lease payments$/i) !== null ? [['− Lease payments', deduction(/^− lease payments$/i)]] : []),
+    ...(component(/pro-forma financing cost/i) !== null ? [['− Pro-forma financing cost', deduction(/pro-forma financing cost/i)]] : []),
     ...(component(/estimated lease payments/i) !== null ? [['− Estimated lease payments', deduction(/estimated lease payments/i)]] : []),
     ['= Owner earnings (normalized)', money(v.normalized)],
     ['× Present value of 10 years + terminal', pvFactor === null ? '' : `${pvFactor.toFixed(2)}×`],

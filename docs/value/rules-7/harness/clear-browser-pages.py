@@ -8,11 +8,12 @@ from pathlib import Path
 root=Path('/Users/miki/data/value-rules');code=Path(sys.argv[1]) if len(sys.argv)>1 else root;build=code/'.next'
 routes=json.loads((build/'prerender-manifest.json').read_text())['routes']
 import os
-names={i.lower() for i in os.environ['BROWSER_IDS'].split(',')}
+# US pages are served and cached under the bare ticker (/s/CHKP), others under the full id.
+names={n for i in os.environ['BROWSER_IDS'].split(',') for n in {i.lower(),i.lower().removesuffix('.us')}}
 assert not any(route.lower().removeprefix('/s/')in names for route in routes)
 removed=[]
 for p in (build/'server/app/s').iterdir():
- if p.stem.lower()not in names:continue
+ if p.name.lower().removesuffix(p.suffix.lower())not in names:continue
  assert p.suffix in {'.html','.rsc','.meta','.segments'}
  if p.is_dir():shutil.rmtree(p)
  else:p.unlink()

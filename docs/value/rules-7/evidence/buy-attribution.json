@@ -1,0 +1,986 @@
+[
+ {
+  "id": "000651.SHE",
+  "name": "Gree Electric Appliances Inc of Zhuhai",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPFP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   73.51328910916375,
+   79.72546332088682,
+   87.99518487617927
+  ],
+  "vAfter": [
+   73.51328910916375,
+   79.72546332088682,
+   87.99518487617927
+  ],
+  "cause": "3.7.0 rule: capital allocation judged on per-share economic progress (evolve-1); computed on live but held by the removed approval hold"
+ },
+ {
+  "id": "000858.SHE",
+  "name": "Wuliangye Yibin Co Ltd",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPPP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   56.43224295680862,
+   59.77667744110655,
+   64.23183886533654
+  ],
+  "vAfter": [
+   77.95847629442181,
+   84.6025721477323,
+   93.45325219051065
+  ],
+  "cause": "unfrozen by this release (freeze reason was approval/transition only)"
+ },
+ {
+  "id": "001800.KO",
+  "name": "ORION Holdings Corp",
+  "before": false,
+  "after": true,
+  "tBefore": "PFPPP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   44998.20250452077,
+   47907.39037855468,
+   51780.136513859965
+  ],
+  "vAfter": [
+   73534.48308035206,
+   80378.20036248943,
+   89488.63970265102
+  ],
+  "cause": "rules-6 proposal; publishes with its computed verdict"
+ },
+ {
+  "id": "009970.KO",
+  "name": "Youngone Holdi",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPFP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   553912.1321630835,
+   720150.4460905568,
+   816951.3146184854
+  ],
+  "vAfter": [
+   553912.1321630835,
+   720150.4460905568,
+   816951.3146184854
+  ],
+  "cause": "3.7.0 rule: capital allocation judged on per-share economic progress (evolve-1); computed on live but held by the removed approval hold"
+ },
+ {
+  "id": "021240.KO",
+  "name": "COWAY Co. Ltd",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPFP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   138107.09582591185,
+   157069.19085009285,
+   182311.76142370192
+  ],
+  "vAfter": [
+   138107.09582591185,
+   157069.19085009285,
+   182311.76142370192
+  ],
+  "cause": "3.7.0 rule: capital allocation judged on per-share economic progress (evolve-1); computed on live but held by the removed approval hold"
+ },
+ {
+  "id": "030000.KO",
+  "name": "Cheil Worldwide",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPFP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   37294.96054839827,
+   50052.31097067177,
+   57480.93901564812
+  ],
+  "vAfter": [
+   37294.96054839827,
+   50052.31097067177,
+   57480.93901564812
+  ],
+  "cause": "3.7.0 rule: capital allocation judged on per-share economic progress (evolve-1); computed on live but held by the removed approval hold"
+ },
+ {
+  "id": "0700.HK",
+  "name": "Tencent Holdings Ltd",
+  "before": false,
+  "after": true,
+  "tBefore": "PPFPP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   281.5565148060693,
+   376.9356607552132,
+   432.4751086069116
+  ],
+  "vAfter": [
+   415.0116051913395,
+   578.3473532043389,
+   669.4457462759669
+  ],
+  "cause": "rules-6 proposal; publishes with its computed verdict"
+ },
+ {
+  "id": "192080.KO",
+  "name": "DoubleU Games Co Ltd",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPFP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   158420.9382454117,
+   173187.42562371836,
+   192844.75248005352
+  ],
+  "vAfter": [
+   158420.9382454117,
+   173187.42562371836,
+   192844.75248005352
+  ],
+  "cause": "3.7.0 rule: capital allocation judged on per-share economic progress (evolve-1); computed on live but held by the removed approval hold"
+ },
+ {
+  "id": "2313.HK",
+  "name": "Shenzhou International Group Holdings Ltd",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPFP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   79.34871592284576,
+   102.71373184829892,
+   116.84325196366308
+  ],
+  "vAfter": [
+   84.39015000054168,
+   113.30101044237405,
+   129.4256675404603
+  ],
+  "cause": "3.7.0 rule: capital allocation judged on per-share economic progress (evolve-1); computed on live but held by the removed approval hold"
+ },
+ {
+  "id": "241560.KO",
+  "name": "Doosan Bobcat Inc",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPFP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   87638.88535565052,
+   108035.32937093421,
+   122899.30251916761
+  ],
+  "vAfter": [
+   87638.88535565052,
+   108035.32937093421,
+   122899.30251916761
+  ],
+  "cause": "3.7.0 rule: capital allocation judged on per-share economic progress (evolve-1); computed on live but held by the removed approval hold"
+ },
+ {
+  "id": "259960.KO",
+  "name": "Krafton Inc",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPPP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   217251.95396389134,
+   238087.13898876405,
+   265823.1896590019
+  ],
+  "vAfter": [
+   388958.1777726637,
+   433467.89828350284,
+   492719.77734927606
+  ],
+  "cause": "rules-6 proposal; publishes with its computed verdict"
+ },
+ {
+  "id": "300628.SHE",
+  "name": "Yealink Network Technology Corp Ltd",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPFP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   35.22153496006457,
+   48.65535685554855,
+   56.47789545335758
+  ],
+  "vAfter": [
+   37.35592895382668,
+   52.71726472867923,
+   61.28485034019773
+  ],
+  "cause": "3.7.0 rule: capital allocation judged on per-share economic progress (evolve-1); computed on live but held by the removed approval hold"
+ },
+ {
+  "id": "300760.SHE",
+  "name": "Shenzhen Mindray Bio-Medical Electronics Co Ltd Class A",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPPP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   108.0865813857987,
+   150.82480678252676,
+   174.66149718091467
+  ],
+  "vAfter": [
+   141.9687543951544,
+   200.25126076059044,
+   232.7575720774224
+  ],
+  "cause": "rules-6 proposal; publishes with its computed verdict"
+ },
+ {
+  "id": "3659.JP",
+  "name": "NEXON Co., Ltd.",
+  "before": false,
+  "after": true,
+  "tBefore": "PFPFP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   1832.89562105177,
+   2125.4295620344597,
+   2378.137716553553
+  ],
+  "vAfter": [
+   3125.376106434314,
+   4195.882105756766,
+   4819.239670270934
+  ],
+  "cause": "unfrozen by this release (freeze reason was approval/transition only)"
+ },
+ {
+  "id": "600406.SHG",
+  "name": "NARI Technology Co Ltd",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPFP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   17.838653419238053,
+   24.542225653544875,
+   28.4457277956787
+  ],
+  "vAfter": [
+   18.903731133158384,
+   26.56914643963813,
+   30.84443231637952
+  ],
+  "cause": "3.7.0 rule: capital allocation judged on per-share economic progress (evolve-1); computed on live but held by the removed approval hold"
+ },
+ {
+  "id": "600519.SHG",
+  "name": "Kweichow Moutai Co Ltd",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPPP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   907.5130852885013,
+   1305.4874386753997,
+   1527.4524678763642
+  ],
+  "vAfter": [
+   1028.4174810416137,
+   1481.859702366596,
+   1734.7612148404478
+  ],
+  "cause": "rules-6 proposal; publishes with its computed verdict"
+ },
+ {
+  "id": "603833.SHG",
+  "name": "Oppein Home Group Inc",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPFP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   40.654711608045865,
+   44.638921065398776,
+   49.94274895356299
+  ],
+  "vAfter": [
+   40.654711608045865,
+   44.638921065398776,
+   49.94274895356299
+  ],
+  "cause": "3.7.0 rule: capital allocation judged on per-share economic progress (evolve-1); computed on live but held by the removed approval hold"
+ },
+ {
+  "id": "ACN.US",
+  "name": "Accenture plc",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPPP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   155.89619304370305,
+   219.85199923428289,
+   255.5225198792713
+  ],
+  "vAfter": [
+   225.83213495100657,
+   313.8092258165147,
+   365.2802375303462
+  ],
+  "cause": "unfrozen by this release (freeze reason was approval/transition only)"
+ },
+ {
+  "id": "ADBE.US",
+  "name": "Adobe Systems Incorporated",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPPP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   170.44550537318943,
+   242.69539330983005,
+   282.99183037705035
+  ],
+  "vAfter": [
+   309.68361254182815,
+   445.7237976701895,
+   521.5984448868796
+  ],
+  "cause": "rules-6 proposal; publishes with its computed verdict"
+ },
+ {
+  "id": "AOS.US",
+  "name": "Smith AO Corporation",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPFP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   47.74454489808151,
+   60.34334141831189,
+   70.35059335341379
+  ],
+  "vAfter": [
+   55.60977868370237,
+   78.7234306532499,
+   92.30480656798743
+  ],
+  "cause": "3.7.0 rule: capital allocation judged on per-share economic progress (evolve-1); computed on live but held by the removed approval hold"
+ },
+ {
+  "id": "AYI.US",
+  "name": "Acuity Brands Inc",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPFP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   198.06763812649882,
+   222.8737318182169,
+   255.89590420319036
+  ],
+  "vAfter": [
+   257.16573046497825,
+   366.8180299531405,
+   427.97517651474624
+  ],
+  "cause": "3.7.0 rule: capital allocation judged on per-share economic progress (evolve-1); computed on live but held by the removed approval hold"
+ },
+ {
+  "id": "BR.US",
+  "name": "Broadridge Financial Solutions Inc",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPPP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   129.8815771500561,
+   188.43839958604175,
+   221.09770713012213
+  ],
+  "vAfter": [
+   159.345052225474,
+   231.41896917485943,
+   271.61726070834817
+  ],
+  "cause": "rules-6 proposal; publishes with its computed verdict"
+ },
+ {
+  "id": "CFG-PH.US",
+  "name": "Citizens Financial Group, Inc",
+  "before": true,
+  "after": false,
+  "tBefore": "PPPPP",
+  "tAfter": "PFPPP",
+  "vBefore": [
+   47.0959390756952,
+   58.86992384461899,
+   78.4932317928253
+  ],
+  "vAfter": [
+   46.53393910089801,
+   58.167423876122506,
+   77.55656516816332
+  ],
+  "cause": "rules-6 proposal; publishes with its computed verdict"
+ },
+ {
+  "id": "CHKP.US",
+  "name": "Check Point Software Technologies Ltd",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPFP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   135.02890158000193,
+   159.22413026362588,
+   181.95013026424664
+  ],
+  "vAfter": [
+   159.97691323459838,
+   218.66890134003086,
+   252.99293942802566
+  ],
+  "cause": "3.7.0 rule: capital allocation judged on per-share economic progress (evolve-1); computed on live but held by the removed approval hold"
+ },
+ {
+  "id": "CRUS.US",
+  "name": "Cirrus Logic Inc",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPPP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   95.06511363862808,
+   130.89527138572572,
+   150.8790767312877
+  ],
+  "vAfter": [
+   127.7549117139021,
+   178.5823190751872,
+   206.9306457026295
+  ],
+  "cause": "rules-6 proposal; publishes with its computed verdict"
+ },
+ {
+  "id": "CURY3.SA",
+  "name": "Cury Construtora e Incorporadora S.A",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPPP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   13.38967257804367,
+   16.171121554374558,
+   17.10673395882567
+  ],
+  "vAfter": [
+   30.209204614240424,
+   38.510275034019465,
+   41.305423555550014
+  ],
+  "cause": "rules-6 proposal; publishes with its computed verdict"
+ },
+ {
+  "id": "DNP.WAR",
+  "name": "Dino Polska SA",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPPP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   1.2330352195562173,
+   1.7592198822252203,
+   2.0431061463122453
+  ],
+  "vAfter": [
+   27.67706256415445,
+   40.07826634940544,
+   46.768942955065775
+  ],
+  "cause": "rules-6 proposal; publishes with its computed verdict"
+ },
+ {
+  "id": "DOX.US",
+  "name": "Amdocs Ltd",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPFP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   62.08139486816499,
+   70.49133240847799,
+   81.6867431270868
+  ],
+  "vAfter": [
+   73.73643893713364,
+   96.03254420599373,
+   112.20116012889265
+  ],
+  "cause": "3.7.0 rule: capital allocation judged on per-share economic progress (evolve-1); computed on live but held by the removed approval hold"
+ },
+ {
+  "id": "EDEN.PA",
+  "name": "Edenred SA",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPFP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   50.23422987627811,
+   60.640549115477775,
+   67.40861170645756
+  ],
+  "vAfter": [
+   50.23422987627811,
+   60.640549115477775,
+   67.40861170645756
+  ],
+  "cause": "3.7.0 rule: capital allocation judged on per-share economic progress (evolve-1); computed on live but held by the removed approval hold"
+ },
+ {
+  "id": "EFOR.US",
+  "name": "Everforth, Inc.",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPFP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   66.4600048620663,
+   75.62338699582509,
+   87.82179228328857
+  ],
+  "vAfter": [
+   66.4600048620663,
+   75.62338699582509,
+   87.82179228328857
+  ],
+  "cause": "3.7.0 rule: capital allocation judged on per-share economic progress (evolve-1); computed on live but held by the removed approval hold"
+ },
+ {
+  "id": "EXP.US",
+  "name": "Eagle Materials Inc",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPPP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   42.93290465234814,
+   58.07663576861254,
+   67.12199101757207
+  ],
+  "vAfter": [
+   234.07600413806225,
+   326.9589230570981,
+   382.74931495261677
+  ],
+  "cause": "rules-6 proposal; publishes with its computed verdict"
+ },
+ {
+  "id": "FCN.US",
+  "name": "FTI Consulting Inc",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPPP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   123.89434452112165,
+   175.66271061057995,
+   205.80752308694824
+  ],
+  "vAfter": [
+   164.038358433847,
+   233.00942204046572,
+   273.1713961526941
+  ],
+  "cause": "rules-6 proposal; publishes with its computed verdict"
+ },
+ {
+  "id": "FDS.US",
+  "name": "FactSet Research Systems Inc",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPPP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   205.90836849870476,
+   296.39235539003784,
+   346.85862443886055
+  ],
+  "vAfter": [
+   256.4569728936917,
+   352.2007427882842,
+   412.0639322703264
+  ],
+  "cause": "unfrozen by this release (freeze reason was approval/transition only)"
+ },
+ {
+  "id": "GIB-A.TO",
+  "name": "CGI Inc",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPPP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   97.59398044482771,
+   121.1972707022346,
+   141.18203978237563
+  ],
+  "vAfter": [
+   113.84223461493649,
+   141.43537751796737,
+   164.79833171200636
+  ],
+  "cause": "current data; computed on live but held by the removed approval hold"
+ },
+ {
+  "id": "IMB.LSE",
+  "name": "Imperial Brands PLC",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPFP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   3900.001302946647,
+   4437.726244965951,
+   5153.552200948279
+  ],
+  "vAfter": [
+   3900.001302946647,
+   4437.726244965951,
+   5153.552200948279
+  ],
+  "cause": "3.7.0 rule: capital allocation judged on per-share economic progress (evolve-1); computed on live but held by the removed approval hold"
+ },
+ {
+  "id": "INTU.US",
+  "name": "Intuit Inc",
+  "before": false,
+  "after": true,
+  "tBefore": "PPFPP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   89.22483296335419,
+   98.03352677643821,
+   109.75976667527507
+  ],
+  "vAfter": [
+   271.1182793700692,
+   384.07994489680334,
+   447.0828474050848
+  ],
+  "cause": "rules-6 proposal; publishes with its computed verdict"
+ },
+ {
+  "id": "ITRN.US",
+  "name": "Ituran Location and Control Ltd",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPPP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   42.02287752608768,
+   54.45870892641629,
+   62.94142185620789
+  ],
+  "vAfter": [
+   51.30934074479948,
+   72.63212925022638,
+   84.52463773217842
+  ],
+  "cause": "rules-6 proposal; publishes with its computed verdict"
+ },
+ {
+  "id": "LDOS.US",
+  "name": "Leidos Holdings Inc",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPPP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   98.1308161746115,
+   134.17179497642104,
+   156.8099869154863
+  ],
+  "vAfter": [
+   134.08215311480072,
+   183.76508140776593,
+   214.97210475127437
+  ],
+  "cause": "rules-6 proposal; publishes with its computed verdict"
+ },
+ {
+  "id": "NTB.US",
+  "name": "Bank of N.T. Butterfield & Son Ltd",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPPP",
+  "tAfter": "PPPPP",
+  "vBefore": null,
+  "vAfter": [
+   79.64968406236753,
+   99.56210507795939,
+   132.74947343727916
+  ],
+  "cause": "rules-6 proposal; publishes with its computed verdict"
+ },
+ {
+  "id": "NTES.US",
+  "name": "NetEase Inc",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPPP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   121.93747441693995,
+   156.46621627946226,
+   176.57236463060005
+  ],
+  "vAfter": [
+   144.6851551647181,
+   183.87546407478533,
+   208.50816891580757
+  ],
+  "cause": "rules-6 proposal; publishes with its computed verdict"
+ },
+ {
+  "id": "NVR.US",
+  "name": "NVR Inc",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPPP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   4907.046257476315,
+   5540.501459169892,
+   6384.334756492054
+  ],
+  "vAfter": [
+   6777.990615715635,
+   7673.048095713162,
+   8865.364936146229
+  ],
+  "cause": "rules-6 proposal; publishes with its computed verdict"
+ },
+ {
+  "id": "OSK.US",
+  "name": "Oshkosh Corporation",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPPP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   116.62183460592998,
+   154.3583671232148,
+   180.20026076658723
+  ],
+  "vAfter": [
+   141.79057593194452,
+   187.89361463024315,
+   219.46487312178604
+  ],
+  "cause": "rules-6 proposal; publishes with its computed verdict"
+ },
+ {
+  "id": "OTEX.TO",
+  "name": "Open Text Corp",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPFP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   64.65621273983382,
+   72.90151678657837,
+   83.87776540443399
+  ],
+  "vAfter": [
+   64.84993231003449,
+   73.11994050644114,
+   84.12907558755471
+  ],
+  "cause": "3.7.0 rule: capital allocation judged on per-share economic progress (evolve-1); computed on live but held by the removed approval hold"
+ },
+ {
+  "id": "PNDORA.CO",
+  "name": "Pandora A/S",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPFP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   771.199702647434,
+   877.0540625248519,
+   1017.9686685492642
+  ],
+  "vAfter": [
+   974.1676115295814,
+   1351.1122900423056,
+   1584.4540685744748
+  ],
+  "cause": "3.7.0 rule: capital allocation judged on per-share economic progress (evolve-1); computed on live but held by the removed approval hold"
+ },
+ {
+  "id": "PRG.US",
+  "name": "PROG Holdings Inc",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPFP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   502.2026372096716,
+   571.3251943574793,
+   663.3419796761269
+  ],
+  "vAfter": [
+   502.2026372096716,
+   571.3251943574793,
+   663.3419796761269
+  ],
+  "cause": "3.7.0 rule: capital allocation judged on per-share economic progress (evolve-1); computed on live but held by the removed approval hold"
+ },
+ {
+  "id": "SEIC.US",
+  "name": "SEI Investments Company",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPPP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   68.41560024066017,
+   98.14049514363879,
+   114.80016742265502
+  ],
+  "vAfter": [
+   86.89698532030584,
+   125.34068275474287,
+   146.7821559326192
+  ],
+  "cause": "rules-6 proposal; publishes with its computed verdict"
+ },
+ {
+  "id": "SFM.US",
+  "name": "Sprouts Farmers Market LLC",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPPP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   58.000070443342075,
+   82.6530311064989,
+   97.00849434236638
+  ],
+  "vAfter": [
+   72.62935155213661,
+   103.55131905539734,
+   121.55723622449189
+  ],
+  "cause": "current data; computed on live but held by the removed approval hold"
+ },
+ {
+  "id": "SSD.US",
+  "name": "Simpson Manufacturing Company Inc",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPPP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   106.86044393908233,
+   151.38440736143252,
+   176.21706996161998
+  ],
+  "vAfter": [
+   145.2442070348534,
+   207.37766669678197,
+   242.03179722264852
+  ],
+  "cause": "rules-6 proposal; publishes with its computed verdict"
+ },
+ {
+  "id": "TGS.US",
+  "name": "Transportadora de Gas del Sur SA ADR",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPPP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   22.63241564715784,
+   28.229585842069305,
+   31.488828091136195
+  ],
+  "vAfter": [
+   38.81569129324982,
+   51.347793216258836,
+   58.64525865588702
+  ],
+  "cause": "rules-6 proposal; publishes with its computed verdict"
+ },
+ {
+  "id": "ULTA.US",
+  "name": "Ulta Beauty Inc",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPPP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   377.53968910141583,
+   548.8527412308939,
+   644.4003721141802
+  ],
+  "vAfter": [
+   498.0213505988598,
+   726.500905318876,
+   853.9324109012185
+  ],
+  "cause": "unfrozen by this release (freeze reason was approval/transition only)"
+ },
+ {
+  "id": "USB.US",
+  "name": "U.S. Bancorp",
+  "before": true,
+  "after": false,
+  "tBefore": "PPPPP",
+  "tAfter": "PPPPF",
+  "vBefore": [
+   67.5485164417002,
+   84.43564555212524,
+   112.58086073616697
+  ],
+  "vAfter": [
+   69.73852059460295,
+   87.17315074325366,
+   116.23086765767152
+  ],
+  "cause": "unfrozen by this release (freeze reason was approval/transition only)"
+ },
+ {
+  "id": "WIT.US",
+  "name": "Wipro Limited ADR",
+  "before": false,
+  "after": true,
+  "tBefore": "PPPFP",
+  "tAfter": "PPPPP",
+  "vBefore": [
+   2.2753101496129635,
+   2.7674397961894375,
+   3.1649011658875392
+  ],
+  "vAfter": [
+   2.4406986447727674,
+   3.1032284128549077,
+   3.5659505014895934
+  ],
+  "cause": "3.7.0 rule: capital allocation judged on per-share economic progress (evolve-1); computed on live but held by the removed approval hold"
+ }
+]

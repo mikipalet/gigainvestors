@@ -11,3 +11,8 @@ Owner instruction, 2026-10-08: "dont' hold it, if the data changes, u change tha
 - [x] Write READY/NOT report, remove disposable copies, and commit `value: buy verdicts follow the data`. No external publication or push.
 
 The existing data coverage, logos, issuer aliases, share reconciliation, calibration and pending-publication receipt remain enforced. Source gaps and numerical disagreements are recorded per field; a verdict transition by itself is never an error.
+
+Resume 4 (2026-10-08, after method 3.7.0 shipped as live archive 00b416fe):
+- [x] Merge origin/master (752f825) and resolve the method as 3.7.1 = 3.7.0 rules + the rules-7 data fixes (3.6.1 never published).
+- [x] Rebind to the live corpus after the nightly and carry the rules-7 source repairs forward only where live bytes still equal the repaired-from bytes.
+- [x] Redo the full proof: analysis, publish --out, REAL local publication, post-publish, build, browser gate on five new Buys, bundle and controller commands bound to 00b416fe.

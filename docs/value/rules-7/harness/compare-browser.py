@@ -6,11 +6,11 @@ candidate=json.loads((r/'browser/report.json').read_text());live=json.loads((r/'
 owner=json.loads(Path('docs/value/dedupe-1/browser-report.json').read_text())
 allowed={i for row in owner for i in row.get('issues',[])if i.startswith('text below 13px:')and i.endswith('(12px)')}
 key=lambda row:(row['path'],row['state'].split(':')[0]if row['state'].startswith('Price story:')else row['state'],row['width'],row['height'])
-# /s/ADBE is prerendered from the candidate store at build time, so the live arm cannot
-# render a live ADBE page from this build; ADBE findings must be owner-accepted or absent.
-prerendered={'/s/ADBE.US'}
+# None of the five browser companies is prerendered at build time (clear-browser-pages.py asserts it).
+prerendered=set()
 lookup={key(row):set(row.get('issues',[]))for row in live if row['path']not in prerendered}
-shape=lambda issue:re.sub(r'"[\d,.]+" / "[\d,.]+"','"<amount>" / "<amount>"',issue)
+# Same element and same defect as on live, with only this release's numbers (price, value, %) differing.
+shape=lambda issue:re.sub(r'\d[\d,.]*','<n>',issue)
 findings=[];new=[];counts={'ownerChrome':0,'ownerWhitespace':0,'preExisting':0}
 for row in candidate:
  for issue in row.get('issues',[]):
@@ -23,18 +23,27 @@ for row in candidate:
   if d in counts:counts[d]+=1
 assert not any(v['state']=='interaction failure'for v in candidate),'Browser interactions must complete'
 assert len({(v['path'],v['width'],v['height'])for v in candidate})==10
-semantic=json.loads((r/'semantics-candidate/semantics.json').read_text());dom={(v['id'],v['width']):v for v in json.loads((r/'price-dom-candidate.json').read_text())}
+semantic=json.loads((r/'semantics-candidate/semantics.json').read_text())
+# Master's shipped phone layout (app/devices.css, <768px) hides the tile rule sentence; the drawer
+# still shows it (checked above in browser-semantics.ts). Pre-existing only when live fails the same tile.
+liveSemantic={(row['id'],row['width'],t['key']) for row in json.loads((r/'semantics-live/semantics.json').read_text()) for t in row['tests'] if not t['pass'] and ' tile rule sentence: expected ' in (t.get('error') or '')}
+phoneHidden=[]
+dom={(v['id'],v['width']):v for v in json.loads((r/'price-dom-candidate.json').read_text())}
 fresh=[];legacy=[]
 for row in semantic:
  assert len(row.get('tests',[]))==3,'Quality surface audit incomplete'
- fresh+=[{'id':row['id'],'width':row['width'],'scope':t['key'],'error':t.get('error')}for t in row['tests']if not t['pass']]
+ for t in row['tests']:
+  if t['pass']:continue
+  f={'id':row['id'],'width':row['width'],'scope':t['key'],'error':t.get('error')}
+  if row['width']<768 and ' tile rule sentence: expected ' in (t.get('error') or '') and (row['id'],row['width'],t['key']) in liveSemantic:phoneHidden.append(f)
+  else:fresh.append(f)
  if row.get('error')and' price math: expected 'not in row['error']:fresh.append({'id':row['id'],'width':row['width'],'error':row['error']});continue
  if row['price'].get('pass')or row['price'].get('absent'):continue
  hidden=bool(row.get('hiddenMath'))and all(x['display']=='none'and not x['visible']for x in row['hiddenMath'])
  if hidden and ' price math: expected 'in row['price'].get('error','')and dom[(row['id'],row['width'])]['passed']:
   legacy.append({'id':row['id'],'width':row['width'],'error':row['price']['error'],'reason':'Strict text check reads the intentionally hidden .valuation-math table; the full arithmetic audit on actual DOM text (header, drawer, key numbers, annual table, chart) passes.'})
  else:fresh.append({'id':row['id'],'width':row['width'],'scope':'price','error':row['price'].get('error')})
-summary={'candidateStates':len(candidate),'liveStates':len(live),'viewports':sorted({f"{v['width']}x{v['height']}"for v in candidate}),'companies':sorted({v['path']for v in candidate}),'counts':counts,'newFindings':new,'semanticStates':len(semantic),'priceDomAudits':len(dom),'legacySemanticFindings':legacy,'newSemanticFindings':fresh,'findings':findings,'pass':not new and not fresh}
+summary={'candidateStates':len(candidate),'liveStates':len(live),'viewports':sorted({f"{v['width']}x{v['height']}"for v in candidate}),'companies':sorted({v['path']for v in candidate}),'counts':counts,'newFindings':new,'semanticStates':len(semantic),'priceDomAudits':len(dom),'legacySemanticFindings':legacy,'phoneHiddenTileSentence':phoneHidden,'newSemanticFindings':fresh,'findings':findings,'pass':not new and not fresh}
 (r/'browser-comparison.json').write_text(json.dumps(summary,indent=2)+'\n')
-print(json.dumps({k:v for k,v in summary.items()if k not in['findings','legacySemanticFindings']},indent=1))
+print(json.dumps({k:v for k,v in summary.items()if k not in['findings','legacySemanticFindings','phoneHiddenTileSentence']},indent=1))
 assert summary['pass'],'New browser findings remain'

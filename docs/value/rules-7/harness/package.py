@@ -10,6 +10,8 @@ def digest(p):
   for b in iter(lambda:f.read(1024*1024),b''):h.update(b)
  return h.hexdigest()
 source=read(e/'source-baseline.json');bound=(e/'source-baseline.json').stat().st_mtime-3600
+# Carried repairs keep their original mtimes (copy2), so always hash them.
+carried=set(read(e/'carry.json')['carried']) if (e/'carry.json').exists() else set()
 files={};present=set()
 for base,dirs,names in os.walk(c):
  dirs[:]=[d for d in dirs if d!='.git']
@@ -18,7 +20,7 @@ for base,dirs,names in os.walk(c):
   if rel.startswith(('publish-repo/','staging/','logs/','tmp/')):continue
   present.add(rel)
   # Unmodified copies keep their rsync mtime; hash every file touched after binding.
-  if rel in source and p.stat().st_mtime<bound:continue
+  if rel in source and rel not in carried and p.stat().st_mtime<bound:continue
   value=digest(p)
   if value!=source.get(rel):files[rel]=value
 removed=sorted(rel for rel in source if rel not in present and not rel.startswith(('publish-repo/','staging/','logs/')))
@@ -48,4 +50,5 @@ manifest={'version':1,'status':'NOT','reason':'Final verification and commit bin
  'frozenIds':read(c/'verdict-freeze.json')['ids'],
  'artifacts':{p.name:digest(p)for p in sorted(out.iterdir())if p.is_file()and p.name!='manifest.json'}}
 (out/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
+assert carried<=set(files),'Carried repair missing from overlay'
 print(json.dumps({'overlayFiles':len(files),'removedFiles':len(removed),'sourceFiles':len(final),'artifactBytes':sum(p.stat().st_size for p in out.iterdir())}))

@@ -21,7 +21,7 @@ for rel in check['sourceMismatches']:
 added=[{'path':rel,'target':os.readlink(live/rel)if(live/rel).is_symlink()else None,'exists':(live/rel).exists()}for rel in check['sourceAdditions']]
 out={'archiveUnchanged':not check['archiveMismatches'],'archiveCommit':check['archiveCommit'],'contentChanged':changed,'danglingBoundInputs':len(dangling),
  'restorableFromBoundCopy':len(restorable),'danglingAtBind':[a for a in added if not a['exists']],'newRealFiles':[a for a in added if a['exists']],
- 'cause':'Live corpus files were symlinks into /mnt/HC_Volume_107024928/value-cover, which was deleted outside this task; content survives only in the bound copy.',
+ 'cause':'No bound input changed or dangled.' if not dangling else 'Live corpus files were symlinks into /mnt/HC_Volume_107024928/value-cover, which was deleted outside this task; content survives only in the bound copy.',
  'restore':sorted(restorable)}
 (e/'end-bindings.json').write_text(json.dumps(out,indent=2)+'\n')
 print(json.dumps({k:(len(v)if isinstance(v,list)else v)for k,v in out.items()}))

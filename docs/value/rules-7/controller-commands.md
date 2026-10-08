@@ -1,6 +1,6 @@
 # Controller only — do not execute unless rules-7 is READY
 
-Future controller procedure only; these commands have not been executed. The agent has not pushed code, externally published data, or paused the runner. There is no Buy approval manifest step: computed verdicts publish as the data says, in this release and in later nightlies. The overlay installs the reviewed data-error-only `verdict-freeze.json` (38 ids) and the corrected corpus files. Publisher and post-publisher read the publish token with `--env-file` and never print it. Any failure leaves the runner paused for inspection. No command opens or modifies the runner lock.
+Future controller procedure only; these commands have not been executed. The agent has not pushed code, externally published data, or paused the runner. There is no Buy approval manifest step: computed verdicts publish as the data says, in this release and in later nightlies. The overlay installs the reviewed data-error-only `verdict-freeze.json` (41 ids) and the corrected corpus files. Publisher and post-publisher read the publish token with `--env-file` and never print it. Any failure leaves the runner paused for inspection. No command opens or modifies the runner lock.
 
 ```bash
 set -euo pipefail
@@ -19,13 +19,13 @@ check_disk() {
   python3 -c 'import pathlib,shutil; assert min(shutil.disk_usage(p).free for p in ["/",pathlib.Path.home()/"data"]) >= 4*1024**3, "DISK STOP"'
 }
 check_disk
-git merge-base --is-ancestor 6f7e0c1 HEAD
+git merge-base --is-ancestor 752f825 HEAD  # live code (method 3.7.0) is merged
 test "$(head -n 1 "$report")" = READY
 python3 - "$bundle" <<'PY'
 import json,sys
 from pathlib import Path
 b=Path(sys.argv[1]);m=json.loads((b/'manifest.json').read_text())
-assert m['status']=='READY' and m['method']=='3.6.1'
+assert m['status']=='READY' and m['method']=='3.7.1'
 # Buy verdicts follow the data: no approval manifest exists or is consulted.
 assert not Path('scripts/value/approved-verdict-changes.json').exists()
 assert m['approvalManifest'] is None
@@ -55,8 +55,9 @@ npm --prefix "$daily" ci --no-audit --no-fund
 check_disk
 test ! -e "$stage"
 mkdir -p "$stage"
-# Exit 23 is expected only for the dangling links into the deleted value-cover
-# directory; the bundle restores the bound bytes and stage-bundle.py verifies every hash.
+# The 55 report extracts lost in the value-cover cleanup are absent (their dangling links sit
+# under the excluded backups/); the nightly refetches them and those companies keep their prior
+# analysis. Exit 23 is tolerated only for files vanishing mid-copy; stage-bundle.py verifies every bound hash.
 set +e
 rsync -aL --exclude='/daily-runner*' --exclude='/publish.hold*' \
   --exclude='/.env*' --exclude='/backups' --exclude='/logs' "$live/" "$stage/"

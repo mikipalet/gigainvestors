@@ -1,0 +1,10058 @@
+{
+ "released": 3915,
+ "counts": {
+  "accounting:pass\u2192unclear": 1,
+  "economics:fail\u2192unclear": 1,
+  "management:fail\u2192pass": 430,
+  "management:fail\u2192unclear": 1,
+  "management:pass\u2192fail": 158,
+  "moat:fail\u2192unclear": 1,
+  "tier:compounder\u2192standard": 3,
+  "tier:standard\u2192compounder": 20,
+  "understandable:fail\u2192unclear": 1,
+  "valuationMidChanged": 24
+ },
+ "rows": [
+  {
+   "id": "000080.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    7361.819514041541,
+    7361.819514041541
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "000100.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    30083.914664136555,
+    30083.914664136555
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "000150.KO",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "000240.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    60097.85740303736,
+    60097.85740303736
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "000538.SHE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    45.06354563693914,
+    51.05419329278378
+   ],
+   "tier": [
+    "standard",
+    "compounder"
+   ]
+  },
+  {
+   "id": "0006.HK",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    42.89312621907982,
+    42.89312621907982
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "000651.SHE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    80.06688940551693,
+    80.06688940551693
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "000661.SHE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    92.82494526858461,
+    92.82494526858461
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "000720.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    85246.61615541409,
+    85246.61615541409
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "000938.SHE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    11.926454431047734,
+    11.926454431047734
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "000963.SHE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    26.797869863154787,
+    26.797869863154787
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "000999.SHE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    48.71161339933658,
+    48.71161339933658
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "001430.KO",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    31092.546572169424,
+    31092.546572169424
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "001680.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    41850.39947155549,
+    41850.39947155549
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "002007.SHE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    8.36657827426059,
+    8.36657827426059
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "002180.SHE",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    3.926728941216432,
+    3.926728941216432
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "002202.SHE",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "002304.SHE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    49.53599167337122,
+    49.53599167337122
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "002352.SHE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    18.866232086595904,
+    18.866232086595904
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "002380.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    566074.691867995,
+    566074.691867995
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "002410.SHE",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    5.746289098674938,
+    5.746289098674938
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "002493.SHE",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    3.95734679991715,
+    3.95734679991715
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "002603.SHE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    10.135952836456557,
+    10.135952836456557
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "0027.HK",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    21.465652558730074,
+    21.465652558730074
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "002841.SHE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    28.276409663772803,
+    28.276409663772803
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "003090.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    19909.128410350848,
+    19909.128410350848
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "003670.KO",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "004000.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    74021.81755224381,
+    74021.81755224381
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "004370.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    642072.0350371671,
+    642072.0350371671
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "006400.KO",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    57612.10391355749,
+    57612.10391355749
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "0066.HK",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    32.992776546590804,
+    32.992776546590804
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "007340.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    135485.6164182589,
+    135485.6164182589
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "008730.KO",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "008930.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    17832.073907231974,
+    17832.073907231974
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "009970.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    720160.6854320052,
+    720160.6854320052
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "010130.KO",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    896432.3752217877,
+    896432.3752217877
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "011210.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    162002.57934775864,
+    162002.57934775864
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "011780.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    262468.96080295474,
+    262468.96080295474
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "012330.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    639576.2095635509,
+    639576.2095635509
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "012750.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    92855.63342700197,
+    92855.63342700197
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "018260.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    206492.7245651573,
+    206492.7245651573
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "021240.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    153887.64557516147,
+    153887.64557516147
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "023530.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "026960.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    27949.040924655892,
+    27949.040924655892
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "028050.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    60439.78648705936,
+    60439.78648705936
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "028670.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    2373.0326346587376,
+    2373.0326346587376
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "0288.HK",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    1.5680237809165924,
+    1.5680237809165924
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "029780.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    66367.74576265913,
+    66367.74576265913
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "030000.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    50046.099602272334,
+    50046.099602272334
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "0316.HK",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    48.68782168984249,
+    48.68782168984249
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "032640.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    22219.07122672853,
+    22219.07122672853
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "033780.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    132355.06210234182,
+    132355.06210234182
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "035420.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    199485.39610727897,
+    199485.39610727897
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "035720.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    41617.99196551743,
+    41617.99196551743
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "036460.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    138346.6118654726,
+    138346.6118654726
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "051600.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    41885.558802808846,
+    41885.558802808846
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "071050.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    505830.456662256,
+    505830.456662256
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "0762.HK",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    16.318089797718468,
+    16.318089797718468
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "081660.KO",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    60122.64600793456,
+    60122.64600793456
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "0881.HK",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    33.25448019933975,
+    33.25448019933975
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "093050.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "0941.HK",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    115.31663026097708,
+    115.31663026097708
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "1099.HK",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    61.898336177787414,
+    61.898336177787414
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "1109.HK",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    86.17554676873502,
+    86.17554676873502
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "111770.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    251313.33445487253,
+    251313.33445487253
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "112610.KO",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    36488.65127745424,
+    36488.65127745424
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "1177.HK",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    3.5533364590176966,
+    3.5533364590176966
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "1303.TW",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    34.26544857051331,
+    34.26544857051331
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "161390.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    294363.22000987956,
+    294363.22000987956
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "161890.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    24125.400682968713,
+    24125.400682968713
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "1803.JP",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    1591.0636478833655,
+    1591.0636478833655
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "183190.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    17662.722036998835,
+    17662.722036998835
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "185750.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    108172.91315580138,
+    108172.91315580138
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "192080.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    173187.42562371836,
+    173187.42562371836
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "1963.JP",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "204320.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    50609.7553743904,
+    50609.7553743904
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "2269.JP",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    2539.7238093900814,
+    2539.7238093900814
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "2313.HK",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    87.72658079911335,
+    96.7690499443062
+   ],
+   "tier": [
+    "standard",
+    "compounder"
+   ]
+  },
+  {
+   "id": "2412.TW",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    87.78995553211944,
+    87.78995553211944
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "2413.JP",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    2025.6910136710046,
+    2025.6910136710046
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "241560.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    108035.32937093421,
+    108035.32937093421
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "2432.JP",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    3474.1824177980184,
+    3474.1824177980184
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "2615.TW",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    223.4249388464701,
+    223.4249388464701
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "267270.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    69302.09233408954,
+    69302.09233408954
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "280360.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    123020.44967469639,
+    123020.44967469639
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "285130.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "298020.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    405515.60847615177,
+    405515.60847615177
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "300015.SHE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    5.583514181052277,
+    5.583514181052277
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "300142.SHE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    0.9724768975191765,
+    0.9724768975191765
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "300628.SHE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    48.65535685554855,
+    52.71726472867923
+   ],
+   "tier": [
+    "standard",
+    "compounder"
+   ]
+  },
+  {
+   "id": "300661.SHE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    31.103930022758792,
+    31.103930022758792
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "300720.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    15332.126000618671,
+    15332.126000618671
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "3092.JP",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    920.0070918094568,
+    890.2487264500962
+   ],
+   "tier": [
+    "compounder",
+    "standard"
+   ]
+  },
+  {
+   "id": "3457.JP",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    1075.2695989519705,
+    1075.2695989519705
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "3690.HK",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "3861.JP",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    678.5618119586194,
+    678.5618119586194
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "4043.JP",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    3530.184099125349,
+    3530.184099125349
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "4183.JP",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    620.6424541179455,
+    620.6424541179455
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "4208.JP",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "4307.JP",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    1833.2525279430738,
+    1833.2525279430738
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "4502.JP",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    3496.169224254286,
+    3496.169224254286
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "4503.JP",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    1937.5570162687154,
+    1937.5570162687154
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "4506.JP",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    1246.9410370800495,
+    1246.9410370800495
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "4751.JP",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    1029.220277339851,
+    1029.220277339851
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "5233.JP",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    3084.999737479499,
+    3084.999737479499
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "5411.JP",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    7401.582178380125,
+    7401.582178380125
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "5706.JP",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    21065.883902430516,
+    21065.883902430516
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "5711.JP",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    3707.4791972403327,
+    3707.4791972403327
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "600010.SHG",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    0.834696222252953,
+    0.834696222252953
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "600011.SHG",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "600018.SHG",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    10.024549701224016,
+    10.024549701224016
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "600019.SHG",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    5.860046838210428,
+    5.860046838210428
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "600023.SHG",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    4.273414314493776,
+    4.273414314493776
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "600050.SHG",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    2.911504512960309,
+    2.911504512960309
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "600085.SHG",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    20.436672882356405,
+    20.436672882356405
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "600332.SHG",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    47.62705082226992,
+    47.62705082226992
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "600406.SHG",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    24.761753718201213,
+    26.80680513367031
+   ],
+   "tier": [
+    "standard",
+    "compounder"
+   ]
+  },
+  {
+   "id": "600438.SHG",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "600741.SHG",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    40.25919024770413,
+    40.25919024770413
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "600745.SHG",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "601012.SHG",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    10.382616398274441,
+    10.382616398274441
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "601668.SHG",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    18.775846897685653,
+    18.775846897685653
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "601699.SHG",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    22.579367803996632,
+    22.579367803996632
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "601766.SHG",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    9.105973139563806,
+    9.105973139563806
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "601808.SHG",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    9.462120377338243,
+    9.462120377338243
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "601919.SHG",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    49.68279901022839,
+    49.68279901022839
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "603833.SHG",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    43.332566535311614,
+    43.332566535311614
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "6103.JP",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    4040.2942023235114,
+    4040.2942023235114
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "6724.JP",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    3627.976487183002,
+    3627.976487183002
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "6902.JP",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    2629.0011167534353,
+    2629.0011167534353
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "6954.JP",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    3107.2247049429966,
+    3107.2247049429966
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "6963.JP",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "6971.JP",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    1265.296920707014,
+    1265.296920707014
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "6976.JP",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "6988.JP",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    2535.2584038707646,
+    2535.2584038707646
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "7004.JP",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    1841.721125632154,
+    1841.721125632154
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "7202.JP",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    3366.0746772189905,
+    3366.0746772189905
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "7267.JP",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    4446.536017065575,
+    4446.536017065575
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "7269.JP",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "7270.JP",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    6810.908255679254,
+    6810.908255679254
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "7272.JP",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "7309.JP",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    13526.659806043408,
+    13526.659806043408
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "7911.JP",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    4631.041251001178,
+    4631.041251001178
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "7951.JP",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    895.0149970301073,
+    895.0149970301073
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "8053.JP",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    7379.116107101216,
+    7379.116107101216
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "8233.JP",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    1373.0653067598053,
+    1373.0653067598053
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "8697.JP",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    1010.7045389856185,
+    1010.7045389856185
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "9001.JP",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    2397.1878408036173,
+    2397.1878408036173
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "9005.JP",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    2048.7890298359725,
+    2048.7890298359725
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "9007.JP",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    865.3644129257412,
+    865.3644129257412
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "9008.JP",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    910.9713350231671,
+    910.9713350231671
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "9009.JP",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    747.0780889330379,
+    747.0780889330379
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "9020.JP",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    2621.5360327087574,
+    2621.5360327087574
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "9022.JP",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    6658.786653814487,
+    6658.786653814487
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "9064.JP",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    2479.3376481689756,
+    2479.3376481689756
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "9432.JP",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    144.52198556530948,
+    144.52198556530948
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "9433.JP",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    2113.25007528942,
+    2113.25007528942
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "9501.JP",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "9502.JP",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    1777.8314377492804,
+    1777.8314377492804
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "9735.JP",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    4121.752539614352,
+    4121.752539614352
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "9843.JP",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "AAL.LSE",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "AALB.AS",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    30.981309915030476,
+    30.981309915030476
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ABBV.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    156.63927550517514,
+    109.27828725172758
+   ],
+   "tier": [
+    "compounder",
+    "standard"
+   ]
+  },
+  {
+   "id": "ABEV3.SA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    7.524558980891199,
+    7.524558980891199
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ABF.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    22.289774696477956,
+    22.289774696477956
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ABM.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    44.5120796422195,
+    44.5120796422195
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ACX.MC",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    17.40953710913222,
+    17.40953710913222
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ADM.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    83.5014003716733,
+    83.5014003716733
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ADP.PA",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    67.80676426297876,
+    67.80676426297876
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ADS.XETRA",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    65.11800147500334,
+    65.11800147500334
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "AGL.AU",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    2.2463122250591994,
+    2.2463122250591994
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "AIN.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    49.41205591827307,
+    49.41205591827307
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ALB.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "ALFA.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    1.2171587728085453,
+    1.2171587728085453
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ALSEA.MX",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    30.427573030100817,
+    30.427573030100817
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ALT.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "ALTR.LS",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    6.469758657344498,
+    6.469758657344498
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "AMG.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    440.50958439128505,
+    440.50958439128505
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "AMP.MI",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    11.179023360829962,
+    11.179023360829962
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "AMR.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    310.5414355152951,
+    310.5414355152951
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "AMXB.MX",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    9.989052477270828,
+    9.989052477270828
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "AN.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    408.0583824482409,
+    408.0583824482409
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ANGI.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    7.040192314620142,
+    7.040192314620142
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "AOS.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    74.52417125448142,
+    97.2236255044826
+   ],
+   "tier": [
+    "standard",
+    "compounder"
+   ]
+  },
+  {
+   "id": "APA.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    54.3068418502776,
+    54.3068418502776
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "APAM.AS",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    47.84705854030799,
+    47.84705854030799
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "APTV.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    52.547995101999355,
+    52.547995101999355
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ARCO.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    24.90239857768672,
+    24.90239857768672
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ARLO.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "ARLP.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    42.999254213579746,
+    42.999254213579746
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ARMK.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    17.15367008751312,
+    17.15367008751312
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ARW.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    258.6128951069692,
+    258.6128951069692
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ASX.AU",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    79.48242935906681,
+    79.48242935906681
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ATHM.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    342.40716331773876,
+    342.40716331773876
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ATKR.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    193.33995135439932,
+    193.33995135439932
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ATS.VI",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "AUTO.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    4.457402648932697,
+    4.457402648932697
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "AVIO.MI",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "AVON.LSE",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "AXTA.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    29.957821686115388,
+    29.957821686115388
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "AYI.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    216.9353625072225,
+    357.0443302262932
+   ],
+   "tier": [
+    "standard",
+    "compounder"
+   ]
+  },
+  {
+   "id": "AYV.PA",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "AZJ.AU",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    2.2151576708232956,
+    2.2151576708232956
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "BAB.LSE",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    3.9580800351759655,
+    3.9580800351759655
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "BABA.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    690.4562599795275,
+    690.4562599795275
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "BAG.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    6.082421891854278,
+    6.082421891854278
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "BAKKA.OL",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    104.10916632824416,
+    104.10916632824416
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "BALL.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    38.16418272228355,
+    38.16418272228355
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "BBWI.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    52.14249947891464,
+    52.14249947891464
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "BE.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "BEI.XETRA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    63.83376693541584,
+    63.83376693541584
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "BF-A.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    21.184705207118142,
+    21.184705207118142
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "BFH.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    323.1363845852508,
+    323.1363845852508
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "BHC.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    37.34730613237278,
+    37.34730613237278
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "BIDU.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    1492.161561369105,
+    1492.161561369105
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "BIMBOA.MX",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    20.381606702982207,
+    20.381606702982207
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "BLND.LSE",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    1.5359062384884279,
+    1.5359062384884279
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "BMRN.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    27.30835086701148,
+    27.30835086701148
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "BMW.XETRA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    211.38668644801425,
+    211.38668644801425
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "BN.TO",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    16.398011857632696,
+    16.398011857632696
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "BNR.XETRA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    44.73839346580037,
+    44.73839346580037
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "BNZL.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    27.034550532495114,
+    27.034550532495114
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "BOSS.XETRA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    40.13834028487262,
+    40.13834028487262
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "BREE.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    6.4239519968182925,
+    6.4239519968182925
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "BRSL.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    31.923159066134332,
+    31.923159066134332
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "BSL.AU",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    13.310748969918334,
+    13.310748969918334
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "BSM.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    20.192053404851315,
+    20.192053404851315
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "BUR.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "BXC.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    113.30792855391756,
+    113.30792855391756
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "BZH.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    59.33657257009778,
+    59.33657257009778
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "C5H.IR",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    2.4355316442263306,
+    2.4355316442263306
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "CA.PA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    18.71045225872574,
+    18.71045225872574
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "CALM.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    83.79360840128865,
+    83.79360840128865
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "CCI.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    30.42465701134008,
+    30.42465701134008
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "CENTA.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    55.484060189415885,
+    55.484060189415885
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "CGNX.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    13.23537431414435,
+    13.23537431414435
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "CHC.AU",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    6.768641940849292,
+    6.768641940849292
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "CHH.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    72.58546226243142,
+    72.58546226243142
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "CHKP.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    149.97126059054233,
+    205.96156331089114
+   ],
+   "tier": [
+    "standard",
+    "compounder"
+   ]
+  },
+  {
+   "id": "CHTR.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    348.5038680709208,
+    348.5038680709208
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "CL.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    39.31821318837527,
+    39.31821318837527
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "CMCSA.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    58.6337198965058,
+    58.6337198965058
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "CMPR.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    14.937181085074739,
+    14.937181085074739
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "CNA.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    4.104381488041832,
+    4.104381488041832
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "CNH.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    15.514024991461177,
+    15.514024991461177
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "COALINDIA.NSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    899.4914083119355,
+    899.4914083119355
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "COH.AU",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    67.80780122580553,
+    67.80780122580553
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "COLO-B.CO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    320.3639860068526,
+    385.105761702927
+   ],
+   "tier": [
+    "standard",
+    "compounder"
+   ]
+  },
+  {
+   "id": "COTN.SW",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    68.41234503782323,
+    68.41234503782323
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "CPAY.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    468.3932438511197,
+    468.3932438511197
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "CPB.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    24.69743534147911,
+    24.69743534147911
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "CPR.MI",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    2.3769195583909895,
+    2.3769195583909895
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "CQR.AU",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    4.39374225947561,
+    4.39374225947561
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "CRI.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    100.92241899477759,
+    100.92241899477759
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "CRL.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    117.5982982224404,
+    117.5982982224404
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "CTC-A.TO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    156.55489308010382,
+    156.55489308010382
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "CTEC.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    1.3704697956837715,
+    1.3704697956837715
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "CURY.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    1.5904643790990876,
+    1.5904643790990876
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "CVI.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    41.51290754894595,
+    41.51290754894595
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "CVSG.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    9.683675893049362,
+    9.683675893049362
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "CYD.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    387.0176018042711,
+    387.0176018042711
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "CYRX.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "CZR.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "D.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    5.13304165405398,
+    5.13304165405398
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "DD.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    89.54970646871881,
+    89.54970646871881
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "DEC.PA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    20.424545436031988,
+    20.424545436031988
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "DFIB.LSE",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    0.831397173450696,
+    0.831397173450696
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "DINO.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    91.09960860344283,
+    91.09960860344283
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "DIOD.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    64.28812405825992,
+    64.28812405825992
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "DKSH.SW",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    51.8575046524958,
+    51.8575046524958
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "DLTR.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    72.74911461179678,
+    72.74911461179678
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "DOM.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    1.4783383316384047,
+    1.4783383316384047
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "DOW.AU",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    3.6291408225190165,
+    3.6291408225190165
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "DOX.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    67.82984806686108,
+    92.40672094578328
+   ],
+   "tier": [
+    "standard",
+    "compounder"
+   ]
+  },
+  {
+   "id": "DP4A.STU",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    5376.716920384354,
+    5376.716920384354
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "DQ.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "DVA.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    201.8957258110096,
+    201.8957258110096
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "EBAY.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    64.94295180741473,
+    64.94295180741473
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "EDEN.PA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    62.75997104396549,
+    62.75997104396549
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "EDP.LS",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "EDU.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    49.43181438156151,
+    49.43181438156151
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "EEFT.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    143.4001560014081,
+    143.4001560014081
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "EFOR.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    71.11373547772543,
+    71.11373547772543
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "EIX.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    47.599550106549344,
+    47.599550106549344
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "EMN.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    65.54414332313594,
+    65.54414332313594
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ENI.MI",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    12.80589308804158,
+    12.80589308804158
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ENT.LSE",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "EOG.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    136.81996974051796,
+    136.81996974051796
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "EPD.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    43.013070769907614,
+    43.013070769907614
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "EQNR.OL",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    65.36634377526158,
+    65.36634377526158
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ERIC-B.ST",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    89.05194110638107,
+    89.05194110638107
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ESSITY-B.ST",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    173.23184518395848,
+    173.23184518395848
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ESTC.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "ETON.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "EVN.VI",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    11.877208300195388,
+    11.877208300195388
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "EVTC.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    39.27210696932603,
+    39.27210696932603
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "EZJ.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    6.830976331897757,
+    6.830976331897757
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "FBIN.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    47.17918275458597,
+    47.17918275458597
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "FINV.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    207.64880515444446,
+    207.64880515444446
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "FISV.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    109.18521140021961,
+    109.18521140021961
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "FLS.CO",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    106.86343101588506,
+    106.86343101588506
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "FND.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    39.68307667088427,
+    39.68307667088427
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "FNTN.XETRA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    32.07056106112,
+    32.07056106112
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "FORTUM.HE",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    9.723389120411536,
+    9.723389120411536
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "FOX.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    56.536023410999256,
+    56.536023410999256
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "FPE3.XETRA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    36.847192857992155,
+    42.555622315733
+   ],
+   "tier": [
+    "standard",
+    "compounder"
+   ]
+  },
+  {
+   "id": "FRES.LSE",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    16.939974889467816,
+    16.939974889467816
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "FTV.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    31.839251237485996,
+    31.839251237485996
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "FUL.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    42.15684033164426,
+    42.15684033164426
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "FWONK.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    27.541307454136778,
+    27.541307454136778
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "GALP.LS",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    12.12952092388624,
+    12.12952092388624
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "GAP.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    25.810125434652576,
+    25.810125434652576
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "GENTERA.MX",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    51.919325362017304,
+    51.919325362017304
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "GF.SW",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    23.949203686784372,
+    23.949203686784372
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "GFRD.LSE",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    7.698105899510595,
+    7.698105899510595
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "GFTU.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    12.823563334158157,
+    12.823563334158157
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "GH.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "GHC.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    1615.945452565071,
+    1615.945452565071
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "GIII.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    56.632200490037434,
+    56.632200490037434
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "GILD.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    68.06393475106988,
+    68.06393475106988
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "GIS.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    48.61553311560519,
+    48.61553311560519
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "GL9.IR",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    12.448777391041718,
+    12.448777391041718
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "GLW.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    35.00150552868948,
+    35.00150552868948
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "GNC.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    0.9824500723667738,
+    0.9824500723667738
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "GNTX.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    29.29752473437163,
+    31.547386486132165
+   ],
+   "tier": [
+    "standard",
+    "compounder"
+   ]
+  },
+  {
+   "id": "GOOS.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    21.966893451030963,
+    21.966893451030963
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "GPI.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    1136.981814034488,
+    1136.981814034488
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "GPK.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    10.322100077618881,
+    10.322100077618881
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "GPRK.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    14.033125653913702,
+    14.033125653913702
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "GRUMAB.MX",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    12.08456076331632,
+    12.08456076331632
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "GSK.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    16.215399752214484,
+    16.215399752214484
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "GVR.IR",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    1.8532813463624875,
+    1.8532813463624875
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "H4W.F",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    45.724467437121085,
+    45.724467437121085
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "HAL.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    32.27398231326425,
+    32.27398231326425
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "HBB.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    42.53621804607044,
+    42.53621804607044
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "HCKT.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    16.6392897470838,
+    16.6392897470838
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "HEIA.AS",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    47.11078915878385,
+    47.11078915878385
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "HEINY.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    30.40447044947741,
+    30.40447044947741
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "HEN.XETRA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    58.108990766680236,
+    58.108990766680236
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "HIK.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    27.245256316846476,
+    27.245256316846476
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "HLE.XETRA",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    40.69789585646305,
+    40.69789585646305
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "HLF.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    35.92461021343776,
+    35.92461021343776
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "HP.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    34.97969891471767,
+    34.97969891471767
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "HPQ.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    46.56826822333089,
+    46.56826822333089
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "HRB.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    75.74370790855465,
+    75.74370790855465
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "HSIC.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    60.089949700887736,
+    60.089949700887736
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "HST.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    19.32982329740465,
+    19.32982329740465
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "HSTM.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    25.967998418098524,
+    25.967998418098524
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "HTG.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "HUBG.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    39.00912754860913,
+    39.00912754860913
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "HUH1V.HE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    24.09323245822597,
+    24.09323245822597
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "HUM.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    350.6568749253675,
+    350.6568749253675
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "HWG.LSE",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    0.3783502807260886,
+    0.3783502807260886
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "HZO.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    57.000492474938156,
+    57.000492474938156
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "IBM.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    153.24697401389182,
+    153.24697401389182
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ICFI.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    75.3989040225056,
+    75.3989040225056
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "IGO.AU",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    4.113068426383757,
+    4.113068426383757
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "IHP.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    3.5826976838267086,
+    3.5826976838267086
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "IMB.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    40.157770128261,
+    40.157770128261
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "INCH.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    8.655204964048611,
+    8.655204964048611
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "INCY.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    120.72488079726612,
+    120.72488079726612
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "INDU-C.ST",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    531.6628870129474,
+    531.6628870129474
+   ],
+   "tier": [
+    "nav",
+    "nav"
+   ]
+  },
+  {
+   "id": "INDV.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    1.7441381362508928,
+    1.7441381362508928
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "INF.LSE",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    6.98225169769103,
+    6.98225169769103
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "INGR.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    111.14488738169575,
+    111.14488738169575
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "INTC.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "INVP.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    17.659359923011802,
+    17.659359923011802
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "IPX.AU",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "IR5B.IR",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    5.547071526779205,
+    5.547071526779205
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "IRE.AU",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    4.838393333181559,
+    4.838393333181559
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ISS.CO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    244.63746289524738,
+    244.63746289524738
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ITC.NSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    262.07387452588654,
+    262.07387452588654
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ITUB.US",
+   "tests": {},
+   "valueMid": [
+    62.01472598480595,
+    53.37647544709455
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "IVT.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    17.671642394103273,
+    17.671642394103273
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "JD.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    0.6632441143370302,
+    0.6632441143370302
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "JDW.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    5.209600521788395,
+    5.209600521788395
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "JJSF.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    48.800203959061385,
+    48.800203959061385
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "JKHY.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    101.84850493749593,
+    164.07882816451303
+   ],
+   "tier": [
+    "standard",
+    "compounder"
+   ]
+  },
+  {
+   "id": "KBX.XETRA",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    46.12691598119371,
+    46.12691598119371
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "KDP.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    26.725189992151414,
+    26.725189992151414
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "KIMBERA.MX",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    35.493142770457375,
+    35.493142770457375
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "KMB.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    61.147609578423,
+    63.812747795835065
+   ],
+   "tier": [
+    "standard",
+    "compounder"
+   ]
+  },
+  {
+   "id": "KMR.IR",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    13.304421732758424,
+    13.304421732758424
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "KMT.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    31.91373793770255,
+    31.91373793770255
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "KNEBV.HE",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    32.345957976530194,
+    30.579674216745452
+   ],
+   "tier": [
+    "compounder",
+    "standard"
+   ]
+  },
+  {
+   "id": "KOD.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "KOP.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    37.08296331454724,
+    37.08296331454724
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "KPN.AS",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    2.4069894132682506,
+    2.4069894132682506
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "KR.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    48.123574254886634,
+    48.123574254886634
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "KRZ.IR",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    55.39460437973918,
+    55.39460437973918
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "LABB.MX",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    20.434099865526953,
+    20.434099865526953
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "LAD.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    1117.643949612692,
+    1117.643949612692
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "LASR.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "LEGH.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    24.907012608217528,
+    24.907012608217528
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "LGEN.LSE",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    3.8925207947067646,
+    3.8925207947067646
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "LGIH.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    82.87835432270829,
+    82.87835432270829
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "LI.PA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    19.91353251848654,
+    19.91353251848654
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "LIGHT.AS",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    43.605266687928655,
+    43.605266687928655
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "LILA.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "LISP.SW",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    43205.145063810094,
+    43205.145063810094
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "LIVEPOLC-1.MX",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    194.14735658287535,
+    194.14735658287535
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "LKQ.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    56.44627713976774,
+    56.44627713976774
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "LOCO.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    11.184905973963835,
+    11.184905973963835
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "LOMA.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    8607.124491974144,
+    8607.124491974144
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "LOOMIS.ST",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    494.8205875455694,
+    494.8205875455694
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "LREN3.SA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    9.729451743667445,
+    9.729451743667445
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "LW.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    39.430687373576625,
+    39.430687373576625
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "MAERSK-B.CO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    5929.490344318526,
+    5929.490344318526
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "MAT.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    21.046093935742807,
+    21.046093935742807
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "MBG.XETRA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    155.01095801377036,
+    155.01095801377036
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "MCHP.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    35.58341626343334,
+    35.58341626343334
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "MDLZ.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    48.813785247279306,
+    48.813785247279306
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "MDT.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    64.6181555037966,
+    64.6181555037966
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "MEGACPO.MX",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    33.27259687729744,
+    33.27259687729744
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "MEGP.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    1.9323718654646516,
+    1.9323718654646516
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "MELE.BR",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    54.50464091152031,
+    54.50464091152031
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "MG.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    10.092623283173081,
+    10.092623283173081
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "MIDD.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    124.71128635415558,
+    124.71128635415558
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "MIN.AU",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "MKTX.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    155.83500137637373,
+    155.83500137637373
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ML.PA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    29.70112479002051,
+    29.70112479002051
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "MMT.PA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    16.716736480849562,
+    16.716736480849562
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "MOMO.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    173.79274881568617,
+    173.79274881568617
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "MONY.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    2.129842671501949,
+    2.129842671501949
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "MOS.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    24.633907656508576,
+    24.633907656508576
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "MOWI.OL",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    23.89696147104919,
+    23.89696147104919
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "MPC.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    483.3199368916301,
+    483.3199368916301
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "MRK.XETRA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    83.01314315396556,
+    83.01314315396556
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "MRO.LSE",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    1.1558985216020816,
+    1.1558985216020816
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "MTH.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    126.62884086343473,
+    126.62884086343473
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "MTN.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    107.23308730341407,
+    107.23308730341407
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "MULT3.SA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    22.80242720708923,
+    22.80242720708923
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "MUR.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    34.49170193926686,
+    34.49170193926686
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "NDA.XETRA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    49.96833210553906,
+    49.96833210553906
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "NESTE.HE",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    10.719567044986945,
+    10.719567044986945
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "NHY.OL",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    50.51758055260074,
+    50.51758055260074
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "NIC.AU",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    0.5275785032948167,
+    0.5275785032948167
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "NKE.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    53.118105704054095,
+    53.118105704054095
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "NOMD.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    18.470505749741285,
+    18.470505749741285
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "NOS.LS",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    2.9326494068507443,
+    2.9326494068507443
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "NOV.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    12.224340107592479,
+    12.224340107592479
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "NSP.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    71.34149783158273,
+    71.34149783158273
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "NTR.TO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    64.16024156345104,
+    64.16024156345104
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "NTRS.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    523.5069473420845,
+    523.5069473420845
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "NUE.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    203.37014017875265,
+    203.37014017875265
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "NVEC.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    48.250092365105154,
+    48.250092365105154
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "NVG.LS",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    3.759974108394157,
+    3.759974108394157
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "OLN.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    81.03697282471364,
+    81.03697282471364
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ONGC.NSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    255.44142744165353,
+    255.44142744165353
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ONIT.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "OPLN.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    19.19517914427409,
+    19.19517914427409
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "OSB.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    18.582820860454373,
+    18.582820860454373
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "OTEX.TO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    51.24976630096459,
+    51.24976630096459
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "PAGS.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    91.04835769673667,
+    91.04835769673667
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "PAH3.XETRA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "PBH.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    59.138621733586994,
+    59.138621733586994
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "PBI.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    3.6328653315185466,
+    3.6328653315185466
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "PE&OLES.MX",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    19.485915532541124,
+    19.485915532541124
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "PETR3.SA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    48.16653528237608,
+    48.16653528237608
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "PETS.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    1.8175191544828404,
+    1.8175191544828404
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "PFE.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    28.247560241998407,
+    29.435632295326556
+   ],
+   "tier": [
+    "standard",
+    "compounder"
+   ]
+  },
+  {
+   "id": "PFG.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    116.1992469168021,
+    116.1992469168021
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "PINE.LSE",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    1.0736964744834252,
+    1.0736964744834252
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "PIRC.MI",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    8.164852351927252,
+    8.164852351927252
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "PK.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    6.898599686312994,
+    6.898599686312994
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "PNDORA.CO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    849.6995568508011,
+    1308.972346356457
+   ],
+   "tier": [
+    "standard",
+    "compounder"
+   ]
+  },
+  {
+   "id": "POLN.LSE",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    12.357949415410914,
+    12.357949415410914
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "PPG.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    75.89174999862294,
+    75.89174999862294
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "PPH.LSE",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "PPL.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    14.19417688931461,
+    14.19417688931461
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "PRG.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    556.9051578518656,
+    556.9051578518656
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "PRKS.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    61.375435465166746,
+    61.375435465166746
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "PRTH.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    11.710057723681079,
+    11.710057723681079
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "PSX.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    194.50943637108332,
+    194.50943637108332
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "PUM.XETRA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    12.126185130315802,
+    12.126185130315802
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "PVH.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    194.3189978064666,
+    194.3189978064666
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "QFIN.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    583.5378214002909,
+    583.5378214002909
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "QLT.LSE",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "QQ.LSE",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    3.409568026980753,
+    3.409568026980753
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "QRVO.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    51.85085913946423,
+    51.85085913946423
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "RCI-B.TO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    61.08959030512555,
+    61.08959030512555
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "RCKT.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "REP.MC",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    14.23940460346384,
+    14.23940460346384
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "RGN.AU",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    0.3929442009197137,
+    0.3929442009197137
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "RHIM.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    42.60113323980076,
+    42.60113323980076
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "RI.PA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    62.841594137789045,
+    62.841594137789045
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "RIGD.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    5449.378672619787,
+    5449.378672619787
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "RKT.LSE",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    32.201392584163095,
+    32.201392584163095
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "RMNI.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    4.17000955675893,
+    4.17000955675893
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "RNG.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "RS1.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    5.797393450399296,
+    6.047743136412125
+   ],
+   "tier": [
+    "standard",
+    "compounder"
+   ]
+  },
+  {
+   "id": "RTHA.F",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    5.124137047939197,
+    5.124137047939197
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "RUI.PA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    29.212755340627336,
+    29.212755340627336
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "S32.AU",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "SAFE.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    13.907196057977936,
+    13.907196057977936
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "SAN.PA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    85.45477089423538,
+    85.45477089423538
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "SBMO.AS",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    45.81014586142059,
+    45.81014586142059
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "SBO.VI",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    50.92766882819598,
+    50.92766882819598
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "SBRY.LSE",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "SBSP3.SA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    23.118060312018773,
+    23.118060312018773
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "SCA-B.ST",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    54.64000484628735,
+    54.64000484628735
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "SCMN.SW",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    447.75927030274806,
+    447.75927030274806
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "SCSC.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    55.86384882884597,
+    55.86384882884597
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "SD.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    36.42892678292297,
+    36.42892678292297
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "SFR.AU",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    8.25373558504427,
+    8.25373558504427
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "SGH.AU",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    9.936023178737006,
+    9.936023178737006
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "SGM.AU",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    6.581536101559438,
+    6.581536101559438
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "SGU.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    21.18138333483744,
+    21.18138333483744
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "SHC.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    1.811699989389132,
+    1.811699989389132
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "SHEL.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    43.69601203679115,
+    43.69601203679115
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "SIRI.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    42.75481151233348,
+    42.75481151233348
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "SKA-B.ST",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    153.52859435984172,
+    153.52859435984172
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "SLB.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    40.881963501444496,
+    40.881963501444496
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "SLM.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    93.0966809504896,
+    93.0966809504896
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "SM.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    58.10243907861893,
+    58.10243907861893
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "SNN.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    22.346726001136542,
+    22.346726001136542
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "SOI.PA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    19.842360560180815,
+    19.842360560180815
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "SOLB.BR",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    55.90136637295753,
+    55.90136637295753
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "SPB.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    104.47825757865576,
+    104.47825757865576
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "SRRK.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "STMMI.MI",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    16.34809827499474,
+    16.34809827499474
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "STNE.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "STT.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    207.9859171065163,
+    207.9859171065163
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "STZ.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "SU.TO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    82.88278163786477,
+    82.88278163786477
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "SVS.LSE",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    9.254287321778015,
+    9.254287321778015
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "SW.PA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    64.59409655128096,
+    64.59409655128096
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "SYF.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    203.80414852101433,
+    203.80414852101433
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "T.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    29.684322662100538,
+    29.684322662100538
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "TAEE3.SA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    52.776000974763164,
+    52.776000974763164
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "TEL.OL",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    114.72145359301946,
+    114.72145359301946
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "TEMN.SW",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    44.661171945885506,
+    74.31577560097766
+   ],
+   "tier": [
+    "standard",
+    "compounder"
+   ]
+  },
+  {
+   "id": "TEN.MI",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    49.79774615176048,
+    49.79774615176048
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "TEP.PA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    227.7604940459161,
+    227.7604940459161
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "TEX.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    43.68433549730995,
+    43.68433549730995
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "TFI.PA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    16.87433948523795,
+    16.87433948523795
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "TIETO.HE",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    15.645660051693358,
+    15.645660051693358
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "TLS.AU",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    2.712727293925415,
+    2.712727293925415
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "TME.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    61.75748446323611,
+    61.75748446323611
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "TMPV.NSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    286.88503637176797,
+    286.88503637176797
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "TNC.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    73.61868591101259,
+    73.61868591101259
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "TNL.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    91.07714114379648,
+    91.07714114379648
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "TREX.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    9.431970907987498,
+    9.431970907987498
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "TRI.PA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    331.2238205285179,
+    331.2238205285179
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "TRN.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    10.698950355389435,
+    10.698950355389435
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "TROW.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    145.76816618293097,
+    238.42389861659763
+   ],
+   "tier": [
+    "standard",
+    "compounder"
+   ]
+  },
+  {
+   "id": "TSEM.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    38.60910223889596,
+    38.60910223889596
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "TTE.PA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    95.84935110569617,
+    95.84935110569617
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "TUB.BR",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "UGPA3.SA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    23.126671075472373,
+    23.126671075472373
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ULVR.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    34.40695640294507,
+    35.8544681495244
+   ],
+   "tier": [
+    "standard",
+    "compounder"
+   ]
+  },
+  {
+   "id": "UMI.BR",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    25.550209655448626,
+    25.550209655448626
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "UNF.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    134.62457613734776,
+    134.62457613734776
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "UPS.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    97.80539018614557,
+    97.80539018614557
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "UU.LSE",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    6.097020039328698,
+    6.097020039328698
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "VAC.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    99.6151919780922,
+    99.6151919780922
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "VBBR3.SA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    29.09254551058967,
+    29.09254551058967
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "VC.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    100.7335865732032,
+    100.7335865732032
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "VCT.PA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    80.62545831305019,
+    80.62545831305019
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "VCX.AU",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    2.356952119915027,
+    2.356952119915027
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "VIPS.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    343.7757301579458,
+    343.7757301579458
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "VLO.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    222.28113573636915,
+    222.28113573636915
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "VMRK.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    28.4846678277469,
+    28.4846678277469
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "VOLARA.MX",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "VOW.XETRA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    650.7663617601471,
+    650.7663617601471
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "VOYA.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    149.78939604664413,
+    149.78939604664413
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "VPK.AS",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    23.891049406411764,
+    23.891049406411764
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "VRTS.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    344.0114478026251,
+    344.0114478026251
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "VSVS.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    5.000541910515387,
+    5.000541910515387
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "VUL.AU",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "VWS.CO",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    7.636408256766413,
+    7.636408256766413
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "WAF.XETRA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "WCH.XETRA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    39.032097087965205,
+    39.032097087965205
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "WEN.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    17.74790277511452,
+    17.74790277511452
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "WEYS.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    41.41539728246819,
+    41.41539728246819
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "WHC.AU",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    17.340176024983755,
+    17.340176024983755
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "WIE.VI",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    30.486690311287663,
+    30.486690311287663
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "WIHL.ST",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    94.98259732658133,
+    94.98259732658133
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "WIT.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    252.0171680897111,
+    283.6900625632218
+   ],
+   "tier": [
+    "standard",
+    "compounder"
+   ]
+  },
+  {
+   "id": "WMK.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    57.27595984543369,
+    57.27595984543369
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "WT.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    12.73212086744481,
+    12.73212086744481
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "WU.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    24.340101334983924,
+    24.340101334983924
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "XERS.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "YAL.AU",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    15.006238841330319,
+    15.006238841330319
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "YPF.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    3462.508149411673,
+    3462.508149411673
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ZAL.XETRA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    10.817137401914737,
+    10.817137401914737
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ZBH.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    103.08134230131515,
+    103.08134230131515
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  {
+   "id": "ZH.US",
+   "tests": {
+    "understandable": [
+     "fail",
+     "unclear"
+    ],
+    "moat": [
+     "fail",
+     "unclear"
+    ],
+    "economics": [
+     "fail",
+     "unclear"
+    ],
+    "management": [
+     "fail",
+     "unclear"
+    ],
+    "accounting": [
+     "pass",
+     "unclear"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  },
+  {
+   "id": "ZLAB.US",
+   "tests": {
+    "management": [
+     "pass",
+     "fail"
+    ]
+   },
+   "valueMid": [
+    null,
+    null
+   ],
+   "tier": [
+    null,
+    null
+   ]
+  }
+ ]
+}

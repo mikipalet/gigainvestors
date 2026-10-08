@@ -1,0 +1,8 @@
+{
+  "releaseCommit": "bea73f6",
+  "mergeCommit": "1430610",
+  "originMaster": "ecc27a1",
+  "changedFiles": 118,
+  "publicationCodeChanged": [],
+  "note": "Only UI/test/CSS files change; publish/analyze code is byte-identical, so the ordinary and REAL publisher outputs proven on bea73f6 apply unchanged. Unit, build, post-check and browser rerun on the merge."
+}

@@ -1,0 +1,258 @@
+{
+ "GOOGL.US": {
+  "before": {
+   "quality": "PPPPP",
+   "management": "pass",
+   "perShareStart": 1.172698724372358,
+   "perShareEnd": 8.043544629227926,
+   "marketCapGain": 3235728843163.071,
+   "retainedEarnings": 218924000000,
+   "economicProgressBasis": null,
+   "valueMid": 239.9869142362074,
+   "mos": 0.15,
+   "buyPrice": 203.9888771007763,
+   "quote": 350.5,
+   "buy": false,
+   "tier": "compounder"
+  },
+  "after": {
+   "quality": "PPPPP",
+   "management": "pass",
+   "perShareStart": 1.172698724372358,
+   "perShareEnd": 8.043544629227926,
+   "marketCapGain": 3235728843163.071,
+   "retainedEarnings": 218924000000,
+   "economicProgressBasis": 1,
+   "valueMid": 239.9869142362074,
+   "mos": 0.15,
+   "buyPrice": 203.9888771007763,
+   "quote": 350.5,
+   "buy": false,
+   "tier": "compounder"
+  }
+ },
+ "MSFT.US": {
+  "before": {
+   "quality": "PPPPP",
+   "management": "pass",
+   "perShareStart": 2.5632097841008363,
+   "perShareEnd": 13.64125920964501,
+   "marketCapGain": 2239107100000,
+   "retainedEarnings": 325617000000,
+   "economicProgressBasis": null,
+   "valueMid": 319.0376263926547,
+   "mos": 0.15,
+   "buyPrice": 271.1819824337565,
+   "quote": 529.76,
+   "buy": false,
+   "tier": "compounder"
+  },
+  "after": {
+   "quality": "PPPPP",
+   "management": "pass",
+   "perShareStart": 2.5632097841008363,
+   "perShareEnd": 13.64125920964501,
+   "marketCapGain": 2239107100000,
+   "retainedEarnings": 325617000000,
+   "economicProgressBasis": 1,
+   "valueMid": 319.0376263926547,
+   "mos": 0.15,
+   "buyPrice": 271.1819824337565,
+   "quote": 529.76,
+   "buy": false,
+   "tier": "compounder"
+  }
+ },
+ "NVDA.US": {
+  "before": {
+   "quality": "PPPPP",
+   "management": "pass",
+   "perShareStart": 0.06632165605095541,
+   "perShareEnd": 2.938235768424448,
+   "marketCapGain": 4576658597282.41,
+   "retainedEarnings": 140865000000,
+   "economicProgressBasis": null,
+   "valueMid": 123.94306706195233,
+   "mos": 0.5,
+   "buyPrice": 61.97153353097617,
+   "quote": 237.47,
+   "buy": false,
+   "tier": "standard"
+  },
+  "after": {
+   "quality": "PPPPP",
+   "management": "pass",
+   "perShareStart": 0.06632165605095541,
+   "perShareEnd": 2.938235768424448,
+   "marketCapGain": 4576658597282.41,
+   "retainedEarnings": 140865000000,
+   "economicProgressBasis": 1,
+   "valueMid": 123.94306706195233,
+   "mos": 0.5,
+   "buyPrice": 61.97153353097617,
+   "quote": 237.47,
+   "buy": false,
+   "tier": "standard"
+  }
+ },
+ "AAPL.US": {
+  "before": {
+   "quality": "PPPPP",
+   "management": "pass",
+   "perShareStart": 2.301686770663626,
+   "perShareEnd": 6.134052913803197,
+   "marketCapGain": 2971665192845.337,
+   "retainedEarnings": -112594000000,
+   "economicProgressBasis": null,
+   "valueMid": 175.77023225136475,
+   "mos": 0.15,
+   "buyPrice": 149.40469741366002,
+   "quote": 336.67,
+   "buy": false,
+   "tier": "compounder"
+  },
+  "after": {
+   "quality": "PPPPP",
+   "management": "pass",
+   "perShareStart": 2.301686770663626,
+   "perShareEnd": 6.134052913803197,
+   "marketCapGain": 2971665192845.337,
+   "retainedEarnings": -112594000000,
+   "economicProgressBasis": 1,
+   "valueMid": 175.77023225136475,
+   "mos": 0.15,
+   "buyPrice": 149.40469741366002,
+   "quote": 336.67,
+   "buy": false,
+   "tier": "compounder"
+  }
+ },
+ "KO.US": {
+  "before": {
+   "quality": "PPPPP",
+   "management": "pass",
+   "perShareStart": 1.49461873139455,
+   "perShareEnd": 2.4692325420603827,
+   "marketCapGain": 120466010000,
+   "retainedEarnings": 14880000000,
+   "economicProgressBasis": null,
+   "valueMid": 55.80027025075747,
+   "mos": 0.15,
+   "buyPrice": 47.43022971314385,
+   "quote": 85.82,
+   "buy": false,
+   "tier": "compounder"
+  },
+  "after": {
+   "quality": "PPPPP",
+   "management": "pass",
+   "perShareStart": 1.49461873139455,
+   "perShareEnd": 2.4692325420603827,
+   "marketCapGain": 120466010000,
+   "retainedEarnings": 14880000000,
+   "economicProgressBasis": 1,
+   "valueMid": 55.80027025075747,
+   "mos": 0.15,
+   "buyPrice": 47.43022971314385,
+   "quote": 85.82,
+   "buy": false,
+   "tier": "compounder"
+  }
+ },
+ "ABBV.US": {
+  "before": {
+   "quality": "PPPPP",
+   "management": "pass",
+   "perShareStart": 3.3119151590767313,
+   "perShareEnd": 2.412859560067682,
+   "marketCapGain": 302979550000,
+   "retainedEarnings": -19871000000,
+   "economicProgressBasis": null,
+   "valueMid": 157.16072601863294,
+   "mos": 0.35,
+   "buyPrice": 102.15447191211142,
+   "quote": 271.36,
+   "buy": false,
+   "tier": "compounder"
+  },
+  "after": {
+   "quality": "PPPFP",
+   "management": "fail",
+   "perShareStart": 3.3119151590767313,
+   "perShareEnd": 2.412859560067682,
+   "marketCapGain": 302979550000,
+   "retainedEarnings": -19871000000,
+   "economicProgressBasis": 1,
+   "valueMid": 109.64207352955239,
+   "mos": 0.35,
+   "buyPrice": 71.26734779420906,
+   "quote": 271.36,
+   "buy": false,
+   "tier": "standard"
+  }
+ },
+ "ABM.US": {
+  "before": {
+   "quality": "PPPFP",
+   "management": "fail",
+   "perShareStart": 1.0052724077328647,
+   "perShareEnd": 2.5901116427432216,
+   "marketCapGain": 414772769.24000025,
+   "retainedEarnings": 611700000,
+   "economicProgressBasis": null,
+   "valueMid": 47.61454952321706,
+   "mos": 0.5,
+   "buyPrice": 23.80727476160853,
+   "quote": 48.75,
+   "buy": false,
+   "tier": "standard"
+  },
+  "after": {
+   "quality": "PPPPP",
+   "management": "pass",
+   "perShareStart": 1.0052724077328647,
+   "perShareEnd": 2.5901116427432216,
+   "marketCapGain": 414772769.24000025,
+   "retainedEarnings": 611700000,
+   "economicProgressBasis": 1,
+   "valueMid": 47.61454952321706,
+   "mos": 0.5,
+   "buyPrice": 23.80727476160853,
+   "quote": 48.75,
+   "buy": false,
+   "tier": "standard"
+  }
+ },
+ "CMCSA.US": {
+  "before": {
+   "quality": "PFPFP",
+   "management": "fail",
+   "perShareStart": 1.668324802345421,
+   "perShareEnd": 4.143295803480041,
+   "marketCapGain": -248310716412.5,
+   "retainedEarnings": 43599000000,
+   "economicProgressBasis": null,
+   "valueMid": 61.446922045949876,
+   "mos": 0.35,
+   "buyPrice": 39.94049932986742,
+   "quote": 20.94,
+   "buy": false,
+   "tier": "standard"
+  },
+  "after": {
+   "quality": "PFPPP",
+   "management": "pass",
+   "perShareStart": 1.668324802345421,
+   "perShareEnd": 4.143295803480041,
+   "marketCapGain": -248310716412.5,
+   "retainedEarnings": 43599000000,
+   "economicProgressBasis": 1,
+   "valueMid": 61.446922045949876,
+   "mos": 0.35,
+   "buyPrice": 39.94049932986742,
+   "quote": 20.94,
+   "buy": false,
+   "tier": "standard"
+  }
+ }
+}

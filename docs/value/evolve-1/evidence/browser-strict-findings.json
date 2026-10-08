@@ -1,0 +1,155 @@
+{
+ "price: AssertionError [ERR_ASSERTION]: GOOGL#US price math: expecte": [
+  "GOOGL.US"
+ ],
+ "price: AssertionError [ERR_ASSERTION]: MSFT#US price math: expected": [
+  "MSFT.US"
+ ],
+ "understandable: AssertionError [ERR_ASSERTION]: NVDA#US understandable published shares FY#\n+ ac": [
+  "NVDA.US"
+ ],
+ "moat: AssertionError [ERR_ASSERTION]: NVDA#US moat published shares FY#\n+ actual - exp": [
+  "NVDA.US"
+ ],
+ "price: AssertionError [ERR_ASSERTION]: NVDA#US price math: expected": [
+  "NVDA.US"
+ ],
+ "understandable: AssertionError [ERR_ASSERTION]: AAPL#US understandable published shares FY#\n+ ac": [
+  "AAPL.US"
+ ],
+ "price: AssertionError [ERR_ASSERTION]: AAPL#US price math: expected": [
+  "AAPL.US"
+ ],
+ "price: AssertionError [ERR_ASSERTION]: KO#US price math: expected $": [
+  "KO.US"
+ ],
+ "price: AssertionError [ERR_ASSERTION]: ABBV#US price math: expected": [
+  "ABBV.US"
+ ],
+ "price: AssertionError [ERR_ASSERTION]: ABM#US price math: expected ": [
+  "ABM.US"
+ ],
+ "price: AssertionError [ERR_ASSERTION]: CMCSA#US price math: expecte": [
+  "CMCSA.US"
+ ],
+ "understandable: AssertionError [ERR_ASSERTION]: GOOGL#US understandable tile rule sentence: expe": [
+  "GOOGL.US"
+ ],
+ "moat: AssertionError [ERR_ASSERTION]: GOOGL#US moat tile rule sentence: expected Capit": [
+  "GOOGL.US"
+ ],
+ "economics: AssertionError [ERR_ASSERTION]: GOOGL#US economics tile rule sentence: expected ": [
+  "GOOGL.US"
+ ],
+ "management: AssertionError [ERR_ASSERTION]: GOOGL#US management tile rule sentence: expected": [
+  "GOOGL.US"
+ ],
+ "accounting: AssertionError [ERR_ASSERTION]: GOOGL#US accounting tile rule sentence: expected": [
+  "GOOGL.US"
+ ],
+ "understandable: AssertionError [ERR_ASSERTION]: MSFT#US understandable tile rule sentence: expec": [
+  "MSFT.US"
+ ],
+ "moat: AssertionError [ERR_ASSERTION]: MSFT#US moat tile rule sentence: expected Capita": [
+  "MSFT.US"
+ ],
+ "economics: AssertionError [ERR_ASSERTION]: MSFT#US economics tile rule sentence: expected E": [
+  "MSFT.US"
+ ],
+ "management: AssertionError [ERR_ASSERTION]: MSFT#US management tile rule sentence: expected ": [
+  "MSFT.US"
+ ],
+ "accounting: AssertionError [ERR_ASSERTION]: MSFT#US accounting tile rule sentence: expected ": [
+  "MSFT.US"
+ ],
+ "understandable: AssertionError [ERR_ASSERTION]: NVDA#US understandable tile rule sentence: expec": [
+  "NVDA.US"
+ ],
+ "moat: AssertionError [ERR_ASSERTION]: NVDA#US moat tile rule sentence: expected Capita": [
+  "NVDA.US"
+ ],
+ "economics: AssertionError [ERR_ASSERTION]: NVDA#US economics tile rule sentence: expected E": [
+  "NVDA.US"
+ ],
+ "management: AssertionError [ERR_ASSERTION]: NVDA#US management tile rule sentence: expected ": [
+  "NVDA.US"
+ ],
+ "accounting: AssertionError [ERR_ASSERTION]: NVDA#US accounting tile rule sentence: expected ": [
+  "NVDA.US"
+ ],
+ "understandable: AssertionError [ERR_ASSERTION]: AAPL#US understandable tile rule sentence: expec": [
+  "AAPL.US"
+ ],
+ "moat: AssertionError [ERR_ASSERTION]: AAPL#US moat tile rule sentence: expected Capita": [
+  "AAPL.US"
+ ],
+ "economics: AssertionError [ERR_ASSERTION]: AAPL#US economics tile rule sentence: expected E": [
+  "AAPL.US"
+ ],
+ "management: AssertionError [ERR_ASSERTION]: AAPL#US management tile rule sentence: expected ": [
+  "AAPL.US"
+ ],
+ "accounting: AssertionError [ERR_ASSERTION]: AAPL#US accounting tile rule sentence: expected ": [
+  "AAPL.US"
+ ],
+ "understandable: AssertionError [ERR_ASSERTION]: KO#US understandable tile rule sentence: expecte": [
+  "KO.US"
+ ],
+ "moat: AssertionError [ERR_ASSERTION]: KO#US moat tile rule sentence: expected Capital ": [
+  "KO.US"
+ ],
+ "economics: AssertionError [ERR_ASSERTION]: KO#US economics tile rule sentence: expected Eac": [
+  "KO.US"
+ ],
+ "management: AssertionError [ERR_ASSERTION]: KO#US management tile rule sentence: expected Pe": [
+  "KO.US"
+ ],
+ "accounting: AssertionError [ERR_ASSERTION]: KO#US accounting tile rule sentence: expected Pr": [
+  "KO.US"
+ ],
+ "understandable: AssertionError [ERR_ASSERTION]: ABBV#US understandable tile rule sentence: expec": [
+  "ABBV.US"
+ ],
+ "moat: AssertionError [ERR_ASSERTION]: ABBV#US moat tile rule sentence: expected Capita": [
+  "ABBV.US"
+ ],
+ "economics: AssertionError [ERR_ASSERTION]: ABBV#US economics tile rule sentence: expected E": [
+  "ABBV.US"
+ ],
+ "management: AssertionError [ERR_ASSERTION]: ABBV#US management tile rule sentence: expected ": [
+  "ABBV.US"
+ ],
+ "accounting: AssertionError [ERR_ASSERTION]: ABBV#US accounting tile rule sentence: expected ": [
+  "ABBV.US"
+ ],
+ "understandable: AssertionError [ERR_ASSERTION]: ABM#US understandable tile rule sentence: expect": [
+  "ABM.US"
+ ],
+ "moat: AssertionError [ERR_ASSERTION]: ABM#US moat tile rule sentence: expected Capital": [
+  "ABM.US"
+ ],
+ "economics: AssertionError [ERR_ASSERTION]: ABM#US economics tile rule sentence: expected Ea": [
+  "ABM.US"
+ ],
+ "management: AssertionError [ERR_ASSERTION]: ABM#US management tile rule sentence: expected P": [
+  "ABM.US"
+ ],
+ "accounting: AssertionError [ERR_ASSERTION]: ABM#US accounting tile rule sentence: expected P": [
+  "ABM.US"
+ ],
+ "understandable: AssertionError [ERR_ASSERTION]: CMCSA#US understandable tile rule sentence: expe": [
+  "CMCSA.US"
+ ],
+ "moat: AssertionError [ERR_ASSERTION]: CMCSA#US moat tile rule sentence: expected Capit": [
+  "CMCSA.US"
+ ],
+ "economics: AssertionError [ERR_ASSERTION]: CMCSA#US economics tile rule sentence: expected ": [
+  "CMCSA.US"
+ ],
+ "management: AssertionError [ERR_ASSERTION]: CMCSA#US management tile rule sentence: expected": [
+  "CMCSA.US"
+ ],
+ "accounting: AssertionError [ERR_ASSERTION]: CMCSA#US accounting tile rule sentence: expected": [
+  "CMCSA.US"
+ ]
+}

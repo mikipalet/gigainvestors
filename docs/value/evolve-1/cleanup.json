@@ -1,0 +1,20 @@
+{
+  "complete": true,
+  "removed": [
+    "/Users/miki/data/value-evolve/.audit/evolve-1/corpus",
+    "/Users/miki/data/value-evolve/.audit/evolve-1/baseline",
+    "/Users/miki/data/value-evolve/.audit/evolve-1/candidate-final",
+    "/Users/miki/data/value-evolve/.audit/evolve-1/storage",
+    "/Users/miki/data/value-evolve/.audit/evolve-1/tmp",
+    "/Users/miki/data/value-evolve/.audit/evolve-1/harness-bin",
+    "/Users/miki/data/value-evolve/.audit/evolve-1/engines",
+    "/Users/miki/data/value-evolve/.audit/evolve-1/research",
+    "/Users/miki/data/value-evolve/.audit/evolve-1/harness.env",
+    "/Users/miki/data/value-evolve/.next"
+  ],
+  "retained": "release-bundle-evolve-1, .audit/evolve-1/evidence and docs/value/evolve-1/evidence retained; nothing outside this task touched.",
+  "freeBytes": {
+    "/": 12540088320,
+    "/Users/miki/data": 78607712256
+  }
+}

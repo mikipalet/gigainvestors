@@ -1,0 +1,111 @@
+US train baseline 10.7721 -47.115 missing 0
+US train government_discount 7.989 -48.6608 missing 0
+US train economic_progress 10.832 -45.8795 missing 0
+US train combined 8.3606 -47.8531 missing 0
+US later baseline 19.9398 -25.9775 missing 0
+US later government_discount 13.102 -36.2481 missing 0
+US later economic_progress 18.6708 -25.9775 missing 0
+US later combined 12.4976 -35.9154 missing 0
+Western_nonUS train baseline 1.6489 -52.6906 missing 2
+Western_nonUS train government_discount 7.2969 -53.8728 missing 0
+Western_nonUS train economic_progress 0.6071 -54.238 missing 2
+Western_nonUS train combined 6.7858 -52.3817 missing 0
+Western_nonUS later baseline 13.0514 -46.1015 missing 0
+Western_nonUS later government_discount 9.6695 -43.7082 missing 0
+Western_nonUS later economic_progress 13.2657 -46.1015 missing 0
+Western_nonUS later combined 9.3599 -43.7082 missing 0
+all_nonUS train baseline 1.2805 -50.5351 missing 71
+all_nonUS train government_discount 7.7563 -49.0802 missing 17
+all_nonUS train economic_progress 0.5053 -50.4546 missing 81
+all_nonUS train combined 7.1566 -48.6005 missing 17
+all_nonUS later baseline 8.9581 -26.7548 missing 519
+all_nonUS later government_discount 9.684 -43.7082 missing 24
+all_nonUS later economic_progress 8.7432 -25.7724 missing 614
+all_nonUS later combined 9.0902 -43.7082 missing 48
+{
+  "accepted": {
+    "government_discount": false,
+    "economic_progress": true,
+    "combined": false
+  },
+  "failures": [
+    {
+      "scope": "US",
+      "period": "train",
+      "variant": "government_discount",
+      "required": true,
+      "cagr_change_pp": -2.783084215347098,
+      "drawdown_change_pp": -1.545869077505757,
+      "performance_pass": false,
+      "not_loser_dominated": true,
+      "passes": false,
+      "missing_baseline": 0,
+      "missing_candidate": 0
+    },
+    {
+      "scope": "US",
+      "period": "train",
+      "variant": "combined",
+      "required": true,
+      "cagr_change_pp": -2.4114784641333653,
+      "drawdown_change_pp": -0.7380831870436144,
+      "performance_pass": false,
+      "not_loser_dominated": true,
+      "passes": false,
+      "missing_baseline": 0,
+      "missing_candidate": 0
+    },
+    {
+      "scope": "Western_nonUS",
+      "period": "later",
+      "variant": "government_discount",
+      "required": true,
+      "cagr_change_pp": -3.381895965071413,
+      "drawdown_change_pp": 2.3933273012394674,
+      "performance_pass": false,
+      "not_loser_dominated": true,
+      "passes": false,
+      "missing_baseline": 0,
+      "missing_candidate": 0
+    },
+    {
+      "scope": "Western_nonUS",
+      "period": "later",
+      "variant": "combined",
+      "required": true,
+      "cagr_change_pp": -3.691493219581332,
+      "drawdown_change_pp": 2.3933273012394563,
+      "performance_pass": false,
+      "not_loser_dominated": true,
+      "passes": false,
+      "missing_baseline": 0,
+      "missing_candidate": 0
+    },
+    {
+      "scope": "all_nonUS",
+      "period": "later",
+      "variant": "government_discount",
+      "required": true,
+      "cagr_change_pp": 0.7258894266635396,
+      "drawdown_change_pp": -16.953387476758664,
+      "performance_pass": false,
+      "not_loser_dominated": true,
+      "passes": false,
+      "missing_baseline": 519,
+      "missing_candidate": 24
+    },
+    {
+      "scope": "all_nonUS",
+      "period": "later",
+      "variant": "combined",
+      "required": true,
+      "cagr_change_pp": 0.13213970915049167,
+      "drawdown_change_pp": -16.953387476758664,
+      "performance_pass": false,
+      "not_loser_dominated": true,
+      "passes": false,
+      "missing_baseline": 519,
+      "missing_candidate": 48
+    }
+  ]
+}

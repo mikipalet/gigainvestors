@@ -1,0 +1,15 @@
+{
+  "baselineDossiers": 3915,
+  "candidateDossiers": 3915,
+  "indexedBefore": 3910,
+  "indexedAfter": 3910,
+  "missing": [],
+  "added": [],
+  "changes": 953,
+  "qualityChanges": 541,
+  "valuationChanges": 484,
+  "valuationLosses": [
+    "VSXY.US"
+  ],
+  "buyChanges": []
+}

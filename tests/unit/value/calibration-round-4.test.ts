@@ -77,10 +77,12 @@ describe("M1 retained earnings aligned with available fiscal endpoints", () => {
     const years = capitalYears(i => ({ marketCap: i === 0 ? null : 100e9 + i * 20e9 }));
     expect(retainedTest(years)).toMatchObject({ gain: 180e9, retained: 27e9, startFy: 2016, endFy: 2025 });
   });
-  it("excludes the baseline year's income and preserves an actual failure", () => {
+  it("excludes the baseline year's income and preserves the market-dollar context", () => {
     const years = capitalYears(i => ({ marketCap: i < 2 ? null : 100e9, netIncome: i === 2 ? 1e12 : 5e9 }));
     expect(retainedTest(years)).toMatchObject({ gain: 0, retained: 24e9, startFy: 2017, endFy: 2025 });
-    expect(management(years).reasons).toContain("market cap gain below cumulative retained earnings");
+    const result = management(years);
+    expect(result.numeric).toBe("pass");
+    expect(result.reasons.join(" ")).toContain("Historical market-dollar context");
   });
   it.each(["short", "gap", "missing-income", "missing-latest"])("keeps %s history unavailable", missing => {
     let years = capitalYears(i => ({

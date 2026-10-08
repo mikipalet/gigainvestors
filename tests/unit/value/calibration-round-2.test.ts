@@ -68,7 +68,7 @@ it("C3 leaves dilution unavailable if growth exceeds 1% in the sole available wi
   const years = makeYears({ n: 6, overrides: (_, i) => ({ dilutedShares: 10 * 1.05 ** i }) });
   const result = management({ years, kind: "operating" });
   expect(result.numeric).toBe("unclear");
-  expect(result.reasons.join(" ")).toMatch(/not enough data for the \$1 test or per-share value growth/);
+  expect(result.reasons.join(" ")).toMatch(/not enough data for per-share economic progress/);
 });
 
 it.each([5, 10])("C3 passes when the %i-year CAGR is exactly 1%", window => {

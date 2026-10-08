@@ -1,0 +1,9 @@
+{
+  "additions": 366,
+  "danglingAtCopy": 366,
+  "equal": true,
+  "allStillDangling": true,
+  "sourceMismatches": 0,
+  "archiveMismatches": 0,
+  "conclusion": "Live source and archive unchanged since the 09:46 snapshot; the 366 listed additions are pre-existing dangling symlinks with no data, reported by rsync at copy time."
+}

@@ -19,7 +19,7 @@ for(const [width,height] of [[1728,970],[1440,800],[2056,1180],[390,844]])for(co
  });
 }
 test('negative retained earnings show signed window bars and the actual capital returned',async({page})=>{
- await page.goto('/wkl.as');await page.getByRole('button',{name:'Open Value created per $1 kept evidence'}).click();
+ await page.goto('/wkl.as');await page.getByRole('button',{name:'Open Capital allocation evidence'}).click();
  const values=JSON.parse((await page.locator('dialog [data-window]').getAttribute('data-window'))!);expect(values.retained).toBeLessThan(0);await expect(page.locator('dialog .panel-answer')).toContainText('more than profits was returned to owners');await expect(page.locator('dialog .panel-answer')).toContainText('Market value rose');
  await expect(page.locator('dialog .mini-dollar svg rect')).toHaveCount(2);
  await expect(page.locator('dialog')).not.toContainText('≥ EUR -1.35B');

@@ -4,6 +4,7 @@ import {formatMetric} from '@/lib/value/metric-labels';
 import { ChartInteraction } from './ChartInteraction';
 import type { Dossier, PriceMap } from '@/lib/value/types';
 import { useWidth } from '@/lib/value/viz/use-width';
+import { useEffect, useState } from 'react';
 export function MiniDollar({provisional,retained,created,first,last,fluid=false,dense=false,currency=''}:{provisional?:ProvisionalYear;retained:number|null;created:number|null;first?:number|null;last?:number|null;fluid?:boolean;dense?:boolean;currency?:string}){
  const {ref,width,height:available}=useWidth();
  if(retained===null||created===null)return null;
@@ -15,6 +16,21 @@ export function MiniDollar({provisional,retained,created,first,last,fluid=false,
 }
 export function MiniPrice({dossier,quote,height:chartHeight,fluid=false,dense=false,minimumHeight=150,priceOnly=false,events=[]}:{priceOnly?:boolean;events?:Array<{date:string;text:string}>;dossier:Dossier;quote:PriceMap[string]|null;height?:number;fluid?:boolean;dense?:boolean;minimumHeight?:number}){
  const {ref,width,height:availableHeight}=useWidth();
+ const [compactPhone,setCompactPhone]=useState(false);
+ useEffect(()=>{
+  const update=()=>setCompactPhone(window.innerWidth<768&&window.innerHeight<740);
+  update();
+  window.addEventListener('resize',update);
+  return()=>window.removeEventListener('resize',update);
+ },[]);
+ // Legend and caption can wrap in narrow cards; reserve their real height so the caption stays inside the card.
+ const [chrome,setChrome]=useState(44);
+ useEffect(()=>{
+  const figure=ref.current;if(!fluid||!figure)return;
+  const used=[...figure.children].filter(child=>!child.classList.contains('chart-interaction')).reduce((sum,child)=>{const style=getComputedStyle(child);return sum+child.getBoundingClientRect().height+parseFloat(style.marginTop)+parseFloat(style.marginBottom);},0);
+  const next=Math.max(44,Math.ceil(used));
+  if(next!==chrome)setChrome(next);
+ });
  const values=dossier.valueHistory?.filter(v=>v.every(Number.isFinite)&&v.slice(1).every(n=>n>0))??[];
  const history=dossier.priceHistory??[];
  if((!priceOnly&&!values.length)||!history.length)return null;
@@ -24,7 +40,10 @@ export function MiniPrice({dossier,quote,height:chartHeight,fluid=false,dense=fa
  const start=sparse?Math.min(quoteStart,values[0][0]):quoteStart;
  const visible=values.filter(v=>v[0]+1>=start),vs=priceOnly?[]:visible.length?visible:[values.at(-1)!],ps=prices.filter(p=>year(p[0])>=start);
  const mos=dossier.requiredMos??.25,max=Math.max(...vs.map(v=>v[3]),...ps.map(p=>p[1]))*1.05;
- const height=dense?minimumHeight:fluid?Math.max(minimumHeight,availableHeight-44):chartHeight??(width<500?146:260),left=42,right=width-8,top=priceOnly&&events.length?32:12,bottom=height-22;
+ const floor=compactPhone?56:minimumHeight;
+ const height=dense?floor:fluid?Math.max(floor,availableHeight-chrome):chartHeight??(width<500?146:260);
+ // Short charts keep one price label and tighter margins so the plot still has room.
+ const tight=height<80,left=tight?34:42,right=width-8,top=priceOnly&&events.length?32:tight?6:12,bottom=height-(tight?14:22);
  const x=(n:number)=>left+(n-start)/(end-start||1)*(right-left),y=(n:number)=>bottom-n/max*(bottom-top);
  const tick=(n:number)=>new Intl.NumberFormat('en-US',{notation:'compact',maximumFractionDigits:0}).format(n);
  const current=priceOnly?null:dossier.valuation?.perShareTrading??dossier.valuation?.perShare;
@@ -33,5 +52,5 @@ export function MiniPrice({dossier,quote,height:chartHeight,fluid=false,dense=fa
  const points=ps.map(([date,p])=>{const v=segments.find(v=>year(date)>=v.from&&year(date)<=v.to);return {x:x(year(date)),y:y(p),text:`${date.slice(0,7)} · Price ${dossier.company.currency} ${p.toFixed(2)}${v?` · Value ${v.mid.toFixed(2)} · Buy below ${(v.mid*(1-mos)).toFixed(2)}`:''}`};});
  if(sparse)for(const v of segments)points.push({x:x((v.from+v.to)/2),y:y(v.mid),text:`FY${Math.floor(v.from)} · Estimated value ${dossier.company.currency} ${v.mid.toFixed(2)} · Range ${v.low.toFixed(2)}–${v.high.toFixed(2)} · Buy below ${(v.mid*(1-mos)).toFixed(2)}`});
  points.sort((a,b)=>a.x-b.x);
- return <figure ref={ref} className="mini-price" data-prices={JSON.stringify(ps)} data-values={JSON.stringify(segments)} data-mos={mos} data-currency={dossier.company.currency} style={{visibility:fluid&&!availableHeight?'hidden':undefined}}><figcaption><span>Price</span>{!priceOnly&&<><span>Estimated range</span><span>Buy price</span></>}</figcaption><ChartInteraction width={width} height={height} label="Price and estimated value" points={points}><svg viewBox={`0 0 ${width} ${height}`} aria-label={priceOnly?"Five-year monthly price and dated events":"Monthly price against fiscal-year value range and buy line"}><path d={`M${left} ${top}V${bottom}H${right}`} fill="none" stroke="var(--viz-grid)"/>{(height<100?[0,max]:[0,max/2,max]).map(v=><g key={v}><text x={left-6} y={y(v)+4} textAnchor="end">{tick(v)}</text><path d={`M${left} ${y(v)}H${right}`} stroke="var(--viz-grid)" opacity=".5"/></g>)}<text x={left} y={height-3}>{Math.floor(start)}</text><text x={right} y={height-3} textAnchor="end">{Math.floor(end)}</text>{segments.map((v,i)=><g key={i}><rect x={x(v.from)} width={Math.max(0,x(v.to)-x(v.from))} y={y(v.high)} height={Math.max(1,y(v.low)-y(v.high))} fill="#779971" opacity=".65" stroke="#536e50" strokeWidth=".5"/><path d={`M${x(v.from)} ${y(v.mid)}H${x(v.to)}`} stroke="var(--viz-muted)"/><path d={`M${x(v.from)} ${y(v.mid*(1-mos))}H${x(v.to)}`} stroke="var(--buy)" strokeDasharray="3 2"/></g>)}{events.map((event,i)=>{const nearest=ps.reduce((a,b)=>Math.abs(year(b[0])-year(event.date))<Math.abs(year(a[0])-year(event.date))?b:a);const labelX=left+(i+.5)*(right-left)/events.length;return <g key={event.date+event.text}><path d={`M${labelX} 22L${x(year(event.date))} ${y(nearest[1])}`} stroke="var(--viz-muted)" strokeDasharray="2 3"/><circle cx={x(year(event.date))} cy={y(nearest[1])} r="2" fill="currentColor"/><circle cx={labelX} cy={12} r="10" fill="var(--paper,#fff)" stroke="currentColor"/><text x={labelX} y={16} textAnchor="middle">{i+1}</text></g>;})}<path d={ps.map(([t,p],i)=>`${i?'L':'M'}${x(year(t))} ${y(p)}`).join(' ')} stroke="var(--ink)" fill="none" strokeWidth="1.5"/></svg></ChartInteraction><div>{dossier.company.currency} per share · {priceOnly?'monthly closes':'annual estimates'}</div></figure>;
+ return <figure ref={ref} className="mini-price" data-prices={JSON.stringify(ps)} data-values={JSON.stringify(segments)} data-mos={mos} data-currency={dossier.company.currency} style={{visibility:fluid&&!availableHeight?'hidden':undefined}}><figcaption><span>Price</span>{!priceOnly&&<><span>Estimated range</span><span>Buy price</span></>}</figcaption><ChartInteraction width={width} height={height} label="Price and estimated value" points={points}><svg viewBox={`0 0 ${width} ${height}`} aria-label={priceOnly?"Five-year monthly price and dated events":"Monthly price against fiscal-year value range and buy line"}><path d={`M${left} ${top}V${bottom}H${right}`} fill="none" stroke="var(--viz-grid)"/>{(tight?[max]:height<100?[0,max]:[0,max/2,max]).map(v=><g key={v}><text x={left-6} y={y(v)+4} textAnchor="end">{tick(v)}</text><path d={`M${left} ${y(v)}H${right}`} stroke="var(--viz-grid)" opacity=".5"/></g>)}<text x={left} y={height-(tight?1:3)}>{Math.floor(start)}</text><text x={right} y={height-(tight?1:3)} textAnchor="end">{Math.floor(end)}</text>{segments.map((v,i)=><g key={i}><rect x={x(v.from)} width={Math.max(0,x(v.to)-x(v.from))} y={y(v.high)} height={Math.max(1,y(v.low)-y(v.high))} fill="#779971" opacity=".65" stroke="#536e50" strokeWidth=".5"/><path d={`M${x(v.from)} ${y(v.mid)}H${x(v.to)}`} stroke="var(--viz-muted)"/><path d={`M${x(v.from)} ${y(v.mid*(1-mos))}H${x(v.to)}`} stroke="var(--buy)" strokeDasharray="3 2"/></g>)}{events.map((event,i)=>{const nearest=ps.reduce((a,b)=>Math.abs(year(b[0])-year(event.date))<Math.abs(year(a[0])-year(event.date))?b:a);const labelX=left+(i+.5)*(right-left)/events.length;return <g key={event.date+event.text}><path d={`M${labelX} 22L${x(year(event.date))} ${y(nearest[1])}`} stroke="var(--viz-muted)" strokeDasharray="2 3"/><circle cx={x(year(event.date))} cy={y(nearest[1])} r="2" fill="currentColor"/><circle cx={labelX} cy={12} r="10" fill="var(--paper,#fff)" stroke="currentColor"/><text x={labelX} y={16} textAnchor="middle">{i+1}</text></g>;})}<path d={ps.map(([t,p],i)=>`${i?'L':'M'}${x(year(t))} ${y(p)}`).join(' ')} stroke="var(--ink)" fill="none" strokeWidth="1.5"/></svg></ChartInteraction><div>{dossier.company.currency} per share · {priceOnly?'monthly closes':'annual estimates'}</div></figure>;
 }

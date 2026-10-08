@@ -1,0 +1,15 @@
+{
+  "materialChanges": 939,
+  "counts": {
+    "floatNoiseOnly": 14,
+    "margin:input/publication drift": 6,
+    "margin:method": 7,
+    "priceVerdict:input/publication drift": 45,
+    "priceVerdict:method": 6,
+    "quality:input/publication drift": 13,
+    "quality:method": 528,
+    "value:input/publication drift": 391,
+    "value:method": 79
+  },
+  "heldBuyTransitions": 49
+}

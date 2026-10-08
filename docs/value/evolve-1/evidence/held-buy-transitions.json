@@ -1,0 +1,1608 @@
+[
+ {
+  "id": "ADBE.US",
+  "before": {
+   "b": false,
+   "v": [
+    170.44550537318943,
+    242.69539330983005,
+    282.99183037705035
+   ],
+   "m": 0.15,
+   "t": "PPPPP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    309.68361254182815,
+    445.7237976701895,
+    521.5984448868796
+   ],
+   "m": 0.15,
+   "t": "PPPPP"
+  },
+  "method370Change": null,
+  "cause": "pre-existing (not caused by 3.7.0 analysis)",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "INTU.US",
+  "before": {
+   "b": false,
+   "v": [
+    89.22483296335419,
+    98.03352677643821,
+    109.75976667527507
+   ],
+   "m": 0.25,
+   "t": "PPFPP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    271.1182793700692,
+    384.07994489680334,
+    447.0828474050848
+   ],
+   "m": 0.15,
+   "t": "PPPPP"
+  },
+  "method370Change": null,
+  "cause": "pre-existing (not caused by 3.7.0 analysis)",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "NTES.US",
+  "before": {
+   "b": false,
+   "v": [
+    121.93747441693995,
+    156.46621627946226,
+    176.57236463060005
+   ],
+   "m": 0.35,
+   "t": "PPPPP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    144.6851551647181,
+    183.87546407478533,
+    208.50816891580757
+   ],
+   "m": 0.15,
+   "t": "PPPPP"
+  },
+  "method370Change": null,
+  "cause": "pre-existing (not caused by 3.7.0 analysis)",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "BR.US",
+  "before": {
+   "b": false,
+   "v": [
+    129.8815771500561,
+    188.43839958604175,
+    221.09770713012213
+   ],
+   "m": 0.35,
+   "t": "PPPPP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    159.345052225474,
+    231.41896917485943,
+    271.61726070834817
+   ],
+   "m": 0.15,
+   "t": "PPPPP"
+  },
+  "method370Change": null,
+  "cause": "pre-existing (not caused by 3.7.0 analysis)",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "WIT.US",
+  "before": {
+   "b": false,
+   "v": [
+    2.2753101496129635,
+    2.7674397961894375,
+    3.1649011658875392
+   ],
+   "m": 0.25,
+   "t": "PPPFP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    2.4406986447727674,
+    3.1032284128549077,
+    3.5659505014895934
+   ],
+   "m": 0.15,
+   "t": "PPPPP"
+  },
+  "method370Change": {
+   "id": "WIT.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    252.0171680897111,
+    283.6900625632218
+   ],
+   "tier": [
+    "standard",
+    "compounder"
+   ]
+  },
+  "cause": "3.7.0 management/tier change",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "NVR.US",
+  "before": {
+   "b": false,
+   "v": [
+    4907.046257476315,
+    5540.501459169892,
+    6384.334756492054
+   ],
+   "m": 0.15,
+   "t": "PPPPP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    6777.990615715635,
+    7673.048095713162,
+    8865.364936146229
+   ],
+   "m": 0.15,
+   "t": "PPPPP"
+  },
+  "method370Change": null,
+  "cause": "pre-existing (not caused by 3.7.0 analysis)",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "LDOS.US",
+  "before": {
+   "b": false,
+   "v": [
+    98.1308161746115,
+    134.17179497642104,
+    156.8099869154863
+   ],
+   "m": 0.5,
+   "t": "PPPPP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    134.08215311480072,
+    183.76508140776593,
+    214.97210475127437
+   ],
+   "m": 0.35,
+   "t": "PPPPP"
+  },
+  "method370Change": null,
+  "cause": "pre-existing (not caused by 3.7.0 analysis)",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "CHKP.US",
+  "before": {
+   "b": false,
+   "v": [
+    135.02890158000193,
+    159.22413026362588,
+    181.95013026424664
+   ],
+   "m": 0.25,
+   "t": "PPPFP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    159.97691323459838,
+    218.66890134003086,
+    252.99293942802566
+   ],
+   "m": 0.15,
+   "t": "PPPPP"
+  },
+  "method370Change": {
+   "id": "CHKP.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    149.97126059054233,
+    205.96156331089114
+   ],
+   "tier": [
+    "standard",
+    "compounder"
+   ]
+  },
+  "cause": "3.7.0 management/tier change",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "SEIC.US",
+  "before": {
+   "b": false,
+   "v": [
+    68.41560024066017,
+    98.14049514363879,
+    114.80016742265502
+   ],
+   "m": 0.15,
+   "t": "PPPPP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    86.89698532030584,
+    125.34068275474287,
+    146.7821559326192
+   ],
+   "m": 0.15,
+   "t": "PPPPP"
+  },
+  "method370Change": null,
+  "cause": "pre-existing (not caused by 3.7.0 analysis)",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "AYI.US",
+  "before": {
+   "b": false,
+   "v": [
+    198.06763812649882,
+    222.8737318182169,
+    255.89590420319036
+   ],
+   "m": 0.25,
+   "t": "PPPFP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    257.16573046497825,
+    366.8180299531405,
+    427.97517651474624
+   ],
+   "m": 0.15,
+   "t": "PPPPP"
+  },
+  "method370Change": {
+   "id": "AYI.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    216.9353625072225,
+    357.0443302262932
+   ],
+   "tier": [
+    "standard",
+    "compounder"
+   ]
+  },
+  "cause": "3.7.0 management/tier change",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "OSK.US",
+  "before": {
+   "b": false,
+   "v": [
+    116.62183460592998,
+    154.3583671232148,
+    180.20026076658723
+   ],
+   "m": 0.25,
+   "t": "PPPPP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    141.79057593194452,
+    187.89361463024315,
+    219.46487312178604
+   ],
+   "m": 0.25,
+   "t": "PPPPP"
+  },
+  "method370Change": null,
+  "cause": "pre-existing (not caused by 3.7.0 analysis)",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "AOS.US",
+  "before": {
+   "b": false,
+   "v": [
+    47.74454489808151,
+    60.34334141831189,
+    70.35059335341379
+   ],
+   "m": 0.25,
+   "t": "PPPFP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    55.60977868370237,
+    78.7234306532499,
+    92.30480656798743
+   ],
+   "m": 0.15,
+   "t": "PPPPP"
+  },
+  "method370Change": {
+   "id": "AOS.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    74.52417125448142,
+    97.2236255044826
+   ],
+   "tier": [
+    "standard",
+    "compounder"
+   ]
+  },
+  "cause": "3.7.0 management/tier change",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "SSD.US",
+  "before": {
+   "b": false,
+   "v": [
+    106.86044393908233,
+    151.38440736143252,
+    176.21706996161998
+   ],
+   "m": 0.15,
+   "t": "PPPPP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    145.2442070348534,
+    207.37766669678197,
+    242.03179722264852
+   ],
+   "m": 0.15,
+   "t": "PPPPP"
+  },
+  "method370Change": null,
+  "cause": "pre-existing (not caused by 3.7.0 analysis)",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "DOX.US",
+  "before": {
+   "b": false,
+   "v": [
+    62.08139486816499,
+    70.49133240847799,
+    81.6867431270868
+   ],
+   "m": 0.25,
+   "t": "PPPFP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    73.73643893713364,
+    96.03254420599373,
+    112.20116012889265
+   ],
+   "m": 0.15,
+   "t": "PPPPP"
+  },
+  "method370Change": {
+   "id": "DOX.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    67.82984806686108,
+    92.40672094578328
+   ],
+   "tier": [
+    "standard",
+    "compounder"
+   ]
+  },
+  "cause": "3.7.0 management/tier change",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "SFM.US",
+  "before": {
+   "b": false,
+   "v": [
+    58.000070443342075,
+    82.6530311064989,
+    97.00849434236638
+   ],
+   "m": 0.35,
+   "t": "PPPPP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    72.62935155213661,
+    103.55131905539734,
+    121.55723622449189
+   ],
+   "m": 0.35,
+   "t": "PPPPP"
+  },
+  "method370Change": null,
+  "cause": "pre-existing (not caused by 3.7.0 analysis)",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "CRUS.US",
+  "before": {
+   "b": false,
+   "v": [
+    95.06511363862808,
+    130.89527138572572,
+    150.8790767312877
+   ],
+   "m": 0.15,
+   "t": "PPPPP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    127.7549117139021,
+    178.5823190751872,
+    206.9306457026295
+   ],
+   "m": 0.15,
+   "t": "PPPPP"
+  },
+  "method370Change": null,
+  "cause": "pre-existing (not caused by 3.7.0 analysis)",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "EXP.US",
+  "before": {
+   "b": false,
+   "v": [
+    42.93290465234814,
+    58.07663576861254,
+    67.12199101757207
+   ],
+   "m": 0.5,
+   "t": "PPPPP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    234.07600413806225,
+    326.9589230570981,
+    382.74931495261677
+   ],
+   "m": 0.25,
+   "t": "PPPPP"
+  },
+  "method370Change": null,
+  "cause": "pre-existing (not caused by 3.7.0 analysis)",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "TGS.US",
+  "before": {
+   "b": false,
+   "v": [
+    22.63241564715784,
+    28.229585842069305,
+    31.488828091136195
+   ],
+   "m": 0.25,
+   "t": "PPPPP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    38.81569129324982,
+    51.347793216258836,
+    58.64525865588702
+   ],
+   "m": 0.25,
+   "t": "PPPPP"
+  },
+  "method370Change": null,
+  "cause": "pre-existing (not caused by 3.7.0 analysis)",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "FCN.US",
+  "before": {
+   "b": false,
+   "v": [
+    123.89434452112165,
+    175.66271061057995,
+    205.80752308694824
+   ],
+   "m": 0.35,
+   "t": "PPPPP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    164.038358433847,
+    233.00942204046572,
+    273.1713961526941
+   ],
+   "m": 0.35,
+   "t": "PPPPP"
+  },
+  "method370Change": null,
+  "cause": "pre-existing (not caused by 3.7.0 analysis)",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "NTB.US",
+  "before": {
+   "b": false,
+   "v": null,
+   "m": 0.35,
+   "t": "PPPPP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    79.64968406236753,
+    99.56210507795939,
+    132.74947343727916
+   ],
+   "m": 0.35,
+   "t": "PPPPP"
+  },
+  "method370Change": null,
+  "cause": "pre-existing (not caused by 3.7.0 analysis)",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "EFOR.US",
+  "before": {
+   "b": false,
+   "v": [
+    66.4600048620663,
+    75.62338699582509,
+    87.82179228328857
+   ],
+   "m": 0.5,
+   "t": "PPPFP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    66.4600048620663,
+    75.62338699582509,
+    87.82179228328857
+   ],
+   "m": 0.5,
+   "t": "PPPPP"
+  },
+  "method370Change": {
+   "id": "EFOR.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    71.11373547772543,
+    71.11373547772543
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  "cause": "3.7.0 management/tier change",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "PRG.US",
+  "before": {
+   "b": false,
+   "v": [
+    502.2026372096716,
+    571.3251943574793,
+    663.3419796761269
+   ],
+   "m": 0.35,
+   "t": "PPPFP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    502.2026372096716,
+    571.3251943574793,
+    663.3419796761269
+   ],
+   "m": 0.35,
+   "t": "PPPPP"
+  },
+  "method370Change": {
+   "id": "PRG.US",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    556.9051578518656,
+    556.9051578518656
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  "cause": "3.7.0 management/tier change",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "ITRN.US",
+  "before": {
+   "b": false,
+   "v": [
+    42.02287752608768,
+    54.45870892641629,
+    62.94142185620789
+   ],
+   "m": 0.25,
+   "t": "PPPPP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    51.30934074479948,
+    72.63212925022638,
+    84.52463773217842
+   ],
+   "m": 0.15,
+   "t": "PPPPP"
+  },
+  "method370Change": null,
+  "cause": "pre-existing (not caused by 3.7.0 analysis)",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "CFG-PH.US",
+  "before": {
+   "b": true,
+   "v": [
+    47.0959390756952,
+    58.86992384461899,
+    78.4932317928253
+   ],
+   "m": 0.35,
+   "t": "PPPPP"
+  },
+  "computed": {
+   "b": false,
+   "v": [
+    46.53393910089801,
+    58.167423876122506,
+    77.55656516816332
+   ],
+   "m": 0.35,
+   "t": "PFPPP"
+  },
+  "method370Change": null,
+  "cause": "pre-existing (not caused by 3.7.0 analysis)",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "259960.KO",
+  "before": {
+   "b": false,
+   "v": [
+    217251.95396389134,
+    238087.13898876405,
+    265823.1896590019
+   ],
+   "m": 0.25,
+   "t": "PPPPP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    388958.1777726637,
+    433467.89828350284,
+    492719.77734927606
+   ],
+   "m": 0.25,
+   "t": "PPPPP"
+  },
+  "method370Change": null,
+  "cause": "pre-existing (not caused by 3.7.0 analysis)",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "021240.KO",
+  "before": {
+   "b": false,
+   "v": [
+    138107.09582591185,
+    157069.19085009285,
+    182311.76142370192
+   ],
+   "m": 0.25,
+   "t": "PPPFP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    138107.09582591185,
+    157069.19085009285,
+    182311.76142370192
+   ],
+   "m": 0.25,
+   "t": "PPPPP"
+  },
+  "method370Change": {
+   "id": "021240.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    153887.64557516147,
+    153887.64557516147
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  "cause": "3.7.0 management/tier change",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "241560.KO",
+  "before": {
+   "b": false,
+   "v": [
+    87638.88535565052,
+    108035.32937093421,
+    122899.30251916761
+   ],
+   "m": 0.25,
+   "t": "PPPFP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    87638.88535565052,
+    108035.32937093421,
+    122899.30251916761
+   ],
+   "m": 0.25,
+   "t": "PPPPP"
+  },
+  "method370Change": {
+   "id": "241560.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    108035.32937093421,
+    108035.32937093421
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  "cause": "3.7.0 management/tier change",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "009970.KO",
+  "before": {
+   "b": false,
+   "v": [
+    553912.1321630835,
+    720150.4460905568,
+    816951.3146184854
+   ],
+   "m": 0.35,
+   "t": "PPPFP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    553912.1321630835,
+    720150.4460905568,
+    816951.3146184854
+   ],
+   "m": 0.35,
+   "t": "PPPPP"
+  },
+  "method370Change": {
+   "id": "009970.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    720160.6854320052,
+    720160.6854320052
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  "cause": "3.7.0 management/tier change",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "030000.KO",
+  "before": {
+   "b": false,
+   "v": [
+    37294.96054839827,
+    50052.31097067177,
+    57480.93901564812
+   ],
+   "m": 0.25,
+   "t": "PPPFP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    37294.96054839827,
+    50052.31097067177,
+    57480.93901564812
+   ],
+   "m": 0.25,
+   "t": "PPPPP"
+  },
+  "method370Change": {
+   "id": "030000.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    50046.099602272334,
+    50046.099602272334
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  "cause": "3.7.0 management/tier change",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "001800.KO",
+  "before": {
+   "b": false,
+   "v": [
+    44998.20250452077,
+    47907.39037855468,
+    51780.136513859965
+   ],
+   "m": 0.35,
+   "t": "PFPPP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    73534.48308035206,
+    80378.20036248943,
+    89488.63970265102
+   ],
+   "m": 0.35,
+   "t": "PPPPP"
+  },
+  "method370Change": null,
+  "cause": "pre-existing (not caused by 3.7.0 analysis)",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "192080.KO",
+  "before": {
+   "b": false,
+   "v": [
+    158420.9382454117,
+    173187.42562371836,
+    192844.75248005352
+   ],
+   "m": 0.25,
+   "t": "PPPFP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    158420.9382454117,
+    173187.42562371836,
+    192844.75248005352
+   ],
+   "m": 0.25,
+   "t": "PPPPP"
+  },
+  "method370Change": {
+   "id": "192080.KO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    173187.42562371836,
+    173187.42562371836
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  "cause": "3.7.0 management/tier change",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "0700.HK",
+  "before": {
+   "b": false,
+   "v": [
+    281.5565148060693,
+    376.9356607552132,
+    432.4751086069116
+   ],
+   "m": 0.35,
+   "t": "PPFPP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    458.3819060499957,
+    641.6148472583136,
+    743.810641534392
+   ],
+   "m": 0.15,
+   "t": "PPPPP"
+  },
+  "method370Change": null,
+  "cause": "pre-existing (not caused by 3.7.0 analysis)",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "2313.HK",
+  "before": {
+   "b": false,
+   "v": [
+    79.34871592284576,
+    102.71373184829892,
+    116.84325196366308
+   ],
+   "m": 0.25,
+   "t": "PPPFP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    84.39015000054168,
+    113.30101044237405,
+    129.4256675404603
+   ],
+   "m": 0.15,
+   "t": "PPPPP"
+  },
+  "method370Change": {
+   "id": "2313.HK",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    87.72658079911335,
+    96.7690499443062
+   ],
+   "tier": [
+    "standard",
+    "compounder"
+   ]
+  },
+  "cause": "3.7.0 management/tier change",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "600519.SHG",
+  "before": {
+   "b": false,
+   "v": [
+    907.5130852885013,
+    1305.4874386753997,
+    1527.4524678763642
+   ],
+   "m": 0.15,
+   "t": "PPPPP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    1159.9018316163408,
+    1673.6657356078197,
+    1960.210883508358
+   ],
+   "m": 0.15,
+   "t": "PPPPP"
+  },
+  "method370Change": null,
+  "cause": "pre-existing (not caused by 3.7.0 analysis)",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "000651.SHE",
+  "before": {
+   "b": false,
+   "v": [
+    73.51328910916375,
+    79.72546332088682,
+    87.99518487617927
+   ],
+   "m": 0.25,
+   "t": "PPPFP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    73.51328910916375,
+    79.72546332088682,
+    87.99518487617927
+   ],
+   "m": 0.25,
+   "t": "PPPPP"
+  },
+  "method370Change": {
+   "id": "000651.SHE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    80.06688940551693,
+    80.06688940551693
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  "cause": "3.7.0 management/tier change",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "300760.SHE",
+  "before": {
+   "b": false,
+   "v": [
+    108.0865813857987,
+    150.82480678252676,
+    174.66149718091467
+   ],
+   "m": 0.15,
+   "t": "PPPPP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    141.9687543951544,
+    200.25126076059044,
+    232.7575720774224
+   ],
+   "m": 0.15,
+   "t": "PPPPP"
+  },
+  "method370Change": null,
+  "cause": "pre-existing (not caused by 3.7.0 analysis)",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "600406.SHG",
+  "before": {
+   "b": false,
+   "v": [
+    17.838653419238053,
+    24.542225653544875,
+    28.4457277956787
+   ],
+   "m": 0.25,
+   "t": "PPPFP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    18.903731133158384,
+    26.56914643963813,
+    30.84443231637952
+   ],
+   "m": 0.15,
+   "t": "PPPPP"
+  },
+  "method370Change": {
+   "id": "600406.SHG",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    24.761753718201213,
+    26.80680513367031
+   ],
+   "tier": [
+    "standard",
+    "compounder"
+   ]
+  },
+  "cause": "3.7.0 management/tier change",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "300628.SHE",
+  "before": {
+   "b": false,
+   "v": [
+    35.22153496006457,
+    48.65535685554855,
+    56.47789545335758
+   ],
+   "m": 0.25,
+   "t": "PPPFP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    37.35592895382668,
+    52.71726472867923,
+    61.28485034019773
+   ],
+   "m": 0.15,
+   "t": "PPPPP"
+  },
+  "method370Change": {
+   "id": "300628.SHE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    48.65535685554855,
+    52.71726472867923
+   ],
+   "tier": [
+    "standard",
+    "compounder"
+   ]
+  },
+  "cause": "3.7.0 management/tier change",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "000786.SHE",
+  "before": {
+   "b": true,
+   "v": [
+    23.530973027599693,
+    30.95762408939952,
+    35.87135455072787
+   ],
+   "m": 0.25,
+   "t": "PPPPP"
+  },
+  "computed": {
+   "b": false,
+   "v": [
+    28.118181382160664,
+    37.15105771359198,
+    43.12752263887547
+   ],
+   "m": 0.25,
+   "t": "PFPPP"
+  },
+  "method370Change": null,
+  "cause": "pre-existing (not caused by 3.7.0 analysis)",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "603833.SHG",
+  "before": {
+   "b": false,
+   "v": [
+    40.654711608045865,
+    44.638921065398776,
+    49.94274895356299
+   ],
+   "m": 0.25,
+   "t": "PPPFP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    40.654711608045865,
+    44.638921065398776,
+    49.94274895356299
+   ],
+   "m": 0.25,
+   "t": "PPPPP"
+  },
+  "method370Change": {
+   "id": "603833.SHG",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    43.332566535311614,
+    43.332566535311614
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  "cause": "3.7.0 management/tier change",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "IMB.LSE",
+  "before": {
+   "b": false,
+   "v": [
+    3900.001302946647,
+    4437.726244965951,
+    5153.552200948279
+   ],
+   "m": 0.35,
+   "t": "PPPFP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    3900.001302946647,
+    4437.726244965951,
+    5153.552200948279
+   ],
+   "m": 0.35,
+   "t": "PPPPP"
+  },
+  "method370Change": {
+   "id": "IMB.LSE",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    40.157770128261,
+    40.157770128261
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  "cause": "3.7.0 management/tier change",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "GIB-A.TO",
+  "before": {
+   "b": false,
+   "v": [
+    97.59398044482771,
+    121.1972707022346,
+    141.18203978237563
+   ],
+   "m": 0.25,
+   "t": "PPPPP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    113.84223461493649,
+    141.43537751796737,
+    164.79833171200636
+   ],
+   "m": 0.25,
+   "t": "PPPPP"
+  },
+  "method370Change": null,
+  "cause": "pre-existing (not caused by 3.7.0 analysis)",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "OTEX.TO",
+  "before": {
+   "b": false,
+   "v": [
+    64.65621273983382,
+    72.90151678657837,
+    83.87776540443399
+   ],
+   "m": 0.5,
+   "t": "PPPFP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    64.84993231003449,
+    73.11994050644114,
+    84.12907558755471
+   ],
+   "m": 0.5,
+   "t": "PPPPP"
+  },
+  "method370Change": {
+   "id": "OTEX.TO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    51.24976630096459,
+    51.24976630096459
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  "cause": "3.7.0 management/tier change",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "EDEN.PA",
+  "before": {
+   "b": false,
+   "v": [
+    50.23422987627811,
+    60.640549115477775,
+    67.40861170645756
+   ],
+   "m": 0.25,
+   "t": "PPPFP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    50.23422987627811,
+    60.640549115477775,
+    67.40861170645756
+   ],
+   "m": 0.25,
+   "t": "PPPPP"
+  },
+  "method370Change": {
+   "id": "EDEN.PA",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    62.75997104396549,
+    62.75997104396549
+   ],
+   "tier": [
+    "standard",
+    "standard"
+   ]
+  },
+  "cause": "3.7.0 management/tier change",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "IPS.PA",
+  "before": {
+   "b": true,
+   "v": [
+    47.22764710184408,
+    52.94189844163409,
+    60.54877903874361
+   ],
+   "m": 0.25,
+   "t": "PPPPP"
+  },
+  "computed": {
+   "b": false,
+   "v": [
+    61.092061478307215,
+    68.71791254271335,
+    78.86953784738704
+   ],
+   "m": 0.25,
+   "t": "PFPPP"
+  },
+  "method370Change": null,
+  "cause": "pre-existing (not caused by 3.7.0 analysis)",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "SIQ.AU",
+  "before": {
+   "b": false,
+   "v": [
+    8.250828402806949,
+    10.666141067056417,
+    12.153225309980142
+   ],
+   "m": 0.15,
+   "t": "PPPPP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    10.052262077617506,
+    13.172968577834933,
+    15.094374232568597
+   ],
+   "m": 0.15,
+   "t": "PPPPP"
+  },
+  "method370Change": null,
+  "cause": "pre-existing (not caused by 3.7.0 analysis)",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "PNDORA.CO",
+  "before": {
+   "b": false,
+   "v": [
+    771.199702647434,
+    877.0540625248519,
+    1017.9686685492642
+   ],
+   "m": 0.35,
+   "t": "PPPFP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    974.1676115295814,
+    1351.1122900423056,
+    1584.4540685744748
+   ],
+   "m": 0.15,
+   "t": "PPPPP"
+  },
+  "method370Change": {
+   "id": "PNDORA.CO",
+   "tests": {
+    "management": [
+     "fail",
+     "pass"
+    ]
+   },
+   "valueMid": [
+    849.6995568508011,
+    1308.972346356457
+   ],
+   "tier": [
+    "standard",
+    "compounder"
+   ]
+  },
+  "cause": "3.7.0 management/tier change",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "CURY3.SA",
+  "before": {
+   "b": false,
+   "v": [
+    13.38967257804367,
+    16.171121554374558,
+    17.10673395882567
+   ],
+   "m": 0.15,
+   "t": "PPPPP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    30.209204614240424,
+    38.510275034019465,
+    41.305423555550014
+   ],
+   "m": 0.15,
+   "t": "PPPPP"
+  },
+  "method370Change": null,
+  "cause": "pre-existing (not caused by 3.7.0 analysis)",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ },
+ {
+  "id": "DNP.WAR",
+  "before": {
+   "b": false,
+   "v": [
+    1.2330352195562173,
+    1.7592198822252203,
+    2.0431061463122453
+   ],
+   "m": 0.15,
+   "t": "PPPPP"
+  },
+  "computed": {
+   "b": true,
+   "v": [
+    27.67706256415445,
+    40.07826634940544,
+    46.768942955065775
+   ],
+   "m": 0.15,
+   "t": "PPPPP"
+  },
+  "method370Change": null,
+  "cause": "pre-existing (not caused by 3.7.0 analysis)",
+  "published": "previous complete record retained by the existing publication-continuity hold (removed by rules-7)"
+ }
+]

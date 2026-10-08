@@ -417,7 +417,7 @@ it("derives per-share series and dated integrity, acquisition and impairment eve
   expect(missing.series?.revenuePerShare.at(-1)).toEqual([2023, null]);
 });
 
-it("R3 derives the $1 test from fiscal-end monthly closes through the corpus stage", async () => {
+it("R3 derives retained-dollar context from fiscal-end monthly closes through the corpus stage", async () => {
   const { makeYears } = await import("./synthetic");
   const { default: history } = await import("../../fixtures/value/prices-history/CALIB.US.json");
   const args = input();
@@ -432,10 +432,12 @@ it("R3 derives the $1 test from fiscal-end monthly closes through the corpus sta
   expect(result.tests.management.metrics.retainedEarnings).toBe(800);
   expect(result.tests.management.series.marketCap.at(-1)).toEqual([2023, 2000]);
   expect(result.tests.management.numeric).toBe("pass");
-  // History is part of the input fingerprint; a new close must change the verdict.
+  // History is part of the input fingerprint; a new close must change the context.
   writeCorpusJson("prices-history/KO.US.json", history.map(([month, close]) => [month, month === "2023-09" ? 100 : close]));
   await analyze(options);
-  expect(readCorpusJson<Analysis>("analysis/KO.US.json")!.tests.management.numeric).toBe("fail");
+  const revised = readCorpusJson<Analysis>("analysis/KO.US.json")!.tests.management;
+  expect(revised.numeric).toBe("pass");
+  expect(revised.metrics.marketCapGain).toBeLessThan(revised.metrics.retainedEarnings!);
   rmSync(corpusPath("prices-history/KO.US.json"));
   await analyze(options);
   const missing = readCorpusJson<Analysis>("analysis/KO.US.json")!.tests.management;

@@ -46,7 +46,7 @@ import {withReportedFacts} from '@/lib/value/completeness/reported-facts';
 describe('primary filing corrections',()=>{
  it('keeps per-share management numbers instead of substituting a share-count chart',()=>{
   const t={key:'management',metrics:{},series:{shares:[[2024,180],[2025,160]]},reasons:[],jev:[],numeric:'unclear',result:'unclear'} as TestOutcome;
-  const m=primaryTileMetric(t,'bank');expect(m.chart).toBe('Per-share earnings / book value');expect(m.series).toEqual([]);expect(m.id).toBe('perShareValueChange');
+  const m=primaryTileMetric(t,'bank');expect(m.chart).toBe('Book value per share');expect(m.series).toEqual([]);expect(m.id).toBe('perShareValueChange');
  });
  it('excludes Chubb long-term bonds and restricted cash from the cash aggregate',()=>{
   const [y]=withReportedFacts('CB.US',[{...emptyYear('2025-12-31','USD'),cash:42585000000,totalDebt:17649000000}]);
@@ -70,7 +70,7 @@ it('uses the filing likelihood chart in a drawer when no financial series exists
 });
 it('calls a negative per-share change a decline',()=>{
  const t={key:'management',metrics:{perShareValueGrowth:-.08,perShareStart:10,perShareEnd:9.2,perShareValueChange:-.8},series:{},reasons:[],jev:[],result:'pass',numeric:'pass'} as TestOutcome;
- expect(tileSentence(t,primaryTileMetric(t,'operating'),'operating')).toContain('Per-share value fell from 10 to 9.2 (must rise and stay positive)');
+ expect(tileSentence(t,primaryTileMetric(t,'operating'),'operating')).toContain('Per-share value fell from 10 to 9.2, comparing three-year medians at each end (must rise and stay positive)');
 });
 
 it('checks a drawer-only financial context chart against its published book series',()=>{

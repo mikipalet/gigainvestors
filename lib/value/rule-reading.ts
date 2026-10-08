@@ -60,14 +60,14 @@ export function ruleReading(t:TestOutcome,kind:Kind){
    break;
   case 'management': {
    const gain=m.marketCapGain,kept=m.retainedEarnings;
-   if(gain!=null&&kept!=null)add(kept>0?`Value per $1 kept ${num(gain/kept)} ${gain>=kept?'≥':'<'} $1`:`Value gained ${num(gain)} ${gain>=kept?'≥':'<'} retained ${num(kept)}`,gain>=kept,true);
-   else add(m.perShareStart!=null&&m.perShareEnd!=null?`Per-share value ${num(m.perShareStart)} → ${num(m.perShareEnd)}; must rise and end positive`:'Per-share value: no observation',m.perShareValueChange==null?null:m.perShareEnd!>0&&m.perShareValueChange>=0,true);
+   if(m.economicProgressBasis!==1&&gain!=null&&kept!=null)add(kept>0?`Value per $1 kept ${num(gain/kept)} ${gain>=kept?'≥':'<'} $1`:`Value gained ${num(gain)} ${gain>=kept?'≥':'<'} retained ${num(kept)}`,gain>=kept,true);
+   else add(m.perShareStart!=null&&m.perShareEnd!=null?`Per-share value ${num(m.perShareStart)} → ${num(m.perShareEnd)} (three-year medians); must rise and end positive`:'Per-share value: no observation',m.perShareValueChange==null?null:m.perShareEnd!>0&&m.perShareValueChange>=0,true);
    const rates=[m.nonAcquisitionShareCagr??m.shareCagr,m.nonAcquisitionShareCagr5??m.shareCagr5],known=rates.filter((v):v is number=>v!=null);
    add(`Share growth ${rates.map(v=>v==null?'—':pct(v)).join(' / ')} (10y / 5y); either ≤1%`,known.some(v=>v<=.01+Number.EPSILON)?true:known.length<2?null:false);
    const blind=(m.buybackYears??0)>=6&&m.buybackYieldSpearman!=null&&m.buybackYieldSpearman<-.5&&(m.averageBuybackYield??0)>.01;
    add(`Buybacks: ${m.buybackYears??0} years, correlation ${m.buybackYieldSpearman==null?'—':num(m.buybackYieldSpearman)}, yield ${pct(m.averageBuybackYield??0)}; fails at ≥6 years, <−0.5 and >1%`,blind?false:m.buybackYears!>0||(t.series.buybacks??[]).some(p=>p[1]===0)?true:null);
    const spend=m.acquisitionSpend,income=m.cumulativeNetIncome,first=m.roicFirst3Median,last=m.roicLast3Median;
-   add(`Acquisitions ${spend==null||income==null?'—':num(spend)+' / '+num(income)} of profits; ROIC ${first==null?'—':pct(first)} → ${last==null?'—':pct(last)}. Fails if spend >50% and ROIC <15% and <⅔ of start`,spend==null||income==null?null:spend<=.5*income?true:first==null||last==null?null:!(last<.15&&last<2/3*first));
+   add(`Acquisitions ${spend==null||income==null||income<=0?'—':pct(spend/income)} of profits; ROIC ${first==null?'—':pct(first)} → ${last==null?'—':pct(last)}. Fails if spend >50% and ROIC <15% and <⅔ of start`,spend==null||income==null?null:spend<=.5*income?true:first==null||last==null?null:!(last<.15&&last<2/3*first));
    if(t.reasons.some(r=>r.includes('Common shareholder capital was cancelled')))add('Common shareholder capital cancelled in restructuring',false,true,true);
    break;
   }

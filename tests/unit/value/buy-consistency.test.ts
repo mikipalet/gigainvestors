@@ -64,7 +64,7 @@ it('refreshes the published flags and funnel in the same price snapshot', async 
     }
     const git = (...args: string[]) => execFileSync('git', ['-C', repo, ...args], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] }).trim();
     git('init', '-b', 'main'); git('config', 'user.name', 'Test'); git('config', 'user.email', 'test@example.com'); git('add', '.'); git('commit', '-m', 'snapshot');
-    await refreshPrices({ repo, companies: [company('BUY.US').company], bulk: async () => [{ code: 'BUY', close: 110, date: '2026-10-08' }] });
+    await refreshPrices({ repo, now: Date.parse('2026-10-08T20:00:00Z'), yahoo: async () => { throw new Error('Unexpected network fallback'); }, companies: [company('BUY.US').company], bulk: async () => [{ code: 'BUY', close: 110, date: '2026-10-08' }] });
     const rows = JSON.parse(readFileSync(path.join(repo, 'index/default.json'), 'utf8')) as IndexRow[];
     const prices = JSON.parse(readFileSync(path.join(repo, 'prices/US.json'), 'utf8')) as PriceMap;
     const meta = JSON.parse(readFileSync(path.join(repo, 'meta.json'), 'utf8')) as StoreMeta;

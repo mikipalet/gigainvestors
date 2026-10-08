@@ -1,0 +1,783 @@
+[
+  {
+    "id": "AQN.US",
+    "reason": "Cached reading unavailable or changed: AQN.US",
+    "retained": [
+      {
+        "file": "analysis/AQN.US.json",
+        "sha256": "dee4a1997d69c50d4a658848ea1f0d15cdd5aa930b2b9b8430ba2e54932b15da"
+      },
+      {
+        "file": "analysis/inputs/AQN.US.json",
+        "sha256": "68c8f8f783ee582773e5e917c2ddb8f8cc3b0367ee9c4d9f7b47b595f507a157"
+      },
+      {
+        "file": "analysis/fingerprints/AQN.US.json",
+        "sha256": "dcc97d695f843d9113c026fe1fff06b9161e1f6f6537242d2db8a3290edd11c2"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "AEM.US",
+    "reason": "Cached reading unavailable or changed: AEM.US",
+    "retained": [],
+    "absent": [
+      "analysis/AEM.US.json",
+      "analysis/inputs/AEM.US.json",
+      "analysis/fingerprints/AEM.US.json"
+    ]
+  },
+  {
+    "id": "AZN.US",
+    "reason": "Cached reading unavailable or changed: AZN.US",
+    "retained": [],
+    "absent": [
+      "analysis/AZN.US.json",
+      "analysis/inputs/AZN.US.json",
+      "analysis/fingerprints/AZN.US.json"
+    ]
+  },
+  {
+    "id": "AERO.US",
+    "reason": "Cached reading unavailable or changed: AERO.US",
+    "retained": [
+      {
+        "file": "analysis/AERO.US.json",
+        "sha256": "f5c3734668fad5ca157bd6e25295efbfe8b9343936ce56e7496666b3dd5459ca"
+      },
+      {
+        "file": "analysis/inputs/AERO.US.json",
+        "sha256": "9aa08df021d0f3a70096e713e9c3fba9a1ee821417bdefb8518b19437d1c29a0"
+      },
+      {
+        "file": "analysis/fingerprints/AERO.US.json",
+        "sha256": "0c57f9d5d4cfbc857aaeb19b408ffe59bd3202e2d4ca12c2da54cd5fa03cacaa"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "AGI.US",
+    "reason": "Cached reading unavailable or changed: AGI.US",
+    "retained": [
+      {
+        "file": "analysis/AGI.US.json",
+        "sha256": "eb89430f47857dd8376ffcdb99cc6b29960adc0351aae6a90cb4f47a25fdda84"
+      },
+      {
+        "file": "analysis/inputs/AGI.US.json",
+        "sha256": "746db7bf8bafdd29f81868556c14f07ca5162f71ee2b1ea8e969fbe270d7c844"
+      },
+      {
+        "file": "analysis/fingerprints/AGI.US.json",
+        "sha256": "f0b59ad422532aa2285a4100220890d8ddf330a2c46d612bbf130d493619ced2"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "BTG.US",
+    "reason": "Cached reading unavailable or changed: BTG.US",
+    "retained": [
+      {
+        "file": "analysis/BTG.US.json",
+        "sha256": "7b9740652816fee58e14cda40df8c8d6eab6aa02bbd831b2a8b4a337b781fee3"
+      },
+      {
+        "file": "analysis/inputs/BTG.US.json",
+        "sha256": "449c776b4cc86d94e657e9eb0b5cef895092e62b9f57eb528c7e723e203fdcd3"
+      },
+      {
+        "file": "analysis/fingerprints/BTG.US.json",
+        "sha256": "b6dc2c961dcd6c8cfc21109b0e65339ead2e998d24f5bcbafe1621d1f6b46bbd"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "ABEV.US",
+    "reason": "Cached reading unavailable or changed: ABEV.US",
+    "retained": [],
+    "absent": [
+      "analysis/ABEV.US.json",
+      "analysis/inputs/ABEV.US.json",
+      "analysis/fingerprints/ABEV.US.json"
+    ]
+  },
+  {
+    "id": "AEG.US",
+    "reason": "Cached reading unavailable or changed: AEG.US",
+    "retained": [
+      {
+        "file": "analysis/AEG.US.json",
+        "sha256": "ffec2ed0a0c367e2a5a48c9c91a4ef924a92f37018aee37d07c70c1f65c95c93"
+      },
+      {
+        "file": "analysis/inputs/AEG.US.json",
+        "sha256": "5da5e68380bfa28d09efcb0e264a06dd999b505b3d097b2117881f58a6d92e4d"
+      },
+      {
+        "file": "analysis/fingerprints/AEG.US.json",
+        "sha256": "ecaefc955b33d1fa2559d2dbb3175f366f07b2f76b091f42c1f076d851d1a2e0"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "AKBLF.US",
+    "reason": "Cached reading unavailable or changed: AKBLF.US",
+    "retained": [
+      {
+        "file": "analysis/AKBLF.US.json",
+        "sha256": "70fe551bd793b426110ab417453989067c7f091f8ba188c7cc94fcdc0356d8b8"
+      },
+      {
+        "file": "analysis/inputs/AKBLF.US.json",
+        "sha256": "19407e282b247cb7b1c211d7332676e112bd7718eae439a624112b617252b05f"
+      },
+      {
+        "file": "analysis/fingerprints/AKBLF.US.json",
+        "sha256": "b8fdeca16e2ebadc431640ac2ab16e9b00f234e8ab808a9d0efb491c64843c54"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "BTE.US",
+    "reason": "Cached reading unavailable or changed: BTE.US",
+    "retained": [
+      {
+        "file": "analysis/BTE.US.json",
+        "sha256": "aac3eded5e5718858c4a3ab40c335348c92ddd2c45557d8a5724d4ca2603178a"
+      },
+      {
+        "file": "analysis/inputs/BTE.US.json",
+        "sha256": "296a1dbad0c813cb4644c759dbcf333a28276864cbfe8e1bb74f5bd2c2043957"
+      },
+      {
+        "file": "analysis/fingerprints/BTE.US.json",
+        "sha256": "6670ff9c5d944595cb3cb1496885022df73eaa3ea9eaa73324a86c7b3b0b3278"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "BUD.US",
+    "reason": "Cached reading unavailable or changed: BUD.US",
+    "retained": [],
+    "absent": [
+      "analysis/BUD.US.json",
+      "analysis/inputs/BUD.US.json",
+      "analysis/fingerprints/BUD.US.json"
+    ]
+  },
+  {
+    "id": "CGAU.US",
+    "reason": "Cached reading unavailable or changed: CGAU.US",
+    "retained": [
+      {
+        "file": "analysis/CGAU.US.json",
+        "sha256": "15db90efce993ecfe306596f670836252315f7a10df70eb6a0b03f1c3006d4c8"
+      },
+      {
+        "file": "analysis/inputs/CGAU.US.json",
+        "sha256": "a5424f9e61f42b4d1c077bb5954cb903c3c0e2b0790ee3cc3621431fd25420d8"
+      },
+      {
+        "file": "analysis/fingerprints/CGAU.US.json",
+        "sha256": "721c1da7f757033af56a688e49c68e8a8561c9489694a172a8e654dd344620d8"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "DSGX.US",
+    "reason": "Cached reading unavailable or changed: DSGX.US",
+    "retained": [
+      {
+        "file": "analysis/DSGX.US.json",
+        "sha256": "8fd92674f4c6badcbd0b175f368949ed50dd1bf9ab82041c69a918d6e9d255ce"
+      },
+      {
+        "file": "analysis/inputs/DSGX.US.json",
+        "sha256": "41a2b2b0cb8c9f9a5bf4cca8c3095a1024de88d1f7d56e313587ecc31fff6fb7"
+      },
+      {
+        "file": "analysis/fingerprints/DSGX.US.json",
+        "sha256": "725a8dcca9975ccc9c07d1ed575f5edab15bdcc74299d9895accd69dc1428b35"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "COST.US",
+    "reason": "Cached reading unavailable or changed: COST.US",
+    "retained": [
+      {
+        "file": "analysis/COST.US.json",
+        "sha256": "ad4c3f9a9035e81fc0a1e002da4725b85749118ad6773becfa16eea7850ce84e"
+      },
+      {
+        "file": "analysis/inputs/COST.US.json",
+        "sha256": "3e8c94c157cad8bb35da9bb5d1d3d11a5db60fd7184d37190cc4e92935614513"
+      },
+      {
+        "file": "analysis/fingerprints/COST.US.json",
+        "sha256": "57cdca4dd6de543e03d99f4a2f88255c063a95f0d7bf0ef400173cc2f5490e49"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "CIGI.US",
+    "reason": "Cached reading unavailable or changed: CIGI.US",
+    "retained": [
+      {
+        "file": "analysis/CIGI.US.json",
+        "sha256": "cc5cea88562129b323b374eab88f59cca012e41bc9ebb507f4d9eec6721b60e5"
+      },
+      {
+        "file": "analysis/inputs/CIGI.US.json",
+        "sha256": "f60f04149e3b20ce85ecbf7c3d40b20283b72f3c0c2fe01b18e22091913a3af9"
+      },
+      {
+        "file": "analysis/fingerprints/CIGI.US.json",
+        "sha256": "93613ab9f561bfc0ebbc1489a27f470961759c7cda53845a7bb98e7df60469e1"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "DCI.US",
+    "reason": "Cached reading unavailable or changed: DCI.US",
+    "retained": [
+      {
+        "file": "analysis/DCI.US.json",
+        "sha256": "f2a73946120b7a296b18be59c6438ad5ea1022cdedd68a46ddf36a1e9fffdef2"
+      },
+      {
+        "file": "analysis/inputs/DCI.US.json",
+        "sha256": "5ba8efe876a717b8533e40634f383d4b59525fde34d7091f870056a8df14a16e"
+      },
+      {
+        "file": "analysis/fingerprints/DCI.US.json",
+        "sha256": "d9c1a0272a7f335395261c17a9be2c7bd79e8468cf1b1218d14ea5b5ce221867"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "EGO.US",
+    "reason": "Cached reading unavailable or changed: EGO.US",
+    "retained": [
+      {
+        "file": "analysis/EGO.US.json",
+        "sha256": "fa53f7899a8c27944e3acfb85e17c6703cba97111091b9259a8e6bf0a6d30bf4"
+      },
+      {
+        "file": "analysis/inputs/EGO.US.json",
+        "sha256": "359792690beb3d0694f94df63b42e661b27a91ae9752a1680524f52144601760"
+      },
+      {
+        "file": "analysis/fingerprints/EGO.US.json",
+        "sha256": "fbd863421870ee1bb46e5f0a99791445a94b6a511ced296a93013687a31ba1e2"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "ERO.US",
+    "reason": "Cached reading unavailable or changed: ERO.US",
+    "retained": [
+      {
+        "file": "analysis/ERO.US.json",
+        "sha256": "b87820cd4f16fa733b2c3abeedd27c5ec89f197dc3d8fda768ad8251dc14f193"
+      },
+      {
+        "file": "analysis/inputs/ERO.US.json",
+        "sha256": "aed7422efb3f8abc3bece49ee73e4ebfa2823e3fe4a7aec135e93ed0abb9d6f2"
+      },
+      {
+        "file": "analysis/fingerprints/ERO.US.json",
+        "sha256": "45bdad8b1572b7e066de8cafecdfe8bcd869770798165f1e9dd6a2804bcccf28"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "IAG.US",
+    "reason": "Cached reading unavailable or changed: IAG.US",
+    "retained": [
+      {
+        "file": "analysis/IAG.US.json",
+        "sha256": "fd8e30b74daea1731a079109a22b57bb8ce0c8ce4bef70710e3a094284a3102e"
+      },
+      {
+        "file": "analysis/inputs/IAG.US.json",
+        "sha256": "aa0500997a0b502712cca3419f5c1e3bfe10d417626b7f059b44c7279106e4f2"
+      },
+      {
+        "file": "analysis/fingerprints/IAG.US.json",
+        "sha256": "63e73983e66af24f5ade48ddf5a4ccce4a0ced586e77381618138bd88cf9fee4"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "EQX.US",
+    "reason": "Cached reading unavailable or changed: EQX.US",
+    "retained": [
+      {
+        "file": "analysis/EQX.US.json",
+        "sha256": "9ba27a5961358a6c330cb03fd1f5cf840946710c4af2fd53d379818148ccb54b"
+      },
+      {
+        "file": "analysis/inputs/EQX.US.json",
+        "sha256": "de883204646d53061b2f790ddf332e5ecc9f5956d2daec7700d85a23f7c35194"
+      },
+      {
+        "file": "analysis/fingerprints/EQX.US.json",
+        "sha256": "6b93d5c1347cc03308c3b3a1746ded4294e59866cd52dbe9b5e1ce1b5f4828f2"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "FRFHF.US",
+    "reason": "Cached reading unavailable or changed: FRFHF.US",
+    "retained": [
+      {
+        "file": "analysis/FRFHF.US.json",
+        "sha256": "2506e0a7575834654066d2b3fbdc849b98dbdded636e3997ccf783c74cdeadc3"
+      },
+      {
+        "file": "analysis/inputs/FRFHF.US.json",
+        "sha256": "df3fbc8a80122a2484f34abc22cf4521fe14b6bcec4b47b105bd057515458605"
+      },
+      {
+        "file": "analysis/fingerprints/FRFHF.US.json",
+        "sha256": "57a18ddc5625b39e67d6bf3470b71bda5c80e39ab4eeba6fc2015dafb95e93de"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "HKHGF.US",
+    "reason": "Cached reading unavailable or changed: HKHGF.US",
+    "retained": [
+      {
+        "file": "analysis/HKHGF.US.json",
+        "sha256": "b9783d69b975e26762c584b344af77421a8d801bcea8305c15b2b4e3cf421ede"
+      },
+      {
+        "file": "analysis/inputs/HKHGF.US.json",
+        "sha256": "8ce0eef99d254b82eda870a0c21c6498220c8011da5398d1a0810e545852df85"
+      },
+      {
+        "file": "analysis/fingerprints/HKHGF.US.json",
+        "sha256": "0f96f0f4f32641b771bd70f82bacabf3dbda2e32413e316237552343932980dc"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "FSM.US",
+    "reason": "Cached reading unavailable or changed: FSM.US",
+    "retained": [
+      {
+        "file": "analysis/FSM.US.json",
+        "sha256": "5ab541e6faf55e4d7d775f0a0360af16a732bf29a7dcf9b7d7c3b0c2ce947e8a"
+      },
+      {
+        "file": "analysis/inputs/FSM.US.json",
+        "sha256": "f35455c283502327f4d0cfdea839aa8308daa24fcc2e47c9e925335c994a771f"
+      },
+      {
+        "file": "analysis/fingerprints/FSM.US.json",
+        "sha256": "2b145c4ce943ddb0f9a3a5ba896287091697e823d09369e56b1ae71a3143f2e6"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "GFL.US",
+    "reason": "Cached reading unavailable or changed: GFL.US",
+    "retained": [
+      {
+        "file": "analysis/GFL.US.json",
+        "sha256": "ec41500c4962b95963f91e45c4449301538cdc29afbbdaabd1e05c98d479b314"
+      },
+      {
+        "file": "analysis/inputs/GFL.US.json",
+        "sha256": "66f78c32930561a02bb1e183d6d82eefb5fb008bc6290026dfee1cf01a19f699"
+      },
+      {
+        "file": "analysis/fingerprints/GFL.US.json",
+        "sha256": "15547aebc69328f9bfc145d8a8935475abf359e5feeb0aca869edeb71a7c4ff2"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "KGEI.US",
+    "reason": "Cached reading unavailable or changed: KGEI.US",
+    "retained": [
+      {
+        "file": "analysis/KGEI.US.json",
+        "sha256": "c0255d7b3bb24b6f05805959d447db32f1d07afff8bcef27b73e7a1f70bdee2d"
+      },
+      {
+        "file": "analysis/inputs/KGEI.US.json",
+        "sha256": "664327c690876f08407f2a58348cf517f4149fbdf9f4de8dd855b3b798722ed0"
+      },
+      {
+        "file": "analysis/fingerprints/KGEI.US.json",
+        "sha256": "9ed0e341bd592ecee518fa4891542264842911e7bbc34da417807aec52b716e0"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "LITE.US",
+    "reason": "Cached reading unavailable or changed: LITE.US",
+    "retained": [
+      {
+        "file": "analysis/LITE.US.json",
+        "sha256": "1f5929f733842a18ca52d96cf65ab8a15507200293314f3f797dd6ed52f0ac9d"
+      },
+      {
+        "file": "analysis/inputs/LITE.US.json",
+        "sha256": "510d14dd013e5c3c3152cf39fb4aa5ed2aecbbe2eac54cbd4ca6a40199305936"
+      },
+      {
+        "file": "analysis/fingerprints/LITE.US.json",
+        "sha256": "bd25439581ce6a80d73ad1e98eb06e753371813bafd194a6b35e4a8d62aeee1d"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "LTG.PSE",
+    "reason": "Cached reading unavailable or changed: LTG.PSE",
+    "retained": [
+      {
+        "file": "analysis/LTG.PSE.json",
+        "sha256": "3666bb910743ca14a2efd138c15b4d831d6ef34bd81519a00c073266a0abda35"
+      },
+      {
+        "file": "analysis/inputs/LTG.PSE.json",
+        "sha256": "1587abb80973cf8e7e4bd6ea8c641ed108017ed2ec6f68e3d0dfcd5e6d09ee4f"
+      },
+      {
+        "file": "analysis/fingerprints/LTG.PSE.json",
+        "sha256": "7a4f5d7aecfa6328c4079eb9135616df55e2b67b33d2ac38aba5670f48030686"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "MEOH.US",
+    "reason": "Cached reading unavailable or changed: MEOH.US",
+    "retained": [
+      {
+        "file": "analysis/MEOH.US.json",
+        "sha256": "63209954c280a6416e867b97941b3d99ede4e52fe3a8a8296b6d8bb5f3cd9843"
+      },
+      {
+        "file": "analysis/inputs/MEOH.US.json",
+        "sha256": "06603665274bba529553331bf4df81f9c4299092ef7f2cb7e76c492c8c729b54"
+      },
+      {
+        "file": "analysis/fingerprints/MEOH.US.json",
+        "sha256": "72cb628b2d9be34e5a6861ce3f949789bf936c4094e100db17116a85a01c5be1"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "PAAS.US",
+    "reason": "Cached reading unavailable or changed: PAAS.US",
+    "retained": [
+      {
+        "file": "analysis/PAAS.US.json",
+        "sha256": "3a554de64bd281ea9f516c35c050f17359f6bac5c1236fdabf0dcefa1e1ed5fb"
+      },
+      {
+        "file": "analysis/inputs/PAAS.US.json",
+        "sha256": "7a4b18ef2a48b0fcdea238b49754ebfe38479d3236830671687167f71be0ac3d"
+      },
+      {
+        "file": "analysis/fingerprints/PAAS.US.json",
+        "sha256": "eb20945ca093f5ad93677a28f21b679edff310ac521cba230f83f6f576265b91"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "NSRGF.US",
+    "reason": "Cached reading unavailable or changed: NSRGF.US",
+    "retained": [
+      {
+        "file": "analysis/NSRGF.US.json",
+        "sha256": "14218e0a530cb962d639cfed2170b895e29614ca462628c7c1a87e7971efadcb"
+      },
+      {
+        "file": "analysis/inputs/NSRGF.US.json",
+        "sha256": "01d6504f500bdae89d6e438e3ced5ea5c820545c68b778aaeee320c55baf041d"
+      },
+      {
+        "file": "analysis/fingerprints/NSRGF.US.json",
+        "sha256": "04c91601a99c27bc1cbcdfabf07637287d80b93be6310aeac3e2d5dae58ad0e7"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "NXE.US",
+    "reason": "Cached reading unavailable or changed: NXE.US",
+    "retained": [
+      {
+        "file": "analysis/NXE.US.json",
+        "sha256": "df4242deb064848d8758ee855ea5289c9928cd374b2dae9524c7b0d94773bf09"
+      },
+      {
+        "file": "analysis/inputs/NXE.US.json",
+        "sha256": "867da7d0f7efc09e37f968adf4c5a82589c95c122590421fd3b6c8cd2f6f4d09"
+      },
+      {
+        "file": "analysis/fingerprints/NXE.US.json",
+        "sha256": "0fa0f8411f8a51a482a5f553acffb095d0f8efb6aca1ef594b5222d285cc5362"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "PDS.US",
+    "reason": "Cached reading unavailable or changed: PDS.US",
+    "retained": [
+      {
+        "file": "analysis/PDS.US.json",
+        "sha256": "98e8c1656c02da6f86ff3180de48107a4c99098a1c0e15dc3d137c6779f7d653"
+      },
+      {
+        "file": "analysis/inputs/PDS.US.json",
+        "sha256": "76f3e5ceae0174a5982acaa45f7763286657698756ddcb5f5d4992b21ed1ae66"
+      },
+      {
+        "file": "analysis/fingerprints/PDS.US.json",
+        "sha256": "8e85f88a53ba5e0c8fef289dce314b78d9e879cccc7fdaba68b723dd3f935515"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "NSRGY.US",
+    "reason": "Cached reading unavailable or changed: NSRGY.US",
+    "retained": [
+      {
+        "file": "analysis/NSRGY.US.json",
+        "sha256": "ad90f0629e129e60286934dd76df03b588be8126a55189a1a37dc57ff04bf7dc"
+      },
+      {
+        "file": "analysis/inputs/NSRGY.US.json",
+        "sha256": "0768f852d772a7eeb9347b7939dd1d4db6395e0635e9baf5496a8d2b212757f5"
+      },
+      {
+        "file": "analysis/fingerprints/NSRGY.US.json",
+        "sha256": "1facd7c5de354d796036c2f8331aca7d6ed800ebcd59df93184238892892bb2b"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "RYCEY.US",
+    "reason": "Cached reading unavailable or changed: RYCEY.US",
+    "retained": [
+      {
+        "file": "analysis/RYCEY.US.json",
+        "sha256": "691f94cf43f881d63bd236acf3dccac44b422809530ef5f1a68ed51c95d6abf2"
+      },
+      {
+        "file": "analysis/inputs/RYCEY.US.json",
+        "sha256": "865013c8cc0126a686a72a5257ec459d4cdc1d5dd8becd3b6521dbd9fe0aed1e"
+      },
+      {
+        "file": "analysis/fingerprints/RYCEY.US.json",
+        "sha256": "0eab32a32fd4a2499f152b261b8c5bf95e05004e519d811f15808e381fb46ea2"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "TFII.US",
+    "reason": "Cached reading unavailable or changed: TFII.US",
+    "retained": [
+      {
+        "file": "analysis/TFII.US.json",
+        "sha256": "4832781d7270cbd91690fdcb866072bb3c29c5fdc5a687d847304f1cc207d712"
+      },
+      {
+        "file": "analysis/inputs/TFII.US.json",
+        "sha256": "7137cf403959122888dcf5167dff8500670acc0521e6413bccf714a596b9c401"
+      },
+      {
+        "file": "analysis/fingerprints/TFII.US.json",
+        "sha256": "0bb75ca5c4b5a3e63982235a9c2842e823315c798625aad609c0f2c39a7c688c"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "SA.US",
+    "reason": "Cached reading unavailable or changed: SA.US",
+    "retained": [
+      {
+        "file": "analysis/SA.US.json",
+        "sha256": "dfe3d433a2ba18517f0ad5e9092a3ed49abfba000d27270d03d81d5bbd6a68ae"
+      },
+      {
+        "file": "analysis/inputs/SA.US.json",
+        "sha256": "1dc13edaaa0fc4809237c7c9219f9ef2421c1cb27cb1269a68320ed4dd847bde"
+      },
+      {
+        "file": "analysis/fingerprints/SA.US.json",
+        "sha256": "8ad5a2e27d53e6ec3f16e80dac17ac13d892f32b6ce1270532be0f70e8403eb2"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "SNDK.US",
+    "reason": "Cached reading unavailable or changed: SNDK.US",
+    "retained": [
+      {
+        "file": "analysis/SNDK.US.json",
+        "sha256": "4d94c8d45d285dab64ec170ebe3c6a586e35d68041160f87cfa8d00ee7c4ec2c"
+      },
+      {
+        "file": "analysis/inputs/SNDK.US.json",
+        "sha256": "3a4c479f6f921dd2c05cac8ca95397fc0034e7860352b282ac03df8fc3a833a9"
+      },
+      {
+        "file": "analysis/fingerprints/SNDK.US.json",
+        "sha256": "295dd34f26b34d0874523a1ad45186de1b53f59e6d0ad02d03014dac4a45a8d4"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "TAC.US",
+    "reason": "Cached reading unavailable or changed: TAC.US",
+    "retained": [
+      {
+        "file": "analysis/TAC.US.json",
+        "sha256": "af27679526a06e31bd9bbb807204cc9a992c6c74b069d9f6dcd5f6a24e221dde"
+      },
+      {
+        "file": "analysis/inputs/TAC.US.json",
+        "sha256": "fb0df892b7dead444a7befba566af3d02af0a5ef8266ea9846457107ddd5b6ad"
+      },
+      {
+        "file": "analysis/fingerprints/TAC.US.json",
+        "sha256": "e65b523bc37c8dd02f98f35f6d09eece8966ab835e3dbc4c91ca5225b02c4442"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "CSL.AU",
+    "reason": "Cached reading unavailable or changed: CSL.AU",
+    "retained": [
+      {
+        "file": "analysis/CSL.AU.json",
+        "sha256": "120e604072c76f4e999bd3ed447a51e36875f86e1116ab3ed6fb36e6bc3adf2f"
+      },
+      {
+        "file": "analysis/inputs/CSL.AU.json",
+        "sha256": "9ffef2bef9455109e4e03ab0913348f2c30c7ece6ac555372268d26848505fa9"
+      },
+      {
+        "file": "analysis/fingerprints/CSL.AU.json",
+        "sha256": "5f763cd089d56d5d706b494f9d7abe7114c656ac25b408d5ebc2d1f894f9e692"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "688036.SHG",
+    "reason": "Cached reading unavailable or changed: 688036.SHG",
+    "retained": [
+      {
+        "file": "analysis/688036.SHG.json",
+        "sha256": "bfdd76037121c140a71f1244833aeabfc9ee244ae12b7df25519fb56a10091b2"
+      },
+      {
+        "file": "analysis/inputs/688036.SHG.json",
+        "sha256": "30291cac47543d59600aee82e0d423fcb0f1ed7ed4fa0cbbe33b019800ee0d36"
+      },
+      {
+        "file": "analysis/fingerprints/688036.SHG.json",
+        "sha256": "d6e95d820de5ae35c21e901e6a5e3832533a0dd36690ec2f2dc1115588c7b08d"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "ACO-X.TO",
+    "reason": "Cached reading unavailable or changed: ACO-X.TO",
+    "retained": [
+      {
+        "file": "analysis/ACO-X.TO.json",
+        "sha256": "99403b4351b6c0ea9959221da03b897e5df117fd8896d79295a2b5c867756837"
+      },
+      {
+        "file": "analysis/inputs/ACO-X.TO.json",
+        "sha256": "b37ce709845cfd8b47eaddf4378d26c1bf6f26e024dd67780ef2290670eb6038"
+      },
+      {
+        "file": "analysis/fingerprints/ACO-X.TO.json",
+        "sha256": "b2b1feb9a892bc7748fc17abc01f6a1d0afba647446988755a8b7813f1e6b09a"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "MBLY.US",
+    "reason": "Cached reading unavailable or changed: MBLY.US",
+    "retained": [
+      {
+        "file": "analysis/MBLY.US.json",
+        "sha256": "e73e9cc5cd986ef0f63ce9502e84a1a76228a2a02f1f7171e55bd404acc7c064"
+      },
+      {
+        "file": "analysis/inputs/MBLY.US.json",
+        "sha256": "33ff9c6cda6dc43c8b851993adea4ff8baeba53b55e1894069a7e0efbda3de20"
+      },
+      {
+        "file": "analysis/fingerprints/MBLY.US.json",
+        "sha256": "ed84af55c1edaf2f5952cb6901413dd6f083339c708960d52b84c2ed4a48efd0"
+      }
+    ],
+    "absent": []
+  },
+  {
+    "id": "RGC.US",
+    "reason": "Cached reading unavailable or changed: RGC.US",
+    "retained": [
+      {
+        "file": "analysis/RGC.US.json",
+        "sha256": "a24160e18b06ec75c66df6162f97e561c06c17e37ed4de041111cd1fe8e45295"
+      },
+      {
+        "file": "analysis/inputs/RGC.US.json",
+        "sha256": "a0655b1a593b9fb0e06d6b5d659b1e427d2e15b834140aae42ab8304fd48d6c8"
+      },
+      {
+        "file": "analysis/fingerprints/RGC.US.json",
+        "sha256": "f1a9379b3e382911175c70cfc3e9770baaa5b7dbb22d51e4d4cc793b29db247a"
+      }
+    ],
+    "absent": []
+  }
+]

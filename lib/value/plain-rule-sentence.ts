@@ -37,7 +37,7 @@ export function plainRuleSentence(t:TestOutcome,kind:Kind):string {
   }
   if(c.text.startsWith('Value per $1'))return `each $1 kept became $${n(m.marketCapGain!/m.retainedEarnings!,2)} of market value (minimum $1)`;
   if(c.text.startsWith('Value gained'))return `market value ${m.marketCapGain!<0?'fell':'rose'} ${money(Math.abs(m.marketCapGain!))} after paying owners ${money(Math.abs(m.retainedEarnings!))} above profits (any decline must be smaller than that payment)`;
-  if(c.text.startsWith('Per-share value'))return m.perShareStart==null||m.perShareEnd==null?'per-share value history is missing':`per-share value ${m.perShareEnd<m.perShareStart?'fell':'rose'} from ${n(m.perShareStart,2)} to ${n(m.perShareEnd,2)} (must rise and stay positive)`;
+  if(c.text.startsWith('Per-share value'))return m.perShareStart==null||m.perShareEnd==null?'per-share value history is missing':`per-share value ${m.perShareEnd<m.perShareStart?'fell':'rose'} from ${n(m.perShareStart,2)} to ${n(m.perShareEnd,2)}, comparing three-year medians at each end (must rise and stay positive)`;
   if(c.text.startsWith('Share growth'))return `share growth was ${pct(m.nonAcquisitionShareCagr??m.shareCagr)} over ten years and ${pct(m.nonAcquisitionShareCagr5??m.shareCagr5)} over five (either must be at most 1% a year)`;
   if(c.text.startsWith('Ordinary share growth'))return `ordinary share growth was ${pct(m.shareCagrExCrisis)} over the full period and ${pct(m.shareCagr5ExCrisis)} over five years (either must be at most 2% a year)`;
   if(c.text.startsWith('Book gain'))return `book value gained ${n(m.retainedBookGain,2)} per share against ${n(Math.max(0,m.retainedPerShare??0),2)} kept (must cover the amount kept)`;

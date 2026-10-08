@@ -5,12 +5,13 @@ import {formatMetric, isCapitalReturn, type MetricFormat} from '@/lib/value/metr
 import {ChartInteraction} from './viz/ChartInteraction';
 import {useWidth} from '@/lib/value/viz/use-width';
 import {MiniSeries} from './viz/MiniSeries';
+import {retainedWindow} from '@/lib/value/drawer-data';
 
 export function TileNumbers({metric,test,currency}:{metric:TileMetric;test:TestOutcome;currency:string}) {
  const format:MetricFormat=metric.chartFormat==='index'?'count':metric.chartFormat==='ratio'?'x':metric.chartFormat??(test.key==='understandable'&&metric.id==='opMarginCv'?'pct':metric.format);
  const summary=seriesSummary(metric.series,metric.chartBetter??(test.key==='understandable'?'higher':metric.better),Infinity);
  const fmt=(value:number|null,kind:MetricFormat=format)=>formatMetric({value,format:kind,currency,returnRatio:isCapitalReturn(metric.chart)});
- const items=test.key==='management'&&test.metrics.retainedEarnings!=null&&test.metrics.marketCapGain!=null?[
+ const items=test.key==='management'&&retainedWindow(test)?[
  ['Retained',fmt(test.metrics.retainedEarnings,'money')],['Value created',fmt(test.metrics.marketCapGain??null,'money')],['Shares / yr',fmt(test.metrics.shareCagr??null,'pct')]]:
  summary&&metric.id==='oeToNi'?[['Five-year totals',fmt(metric.value,'x')],['Annual median',fmt(summary.median)],[test.provisional?.fy===summary.last?'Latest · LTM':`Latest · ${summary.last}`,fmt(summary.latest)]]:
  summary?[[`${summary.years}y median`,fmt(summary.median)],['Worst year',fmt(summary.worst)],[test.provisional?.fy===summary.last?'Latest · LTM':`Latest · ${summary.last}`,fmt(summary.latest)]]:

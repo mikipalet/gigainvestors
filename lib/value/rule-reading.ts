@@ -60,7 +60,7 @@ export function ruleReading(t:TestOutcome,kind:Kind){
    break;
   case 'management': {
    const gain=m.marketCapGain,kept=m.retainedEarnings;
-   if(gain!=null&&kept!=null)add(kept>0?`Value per $1 kept ${num(gain/kept)} ${gain>=kept?'≥':'<'} $1`:`Value gained ${num(gain)} ${gain>=kept?'≥':'<'} retained ${num(kept)}`,gain>=kept,true);
+   if(m.economicProgressBasis!==1&&gain!=null&&kept!=null)add(kept>0?`Value per $1 kept ${num(gain/kept)} ${gain>=kept?'≥':'<'} $1`:`Value gained ${num(gain)} ${gain>=kept?'≥':'<'} retained ${num(kept)}`,gain>=kept,true);
    else add(m.perShareStart!=null&&m.perShareEnd!=null?`Per-share value ${num(m.perShareStart)} → ${num(m.perShareEnd)}; must rise and end positive`:'Per-share value: no observation',m.perShareValueChange==null?null:m.perShareEnd!>0&&m.perShareValueChange>=0,true);
    const rates=[m.nonAcquisitionShareCagr??m.shareCagr,m.nonAcquisitionShareCagr5??m.shareCagr5],known=rates.filter((v):v is number=>v!=null);
    add(`Share growth ${rates.map(v=>v==null?'—':pct(v)).join(' / ')} (10y / 5y); either ≤1%`,known.some(v=>v<=.01+Number.EPSILON)?true:known.length<2?null:false);

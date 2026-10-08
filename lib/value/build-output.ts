@@ -42,7 +42,7 @@ function emptyFunnel(): FunnelCounts {
   return {
     asOf: null, analysed: 0,
     gates: ([
-      { key: "understandable", label: "Understandable" },
+      { key: "understandable", label: "Earnings resilience" },
       { key: "moat", label: "Moat" },
       { key: "economics", label: "Economics" },
       { key: "management", label: "Management" },

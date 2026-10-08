@@ -68,6 +68,7 @@ export const metricLabels: Record<string, { label: string; format: MetricFormat;
   nwcToRevenueTrend: { label: 'Working capital / revenue, annual change', format: 'pp' },
   marketCapGain: { label: 'Market cap gain', format: 'money' },
   retainedEarnings: { label: 'Cumulative retained earnings', format: 'money' },
+  economicProgressBasis: { label: 'Management verdict uses per-share economic progress', format: 'yesno' },
   shareCagr: { label: 'Diluted shares, 10-year annual growth', format: 'pct', threshold: T.management.maxShareCagr, better: 'lower' },
   nonAcquisitionShareCagr: { label: 'Ordinary dilution, 10-year annual growth', format: 'pct', threshold: T.management.maxShareCagr, better: 'lower' },
   nonAcquisitionShareCagr5: { label: 'Ordinary dilution, 5-year annual growth', format: 'pct', threshold: T.management.maxShareCagr, better: 'lower' },

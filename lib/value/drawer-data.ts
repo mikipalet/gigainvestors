@@ -4,7 +4,7 @@ import type {MetricFormat} from './metric-labels';
 
 export function retainedWindow(test:TestOutcome){
  const m=test.metrics;
- return m.retainedEarnings==null||m.marketCapGain==null?null:{start:m.retainedStartFy,end:m.retainedEndFy,retained:m.retainedEarnings,created:m.marketCapGain};
+ return m.economicProgressBasis===1||m.retainedEarnings==null||m.marketCapGain==null?null:{start:m.retainedStartFy,end:m.retainedEndFy,retained:m.retainedEarnings,created:m.marketCapGain};
 }
 export function retainedSentence(test:TestOutcome,currency:string){
  const w=retainedWindow(test);if(!w)return null;

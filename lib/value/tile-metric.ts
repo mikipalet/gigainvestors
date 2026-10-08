@@ -39,8 +39,8 @@ export function tileMetric(test:TestOutcome,kind:Kind,netIncome:Series=[]):TileM
    return {...metric('oeToNi',m.consolidatedCashConversion?'consolidated cash / profit':'owner cash / profit','x',T.economics.oeToNi,'higher',m.consolidatedCashConversion?[]:series,'Annual owner cash / profit'),chartThreshold:null};
   }
   case 'management':
-   if(m.retainedEarnings!=null&&m.marketCapGain!=null&&m.retainedEarnings<=0)return metric('marketCapGain','Market value gained','money',m.retainedEarnings,'higher');
-   if(m.retainedEarnings==null||m.marketCapGain==null) return {...metric(m.perShareValueGrowth!=null?'perShareValueGrowth':'perShareValueChange',m.perShareValueGrowth!=null?'per-share value growth':'per-share value change',m.perShareValueGrowth!=null?'pct':'money',0,'higher',test.series.perShareValue??[],'Per-share earnings / book value'),chartFormat:'money',chartThreshold:null};
+   if(m.economicProgressBasis!==1&&m.retainedEarnings!=null&&m.marketCapGain!=null&&m.retainedEarnings<=0)return metric('marketCapGain','Market value gained','money',m.retainedEarnings,'higher');
+   if(m.economicProgressBasis===1||m.retainedEarnings==null||m.marketCapGain==null) return {...metric(m.perShareValueGrowth!=null?'perShareValueGrowth':'perShareValueChange',m.perShareValueGrowth!=null?'per-share value growth':'per-share value change',m.perShareValueGrowth!=null?'pct':'money',0,'higher',test.series.perShareValue??[],kind==='operating'?'Earnings per share':'Book value per share'),chartFormat:'money',chartThreshold:null};
    return {...metric('retainedDollar','value created / retained','x',1,'higher',[],'Retained → value created'),value:m.retainedEarnings!=null&&m.retainedEarnings>0&&m.marketCapGain!=null?m.marketCapGain/m.retainedEarnings:null};
   case 'accounting':return financial&&m.ocfToNi==null?metric('cashBacked','Earnings backed by cash','yesno',1,'higher'):financial?metric('ocfToNi','operating cash / earnings','x',0,'higher',test.series.ocfToNi??[],'Cash backing'):metric('accruals','Sloan accruals','pct',T.accounting.maxAccruals,'lower',test.series.accruals??[],'Sloan accruals');
   case 'price':return metric('priceToMid','price / estimated value','x',m.buyRatio??.75,'lower');
@@ -50,7 +50,7 @@ export function tileReason(test:TestOutcome):string {
  if(test.insufficientHistory!==undefined)return 'Not enough history yet';
  if(test.key==='understandable'&&(test.metrics.opMarginCv??0)>1)return test.series.operatingMargin?.some(p=>p[1]!==null&&p[1]<0)?'Margins swing wildly, including losses.':'Margins swing wildly relative to their average.';
  if(test.result==='fail'){
-   const reason=test.reasons.find(r=>!/informational|ROIC first|\$1 retained earnings test:|^Per-share .*three-year endpoint medians|^Years with nonpositive invested capital/.test(r))??'Filing-evidence rule fails';
+   const reason=test.reasons.find(r=>!/informational|Historical market-dollar context|ROIC first|\$1 retained earnings test:|^Per-share .*three-year endpoint medians|^Years with nonpositive invested capital/.test(r))??'Filing-evidence rule fails';
   const short:Array<[RegExp,string]>=[[/market cap gain/,'Managers created less value than they kept.'],[/variation/,'Margins are too variable.'],[/net loss/,'Too many loss years.'],[/revenue declines/,'Too many revenue declines.'],[/worst years/,'Returns are too weak in the worst years.'],[/median below/,'Median return below the bar.'],[/incremental/,'New investments earn too little.'],[/cash conversion/,'Cash conversion below the bar.'],[/gross margin/,'Gross margin fell too far.'],[/diluted share/,'Both dilution windows fail.'],[/buybacks/,'Buyback timing fails.'],[/working capital/,'Working capital rose too far.']];
   return short.find(([pattern])=>pattern.test(reason))?.[1]??reason;
  }

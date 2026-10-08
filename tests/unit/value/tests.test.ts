@@ -37,8 +37,10 @@ describe("numeric quality tests", () => {
   it("fails three percent annual dilution", () => {
     expect(run(makeYears({ overrides: (_, i) => ({ dilutedShares: 10 * 1.03 ** i }) })).management.numeric).toBe("fail");
   });
-  it("fails the dollar retention test", () => {
-    expect(run(makeYears({ overrides: { marketCap: 1000 } })).management.numeric).toBe("fail");
+  it("does not let market rerating override per-share economic progress", () => {
+    const result = run(makeYears({ overrides: { marketCap: 1000 } })).management;
+    expect(result.numeric).toBe("pass");
+    expect(result.reasons.join(" ")).toContain("Historical market-dollar context");
   });
   it("flags debt-funded repurchases", () => {
     const result = run(makeYears({ overrides: (_, i) => ({ buybacks: 200, totalDebt: 100 + 200 * i }) })).management;

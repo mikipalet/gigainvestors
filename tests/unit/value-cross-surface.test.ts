@@ -46,7 +46,7 @@ import {withReportedFacts} from '@/lib/value/completeness/reported-facts';
 describe('primary filing corrections',()=>{
  it('keeps per-share management numbers instead of substituting a share-count chart',()=>{
   const t={key:'management',metrics:{},series:{shares:[[2024,180],[2025,160]]},reasons:[],jev:[],numeric:'unclear',result:'unclear'} as TestOutcome;
-  const m=primaryTileMetric(t,'bank');expect(m.chart).toBe('Per-share earnings / book value');expect(m.series).toEqual([]);expect(m.id).toBe('perShareValueChange');
+  const m=primaryTileMetric(t,'bank');expect(m.chart).toBe('Book value per share');expect(m.series).toEqual([]);expect(m.id).toBe('perShareValueChange');
  });
  it('excludes Chubb long-term bonds and restricted cash from the cash aggregate',()=>{
   const [y]=withReportedFacts('CB.US',[{...emptyYear('2025-12-31','USD'),cash:42585000000,totalDebt:17649000000}]);

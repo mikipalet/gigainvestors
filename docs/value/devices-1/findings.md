@@ -68,3 +68,43 @@ Production was inspected first, with Playwright Chromium and WebKit, touch enabl
 - Local Webpack development occasionally served truncated JavaScript (captured by the browser debugger at 524,252 bytes, with an incomplete final string). The audit harness can fulfill local `_next/static` assets directly from the generated files to distinguish this transport problem from application behavior. It still uses the requested dev server for pages and live-data APIs. This workaround does not modify application or production networking.
 - `npx next build` fails on the out-of-root node_modules symlink in Turbopack; `npx next build --webpack` is the compatible verification command.
 - Final status, verification results and unresolved items are in `report.md`.
+
+## Controller review fixes (resume 2 and 3) — 8 October 2026
+
+Verified on a local production build (`npx next build --webpack` + `npx next start -p 3998`), which avoids the dev server's truncated-chunk flake; the desktop and iPad results were rechecked on `next dev --webpack` too. Production was captured at the same moment and compared side by side.
+
+## F8 — iPad dossier charts render as empty boxes — high
+
+- Devices: 768x1024 (WebKit and Chromium); every iPad size checked.
+- URL: `/s/GOOGL`, also KO, NTES, JPM, NVDA, 7203.JP, 005930.KO.
+- Steps: open the stock page; look at the quality tiles and the price panel.
+- Before: `screenshots/final-dev6-webkit-768x1024-_s_GOOGL.png` (commit d959c2f). Production itself shows the price chart growing to 7,259px tall at this size (left half of `screenshots/resume3-compare-webkit-768x1024-_s_GOOGL.png`).
+- After: right half of `screenshots/resume3-compare-webkit-768x1024-_s_GOOGL.png`; `screenshots/resume3-final-webkit-local-1024x768-_s_GOOGL.png`.
+- Change: `useWidth` measures on mount and defers observer commits to the next frame. Tablet CSS no longer hides the mini charts. The price chart reserves the measured height of its legend and caption, so on narrow cards the caption stays inside the card.
+
+## F9 — Desktop `/value` loses most next-closest cards and the time slider — high
+
+- Devices: 1728x970 and 1440x900.
+- URL: `/value`.
+- Before: `screenshots/final-dev6-chromium-1728x970-_value.png` (2 cards, no slider).
+- Cause: d959c2f measured the grid's column and row variables once on mount and then only watched the grid box. The variables come from container queries on `.main-next`, so when the container settled later the grid box did not resize and the count stayed at 2x1. The slider portal looked up `#value-timeline` once, before the bottom bar mounted.
+- Change: MainView also observes the `.main-next` container and re-measures in the next frame. The timeline portal waits for its slot with a MutationObserver. The earlier forced desktop minimum and inline grid variables were removed; they froze the column count when the window shrank.
+- After: `screenshots/resume3-compare-chromium-1728x970-_value.png` and `-1440x900-_value.png` are pixel-identical to production (0 differing pixels): 20 and 16 cards, slider present. Resizing 1728→1024→1180→1440→1728 gives 20→6→9→16→20 cards in both engines.
+
+## F10 — Phone stock page wastes the area above the dock — medium
+
+- Devices: 390x844, 375x667.
+- URL: `/s/GOOGL` and the six other companies above.
+- Before: `screenshots/final-dev6-chromium-390x844-_s_GOOGL.png`.
+- Change: the price card grows into the free space and shows the price-vs-value chart (110–177px at 390x844). On 375x667 the chart has a 56px floor with one price label and tighter margins, and the repeated "2. Is the price low enough?" heading is hidden because the card is titled "Price · separate check".
+- After: `screenshots/resume3-final-webkit-local-390x844-_s_GOOGL.png`, `screenshots/resume3-final-webkit-local-375x667-_s_GOOGL.png`.
+- Residual: on NTES at 375x667 the two-line verdict pushes the card's bottom border about 7px under the dock; the chart and its year labels stay visible (`screenshots/resume3-final-webkit-local-375x667-_s_NTES.png`).
+
+## F11 — No way to filter `/value` on iPad portrait or 1024 landscape — high
+
+- Devices: 768x1024, 820x1180, 1024x768 (production and local).
+- URL: https://gigainvestors.com/value.
+- Steps: look for Country/Sector/toggles. The desktop filter row is hidden below 1100px, and `density.css` also hides the Filters button at 768px and up, so neither is shown.
+- Before: left half of `screenshots/resume3-compare-webkit-1024x768-_value.png`.
+- Change: the Filters button is shown at 768–1099px. It opens the existing filter drawer, which holds countries, sectors and all three toggles.
+- After: `screenshots/resume3-filters-webkit-1024x768-_value.png` (drawer open); tapping Near misses sets `?near=1`, Apply closes the drawer and Back restores `/value`.

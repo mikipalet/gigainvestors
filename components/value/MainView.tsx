@@ -23,17 +23,22 @@ export function MainView({entries,year,fast=false,loading=false}:{entries:Result
  useEffect(()=>{
   const node=grid.current;if(!node)return;
   const measure=()=>{
-   const phone=window.innerWidth<768;
    const style=getComputedStyle(node);
    const columns=Number(style.getPropertyValue('--shelf-columns'))||2;
    const rows=Number(style.getPropertyValue('--shelf-rows'))||1;
-   setSize({columns,rows,phone,width:root.current?.clientWidth||window.innerWidth,height:root.current?.clientHeight||window.innerHeight});
+   setSize({columns,rows,phone:window.innerWidth<768,width:root.current?.clientWidth||window.innerWidth,height:root.current?.clientHeight||window.innerHeight});
   };
   measure();
-  const observer=new ResizeObserver(measure);
+  // The column/row variables come from container queries on .main-next, so
+  // watch that container too: the grid box itself may not resize when they change.
+  // Measure in the next frame: re-rendering the grid inside the observer callback trips WebKit's resize-loop warning.
+  let frame=0;
+  const schedule=()=>{cancelAnimationFrame(frame);frame=requestAnimationFrame(measure);};
+  const observer=new ResizeObserver(schedule);
   observer.observe(node);
-  window.addEventListener('resize',measure);
-  return()=>{observer.disconnect();window.removeEventListener('resize',measure);};
+  if(node.parentElement)observer.observe(node.parentElement);
+  window.addEventListener('resize',schedule);
+  return()=>{observer.disconnect();window.removeEventListener('resize',schedule);cancelAnimationFrame(frame);};
  },[historical]);
  useEffect(()=>{setHover(null);setList(null);},[year]);
  const previous=useRef(new Map<string,DOMRect>()),previousYear=useRef(year);

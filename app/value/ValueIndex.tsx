@@ -39,7 +39,17 @@ export default function ValueIndex({ rows, todayRows, initialFilter, tags, meta,
   const quarters=useMemo(()=>history?.quarters??history?.years.map(y=>`${y}Q4`)??[],[history]);
   const initialFrame=historyFrame(initialFilter,quarters);
   const [timelineSlot,setTimelineSlot]=useState<HTMLElement|null>(null);
-  useEffect(()=>{setTimelineSlot(document.getElementById("value-timeline"));},[]);
+  useEffect(()=>{
+    const find=()=>{
+      const slot=document.getElementById("value-timeline");
+      if(slot)setTimelineSlot(slot);
+      return Boolean(slot);
+    };
+    if(find())return;
+    const observer=new MutationObserver(()=>{if(find())observer.disconnect();});
+    observer.observe(document.body,{childList:true,subtree:true});
+    return()=>observer.disconnect();
+  },[]);
   useEffect(()=>{if(todayRows||initialFrame==='Today')primeValueSearch(todayRows??rows);},[rows,todayRows,initialFrame]);
   const [filter, setFilter] = useDebouncedQuery(initialFilter,"push");
   const [views,setViews]=useState<Record<string,BrowserRow[]>>({...(todayRows?{Today:todayRows}:{}),[initialFrame]:rows});

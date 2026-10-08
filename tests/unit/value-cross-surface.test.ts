@@ -70,7 +70,7 @@ it('uses the filing likelihood chart in a drawer when no financial series exists
 });
 it('calls a negative per-share change a decline',()=>{
  const t={key:'management',metrics:{perShareValueGrowth:-.08,perShareStart:10,perShareEnd:9.2,perShareValueChange:-.8},series:{},reasons:[],jev:[],result:'pass',numeric:'pass'} as TestOutcome;
- expect(tileSentence(t,primaryTileMetric(t,'operating'),'operating')).toContain('Per-share value fell from 10 to 9.2 (must rise and stay positive)');
+ expect(tileSentence(t,primaryTileMetric(t,'operating'),'operating')).toContain('Per-share value fell from 10 to 9.2, comparing three-year medians at each end (must rise and stay positive)');
 });
 
 it('checks a drawer-only financial context chart against its published book series',()=>{

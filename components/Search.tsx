@@ -1,5 +1,6 @@
 "use client";
 
+import {useOverlayHistory} from './useOverlayHistory';
 import {CompanyLogo} from './value/CompanyLogo';
 import {useEffect,useLayoutEffect,useMemo,useRef,useState} from 'react';
 import {usePathname} from 'next/navigation';
@@ -28,6 +29,7 @@ export function SearchTrigger({query='',className='',label='Search'}:{query?:str
 export function Search() {
  const pathname=usePathname();
  const [open,setOpen]=useState(false),[query,setQuery]=useState(''),[index,setIndex]=useState<SearchIndex|null>(null),[sel,setSel]=useState(0),[error,setError]=useState('');
+ useOverlayHistory(open,()=>setOpen(false));
  const results=useRef<HTMLUListElement>(null);
  const rowHeights=useRef(new Map<string,number>()),fitResults=useRef<(()=>void)|null>(null);
  const input=useRef<HTMLInputElement>(null),previousFocus=useRef<HTMLElement|null>(null);
@@ -78,20 +80,25 @@ export function Search() {
   return ()=>{fitResults.current=null;window.removeEventListener('resize',resize);};
  },[hits,open]);
  useEffect(()=>{document.getElementById(`search-hit-${sel}`)?.scrollIntoView({block:'nearest'});},[sel]);
- const go=(hit:Hit)=>{
-  setOpen(false);
+const go=(hit:Hit)=>{
   const path=hit.kind==='munger'?'/munger':hit.kind==='investor'?`/${hit.code}`:companyPath(hit.ticker);
   window.location.assign(withQuarter(path,document.documentElement.dataset.quarter??new URLSearchParams(location.search).get('q')));
  };
  if(!open)return null;
  return <div className="fixed inset-0 z-50 flex items-start justify-center bg-paper/85 pt-[18vh]" onMouseDown={()=>setOpen(false)}>
-  <div role="dialog" aria-modal="true" aria-label="Search" className="search-modal w-[min(560px,92vw)] bg-paper shadow-[0_0_0_1px_var(--ink)]" onMouseDown={e=>e.stopPropagation()}>
+  <div role="dialog" aria-modal="true" aria-label="Search" className="search-modal w-[min(560px,92vw)] bg-paper shadow-[0_0_0_1px_var(--ink)]" onMouseDown={e=>e.stopPropagation()} onKeyDown={e=>{
+   if(e.key!=='Tab')return;
+   const controls=e.currentTarget.querySelectorAll<HTMLElement>('button,input');
+   const first=controls[0],last=controls[controls.length-1];
+   if(e.shiftKey&&document.activeElement===first){e.preventDefault();last?.focus();}
+   else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}
+  }}>
+   <div className="search-heading"><span>Search</span><button className="house-action" aria-label="Close search" onClick={()=>setOpen(false)}>Close ×</button></div>
    <input ref={input} aria-label="Search investor, firm, ticker, company" role="combobox" aria-expanded="true" aria-controls="search-results" aria-activedescendant={hits[sel]?`search-hit-${sel}`:undefined}
     value={query} onChange={e=>{setQuery(e.target.value);setSel(0);}} onKeyDown={e=>{
      if(e.key==='ArrowDown'){e.preventDefault();setSel(s=>Math.min(s+1,Math.max(0,hits.length-1)));}
      if(e.key==='ArrowUp'){e.preventDefault();setSel(s=>Math.max(s-1,0));}
      if(e.key==='Enter'&&hits[sel])go(hits[sel]);
-     if(e.key==='Tab'){e.preventDefault();input.current?.focus();}
     }} placeholder="investor, firm, ticker, company" className="w-full bg-transparent px-4 py-3 text-[16px] outline-none placeholder:opacity-35" spellCheck={false} autoComplete="off"/>
    {!query.trim()&&<div className="border-t border-ink/15 px-4 py-3 text-[12px] leading-relaxed opacity-45">Try an investor (Buffett, Ackman), a firm (Baupost), or a ticker (AAPL, GOOGL).</div>}
    {!hits.length&&query.trim().length>1&&index&&!error&&<div className="border-t border-ink/15 px-4 py-3 text-[13px] opacity-40">nothing filed under that</div>}

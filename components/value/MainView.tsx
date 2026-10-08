@@ -22,13 +22,18 @@ export function MainView({entries,year,fast=false,loading=false}:{entries:Result
  const [failedLogos,setFailedLogos]=useState<Set<string>>(()=>new Set());
  useEffect(()=>{
   const node=grid.current;if(!node)return;
-  const observer=new ResizeObserver(([e])=>{
+  const measure=()=>{
    const phone=window.innerWidth<768;
    const style=getComputedStyle(node);
    const columns=Number(style.getPropertyValue('--shelf-columns'))||2;
    const rows=Number(style.getPropertyValue('--shelf-rows'))||1;
-   setSize({columns,rows,phone,width:root.current?.clientWidth??1200,height:root.current?.clientHeight??600});
-  });observer.observe(node);return()=>observer.disconnect();
+   setSize({columns,rows,phone,width:root.current?.clientWidth||window.innerWidth,height:root.current?.clientHeight||window.innerHeight});
+  };
+  measure();
+  const observer=new ResizeObserver(measure);
+  observer.observe(node);
+  window.addEventListener('resize',measure);
+  return()=>{observer.disconnect();window.removeEventListener('resize',measure);};
  },[historical]);
  useEffect(()=>{setHover(null);setList(null);},[year]);
  const previous=useRef(new Map<string,DOMRect>()),previousYear=useRef(year);
@@ -69,8 +74,8 @@ export function MainView({entries,year,fast=false,loading=false}:{entries:Result
    {c.entry.row.quality&&<span className="shelf-quality" title={c.entry.row.quality.basis==='including-acquisitions'?'Owner earnings return on capital including goodwill and acquired intangibles':undefined}>{c.entry.row.quality.label} 10y <b>{c.entry.row.quality.value==='unlimited'||c.entry.row.quality.value>1?'>100%':formatRate(c.entry.row.quality.value)}</b></span>}
   </>:null}
  </ValueLink>;
- const buyLimit=size.phone?3:size.height>760?5:size.height>600?4:3;
- return <section ref={root} className={`main-view${zones.buy.length?'':' main-no-buys'}`} style={{visibility:size.width?undefined:'hidden'}} data-historical={historical} data-frame={year} data-fast={fast} data-total={companies.length} data-buy-count={zones.buy.length} aria-busy={loading} aria-label="Buying opportunities">
+ const buyLimit=size.phone?(size.height<500?1:3):size.height>760?5:size.height>600?4:3;
+ return <section ref={root} className={`main-view${zones.buy.length?'':' main-no-buys'}`} data-historical={historical} data-frame={year} data-fast={fast} data-total={companies.length} data-buy-count={zones.buy.length} aria-busy={loading} aria-label="Buying opportunities">
   <div className="shelf-body">
    {zones.buy.length?<section className="main-buys" data-many-buys={zones.buy.length>=4}><header className="main-zone-heading"><h2>{historical?'Buy then':'Buy now'} <span>{zones.buy.length}</span></h2><span>{metric}</span></header><div className="shelf-buy-grid">{zones.buy.slice(0,buyLimit).map((c,i)=>card(c,'buy',i))}</div>{zones.buy.length>buyLimit&&<button className="main-more" onClick={()=>open(zones.buy,historical?'Buy then':'Buy now')}>+{zones.buy.length-buyLimit} more ↗</button>}</section>:<p className="main-empty-buy">{historical?'Buy then':'Buy now'} · No picks in this view.</p>}
    <section className="main-next"><header className="main-zone-heading"><h2><button className="main-more next-list-open" onClick={()=>open(zones.next,'Next closest')}>Next closest ↗</button></h2><span>{metric}</span></header><div ref={grid} className="shelf-near-grid">{near.map(c=>card(c,'next'))}{!near.length&&<p className="main-empty">No priced companies in this view.</p>}</div></section>

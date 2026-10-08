@@ -1,0 +1,90 @@
+▲ Next.js 16.3.3 (webpack)
+- Environments: .env.local
+✓ Running next.config.ts took 32ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 33.0s
+  Running TypeScript ...
+  Finished TypeScript in 28.9s ...
+  Collecting page data using 15 workers ...
+  Generating static pages using 15 workers (0/223) ...
+  Generating static pages using 15 workers (55/223)
+  Generating static pages using 15 workers (111/223)
+  Generating static pages using 15 workers (167/223)
+✓ Generating static pages using 15 workers (223/223) in 9.4s
+  Finalizing page optimization ...
+  Collecting build traces ...
+
+Route (app)                    Revalidate  Expire
+┌ ○ /                                  5m      1y
+├ ○ /_not-found                        5m      1y
+├ ƒ /.well-known/x402
+├   /[code]
+│ ├ ● /AIM                             5m      1y
+│ ├ ● /JIM                             5m      1y
+│ ├ ● /vg                              5m      1y
+│ └ ● [+80 more paths]
+├ ○ /about                             5m      1y
+├ ƒ /api/confirm
+├ ƒ /api/confirm-unsubscribe
+├ ƒ /api/inbound
+├ ƒ /api/newsletter-stats
+├ ƒ /api/resend-webhook
+├ ○ /api/search                        5m      1y
+├ ƒ /api/subscribe
+├ ƒ /api/unsubscribe
+├ ƒ /api/v1/[[...path]]
+├ ƒ /api/value/data/[...path]
+├ ƒ /api/value/logo
+├ ƒ /api/value/revalidate
+├ ○ /apple-icon.png
+├ ƒ /data/v/[...path]
+├ ○ /icon.svg
+├ ƒ /index
+├ ƒ /llms-full.txt
+├ ƒ /llms.txt
+├ ƒ /mcp
+├ ƒ /mcp.json
+├ ƒ /md/[...path]
+├ ƒ /md/home
+├ ƒ /md/i/[code]
+├   /md/issue/[issue]
+│ └ ● /md/issue/2026-q2
+├ ○ /md/missing
+├   /md/page/[slug]
+│ ├ ● /md/page/about
+│ └ ● /md/page/privacy
+├ ƒ /md/s/[ticker]
+├ ○ /munger                            5m      1y
+├ ○ /newsletter                        5m      1y
+├   /newsletter/[issue]
+│ └ ● /newsletter/2026-q2              5m      1y
+├ ○ /opengraph-image.png
+├ ○ /privacy                           5m      1y
+├ ƒ /robots.txt
+├   /s/[ticker]
+│ ├ ● /s/AAPL                          5m      1y
+│ ├ ● /s/PLX.PA                        5m      1y
+│ ├ ● /s/7203.JP                       5m      1y
+│ └ ● [+5 more paths]
+├ ƒ /sitemap.xml
+├ ƒ /sitemaps/[part]
+├ ○ /unsubscribe                       5m      1y
+├ ○ /value                             5m      1y
+├ ƒ /value/[id]
+├ ○ /value/forward                     5m      1y
+├ ○ /value/method                      5m      1y
+├ ● /value/quarter/[quarter]
+├ ○ /value/sitemap.xml                 5m      1y
+└   /value/year/[year]
+  ├ ● /value/year/2005                 5m      1y
+  ├ ● /value/year/2006                 5m      1y
+  ├ ● /value/year/2007                 5m      1y
+  └ ● [+19 more paths]
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand

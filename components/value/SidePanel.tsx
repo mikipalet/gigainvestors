@@ -1,4 +1,5 @@
 'use client';
+import {useOverlayHistory} from '../useOverlayHistory';
 import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from 'react';
 
 // Measured per screen height across the reference companies (widest content that fits at 14px); one width per drawer type.
@@ -58,6 +59,7 @@ export function SidePanel({ title, onClose, children, wide = false, compact = fa
     const frame=requestAnimationFrame(()=>{timer=setTimeout(()=>{if(active)setContentReady(true);},0);});
     return()=>{active=false;cancelAnimationFrame(frame);clearTimeout(timer);};
   },[]);
+  useOverlayHistory(true,onClose);
   const start=useRef<{x:number;y:number}|null>(null);
   const ref = useRef<HTMLDialogElement>(null);
   const close=()=>{

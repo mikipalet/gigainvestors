@@ -7,9 +7,16 @@ export function useWidth() {
   useEffect(() => {
     const element = ref.current;
     if (!element) return;
-    const observer = new ResizeObserver(([entry]) => {setWidth(Math.max(120, entry.contentRect.width));setHeight(entry.contentRect.height);});
+    let frame=0;
+    const observer = new ResizeObserver(([entry]) => {
+      const {width:nextWidth,height:nextHeight}=entry.contentRect;
+      cancelAnimationFrame(frame);
+      // Chart rendering can affect the observed box. Commit outside the current
+      // observer delivery so WebKit does not drop notifications in a resize loop.
+      frame=requestAnimationFrame(()=>{setWidth(Math.max(120,nextWidth));setHeight(nextHeight);});
+    });
     observer.observe(element);
-    return () => observer.disconnect();
+    return () => {observer.disconnect();cancelAnimationFrame(frame);};
   }, []);
   return { ref, width, height };
 }

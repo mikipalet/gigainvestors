@@ -315,6 +315,16 @@ it("logs each failed company's error and still writes successful companies", asy
   expect(log.mock.calls.flat().join(" ")).toContain("KO.US: Jev fixture failure");
   expect(readCorpusJson<Analysis>("analysis/DAL.US.json")?.status).toBe("scored");
 });
+it('retains current prior analysis when cache-bound Jev evidence needs a fresh reading',async()=>{
+  const args=input();
+  appendJsonl('universe.jsonl',args.company);
+  writeCorpusJson('fundamentals/KO.US.json',args.fundamentals);
+  const prior=await analyzeCompany(args);
+  writeCorpusJson('analysis/KO.US.json',prior);
+  const persisted=readCorpusJson<Analysis>('analysis/KO.US.json');
+  await analyze({ask:async()=>{throw new Error('Cached reading unavailable or changed: KO.US');},getBondYield:async()=>.04,evidence:async()=>null});
+  expect(readCorpusJson<Analysis>('analysis/KO.US.json')).toEqual(persisted);
+});
 
 it.each([
   { risk: 0.1, mean: 0.5, window: 5 },
@@ -659,4 +669,15 @@ it('preserves unchanged nonmember evidence inputs when only the analysis clock c
     expect(readFileSync(corpusPath('analysis/inputs/KO.US.json'),'utf8')).toBe(before);
     expect(readCorpusJson<Analysis>('analysis/KO.US.json')!.asOf).toMatch(/^2026-10-03/);
   } finally { vi.useRealTimers(); }
+});
+it('does not retain a prior analysis built on another issuer\'s filing when a fresh reading is needed',async()=>{
+  const args=input('BATRA.US');
+  appendJsonl('universe.jsonl',args.company);
+  writeCorpusJson('fundamentals/BATRA.US.json',args.fundamentals);
+  const prior=await analyzeCompany(args);
+  writeCorpusJson('analysis/BATRA.US.json',{...prior,report:{id:'BATRA.US',kind:'10-K',url:'https://www.sec.gov/Archives/edgar/data/1560385/000110465926020653/lmca-20251231x10k.htm',filed:'2026-02-26',period:'2025-12-31',sections:[]}});
+  const log=vi.spyOn(console,'error').mockImplementation(()=>{});
+  await expect(analyze({ask:async()=>{throw new Error('Cached reading unavailable or changed: BATRA.US');},getBondYield:async()=>.04,evidence:async()=>null})).rejects.toThrow();
+  expect(log.mock.calls.flat().join(' ')).toContain('BATRA.US: Cached reading unavailable');
+  log.mockRestore();
 });

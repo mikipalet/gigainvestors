@@ -44,3 +44,4 @@ data/newsletter/*.facts.json
 # Local, controller-reviewed release artifacts (never publication inputs in git)
 /release-bundle/
 /release-bundle-rules-5/
+/release-bundle-rules-7/

@@ -1,0 +1,1963 @@
+[
+  {
+    "id": "000858.SHE",
+    "originalReasons": [
+      {
+        "source": "reanalyze-1-report.md",
+        "reason": "numeric→null"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "002236.SHE",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "002236.SHE / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "002236.SHE / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "0267.HK",
+    "originalReasons": [
+      {
+        "source": "reanalyze-1-report.md",
+        "reason": "numeric→null; lost dated observations"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "086280.KO",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "086280.KO / management**: marketCap FY2016,2017,2018,2019,2020,2021,2022,2023,2024,2025: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "1093.HK",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "1093.HK / management**: marketCap FY2016,2017,2018,2019,2020,2021,2022,2023,2024,2025: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "1299.HK",
+    "originalReasons": [
+      {
+        "source": "nightly-6-report.md",
+        "reason": "numeric-to-null observations: 1"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "138040.KO",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "138040.KO / management**: marketCap FY2022,2023,2024,2025: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "139130.KO",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "139130.KO / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "139130.KO / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "2269.HK",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "2269.HK / management**: marketCap FY2017,2018,2019,2020,2021,2022,2023,2024,2025: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "2269.JP",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "2269.JP / management**: dilutedShares FY2019,2020,2021,2022: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "2413.JP",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "2413.JP / management**: marketCap FY2017,2018: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "267270.KO",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "267270.KO / management**: marketCap FY2022,2023,2024,2025: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "300122.SHE",
+    "originalReasons": [
+      {
+        "source": "reanalyze-1-report.md",
+        "reason": "unapproved quality flip: management"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "300124.SHE",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "300124.SHE / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "300124.SHE / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "3092.JP",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "3092.JP / management**: dilutedShares FY2021,2022,2023,2024: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "3457.JP",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "3457.JP / management**: marketCap FY2017,2019,2020,2021,2022: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "3659.JP",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "3659.JP / management**: dilutedShares FY2015,2016,2017: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "4208.JP",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "4208.JP / understandable**: revenue FY2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026: NO_SECOND_SOURCE; operatingIncome FY2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026: NO_SECOND_SOURCE; netIncome FY2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "4507.JP",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "4507.JP / management**: dilutedShares FY2016,2017,2018,2019,2020,2021,2022: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "4568.JP",
+    "originalReasons": [
+      {
+        "source": "reanalyze-1-report.md",
+        "reason": "numeric→null"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "4751.JP",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "4751.JP / management**: dilutedShares FY2017,2018,2019,2020,2021,2022,2023,2024: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "5019.JP",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "5019.JP / management**: dilutedShares FY2020,2021,2022,2023: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "5713.JP",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "5713.JP / management**: marketCap FY2017,2018: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "5714.JP",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "5714.JP / management**: marketCap FY2017: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "600000.SHG",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "600000.SHG / management**: dilutedShares FY2022,2023,2025: INCOMPARABLE_BASIS."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "600000.SHG / management**: dilutedShares FY2022,2023,2025: INCOMPARABLE_BASIS."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "600089.SHG",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "600089.SHG / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "600089.SHG / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "600183.SHG",
+    "originalReasons": [
+      {
+        "source": "reanalyze-1-report.md",
+        "reason": "numeric→null"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "600426.SHG",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "600426.SHG / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "600426.SHG / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "600875.SHG",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "600875.SHG / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "600875.SHG / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "601066.SHG",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "601066.SHG / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "601066.SHG / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "601088.SHG",
+    "originalReasons": [
+      {
+        "source": "reanalyze-1-report.md",
+        "reason": "numeric→null"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "601169.SHG",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "601169.SHG / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "601169.SHG / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "601229.SHG",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "601229.SHG / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "601229.SHG / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "601788.SHG",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "601788.SHG / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "601788.SHG / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "601988.SHG",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "601988.SHG / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "601988.SHG / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "601998.SHG",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "601998.SHG / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "601998.SHG / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "688036.SHG",
+    "originalReasons": [
+      {
+        "source": "reanalyze-1-report.md",
+        "reason": "numeric→null"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "6963.JP",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "6963.JP / management**: dilutedShares FY2020,2021,2022,2023: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "6971.JP",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "6971.JP / management**: dilutedShares FY2018,2020,2021,2022,2023: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "6988.JP",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "6988.JP / management**: dilutedShares FY2021,2022: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "7012.JP",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "7012.JP / understandable**: operatingIncome FY2022,2023,2024,2025,2026: DISAGREES."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "7012.JP / understandable**: operatingIncome FY2022,2023,2024,2025,2026: DISAGREES."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "7201.JP",
+    "originalReasons": [
+      {
+        "source": "reanalyze-1-report.md",
+        "reason": "non-quote price addition"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "7267.JP",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "7267.JP / management**: dilutedShares FY2020,2021: INCOMPARABLE_BASIS."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "7267.JP / management**: dilutedShares FY2020,2021: INCOMPARABLE_BASIS."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "7269.JP",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "7269.JP / management**: dilutedShares FY2020,2021,2022: NO_SECOND_SOURCE; dilutedShares FY2023: DISAGREES."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "7269.JP / management**: dilutedShares FY2020,2021,2022: NO_SECOND_SOURCE; dilutedShares FY2023: DISAGREES."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "7936.JP",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "7936.JP / management**: dilutedShares FY2020,2021,2022,2023: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "7951.JP",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "7951.JP / management**: dilutedShares FY2018,2019,2021,2022,2023,2024: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "8015.JP",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "8015.JP / management**: dilutedShares FY2021,2022: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "8253.JP",
+    "originalReasons": [
+      {
+        "source": "reanalyze-1-report.md",
+        "reason": "numeric→null; lost dated observations"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "8697.JP",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "8697.JP / management**: dilutedShares FY2021,2022: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "9009.JP",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "9009.JP / management**: dilutedShares FY2021: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "9020.JP",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "9020.JP / management**: dilutedShares FY2020,2021,2022: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "9101.JP",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "9101.JP / management**: marketCap FY2022: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "9202.JP",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "9202.JP / economics**: netIncome FY2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026: NO_SECOND_SOURCE; revenue FY2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026: NO_SECOND_SOURCE; operatingIncome FY2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026: NO_SECOND_SOURCE; ocf FY2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026: NO_SECOND_SOURCE; capex FY2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026: NO_SECOND_SOURCE; equity FY2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "9433.JP",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "9433.JP / management**: dilutedShares FY2021,2022,2023,2024,2025: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "9532.JP",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "9532.JP / understandable**: revenue FY2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026: NO_SECOND_SOURCE; operatingIncome FY2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026: NO_SECOND_SOURCE; netIncome FY2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "9735.JP",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "9735.JP / management**: dilutedShares FY2021,2022,2023,2024: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "ACN.US",
+    "originalReasons": [
+      {
+        "source": "reanalyze-1-report.md",
+        "reason": "lost dated observations"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "AIZ.US",
+    "originalReasons": [
+      {
+        "source": "reanalyze-1-report.md",
+        "reason": "non-quote price addition"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "AMCR.US",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "AMCR.US / economics**: netIncome FY2016: NO_SECOND_SOURCE; ocf FY2016: NO_SECOND_SOURCE; capex FY2016: NO_SECOND_SOURCE; sbc FY2016: NO_SECOND_SOURCE; operatingIncome FY2016: NO_SECOND_SOURCE; revenue FY2016: NO_SECOND_SOURCE; ppe FY2016,2017,2020,2021,2022,2023,2024,2025,2026: NO_SECOND_SOURCE; receivables FY2016,2017: NO_SECOND_SOURCE; inventory FY2016,2017: NO_SECOND_SOURCE; payables FY2016,2017: NO_SECOND_SOURCE; capex FY2018,2020,2021,2022,2023,2024,2025,2026: DISAGREES; receivables FY2018: DISAGREES; payables FY2018: DISAGREES; inventory FY2023,2024,2025,2026: DISAGREES."
+      },
+      {
+        "source": "nightly-5-report.md",
+        "reason": "AMCR.US / management**: dilutedShares FY2016: NO_SECOND_SOURCE; netIncome FY2016: NO_SECOND_SOURCE; dividendsPaid FY2016: NO_SECOND_SOURCE; dilutedShares FY2017,2018,2019,2020,2021,2022,2023,2025: DISAGREES; marketCap FY2017,2018,2019,2020,2021,2022,2023,2024,2025,2026: NO_SECOND_SOURCE; dilutedShares FY2026: INCOMPARABLE_BASIS."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "AMCR.US / economics**: netIncome FY2016: NO_SECOND_SOURCE; ocf FY2016: NO_SECOND_SOURCE; capex FY2016: NO_SECOND_SOURCE; sbc FY2016: NO_SECOND_SOURCE; operatingIncome FY2016: NO_SECOND_SOURCE; revenue FY2016: NO_SECOND_SOURCE; ppe FY2016,2017,2020,2021,2022,2023,2024,2025,2026: NO_SECOND_SOURCE; receivables FY2016,2017: NO_SECOND_SOURCE; inventory FY2016,2017: NO_SECOND_SOURCE; payables FY2016,2017: NO_SECOND_SOURCE; capex FY2018,2020,2021,2022,2023,2024,2025,2026: DISAGREES; receivables FY2018: DISAGREES; payables FY2018: DISAGREES; inventory FY2023,2024,2025,2026: DISAGREES.",
+      "AMCR.US / management**: dilutedShares FY2016: NO_SECOND_SOURCE; netIncome FY2016: NO_SECOND_SOURCE; dividendsPaid FY2016: NO_SECOND_SOURCE; dilutedShares FY2017,2018,2019,2020,2021,2022,2023,2025: DISAGREES; marketCap FY2017,2018,2019,2020,2021,2022,2023,2024,2025,2026: NO_SECOND_SOURCE; dilutedShares FY2026: INCOMPARABLE_BASIS."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "ANDR.VI",
+    "originalReasons": [
+      {
+        "source": "nightly-6-report.md",
+        "reason": "numeric-to-null observations: 3"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "ATS.VI",
+    "originalReasons": [
+      {
+        "source": "nightly-6-report.md",
+        "reason": "numeric-to-null observations: 5"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "AXP.US",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "AXP.US / moat**: nonInterestExpense FY2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025: NO_SECOND_SOURCE; netRevenue FY2015,2016,2017,2018,2019,2020,2021,2022,2023,2024: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "AXP.US / 2026-10-08 replay: computed moat fails on bank cost/income ratio 73.1% (>65%) built from nonInterestExpense FY2015-2025 and netRevenue FY2015-2024 with NO_SECOND_SOURCE; publishing it fails the calibration guard (known quality company, false negative). Kept at live bytes until those inputs are corroborated."
+    ],
+    "rationale": "Uncorroborated inputs drive a calibration false negative; calibration guard retained."
+  },
+  {
+    "id": "BX.US",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "BX.US / management**: dilutedShares FY2015,2016,2017,2018,2019,2020,2021: INCOMPARABLE_BASIS."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "BX.US / management**: dilutedShares FY2015,2016,2017,2018,2019,2020,2021: INCOMPARABLE_BASIS."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "CAI.VI",
+    "originalReasons": [
+      {
+        "source": "nightly-6-report.md",
+        "reason": "numeric-to-null observations: 4"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "CBG.LSE",
+    "originalReasons": [
+      {
+        "source": "reanalyze-1-report.md",
+        "reason": "lost dated observations"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "COALINDIA.NSE",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "COALINDIA.NSE / management**: marketCap FY2017,2018,2019,2020,2021,2022,2023,2024,2025,2026: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "CPI.VI",
+    "originalReasons": [
+      {
+        "source": "nightly-6-report.md",
+        "reason": "numeric-to-null observations: 4"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "CSAN3.SA",
+    "originalReasons": [
+      {
+        "source": "reanalyze-1-report.md",
+        "reason": "lost dated observations"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "DBV.PA",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "DBV.PA / moat**: netIncome FY2019: NO_SECOND_SOURCE; operatingIncome FY2019: NO_SECOND_SOURCE; revenue FY2019: NO_SECOND_SOURCE; grossProfit FY2019,2025: NO_SECOND_SOURCE; equity FY2019: NO_SECOND_SOURCE; totalDebt FY2019,2020,2021: NO_SECOND_SOURCE; cash FY2019: NO_SECOND_SOURCE; operatingIncome FY2020,2021: DISAGREES; revenue FY2021: DISAGREES; totalDebt FY2022,2023,2024,2025: DISAGREES."
+      },
+      {
+        "source": "nightly-5-report.md",
+        "reason": "DBV.PA / management**: netIncome FY2019: NO_SECOND_SOURCE; dividendsPaid FY2019,2023,2024: NO_SECOND_SOURCE; marketCap FY2019,2020,2021,2022,2023,2024,2025: NO_SECOND_SOURCE; dilutedShares FY2019: NO_SECOND_SOURCE; dilutedShares FY2020,2021: INCOMPARABLE_BASIS; dilutedShares FY2022,2024,2025: DISAGREES."
+      },
+      {
+        "source": "nightly-5-report.md",
+        "reason": "DBV.PA / understandable**: revenue FY2019: NO_SECOND_SOURCE; operatingIncome FY2019: NO_SECOND_SOURCE; netIncome FY2019: NO_SECOND_SOURCE; operatingIncome FY2020,2021: DISAGREES; revenue FY2021: DISAGREES."
+      },
+      {
+        "source": "nightly-5-report.md",
+        "reason": "DBV.PA / accounting**: netIncome FY2019: NO_SECOND_SOURCE; ocf FY2019: NO_SECOND_SOURCE; totalAssets FY2019: NO_SECOND_SOURCE; receivables FY2019: NO_SECOND_SOURCE; revenue FY2019: NO_SECOND_SOURCE; nonRecurring FY2019,2022,2023,2024,2025: NO_SECOND_SOURCE; sbc FY2019: NO_SECOND_SOURCE; ocf FY2020,2021,2022,2023,2024: DISAGREES; nonRecurring FY2020: DISAGREES; receivables FY2021,2022: DISAGREES; revenue FY2021: DISAGREES."
+      },
+      {
+        "source": "nightly-5-report.md",
+        "reason": "DBV.PA / economics**: netIncome FY2019: NO_SECOND_SOURCE; ocf FY2019: NO_SECOND_SOURCE; capex FY2019: NO_SECOND_SOURCE; sbc FY2019: NO_SECOND_SOURCE; operatingIncome FY2019: NO_SECOND_SOURCE; revenue FY2019: NO_SECOND_SOURCE; ppe FY2019: NO_SECOND_SOURCE; receivables FY2019: NO_SECOND_SOURCE; inventory FY2019,2020,2021,2022,2023,2024,2025: NO_SECOND_SOURCE; payables FY2019: NO_SECOND_SOURCE; ocf FY2020,2021,2022,2023,2024: DISAGREES; operatingIncome FY2020,2021: DISAGREES; ppe FY2020,2021,2022,2023,2024,2025: DISAGREES; revenue FY2021: DISAGREES; receivables FY2021,2022: DISAGREES."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "DBV.PA / moat**: netIncome FY2019: NO_SECOND_SOURCE; operatingIncome FY2019: NO_SECOND_SOURCE; revenue FY2019: NO_SECOND_SOURCE; grossProfit FY2019,2025: NO_SECOND_SOURCE; equity FY2019: NO_SECOND_SOURCE; totalDebt FY2019,2020,2021: NO_SECOND_SOURCE; cash FY2019: NO_SECOND_SOURCE; operatingIncome FY2020,2021: DISAGREES; revenue FY2021: DISAGREES; totalDebt FY2022,2023,2024,2025: DISAGREES.",
+      "DBV.PA / management**: netIncome FY2019: NO_SECOND_SOURCE; dividendsPaid FY2019,2023,2024: NO_SECOND_SOURCE; marketCap FY2019,2020,2021,2022,2023,2024,2025: NO_SECOND_SOURCE; dilutedShares FY2019: NO_SECOND_SOURCE; dilutedShares FY2020,2021: INCOMPARABLE_BASIS; dilutedShares FY2022,2024,2025: DISAGREES.",
+      "DBV.PA / understandable**: revenue FY2019: NO_SECOND_SOURCE; operatingIncome FY2019: NO_SECOND_SOURCE; netIncome FY2019: NO_SECOND_SOURCE; operatingIncome FY2020,2021: DISAGREES; revenue FY2021: DISAGREES.",
+      "DBV.PA / accounting**: netIncome FY2019: NO_SECOND_SOURCE; ocf FY2019: NO_SECOND_SOURCE; totalAssets FY2019: NO_SECOND_SOURCE; receivables FY2019: NO_SECOND_SOURCE; revenue FY2019: NO_SECOND_SOURCE; nonRecurring FY2019,2022,2023,2024,2025: NO_SECOND_SOURCE; sbc FY2019: NO_SECOND_SOURCE; ocf FY2020,2021,2022,2023,2024: DISAGREES; nonRecurring FY2020: DISAGREES; receivables FY2021,2022: DISAGREES; revenue FY2021: DISAGREES.",
+      "DBV.PA / economics**: netIncome FY2019: NO_SECOND_SOURCE; ocf FY2019: NO_SECOND_SOURCE; capex FY2019: NO_SECOND_SOURCE; sbc FY2019: NO_SECOND_SOURCE; operatingIncome FY2019: NO_SECOND_SOURCE; revenue FY2019: NO_SECOND_SOURCE; ppe FY2019: NO_SECOND_SOURCE; receivables FY2019: NO_SECOND_SOURCE; inventory FY2019,2020,2021,2022,2023,2024,2025: NO_SECOND_SOURCE; payables FY2019: NO_SECOND_SOURCE; ocf FY2020,2021,2022,2023,2024: DISAGREES; operatingIncome FY2020,2021: DISAGREES; ppe FY2020,2021,2022,2023,2024,2025: DISAGREES; revenue FY2021: DISAGREES; receivables FY2021,2022: DISAGREES."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "DLTR.US",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "DLTR.US / management**: acquisitions FY2016: DISAGREES."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "DLTR.US / management**: acquisitions FY2016: DISAGREES."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "DVP.AU",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "DVP.AU / accounting**: netIncome FY2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026: NO_SECOND_SOURCE; revenue FY2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026: NO_SECOND_SOURCE; operatingIncome FY2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026: NO_SECOND_SOURCE; ocf FY2016,2017,2018,2019,2020,2021,2022,2023,2024,2025: NO_SECOND_SOURCE; capex FY2016,2017,2018,2019,2020,2021,2022,2023,2024,2025: NO_SECOND_SOURCE; equity FY2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026: NO_SECOND_SOURCE; totalDebt FY2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026: NO_SECOND_SOURCE; cash FY2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "EDP.LS",
+    "originalReasons": [
+      {
+        "source": "nightly-6-report.md",
+        "reason": "numeric-to-null observations: 2"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "EDPR.LS",
+    "originalReasons": [
+      {
+        "source": "nightly-6-report.md",
+        "reason": "numeric-to-null observations: 1"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "EGL.LS",
+    "originalReasons": [
+      {
+        "source": "nightly-6-report.md",
+        "reason": "numeric-to-null observations: 1"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "EVN.VI",
+    "originalReasons": [
+      {
+        "source": "nightly-6-report.md",
+        "reason": "numeric-to-null observations: 2"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "FDS.US",
+    "originalReasons": [
+      {
+        "source": "reanalyze-1-report.md",
+        "reason": "lost dated observations"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "GALP.LS",
+    "originalReasons": [
+      {
+        "source": "nightly-6-report.md",
+        "reason": "numeric-to-null observations: 2"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "GIL.TO",
+    "originalReasons": [
+      {
+        "source": "nightly-6-report.md",
+        "reason": "numeric-to-null observations: 2"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "GJF.OL",
+    "originalReasons": [
+      {
+        "source": "nightly-6-report.md",
+        "reason": "numeric-to-null observations: 1"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "GVR.IR",
+    "originalReasons": [
+      {
+        "source": "nightly-6-report.md",
+        "reason": "numeric-to-null observations: 3"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "H4W.F",
+    "originalReasons": [
+      {
+        "source": "reanalyze-1-report.md",
+        "reason": "non-quote price addition"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "HBAN.US",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "HBAN.US / accounting**: peerCreditLossRate FY2015,2016,2017,2018,2019,2020,2021,2022,2023,2024: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "HDB.US",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "HDB.US / accounting**: peerCreditLossRate FY2016,2017,2018,2019,2020,2021,2022,2023,2024: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "HFG.LSE",
+    "originalReasons": [
+      {
+        "source": "nightly-6-report.md",
+        "reason": "numeric-to-null observations: 12"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "HMSO.LSE",
+    "originalReasons": [
+      {
+        "source": "reanalyze-1-report.md",
+        "reason": "numeric→null; lost dated observations"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "HTWS.LSE",
+    "originalReasons": [
+      {
+        "source": "nightly-6-report.md",
+        "reason": "numeric-to-null observations: 2"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "IBKR.US",
+    "originalReasons": [
+      {
+        "source": "nightly-6-report.md",
+        "reason": "numeric-to-null observations: 1"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "INVP.LSE",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "INVP.LSE / understandable**: operatingIncome FY2021,2022,2023,2024,2026: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "IPX.AU",
+    "originalReasons": [
+      {
+        "source": "reanalyze-1-report.md",
+        "reason": "numeric→null"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "IR5B.IR",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "IR5B.IR / economics**: netIncome FY2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025: NO_SECOND_SOURCE; ocf FY2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025: NO_SECOND_SOURCE; capex FY2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025: NO_SECOND_SOURCE; operatingIncome FY2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025: NO_SECOND_SOURCE; revenue FY2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025: NO_SECOND_SOURCE; ppe FY2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025: NO_SECOND_SOURCE; inventory FY2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025: NO_SECOND_SOURCE; payables FY2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025: NO_SECOND_SOURCE; receivables FY2016,2017,2018,2019,2020,2021,2022,2023,2024,2025: NO_SECOND_SOURCE; sbc FY2019,2020,2021,2022,2023,2024,2025: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "ITC.NSE",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "ITC.NSE / management**: marketCap FY2017,2018,2019,2020,2021,2022,2023,2024,2025,2026: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "IWG.LSE",
+    "originalReasons": [
+      {
+        "source": "reanalyze-1-report.md",
+        "reason": "numeric→null; lost dated observations"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "JBL.US",
+    "originalReasons": [
+      {
+        "source": "reanalyze-1-report.md",
+        "reason": "lost dated observations"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "JMT.LS",
+    "originalReasons": [
+      {
+        "source": "nightly-6-report.md",
+        "reason": "numeric-to-null observations: 1"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "KIM.US",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "KIM.US / economics**: capex FY2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025: DISAGREES; ppe FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; receivables FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; inventory FY2015,2016,2017,2018,2020,2021,2022: DISAGREES; payables FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; inventory FY2019,2023,2024,2025: NO_SECOND_SOURCE; receivables FY2024: DISAGREES."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "KIM.US / economics**: capex FY2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025: DISAGREES; ppe FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; receivables FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; inventory FY2015,2016,2017,2018,2020,2021,2022: DISAGREES; payables FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; inventory FY2019,2023,2024,2025: NO_SECOND_SOURCE; receivables FY2024: DISAGREES."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "KRZ.IR",
+    "originalReasons": [
+      {
+        "source": "nightly-6-report.md",
+        "reason": "numeric-to-null observations: 2"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "LEN-B.US",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "LEN-B.US / moat**: grossProfit FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; totalDebt FY2015,2016,2017,2018,2020,2021,2022,2023,2024,2025: DISAGREES; cash FY2015,2016,2020: DISAGREES; operatingIncome FY2021: NO_SECOND_SOURCE; cash FY2021: NO_SECOND_SOURCE; operatingIncome FY2023: DISAGREES; grossProfit FY2023: DISAGREES."
+      },
+      {
+        "source": "nightly-5-report.md",
+        "reason": "LEN-B.US / economics**: ppe FY2015,2016,2017,2018,2020,2021,2022,2023,2024,2025: DISAGREES; receivables FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; inventory FY2015,2016,2017,2018,2019,2020,2021,2022: DISAGREES; payables FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; operatingIncome FY2021: NO_SECOND_SOURCE; receivables FY2022,2023,2024,2025: DISAGREES; operatingIncome FY2023: DISAGREES."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "LEN-B.US / moat**: grossProfit FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; totalDebt FY2015,2016,2017,2018,2020,2021,2022,2023,2024,2025: DISAGREES; cash FY2015,2016,2020: DISAGREES; operatingIncome FY2021: NO_SECOND_SOURCE; cash FY2021: NO_SECOND_SOURCE; operatingIncome FY2023: DISAGREES; grossProfit FY2023: DISAGREES.",
+      "LEN-B.US / economics**: ppe FY2015,2016,2017,2018,2020,2021,2022,2023,2024,2025: DISAGREES; receivables FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; inventory FY2015,2016,2017,2018,2019,2020,2021,2022: DISAGREES; payables FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; operatingIncome FY2021: NO_SECOND_SOURCE; receivables FY2022,2023,2024,2025: DISAGREES; operatingIncome FY2023: DISAGREES."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "LHX.US",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "LHX.US / moat**: revenue FY2019: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "LNZ.VI",
+    "originalReasons": [
+      {
+        "source": "nightly-6-report.md",
+        "reason": "numeric-to-null observations: 3"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "MEGACPO.MX",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "MEGACPO.MX / management**: marketCap FY2022,2023,2024,2025: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "MGM.US",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "MGM.US / economics**: ocf FY2015: NO_SECOND_SOURCE; receivables FY2015,2017,2018,2019,2020,2021: DISAGREES; ppe FY2019,2020,2021: DISAGREES."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "MGM.US / economics**: ocf FY2015: NO_SECOND_SOURCE; receivables FY2015,2017,2018,2019,2020,2021: DISAGREES; ppe FY2019,2020,2021: DISAGREES."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "MI6.AU",
+    "originalReasons": [
+      {
+        "source": "reanalyze-1-report.md",
+        "reason": "unapproved quality flip: accounting; numeric→null"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "MS.US",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "MS.US / moat**: nonInterestExpense FY2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025: NO_SECOND_SOURCE; netRevenue FY2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "MTB.US",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "MTB.US / accounting**: peerCreditLossRate FY2015,2016,2017,2018,2019,2020,2021,2022,2023,2024: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "MU.US",
+    "originalReasons": [
+      {
+        "source": "reanalyze-1-report.md",
+        "reason": "lost dated observations"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "NDSN.US",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "NDSN.US / economics**: ocf FY2015: NO_SECOND_SOURCE; receivables FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; ppe FY2020,2021: DISAGREES."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "NDSN.US / economics**: ocf FY2015: NO_SECOND_SOURCE; receivables FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; ppe FY2020,2021: DISAGREES."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "OMV.VI",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "OMV.VI / economics**: netIncome FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; ocf FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; capex FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; sbc FY2015,2016,2017,2018,2019,2020,2021,2022: NO_SECOND_SOURCE; operatingIncome FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; revenue FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; receivables FY2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025: NO_SECOND_SOURCE; inventory FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; payables FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; ppe FY2019,2020,2021: NO_SECOND_SOURCE; ocf FY2023: DISAGREES; capex FY2023: DISAGREES; ppe FY2024,2025: DISAGREES."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "OMV.VI / economics**: netIncome FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; ocf FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; capex FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; sbc FY2015,2016,2017,2018,2019,2020,2021,2022: NO_SECOND_SOURCE; operatingIncome FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; revenue FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; receivables FY2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025: NO_SECOND_SOURCE; inventory FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; payables FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; ppe FY2019,2020,2021: NO_SECOND_SOURCE; ocf FY2023: DISAGREES; capex FY2023: DISAGREES; ppe FY2024,2025: DISAGREES."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "ONGC.NSE",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "ONGC.NSE / management**: marketCap FY2017,2018,2019,2020,2021,2022,2023,2024,2025,2026: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "PDI.AU",
+    "originalReasons": [
+      {
+        "source": "reanalyze-1-report.md",
+        "reason": "lost dated observations"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "PFD.LSE",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "PFD.LSE / management**: netIncome FY2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026: NO_SECOND_SOURCE; dividendsPaid FY2016,2017,2018,2019,2020,2021,2022,2024,2025,2026: NO_SECOND_SOURCE; dilutedShares FY2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026: NO_SECOND_SOURCE; marketCap FY2017,2018,2019,2020,2021,2022,2023,2024,2025,2026: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "PINFRA.MX",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "PINFRA.MX / management**: marketCap FY2022,2023,2024,2025: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "POS.VI",
+    "originalReasons": [
+      {
+        "source": "nightly-6-report.md",
+        "reason": "numeric-to-null observations: 6"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "POST.VI",
+    "originalReasons": [
+      {
+        "source": "nightly-6-report.md",
+        "reason": "numeric-to-null observations: 3"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "PTC.US",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "PTC.US / moat**: equity FY2015: DISAGREES; totalDebt FY2015,2016,2017,2020,2021,2022,2023,2024,2025: DISAGREES; cash FY2016,2017,2018,2019,2020: DISAGREES."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "PTC.US / moat**: equity FY2015: DISAGREES; totalDebt FY2015,2016,2017,2020,2021,2022,2023,2024,2025: DISAGREES; cash FY2016,2017,2018,2019,2020: DISAGREES."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "PYIYF.US",
+    "originalReasons": [
+      {
+        "source": "nightly-6-report.md",
+        "reason": "numeric-to-null observations: 1"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "RA.MX",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "RA.MX / management**: dilutedShares FY2021,2022,2023,2025: INCOMPARABLE_BASIS."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "RA.MX / management**: dilutedShares FY2021,2022,2023,2025: INCOMPARABLE_BASIS."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "RENT3.SA",
+    "originalReasons": [
+      {
+        "source": "reanalyze-1-report.md",
+        "reason": "non-quote price addition"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "RF.US",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "RF.US / accounting**: peerCreditLossRate FY2015,2016,2017,2018,2019,2020,2021,2022,2023,2024: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "SANB3.SA",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "SANB3.SA / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "SANB3.SA / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "SATS.OL",
+    "originalReasons": [
+      {
+        "source": "nightly-6-report.md",
+        "reason": "numeric-to-null observations: 4"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "SBO.VI",
+    "originalReasons": [
+      {
+        "source": "nightly-6-report.md",
+        "reason": "numeric-to-null observations: 3"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "SCHW.US",
+    "originalReasons": [
+      {
+        "source": "reanalyze-1-report.md",
+        "reason": "lost dated observations; non-quote price addition"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "SHC.LSE",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "SHC.LSE / economics**: operatingIncome FY2019,2020,2021,2022,2025: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "SHRIRAMFIN.NSE",
+    "originalReasons": [
+      {
+        "source": "nightly-6-report.md",
+        "reason": "numeric-to-null observations: 1"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "SON.LS",
+    "originalReasons": [
+      {
+        "source": "nightly-6-report.md",
+        "reason": "numeric-to-null observations: 1"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "SREN.SW",
+    "originalReasons": [
+      {
+        "source": "nightly-6-report.md",
+        "reason": "numeric-to-null observations: 1"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "SSPG.LSE",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "SSPG.LSE / economics**: operatingIncome FY2020: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "STE.US",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "STE.US / moat**: netIncome FY2016: NO_SECOND_SOURCE; operatingIncome FY2016: NO_SECOND_SOURCE; revenue FY2016: NO_SECOND_SOURCE; grossProfit FY2016: NO_SECOND_SOURCE; equity FY2016,2017: NO_SECOND_SOURCE; totalDebt FY2016,2017: NO_SECOND_SOURCE; cash FY2016,2022: NO_SECOND_SOURCE; totalDebt FY2018,2019,2020,2021,2022,2023: DISAGREES."
+      },
+      {
+        "source": "nightly-5-report.md",
+        "reason": "STE.US / management**: dilutedShares FY2016: NO_SECOND_SOURCE; netIncome FY2016: NO_SECOND_SOURCE; dividendsPaid FY2016: NO_SECOND_SOURCE; dilutedShares FY2017,2018,2019,2020,2021,2022: INCOMPARABLE_BASIS; marketCap FY2017,2018,2019,2020,2021,2022,2023,2024,2025,2026: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "STE.US / moat**: netIncome FY2016: NO_SECOND_SOURCE; operatingIncome FY2016: NO_SECOND_SOURCE; revenue FY2016: NO_SECOND_SOURCE; grossProfit FY2016: NO_SECOND_SOURCE; equity FY2016,2017: NO_SECOND_SOURCE; totalDebt FY2016,2017: NO_SECOND_SOURCE; cash FY2016,2022: NO_SECOND_SOURCE; totalDebt FY2018,2019,2020,2021,2022,2023: DISAGREES.",
+      "STE.US / management**: dilutedShares FY2016: NO_SECOND_SOURCE; netIncome FY2016: NO_SECOND_SOURCE; dividendsPaid FY2016: NO_SECOND_SOURCE; dilutedShares FY2017,2018,2019,2020,2021,2022: INCOMPARABLE_BASIS; marketCap FY2017,2018,2019,2020,2021,2022,2023,2024,2025,2026: NO_SECOND_SOURCE."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "STR.VI",
+    "originalReasons": [
+      {
+        "source": "nightly-6-report.md",
+        "reason": "numeric-to-null observations: 3"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "TFC.US",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "TFC.US / accounting**: peerCreditLossRate FY2015,2016,2017,2018,2019,2020,2021,2022,2023,2024: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "TMPV.NSE",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "TMPV.NSE / management**: marketCap FY2017,2018,2019,2020,2021,2022,2023,2024,2025,2026: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "TPL.US",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "TPL.US / economics**: netIncome FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; ocf FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; capex FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; sbc FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; operatingIncome FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; revenue FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; ppe FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; receivables FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; inventory FY2015,2016,2017,2018,2019,2020,2023,2024,2025: NO_SECOND_SOURCE; payables FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; capex FY2023,2024,2025: DISAGREES; ppe FY2025: DISAGREES; payables FY2025: DISAGREES."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "TPL.US / economics**: netIncome FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; ocf FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; capex FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; sbc FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; operatingIncome FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; revenue FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; ppe FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; receivables FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; inventory FY2015,2016,2017,2018,2019,2020,2023,2024,2025: NO_SECOND_SOURCE; payables FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; capex FY2023,2024,2025: DISAGREES; ppe FY2025: DISAGREES; payables FY2025: DISAGREES."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "TROW.US",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "TROW.US / moat**: revenue FY2015: NO_SECOND_SOURCE; grossProfit FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; totalDebt FY2016,2017,2018,2019,2020,2021,2025: DISAGREES; grossProfit FY2022,2023,2025: DISAGREES."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "TROW.US / moat**: revenue FY2015: NO_SECOND_SOURCE; grossProfit FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; totalDebt FY2016,2017,2018,2019,2020,2021,2025: DISAGREES; grossProfit FY2022,2023,2025: DISAGREES."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "TSCO.US",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "TSCO.US / economics**: revenue FY2015,2016: NO_SECOND_SOURCE; receivables FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; ppe FY2019,2020,2021: DISAGREES; receivables FY2022: DISAGREES."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "TSCO.US / economics**: revenue FY2015,2016: NO_SECOND_SOURCE; receivables FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; ppe FY2019,2020,2021: DISAGREES; receivables FY2022: DISAGREES."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "UHS.US",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "UHS.US / economics**: capex FY2015,2016,2017,2018,2019: DISAGREES; inventory FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; ppe FY2019,2020,2021: DISAGREES."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "UHS.US / economics**: capex FY2015,2016,2017,2018,2019: DISAGREES; inventory FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; ppe FY2019,2020,2021: DISAGREES."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "ULTA.US",
+    "originalReasons": [
+      {
+        "source": "reanalyze-1-report.md",
+        "reason": "non-quote price addition"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "UOB.F",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "UOB.F / understandable**: operatingIncome FY2017,2018: DISAGREES."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "UOB.F / understandable**: operatingIncome FY2017,2018: DISAGREES."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "USB.US",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "USB.US / accounting**: peerCreditLossRate FY2015,2016,2017,2018,2019,2020,2021,2022,2023,2024: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "VER.VI",
+    "originalReasons": [
+      {
+        "source": "nightly-6-report.md",
+        "reason": "numeric-to-null observations: 3"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "VOE.VI",
+    "originalReasons": [
+      {
+        "source": "nightly-6-report.md",
+        "reason": "numeric-to-null observations: 4"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "VTRS.US",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "VTRS.US / management**: dilutedShares FY2015,2016,2017: NO_SECOND_SOURCE; netIncome FY2015,2016,2017: NO_SECOND_SOURCE; dividendsPaid FY2015,2016,2017: NO_SECOND_SOURCE; marketCap FY2016,2017,2018,2019,2020,2021,2022,2023,2024,2025: NO_SECOND_SOURCE; dilutedShares FY2018,2019,2020,2021,2024,2025: INCOMPARABLE_BASIS; dividendsPaid FY2018,2019,2020,2021: DISAGREES."
+      },
+      {
+        "source": "nightly-5-report.md",
+        "reason": "VTRS.US / economics**: netIncome FY2015,2016,2017: NO_SECOND_SOURCE; ocf FY2015,2016,2017: NO_SECOND_SOURCE; capex FY2015,2016,2017: NO_SECOND_SOURCE; sbc FY2015,2016,2017: NO_SECOND_SOURCE; operatingIncome FY2015,2016,2017: NO_SECOND_SOURCE; revenue FY2015,2016,2017: NO_SECOND_SOURCE; ppe FY2015,2016,2017,2018: NO_SECOND_SOURCE; receivables FY2015,2016,2017,2018: NO_SECOND_SOURCE; inventory FY2015,2016,2017,2018: NO_SECOND_SOURCE; payables FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; capex FY2019,2020,2021,2022,2023: DISAGREES; ppe FY2019,2020,2021: DISAGREES."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "VTRS.US / management**: dilutedShares FY2015,2016,2017: NO_SECOND_SOURCE; netIncome FY2015,2016,2017: NO_SECOND_SOURCE; dividendsPaid FY2015,2016,2017: NO_SECOND_SOURCE; marketCap FY2016,2017,2018,2019,2020,2021,2022,2023,2024,2025: NO_SECOND_SOURCE; dilutedShares FY2018,2019,2020,2021,2024,2025: INCOMPARABLE_BASIS; dividendsPaid FY2018,2019,2020,2021: DISAGREES.",
+      "VTRS.US / economics**: netIncome FY2015,2016,2017: NO_SECOND_SOURCE; ocf FY2015,2016,2017: NO_SECOND_SOURCE; capex FY2015,2016,2017: NO_SECOND_SOURCE; sbc FY2015,2016,2017: NO_SECOND_SOURCE; operatingIncome FY2015,2016,2017: NO_SECOND_SOURCE; revenue FY2015,2016,2017: NO_SECOND_SOURCE; ppe FY2015,2016,2017,2018: NO_SECOND_SOURCE; receivables FY2015,2016,2017,2018: NO_SECOND_SOURCE; inventory FY2015,2016,2017,2018: NO_SECOND_SOURCE; payables FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; capex FY2019,2020,2021,2022,2023: DISAGREES; ppe FY2019,2020,2021: DISAGREES."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "WFC.US",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "WFC.US / moat**: nonInterestExpense FY2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025: NO_SECOND_SOURCE; netRevenue FY2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "WIE.VI",
+    "originalReasons": [
+      {
+        "source": "nightly-6-report.md",
+        "reason": "numeric-to-null observations: 3"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "WSM.US",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "WSM.US / management**: dilutedShares FY2016,2017,2018,2019,2020,2021,2022: INCOMPARABLE_BASIS."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "WSM.US / management**: dilutedShares FY2016,2017,2018,2019,2020,2021,2022: INCOMPARABLE_BASIS."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "WTW.US",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "WTW.US / economics**: capex FY2015,2016,2017,2018,2019,2020,2021: DISAGREES; inventory FY2015,2016,2017,2018,2019,2020,2021,2022,2023: DISAGREES; payables FY2017,2018: DISAGREES; ppe FY2019,2020,2021: DISAGREES; payables FY2019,2020,2021: NO_SECOND_SOURCE; inventory FY2024,2025: NO_SECOND_SOURCE."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "WTW.US / economics**: capex FY2015,2016,2017,2018,2019,2020,2021: DISAGREES; inventory FY2015,2016,2017,2018,2019,2020,2021,2022,2023: DISAGREES; payables FY2017,2018: DISAGREES; ppe FY2019,2020,2021: DISAGREES; payables FY2019,2020,2021: NO_SECOND_SOURCE; inventory FY2024,2025: NO_SECOND_SOURCE."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "WYNN.US",
+    "originalReasons": [
+      {
+        "source": "nightly-5-report.md",
+        "reason": "WYNN.US / economics**: receivables FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; payables FY2015: DISAGREES; capex FY2016,2017,2018,2021,2022,2023: DISAGREES; revenue FY2019,2020,2021: NO_SECOND_SOURCE; ppe FY2019,2020,2021,2025: DISAGREES; receivables FY2025: DISAGREES."
+      }
+    ],
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "WYNN.US / economics**: receivables FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; payables FY2015: DISAGREES; capex FY2016,2017,2018,2021,2022,2023: DISAGREES; revenue FY2019,2020,2021: NO_SECOND_SOURCE; ppe FY2019,2020,2021,2025: DISAGREES; receivables FY2025: DISAGREES."
+    ],
+    "rationale": "Unresolved conflicting statement observations or share-count basis; source review does not identify which input is correct. This hold is independent of the resulting buy verdict."
+  },
+  {
+    "id": "ZBH.US",
+    "originalReasons": [
+      {
+        "source": "reanalyze-1-report.md",
+        "reason": "non-quote price addition"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "FRFHF.US",
+    "originalReasons": [
+      {
+        "source": "controller 2026-10-05",
+        "reason": "2026-10-05 controller: FRFHF.US buy flip from scheduled share check, held until second-source share count"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "Original reason held a share-driven buy flip for second-source approval; no confirmed wrong share number cited. Keep ordinary share-conflict and scale guards; publish their computed outcome."
+  },
+  {
+    "id": "AERO.US",
+    "originalReasons": [
+      {
+        "source": "controller 2026-10-06",
+        "reason": "2026-10-06 controller: AERO/JBS unresolved management/economics after full reanalysis; CEG 2020-21 diluted shares null (data regression) - kept at live bytes until investigated (understand-2 report)"
+      }
+    ],
+    "currentUncertainty": {
+      "understandable": [
+        "fewer than 7 annual periods"
+      ],
+      "moat": [
+        "fewer than 7 annual periods"
+      ],
+      "economics": [
+        "fewer than 7 annual periods"
+      ],
+      "management": [
+        "fewer than 7 annual periods"
+      ],
+      "accounting": [
+        "fewer than 7 annual periods"
+      ]
+    },
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "AERO.US / 2026-10-08 replay: management test unclear and owner-earnings history insufficient for a valuation after fresh 20-F reading; the computed record is undecided and would remove the published company. Kept at live bytes until the missing management/owner-earnings evidence is sourced."
+    ],
+    "rationale": "Unfreezing publishes an undecided record that the coverage guard rejects (company would disappear). Data gap, not a Buy approval hold."
+  },
+  {
+    "id": "CEG.US",
+    "originalReasons": [
+      {
+        "source": "controller 2026-10-06",
+        "reason": "2026-10-06 controller: AERO/JBS unresolved management/economics after full reanalysis; CEG 2020-21 diluted shares null (data regression) - kept at live bytes until investigated (understand-2 report)"
+      }
+    ],
+    "decision": "unfreeze",
+    "dataErrors": [],
+    "rationale": "No confirmed erroneous observation in the cited reason. Approval-only, method-transition or numeric-history preservation is replaced by normal computed verdicts and the existing numeric-observation retention guard. Missing second-source corroboration alone is not a verdict veto."
+  },
+  {
+    "id": "JBS.US",
+    "originalReasons": [
+      {
+        "source": "controller 2026-10-06",
+        "reason": "2026-10-06 controller: AERO/JBS unresolved management/economics after full reanalysis; CEG 2020-21 diluted shares null (data regression) - kept at live bytes until investigated (understand-2 report)"
+      }
+    ],
+    "currentUncertainty": {
+      "economics": [
+        "not enough data for owner earnings cash conversion"
+      ],
+      "management": [
+        "buybacks unrelated to price (informational)",
+        "ROIC first 3 years vs last 3 years: 12.7% vs 16.6%",
+        "not enough data for the $1 test or per-share value growth"
+      ]
+    },
+    "decision": "keep-data-freeze",
+    "dataErrors": [
+      "JBS.US / 2026-10-08 replay: economics and management tests unclear and owner-earnings history insufficient for a valuation; the computed record is undecided and would remove the published company. Kept at live bytes until the missing evidence is sourced."
+    ],
+    "rationale": "Unfreezing publishes an undecided record that the coverage guard rejects (company would disappear). Data gap, not a Buy approval hold."
+  }
+]

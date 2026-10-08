@@ -5057,7 +5057,12 @@
           "Listings": {},
           "WebURL": "https://www.regalrexnord.com"
         }
-      }
+      },
+      "secCik": {
+        "RBC.US": "1324948",
+        "RRX.US": "82811"
+      },
+      "secCikSource": "https://www.sec.gov/files/company_tickers_exchange.json (2026-10-08)"
     },
     {
       "ids": [
@@ -5104,7 +5109,12 @@
           },
           "WebURL": "https://www.salliemae.com"
         }
-      }
+      },
+      "secCik": {
+        "NAVI.US": "1593538",
+        "SLM.US": "1032033"
+      },
+      "secCikSource": "https://www.sec.gov/files/company_tickers_exchange.json (2026-10-08)"
     },
     {
       "ids": [
@@ -5176,7 +5186,13 @@
           "Listings": {},
           "WebURL": "https://libertyliveholdings.com"
         }
-      }
+      },
+      "secCik": {
+        "BATRA.US": "1958140",
+        "FWONA.US": "1560385",
+        "LLYVA.US": "2078416"
+      },
+      "secCikSource": "https://www.sec.gov/files/company_tickers_exchange.json (2026-10-08)"
     },
     {
       "ids": [
@@ -5206,7 +5222,12 @@
           "Listings": {},
           "WebURL": "https://grahamcorp.com"
         }
-      }
+      },
+      "secCik": {
+        "GHC.US": "104889",
+        "GHM.US": "716314"
+      },
+      "secCikSource": "https://www.sec.gov/files/company_tickers_exchange.json (2026-10-08)"
     },
     {
       "ids": [
@@ -5248,7 +5269,12 @@
           "Listings": {},
           "WebURL": "https://www.apa.com.au"
         }
-      }
+      },
+      "secCik": {
+        "APA.US": "1841666",
+        "APA.AU": null
+      },
+      "secCikSource": "https://www.sec.gov/files/company_tickers_exchange.json (2026-10-08)"
     },
     {
       "ids": [
@@ -5284,7 +5310,12 @@
           "Listings": {},
           "WebURL": "https://www.merckgroup.com"
         }
-      }
+      },
+      "secCik": {
+        "MRK.US": "310158",
+        "MRK.XETRA": null
+      },
+      "secCikSource": "https://www.sec.gov/files/company_tickers_exchange.json (2026-10-08)"
     },
     {
       "ids": [
@@ -5314,7 +5345,12 @@
           "Listings": {},
           "WebURL": "https://www.jinkosolar.com/en/"
         }
-      }
+      },
+      "secCik": {
+        "JKS.US": "1481513",
+        "688223.SHG": null
+      },
+      "secCikSource": "https://www.sec.gov/files/company_tickers_exchange.json (2026-10-08)"
     },
     {
       "ids": [
@@ -5565,7 +5601,12 @@
           "Listings": {},
           "WebURL": "https://www.compass-group.com"
         }
-      }
+      },
+      "secCik": {
+        "COMP.US": "1563190",
+        "CPG.LSE": null
+      },
+      "secCikSource": "https://www.sec.gov/files/company_tickers_exchange.json (2026-10-08)"
     },
     {
       "ids": [
@@ -5595,7 +5636,12 @@
           "Listings": {},
           "WebURL": "https://www.argan.fr/"
         }
-      }
+      },
+      "secCik": {
+        "AGX.US": "100591",
+        "ARG.PA": null
+      },
+      "secCikSource": "https://www.sec.gov/files/company_tickers_exchange.json (2026-10-08)"
     },
     {
       "ids": [
@@ -5625,7 +5671,12 @@
           "Listings": {},
           "WebURL": "https://www.nn-group.com"
         }
-      }
+      },
+      "secCik": {
+        "NNBR.US": "918541",
+        "NN.AS": null
+      },
+      "secCikSource": "https://www.sec.gov/files/company_tickers_exchange.json (2026-10-08)"
     },
     {
       "ids": [
@@ -5687,7 +5738,43 @@
           "Listings": {},
           "WebURL": "https://www.alihealth.cn"
         }
-      }
+      },
+      "secCik": {
+        "BABA.US": "1577552",
+        "0241.HK": null
+      },
+      "secCikSource": "https://www.sec.gov/files/company_tickers_exchange.json (2026-10-08)"
+    },
+    {
+      "ids": [
+        "001800.KO",
+        "271560.KO",
+        "ORN.US"
+      ],
+      "reason": "Orion Holdings Korea (001800) and separately listed Orion Corp (271560) are distinct securities; neither is the US marine/concrete contractor Orion Group Holdings (ORN), CIK 1402829. Remove the stale cross-issuer listing links before filing selection.",
+      "source": "https://www.orionworld.com/en/invest/finance/79",
+      "identifiers": {
+        "001800.KO": {
+          "Name": "ORION Holdings Corp",
+          "ISIN": "KR7001800002",
+          "CIK": null
+        },
+        "271560.KO": {
+          "Name": "ORION Corp",
+          "ISIN": "KR7271560005",
+          "CIK": null
+        },
+        "ORN.US": {
+          "Name": "Orion Group Holdings, Inc.",
+          "CIK": "1402829"
+        }
+      },
+      "secCik": {
+        "001800.KO": null,
+        "271560.KO": null,
+        "ORN.US": "1402829"
+      },
+      "secCikSource": "https://www.sec.gov/files/company_tickers_exchange.json (2026-10-08)"
     }
   ]
 }

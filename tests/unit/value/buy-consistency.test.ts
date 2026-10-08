@@ -12,7 +12,7 @@ const dossiers = readdirSync(path.join(root, 'dossiers')).flatMap(file => Object
 const base = dossiers.find(d => d.id === 'KO.US')!;
 function company(id: string, requiredMos = .25): Analysis {
   const a = structuredClone(base);
-  a.id = id; a.company = { ...a.company, id, country: 'US', currency: 'USD', marketCapUsd: null };
+  a.id = id; a.company = { ...a.company, id, code: id.replace(/\.US$/, ''), country: 'US', currency: 'USD', marketCapUsd: null };
   a.requiredMos = requiredMos;
   a.valuation = { ...a.valuation!, currency: 'USD', normalized: 1000, shares: 100, netCash: 0, terminalGrowth: 0, growth: 0, discountRate: .1, perShare: { low: 80, mid: 100, high: 120 }, perShareTrading: undefined, assumptions: [] };
   return a;
@@ -64,7 +64,7 @@ it('refreshes the published flags and funnel in the same price snapshot', async 
     }
     const git = (...args: string[]) => execFileSync('git', ['-C', repo, ...args], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] }).trim();
     git('init', '-b', 'main'); git('config', 'user.name', 'Test'); git('config', 'user.email', 'test@example.com'); git('add', '.'); git('commit', '-m', 'snapshot');
-    await refreshPrices({ repo, companies: [company('BUY.US').company], bulk: async () => [{ code: base.company.code, close: 110, date: '2026-09-30' }] });
+    await refreshPrices({ repo, companies: [company('BUY.US').company], bulk: async () => [{ code: 'BUY', close: 110, date: '2026-10-08' }] });
     const rows = JSON.parse(readFileSync(path.join(repo, 'index/default.json'), 'utf8')) as IndexRow[];
     const prices = JSON.parse(readFileSync(path.join(repo, 'prices/US.json'), 'utf8')) as PriceMap;
     const meta = JSON.parse(readFileSync(path.join(repo, 'meta.json'), 'utf8')) as StoreMeta;
@@ -77,7 +77,7 @@ it('refreshes the published flags and funnel in the same price snapshot', async 
     expect(buyCount(rows, prices)).toBe(2);
     expect(meta.funnel!.byCountry.US.gates[5].passing).toBe(2);
     expect(() => assertIndexConsistency({ rows, meta })).not.toThrow();
-    expect(commitPrices({ repo, asOf: '2026-09-30' })).toBe(true);
+    expect(commitPrices({ repo, asOf: '2026-10-08' })).toBe(true);
     expect(git('status', '--porcelain')).toBe('');
     expect(JSON.parse(git('show', 'HEAD:index/default.json')).filter((r: IndexRow) => r.b)).toHaveLength(2);
   } finally { rmSync(repo, { recursive: true, force: true }); }

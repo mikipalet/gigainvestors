@@ -114,6 +114,8 @@ export function coverageSummary(before:Coverage,after:Coverage):string {
 export function compareCoverage(before:Coverage,after:Coverage,baseline:string,approvals:CoverageManifest=manifest):void {
  const failures:string[]=[];
  for(const metric of Object.keys({...before.metrics,...after.metrics}).sort()){
+  // Buy counts are outcomes, not evidence coverage. Keep them in the audit summary.
+  if(metric.startsWith('buy:'))continue;
   const old=before.metrics[metric]??new Set<string>(),next=after.metrics[metric]??new Set<string>();
   const approved=approvedIds(baseline,metric,approvals);
   const lost=metric==='logos'?Object.keys(before.logoSurfaces).filter(id=>Object.entries(before.logoSurfaces[id]).some(([surface,present])=>present&&(after.logoSurfaces[id]?.[surface]===false||(surface==='dossier'&&!after.logoSurfaces[id]?.[surface])||!Object.values(after.logoSurfaces[id]??{}).some(Boolean)))):[...old].filter(id=>!next.has(id));

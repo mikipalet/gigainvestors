@@ -1,5 +1,6 @@
+import {assertFilingIssuer} from '../../../lib/value/issuer-separation';
 import {cachedPublicationShares} from '../../../lib/value/cached-publication-shares';
-import {applyPublicationContinuity} from '../publication-continuity';
+import {retainPublicationObservations} from '../publication-continuity';
 import {issuerShareContradictions,issuerFilingShareObservations} from '../../../lib/value/publication-continuity';
 import {refreshBalanceValuation} from '../../../lib/value/refresh-balance-valuation';
 import {publishBalances} from '../publish-balances';
@@ -260,6 +261,7 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
   }
   for (const analysis of analyses) if (allowedIds.has(analysis.id)) merged.set(analysis.id, analysis);
   for(const [id,dossier] of Object.entries(freeze.dossiers)) merged.set(id,dossier);
+  for(const analysis of merged.values())assertFilingIssuer(analysis.company,analysis.report?.url);
   const identities = new Map(universe.map(company => [company.id, company]));
   let rows = [...merged.values()].map(analysis => ({ ...analysis, company: enrichedCompany({...analysis.company, indexes: identities.get(analysis.id)?.indexes ?? [], listings: identities.get(analysis.id)?.listings ?? analysis.company.listings}) }));
   if (!force && (rows.length === 0 || rows.length < previousCount * (1 - T.publish.maxCountDrop))) {
@@ -401,7 +403,7 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
   }
   if(!additionsOnly)publishBalances(files,readPrices(path.join(repo,'prices')),fx);
   if(!additionsOnly){
-    applyPublicationContinuity(files,freeze,readPrices(path.join(repo,'prices')));
+    retainPublicationObservations(files,freeze,readPrices(path.join(repo,'prices')));
     reconcileIssuers(files,holdersByTicker,investorNames);
   }
   fillPublishedLogos(files);
@@ -542,7 +544,11 @@ export default async function publish(options: { only?: string[]; limit?: number
   });
   if(stale.length)throw new Error(`Run analyze before publish; stale analysis versions: ${stale.map(c=>c.id).join(', ')}`);
   const returns=options.additionsOnly?{failed:[]}:await historyReturns({});
-  if(returns.failed.length)throw new Error(`History return refresh failed for ${returns.failed.length} companies; retaining prior publication`);
+  // A provider gap keeps the last cached split-adjusted closes; a company with
+  // no cached closes at all still stops publication.
+  const uncached=returns.failed.filter(f=>!readCorpusJson(`history-return-prices/${f.id}.json`));
+  if(uncached.length)throw new Error(`History return prices unavailable for ${uncached.map(f=>f.id).join(', ')}; retaining prior publication`);
+  if(returns.failed.length)console.warn(`History return refresh failed for ${returns.failed.map(f=>f.id).join(', ')}; using their cached return prices`);
   const analyses = loadAnalyses(selected);
   const holders = loadHolders(path.resolve(__dirname, "../../../data/store"));
   if (out) {

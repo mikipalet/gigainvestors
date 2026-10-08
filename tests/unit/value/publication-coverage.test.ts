@@ -7,7 +7,7 @@ function archive(n=1000){
  return {'meta.json':{},'dossiers/000.json':dossiers,'index/US.json':rows} as Record<string,any>;
 }
 const measure=(files:Record<string,any>)=>measureCoverage({files:Object.keys(files),read:f=>files[f]??null} as Archive);
-it.each(['valuation','quality','priceHistory','dossiers','index:US','buy:US'])('rejects >1%% %s loss with ids',metric=>{
+it.each(['valuation','quality','priceHistory','dossiers','index:US'])('rejects >1%% %s loss with ids',metric=>{
  const old=archive(),next=structuredClone(old);
  for(let i=0;i<11;i++){
   const id=`C${i}.US`,d=next['dossiers/000.json'][id],row=next['index/US.json'][i];
@@ -15,7 +15,6 @@ it.each(['valuation','quality','priceHistory','dossiers','index:US','buy:US'])('
   if(metric==='quality')d.tests.moat.result='unclear';
   if(metric==='priceHistory')d.priceHistory=[];
   if(metric==='dossiers')delete next['dossiers/000.json'][id];
-  if(metric==='buy:US')row.b=false;
  }
  if(metric==='index:US')next['index/US.json'].splice(0,11);
  expect(()=>compareCoverage(measure(old),measure(next),baseline)).toThrow(new RegExp(`CRITICAL.*${metric}.*C0.US`,'s'));
@@ -75,4 +74,12 @@ it('allows normal removal from a filtered index when surviving company logos rem
  const old=archive(1);old['dossiers/000.json']['C0.US'].company.logo=old['index/US.json'][0].lg='https://example.com/logo.png';old['index/default.json']=structuredClone(old['index/US.json']);
  const next=structuredClone(old);next['index/default.json']=[];
  expect(()=>compareCoverage(measure(old),measure(next),baseline)).not.toThrow();
+});
+
+it('reports Buy counts without treating data driven verdict changes as coverage loss',()=>{
+ const old=archive(100),next=structuredClone(old);
+ for(const row of next['index/US.json'])row.b=false;
+ const before=measure(old),after=measure(next);
+ expect(before.metrics['buy:US'].size).toBe(100);expect(after.metrics['buy:US'].size).toBe(0);
+ expect(()=>compareCoverage(before,after,baseline)).not.toThrow();
 });

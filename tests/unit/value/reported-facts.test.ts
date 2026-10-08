@@ -54,3 +54,14 @@ it('rejoins a sparse exact-date correction with a uniquely corroborated vendor p
  expect(result[0]).toMatchObject({end:ghost.end,netIncome:y.netIncome,ocf:y.ocf,dilutedShares:y.dilutedShares,cash:ghost.cash});
  expect(applyReportedFacts(result,[fact])).toEqual(result);
 });
+it('replaces the verified Ipsos gross-profit reclassification and Smartgroup cash/SBC errors on every normalization',async()=>{
+ const {withReportedFacts}=await import('@/lib/value/completeness/reported-facts');
+ const ips={...emptyYear('2025-12-31','EUR'),revenue:2524714000,grossProfit:504184000};
+ const siq={...emptyYear('2025-12-31','AUD'),revenue:329309000,ocf:123681000,sbc:0};
+ const fixedIps=withReportedFacts('IPS.PA',[ips]),fixedSiq=withReportedFacts('SIQ.AU',[siq]),fixedSiq2025=fixedSiq.find(y=>y.end==='2025-12-31')!;
+ expect(fixedIps[0].grossProfit).toBe(1710992000);
+ expect(fixedSiq2025).toMatchObject({ocf:97773000,sbc:4722000});
+ expect(withReportedFacts('IPS.PA',fixedIps)).toEqual(fixedIps);
+ expect(withReportedFacts('SIQ.AU',fixedSiq)).toEqual(fixedSiq);
+ expect(fixedIps[0].provenance?.grossProfit?.source).toContain('ipsos');
+});

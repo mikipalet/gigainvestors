@@ -13,7 +13,17 @@ export function retainPublishedHistory(files:Record<string,unknown>,previousRepo
  const periods=readdirSync(directory).filter(file=>/^\d{4}(?:Q[1-4])?\.json$/.test(file));
  for(const file of periods){
   const key=`history/${file}`,current=(files[key]??[]) as SnapshotRow[],seen=new Set(current.map(row=>row[0]));
-  const missing=(read(file) as SnapshotRow[]).filter(row=>!seen.has(row[0]));
+  const previous=read(file) as SnapshotRow[];
+  const priorById=new Map(previous.map(row=>[row[0],row]));
+  for(const row of current){
+   const prior=priorById.get(row[0]);
+   if(row[4]===null&&prior?.[4]!==null&&prior?.[4]!==undefined){
+    row[4]=prior[4];
+    row[8]=prior[8];
+    retained.push({file:key,id:row[0]});
+   }
+  }
+  const missing=previous.filter(row=>!seen.has(row[0]));
   files[key]=[...current,...missing];retained.push(...missing.map(row=>({file:key,id:row[0]})));
  }
  if(!periods.length)return retained;

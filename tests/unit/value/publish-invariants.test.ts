@@ -20,19 +20,18 @@ beforeEach(()=>{
  git('add','.');git('commit','-m','baseline');
 });
 afterEach(()=>rmSync(repo,{recursive:true,force:true}));
-it('permits added-company buys while preserving the price-only rule for existing companies',()=>{
+it('permits added-company buys',()=>{
  const ds=read('dossiers/000.json');ds['NEW.US']={id:'NEW.US'};write('dossiers/000.json',ds);
  for(const file of ['index/US.json','index/default.json']){const rows=read(file);rows.push({...rows[0],id:'NEW.US',b:true});write(file,rows);}
  expect(commitOutput({repo,asOf:'2026-10-04'})).toBe(true);
 });
 for(const [stage,commit]of [['prices',commitPrices],['publish',commitOutput]] as const){
- it.each(['quarters','yearDeferred','missing-file','dossiers','buy','history'])('%s refuses '+stage+' commit before changing HEAD or index',failure=>{
+ it.each(['quarters','yearDeferred','missing-file','dossiers','history'])('%s refuses '+stage+' commit before changing HEAD or index',failure=>{
   const head=git('rev-parse','HEAD');
   if(failure==='quarters'){const meta=read('meta.json');meta.views.quarters={};write('meta.json',meta);}
   if(failure==='yearDeferred'){const meta=read('meta.json');meta.views.yearDeferred={};write('meta.json',meta);}
   if(failure==='missing-file')rmSync(path.join(repo,view));
   if(failure==='dossiers'){const ds=read('dossiers/000.json');for(let i=0;i<6;i++)delete ds[`C${i}.US`];write('dossiers/000.json',ds);}
-  if(failure==='buy'){for(const f of ['index/US.json','index/default.json']){const rows=read(f);rows[0].b=true;write(f,rows);}}
   if(failure==='history'){write('history/index.json',{years:[],quarters:[]});const m=read('meta.json');m.views.quarters={};m.views.years={};write('meta.json',m);}
   expect(()=>commit({repo,asOf:'2026-10-04'})).toThrow(/invariant/i);
   expect(git('rev-parse','HEAD')).toBe(head);expect(git('diff','--cached','--name-only')).toBe('');
@@ -80,51 +79,22 @@ it('permits retired Buy-now rows to disappear from country and default indexes',
  for(const file of ['index/US.json','index/default.json'])write(file,read(file).filter((r:any)=>r.id!=='C0.US'));
  expect(commitOutput({repo,asOf:'2026-10-05'})).toBe(true);
 });
-it('does not count retired-listing price moves as explanations for surviving Buy-now flips',()=>{
- const row=read('index/US.json')[0];
- for(const file of ['index/US.json','index/default.json'])write(file,[row,{...row,id:'C0.US'}]);
- write('prices/US.json',{'A.US':[100,'2026-10-01'],'C0.US':[100,'2026-10-01']});
- git('add','.');git('commit','-m','alias before retirement');
- const ds=read('dossiers/000.json');delete ds['C0.US'];write('dossiers/000.json',ds);write('aliases.json',{'C0.US':'C2.US'});
- write('prices/US.json',{'A.US':[100,'2026-10-01'],'C0.US':[50,'2026-10-02']});
- for(const file of ['index/US.json','index/default.json'])write(file,[{...row,b:true}]);
- expect(()=>commitOutput({repo,asOf:'2026-10-05'})).toThrow(/Buy-now changed/);
-});
-
-it('accepts only an exact controller-reviewed valuation transition',async()=>{
- const {assertPublishInvariants}=await import('@/scripts/value/publish-invariants');
- const before=read('index/US.json')[0],after={...before,v:[70,90,110],b:true};
- const approval={id:'A.US',before:{b:false,v:before.v,m:before.m},after:{b:true,v:after.v,m:after.m},reason:'Controller-approved filed balance correction',evidence:['https://example.com/filing']};
- for(const file of ['index/US.json','index/default.json'])write(file,[after]);
- expect(()=>assertPublishInvariants(repo,'HEAD',[approval])).not.toThrow();
- expect(()=>assertPublishInvariants(repo,'HEAD',[{...approval,after:{...approval.after,v:[1,2,3]}}])).toThrow(/Buy-now changed/);
- expect(()=>assertPublishInvariants(repo,'HEAD',[{...approval,evidence:[]}])).toThrow();
-});
-
-it('binds a reviewed method transition to both exact quality masks as well as valuation and margin',async()=>{
- const {assertPublishInvariants}=await import('@/scripts/value/publish-invariants');
- const before={...read('index/US.json')[0],t:'PFPPP'},after={...before,t:'PPPPP',b:true};
- for(const file of ['index/US.json','index/default.json'])write(file,[before]);
- git('add','index');git('commit','-m','quality baseline');
- const state=(r:any)=>({b:r.b,v:r.v,m:r.m,t:r.t});
- const approval={id:'A.US',before:state(before),after:state(after),reason:'Reviewed 3.5.0 margin rule',evidence:['https://example.com/filing']};
- for(const file of ['index/US.json','index/default.json'])write(file,[after]);
- expect(()=>assertPublishInvariants(repo,'HEAD',[approval])).not.toThrow();
- for(const change of [{before:{...approval.before,t:'FPPPP'}},{after:{...approval.after,t:'PFPPP'}},{after:{...approval.after,v:[1,2,3]}},{after:{...approval.after,m:.1}}]){
-  expect(()=>assertPublishInvariants(repo,'HEAD',[{...approval,...change}])).toThrow(/Buy-now changed/);
- }
- const legacy={...approval,before:{b:false,v:before.v,m:before.m},after:{b:true,v:after.v,m:after.m}};
- expect(()=>assertPublishInvariants(repo,'HEAD',[legacy])).toThrow(/Buy-now changed/);
-});
-
-it('rejects unapproved offsetting Buy flips even when country and default totals are unchanged',async()=>{
+for(const [stage,commit]of [['prices',commitPrices],['publish',commitOutput]] as const){
+ it(stage+' publishes valuation and quality driven Buy changes without an approval manifest',()=>{
+  const before=read('index/US.json')[0];
+  for(const file of ['index/US.json','index/default.json'])write(file,[{...before,t:'PPPPP',v:[150,200,250],b:true}]);
+  expect(commit({repo,asOf:'2026-10-08'})).toBe(true);
+  expect(read('index/US.json')[0].b).toBe(true);
+ });
+}
+it('accepts offsetting Buy flips without hiding either change behind the totals',async()=>{
  const {assertPublishInvariants}=await import('@/scripts/value/publish-invariants');
  const row=read('index/US.json')[0];
  for(const file of ['index/US.json','index/default.json'])write(file,[row,{...row,id:'B.US',b:true}]);
  write('prices/US.json',{'A.US':[100,'2026-10-01'],'B.US':[50,'2026-10-01']});
  git('add','.');git('commit','-m','two-company baseline');
  for(const file of ['index/US.json','index/default.json'])write(file,[{...row,b:true},{...row,id:'B.US',b:false}]);
- expect(()=>assertPublishInvariants(repo,'HEAD',[])).toThrow(/Buy-now changed/);
+ expect(()=>assertPublishInvariants(repo,'HEAD')).not.toThrow();
 });
 
 it('blocks the 2026-10-06 logo demotion: US missing logos 13 -> 148 before staging',()=>{

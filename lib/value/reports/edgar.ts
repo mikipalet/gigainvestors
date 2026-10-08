@@ -1,3 +1,4 @@
+import {sameIssuerListings} from '../issuer-separation';
 import { reportRequest } from './transport';
 import { readCorpusJson, writeCorpusJson } from "../corpus";
 import type { Company } from "../types";
@@ -62,7 +63,7 @@ interface TickerMap { fields: string[]; data: unknown[][] }
 /** Resolve only explicit US listings, never a coincidentally identical foreign ticker. */
 export async function resolveCik(company: Company): Promise<string | null> {
   if (company.cik) return company.cik;
-  const tickers = new Set([company.id, ...company.listings].filter(id => id.endsWith(".US"))
+  const tickers = new Set([company.id, ...sameIssuerListings(company)].filter(id => id.endsWith(".US"))
     .map(id => id.slice(0, -3).replaceAll(".", "-").toUpperCase()));
   if (!tickers.size) return null;
   const file = "sec/company-tickers-exchange.json";

@@ -1,0 +1,183 @@
+{
+  "version": 1,
+  "ids": [
+    "002236.SHE",
+    "139130.KO",
+    "300124.SHE",
+    "600000.SHG",
+    "600089.SHG",
+    "600426.SHG",
+    "600875.SHG",
+    "601066.SHG",
+    "601169.SHG",
+    "601229.SHG",
+    "601788.SHG",
+    "601988.SHG",
+    "601998.SHG",
+    "7012.JP",
+    "7267.JP",
+    "7269.JP",
+    "AMCR.US",
+    "AXP.US",
+    "BX.US",
+    "DBV.PA",
+    "DLTR.US",
+    "KIM.US",
+    "LEN-B.US",
+    "MGM.US",
+    "NDSN.US",
+    "OMV.VI",
+    "PTC.US",
+    "RA.MX",
+    "SANB3.SA",
+    "STE.US",
+    "TPL.US",
+    "TROW.US",
+    "TSCO.US",
+    "UHS.US",
+    "UOB.F",
+    "VTRS.US",
+    "WSM.US",
+    "WTW.US",
+    "WYNN.US",
+    "AERO.US",
+    "JBS.US"
+  ],
+  "reason": "Unresolved data discrepancies only; never approval for verdict changes",
+  "sources": [
+    "docs/value/rules-7/evidence/freeze-review.json"
+  ],
+  "reasons": {
+    "002236.SHE": [
+      "002236.SHE / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+    ],
+    "139130.KO": [
+      "139130.KO / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+    ],
+    "300124.SHE": [
+      "300124.SHE / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+    ],
+    "600000.SHG": [
+      "600000.SHG / management**: dilutedShares FY2022,2023,2025: INCOMPARABLE_BASIS."
+    ],
+    "600089.SHG": [
+      "600089.SHG / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+    ],
+    "600426.SHG": [
+      "600426.SHG / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+    ],
+    "600875.SHG": [
+      "600875.SHG / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+    ],
+    "601066.SHG": [
+      "601066.SHG / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+    ],
+    "601169.SHG": [
+      "601169.SHG / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+    ],
+    "601229.SHG": [
+      "601229.SHG / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+    ],
+    "601788.SHG": [
+      "601788.SHG / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+    ],
+    "601988.SHG": [
+      "601988.SHG / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+    ],
+    "601998.SHG": [
+      "601998.SHG / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+    ],
+    "7012.JP": [
+      "7012.JP / understandable**: operatingIncome FY2022,2023,2024,2025,2026: DISAGREES."
+    ],
+    "7267.JP": [
+      "7267.JP / management**: dilutedShares FY2020,2021: INCOMPARABLE_BASIS."
+    ],
+    "7269.JP": [
+      "7269.JP / management**: dilutedShares FY2020,2021,2022: NO_SECOND_SOURCE; dilutedShares FY2023: DISAGREES."
+    ],
+    "AMCR.US": [
+      "AMCR.US / economics**: netIncome FY2016: NO_SECOND_SOURCE; ocf FY2016: NO_SECOND_SOURCE; capex FY2016: NO_SECOND_SOURCE; sbc FY2016: NO_SECOND_SOURCE; operatingIncome FY2016: NO_SECOND_SOURCE; revenue FY2016: NO_SECOND_SOURCE; ppe FY2016,2017,2020,2021,2022,2023,2024,2025,2026: NO_SECOND_SOURCE; receivables FY2016,2017: NO_SECOND_SOURCE; inventory FY2016,2017: NO_SECOND_SOURCE; payables FY2016,2017: NO_SECOND_SOURCE; capex FY2018,2020,2021,2022,2023,2024,2025,2026: DISAGREES; receivables FY2018: DISAGREES; payables FY2018: DISAGREES; inventory FY2023,2024,2025,2026: DISAGREES.",
+      "AMCR.US / management**: dilutedShares FY2016: NO_SECOND_SOURCE; netIncome FY2016: NO_SECOND_SOURCE; dividendsPaid FY2016: NO_SECOND_SOURCE; dilutedShares FY2017,2018,2019,2020,2021,2022,2023,2025: DISAGREES; marketCap FY2017,2018,2019,2020,2021,2022,2023,2024,2025,2026: NO_SECOND_SOURCE; dilutedShares FY2026: INCOMPARABLE_BASIS."
+    ],
+    "BX.US": [
+      "BX.US / management**: dilutedShares FY2015,2016,2017,2018,2019,2020,2021: INCOMPARABLE_BASIS."
+    ],
+    "DBV.PA": [
+      "DBV.PA / moat**: netIncome FY2019: NO_SECOND_SOURCE; operatingIncome FY2019: NO_SECOND_SOURCE; revenue FY2019: NO_SECOND_SOURCE; grossProfit FY2019,2025: NO_SECOND_SOURCE; equity FY2019: NO_SECOND_SOURCE; totalDebt FY2019,2020,2021: NO_SECOND_SOURCE; cash FY2019: NO_SECOND_SOURCE; operatingIncome FY2020,2021: DISAGREES; revenue FY2021: DISAGREES; totalDebt FY2022,2023,2024,2025: DISAGREES.",
+      "DBV.PA / management**: netIncome FY2019: NO_SECOND_SOURCE; dividendsPaid FY2019,2023,2024: NO_SECOND_SOURCE; marketCap FY2019,2020,2021,2022,2023,2024,2025: NO_SECOND_SOURCE; dilutedShares FY2019: NO_SECOND_SOURCE; dilutedShares FY2020,2021: INCOMPARABLE_BASIS; dilutedShares FY2022,2024,2025: DISAGREES.",
+      "DBV.PA / understandable**: revenue FY2019: NO_SECOND_SOURCE; operatingIncome FY2019: NO_SECOND_SOURCE; netIncome FY2019: NO_SECOND_SOURCE; operatingIncome FY2020,2021: DISAGREES; revenue FY2021: DISAGREES.",
+      "DBV.PA / accounting**: netIncome FY2019: NO_SECOND_SOURCE; ocf FY2019: NO_SECOND_SOURCE; totalAssets FY2019: NO_SECOND_SOURCE; receivables FY2019: NO_SECOND_SOURCE; revenue FY2019: NO_SECOND_SOURCE; nonRecurring FY2019,2022,2023,2024,2025: NO_SECOND_SOURCE; sbc FY2019: NO_SECOND_SOURCE; ocf FY2020,2021,2022,2023,2024: DISAGREES; nonRecurring FY2020: DISAGREES; receivables FY2021,2022: DISAGREES; revenue FY2021: DISAGREES.",
+      "DBV.PA / economics**: netIncome FY2019: NO_SECOND_SOURCE; ocf FY2019: NO_SECOND_SOURCE; capex FY2019: NO_SECOND_SOURCE; sbc FY2019: NO_SECOND_SOURCE; operatingIncome FY2019: NO_SECOND_SOURCE; revenue FY2019: NO_SECOND_SOURCE; ppe FY2019: NO_SECOND_SOURCE; receivables FY2019: NO_SECOND_SOURCE; inventory FY2019,2020,2021,2022,2023,2024,2025: NO_SECOND_SOURCE; payables FY2019: NO_SECOND_SOURCE; ocf FY2020,2021,2022,2023,2024: DISAGREES; operatingIncome FY2020,2021: DISAGREES; ppe FY2020,2021,2022,2023,2024,2025: DISAGREES; revenue FY2021: DISAGREES; receivables FY2021,2022: DISAGREES."
+    ],
+    "DLTR.US": [
+      "DLTR.US / management**: acquisitions FY2016: DISAGREES."
+    ],
+    "KIM.US": [
+      "KIM.US / economics**: capex FY2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025: DISAGREES; ppe FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; receivables FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; inventory FY2015,2016,2017,2018,2020,2021,2022: DISAGREES; payables FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; inventory FY2019,2023,2024,2025: NO_SECOND_SOURCE; receivables FY2024: DISAGREES."
+    ],
+    "LEN-B.US": [
+      "LEN-B.US / moat**: grossProfit FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; totalDebt FY2015,2016,2017,2018,2020,2021,2022,2023,2024,2025: DISAGREES; cash FY2015,2016,2020: DISAGREES; operatingIncome FY2021: NO_SECOND_SOURCE; cash FY2021: NO_SECOND_SOURCE; operatingIncome FY2023: DISAGREES; grossProfit FY2023: DISAGREES.",
+      "LEN-B.US / economics**: ppe FY2015,2016,2017,2018,2020,2021,2022,2023,2024,2025: DISAGREES; receivables FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; inventory FY2015,2016,2017,2018,2019,2020,2021,2022: DISAGREES; payables FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; operatingIncome FY2021: NO_SECOND_SOURCE; receivables FY2022,2023,2024,2025: DISAGREES; operatingIncome FY2023: DISAGREES."
+    ],
+    "MGM.US": [
+      "MGM.US / economics**: ocf FY2015: NO_SECOND_SOURCE; receivables FY2015,2017,2018,2019,2020,2021: DISAGREES; ppe FY2019,2020,2021: DISAGREES."
+    ],
+    "NDSN.US": [
+      "NDSN.US / economics**: ocf FY2015: NO_SECOND_SOURCE; receivables FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; ppe FY2020,2021: DISAGREES."
+    ],
+    "OMV.VI": [
+      "OMV.VI / economics**: netIncome FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; ocf FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; capex FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; sbc FY2015,2016,2017,2018,2019,2020,2021,2022: NO_SECOND_SOURCE; operatingIncome FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; revenue FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; receivables FY2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025: NO_SECOND_SOURCE; inventory FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; payables FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; ppe FY2019,2020,2021: NO_SECOND_SOURCE; ocf FY2023: DISAGREES; capex FY2023: DISAGREES; ppe FY2024,2025: DISAGREES."
+    ],
+    "PTC.US": [
+      "PTC.US / moat**: equity FY2015: DISAGREES; totalDebt FY2015,2016,2017,2020,2021,2022,2023,2024,2025: DISAGREES; cash FY2016,2017,2018,2019,2020: DISAGREES."
+    ],
+    "RA.MX": [
+      "RA.MX / management**: dilutedShares FY2021,2022,2023,2025: INCOMPARABLE_BASIS."
+    ],
+    "SANB3.SA": [
+      "SANB3.SA / management**: dilutedShares FY2022,2023,2024,2025: INCOMPARABLE_BASIS."
+    ],
+    "STE.US": [
+      "STE.US / moat**: netIncome FY2016: NO_SECOND_SOURCE; operatingIncome FY2016: NO_SECOND_SOURCE; revenue FY2016: NO_SECOND_SOURCE; grossProfit FY2016: NO_SECOND_SOURCE; equity FY2016,2017: NO_SECOND_SOURCE; totalDebt FY2016,2017: NO_SECOND_SOURCE; cash FY2016,2022: NO_SECOND_SOURCE; totalDebt FY2018,2019,2020,2021,2022,2023: DISAGREES.",
+      "STE.US / management**: dilutedShares FY2016: NO_SECOND_SOURCE; netIncome FY2016: NO_SECOND_SOURCE; dividendsPaid FY2016: NO_SECOND_SOURCE; dilutedShares FY2017,2018,2019,2020,2021,2022: INCOMPARABLE_BASIS; marketCap FY2017,2018,2019,2020,2021,2022,2023,2024,2025,2026: NO_SECOND_SOURCE."
+    ],
+    "TPL.US": [
+      "TPL.US / economics**: netIncome FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; ocf FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; capex FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; sbc FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; operatingIncome FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; revenue FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; ppe FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; receivables FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; inventory FY2015,2016,2017,2018,2019,2020,2023,2024,2025: NO_SECOND_SOURCE; payables FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; capex FY2023,2024,2025: DISAGREES; ppe FY2025: DISAGREES; payables FY2025: DISAGREES."
+    ],
+    "TROW.US": [
+      "TROW.US / moat**: revenue FY2015: NO_SECOND_SOURCE; grossProfit FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; totalDebt FY2016,2017,2018,2019,2020,2021,2025: DISAGREES; grossProfit FY2022,2023,2025: DISAGREES."
+    ],
+    "TSCO.US": [
+      "TSCO.US / economics**: revenue FY2015,2016: NO_SECOND_SOURCE; receivables FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; ppe FY2019,2020,2021: DISAGREES; receivables FY2022: DISAGREES."
+    ],
+    "UHS.US": [
+      "UHS.US / economics**: capex FY2015,2016,2017,2018,2019: DISAGREES; inventory FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; ppe FY2019,2020,2021: DISAGREES."
+    ],
+    "UOB.F": [
+      "UOB.F / understandable**: operatingIncome FY2017,2018: DISAGREES."
+    ],
+    "VTRS.US": [
+      "VTRS.US / management**: dilutedShares FY2015,2016,2017: NO_SECOND_SOURCE; netIncome FY2015,2016,2017: NO_SECOND_SOURCE; dividendsPaid FY2015,2016,2017: NO_SECOND_SOURCE; marketCap FY2016,2017,2018,2019,2020,2021,2022,2023,2024,2025: NO_SECOND_SOURCE; dilutedShares FY2018,2019,2020,2021,2024,2025: INCOMPARABLE_BASIS; dividendsPaid FY2018,2019,2020,2021: DISAGREES.",
+      "VTRS.US / economics**: netIncome FY2015,2016,2017: NO_SECOND_SOURCE; ocf FY2015,2016,2017: NO_SECOND_SOURCE; capex FY2015,2016,2017: NO_SECOND_SOURCE; sbc FY2015,2016,2017: NO_SECOND_SOURCE; operatingIncome FY2015,2016,2017: NO_SECOND_SOURCE; revenue FY2015,2016,2017: NO_SECOND_SOURCE; ppe FY2015,2016,2017,2018: NO_SECOND_SOURCE; receivables FY2015,2016,2017,2018: NO_SECOND_SOURCE; inventory FY2015,2016,2017,2018: NO_SECOND_SOURCE; payables FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; capex FY2019,2020,2021,2022,2023: DISAGREES; ppe FY2019,2020,2021: DISAGREES."
+    ],
+    "WSM.US": [
+      "WSM.US / management**: dilutedShares FY2016,2017,2018,2019,2020,2021,2022: INCOMPARABLE_BASIS."
+    ],
+    "WTW.US": [
+      "WTW.US / economics**: capex FY2015,2016,2017,2018,2019,2020,2021: DISAGREES; inventory FY2015,2016,2017,2018,2019,2020,2021,2022,2023: DISAGREES; payables FY2017,2018: DISAGREES; ppe FY2019,2020,2021: DISAGREES; payables FY2019,2020,2021: NO_SECOND_SOURCE; inventory FY2024,2025: NO_SECOND_SOURCE."
+    ],
+    "WYNN.US": [
+      "WYNN.US / economics**: receivables FY2015,2016,2017,2018,2019,2020,2021: NO_SECOND_SOURCE; payables FY2015: DISAGREES; capex FY2016,2017,2018,2021,2022,2023: DISAGREES; revenue FY2019,2020,2021: NO_SECOND_SOURCE; ppe FY2019,2020,2021,2025: DISAGREES; receivables FY2025: DISAGREES."
+    ],
+    "AERO.US": [
+      "AERO.US / 2026-10-08 replay: management test unclear and owner-earnings history insufficient for a valuation after fresh 20-F reading; the computed record is undecided and would remove the published company. Kept at live bytes until the missing management/owner-earnings evidence is sourced."
+    ],
+    "JBS.US": [
+      "JBS.US / 2026-10-08 replay: economics and management tests unclear and owner-earnings history insufficient for a valuation; the computed record is undecided and would remove the published company. Kept at live bytes until the missing evidence is sourced."
+    ],
+    "AXP.US": [
+      "AXP.US / 2026-10-08 replay: computed moat fails on bank cost/income ratio 73.1% (>65%) built from nonInterestExpense FY2015-2025 and netRevenue FY2015-2024 with NO_SECOND_SOURCE; publishing it fails the calibration guard (known quality company, false negative). Kept at live bytes until those inputs are corroborated."
+    ]
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "IPS.PA": [
+    {
+      "end": "2025-12-31",
+      "currency": "EUR",
+      "source": "https://filings.xbrl.org/9695002OY2X35E9X8W87/2025-12-31/ESEF/FR/0/ipsos-2025-12-31-fr/reports/ipsos-2025-12-31-fr.xhtml",
+      "quote": "GrossProfit 1 710 992; EUR thousands; context c-1, fiscal 2025.",
+      "values": {
+        "grossProfit": 1710992000
+      },
+      "correction": true,
+      "calculation": "Issuer ifrs-full:GrossProfit f-11, scale=3; replaces vendor reclassification 504184000."
+    }
+  ],
+  "SIQ.AU": [
+    {
+      "end": "2025-12-31",
+      "currency": "AUD",
+      "source": "https://www.smartgroup.com.au/globalassets/smartgroup-corporate/about-us/2025annualreport.pdf",
+      "quote": "Operating cash inflow 97,773; share-based payments 4,722; AUD thousands.",
+      "values": {
+        "ocf": 97773000,
+        "sbc": 4722000,
+        "capex": 26156000,
+        "dilutedShares": 130304220
+      },
+      "correction": true,
+      "calculation": "2025 annual report pp.74 and 114, AUD thousands multiplied by 1000; excludes restricted customer cash. Cash capital expenditure: property/equipment 13596 + software 12560 (thousands); diluted weighted-average shares 130304220, p79."
+    },
+    {
+      "end": "2024-12-31",
+      "currency": "AUD",
+      "source": "https://www.smartgroup.com.au/globalassets/smartgroup-corporate/about-us/2025annualreport.pdf",
+      "quote": "2024 consolidated annual financial statements; see calculation for statement lines and units.",
+      "values": {
+        "sbc": 2823000,
+        "capex": 28340000,
+        "dilutedShares": 130248818
+      },
+      "correction": true,
+      "calculation": "Comparative cash-flow statement p74: PPE11482 + software11998 + contract rights4860, AUD thousands; share payments2823 thousand p114; EPS weighted-average diluted130248818 p79."
+    }
+  ],
+  "000786.SHE": [
+    {
+      "end": "2025-12-31",
+      "currency": "CNY",
+      "source": "https://pdf.dfcfw.com/pdf/H2_AN202603251820748841_1.pdf",
+      "quote": "2025 consolidated annual financial statements; see calculation for statement lines and units.",
+      "values": {
+        "revenue": 25280261918.22,
+        "grossProfit": 7284489842.86,
+        "ocf": 4203945682.37,
+        "sbc": 30062502.01
+      },
+      "correction": true,
+      "calculation": "Consolidated statements CNY units: revenue25280261918.22 minus cost17995772075.36; operating cash flow4203945682.37; note15 share-based expense30062502.01."
+    },
+    {
+      "end": "2024-12-31",
+      "currency": "CNY",
+      "source": "https://pdf.dfcfw.com/pdf/H2_AN202603251820748841_1.pdf",
+      "quote": "2024 consolidated annual financial statements; see calculation for statement lines and units.",
+      "values": {
+        "sbc": 19153438.74
+      },
+      "correction": true,
+      "calculation": "Note15 comparative share-based expense19153438.74 CNY, previously cached zero."
+    }
+  ],
+  "300760.SHE": [
+    {
+      "end": "2025-12-31",
+      "currency": "CNY",
+      "source": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225059012.PDF",
+      "quote": "2025 consolidated annual financial statements; see calculation for statement lines and units.",
+      "values": {
+        "sbc": 4768835
+      },
+      "correction": true,
+      "calculation": "Note11 share-based payments, report p323: expense4768835 CNY, previously missing."
+    },
+    {
+      "end": "2024-12-31",
+      "currency": "CNY",
+      "source": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225059012.PDF",
+      "quote": "2024 consolidated annual financial statements; see calculation for statement lines and units.",
+      "values": {
+        "grossProfit": 23178230164
+      },
+      "correction": true,
+      "calculation": "Comparative consolidated income statement: revenue36725749548 less operating cost13547519384 CNY."
+    }
+  ],
+  "600519.SHG": [
+    {
+      "end": "2023-12-31",
+      "currency": "CNY",
+      "source": "https://www.moutaichina.com/mtgf/articleFileDir/2024-05/07/e7471b99e4e84c7e9dcf1e591174c08e.pdf",
+      "quote": "Consolidated 2023 income and cash-flow statements, CNY units.",
+      "values": {
+        "revenue": 150560330316.45,
+        "grossProfit": 138693056464.67,
+        "ocf": 66593247721.09
+      },
+      "correction": true,
+      "calculation": "Total revenue150560330316.45 less cost of sales11867273851.78; consistent total-revenue basis with FY2024\u20132025. OCF66593247721.09."
+    },
+    {
+      "end": "2022-12-31",
+      "currency": "CNY",
+      "source": "https://www.moutaichina.com/mtgf/articleFileDir/2024-05/07/e7471b99e4e84c7e9dcf1e591174c08e.pdf",
+      "quote": "Consolidated comparative 2022 income statement, CNY units.",
+      "values": {
+        "revenue": 127553959355.97,
+        "grossProfit": 117460490739.34
+      },
+      "correction": true,
+      "calculation": "Total revenue127553959355.97 less cost of sales10093468616.63; replaces stale revenue109058141000."
+    },
+    {
+      "end": "2021-12-31",
+      "currency": "CNY",
+      "source": "https://www.moutaichina.com/mtgf/articleFileDir/2023-03/31/555222.pdf",
+      "quote": "2021 consolidated annual financial statements; cash-flow reconciliation and statement lines.",
+      "values": {
+        "revenue": 109464278563.89,
+        "grossProfit": 100480900753.93
+      },
+      "correction": true,
+      "calculation": "FY2021 comparative total revenue109464278563.89 minus operating cost8983377809.96; CNY units. Same total-revenue basis as later periods; stale cached revenue94159809000 replaced."
+    }
+  ],
+  "0700.HK": [
+    {
+      "end": "2024-12-31",
+      "currency": "CNY",
+      "source": "https://static.www.tencent.com/uploads/2026/04/09/62d786fcf3d3c8cb7e54791ee95439ac.pdf",
+      "quote": "2024 consolidated annual financial statements; cash-flow reconciliation and statement lines.",
+      "values": {
+        "capex": 96048000000,
+        "sbc": 20702000000
+      },
+      "correction": true,
+      "calculation": "Cash capital expenditure: PPE62927 + intangible26394 + land-use rights6727, RMB millions. SBC is the equity-settled noncash add-back20702 in cash-flow reconciliation, excluding already-paid cash compensation. Cached capex76760 is management capex excluding media content, inconsistent with other cash-flow years."
+    },
+    {
+      "end": "2023-12-31",
+      "currency": "CNY",
+      "source": "https://static.www.tencent.com/uploads/2024/04/08/e95c902973fc282be3b3e285c6245281.pdf",
+      "quote": "2023 consolidated annual financial statements; cash-flow reconciliation and statement lines.",
+      "values": {
+        "sbc": 21073000000
+      },
+      "correction": true,
+      "calculation": "Equity-settled noncash compensation add-back21073 RMB million, cash-flow note43; excludes cash-settled compensation already included in operating cash flow."
+    },
+    {
+      "end": "2021-12-31",
+      "currency": "CNY",
+      "source": "https://static.www.tencent.com/uploads/2023/04/06/214dce4c5312264800b20cfab64861ba.pdf",
+      "quote": "2021 consolidated annual financial statements; cash-flow reconciliation and statement lines.",
+      "values": {
+        "sbc": 21625000000
+      },
+      "correction": true,
+      "calculation": "Comparative cash-flow reconciliation equity-settled noncash compensation21625 RMB million; excludes cash-settled compensation already included in operating cash flow."
+    }
+  ]
+}

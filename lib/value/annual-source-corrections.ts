@@ -1,3 +1,4 @@
+import {isWrongIssuerFiling,wrongIssuerOf} from './issuer-separation';
 import {shareUnitScale,resolveShareScale,retainShareContinuity} from './share-fact-scale';
 import {applyReportedFacts,type ReportedFacts} from './completeness/reported-facts';
 import type {Company,Year} from './types';
@@ -165,13 +166,21 @@ export interface AnnualSourceEvidence {
  reportedFacts?:ReportedFacts[];
  facts:CompanyFacts;source:string;ordinaryPerAds?:number;shareBasisSource?:string;shareBasisDate?:string;revenueConcept?:string;revenueComponents?:string[];shareDimensions?:Record<string,string>;revenueDimensions?:Record<string,string>;
 }
+/** Cached SEC evidence that belongs to another reviewed issuer is excluded, never applied. */
+export function issuerAnnualSources(company:Company,read:<T>(file:string)=>T|null){
+ const rejected:string[]=[];
+ const keep=<T extends {source?:string}|null>(value:T):T|null=>{if(value&&isWrongIssuerFiling(company,value.source)){rejected.push(value.source!);return null;}return value;};
+ const evidence=keep(read<AnnualSourceEvidence>(`raw/sec-annual/${company.id}.json`));
+ const reviewed=keep(read<AnnualSourceEvidence>(`raw/annual-reviewed/${company.id}.json`));
+ let facts=read<CompanyFacts & {cik?:number|string}>(`raw/sec-companyfacts/${company.id}.json`);
+ if(facts&&wrongIssuerOf(company,facts.cik)){rejected.push(`https://data.sec.gov/api/xbrl/companyfacts/CIK${String(facts.cik).padStart(10,'0')}.json`);facts=null;}
+ return {evidence,reviewed,facts,rejected};
+}
 /** All cache, fetch and analysis paths consume the same general correction. */
 export function correctCachedAnnualSources(company:Company,years:Year[],raw:unknown,read:<T>(file:string)=>T|null,splits:Options['splits']=[]):Year[]{
  const provider=raw as {General?:{HomeCategory?:string;Type?:string}}|null;
  const adr=/ADR|GDR|depositary/i.test(`${provider?.General?.HomeCategory??''} ${provider?.General?.Type??''}`);
- const evidence=read<AnnualSourceEvidence>(`raw/sec-annual/${company.id}.json`);
- const reviewed=read<AnnualSourceEvidence>(`raw/annual-reviewed/${company.id}.json`);
- const facts=read<CompanyFacts>(`raw/sec-companyfacts/${company.id}.json`);
+ const {evidence,reviewed,facts}=issuerAnnualSources(company,read);
  const options={splits,financial:company.sector==='Financial Services'||company.kind==='bank'||company.kind==='insurer',adr,
   ordinaryPerAds:evidence?.ordinaryPerAds,shareBasisSource:evidence?.shareBasisSource};
  let result=facts?correctAnnualSources(years,facts,{...options,financial:options.financial&&!evidence?.revenueDimensions,source:`https://data.sec.gov/api/xbrl/companyfacts/CIK${String(company.cik??'').padStart(10,'0')}.json`}):years;

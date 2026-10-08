@@ -1,5 +1,6 @@
+import {assertFilingIssuer,inDistinctIssuerGroup} from '../../../lib/value/issuer-separation';
 import {balanceSheetsFor,correctFinancialBalances} from '../../../lib/value/latest-balance';
-import {correctCachedAnnualSources,correctCachedTrailingSources} from '../../../lib/value/annual-source-corrections';
+import {correctCachedAnnualSources,correctCachedTrailingSources,issuerAnnualSources} from '../../../lib/value/annual-source-corrections';
 import {METHOD_VERSION} from '../../../lib/value/method-version';
 import {publicBusiness} from '../../../lib/value/flags/public';
 import {inPublicationScope} from '../../../lib/value/held-universe';
@@ -38,6 +39,7 @@ export interface Options {
 }
 
 export function loadSections({ company, report }: { company: Company; report: ReportMeta }): Sections {
+  assertFilingIssuer(company,report.url);
   if (report.kind === "description") return { description: company.description ?? "" };
   const sections: Sections = {};
   for (const key of report.sections) {
@@ -45,6 +47,20 @@ export function loadSections({ company, report }: { company: Company; report: Re
     catch (error) { if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error; }
   }
   return sections;
+}
+
+function rightIssuer(company:Company,url:string|null|undefined):boolean{
+ try{assertFilingIssuer(company,url);return true;}catch{return false;}
+}
+
+export function analysisSections({company,report}:{company:Company;report:ReportMeta}):{report:ReportMeta;sections:Sections;rejectedReport?:ReportMeta}{
+ try{return {report,sections:loadSections({company,report})};}
+ catch(error){
+  if(error instanceof Error&&/Wrong issuer filing/.test(error.message)){
+   return {report:{id:company.id,kind:'description',url:null,filed:null,period:null,sections:[]} satisfies ReportMeta,sections:{description:company.description??''},rejectedReport:report};
+  }
+  throw error;
+ }
 }
 
 export default async function analyze({ only, limit, force, ask, getBondYield = bondYield, evidence = findEvidence }: Options): Promise<void> {
@@ -117,10 +133,10 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
         const shareInputs = company.source === 'esef' && !fundamentals.years.at(-1)?.dilutedShares
           ? await esefShareInputs(company, usdRate)
           : currentShareInputs(raw, prices[company.id]?.[0] ?? null, company.currency);
-        const report = readCorpusJson<ReportMeta>(`reports/${company.id}/meta.json`) ?? {
+        const sourceReport = readCorpusJson<ReportMeta>(`reports/${company.id}/meta.json`) ?? {
           id: company.id, kind: "description", url: null, filed: null, period: null, sections: [],
         } satisfies ReportMeta;
-        const sections = loadSections({ company, report });
+        const {report,sections,rejectedReport} = analysisSections({ company, report: sourceReport });
         const historyAttempts = readCorpusJson<{ failures?: number }>(`prices-history/meta/${company.id}.json`);
         const priceHistoryPending = priceHistory === null && (historyAttempts?.failures ?? 0) < 3;
         const localBondYield = fundamentals.integrity.ok ? await getBondYield(company.country) : null;
@@ -148,6 +164,8 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
               return typeof value==='number'&&Number.isFinite(value)&&provenance&&(field!=='buybacks'||provenance.method==='estimate')?[{fy:y.fy,field,value,provenance}]:[];
             }));
           } });
+        const rejectedSources=[...(rejectedReport?.url?[rejectedReport.url]:[]),...(inDistinctIssuerGroup(company.id)?issuerAnnualSources(company,readCorpusJson).rejected:[])];
+        if(rejectedSources.length)result.historyAssumptions=[...(result.historyAssumptions??[]),...[...new Set(rejectedSources)].map(url=>`Excluded another issuer's SEC filing ${url}; this company is analysed without it.`)];
         const yieldInfo = getBondYield === bondYield ? readCorpusJson<BondObservation>(`bonds/${company.country}.json`) : null;
         if (result.valuation && yieldInfo) {
           result.valuation.bondSource = yieldInfo.source;
@@ -197,7 +215,16 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
         writeCorpusJson(fingerprintFile, fingerprint);
         written++;
       } catch (error) {
-        console.error(`analyze: ${company.id}: ${error instanceof Error ? error.message : String(error)}`);
+        const message=error instanceof Error ? error.message : String(error);
+        const prior=readCorpusJson<Analysis>(`analysis/${company.id}.json`);
+        if(message.startsWith('Cached reading unavailable or changed:')
+          && prior?.versions.pipeline===PIPELINE_VERSION&&prior.versions.questions===QUESTIONS_VERSION
+          && rightIssuer(company,prior.report?.url)){
+          console.warn(`analyze: ${company.id}: retained prior analysis; ${message}`);
+          skipped++;
+          continue;
+        }
+        console.error(`analyze: ${company.id}: ${message}`);
         failures.push(company.id);
       }
     }

@@ -1,3 +1,4 @@
+import {reviewedCik,sameIssuerListings} from './issuer-separation';
 import { enrichedCompany } from "./enrichment";
 import { readCorpusJson, readJsonl } from "./corpus";
 import { shardOf } from "./shard";
@@ -20,7 +21,7 @@ export function universeCompanies(): Company[] {
   if(dossier?.company?.id===id)companies.set(id,dossier.company);
  }
  return [...companies.values()]
-   .map(c=>({...c,...(snapshot?{indexes:snapshot.memberships?.[c.id]??[]}:{}),...(heldIds.has(c.id)?{heldBySuperinvestors:true}:{})}));
+   .map(c=>({...c,cik:reviewedCik({id:c.id,cik:c.cik??null}),listings:sameIssuerListings(c),...(snapshot?{indexes:snapshot.memberships?.[c.id]??[]}:{}),...(heldIds.has(c.id)?{heldBySuperinvestors:true}:{})}));
 }
 
 /** Reject unsafe paths without stopping a whole stage. */
@@ -55,7 +56,7 @@ export function mergeCompany(row: Company, patch: Partial<Company>): Company {
  if (/[^\x00-\x7F]/.test(merged.name) && /^[\x00-\x7F]+$/.test(row.name)) {
    merged.nativeName=merged.name; merged.name=row.name;
  }
- return merged;
+ return {...merged,cik:reviewedCik({id:merged.id,cik:merged.cik??null}),listings:sameIssuerListings(merged)};
 }
 
 /** Use an explicitly linked listing from the same issuer, preserving the native name. */

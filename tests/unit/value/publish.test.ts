@@ -5,7 +5,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { buildOutput } from "@/lib/value/build-output";
 import { PIPELINE_VERSION } from '@/lib/value/analyze-company';
 import { QUESTIONS_VERSION } from '@/lib/value/jev/questions';
-import { corpusDir, writeCorpusJson } from "@/lib/value/corpus";
+import { corpusDir, readCorpusJson, writeCorpusJson } from "@/lib/value/corpus";
 import { parseYahooPrice, yahooPrice } from "@/lib/value/prices-yahoo";
 import { shardOf } from "@/lib/value/shard";
 import { baselineAnalysisHash } from '@/scripts/value/coverage-release';
@@ -178,6 +178,24 @@ describe("buildOutput", () => {
     expect(shards.length).toBeGreaterThan(0);
     expect(shards.every(r=>r[4]===100)).toBe(true);
     expect(JSON.parse(readFileSync(path.join(out,'history/2018Q3.json'),'utf8'))).toEqual([[a.id,'PPPPP',.8,true,1.5,null,null,null,{date:'2026-10-02'}]]);
+  });
+  it('publishes cached history returns when the refresh provider fails, and stops without any cache', async()=>{
+    const {default:publish}=await import('@/scripts/value/stages/publish');
+    const a=analysis();
+    writeCorpusJson('analysis/KO.US.json',a);
+    writeFileSync(path.join(corpusDir(),'universe.jsonl'),JSON.stringify(a.company)+'\n');
+    writeCorpusJson('index-membership/latest.json',{complete:true,memberships:{'KO.US':['S&P 500']}});
+    writeCorpusJson('history-v7/run/index.json',{scope:'universe',years:[],quarters:['2018Q3'],perYear:{},perQuarter:{}});
+    writeCorpusJson('history-v7/run/2018Q3.json',[[a.id,'PPPPP',.8,true,.1]]);
+    const request=vi.spyOn(globalThis,'fetch').mockRejectedValue(new Error('provider down'));
+    try{
+      const out=path.join(corpusDir(),'candidate');
+      await expect(publish({out})).rejects.toThrow(/History return prices unavailable for KO.US/);
+      writeCorpusJson('history-return-prices/KO.US.json',{currency:'USD',fetchedAt:'2026-10-06',prices:[['2018-09',10]],latest:[25,'2026-10-02']});
+      await publish({out});
+      expect(JSON.parse(readFileSync(path.join(out,'history/2018Q3.json'),'utf8'))).toEqual([[a.id,'PPPPP',.8,true,1.5,null,null,null,{date:'2026-10-02'}]]);
+      expect(readCorpusJson<{failed:Array<{id:string}>}>('history-return-prices/report.json')?.failed.map(f=>f.id)).toEqual(['KO.US']);
+    }finally{request.mockRestore();}
   });
   it('does not replace a released filing answer with a computed price-story fallback',()=>{
     const a=analysis();
@@ -868,8 +886,8 @@ it('stamps every published dossier and index row with the live method',()=>{
  const full=analysis(), short=analysis('SHORT.US');short.historyCoverage!.years=5;
  const files=output([full,short]);
  for(const [file,data] of Object.entries(files)){
-  if(file.startsWith('dossiers/'))for(const d of Object.values(data as Record<string,Dossier>))expect(d.methodVersion).toBe('3.6.0');
-  if(file.startsWith('index/'))for(const row of data as IndexRow[])expect(row.methodVersion).toBe('3.6.0');
+  if(file.startsWith('dossiers/'))for(const d of Object.values(data as Record<string,Dossier>))expect(d.methodVersion).toBe('3.6.1');
+  if(file.startsWith('index/'))for(const row of data as IndexRow[])expect(row.methodVersion).toBe('3.6.1');
  }
 });
 
@@ -1001,7 +1019,7 @@ it('freezes the live dossier, every index/history row and search identity in nor
   }
   expect(read(root,`dossiers/${shardOf(next.id)}.json`)[next.id].tests.management.result).toBe('fail');
  }
- expect(readFileSync(path.join(corpusDir(),'staging/verdict-freeze.jsonl'),'utf8')).toContain('frozen until second-source check');
+ expect(readFileSync(path.join(corpusDir(),'staging/verdict-freeze.jsonl'),'utf8')).toContain('unresolved data-quality check');
  expect(readdirSync(out)).not.toContain('verdict-freeze.jsonl');
  writeCorpusJson('verdict-freeze.json',{version:1,ids:[]});
  publishSnapshot({repo:live,analyses:[old,next],universe:[old.company,next.company],partial:false,commit:false,holdersByTicker:{},investorNames:{}});
@@ -1033,7 +1051,7 @@ it('replaces a dated vendor cap with the current quote times supported issuer sh
  expect(JSON.parse(readFileSync(path.join(repo,'index/US.json'),'utf8'))[0].mc).toBe(6000);
 });
 
-it('retains published shares, preserves unapproved Buy changes, and still reprices later quotes',async()=>{
+it('retains supported shares while publishing quality driven Buy changes and repricing later quotes',async()=>{
  const a=analysis();a.company.marketCapUsd=null;
  const repo=directory();mkdirSync(path.join(repo,'prices'));writeFileSync(path.join(repo,'prices/US.json'),JSON.stringify({[a.id]:[50,'2026-10-01']}));
  const run=()=>publishSnapshot({repo,analyses:[a],universe:[a.company],partial:false,commit:false,holdersByTicker:{},investorNames:{}});
@@ -1042,7 +1060,7 @@ it('retains published shares, preserves unapproved Buy changes, and still repric
  a.valuation!.assumptions=['current share sources disagree by more than 1.5x; share count not corrected'];run();
  expect(read().b).toBe(true);
  a.tests.moat.result='fail';run();
- expect(read().tests.price).toEqual(old);expect(read().tests.moat.result).toBe('pass');expect(read().b).toBe(true);
+ expect(read().tests.price).toEqual(old);expect(read().tests.moat.result).toBe('fail');expect(read().b).toBe(false);
  expect(read().valuation.publishedShareReview).toBe(true);
  expect(read().priceTestFreeze).toBeUndefined();
  const {refreshPublishedBuyPrices}=await import('@/lib/value/refresh-buy-prices');

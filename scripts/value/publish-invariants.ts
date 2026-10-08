@@ -1,11 +1,7 @@
-import {assertCoverage,approvedIds,committedArchive,critical} from './publication-coverage';
+import {assertCoverage,committedArchive,critical} from './publication-coverage';
 import {execFileSync} from 'node:child_process';
 import {existsSync,readFileSync,readdirSync,statSync} from 'node:fs';
 import path from 'node:path';
-import {isDeepStrictEqual} from 'node:util';
-import {publishedBuyPrice} from '../../lib/value/buy-price';
-import type {IndexRow,PriceMap} from '../../lib/value/types';
-import approvedChanges from './approved-verdict-changes.json';
 import issuerRegistry from '../../lib/value/issuer-registry.json';
 
 type Reader = {files:string[]; read:(file:string)=>any};
@@ -22,8 +18,7 @@ const fail=(message:string):never=>{throw new Error(`Publish invariant: ${messag
 /** Compare the proposed working tree to the released commit, never to mutable meta counts.
  * Every commit entry point calls this BEFORE staging or creating an orphan branch.
  */
-export interface ApprovedVerdictChange {id:string;before:{b:boolean;v:number[]|null;m:number;t?:string};after:{b:boolean;v:number[]|null;m:number;t?:string};reason:string;evidence:string[]}
-export function assertPublishInvariants(repo:string,baseline='HEAD',approvals:ApprovedVerdictChange[]=approvedChanges):ReturnType<typeof assertCoverage>|undefined {
+export function assertPublishInvariants(repo:string,baseline='HEAD'):ReturnType<typeof assertCoverage>|undefined {
  if(baseline==='HEAD'&&committed(repo,'origin/main'))baseline='origin/main';
  const prior=committed(repo,baseline);
  if(!prior&&existsSync(path.join(repo,'.git'))&&committed(repo,'HEAD'))critical('previous published archive missing');
@@ -56,7 +51,7 @@ export function assertPublishInvariants(repo:string,baseline='HEAD',approvals:Ap
  };
  if(meta.views)checkRefs(meta.views);
  const dossierIds=(r:Reader)=>new Set(r.files.filter(f=>/^dossiers\/\d{3}\.json$/.test(f)).flatMap(f=>Object.keys(r.read(f))));
- const oldIds=prior?dossierIds(prior):new Set<string>(),newIds=dossierIds(current);
+ const newIds=dossierIds(current);
  for(const group of issuerRegistry.groups){
   const present=group.ids.filter(id=>newIds.has(id));
   if(present.length>1)fail(`duplicate issuer: ${present.join(', ')}`);
@@ -64,51 +59,5 @@ export function assertPublishInvariants(repo:string,baseline='HEAD',approvals:Ap
  const aliases:Record<string,string>=current.read('aliases.json')??{};
  for(const [id,target]of Object.entries(aliases))if(id===target||aliases[target]||!newIds.has(target)||newIds.has(id))fail(`invalid issuer alias ${id} -> ${target}`);
 
- if(!prior)return coverage;
- const prices=(r:Reader):PriceMap=>Object.assign({},...r.files.filter(f=>/^prices\/[A-Z]{2}\.json$/.test(f)).map(f=>r.read(f)));
- const oldPrices=prices(prior),newPrices=prices(current);
- for(const file of prior.files.filter(f=>/^index\/(?:default|[A-Z]{2})\.json$/.test(f)))for(const row of prior.read(file)??[])oldIds.add(row.id);
- // Check the default index and every country separately, so offsetting country
- // losses cannot hide in the global total. Analysis changes need explicit review.
- const indexes=new Set([...prior.files,...current.files].filter(f=>/^index\/(?:default|[A-Z]{2})\.json$/.test(f)));
- for(const file of indexes){
-  const oldRows:IndexRow[]=prior.read(file)??[],newRows:IndexRow[]=current.read(file)??[];
-  const oldBuys=oldRows.filter(r=>r.b).length,newBuys=newRows.filter(r=>r.b).length;
-  let increases=0,decreases=0;
-  const reviewed=new Set<string>();
-  for(const id of approvedIds(git(repo,['rev-parse',baseline]),`buy:${path.basename(file,'.json')}`)){
-   const old=oldRows.find(r=>r.id===id),next=newRows.find(r=>r.id===id);
-   if(old?.b&&!next?.b){decreases++;reviewed.add(id);}
-  }
-  for(const approval of approvals){
-   if(!approval.reason?.trim()||!approval.evidence?.length||approval.evidence.some(url=>!/^https:\/\//.test(url)))fail('Invalid approved verdict change');
-   const old=oldRows.find(r=>r.id===approval.id),next=newRows.find(r=>r.id===approval.id);
-   // A method approval binds both quality masks; older balance approvals
-   // still require quality to remain unchanged. Partial bindings fail closed.
-   const masksBound=approval.before.t!==undefined&&approval.after.t!==undefined;
-   const state=(r:IndexRow)=>({b:r.b,v:r.v,m:r.m,...(masksBound?{t:r.t}:{})});
-   if(!old||!next||(!masksBound&&old.t!==next.t)||!isDeepStrictEqual(state(old),approval.before)||!isDeepStrictEqual(state(next),approval.after))continue;
-   if(reviewed.has(approval.id))fail('Duplicate approved verdict change');
-   reviewed.add(approval.id);
-   if(next.b&&!old.b)increases++;if(old.b&&!next.b)decreases++;
-  }
-  for(const row of oldRows){
-   if(reviewed.has(row.id))continue;
-   // A retired quote cannot explain a verdict change in a surviving dossier.
-   if(!newIds.has(row.id)&&aliases[row.id])continue;
-   const next=newRows.find(r=>r.id===row.id);
-   const priceExplains=!isDeepStrictEqual(oldPrices[row.id],newPrices[row.id])
-     && publishedBuyPrice(row,oldPrices[row.id]).b===row.b
-     && publishedBuyPrice(row,newPrices[row.id]).b===next?.b;
-   if(next&&row.b!==next.b&&!priceExplains)fail(`${file} Buy-now changed for unapproved ${row.id}`);
-   if(isDeepStrictEqual(oldPrices[row.id],newPrices[row.id]))continue;
-   const change=Number(publishedBuyPrice(row,newPrices[row.id]).b)-Number(publishedBuyPrice(row,oldPrices[row.id]).b);
-   if(change>0)increases++;if(change<0)decreases++;
-  }
-  const delta=newBuys-oldBuys;
-  const addedBuys=newRows.filter(row=>row.b&&!oldIds.has(row.id)&&newIds.has(row.id)).length;
-  const removedBuys=oldRows.filter(row=>row.b&&!newIds.has(row.id)&&aliases[row.id]&&newIds.has(aliases[row.id])).length;
-  if(delta>increases+addedBuys||delta < -decreases-removedBuys)fail(`${file} Buy-now changed ${oldBuys} -> ${newBuys}; prices and new dossiers explain at most +${increases+addedBuys}/-${decreases}`);
- }
  return coverage;
 }

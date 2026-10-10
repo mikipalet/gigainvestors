@@ -3,6 +3,7 @@ import {existsSync, readFileSync, readdirSync} from 'node:fs';
 import path from 'node:path';
 import {isDeepStrictEqual} from 'node:util';
 import {appendJsonl, readCorpusJson} from '../../lib/value/corpus';
+import {readAnalysisRetained} from './analysis-retained';
 import {validCompanyId} from '../../lib/value/companies';
 import {shardOf} from '../../lib/value/shard';
 import {summarizeSnapshots} from '../../lib/value/snapshots';
@@ -19,19 +20,27 @@ export function readVerdictFreeze(repo: string, {all=false,captureAll=false}:{al
   const aliasesFile=path.join(repo,'aliases.json');
   const aliases=existsSync(aliasesFile)?JSON.parse(readFileSync(aliasesFile,'utf8')):{};
   const ids = new Set([...(config?.ids ?? []),...unchangedCoverageBaselineIds().filter(id=>!aliases[id])]), previous: Files = {}, dossiers: Record<string,Dossier> = {};
-  if (!ids.size&&!all&&!captureAll) return {ids, previous, dossiers, reasons:config?.reasons};
+  // A company whose latest analysis failed keeps its released record, exactly
+  // like --existing-analysis; one without a live dossier is simply not published.
+  const failed=readAnalysisRetained(), retained=new Set(failed.ids.filter(id=>!ids.has(id)&&!aliases[id]));
+  const reasons:Record<string,string[]>={...config?.reasons};
+  if (!ids.size&&!retained.size&&!all&&!captureAll) return {ids, previous, dossiers, reasons:config?.reasons};
   for (const dir of ['dossiers','index','search','history','prices']) {
     if (!existsSync(path.join(repo,dir))) continue;
     for (const file of readdirSync(path.join(repo,dir)).filter(f=>f.endsWith('.json'))) previous[`${dir}/${file}`] = JSON.parse(readFileSync(path.join(repo,dir,file),'utf8'));
   }
   if (existsSync(path.join(repo,'aliases.json'))) previous['aliases.json']=JSON.parse(readFileSync(path.join(repo,'aliases.json'),'utf8'));
+  for(const id of retained){
+    if(previous[`dossiers/${shardOf(id)}.json`]?.[id]?.id!==id){retained.delete(id);continue;}
+    ids.add(id);reasons[id]=[`analysis failed: ${failed.reasons[id]??'unknown error'}`];
+  }
   if(all)for(const [file,rows]of Object.entries(previous))if(file.startsWith('dossiers/'))for(const id of Object.keys(rows))ids.add(id);
   for (const id of ids) {
     const dossier=previous[`dossiers/${shardOf(id)}.json`]?.[id];
     if (!dossier || dossier.id!==id) throw Error(`Frozen company ${id}: previous live dossier missing`);
     dossiers[id]=dossier;
   }
-  return {ids,previous,dossiers,reasons:config?.reasons};
+  return {ids,previous,dossiers,reasons};
 }
 
 /** Replace in place; a freeze must not reshuffle every other historical/search row. */

@@ -1205,3 +1205,51 @@ describe('coverage additions retired by the issuer registry', () => {
     expect(()=>publish()).toThrow(/ALK-B.CO.*incomplete.*full-filing/);
   });
 });
+
+it('keeps the released record of a company whose analysis failed, publishes every fresh analysis and withholds an unreleased failure', async()=>{
+ const {default:publish}=await import('@/scripts/value/stages/publish');
+ const failed=analysis(), fresh=analysis('PEP.US'), unreleased=analysis('MSFT.US'), live=path.join(corpusDir(),'publish-repo');
+ mkdirSync(live);
+ publishSnapshot({repo:live,analyses:[failed,fresh],universe:[failed.company,fresh.company],partial:false,commit:false,holdersByTicker:{},investorNames:{}});
+ const released=JSON.parse(readFileSync(path.join(live,`dossiers/${shardOf(failed.id)}.json`),'utf8'))[failed.id];
+ // The failed company's cached file is not tonight's analysis: it may be stale or never released.
+ failed.versions.pipeline='obsolete';failed.tests.moat.result=failed.tests.moat.numeric='fail';
+ fresh.tests.management.result=fresh.tests.management.numeric='fail';
+ writeFileSync(path.join(corpusDir(),'universe.jsonl'),[failed,fresh,unreleased].map(a=>JSON.stringify(a.company)).join('\n')+'\n');
+ writeCorpusJson('index-membership/latest.json',{complete:true,memberships:Object.fromEntries([failed,fresh,unreleased].map(a=>[a.id,['S&P 500']]))});
+ for(const a of [failed,fresh,unreleased])writeCorpusJson(`analysis/${a.id}.json`,a);
+ writeCorpusJson('staging/analysis-retained.json',{version:1,updatedAt:'2026-10-10T07:05:06Z',ids:[failed.id,unreleased.id],reasons:{[failed.id]:'The operation was aborted due to timeout',[unreleased.id]:'The operation was aborted due to timeout'}});
+ const log=vi.spyOn(console,'log').mockImplementation(()=>{});
+ const out=path.join(corpusDir(),'out');await publish({out});
+ const dossiers=(root:string)=>Object.assign({},...readdirSync(path.join(root,'dossiers')).map(f=>JSON.parse(readFileSync(path.join(root,'dossiers',f),'utf8'))));
+ expect(JSON.stringify(dossiers(out)[failed.id])).toBe(JSON.stringify(released));
+ expect(dossiers(out)[fresh.id].tests.management.result).toBe('fail');
+ expect(dossiers(out)[unreleased.id]).toBeUndefined();
+ const lines=log.mock.calls.flat().join('\n');
+ expect(lines).toContain('publish: retained released analysis for 1 companies whose analysis failed: KO.US');
+ expect(lines).toContain('publish: withheld 1 unreleased companies whose analysis failed: MSFT.US');
+ expect(readFileSync(path.join(corpusDir(),'staging/verdict-freeze.jsonl'),'utf8')).toContain('analysis failed: The operation was aborted due to timeout');
+ // A successful analysis clears the list; the next publication uses it.
+ failed.versions.pipeline=PIPELINE_VERSION;writeCorpusJson(`analysis/${failed.id}.json`,failed);
+ writeCorpusJson('staging/analysis-retained.json',{version:1,updatedAt:'2026-10-11T07:00:00Z',ids:[],reasons:{}});
+ const next=path.join(corpusDir(),'next');await publish({out:next});
+ expect(dossiers(next)[failed.id].tests.moat.result).toBe('fail');
+ expect(dossiers(next)[unreleased.id]).toBeDefined();
+});
+
+it('rejects a malformed analysis-retained file instead of guessing which companies failed', async()=>{
+ const {readAnalysisRetained}=await import('@/scripts/value/analysis-retained');
+ writeCorpusJson('staging/analysis-retained.json',{version:1,ids:['../KO.US'],reasons:{}});
+ vi.spyOn(console,'warn').mockImplementation(()=>{});
+ expect(()=>readAnalysisRetained()).toThrow(/Invalid staging\/analysis-retained.json/);
+});
+
+it('states the systemic-failure threshold: more than 2% of fresh analyses, or any failure in a tiny run', async()=>{
+ const {systemicAnalysisFailure,MAX_ANALYSIS_FAILURE_SHARE}=await import('@/scripts/value/analysis-retained');
+ expect(MAX_ANALYSIS_FAILURE_SHARE).toBe(0.02);
+ expect(systemicAnalysisFailure(10,6268)).toBe(false); // 2026-10-10: 10 of 6,268
+ expect(systemicAnalysisFailure(25,9894)).toBe(false); // 2026-10-09: 25 of 9,894
+ expect(systemicAnalysisFailure(126,6268)).toBe(true);
+ expect(systemicAnalysisFailure(1,10)).toBe(true);
+ expect(systemicAnalysisFailure(0,0)).toBe(false);
+});

@@ -31,11 +31,12 @@ import { corpusPath, readCorpusJson, readJsonl, writeCorpusJson } from "../../..
 import { findEvidence } from "../../../lib/value/jev/run";
 import { QUESTIONS, QUESTIONS_VERSION } from "../../../lib/value/jev/questions";
 import trust from "../../../lib/value/jev-trust.json";
+import { MAX_ANALYSIS_FAILURE_SHARE, recordAnalysisRetained, systemicAnalysisFailure } from "../analysis-retained";
 import type { Analysis, Company, Fundamentals, ReportMeta, JevQuestion, Year } from "../../../lib/value/types";
 
 export interface Options {
   only?: string[]; limit?: number; force?: boolean;
-  ask?: Ask; getBondYield?: typeof bondYield; evidence?: (args: { section: string; questions: Record<string, JevQuestion> }) => Promise<Record<string, string | null> | null>;
+  ask?: Ask; getBondYield?: typeof bondYield; maxFailureShare?: number; evidence?: (args: { section: string; questions: Record<string, JevQuestion> }) => Promise<Record<string, string | null> | null>;
 }
 
 export function loadSections({ company, report }: { company: Company; report: ReportMeta }): Sections {
@@ -63,7 +64,27 @@ export function analysisSections({company,report}:{company:Company;report:Report
  }
 }
 
-export default async function analyze({ only, limit, force, ask, getBondYield = bondYield, evidence = findEvidence }: Options): Promise<void> {
+/**
+ * Unchanged companies resolve every await as a microtask, so the workers used to
+ * run thousands of companies of synchronous work while a Jev response sat unread;
+ * its 120s timer then fired first and the same fresh readings failed every night.
+ * Each event-loop turn now admits one waiting worker; a worker that finishes a
+ * company inside the ~50ms slice may continue. Network I/O and timers therefore
+ * wait about one company, not the whole worker pool.
+ */
+export function eventLoopSlicer(sliceMs = 50): () => Promise<void> {
+  let started = 0, admitted = false, turn: Promise<void> | null = null;
+  return async () => {
+    if (Date.now() - started < sliceMs) return;
+    for (;;) {
+      await (turn ??= new Promise<void>(resolve => setImmediate(() => { turn = null; started = Date.now(); admitted = false; resolve(); })));
+      // Every waiter resumes in this same microtask round, before the admitted one works.
+      if (!admitted) { admitted = true; return; }
+    }
+  };
+}
+
+export default async function analyze({ only, limit, force, ask, getBondYield = bondYield, evidence = findEvidence, maxFailureShare = MAX_ANALYSIS_FAILURE_SHARE }: Options): Promise<void> {
   const companies = universeCompanies().filter(company => !only || only.includes(company.id));
   // Offline repairs can change cached records that dedupe removed from the universe.
   // Honor explicit IDs without adding those aliases back to published coverage.
@@ -87,13 +108,19 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
   const peers = new Map(peerRows.map(r=>[r.company.id,new Map(r.years.map(y=>[y.end,y.peerCreditLossRate]))]));
   const usdRate = createUsdRate({ force });
   const prices = { ...readPrices(corpusPath("prices")), ...readPrices(corpusPath("publish-repo/prices")) };
+  const yieldEventLoop = eventLoopSlicer();
   let cursor = 0;
   let written = 0;
   let skipped = 0;
   const failures: string[] = [];
+  const reasons: Record<string, string> = {};
+  const attempted: string[] = [];
   await Promise.all(Array.from({ length: Math.min(Number(process.env.VALUE_ANALYZE_CONCURRENCY)||T.analyze.concurrency, jobs.length) }, async () => {
     while (cursor < jobs.length) {
+      await yieldEventLoop();
+      if (cursor >= jobs.length) break;
       const { company } = jobs[cursor++];
+      attempted.push(company.id);
       try {
         // Keep statement payloads bounded by worker count, not universe size.
         const cachedFundamentals = readCorpusJson<Fundamentals>(`fundamentals/${company.id}.json`);
@@ -226,9 +253,17 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
         }
         console.error(`analyze: ${company.id}: ${message}`);
         failures.push(company.id);
+        reasons[company.id] = message;
       }
     }
   }));
   console.log(`analyze: ${written} written, ${skipped} unchanged, ${failures.length} failed`);
-  if (failures.length) throw new Error(`Analysis failed for: ${failures.join(", ")}`);
+  const retained = recordAnalysisRetained(attempted, reasons);
+  // One company's failure must not withhold every other fresh analysis. Publish
+  // keeps the released record of each retained company; only a systemic failure
+  // (above the stated share of fresh analyses) still fails the stage.
+  if (systemicAnalysisFailure(failures.length, written + failures.length, maxFailureShare)) {
+    throw new Error(`Analysis failed for: ${failures.join(", ")} (${failures.length} of ${written + failures.length} fresh analyses exceeds ${maxFailureShare * 100}%)`);
+  }
+  if (retained.ids.length) console.log(`analyze: retained released analysis for ${retained.ids.length} companies pending a successful analysis: ${retained.ids.join(", ")}`);
 }

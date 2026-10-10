@@ -13,7 +13,7 @@ import { askCompany } from "../../../lib/value/jev/run";
 import { QUESTIONS } from "../../../lib/value/jev/questions";
 import { appendJsonl, corpusPath, readCorpusJson, writeCorpusJson } from "../../../lib/value/corpus";
 import type { Analysis, Company, JevAnswer, ReportMeta } from "../../../lib/value/types";
-import analyze from "../../../scripts/value/stages/analyze";
+import analyze, { eventLoopSlicer } from "../../../scripts/value/stages/analyze";
 import calibrate, { calibrationSummary } from "../../../scripts/value/stages/calibrate";
 import sample from "../../../scripts/value/stages/jev-sample";
 
@@ -660,7 +660,8 @@ it('preserves unchanged nonmember evidence inputs when only the analysis clock c
   const args=input();
   appendJsonl('universe.jsonl',args.company);
   writeCorpusJson('fundamentals/KO.US.json',args.fundamentals);
-  vi.useFakeTimers();
+  // Only the clock: analyze hands the event loop back with real setImmediate turns.
+  vi.useFakeTimers({toFake:['Date']});
   try {
     vi.setSystemTime(new Date('2026-10-02T12:00:00Z'));
     const options={ask:args.ask,getBondYield:async()=>.04,evidence:async()=>null};
@@ -682,4 +683,65 @@ it('does not retain a prior analysis built on another issuer\'s filing when a fr
   await expect(analyze({ask:async()=>{throw new Error('Cached reading unavailable or changed: BATRA.US');},getBondYield:async()=>.04,evidence:async()=>null})).rejects.toThrow();
   expect(log.mock.calls.flat().join(' ')).toContain('BATRA.US: Cached reading unavailable');
   log.mockRestore();
+});
+
+it('hands the event loop back between companies so a pending Jev reading is not starved into a timeout', async () => {
+  vi.stubEnv('VALUE_ANALYZE_CONCURRENCY', '4');
+  const ids = Array.from({ length: 24 }, (_, i) => `T${String.fromCharCode(65 + i)}.US`);
+  for (const id of ids) {
+    const args = input('DAL.US');
+    appendJsonl('universe.jsonl', { ...args.company, id, name: id, code: id.split('.')[0], listings: [id] });
+    writeCorpusJson(`fundamentals/${id}.json`, { ...args.fundamentals, id });
+  }
+  let analysed = 0, during = -1;
+  await analyze({ getBondYield: async () => 0.04, evidence: async () => null, ask: async ({ id }) => {
+    analysed++;
+    // The first company's reading needs real I/O; every other one resolves at once,
+    // like the unchanged companies that dominate a nightly run.
+    if (id === ids[0]) { const before = analysed; await new Promise(resolve => setImmediate(resolve)); during = analysed - before; }
+    return answers();
+  } });
+  expect(analysed).toBe(ids.length);
+  // Before the fix the other workers analysed every remaining company first.
+  expect(during).toBeGreaterThanOrEqual(0);
+  expect(during).toBeLessThan(8);
+}, 60_000);
+
+it('publishes partial results: per-company failures within the stated share are retained, not fatal', async () => {
+  for (const id of ['KO.US', 'DAL.US']) {
+    const args = input(id);
+    appendJsonl('universe.jsonl', args.company);
+    writeCorpusJson(`fundamentals/${id}.json`, args.fundamentals);
+  }
+  vi.spyOn(console, 'error').mockImplementation(() => {});
+  const log = vi.spyOn(console, 'log').mockImplementation(() => {});
+  const failKo = async ({ id }: { id: string }) => { if (id === 'KO.US') throw new Error('The operation was aborted due to timeout'); return answers(); };
+  // 1 of 2 fresh analyses exceeds the default 2% share: still systemic.
+  await expect(analyze({ ask: failKo, getBondYield: async () => 0.04, evidence: async () => null })).rejects.toThrow(/KO\.US.*exceeds 2%/);
+  expect(readCorpusJson('staging/analysis-retained.json')).toMatchObject({ version: 1, ids: ['KO.US'], reasons: { 'KO.US': 'The operation was aborted due to timeout' } });
+  await analyze({ force: true, ask: failKo, getBondYield: async () => 0.04, evidence: async () => null, maxFailureShare: 0.5 });
+  expect(readCorpusJson<Analysis>('analysis/DAL.US.json')?.status).toBe('scored');
+  expect(readCorpusJson<Analysis>('analysis/KO.US.json')).toBeNull();
+  expect(log.mock.calls.flat().join('\n')).toMatch(/^analyze: retained released analysis for 1 companies pending a successful analysis: KO\.US$/m);
+  // A later success (here an --only run) clears the company; companies not attempted keep their state.
+  writeCorpusJson('staging/analysis-retained.json', { version: 1, updatedAt: '', ids: ['KO.US', 'ZZ.US'], reasons: { 'KO.US': 'x', 'ZZ.US': 'y' } });
+  await analyze({ only: ['KO.US'], ask: async () => answers(), getBondYield: async () => 0.04, evidence: async () => null });
+  expect(readCorpusJson('staging/analysis-retained.json')).toMatchObject({ ids: ['ZZ.US'], reasons: { 'ZZ.US': 'y' } });
+});
+
+it('bounds how long a timer waits behind workers whose awaits never leave the microtask queue', async () => {
+  const busy = (ms: number) => { const end = Date.now() + ms; while (Date.now() < end); };
+  // 16 workers x 6 companies; a company is two 4ms segments joined by a microtask await.
+  const maxTimerGap = async (slice?: () => Promise<void>) => {
+    let last = Date.now(), gap = 0;
+    const timer = setInterval(() => { const now = Date.now(); gap = Math.max(gap, now - last); last = now; }, 1);
+    await Promise.all(Array.from({ length: 16 }, async () => {
+      for (let i = 0; i < 6; i++) { await slice?.(); busy(4); await Promise.resolve(); busy(4); }
+    }));
+    clearInterval(timer);
+    return Math.max(gap, Date.now() - last);
+  };
+  expect(await maxTimerGap()).toBeGreaterThanOrEqual(700);
+  // Admitting every waiter at once would hold a turn for 16 companies (128ms).
+  expect(await maxTimerGap(eventLoopSlicer(10))).toBeLessThan(60);
 });

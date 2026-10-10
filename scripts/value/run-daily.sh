@@ -35,13 +35,16 @@ check_disk() {
   df -Pk / | awk 'NR==2 { exit ($4 < 6*1024*1024) }' || { echo "Disk below 6 GiB; stopping" >&2; exit 1; }
 }
 run_stage() {
-  local stage="$1" code started status detail
+  local stage="$1" code started status detail before
   check_disk
   started=$SECONDS
   shift
   echo "$(date -u +%FT%TZ) starting $stage $*"
+  before=$(cat "$VALUE_CORPUS_DIR/logs/$cycle_date-$stage.log" 2>/dev/null | wc -l)
   node --import tsx scripts/value/cli.ts "$stage" "$@" >> "$VALUE_CORPUS_DIR/logs/$cycle_date-$stage.log" 2>&1
   code=$?
+  # Companies whose analysis failed keep their released record; name them in the runner log.
+  tail -n "+$((before+1))" "$VALUE_CORPUS_DIR/logs/$cycle_date-$stage.log" | awk '/^(analyze|publish): (retained released|withheld)/'
   status=ok
   if [[ "$code" != 0 ]]; then status=failed; fi
   if [[ "$code" == 75 ]]; then status=budget-exhausted; fi
@@ -85,7 +88,7 @@ run_analysis() {
     run_stage business-backfill --limit=100 || :
   else
     retain_analysis=1
-    echo 'analysis failed; retaining existing released analysis'
+    echo 'analysis failed systemically (crash or more than 2% of fresh analyses); retaining existing released analysis'
   fi
 }
 run_japan() {

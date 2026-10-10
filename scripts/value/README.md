@@ -407,6 +407,20 @@ yields failure or thesis budget exhaustion, the runner uses
 refreshes its price decisions, and publishes it without consuming partial research.
 The existing `publish.hold` is still honored. Non-budget thesis errors block publish.
 
+A per-company analysis failure does not block publication. `analyze` records the
+companies whose latest attempt failed in `staging/analysis-retained.json` (a
+later success removes them) and logs `analyze: retained released analysis for N
+companies ...`; the runner copies that line, and publish's matching line, into its
+log. Publish keeps each retained company's released dossier, index, history and
+search rows through the verdict freeze (reason `analysis failed: ...` in
+`staging/verdict-freeze.jsonl`), withholds a failing company that was never
+released, and publishes every fresh analysis under all the usual guards. Only a
+systemic failure still exits non-zero and sends the runner to
+`publish --existing-analysis`: a stage crash, or more than 2% of the companies
+that needed a fresh analysis (`MAX_ANALYSIS_FAILURE_SHARE` in
+`scripts/value/analysis-retained.ts`; observed per-company nights are 0.1-0.4%,
+an outage fails nearly all).
+
 Every push first records its prior/proposed commit in the repository's Git directory
 (`value-publish-pending.json`) and retains the prior object at `refs/value/rollback`.
 The daily runner invokes `post-publish-cli.ts` after prices/publish, even if a stage

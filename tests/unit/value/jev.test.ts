@@ -197,6 +197,42 @@ describe("HTTP client", () => {
     expect(await realAsk(fixture.request)).toMatchObject({ answers: fixture.response.answers });
     expect(fetcher).toHaveBeenCalledTimes(2);
   });
+  it("starts each request timeout when the request is sent, not while it waits behind the rate limit", async () => {
+    const fixture = JSON.parse(readFileSync(path.resolve("tests/fixtures/value/jev/ko-business.json"), "utf8"));
+    vi.stubEnv("JEV_API_KEY", "fixture");
+    const created = new WeakMap<AbortSignal, number>();
+    const timeout = AbortSignal.timeout.bind(AbortSignal);
+    vi.spyOn(AbortSignal, "timeout").mockImplementation(ms => { const signal = timeout(ms); created.set(signal, Date.now()); return signal; });
+    const waits: number[] = [];
+    vi.stubGlobal("fetch", vi.fn(async (_url: string, init: RequestInit) => {
+      waits.push(Date.now() - created.get(init.signal!)!);
+      return Response.json(fixture.response);
+    }));
+    const { askJev: realAsk, JEV_REQUEST_TIMEOUT_MS } = await client();
+    expect(JEV_REQUEST_TIMEOUT_MS).toBe(120_000);
+    // 24 requests queued at once wait about three seconds for the last rate slot.
+    const started = Date.now();
+    await Promise.all(Array.from({ length: 24 }, () => realAsk(fixture.request)));
+    expect(Date.now() - started).toBeGreaterThan(2_000);
+    expect(waits).toHaveLength(24);
+    expect(Math.max(...waits)).toBeLessThan(100);
+  }, 15_000);
+  it("retries a timed-out attempt with a fresh timeout instead of failing the company", async () => {
+    const fixture = JSON.parse(readFileSync(path.resolve("tests/fixtures/value/jev/ko-business.json"), "utf8"));
+    vi.stubEnv("JEV_API_KEY", "fixture");
+    const signals: AbortSignal[] = [];
+    const fetcher = vi.fn(async (_url: string, init: RequestInit) => {
+      signals.push(init.signal!);
+      if (signals.length === 1) throw new DOMException("The operation was aborted due to timeout", "TimeoutError");
+      return Response.json(fixture.response);
+    });
+    vi.stubGlobal("fetch", fetcher);
+    const { askJev: realAsk } = await client();
+    expect(await realAsk(fixture.request)).toMatchObject({ answers: fixture.response.answers });
+    expect(fetcher).toHaveBeenCalledTimes(2);
+    expect(signals[1]).not.toBe(signals[0]);
+    expect(signals[1].aborted).toBe(false);
+  }, 15_000);
   it("fails without a key and never exposes API error bodies", async () => {
     const { askJev: realAsk } = await client();
     const input = { state: "Hello", questions: { q: { type: "noul" as const, instructions: "Is this a greeting?" } } };

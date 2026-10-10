@@ -20,6 +20,7 @@ import {publicationCapitalization} from '../../../lib/value/publication-capitali
 import issuerShareObservations from '../../../lib/value/issuer-share-observations.json';
 import {createUsdRate} from '../../../lib/value/fx';
 import {readVerdictFreeze,applyVerdictFreeze} from '../verdict-freeze';
+import {readAnalysisRetained} from '../analysis-retained';
 import {PIPELINE_VERSION} from '../../../lib/value/analyze-company';
 import {QUESTIONS_VERSION} from '../../../lib/value/jev/questions';
 import {mergeCompany} from '../../../lib/value/companies';
@@ -531,7 +532,14 @@ export default async function publish(options: { only?: string[]; limit?: number
   if (!companies.length) throw new Error("Run the universe stage before publish");
   // Selection only needs IDs; do not retain a second full baseline while building output.
   const frozenIds=options.additionsOnly?new Set(readdirSync(corpusPath('publish-repo/dossiers')).filter(f=>/^\d{3}\.json$/.test(f)).flatMap(f=>Object.keys(JSON.parse(readFileSync(corpusPath('publish-repo/dossiers',f),'utf8'))))):readVerdictFreeze(corpusPath('publish-repo')).ids;
-  const selected = companies.filter((company) => (!options.only || options.only.includes(company.id))&&(!(options.additionsOnly||release)||!frozenIds.has(company.id))).slice(0, options.limit);
+  // A failed analysis never publishes its cached file: a released company keeps
+  // its released record (verdict freeze); an unreleased one waits for a success.
+  const failedAnalysis=new Set(readAnalysisRetained().ids);
+  const unreleasedFailures=new Set(companies.filter(c=>failedAnalysis.has(c.id)&&!frozenIds.has(c.id)).map(c=>c.id));
+  const retainedFailures=companies.filter(c=>failedAnalysis.has(c.id)&&frozenIds.has(c.id)).map(c=>c.id);
+  if(retainedFailures.length)console.log(`publish: retained released analysis for ${retainedFailures.length} companies whose analysis failed: ${retainedFailures.join(', ')}`);
+  if(unreleasedFailures.size)console.log(`publish: withheld ${unreleasedFailures.size} unreleased companies whose analysis failed: ${[...unreleasedFailures].join(', ')}`);
+  const selected = companies.filter((company) => (!options.only || options.only.includes(company.id))&&(!(options.additionsOnly||release)||!frozenIds.has(company.id))&&!unreleasedFailures.has(company.id)).slice(0, options.limit);
   // An all-held coverage review still has a real, frozen baseline to replay.
   // Do not require an accepted addition merely to prove baseline preservation.
   if (!selected.length && !release?.baselineIds.some(id=>frozenIds.has(id))) throw new Error("No companies selected for publish");

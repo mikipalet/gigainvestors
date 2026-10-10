@@ -17,6 +17,8 @@ const responseSchema = z.object({
   usage: z.object({ input_tokens: z.number().int().nonnegative() }),
 });
 const totals = new Map<string, number>();
+/** Budget for one HTTP exchange. It starts when the request is sent, not when it is queued. */
+export const JEV_REQUEST_TIMEOUT_MS = 120_000;
 
 export async function askJev({ state, questions, usageFile = "jev-usage.jsonl" }: {
   state: string;
@@ -27,13 +29,18 @@ export async function askJev({ state, questions, usageFile = "jev-usage.jsonl" }
   if (!key) throw new Error("JEV_API_KEY is required");
   const body = JSON.stringify({ model: "jev-latest", state, questions });
   if (Buffer.byteLength(body) > 32_000) throw new Error("Jev request exceeds conservative context budget");
-  const response = await tokenLimit(() => limit(() => fetchWithRetry("https://api.typesafe.ai/v1/systemone", {
+  // Each attempt, retries included, waits for its rate slot and then gets its
+  // own timeout; a timed-out attempt is retried like a 5xx instead of failing
+  // the company (retries used to share one budget and skip the rate limits).
+  const response = await fetchWithRetry("https://api.typesafe.ai/v1/systemone", {
     method: "POST",
     headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
     body,
     retryOn: [429, 529, 520, 502, 503, 504],
-    signal: AbortSignal.timeout(120_000),
-  })));
+    retryNetworkErrors: true,
+    beforeAttempt: () => tokenLimit(() => limit(async () => {})),
+    fetcher: (url, init) => fetch(url, { ...init, signal: AbortSignal.timeout(JEV_REQUEST_TIMEOUT_MS) }),
+  });
   if (!response.ok) throw new Error(`Jev HTTP ${response.status}`);
   const parsed = responseSchema.safeParse(await response.json());
   if (!parsed.success) throw new Error("Invalid Jev response");

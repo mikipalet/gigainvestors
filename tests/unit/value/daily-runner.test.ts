@@ -20,11 +20,13 @@ if [[ "$3" == *'post-publish'* ]]; then echo LIVE-CHECK >> "$TRACE"; exit "${cod
 stage="$4"
 if [[ "$stage" == "publish" && "${codes.coverageFailure??0}" == "1" ]]; then echo "CRITICAL: publication coverage invariant: logos ids=KO.US"; exit 1; fi
 if [[ "$stage" == "analyze" ]]; then echo "ANALYZE_OFFLINE=$VALUE_NO_EODHD" >> "$TRACE"; fi
+if [[ "$stage" == "analyze" && "${codes.retained??0}" == "1" ]]; then echo "analyze: AEG.US: The operation was aborted due to timeout"; echo "analyze: 6258 written, 32013 unchanged, 1 failed"; echo "analyze: retained released analysis for 1 companies pending a successful analysis: AEG.US"; fi
+if [[ "$stage" == "publish" && "${codes.retained??0}" == "1" ]]; then echo "publish: retained released analysis for 1 companies whose analysis failed: AEG.US"; echo "publish: 3915 companies, replaced data snapshot"; fi
 if [[ "$stage" == "price-story" ]]; then echo "LEDGER=$STORY_DISK_LEDGER" >> "$TRACE"; fi
 shift 4
 echo "$stage $*" >> "$TRACE"
 case "$stage" in
-${Object.entries(codes).map(([s,n])=>`${s}) exit ${n};;`).join('\n')}
+${Object.entries(codes).filter(([s])=>s!=='retained').map(([s,n])=>`${s}) exit ${n};;`).join('\n')}
 esac
 exit 0
 `,{mode:0o755});
@@ -68,6 +70,14 @@ it('reserves both fundamentals passes and runs analysis before optional news',()
 });
 it('retains prior released analysis when analysis itself fails',()=>{
  expect(run({analyze:1}).trace).toContain('publish --existing-analysis');
+});
+it('publishes fresh analysis after per-company failures and names the retained companies in the runner log',()=>{
+ const {trace,output,code}=run({retained:1});
+ expect(code).toBe(0);
+ expect(trace).toMatch(/^publish $/m);expect(trace).not.toContain('publish --existing-analysis');
+ expect(trace).toMatch(/^business-backfill /m);
+ expect(output).toContain('analyze: retained released analysis for 1 companies pending a successful analysis: AEG.US');
+ expect(output).toContain('publish: retained released analysis for 1 companies whose analysis failed: AEG.US');
 });
 it('still analyzes after non-budget yields failures',()=>{
  expect(run({yields:1}).trace).toMatch(/^analyze /m);

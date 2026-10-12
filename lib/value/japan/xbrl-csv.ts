@@ -47,7 +47,9 @@ const fields = {
   nonRecurring: ["RestructuringExpenses", "BusinessRestructuringExpenses", "RestructuringCostsIFRS"],
   retainedEarnings: ["RetainedEarnings", "RetainedEarningsIFRS"],
   ocf: ["CashFlowsFromUsedInOperatingActivitiesUSGAAPSummaryOfBusinessResults", "CashFlowsFromUsedInOperatingActivitiesIFRSSummaryOfBusinessResults", "CashFlowsFromUsedInOperatingActivitiesSummaryOfBusinessResults", "CashFlowsFromUsedInOperatingActivitiesIFRS", "NetCashProvidedByUsedInOperatingActivitiesIFRS", "NetCashProvidedByUsedInOperatingActivities", "NetCashProvidedByUsedInOperatingActivitiesUSGAAP", "NetCashProvidedByUsedInOperatingActivitiesSummaryOfBusinessResults"],
-  capex: ["PurchaseOfPropertyPlantAndEquipmentInvCFIFRS", "PurchaseOfPropertyPlantAndEquipmentInvCF", "PurchaseOfPropertyPlantAndEquipmentAndIntangibleAssetsInvCFIFRS", "PurchaseOfPropertyPlantAndEquipmentAndIntangibleAssetsInvCF", "PurchaseOfNoncurrentAssetsInvCF", "PurchaseOfPropertyPlantAndEquipmentInvCFUSGAAP", "PurchasesOfPropertyPlantAndEquipment", "PaymentsToAcquirePropertyPlantAndEquipment", "PurchaseOfPropertyPlantEquipmentAndTheIncreaseOfConstructionInProgressInvCF"],
+  capex: ["PurchaseOfPropertyPlantAndEquipmentInvCFIFRS", "PurchaseOfPropertyPlantAndEquipmentInvCF", "PurchaseOfPropertyPlantAndEquipmentAndIntangibleAssetsInvCFIFRS", "PurchaseOfPropertyPlantAndEquipmentAndIntangibleAssetsInvCF", "PurchaseOfNoncurrentAssetsInvCF", "PurchaseOfPropertyPlantAndEquipmentInvCFUSGAAP", "PurchasesOfPropertyPlantAndEquipment", "PaymentsToAcquirePropertyPlantAndEquipment", "PurchaseOfPropertyPlantEquipmentAndTheIncreaseOfConstructionInProgressInvCF",
+    // Issuer extension concepts (JFE, JAL: purchase of non-current assets; Konami: capital expenditures).
+    "PurchaseOfNonCurrentAssetsInvCFIFRS", "PurchaseOfNonCurrentAssetsInvCF", "CapitalExpendituresInvCFIFRS", "CapitalExpendituresInvCF"],
   leaseCash: ["RepaymentsOfLeaseObligationsFinCFIFRS", "RepaymentsOfLeaseObligationsFinCF", "RepaymentsOfLeaseLiabilitiesFinCFIFRS", "RepaymentsOfFinanceLeaseObligationsFinCF"],
   dividendsPaid: ["DividendsPaidFinCFIFRS", "CashDividendsPaidFinCF", "DividendsPaidFinCF"],
   buybacks: ["PurchaseOfTreasurySharesFinCFIFRS", "PurchaseOfTreasuryStockFinCF"],
@@ -118,7 +120,10 @@ export function yearsFromEdinet(rows: EdinetRow[]): Year[] {
       const issued = value(["NumberOfIssuedSharesAsOfFiscalYearEndIssuedSharesTotalNumberOfSharesEtc"], filingRows);
       const filing = value(["NumberOfIssuedSharesAsOfFilingDateIssuedSharesTotalNumberOfSharesEtc"], filingRows);
       const block = edinetFact(filingRows, "IssuedSharesTotalNumberOfSharesEtcTextBlock") ?? "";
-      year.edinetShares = { basic, issued, filing,
+      // The issuer's own fiscal-year-end share price: reported P/E × basic EPS.
+      const per = value(["PriceEarningsRatioIFRSSummaryOfBusinessResults", "PriceEarningsRatioUSGAAPSummaryOfBusinessResults", "PriceEarningsRatioSummaryOfBusinessResults"]);
+      const yearEndPrice = per !== null && per > 0 && eps !== null && eps > 0 ? per * eps : null;
+      year.edinetShares = { basic, issued, filing, yearEndPrice,
         treasury: value(["TotalNumberOfSharesHeldTreasurySharesEtc", "NumberOfSharesHeldInOwnNameTreasurySharesEtc"], rows.filter(r => r.context === "CurrentYearInstant")),
         splitFiled: filedShareChange([block], end, edinetFact(rows, "FilingDateCoverPage") ?? end, issued && filing ? filing / issued : undefined), filed: edinetFact(rows, "FilingDateCoverPage") ?? end,
         reconciled: false, reason: "" };
@@ -168,6 +173,11 @@ export function yearsFromEdinet(rows: EdinetRow[]): Year[] {
     const combinedCapex = value(["PurchaseOfPropertyPlantAndEquipmentAndIntangibleAssetsInvCFIFRS", "PurchaseOfPropertyPlantAndEquipmentAndIntangibleAssetsInvCF"]);
     const intangiblesCapex = value(["PurchaseOfIntangibleAssetsInvCFIFRS", "PurchaseOfIntangibleAssetsInvCF", "PurchaseOfIntangibleAssetsInvCFUSGAAP"]);
     year.capex = combinedCapex !== null ? Math.abs(combinedCapex) : sumReported([year.capex === null ? null : Math.abs(year.capex), intangiblesCapex === null ? null : Math.abs(intangiblesCapex)]);
+    // No capital-spending line in the cash-flow statement (LY Corp folds it into
+    // "other"): the consolidated total in the capital expenditure overview is
+    // the issuer's own figure, never zero.
+    const overview = year.capex === null ? value(["CapitalExpendituresOverviewOfCapitalExpendituresEtc"]) : null;
+    if (overview !== null) { year.capex = Math.abs(overview); year.provenance = { ...year.provenance, capex: { source: "EDINET XBRL", field: "CapitalExpendituresOverviewOfCapitalExpendituresEtc", method: "reported" } }; }
     if (year.receivables === null) year.receivables = sumReported([value(["NotesReceivableTrade"]), value(["AccountsReceivableTrade", "AccountsReceivableTradeAndContractAssets", "AccountsReceivableTradeAndContractAssetsCA"]) ]);
     if (year.inventory === null) year.inventory = sumReported([
       value(["MerchandiseAndFinishedGoods", "MerchandiseAndFinishedGoodsCAIFRS"])

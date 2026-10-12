@@ -1,0 +1,72 @@
+{
+ "5871.TW": {
+  "reviewed": "2026-10-12",
+  "reason": "A leasing and lending company valued as an operating company: its balance sheet is a loan book funded by borrowings (NT$976bn assets at end-2025), so owner earnings, excess cash and the operating-company value do not apply; it needs the financial-company model.",
+  "source": "https://www.twse.com.tw/pdf/en/5871_en.pdf"
+ },
+ "ABR.US": {
+  "reviewed": "2026-10-12",
+  "reason": "A mortgage-loan REIT valued as an operating company: its balance sheet is a loan book funded by securitisations and borrowings (US$14.5bn assets, 2025 10-K), so owner earnings, excess cash and the operating-company value do not apply; it needs the financial-company model.",
+  "source": "https://www.sec.gov/Archives/edgar/data/1253986/000125398626000019/abr-20251231.htm"
+ },
+ "BFH.US": {
+  "reviewed": "2026-10-12",
+  "reason": "A bank valued as an operating company: its balance sheet is a loan book funded by US$13.9bn of deposits (2025 10-K), so owner earnings, excess cash and the operating-company value do not apply; it needs the financial-company model.",
+  "source": "https://www.sec.gov/Archives/edgar/data/1101215/000110121526000016/bfh-20251231.htm"
+ },
+ "FINV.US": {
+  "reviewed": "2026-10-12",
+  "reason": "A consumer lender valued as an operating company: its balance sheet is a loan book funded by partner banks and securitisations (2025 20-F), so owner earnings, excess cash and the operating-company value do not apply; it needs the financial-company model.",
+  "source": "https://www.sec.gov/Archives/edgar/data/1691445/000149315226019597/form20-f.htm"
+ },
+ "LGEN.LSE": {
+  "reviewed": "2026-10-12",
+  "reason": "An insurer valued as an operating company: Legal & General is a life insurer and annuity provider regulated under Solvency II (2025 annual report), so the consolidated cash credited to owners backs policyholder liabilities; it needs the insurer model.",
+  "source": "https://group.legalandgeneral.com/Annualreport2025"
+ },
+ "NAVI.US": {
+  "reviewed": "2026-10-12",
+  "reason": "A student-loan lender valued as an operating company: its balance sheet is a loan book funded by asset-backed securitisations (US$48.7bn assets, 2025 10-K), so owner earnings, excess cash and the operating-company value do not apply; it needs the financial-company model.",
+  "source": "https://www.sec.gov/Archives/edgar/data/1593538/000119312526076753/navi-20251231.htm"
+ },
+ "OSB.LSE": {
+  "reviewed": "2026-10-12",
+  "reason": "A bank valued as an operating company: its balance sheet is a loan book funded by £24.3bn of retail deposits (2025 annual report), so owner earnings, excess cash and the operating-company value do not apply; it needs the financial-company model.",
+  "source": "https://www.osb.co.uk/media/vxpbqwz0/osbg-2025-ara.pdf"
+ },
+ "PAG.LSE": {
+  "reviewed": "2026-10-12",
+  "reason": "A bank valued as an operating company: its balance sheet is a loan book funded by retail savings deposits (annual report), so owner earnings, excess cash and the operating-company value do not apply; it needs the financial-company model.",
+  "source": "https://paragonbankinggroup.co.uk/resources/paragon-group/documents/reports-presentations/2023/2023-annual-report-full"
+ },
+ "PETR3.SA": {
+  "reviewed": "2026-10-12",
+  "reason": "Vendor statements label Brazilian-real amounts as US dollars: FY2025 revenue 497.5bn and net income 110.1bn 'USD' against US$89.2bn and US$19.6bn attributable in the 20-F, a 5.6× overstatement.",
+  "source": "https://www.sec.gov/Archives/edgar/data/1119639/000129281426002168/pbrform20f_2025.htm"
+ },
+ "QFIN.US": {
+  "reviewed": "2026-10-12",
+  "reason": "A consumer lender valued as an operating company: its balance sheet is a loan book funded by partner banks and securitisations (2025 20-F), so owner earnings, excess cash and the operating-company value do not apply; it needs the financial-company model.",
+  "source": "https://www.sec.gov/Archives/edgar/data/1741530/000110465926049501/qfin-20251231x20f.htm"
+ },
+ "SLM.US": {
+  "reviewed": "2026-10-12",
+  "reason": "A bank valued as an operating company: its balance sheet is a loan book funded by US$21.1bn of deposits (2025 10-K), so owner earnings, excess cash and the operating-company value do not apply; it needs the financial-company model.",
+  "source": "https://www.sec.gov/Archives/edgar/data/1032033/000103203326000011/slm-20251231.htm"
+ },
+ "SYF.US": {
+  "reviewed": "2026-10-12",
+  "reason": "A bank valued as an operating company: its balance sheet is a loan book funded by US$81.1bn of deposits (2025 10-K), so owner earnings, excess cash and the operating-company value do not apply; it needs the financial-company model.",
+  "source": "https://www.sec.gov/Archives/edgar/data/1601712/000160171226000006/syf-20251231.htm"
+ },
+ "UBI.PA": {
+  "reviewed": "2026-10-12",
+  "reason": "Vendor capital spending (€42m in FY2025, €35m in FY2026) omits game-development payments of €797m and €644m that Ubisoft capitalises and amortises through D&A, so net income plus D&A counts development amortisation as free cash.",
+  "source": "https://mfn.se/all/a/ubisoft-entertainment-sa/ubisoft-reports-full-year-2025-26-earnings-figures-16d613e6"
+ },
+ "UOB.F": {
+  "reviewed": "2026-10-12",
+  "reason": "A bank valued as an operating company: its balance sheet is a loan book funded by about S$426bn of customer deposits (2025 annual report), so owner earnings, excess cash and the operating-company value do not apply; it needs the financial-company model.",
+  "source": "https://links.sgx.com/1.0.0/corporate-announcements/CJ5LTSEV6VGWLF37/878788_UOB%20AR2025.pdf"
+ }
+}

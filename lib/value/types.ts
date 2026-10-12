@@ -80,7 +80,7 @@ export interface Year {
   taxExpense: number | null;
   netIncome: number | null;
   totalNetIncome?: number | null; // consolidated profit, before non-controlling interests
-  edinetShares?: { basic: number | null; issued: number | null; filing: number | null; treasury: number | null; splitFiled: boolean; filed: string; reconciled: boolean; reason: string };
+  edinetShares?: { basic: number | null; issued: number | null; filing: number | null; treasury: number | null; splitFiled: boolean; filed: string; reconciled: boolean; reason: string; yearEndPrice?: number | null };
   interestExpense: number | null;
   da: number | null;
   leaseLiabilities?: number | null;
@@ -205,6 +205,7 @@ export interface Valuation {
   retainedPublishedReason?: string;
   publishedShareReview?: boolean;
   shareReviewReasons?: string[];
+  splitAfterReport?: number; // 3.8.1: share split after the annual report applied to the share count
   balanceSheet?: {end:string;filed:string|null;source:string;basis:string;filingDateAssumed?:boolean};
   shareBasis?:'listing-ADS'|'effective-common';
   capitalReturns?: { excludingGoodwill: number | null; includingAcquisitions: number | null; observations: number; basis: "owner_earnings" };

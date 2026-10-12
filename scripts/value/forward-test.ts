@@ -1,18 +1,22 @@
 /** Method 3.8.0 forward test (not shown on the site).
  *   freeze --repo=<published repo> --out=<file> [--date=YYYY-MM-DD] [--baseline=<live archive commit>]
  *       Write the published Buy list once. Refuses to overwrite an existing file.
- *   verify --repo=<published repo> --snapshot=<file>
- *       Exit 1 unless the published Buy ids equal the frozen list (controller check at release).
+ *   verify --repo=<published repo> --snapshot=<file> [--corrected]
+ *       Exit 1 unless the published Buy ids equal the frozen list (controller check at release);
+ *       with --corrected, the frozen list less the names corrections.jsonl removed.
  *   score [--repo=<published repo>] [--snapshots=<dir>]
  *       Equal-weight return of each frozen list since its date vs SPY and EFA. Appends one
  *       JSON line per list to <corpus>/forward-test/scores.jsonl and prints a summary.
  *       Quotes: the published price files the nightly writes; splits: cached fundamentals;
- *       benchmarks: Yahoo daily closes (no EODHD). Non-fatal in run-daily.sh. */
+ *       benchmarks: Yahoo daily closes (no EODHD). Non-fatal in run-daily.sh.
+ *       The frozen basket is always scored as frozen. When corrections.jsonl (append-only)
+ *       removes names frozen on inputs later found wrong, the same line also reports the
+ *       corrected basket under "corrected". */
 import { execFileSync } from 'node:child_process';
 import { appendFileSync, existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { corpusPath, readCorpusJson } from '../../lib/value/corpus';
-import { buyListSnapshot, scoreForwardTest, type ForwardTestSnapshot, type Series } from '../../lib/value/forward-test';
+import { buyListSnapshot, correctedSnapshot, parseCorrections, scoreForwardTest, type ForwardTestSnapshot, type Series } from '../../lib/value/forward-test';
 import { METHOD_VERSION } from '../../lib/value/method-version';
 import { readPrices } from '../../lib/value/price-files';
 import type { Fundamentals, IndexRow, StoreMeta } from '../../lib/value/types';
@@ -52,7 +56,12 @@ async function main() {
   }
   if (command === 'verify') {
     const { rows } = published(args.repo);
-    const snapshot = JSON.parse(readFileSync(args.snapshot, 'utf8')) as ForwardTestSnapshot;
+    let snapshot = JSON.parse(readFileSync(args.snapshot, 'utf8')) as ForwardTestSnapshot;
+    // --corrected: compare with the frozen list less the names corrections.jsonl removed.
+    if (args.corrected !== undefined) {
+      const file = path.join(path.dirname(args.snapshot), 'corrections.jsonl');
+      snapshot = correctedSnapshot(snapshot, path.basename(args.snapshot), existsSync(file) ? parseCorrections(readFileSync(file, 'utf8')) : []).snapshot;
+    }
     const live = rows.filter(r => r.b === true).map(r => r.id).sort(), frozen = snapshot.companies.map(c => c.id).sort();
     const added = live.filter(id => !frozen.includes(id)), removed = frozen.filter(id => !live.includes(id));
     console.log(JSON.stringify({ frozen: frozen.length, live: live.length, added, removed }));
@@ -69,6 +78,8 @@ async function main() {
       try { benchmarks[symbol] = await yahooDaily(symbol); } catch (error) { console.warn(`forward-test: benchmark ${symbol} unavailable: ${error instanceof Error ? error.message : error}`); }
     }
     const asOf = new Date().toISOString().slice(0, 10);
+    const correctionsFile = path.join(dir, 'corrections.jsonl');
+    const corrections = existsSync(correctionsFile) ? parseCorrections(readFileSync(correctionsFile, 'utf8')) : [];
     mkdirSync(corpusPath('forward-test'), { recursive: true });
     for (const file of files) {
       const snapshot = JSON.parse(readFileSync(path.join(dir, file), 'utf8')) as ForwardTestSnapshot;
@@ -76,10 +87,14 @@ async function main() {
         const splits = readCorpusJson<Fundamentals>(`fundamentals/${c.id}.json`)?.splits ?? [];
         return [c.id, splits.filter(s => s.date > c.priceDate && s.date <= (prices[c.id]?.[1] ?? '')).reduce((f, s) => f * s.factor, 1)];
       }));
-      const score = { file, ...scoreForwardTest({ snapshot, prices, splitFactors, benchmarks, asOf }) };
+      const corrected = correctedSnapshot(snapshot, file, corrections);
+      const score = { file, ...scoreForwardTest({ snapshot, prices, splitFactors, benchmarks, asOf }),
+        ...(corrected.removed.length || corrected.kept.length ? { corrected: { removed: corrected.removed, kept: corrected.kept,
+          ...scoreForwardTest({ snapshot: corrected.snapshot, prices, splitFactors, benchmarks, asOf }) } } : {}) };
       appendFileSync(corpusPath('forward-test', 'scores.jsonl'), JSON.stringify({ at: new Date().toISOString(), ...score }) + '\n');
       const pct = (n: number | null | undefined) => n == null ? 'n/a' : `${(n * 100).toFixed(2)}%`;
       console.log(`forward-test: ${file} ${score.companies} names since ${snapshot.date}: basket ${pct(score.basketReturn)} (Western ${pct(score.westernBasketReturn)}), SPY ${pct(score.benchmarks.SPY?.return)}, EFA ${pct(score.benchmarks.EFA?.return)}; stale quotes ${score.staleQuotes.length}`);
+      if (score.corrected) console.log(`forward-test: ${file} corrected basket (${score.corrected.removed.length} removed for input errors) ${score.corrected.companies} names: ${pct(score.corrected.basketReturn)} (Western ${pct(score.corrected.westernBasketReturn)})`);
     }
     return;
   }

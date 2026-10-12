@@ -58,3 +58,9 @@ it('does not inherit an annual restriction in a newer independent balance',()=>{
  const balance=balanceSheets({Financials:{Balance_Sheet:{quarterly:{'2026-06-30':{filing_date:'2026-08-01',currency_symbol:'USD',cash:500,shortLongTermDebtTotal:100}}}}})[0];
  expect(value('Consulting Services',{years:ys,balance}).netCash).toBe(480);
 });
+it.each(['Credit Services','Mortgage Finance','REIT - Mortgage','Financial Conglomerates'])('gives no cash credit to a lender or settlement business valued as an operating company: %s',industry=>{
+ const v=value(industry);
+ expect(v.netCash).toBe(0);
+ expect(v.netDebt).toBe(600);
+ expect(v.assumptions.join(' ')).toContain('Lending, deposit or settlement funds');
+});

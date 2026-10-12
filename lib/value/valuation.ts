@@ -4,7 +4,7 @@ import {ownerCash} from './owner-cash';
 import type {CurrentCommonBalance} from './types';
 import {earningsPath,modelValue} from './return-model';
 import { valueInvestmentHolding } from './investment-nav';
-import { parentShare } from "./parent-share";
+import { parentEquityShare, parentShare } from "./parent-share";
 import { T } from "./config";
 import { financialBvps, tangibleEquity, cagr, clamp, investment, last, mean, median, nopat, present, ratio, roe, roic, returnOnTotalCapital, roiic, sum, withZeroDefaults } from "./metrics";
 import { ownerEarningsBridge, trailingOwnerEarnings } from "./owner-earnings";
@@ -21,7 +21,7 @@ export function presentValue({ oe, g, r, terminal, decadeFade = false }: { oe: n
  * the adjacent order statistic (10% of observations in each tail).
  * Eleven consecutive positive observations supply a full ten-year CAGR. */
 export function compounderGrowth(years: Year[]): number | null {
-  const history = ownerEarningsBridge([...years].sort((a,b) => a.fy-b.fy)).slice(-11);
+  const history = ownerEarningsBridge([...years].sort((a,b) => a.fy-b.fy), { strictCapex: true }).slice(-11);
   if (history.length !== 11 || history.some((r,i) => r.value === null || r.value <= 0 || !r.year.dilutedShares || r.year.dilutedShares <= 0 || (i > 0 && r.year.fy !== history[i-1].year.fy + 1))) return null;
   const values = history.map(r => r.value! / r.year.dilutedShares!);
   const logs = values.slice(1).map((v,i) => Math.log(v / values[i]));
@@ -57,6 +57,18 @@ function postYearSplit(prices: PriceHistory | null, end: string, shareRatio: num
     && monthIndex(month) - monthIndex(rows[i - 1][0]) === 1
     && (shareRatio > 1 ? close < rows[i - 1][1] : close > rows[i - 1][1])
     && Math.abs(close / rows[i - 1][1] * shareRatio - 1) <= T.integrity.splitPriceTolerance);
+}
+
+/** EDINET shares are counted at the filing date; the quote vendor's history is
+ * restated for every later split. The issuer's own fiscal-year-end price (P/E ×
+ * EPS in its report) divided by the vendor's restated close for the same month
+ * is the share change since: exactly 15 for Tokio Marine's 2026 15:1 split, 1
+ * when a split before the filing is already in the report. */
+export function postFilingShareChange(latest: Year, prices: PriceHistory | null): number {
+  const price = latest.edinetShares?.yearEndPrice, close = prices?.find(([month]) => month === latest.end.slice(0, 7))?.[1];
+  if (!(typeof price === 'number' && price > 0) || !(typeof close === 'number' && close > 0)) return 1;
+  const ratio = price / close, whole = ratio >= 1 ? Math.round(ratio) : 1 / Math.round(1 / ratio);
+  return whole !== 1 && Number.isFinite(whole) && Math.abs(ratio / whole - 1) <= .03 ? whole : 1;
 }
 
 function decadeCagr(series: Array<[number, number | null]>): number | null {
@@ -100,13 +112,15 @@ export function valueCompany({ years, kind, industry, bondYield, cyclical, curre
     && postYearSplit(priceHistory, latest.end, currentShares / taggedShares);
   const corrected = !documentedAds && !reviewedBalance && !fallback && currentShares !== null && Number.isFinite(currentShares) && currentShares > 0
     && Math.max(currentShares / taggedShares, taggedShares / currentShares) > 1.5 || postSplit;
-  const shares = reviewedBalance?.shares ?? (fallback || corrected ? currentShares : latest.dilutedShares)!;
+  const filingChange = !reviewedBalance && !fallback && !corrected ? postFilingShareChange(latest, priceHistory) : 1;
+  const shares = reviewedBalance?.shares ?? (fallback || corrected ? currentShares : latest.dilutedShares! * filingChange)!;
   if (bondYield === null || !Number.isFinite(bondYield)) return { valuation: null, reason: "local government bond yield unavailable" };
   const discountRate = Math.max(T.valuation.minDiscount, bondYield + T.valuation.bondSpread);
   const assumptions: string[] = [...shareAssumptions];
   if(reviewedBalance) assumptions.push(`Issuer ${reviewedBalance.basis} book and shares at ${reviewedBalance.end}; ${reviewedBalance.source}; annual weighted diluted history retained; independent confidence unchanged`);
   if (latest.edinetShares) assumptions.push(latest.edinetShares.reason);
   if (postSplit) assumptions.push('share count adjusted for post-year split/bonus');
+  if (filingChange !== 1) assumptions.push(`share count × ${filingChange} for a share split after the annual report: the issuer's year-end price (P/E × EPS) is ${filingChange}× the quote vendor's split-restated close`);
   if (corrected) assumptions.push(`share count corrected to current ${shares}`);
   const stock = reviewedBalance ? null : datedBalance;
   const currentBalance = stock ? {...latest,cashExclusion:undefined,clientAssets:null,currentAssets:null,currentLiabilities:null,shortTermDebt:null,...stock.values,tangibleEquity:undefined} : reviewedBalance ? {...latest,end:reviewedBalance.end,equity:reviewedBalance.commonEquity,minorityInterest:0,preferredEquity:0,goodwill:reviewedBalance.goodwillAndIntangibles,intangibles:0,tangibleEquity:reviewedBalance.commonEquity-reviewedBalance.goodwillAndIntangibles} : annualBalance;
@@ -124,7 +138,7 @@ export function valueCompany({ years, kind, industry, bondYield, cyclical, curre
   assumptions.push(decliningRevenue ? "three-year revenue trend is negative; growth set to zero"
     : "growth set to zero when latest revenue is below three years earlier");
   if (!currency) assumptions.push("reporting currency not supplied");
-  const common = { version, ...(reviewedBalance?{shareBasis:"effective-common" as const}:documentedAds?{shareBasis:"listing-ADS" as const}:{}), ...(fallback ? { sharesSource: shareSource } : {}), currency, balanceSheet, discountRate, terminalGrowth: T.valuation.terminal, bondYield, shares, assumptions };
+  const common = { version, ...(reviewedBalance?{shareBasis:"effective-common" as const}:documentedAds?{shareBasis:"listing-ADS" as const}:{}), ...(fallback ? { sharesSource: shareSource } : {}), currency, balanceSheet, discountRate, terminalGrowth: T.valuation.terminal, bondYield, shares, ...(filingChange !== 1 ? { splitAfterReport: filingChange } : {}), assumptions };
 
   if (kind !== "operating") {
     const book = reviewedBalance && version === 1 ? reviewedBalance.commonEquity / shares : version === 2 ? ratio(tangibleEquity(currentBalance), shares) : financialBvps({ ...currentBalance, dilutedShares: shares });
@@ -157,7 +171,7 @@ export function valueCompany({ years, kind, industry, bondYield, cyclical, curre
     } };
   }
 
-  const history = ownerEarningsBridge(ys), window = 5;
+  const history = ownerEarningsBridge(ys, { strictCapex: true }), window = 5;
   const recent = history.filter(row => row.year.fy > latest.fy - window).filter((row): row is typeof row & { value: number; maintenanceCapex: number } => row.value !== null && Number.isFinite(row.value) && row.maintenanceCapex !== null && row.year.revenue !== null && Number.isFinite(row.year.revenue) && row.year.revenue > 0);
   if (recent.length !== window || recent.some((row,i) => i > 0 && row.year.fy !== recent[i-1].year.fy+1)) return { valuation: null, reason: "insufficient owner earnings history" };
   if (currentRevenue === null || !Number.isFinite(currentRevenue) || currentRevenue <= 0) return {valuation:null,reason:"current revenue not positive"};
@@ -180,12 +194,16 @@ export function valueCompany({ years, kind, industry, bondYield, cyclical, curre
   if (version === 2 && (currentRevenue === null || currentRevenue < 0)) return {valuation:null,reason:'operating cash reserve unavailable'};
   const eligible = version === 2 ? ownerCash(currentBalance,industry) : {cash:currentBalance.cash,reason:null};
   if(eligible.reason)assumptions.push(eligible.reason);
-  const netDebt = (currentBalance.totalDebt - eligible.cash) * allocation;
-  const netCash = version === 2 ? Math.max(0, eligible.cash - T.valuation.operatingCashRatio * currentRevenue!) * allocation : -netDebt;
+  // Consolidated cash and debt belong partly to minority holders; parent net
+  // income is already allocated, the balance sheet is not.
+  const cashAllocation = allocation === 1 && allocationIncome.totalNetIncome == null ? parentEquityShare(currentBalance) : allocation;
+  const netDebt = (currentBalance.totalDebt - eligible.cash) * cashAllocation;
+  const netCash = version === 2 ? Math.max(0, eligible.cash - T.valuation.operatingCashRatio * currentRevenue!) * cashAllocation : -netDebt;
   const debtYears = netDebt / normalized;
   const leverage = version === 1 || debtYears <= T.valuation.leverageModerate ? 'normal' : debtYears > T.valuation.leverageVolatile ? 'volatile' : 'moderate';
   const riskFlags = leverage === 'normal' ? [] : [leverage === 'volatile' ? 'High leverage: net debt exceeds 5 years of owner earnings' : 'Elevated leverage: net debt exceeds 3 years of owner earnings'];
   if (version === 2) assumptions.push('equity owner earnings are after interest; debt is reflected in leverage risk, never deducted a second time', 'only cash above 2% of revenue is added to equity value');
+  if (cashAllocation !== allocation) assumptions.push(`Material minority interests without a reported profit split: cash and debt allocated by parent equity / (parent equity + non-controlling interests) = ${(cashAllocation * 100).toFixed(1)}%`);
   if (allocation !== 1 || recent.some(row => row.allocation !== 1)) assumptions.push("Material minority interests: consolidated cash-flow adjustments and cash adjustment allocated by parent net income / total net income; parent net income is already allocated");
   const oeGrowth = decadeCagr(history.map(row => [row.year.fy, ratio(row.value, row.year.dilutedShares)]));
   const revenueGrowth = decadeCagr(ys.map(y => [y.fy, ratio(y.revenue, y.dilutedShares)]));
@@ -220,7 +238,8 @@ export function valueCompany({ years, kind, industry, bondYield, cyclical, curre
   if (ttmRow) assumptions.push('TTM maintenance uses annual capacity context and revenue expansion since the latest annual report; overlapping twelve-month windows; annual maintenance judgements are not carried forward');
   if (recent.some(row => row.year.leaseCash != null)) assumptions.push("Reported capitalized lease repayments charged in owner earnings; corresponding lease obligations excluded from debt");
   if (recent.some(row => row.leaseCashCost > 0 && row.year.leaseCash == null)) assumptions.push("lease payments estimated at 20% of lease liabilities; cash-flow classification and ROU maintenance overlap require issuer evidence");
-  if (recent.some(row=>row.cashFlowBasis)) assumptions.push("Cash-flow fallback deducts all capex when maintenance inputs are unavailable");
+  if (recent.some(row=>row.operatingReplenishment)) assumptions.push("D&A is replenished inside operating cash flow (capex under a quarter of D&A and operating cash flow above net income by less than a quarter of D&A in at least three of five years): owner earnings use operating cash flow less capex and stock compensation, never net income plus D&A");
+  if (recent.some(row=>row.cashFlowBasis && !row.operatingReplenishment)) assumptions.push("Cash-flow fallback deducts all capex when maintenance inputs are unavailable");
   assumptions.push("NI bridge does not estimate required working-capital reinvestment; OCF includes reported working-capital changes", "Cash-specific after-tax interest is not separately attributed; excess-cash income overlap remains a model limitation");
   const representative = [marginRow];
   return { reason: null, valuation: { ...common, tier, capitalReturns, netDebt, leverage, riskFlags, method: "owner_earnings", normalized, growth, netCash,

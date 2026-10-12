@@ -74,3 +74,30 @@ export function scoreForwardTest({ snapshot, prices, splitFactors = {}, benchmar
     vs: Object.fromEntries(Object.entries(bench).map(([symbol, b]) => [symbol, b && all !== null ? all - b.return : null])),
     staleQuotes: stale, best: [...held].sort((a, b) => b.return - a.return).slice(0, 3).map(r => r.id), worst: [...held].sort((a, b) => a.return - b.return).slice(0, 3).map(r => r.id) };
 }
+
+/** Append-only corrections to a frozen list (docs/value/forward-test/corrections.jsonl).
+ * The frozen file is never edited. "remove": the name was a Buy only because of an
+ * input error later confirmed against its filings; "keep": the input was wrong but
+ * the corrected data still makes it a Buy at the frozen price. */
+export interface ForwardTestCorrection {
+  date: string; list: string; id: string; action: 'remove' | 'keep';
+  reason: string; source: string; methodVersion: string;
+}
+export function parseCorrections(text: string): ForwardTestCorrection[] {
+  return text.split('\n').filter(line => line.trim()).map((line, i) => {
+    const c = JSON.parse(line) as ForwardTestCorrection;
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(c.date) || !c.list || !c.id || !['remove', 'keep'].includes(c.action) || !c.reason || !c.source)
+      throw new Error(`Forward test corrections line ${i + 1} is incomplete`);
+    return c;
+  });
+}
+/** The corrected basket: the frozen list without names removed by a correction.
+ * Every correction must name a company in that list. */
+export function correctedSnapshot(snapshot: ForwardTestSnapshot, file: string, corrections: ForwardTestCorrection[]): { snapshot: ForwardTestSnapshot; removed: string[]; kept: string[] } {
+  const own = corrections.filter(c => c.list === file), ids = new Set(snapshot.companies.map(c => c.id));
+  const unknown = own.filter(c => !ids.has(c.id)).map(c => c.id);
+  if (unknown.length) throw new Error(`Forward test corrections name companies outside ${file}: ${unknown.join(', ')}`);
+  const removed = [...new Set(own.filter(c => c.action === 'remove').map(c => c.id))].sort();
+  const kept = [...new Set(own.filter(c => c.action === 'keep').map(c => c.id))].sort();
+  return { snapshot: { ...snapshot, companies: snapshot.companies.filter(c => !removed.includes(c.id)) }, removed, kept };
+}

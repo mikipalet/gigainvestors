@@ -11,6 +11,7 @@ import { buyReturnInputs } from "./owner-return";
 import { bestWesternListing } from "./western";
 import { storyFromFunnel } from "./story";
 import { valuationFlags } from "./data-quality";
+import { reviewedInputError } from "./reviewed-input-errors";
 import { assertIndexConsistency } from "./consistency";
 import { dossierReturn } from "./presentation";
 import { sameCurrency } from "./currency";
@@ -121,16 +122,19 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
     if(contradiction.length)dataQualityFlags.push(...contradiction.map(o=>`Issuer filing contradicts valuation shares by more than 2%: ${o.url} (${o.date}: ${o.shares})`));
     const retained=!!(previousDossiers[analysis.id]?.valuation&&analysis.valuation&&dataQualityFlags.length&&!contradiction.length);
     if(retained){
-      analysis={...analysis,valuation:{...withShareDenominator(analysis.valuation!,previousDossiers[analysis.id].valuation!.shares),publishedShareReview:true,shareReviewReasons:dataQualityFlags,
+      // A split after the annual report moves every earlier share count to the new basis.
+      const prior=previousDossiers[analysis.id].valuation!,split=analysis.valuation!.splitAfterReport;
+      const retainedShares=split&&!prior.splitAfterReport?prior.shares*split:prior.shares;
+      analysis={...analysis,valuation:{...withShareDenominator(analysis.valuation!,retainedShares),publishedShareReview:true,shareReviewReasons:dataQualityFlags,
         assumptions:[...analysis.valuation!.assumptions,'Previously published share basis retained; independent share observations differ and await reconciliation.']}};
       valuation=tradingValuation(analysis,usdRate);
       dataQualityFlags=[];
     }
     const returnInputs = buyReturnInputs(analysis.valuation, company.currency);
-    let price = publishedBuyPrice({ businessChanged: analysis.thesis?.changed, st: analysis.status === 'scored' ? 's' : 'i', t, pr, shareSources:analysis.valuation?.shareSources, publishedShareReview:analysis.valuation?.publishedShareReview,
+    let price = publishedBuyPrice({ id: analysis.id, businessChanged: analysis.thesis?.changed, st: analysis.status === 'scored' ? 's' : 'i', t, pr, shareSources:analysis.valuation?.shareSources, publishedShareReview:analysis.valuation?.publishedShareReview,
       v: valuation ? [valuation.perShare.low, valuation.perShare.mid, valuation.perShare.high] : null, dataQualityFlags }, prices[analysis.id]);
     const prior=previousDossiers[analysis.id];
-    const priceTestFreeze=price.result==='unclear'&&prior?.tests.price&&['pass','fail'].includes(prior.tests.price.result)
+    const priceTestFreeze=price.result==='unclear'&&!reviewedInputError(analysis.id)&&prior?.tests.price&&['pass','fail'].includes(prior.tests.price.result)
       ? prior.priceTestFreeze??{asOf:prior.asOf,test:prior.tests.price} : undefined;
     if(priceTestFreeze)price={...price,...publishedBuyPrice({st:analysis.status==='scored'?'s':'i',t,pr,v:null,priceTestFreeze,businessChanged:analysis.thesis?.changed},prices[analysis.id]),dataQualityFlags:price.dataQualityFlags};
     // Funnel order: moat, economics, management, accounting, profit record, price.

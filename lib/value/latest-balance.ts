@@ -44,8 +44,27 @@ export function completeBalance(values:Pick<Year,'cash'|'totalDebt'|'equity'|'go
  const required=kind==='operating'?[values.cash,values.totalDebt]:[values.equity,values.goodwill,values.intangibles];
  return required.every(v=>v!==null&&v!==undefined&&Number.isFinite(v));
 }
+/** A statement in a different unit scale (thousands read as units, or the
+ * reverse) or with assets below its own cash or equity is not a balance sheet
+ * of this company. Assets move with acquisitions, never by 100× within a year:
+ * each statement is compared with the latest accepted statement in the same
+ * currency that ended within the preceding 400 days. */
+export function plausibleBalances(rows:BalanceSheet[]):Set<BalanceSheet> {
+ const accepted:BalanceSheet[]=[];
+ const day=(date:string)=>Date.parse(`${date}T00:00:00Z`)/864e5;
+ for(const row of [...rows].sort((a,b)=>a.end.localeCompare(b.end)||a.filed.localeCompare(b.filed))){
+  const {totalAssets:assets,cash,equity}=row.values;
+  if(assets==null||!(assets>0)){accepted.push(row);continue;}
+  if(cash!=null&&cash>assets*1.001||equity!=null&&equity>assets*1.001)continue;
+  const prior=accepted.filter(r=>r.currency===row.currency&&r.values.totalAssets!=null&&r.values.totalAssets>0&&day(row.end)-day(r.end)<=400).at(-1);
+  if(prior&&(assets/prior.values.totalAssets!>100||assets/prior.values.totalAssets!<.01))continue;
+  accepted.push(row);
+ }
+ return new Set(accepted);
+}
 export function latestBalanceAt(rows:BalanceSheet[],cutoff:string,currency:string,annual:Year,kind:Kind='operating'):BalanceSheet|null {
- return rows.filter(r=>completeBalance(r.values,kind)&&(!completeBalance(annual,kind)||r.end>annual.end)&&r.end<cutoff&&r.filed<cutoff&&r.filed>=r.end&&!!r.currency&&sameCurrency(r.currency,currency))
+ const plausible=plausibleBalances(rows);
+ return rows.filter(r=>completeBalance(r.values,kind)&&plausible.has(r)&&(!completeBalance(annual,kind)||r.end>annual.end)&&r.end<cutoff&&r.filed<cutoff&&r.filed>=r.end&&!!r.currency&&sameCurrency(r.currency,currency))
   .sort((a,b)=>a.end.localeCompare(b.end)||a.filed.localeCompare(b.filed)).at(-1)??null;
 }
 

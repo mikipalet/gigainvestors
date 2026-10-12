@@ -19,3 +19,10 @@ it('suppresses a retained valuation when a comparable issuer filing contradicts 
  const files=buildOutput({analyses:[a],previousDossiers:{[a.id]:base},issuerContradictions:{[a.id]:[{source:'issuer:sec',shares:1,date:'2026-06-30',url:'https://www.sec.gov/Archives/edgar/data/1/filing.htm',basis:'all-ordinary-outstanding'}]},prices:{[a.id]:[60,'2026-10-06']},holdersByTicker:{},investorNames:{},fx:{}}).files;
  expect((files[`dossiers/${shardOf(a.id)}.json`] as Record<string,Dossier>)[a.id].valuation).toBeNull();
 });
+it('moves a retained share basis to the post-split basis when a split followed the annual report (3.8.1)',()=>{
+ const a=structuredClone(base);a.company.marketCapUsd=null;
+ a.valuation!.assumptions=['Unverified share count: providers disagree'];a.valuation!.shares=base.valuation!.shares*10;a.valuation!.splitAfterReport=10;
+ const d=buildOutput({analyses:[a],previousDossiers:{[a.id]:base},prices:{[a.id]:[6,'2026-10-06']},holdersByTicker:{},investorNames:{},fx:{}}).files[`dossiers/${shardOf(a.id)}.json`] as Record<string,Dossier>;
+ expect(d[base.id].valuation?.shares).toBeCloseTo(base.valuation!.shares*10,0);
+ expect(d[base.id].valuation?.assumptions.some(s=>s.includes('Previously published share basis retained'))).toBe(true);
+});

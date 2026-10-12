@@ -4,6 +4,7 @@ import {retainPublicationObservations} from '../publication-continuity';
 import {issuerShareContradictions,issuerFilingShareObservations} from '../../../lib/value/publication-continuity';
 import {refreshBalanceValuation} from '../../../lib/value/refresh-balance-valuation';
 import {publishBalances} from '../publish-balances';
+import {valueOutliers} from '../../../lib/value/value-outliers';
 import {readRetiredIssuerAliases,reviewedIssuerAliases,releaseCanonicalIds} from '../retired-issuer-aliases';
 import {reconcileIssuers} from '../issuer-publication';
 import {fillPublishedLogos} from '../../../lib/value/logo-fill';
@@ -409,6 +410,9 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
     reconcileIssuers(files,holdersByTicker,investorNames);
   }
   fillPublishedLogos(files);
+  const outliers=valueOutliers(Object.entries(files).filter(([file])=>/^index\/[A-Z]{2}\.json$/.test(file)).flatMap(([,rows])=>rows as import('../../../lib/value/types').IndexRow[]),readPrices(path.join(repo,'prices')));
+  writeCorpusJson('staging/value-outliers.json',{asOf:new Date().toISOString(),companies:outliers});
+  console.log(`Value outliers for review: ${outliers.length}; Buys among them: ${outliers.filter(o=>o.buy).map(o=>o.id).join(', ')||'none'}`);
   forwardFiles(repo, files, universe, readPrices(path.join(repo, 'prices')), new Date().toISOString().slice(0,10));
   publishViews(files);
   writeOutput({ repo, files });

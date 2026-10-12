@@ -1,4 +1,5 @@
 import { valuationFlags } from './data-quality';
+import { reviewedInputFlags } from './reviewed-input-errors';
 import { qualityPass } from './fair-buy';
 import { priceTest } from './price-test';
 import { T } from './config';
@@ -14,8 +15,11 @@ import type { IndexRow, PriceMap, Valuation } from './types';
  * b requires every quality gate, so its count is the final funnel count.
  */
 // m and buyReturnInputs are accepted for older callers and ignored from 3.8.0.
-export function publishedBuyPrice(row: Pick<IndexRow, 'businessChanged' | 'st' | 't' | 'pr' | 'v' | 'dataQualityFlags' | 'shareSources' | 'priceTestFreeze' | 'publishedShareReview'> & Partial<Pick<IndexRow, 'm' | 'buyReturnInputs'>>, quote: PriceMap[string] | undefined) {
+export function publishedBuyPrice(row: Pick<IndexRow, 'businessChanged' | 'st' | 't' | 'pr' | 'v' | 'dataQualityFlags' | 'shareSources' | 'priceTestFreeze' | 'publishedShareReview'> & Partial<Pick<IndexRow, 'id' | 'm' | 'buyReturnInputs'>>, quote: PriceMap[string] | undefined) {
   const quality = qualityPass(row);
+  // A reviewed input error outranks every retained or frozen price result.
+  const reviewed = reviewedInputFlags(row.id);
+  if(reviewed.length)return {result:'unclear' as const,mos:null,dataQualityFlags:[...new Set([...(row.dataQualityFlags ?? []).filter(flag => !flag.startsWith('Unverified ratio:')),...reviewed])],b:false};
   if(row.priceTestFreeze){
     const test=row.priceTestFreeze.test;
     return {result:test.result,mos:test.metrics.mos??null,dataQualityFlags:[],b:!row.businessChanged&&row.st==='s'&&quality&&test.result==='pass'};

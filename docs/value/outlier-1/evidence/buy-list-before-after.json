@@ -1,0 +1,22 @@
+{
+ "live": 175,
+ "candidate": 174,
+ "liveWestern": 140,
+ "candidateWestern": 139,
+ "removed": [
+  {
+   "id": "NFLX.US",
+   "name": "Netflix Inc",
+   "western": true,
+   "price": 70.3,
+   "liveValue": 86.26017703928007,
+   "candidateValue": 26.59186546751827,
+   "liveTests": "PPPPP",
+   "candidateTests": "PPFPP",
+   "livePr": "P",
+   "candidatePr": "P",
+   "flags": null
+  }
+ ],
+ "added": []
+}

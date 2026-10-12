@@ -10,6 +10,10 @@ export function ownerCash(y:Year,industry:string|null|undefined):{cash:number;re
  if(y.cashExclusion?.invalid)return {cash:0,reason:y.cashExclusion.reason};
  if(/healthcare plans|managed health care|insurance|capital markets|investment banking|brokerage|education|educational/i.test(industry??'') || (y.clientAssets??0)>0)
   return {cash:0,reason:'Regulated, client or student funds: distributable surplus is not established by consolidated cash; no cash credit or debt offset'};
+ // Lenders and settlement businesses valued as operating companies hold cash
+ // funded by deposits, securitisations or client settlements (3.8.1).
+ if(/credit services|mortgage finance|REIT - mortgage|financial conglomerates/i.test(industry??''))
+  return {cash:0,reason:'Lending, deposit or settlement funds: consolidated cash backs borrowings, deposits or client settlements; no cash credit or debt offset'};
  let cash=Math.max(0,gross-(y.cashExclusion?.amount??0));
  let reason=y.cashExclusion?.reason??null;
  if(/logistics|distribution|distributors|tobacco/i.test(industry??'')) {

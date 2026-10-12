@@ -60,3 +60,13 @@ it('sums separate merchandise and finished goods only when an inventory aggregat
  const rows=read('S100VJ7H').filter(r=>!r.element.endsWith(':InventoriesCAIFRS'));
  expect(yearsFromEdinet(rows).at(-1)?.inventory).toBe(2529640000);
 });
+it('reads capital spending from issuer extension concepts and the capital expenditure overview, never as zero (3.8.1)', () => {
+ // JFE and Konami tag cash-flow capex with their own concepts; LY Corp has no cash-flow capex line.
+ const jfe = yearsFromEdinet(read('jfe-2026'));
+ expect(jfe.slice(-2).map(y => [y.fy, y.capex])).toEqual([[2025, 279417000000], [2026, 321720000000]]);
+ expect(jfe.at(-1)!.provenance?.capex).toMatchObject({ field: 'PurchaseOfNonCurrentAssetsInvCFIFRS', method: 'reported' });
+ expect(yearsFromEdinet(read('konami-2026')).slice(-2).map(y => [y.fy, y.capex])).toEqual([[2025, 66862000000], [2026, 55680000000]]);
+ const ly = yearsFromEdinet(read('lycorp-2026')).at(-1)!;
+ expect(ly.capex).toBe(173750000000);
+ expect(ly.provenance?.capex).toMatchObject({ field: 'CapitalExpendituresOverviewOfCapitalExpendituresEtc', method: 'reported' });
+});

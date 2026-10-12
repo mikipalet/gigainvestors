@@ -42,3 +42,25 @@ describe('3.8.0 forward test', () => {
     expect(closeOn([['2026-10-13', 3]], '2026-10-12')).toBeNull();
   });
 });
+
+describe('forward-test corrections', () => {
+  const rows = [row('A.US', true), row('B.L', true, 50, null), row('P.US', true, 569)];
+  const prices: PriceMap = { 'A.US': [90, '2026-10-09'], 'B.L': [40, '2026-10-10'], 'P.US': [30, '2026-10-09'] };
+  const snapshot = buyListSnapshot({ date: '2026-10-12', rows, prices, methodVersion: '3.8.0', publishCommit: 'abc', publishedAsOf: '2026-10-12' });
+  const line = (id: string, action: string) => JSON.stringify({ date: '2026-10-12', list: '2026-10-12-buy-list.json', id, action, reason: 'input error', source: 'https://www.sec.gov/x', methodVersion: '3.8.1' });
+  it('scores the frozen basket unchanged and the corrected basket without removed names', async () => {
+    const { correctedSnapshot, parseCorrections } = await import('@/lib/value/forward-test');
+    const corrections = parseCorrections(`${line('P.US', 'remove')}\n${line('A.US', 'keep')}\n`);
+    const corrected = correctedSnapshot(snapshot, '2026-10-12-buy-list.json', corrections);
+    expect(corrected.removed).toEqual(['P.US']);
+    expect(corrected.kept).toEqual(['A.US']);
+    expect(corrected.snapshot.companies.map(c => c.id)).toEqual(['A.US', 'B.L']);
+    expect(snapshot.companies.map(c => c.id)).toEqual(['A.US', 'B.L', 'P.US']);
+    expect(correctedSnapshot(snapshot, '2027-01-01-buy-list.json', corrections).removed).toEqual([]);
+  });
+  it('rejects incomplete lines and names outside the list', async () => {
+    const { correctedSnapshot, parseCorrections } = await import('@/lib/value/forward-test');
+    expect(() => parseCorrections('{"date":"2026-10-12","id":"P.US","action":"remove"}')).toThrow(/line 1/);
+    expect(() => correctedSnapshot(snapshot, '2026-10-12-buy-list.json', parseCorrections(line('Z.US', 'remove')))).toThrow(/Z.US/);
+  });
+});

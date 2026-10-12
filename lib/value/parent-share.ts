@@ -9,3 +9,12 @@ export function parentShare(year: Year): number | null {
   if (parent === null || total == null || total <= 0 || parent < 0 || parent > total) return null;
   return parent / total;
 }
+
+/** Without a consolidated/parent profit split, material minority holders'
+ * claim on consolidated cash and debt is estimated from the balance sheet:
+ * parent equity / (parent equity + non-controlling interests). */
+export function parentEquityShare(year: Pick<Year, 'equity' | 'minorityInterest'>): number {
+  const minority = year.minorityInterest ?? 0;
+  if (!(minority > 0) || year.equity === null || !(year.equity > 0) || minority / (year.equity + minority) <= .1) return 1;
+  return year.equity / (year.equity + minority);
+}

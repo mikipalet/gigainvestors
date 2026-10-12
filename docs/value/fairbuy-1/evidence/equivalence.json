@@ -7,7 +7,9 @@
    "eligible": 3353,
    "identicalQuarters": 43,
    "onlyBest1": [],
-   "onlyProduction": []
+   "onlyProduction": [],
+   "buys": 1658,
+   "identicalBuyQuarters": 43
   },
   "intl_train": {
    "quarters": 43,
@@ -15,7 +17,9 @@
    "eligible": 2295,
    "identicalQuarters": 43,
    "onlyBest1": [],
-   "onlyProduction": []
+   "onlyProduction": [],
+   "buys": 1041,
+   "identicalBuyQuarters": 43
   },
   "intl_later": {
    "quarters": 42,
@@ -23,7 +27,9 @@
    "eligible": 5178,
    "identicalQuarters": 42,
    "onlyBest1": [],
-   "onlyProduction": []
+   "onlyProduction": [],
+   "buys": 1624,
+   "identicalBuyQuarters": 42
   },
   "US_later": {
    "quarters": 42,
@@ -31,7 +37,9 @@
    "eligible": 6074,
    "identicalQuarters": 42,
    "onlyBest1": [],
-   "onlyProduction": []
+   "onlyProduction": [],
+   "buys": 1361,
+   "identicalBuyQuarters": 42
   }
  }
 }

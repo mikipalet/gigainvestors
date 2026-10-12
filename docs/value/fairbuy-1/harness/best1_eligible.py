@@ -10,7 +10,7 @@ sys.path.insert(0, sys.argv[1])
 import best as b
 h, c = b.h, b.c
 
-out = {'panels': {}, 'scopes': {}, 'rows': {}, 'counts_check': {}}
+out = {'panels': {}, 'buys': {}, 'scopes': {}, 'rows': {}, 'counts_check': {}}
 fund_ids = set()
 for panel, (qs, scope, idx) in b.PANELS.items():
     P = {}
@@ -18,9 +18,11 @@ for panel, (qs, scope, idx) in b.PANELS.items():
         F = c.frame(q, scope)
         P[q] = sorted(i for i, r in F.items() if b.eligible(i, r))
         out['scopes'].setdefault(panel, {})[q] = sorted(F)
+        # best-1's ranking check: every eligible company at or below intrinsic value.
+        out['buys'].setdefault(panel, {})[q] = sorted(i for i in P[q] if b.sensible(F[i]))
         rows = out['rows'].setdefault(q, {})
         for i, r in F.items():
-            rows[i] = {'t': r[1], 'fy': h.basis(r), 'financial': bool(c.a.financial(i))}
+            rows[i] = {'t': r[1], 'fy': h.basis(r), 'financial': bool(c.a.financial(i)), 'pm': r[2]}
             fund_ids.add(i)
     out['panels'][panel] = P
 # Reproduce best-1's published eligibility counts (best.json counts.eligible_mean).

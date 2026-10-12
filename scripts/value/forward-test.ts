@@ -26,7 +26,8 @@ function published(repo: string) {
     .flatMap(f => JSON.parse(readFileSync(path.join(repo, 'index', f), 'utf8')) as IndexRow[]);
   const meta = JSON.parse(readFileSync(path.join(repo, 'meta.json'), 'utf8')) as StoreMeta;
   let commit: string | null = null;
-  try { commit = execFileSync('git', ['-C', repo, 'rev-parse', 'HEAD'], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim(); } catch { commit = null; }
+  // Only the published repository's own commit; never a parent checkout's.
+  if (existsSync(path.join(repo, '.git'))) try { commit = execFileSync('git', ['-C', repo, 'rev-parse', 'HEAD'], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim(); } catch { commit = null; }
   return { rows, prices: readPrices(path.join(repo, 'prices')), meta, commit };
 }
 

@@ -14,9 +14,10 @@ describe('3.8.0 forward test', () => {
     expect(snapshot.companies[1].western).toBe(false);
     expect(snapshot).toMatchObject({ weighting: 'equal', rebalancing: 'none', archive: { publishCommit: 'abc' }, benchmarks: ['SPY', 'EFA'] });
   });
-  it('refuses a Buy without a quote, a value or the live method', () => {
+  it('refuses a Buy without a quote, a value or a method; keeps a frozen record\'s method', () => {
     expect(() => buyListSnapshot({ date: '2026-10-12', rows, prices: { 'A.US': [90, '2026-10-09'] }, methodVersion: '3.8.0', publishCommit: null, publishedAsOf: null })).toThrow(/B.L/);
-    expect(() => buyListSnapshot({ date: '2026-10-12', rows: [{ ...rows[0], methodVersion: '3.7.1' }], prices, methodVersion: '3.8.0', publishCommit: null, publishedAsOf: null })).toThrow(/3.7.1/);
+    expect(buyListSnapshot({ date: '2026-10-12', rows: [{ ...rows[0], methodVersion: '3.2.0' }], prices, methodVersion: '3.8.0', publishCommit: null, publishedAsOf: null }).companies[0].methodVersion).toBe('3.2.0');
+    expect(() => buyListSnapshot({ date: '2026-10-12', rows: [{ ...rows[0], methodVersion: undefined }], prices, methodVersion: '3.8.0', publishCommit: null, publishedAsOf: null })).toThrow(/method/);
   });
   it('scores the equal-weight basket since the snapshot against the same-dated benchmark', () => {
     const later: PriceMap = { 'A.US': [99, '2026-11-12'], 'B.L': [20, '2026-11-12'] };

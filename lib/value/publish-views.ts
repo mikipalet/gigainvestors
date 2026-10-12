@@ -38,7 +38,8 @@ export function publishViews(files: Record<string, unknown>): ViewManifest {
   // Partial writers (notably prices) supply no history. Omission must not
   // retract released frames; supplied periods below replace both view halves.
   const prior = (files['meta.json'] as StoreMeta).views;
-  const manifest: ViewManifest = {current:bounded(rows.filter(qualityPass)),deferred:chunks(rows.filter(r=>!qualityPass(r))),
+  // 3.8.0 first paint holds every company passing the Buy quality tests (more than the old all-five set).
+  const manifest: ViewManifest = {current:bounded(rows.filter(qualityPass),100_000),deferred:chunks(rows.filter(r=>!qualityPass(r))),
     years:{...prior?.years},yearDeferred:{...prior?.yearDeferred},quarters:{...prior?.quarters},quarterDeferred:{...prior?.quarterDeferred}};
   const currentById=new Map(source.map(row=>[row.id,row]));
   const identities=((files['history/companies.json'] as IndexRow[] | undefined)??Object.entries(files).filter(([f])=>/^index\/[A-Z]{2}\.json$/.test(f)).flatMap(([,data])=>data as IndexRow[])).map(row=>({...row,lg:currentById.get(row.id)?.lg??row.lg}));

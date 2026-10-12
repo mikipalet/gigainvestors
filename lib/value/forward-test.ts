@@ -27,7 +27,8 @@ export function buyListSnapshot({ date, rows, prices, methodVersion, publishComm
   const companies = rows.filter(r => r.b === true).sort((a, b) => a.id.localeCompare(b.id)).map(r => {
     const quote = prices[r.id], mid = r.v?.[1];
     if (!quote || !positive(quote[0]) || !positive(mid)) throw new Error(`Forward test: published Buy ${r.id} lacks a quote or central value`);
-    if (r.methodVersion !== methodVersion) throw new Error(`Forward test: ${r.id} published under ${r.methodVersion}, not ${methodVersion}`);
+    // A reviewed data-error freeze keeps an older published record (and its method); it is still a published Buy.
+    if (!r.methodVersion) throw new Error(`Forward test: ${r.id} has no method version`);
     return { id: r.id, ticker: r.id.slice(0, r.id.lastIndexOf('.')), name: companyName(r), western: r.w != null,
       price: quote[0], currency: r.cur, priceDate: quote[1], seed: quote[2] === 'seed',
       centralValue: mid, priceToValue: Number((quote[0] / mid).toFixed(6)), methodVersion: r.methodVersion! };

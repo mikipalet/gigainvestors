@@ -5,6 +5,7 @@ import type {Dossier,PriceMap} from './types';
 import type { IndexRow, StoreMeta } from './types';
 import { gateCode, qualityPass } from './fair-buy';
 import { qualityGate } from './story';
+import { T } from './config';
 /** Runs while rendering/building the index. A published contradiction must not ship. */
 export function assertIndexConsistency({meta,rows}:{meta:StoreMeta|null;rows:IndexRow[]}) {
   if (meta?.western) {
@@ -21,6 +22,7 @@ export function assertIndexConsistency({meta,rows}:{meta:StoreMeta|null;rows:Ind
     if (rows.filter(r=>/^P*FP*$/.test(gateCode(r))&&r.st==='s').length !== f.gates.filter(g=>g.key!=='price').reduce((n,g)=>n+g.failsOnlyThis,0)) throw new Error('Value consistency: near-miss list and funnel disagree');
   }
   if (rows.some(r=>r.b !== undefined) && f.gates.find(g=>g.key==='price')?.passing !== rows.filter(r=>r.b === true).length) throw new Error('Value consistency: price gate and published buy flags disagree');
+  if (rows.some(r=>r.pr && r.m !== undefined && r.m !== T.price.buyMos)) throw new Error('Value consistency: a 3.8.0 row carries a buy discount');
   if (rows.some(r=>r.b === true && (!qualityPass(r) || r.st !== 's' || r.dataQualityFlags?.length))) throw new Error('Value consistency: invalid published buy flag');
   if (qualityGate(f)?.passing!==rows.filter(qualityPass).length) throw new Error('Value consistency: headline, last quality gate and default rows disagree');
 }

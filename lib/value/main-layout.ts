@@ -9,7 +9,7 @@ export function mainCompanies(entries:ResultEntry[]){
   const {row}=entry;
   const price=entry.historical?entry.historicalPrice?.price??null:entry.quote;
   const unavailable=!entry.historical&&Boolean(row.dataQualityFlags?.length);
-  const buyPrice=unavailable?null:entry.historical?entry.historicalPrice?.buyPrice??null:row.v?.[1]!=null?row.v[1]*(1-(row.m??0)):null;
+  const buyPrice=unavailable?null:entry.historical?entry.historicalPrice?.buyPrice??null:row.v?.[1]!=null?row.v[1]*(1-(row.pr?0:row.m??0)):null; // 3.8.0 rows (with a profit record) buy at central value
   const ratio=price!=null&&price>0&&buyPrice!=null&&buyPrice>0?finite(price/buyPrice):null;
   const expected=unavailable||(entry.historical&&!entry.basis)?null:finite(entry.expected);
   return {entry,id:row.id,name:companyName(row),price,buyPrice,ratio,expected,returnValue:entry.historical&&!entry.basis?finite(entry.historicalReturn):expected,buy:!row.businessChanged&&!unavailable&&row.b===true&&qualityPass(row)};

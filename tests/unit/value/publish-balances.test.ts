@@ -21,6 +21,8 @@ it('reprices bound research without reopening an unrelated capitalization check'
  publishBalances(files,prices,{},read);
  const next=(files[key] as any)[a.id];
  expect(next.valuation).not.toBeNull();expect(next.valuation.netDebt).toBe(660);
+ // 3.8.0: a balance refresh keeps the Buy rule (no discount below central value).
+ expect(next.requiredMos).toBe(0);expect((files['index/US.json'] as any[]).find(r=>r.id===a.id).m).toBe(0);
  expect(next.company).toEqual(company);
  for(const k of Object.keys(quality).filter(k=>k!=='price'))expect(next.tests[k]).toEqual(quality[k]);
  const frozen=structuredClone(files);

@@ -23,12 +23,14 @@ const VIEWPORTS: Array<[number, number]> = [[1728, 970], [2056, 1180], [390, 844
 // Copy that 3.8.0 removed: Wait as a verdict, Buy discounts, the return hurdle and any ranking language.
 const FORBIDDEN: Array<[string, RegExp]> = [['Wait', /\bWait\b/], ['safety discount', /safety discount/i], ['margin of safety', /margin of safety/i],
   ['return hurdle', /return hurdle/i], ['top 3', /\btop (?:3|three)\b/i], ['top pick', /top pick(?!\.| or| and)/i], ['old discounts', /15[–-]50%|25%, 35%|35% or 50%|85% of both/], ['buy below', /\bBuy below\b/]];
-const forbidden = (text: string) => FORBIDDEN.filter(([, re]) => re.test(text.replace(/there is no top pick|no ranking and no top pick|not ranked/gi, ''))).map(([name]) => name);
+// Statements that a rule no longer applies are allowed.
+const forbidden = (text: string) => FORBIDDEN.filter(([, re]) => re.test(text.replace(/there is no top pick|no ranking and no top pick|not ranked|no separate (?:expected-)?return hurdle|no extra discount and no separate return hurdle|no extra safety discount|no margin-of-safety discount/gi, ''))).map(([name]) => name);
 
 async function capture(page: Page, selector: string): Promise<SurfaceSnapshot> {
   return page.locator(selector).first().evaluate(el => ({
     accountingContext: el.querySelector('.accounting-basis')?.textContent ?? '', signals: [],
-    text: (el as HTMLElement).innerText, numbers: ((el as HTMLElement).innerText.match(/[-−+]?\d[\d,.]*(?:%|×|bn|[KMBT])?/g) ?? []),
+    // textContent: the price math table is in the DOM but hidden on company pages at some widths.
+    text: (el as HTMLElement).innerText + ' ' + [...el.querySelectorAll('.valuation-math')].map(t => [...t.querySelectorAll('tr')].map(r => [...r.children].map(c => c.textContent).join(' ')).join(' ')).join(' '), numbers: ((el as HTMLElement).innerText.match(/[-−+]?\d[\d,.]*(?:%|×|bn|[KMBT])?/g) ?? []),
     charts: [], windows: [],
     stats: [...el.querySelectorAll('.tile-support>div,.drawer-numbers>div')].map(e => [e.querySelector('dt')!.textContent!, e.querySelector('dd')!.textContent!] as [string, string]),
     table: [...el.querySelectorAll('.drawer-years tbody tr')].map(e => [...e.children].map(c => c.querySelector('.quality-ltm-label')?.textContent ?? [...c.childNodes].filter(n => n.nodeType === Node.TEXT_NODE).map(n => n.textContent).join('').trim())),
@@ -64,7 +66,7 @@ async function main() {
         if (await more.count()) {
           await more.click(); await page.locator('dialog').waitFor();
           await expect(page.locator('dialog')).toContainText(`Buy now · ${count}`);
-          panel = await page.locator('dialog [data-company-row]').count();
+          panel = Number(await page.locator('dialog [data-testid=results-table]').getAttribute('aria-rowcount')) - 1;
           panelBad = forbidden(await page.locator('dialog').innerText());
           await page.screenshot({ path: `${out}/list-${width}-all-buys.png` });
           await page.keyboard.press('Escape'); await page.locator('dialog').waitFor({ state: 'detached' });
@@ -80,11 +82,12 @@ async function main() {
       try {
         const response = await page.goto(`${base}/value/method`, { waitUntil: 'networkidle', timeout: 120000 });
         expect(response?.ok()).toBe(true);
-        const text = await page.locator('body').innerText();
+        // Earlier changelog entries are history and keep their original wording.
+        const text = await page.evaluate(() => { const b = document.body.cloneNode(true) as HTMLElement; b.querySelectorAll('li').forEach(li => { if (/^3\.[0-7]\.\d/.test(li.querySelector('b')?.textContent ?? '')) li.remove(); }); document.body.append(b); b.style.position = 'absolute'; const t = b.innerText; b.remove(); return t; });
         expect(text).toContain('passes the quality tests and trades at or below our central estimate of value');
         expect(text).toContain('3.8.0');
         await page.screenshot({ path: `${out}/method-${width}.png`, fullPage: false });
-        const bad = forbidden(text.replace(/^.*3\.[0-7]\.\d.*$/gm, '')); // earlier changelog entries are history
+        const bad = forbidden(text);
         record('method', { pass: !bad.length, forbidden: bad });
       } catch (e) { record('method', { pass: false, error: String(e) }); }
       // Five newly-Buy companies: verdict, price card, drawers.

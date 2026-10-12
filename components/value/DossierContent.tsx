@@ -77,7 +77,7 @@ const DossierBody=memo(function DossierBody({dossier,quote=null,children,holders
  const ownerCopy=owner?expectedReturnCopy(owner,valuation,company.country):coveredCopy|| (valuation?.method==='book_value'?`This financial business uses a book-value estimate; ${requiredReturnCopy(valuation,company.country)}.`:'');
  const referenceRow=comparable?<dl className="reference-metrics" aria-label="Key numbers">
   {quote&&<div><dt>Share price</dt><dd><b>{sharePrice(quote[0],company.currency)}</b></dd></div>}
-  <div><dt>Buy at or below</dt><dd><b>{sharePrice(comparable.perShare.mid,company.currency)}</b></dd></div>
+  <div><dt>Buy up to</dt><dd><b>{sharePrice(comparable.perShare.mid,company.currency)}</b></dd></div>
   <div title={ownerCopy}><dt>Expected / yr</dt><dd>{coveredCopy?<>Excess cash covers price · no finite IRR</>:<><b>{owner?pct(owner.expected):'—'}</b> at today's price ({pct(valuation!.discountRate)} at central value)</>}</dd></div>
  </dl>:<dl className="reference-metrics" aria-label="Key numbers">
   {quote&&<div><dt>Share price</dt><dd><b>{sharePrice(quote[0],company.currency)}</b></dd></div>}

@@ -1,4 +1,5 @@
 import {createUsdRate} from '../../lib/value/fx';
+import {T} from '../../lib/value/config';
 import {sameCurrency} from '../../lib/value/currency';
 import {readCorpusJson} from '../../lib/value/corpus';
 import {refreshBalanceValuation} from '../../lib/value/refresh-balance-valuation';
@@ -34,14 +35,14 @@ export function publishBalances(files:Record<string,any>,prices:PriceMap,fx:Reco
    }
   }
   const range=v?.perShareTrading&&sameCurrency(v.perShareTrading.currency,d.company.currency)?v.perShareTrading:sameCurrency(v?.currency??'',d.company.currency)?v?.perShare:null;
-  const candidate:IndexRow={...row,v:range?[range.low,range.mid,range.high]:null,m:next.requiredMos,buyReturnInputs:buyReturnInputs(v,d.company.currency),priceTestFreeze:undefined};
+  const candidate:IndexRow={...row,v:range?[range.low,range.mid,range.high]:null,m:T.price.buyMos,buyReturnInputs:buyReturnInputs(v,d.company.currency),priceTestFreeze:undefined};
   const price=publishedBuyPrice(candidate,prices[d.id]);
   candidate.b=price.b;
   if(price.dataQualityFlags.length){candidate.v=null;candidate.buyReturnInputs=null;}
   next={...next,b:price.b,priceTestFreeze:undefined,dataQualityFlags:price.dataQualityFlags,tests:{...d.tests,price:{key:'price',result:price.result,numeric:price.result,reasons:[],metrics:{mos:price.mos},series:{},jev:[]}}};
   const visible=publicAnalysis(next);
   // Keep every quality outcome and non-price public field exactly bound.
-  next={...d,valuation:visible.valuation,valuationReason:visible.valuationReason,requiredMos:next.requiredMos,b:visible.b,priceTestFreeze:undefined,tests:{...d.tests,price:visible.tests.price}};
+  next={...d,valuation:visible.valuation,valuationReason:visible.valuationReason,requiredMos:T.price.buyMos,b:visible.b,priceTestFreeze:undefined,tests:{...d.tests,price:visible.tests.price}};
   next.ownerMemo=memoAtPrice(next,prices[d.id]);
   next.priceStory=retainStoryTimestamp(composePriceStory(next,prices[d.id]??null,d.priceStory?.selected??null,d.priceStory?.events??[],d.priceStory?.asOf??new Date().toISOString()),d.priceStory);
   files[file][d.id]=next;changed.set(d.id,candidate);

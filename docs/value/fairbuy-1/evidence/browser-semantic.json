@@ -1,0 +1,782 @@
+[
+ {
+  "name": "list",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buyCount": 140,
+  "listed": 140,
+  "forbidden": [],
+  "nextRatios": [
+   1.0040363081209294,
+   1.0054747707896725,
+   1.0138802952528168,
+   1.0236804026459236,
+   1.025429769988097,
+   1.0321641265388786
+  ],
+  "overflow": false
+ },
+ {
+  "name": "method",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "forbidden": []
+ },
+ {
+  "name": "DECK.US",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "forbidden": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "$82.89"
+   ],
+   [
+    "Estimated value",
+    "$150.59"
+   ],
+   [
+    "Buy at or below",
+    "$150.59"
+   ],
+   [
+    "Expected / yr",
+    "16.1%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "55.0%"
+   ]
+  ]
+ },
+ {
+  "name": "DSY.PA",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "forbidden": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "EUR 21.75"
+   ],
+   [
+    "Estimated value",
+    "EUR 24.12"
+   ],
+   [
+    "Buy at or below",
+    "EUR 24.12"
+   ],
+   [
+    "Expected / yr",
+    "10.9%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "90.2%"
+   ]
+  ]
+ },
+ {
+  "name": "MC.PA",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "forbidden": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "EUR 380.00"
+   ],
+   [
+    "Estimated value",
+    "EUR 416.01"
+   ],
+   [
+    "Buy at or below",
+    "EUR 416.01"
+   ],
+   [
+    "Expected / yr",
+    "10.7%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "91.3%"
+   ]
+  ]
+ },
+ {
+  "name": "AON.US",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "forbidden": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "$273.47"
+   ],
+   [
+    "Estimated value",
+    "$349.07"
+   ],
+   [
+    "Buy at or below",
+    "$349.07"
+   ],
+   [
+    "Expected / yr",
+    "11.8%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "78.3%"
+   ]
+  ]
+ },
+ {
+  "name": "BRK-B.US",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "forbidden": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "$515.62"
+   ],
+   [
+    "Estimated value",
+    "$700.09"
+   ],
+   [
+    "Buy at or below",
+    "$700.09"
+   ],
+   [
+    "Expected / yr",
+    "11.4%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "73.7%"
+   ]
+  ]
+ },
+ {
+  "name": "list",
+  "width": 2056,
+  "height": 1180,
+  "pass": true,
+  "buyCount": 140,
+  "listed": 140,
+  "forbidden": [],
+  "nextRatios": [
+   1.0040363081209294,
+   1.0054747707896725,
+   1.0138802952528168,
+   1.0236804026459236,
+   1.025429769988097,
+   1.0321641265388786
+  ],
+  "overflow": false
+ },
+ {
+  "name": "method",
+  "width": 2056,
+  "height": 1180,
+  "pass": true,
+  "forbidden": []
+ },
+ {
+  "name": "DECK.US",
+  "width": 2056,
+  "height": 1180,
+  "pass": true,
+  "forbidden": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "$82.89"
+   ],
+   [
+    "Estimated value",
+    "$150.59"
+   ],
+   [
+    "Buy at or below",
+    "$150.59"
+   ],
+   [
+    "Expected / yr",
+    "16.1%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "55.0%"
+   ]
+  ]
+ },
+ {
+  "name": "DSY.PA",
+  "width": 2056,
+  "height": 1180,
+  "pass": true,
+  "forbidden": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "EUR 21.75"
+   ],
+   [
+    "Estimated value",
+    "EUR 24.12"
+   ],
+   [
+    "Buy at or below",
+    "EUR 24.12"
+   ],
+   [
+    "Expected / yr",
+    "10.9%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "90.2%"
+   ]
+  ]
+ },
+ {
+  "name": "MC.PA",
+  "width": 2056,
+  "height": 1180,
+  "pass": true,
+  "forbidden": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "EUR 380.00"
+   ],
+   [
+    "Estimated value",
+    "EUR 416.01"
+   ],
+   [
+    "Buy at or below",
+    "EUR 416.01"
+   ],
+   [
+    "Expected / yr",
+    "10.7%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "91.3%"
+   ]
+  ]
+ },
+ {
+  "name": "AON.US",
+  "width": 2056,
+  "height": 1180,
+  "pass": true,
+  "forbidden": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "$273.47"
+   ],
+   [
+    "Estimated value",
+    "$349.07"
+   ],
+   [
+    "Buy at or below",
+    "$349.07"
+   ],
+   [
+    "Expected / yr",
+    "11.8%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "78.3%"
+   ]
+  ]
+ },
+ {
+  "name": "BRK-B.US",
+  "width": 2056,
+  "height": 1180,
+  "pass": true,
+  "forbidden": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "$515.62"
+   ],
+   [
+    "Estimated value",
+    "$700.09"
+   ],
+   [
+    "Buy at or below",
+    "$700.09"
+   ],
+   [
+    "Expected / yr",
+    "11.4%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "73.7%"
+   ]
+  ]
+ },
+ {
+  "name": "list",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buyCount": 140,
+  "listed": 140,
+  "forbidden": [],
+  "nextRatios": [
+   1.0040363081209294,
+   1.0054747707896725,
+   1.0138802952528168,
+   1.0236804026459236,
+   1.025429769988097,
+   1.0321641265388786
+  ],
+  "overflow": false
+ },
+ {
+  "name": "method",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "forbidden": []
+ },
+ {
+  "name": "DECK.US",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "forbidden": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "$82.89"
+   ],
+   [
+    "Estimated value",
+    "$150.59"
+   ],
+   [
+    "Buy at or below",
+    "$150.59"
+   ],
+   [
+    "Expected / yr",
+    "16.1%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "55.0%"
+   ]
+  ]
+ },
+ {
+  "name": "DSY.PA",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "forbidden": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "EUR 21.75"
+   ],
+   [
+    "Estimated value",
+    "EUR 24.12"
+   ],
+   [
+    "Buy at or below",
+    "EUR 24.12"
+   ],
+   [
+    "Expected / yr",
+    "10.9%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "90.2%"
+   ]
+  ]
+ },
+ {
+  "name": "MC.PA",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "forbidden": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "EUR 380.00"
+   ],
+   [
+    "Estimated value",
+    "EUR 416.01"
+   ],
+   [
+    "Buy at or below",
+    "EUR 416.01"
+   ],
+   [
+    "Expected / yr",
+    "10.7%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "91.3%"
+   ]
+  ]
+ },
+ {
+  "name": "AON.US",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "forbidden": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "$273.47"
+   ],
+   [
+    "Estimated value",
+    "$349.07"
+   ],
+   [
+    "Buy at or below",
+    "$349.07"
+   ],
+   [
+    "Expected / yr",
+    "11.8%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "78.3%"
+   ]
+  ]
+ },
+ {
+  "name": "BRK-B.US",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "forbidden": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "$515.62"
+   ],
+   [
+    "Estimated value",
+    "$700.09"
+   ],
+   [
+    "Buy at or below",
+    "$700.09"
+   ],
+   [
+    "Expected / yr",
+    "11.4%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "73.7%"
+   ]
+  ]
+ },
+ {
+  "name": "list",
+  "width": 820,
+  "height": 1180,
+  "pass": true,
+  "buyCount": 140,
+  "listed": 140,
+  "forbidden": [],
+  "nextRatios": [
+   1.0040363081209294,
+   1.0054747707896725,
+   1.0138802952528168,
+   1.0236804026459236,
+   1.025429769988097,
+   1.0321641265388786
+  ],
+  "overflow": false
+ },
+ {
+  "name": "method",
+  "width": 820,
+  "height": 1180,
+  "pass": true,
+  "forbidden": []
+ },
+ {
+  "name": "DECK.US",
+  "width": 820,
+  "height": 1180,
+  "pass": true,
+  "forbidden": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "$82.89"
+   ],
+   [
+    "Estimated value",
+    "$150.59"
+   ],
+   [
+    "Buy at or below",
+    "$150.59"
+   ],
+   [
+    "Expected / yr",
+    "16.1%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "55.0%"
+   ]
+  ]
+ },
+ {
+  "name": "DSY.PA",
+  "width": 820,
+  "height": 1180,
+  "pass": true,
+  "forbidden": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "EUR 21.75"
+   ],
+   [
+    "Estimated value",
+    "EUR 24.12"
+   ],
+   [
+    "Buy at or below",
+    "EUR 24.12"
+   ],
+   [
+    "Expected / yr",
+    "10.9%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "90.2%"
+   ]
+  ]
+ },
+ {
+  "name": "MC.PA",
+  "width": 820,
+  "height": 1180,
+  "pass": true,
+  "forbidden": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "EUR 380.00"
+   ],
+   [
+    "Estimated value",
+    "EUR 416.01"
+   ],
+   [
+    "Buy at or below",
+    "EUR 416.01"
+   ],
+   [
+    "Expected / yr",
+    "10.7%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "91.3%"
+   ]
+  ]
+ },
+ {
+  "name": "AON.US",
+  "width": 820,
+  "height": 1180,
+  "pass": true,
+  "forbidden": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "$273.47"
+   ],
+   [
+    "Estimated value",
+    "$349.07"
+   ],
+   [
+    "Buy at or below",
+    "$349.07"
+   ],
+   [
+    "Expected / yr",
+    "11.8%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "78.3%"
+   ]
+  ]
+ },
+ {
+  "name": "BRK-B.US",
+  "width": 820,
+  "height": 1180,
+  "pass": true,
+  "forbidden": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "$515.62"
+   ],
+   [
+    "Estimated value",
+    "$700.09"
+   ],
+   [
+    "Buy at or below",
+    "$700.09"
+   ],
+   [
+    "Expected / yr",
+    "11.4%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "73.7%"
+   ]
+  ]
+ }
+]

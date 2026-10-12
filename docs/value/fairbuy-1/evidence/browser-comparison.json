@@ -1,0 +1,46 @@
+{
+ "candidateStates": 294,
+ "baselineStates": 294,
+ "viewports": [
+  "1728x970",
+  "2056x1180",
+  "390x844",
+  "820x1180"
+ ],
+ "paths": [
+  "/s/aon.us",
+  "/s/brk-b.us",
+  "/s/deck.us",
+  "/s/dsy.pa",
+  "/s/mc.pa",
+  "/value",
+  "/value/method"
+ ],
+ "counts": {
+  "ownerChrome": 611,
+  "ownerWhitespace": 156,
+  "preExisting": 1021,
+  "new": 0
+ },
+ "newFindings": [],
+ "interactionFailures": [],
+ "preExistingInteractionFailures": [
+  [
+   "/value/method",
+   1728
+  ],
+  [
+   "/value/method",
+   2056
+  ],
+  [
+   "/value/method",
+   390
+  ],
+  [
+   "/value/method",
+   820
+  ]
+ ],
+ "pass": true
+}

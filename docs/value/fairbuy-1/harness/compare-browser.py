@@ -7,7 +7,8 @@ cand = json.loads((Path(sys.argv[1]) / 'release-gate/report.json').read_text())
 live = json.loads((Path(sys.argv[2]) / 'release-gate/report.json').read_text())
 owner = json.loads(Path('docs/value/dedupe-1/browser-report.json').read_text())
 allowed = {i for row in owner for i in row.get('issues', []) if i.startswith('text below 13px:') and i.endswith('(12px)')}
-key = lambda row: (row['path'], row['state'].split(':')[0] if row['state'].startswith('Price story:') else row['state'], row['width'], row['height'])
+# State names carry counts ("+296 more"); the Buy rule changes those counts, not the control.
+key = lambda row: (row['path'], re.sub(r'\d+', '<n>', row['state'].split(':')[0] if row['state'].startswith('Price story:') else row['state']), row['width'], row['height'])
 lookup = {key(row): set(row.get('issues', [])) for row in live}
 shape = lambda issue: re.sub(r'\d[\d,.]*', '<n>', issue)
 # "Buy up to" replaces "Buy below" in the same reference-row label, styled 12px on phones by app/devices.css

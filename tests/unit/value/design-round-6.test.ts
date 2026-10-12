@@ -42,3 +42,10 @@ it('renders a price series starting after the last historical valuation without 
  expect(html).toContain('Monthly price against fiscal-year value range and buy line');
  expect(html).not.toMatch(/NaN|Infinity/);
 });
+it('scales the price chart to the current value band drawn after the last fiscal year (3.8.2)',()=>{
+ const dossier=structuredClone(fixture);dossier.valueHistory=[[2023,8,10,12],[2024,9,11,13]];dossier.priceHistory=[['2025-01',15],['2026-01',16]];
+ dossier.valuation={...dossier.valuation!,perShare:{low:30,mid:40,high:50}};delete dossier.valuation!.perShareTrading;
+ const html=renderToStaticMarkup(createElement(MiniPrice,{dossier,quote:[17,'2026-09-28']}));
+ const ys=[...html.matchAll(/<rect[^>]* y="(-?[\d.]+)"/g)].map(m=>Number(m[1]));
+ expect(ys.length).toBeGreaterThan(0);expect(Math.min(...ys)).toBeGreaterThanOrEqual(0);
+});

@@ -39,16 +39,18 @@ export function MiniPrice({dossier,quote,height:chartHeight,fluid=false,dense=fa
  const quoteStart=year(prices[0][0]),end=year(prices.at(-1)![0]),sparse=dense&&Math.floor(quoteStart)===Math.floor(end);
  const start=sparse?Math.min(quoteStart,values[0][0]):quoteStart;
  const visible=values.filter(v=>v[0]+1>=start),vs=priceOnly?[]:visible.length?visible:[values.at(-1)!],ps=prices.filter(p=>year(p[0])>=start);
- const mos=dossier.requiredMos??0,max=Math.max(...vs.map(v=>v[3]),...ps.map(p=>p[1]))*1.05;
+ const current=priceOnly?null:dossier.valuation?.perShareTrading??dossier.valuation?.perShare;
+ // The current band after the last fiscal-year band is drawn too; the scale must contain it.
+ const extended=Boolean(current&&vs.length&&end>vs.at(-1)![0]+1);
+ const mos=dossier.requiredMos??0,max=Math.max(...vs.map(v=>v[3]),...ps.map(p=>p[1]),...(extended?[current!.high]:[]))*1.05;
  const floor=compactPhone?56:minimumHeight;
  const height=dense?floor:fluid?Math.max(floor,availableHeight-chrome):chartHeight??(width<500?146:260);
  // Short charts keep one price label and tighter margins so the plot still has room.
  const tight=height<80,left=tight?34:42,right=width-8,top=priceOnly&&events.length?32:tight?6:12,bottom=height-(tight?14:22);
  const x=(n:number)=>left+(n-start)/(end-start||1)*(right-left),y=(n:number)=>bottom-n/max*(bottom-top);
  const tick=(n:number)=>new Intl.NumberFormat('en-US',{notation:'compact',maximumFractionDigits:0}).format(n);
- const current=priceOnly?null:dossier.valuation?.perShareTrading??dossier.valuation?.perShare;
  const segments=vs.filter(v=>v[0]+1>=start).map(([fy,low,mid,high])=>({from:Math.max(start,fy),to:Math.min(end,fy+1),low,mid,high}));
- if(current&&end>vs.at(-1)![0]+1)segments.push({from:Math.max(start,vs.at(-1)![0]+1),to:end,...current});
+ if(extended)segments.push({from:Math.max(start,vs.at(-1)![0]+1),to:end,...current!});
  const points=ps.map(([date,p])=>{const v=segments.find(v=>year(date)>=v.from&&year(date)<=v.to);return {x:x(year(date)),y:y(p),text:`${date.slice(0,7)} · Price ${dossier.company.currency} ${p.toFixed(2)}${v?` · Value ${v.mid.toFixed(2)} · Buy at or below ${(v.mid*(1-mos)).toFixed(2)}`:''}`};});
  if(sparse)for(const v of segments)points.push({x:x((v.from+v.to)/2),y:y(v.mid),text:`FY${Math.floor(v.from)} · Estimated value ${dossier.company.currency} ${v.mid.toFixed(2)} · Range ${v.low.toFixed(2)}–${v.high.toFixed(2)} · Buy at or below ${(v.mid*(1-mos)).toFixed(2)}`});
  points.sort((a,b)=>a.x-b.x);

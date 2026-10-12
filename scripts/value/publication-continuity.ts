@@ -5,6 +5,8 @@ import {retainPublishedNumbers} from '../../lib/value/retain-published-numbers';
 import type {readVerdictFreeze} from './verdict-freeze';
 import {publishedBuyPrice} from '../../lib/value/buy-price';
 import {isDeepStrictEqual} from 'node:util';
+import {sameCurrency} from '../../lib/value/currency';
+import {statementCurrencyChanged} from '../../lib/value/statement-currency';
 import type {Dossier,IndexRow,PriceMap} from '../../lib/value/types';
 
 /** Filing-backed nulls are real changes, not incomplete cache observations. */
@@ -38,6 +40,12 @@ export function retainPublicationObservations(files:Record<string,any>,baseline:
   // A known wrong-issuer dossier is not a source for retained observations.
   try{assertFilingIssuer({id:d.id},old.report?.url);}catch{
    retention.push({id:d.id,asOf:old.asOf,retained:[],rejectedSource:old.report?.url,reason:'wrong issuer filing'});
+   continue;
+  }
+  // Observations published from statements in a mislabelled currency (or in
+  // another reporting currency) are not this dossier's evidence either.
+  if(statementCurrencyChanged(d)||old.reportingCurrency&&d.reportingCurrency&&!sameCurrency(old.reportingCurrency,d.reportingCurrency)){
+   retention.push({id:d.id,asOf:old.asOf,retained:[],rejectedSource:old.asOf,reason:'statement currency corrected'});
    continue;
   }
   const retained=retainPublishedNumbers(old,d,justifiedNulls(d,old));

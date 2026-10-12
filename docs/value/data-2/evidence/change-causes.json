@@ -1,0 +1,7427 @@
+[
+ {
+  "id": "0001.HK",
+  "name": "CK Hutchison Holdings Limited",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   108.48894463402024,
+   99.22782131056316
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "HKD",
+   "HKD"
+  ]
+ },
+ {
+  "id": "000120.KO",
+  "name": "CJ Korea Express",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   93151.86307410906,
+   95364.73675743896
+  ],
+  "t": [
+   "PFFPP",
+   "PFFPP"
+  ],
+  "hist": [
+   7,
+   7
+  ],
+  "cur": [
+   "KRW",
+   "KRW"
+  ]
+ },
+ {
+  "id": "000166.SHE",
+  "name": "Shenwan Hongyuan Group Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   2.3769000385625154,
+   2.353523969077342
+  ],
+  "t": [
+   "FFPFP",
+   "FFPFP"
+  ],
+  "hist": [
+   22,
+   22
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "000210.KO",
+  "name": "DL Holdings CO. LTD.",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   121633.84233594924,
+   120363.25373404945
+  ],
+  "t": [
+   "FFPFP",
+   "FFPFP"
+  ],
+  "hist": [
+   26,
+   26
+  ],
+  "cur": [
+   "KRW",
+   "KRW"
+  ]
+ },
+ {
+  "id": "0003.HK",
+  "name": "Hong Kong and China Gas Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   3.318868691664178,
+   3.4638941951581397
+  ],
+  "t": [
+   "PFFFP",
+   "PFFFP"
+  ],
+  "hist": [
+   27,
+   27
+  ],
+  "cur": [
+   "HKD",
+   "HKD"
+  ]
+ },
+ {
+  "id": "000338.SHE",
+  "name": "Weichai Power Co Ltd Class A",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   28.43031689888836,
+   29.32090725200427
+  ],
+  "t": [
+   "PPPFP",
+   "PPPFP"
+  ],
+  "hist": [
+   24,
+   24
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "000617.SHE",
+  "name": "CNPC Capital Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   4.491497697488987,
+   4.25047497495522
+  ],
+  "t": [
+   "PFFFF",
+   "PFFFF"
+  ],
+  "hist": [
+   10,
+   10
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "000720.KO",
+  "name": "Hyundai Engineering & Construction",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   80931.36030258775,
+   76601.20889525511
+  ],
+  "t": [
+   "FFFPF",
+   "FFFPF"
+  ],
+  "hist": [
+   26,
+   26
+  ],
+  "cur": [
+   "KRW",
+   "KRW"
+  ]
+ },
+ {
+  "id": "000938.SHE",
+  "name": "Unisplendour Corp Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   11.753363888042133,
+   12.889764608423853
+  ],
+  "t": [
+   "PFFPP",
+   "PFFPP"
+  ],
+  "hist": [
+   10,
+   10
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "000983.SHE",
+  "name": "Shanxi Xishan Coal and Electricity Power Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   11.696719682630736,
+   11.52862843961148
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   29,
+   29
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "000999.SHE",
+  "name": "China Resources Sanjiu Medical & Pharmaceutical Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   47.33076253295692,
+   48.30131196141221
+  ],
+  "t": [
+   "PFPPP",
+   "PFPPP"
+  ],
+  "hist": [
+   29,
+   29
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "001800.KO",
+  "name": "ORION Holdings Corp",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   true,
+   true
+  ],
+  "v": [
+   67722.72911978376,
+   51365.13871531641
+  ],
+  "t": [
+   "PPPPP",
+   "PPPPP"
+  ],
+  "hist": [
+   9,
+   9
+  ],
+  "cur": [
+   "KRW",
+   "KRW"
+  ]
+ },
+ {
+  "id": "001979.SHE",
+  "name": "China Merchants Shekou Industrial Zone Holdings",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   5.749828535578707,
+   7.322931563870532
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   14,
+   14
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "002007.SHE",
+  "name": "Hualan Biological EngineeringInc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   8.133357492078233,
+   8.23356261621187
+  ],
+  "t": [
+   "PFFPP",
+   "PFFPP"
+  ],
+  "hist": [
+   25,
+   25
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "002352.SHE",
+  "name": "S.F. Holding Co. Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   18.33308979214846,
+   18.7605119280599
+  ],
+  "t": [
+   "PFPPP",
+   "PFPPP"
+  ],
+  "hist": [
+   10,
+   10
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "002466.SHE",
+  "name": "Sichuan Tianqi Lithium Industries Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   17.134255593558265,
+   12.639854215663997
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   19,
+   19
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "002475.SHE",
+  "name": "Luxshare Precision Industry Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   true,
+   true
+  ],
+  "v": [
+   54.84421812293059,
+   55.74241307045173
+  ],
+  "t": [
+   "PPPPP",
+   "PPPPP"
+  ],
+  "hist": [
+   19,
+   19
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "002493.SHE",
+  "name": "Rongsheng Petrochemical Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   2.9218724793064705,
+   2.570148572896642
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   19,
+   19
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "002601.SHE",
+  "name": "LB Group Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   28.687950359101848,
+   28.342203062460964
+  ],
+  "t": [
+   "FFPFP",
+   "FFPFP"
+  ],
+  "hist": [
+   18,
+   18
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "002714.SHE",
+  "name": "Muyuan Foodstuff Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   45.03509708583471,
+   45.37043624484578
+  ],
+  "t": [
+   "FFPPP",
+   "FFPPP"
+  ],
+  "hist": [
+   17,
+   17
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "002790.KO",
+  "name": "Amore Group",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   50453.252079735175,
+   36375.79457908142
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   26,
+   26
+  ],
+  "cur": [
+   "KRW",
+   "KRW"
+  ]
+ },
+ {
+  "id": "003090.KO",
+  "name": "Daewoong",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   17856.805376882556,
+   32871.69777223105
+  ],
+  "t": [
+   "PFFPP",
+   "PFFPP"
+  ],
+  "hist": [
+   26,
+   26
+  ],
+  "cur": [
+   "KRW",
+   "KRW"
+  ]
+ },
+ {
+  "id": "004170.KO",
+  "name": "Shinsegae",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   null,
+   77767.59705074693
+  ],
+  "t": [
+   "PFFFP",
+   "PFFFP"
+  ],
+  "hist": [
+   26,
+   26
+  ],
+  "cur": [
+   "KRW",
+   "KRW"
+  ]
+ },
+ {
+  "id": "005250.KO",
+  "name": "Green Cross",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   8344.466329888317,
+   9693.543310383795
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   26,
+   26
+  ],
+  "cur": [
+   "KRW",
+   "KRW"
+  ]
+ },
+ {
+  "id": "006040.KO",
+  "name": "Dongwon Ind",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   114947.28284871695,
+   109328.04200894927
+  ],
+  "t": [
+   "PFFFP",
+   "PFFFP"
+  ],
+  "hist": [
+   17,
+   17
+  ],
+  "cur": [
+   "KRW",
+   "KRW"
+  ]
+ },
+ {
+  "id": "006260.KO",
+  "name": "LS Corp",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   330615.69461514533,
+   323055.4885129505
+  ],
+  "t": [
+   "PFFPP",
+   "PFFPP"
+  ],
+  "hist": [
+   8,
+   8
+  ],
+  "cur": [
+   "KRW",
+   "KRW"
+  ]
+ },
+ {
+  "id": "006650.KO",
+  "name": "Korea Petro Chemical Ind",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   283528.4871230773,
+   192790.37490986442
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   21,
+   21
+  ],
+  "cur": [
+   "KRW",
+   "KRW"
+  ]
+ },
+ {
+  "id": "007340.KO",
+  "name": "DTR Automotive",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   133550.79276864885,
+   134502.1945321014
+  ],
+  "t": [
+   "PFPPP",
+   "PFPPP"
+  ],
+  "hist": [
+   22,
+   22
+  ],
+  "cur": [
+   "KRW",
+   "KRW"
+  ]
+ },
+ {
+  "id": "009540.KO",
+  "name": "Korea Shipbuilding & Offshore Engineering Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   198102.77910020165,
+   190202.9452744632
+  ],
+  "t": [
+   "FFPPP",
+   "FFPPP"
+  ],
+  "hist": [
+   26,
+   26
+  ],
+  "cur": [
+   "KRW",
+   "KRW"
+  ]
+ },
+ {
+  "id": "009970.KO",
+  "name": "Youngone Holdi",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   true,
+   true
+  ],
+  "v": [
+   648819.9239143687,
+   709699.3291707945
+  ],
+  "t": [
+   "PPPPP",
+   "PPPPP"
+  ],
+  "hist": [
+   26,
+   26
+  ],
+  "cur": [
+   "KRW",
+   "KRW"
+  ]
+ },
+ {
+  "id": "012450.KO",
+  "name": "Hanwha Aerospace Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   658046.3378161378,
+   678824.8788219356
+  ],
+  "t": [
+   "FFPPP",
+   "FFPPP"
+  ],
+  "hist": [
+   26,
+   26
+  ],
+  "cur": [
+   "KRW",
+   "KRW"
+  ]
+ },
+ {
+  "id": "028260.KO",
+  "name": "Samsung C&T Corp",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   230773.25555610363,
+   275349.03115581966
+  ],
+  "t": [
+   "FFFPP",
+   "FFFPP"
+  ],
+  "hist": [
+   13,
+   13
+  ],
+  "cur": [
+   "KRW",
+   "KRW"
+  ]
+ },
+ {
+  "id": "0288.HK",
+  "name": "WH Group Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   12.064549002970992,
+   11.981067281268404
+  ],
+  "t": [
+   "PFPPP",
+   "PFPPP"
+  ],
+  "hist": [
+   13,
+   13
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "034020.KO",
+  "name": "Doosan Heavy Ind. & Const.",
+  "causes": [
+   "other"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   null,
+   null
+  ],
+  "t": [
+   "FFFPP",
+   "FFPPP"
+  ],
+  "hist": [
+   26,
+   26
+  ],
+  "cur": [
+   "KRW",
+   "KRW"
+  ]
+ },
+ {
+  "id": "066570.KO",
+  "name": "LG Electronics Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   100959.61027143775,
+   104011.82075256907
+  ],
+  "t": [
+   "PFFFP",
+   "PFFFP"
+  ],
+  "hist": [
+   24,
+   24
+  ],
+  "cur": [
+   "KRW",
+   "KRW"
+  ]
+ },
+ {
+  "id": "078930.KO",
+  "name": "GS Holdings",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   47347.40342591863,
+   47046.20468571718
+  ],
+  "t": [
+   "PFFFP",
+   "PFFFP"
+  ],
+  "hist": [
+   22,
+   22
+  ],
+  "cur": [
+   "KRW",
+   "KRW"
+  ]
+ },
+ {
+  "id": "081660.KO",
+  "name": "Fila Holdings Corp",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   57615.95878363979,
+   68411.60137335343
+  ],
+  "t": [
+   "PFFFP",
+   "PFPFP"
+  ],
+  "hist": [
+   16,
+   16
+  ],
+  "cur": [
+   "KRW",
+   "KRW"
+  ]
+ },
+ {
+  "id": "093370.KO",
+  "name": "Foosung",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   1524.8973064013655,
+   1418.7196889455388
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   20,
+   20
+  ],
+  "cur": [
+   "KRW",
+   "KRW"
+  ]
+ },
+ {
+  "id": "0960.HK",
+  "name": "Longfor Properties Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   15.799708117199689,
+   17.780493546281686
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   20,
+   20
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "0968.HK",
+  "name": "Xinyi Solar Holdings Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   5.568761426701913,
+   5.6150913878021855
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   7,
+   7
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "097950.KO",
+  "name": "CJ Cheiljedang",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   206658.49848990433,
+   268101.5657248775
+  ],
+  "t": [
+   "PFFFP",
+   "PFFFP"
+  ],
+  "hist": [
+   9,
+   9
+  ],
+  "cur": [
+   "KRW",
+   "KRW"
+  ]
+ },
+ {
+  "id": "0981.HK",
+  "name": "Semiconductor Manufacturing International Corp",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   20.129297843041748,
+   20.519757790496854
+  ],
+  "t": [
+   "FFFPP",
+   "FFFPP"
+  ],
+  "hist": [
+   22,
+   22
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "1099.HK",
+  "name": "Sinopharm Group Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   65.54443714159952,
+   66.16794754700177
+  ],
+  "t": [
+   "PPFPP",
+   "PPFPP"
+  ],
+  "hist": [
+   20,
+   20
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "1109.HK",
+  "name": "China Resources Land Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   95.17555166388652,
+   97.61973602702226
+  ],
+  "t": [
+   "PFFPP",
+   "PFFPP"
+  ],
+  "hist": [
+   28,
+   28
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "1177.HK",
+  "name": "Sino Biopharmaceutical Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   3.826583428579455,
+   3.41620376465755
+  ],
+  "t": [
+   "PPPPP",
+   "PPPPP"
+  ],
+  "hist": [
+   27,
+   27
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "1216.TW",
+  "name": "Uni-President Enterprises Corp",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   33.65182174273807,
+   44.92101676477452
+  ],
+  "t": [
+   "PFFFP",
+   "PFFFP"
+  ],
+  "hist": [
+   26,
+   26
+  ],
+  "cur": [
+   "TWD",
+   "TWD"
+  ]
+ },
+ {
+  "id": "128940.KO",
+  "name": "Hanmi Pharm Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   258904.698237151,
+   253828.94973966468
+  ],
+  "t": [
+   "FFPPP",
+   "FFPPP"
+  ],
+  "hist": [
+   16,
+   16
+  ],
+  "cur": [
+   "KRW",
+   "KRW"
+  ]
+ },
+ {
+  "id": "139480.KO",
+  "name": "E-Mart",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   153912.78206410847,
+   121209.40193980759
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   15,
+   15
+  ],
+  "cur": [
+   "KRW",
+   "KRW"
+  ]
+ },
+ {
+  "id": "161890.KO",
+  "name": "Korea Kolmar",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   20798.01517972876,
+   42417.43673761155
+  ],
+  "t": [
+   "PPFPP",
+   "PPPPP"
+  ],
+  "hist": [
+   14,
+   14
+  ],
+  "cur": [
+   "KRW",
+   "KRW"
+  ]
+ },
+ {
+  "id": "1876.HK",
+  "name": "Budweiser Brewing Company",
+  "causes": [
+   "other"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   null,
+   null
+  ],
+  "t": [
+   "UUUUU",
+   "UUUUU"
+  ],
+  "hist": [
+   6,
+   6
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "192080.KO",
+  "name": "DoubleU Games Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   true,
+   true
+  ],
+  "v": [
+   159565.49260473426,
+   160287.17572774817
+  ],
+  "t": [
+   "PPPPP",
+   "PPPPP"
+  ],
+  "hist": [
+   11,
+   11
+  ],
+  "cur": [
+   "KRW",
+   "KRW"
+  ]
+ },
+ {
+  "id": "2207.TW",
+  "name": "Hotai Motor Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   306.45621254439095,
+   365.28487108788414
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   26,
+   26
+  ],
+  "cur": [
+   "TWD",
+   "TWD"
+  ]
+ },
+ {
+  "id": "2269.HK",
+  "name": "WuXi Biologics",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   28.76011818433823,
+   28.936753062744433
+  ],
+  "t": [
+   "PFFPP",
+   "PFFPP"
+  ],
+  "hist": [
+   12,
+   12
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "2317.TW",
+  "name": "Hon Hai Precision Industry Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   284.58860013860647,
+   285.61279758782666
+  ],
+  "t": [
+   "PFFPP",
+   "PFFPP"
+  ],
+  "hist": [
+   26,
+   26
+  ],
+  "cur": [
+   "TWD",
+   "TWD"
+  ]
+ },
+ {
+  "id": "2319.HK",
+  "name": "China Mengniu Dairy Co",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   18.94568308114741,
+   19.593780162224373
+  ],
+  "t": [
+   "PFFFP",
+   "PFFFP"
+  ],
+  "hist": [
+   23,
+   23
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "2688.HK",
+  "name": "ENN Energy Holdings Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   78.34043440602173,
+   87.9170206253029
+  ],
+  "t": [
+   "PFFPP",
+   "PFFPP"
+  ],
+  "hist": [
+   26,
+   26
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "2912.TW",
+  "name": "President Chain Store Corp",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   64.78291494793268,
+   85.1743663052105
+  ],
+  "t": [
+   "PPFFP",
+   "PPFFP"
+  ],
+  "hist": [
+   26,
+   26
+  ],
+  "cur": [
+   "TWD",
+   "TWD"
+  ]
+ },
+ {
+  "id": "298020.KO",
+  "name": "Hyosung TNC Corp",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   405515.60847615177,
+   409095.14353859733
+  ],
+  "t": [
+   "FFPPP",
+   "FFPPP"
+  ],
+  "hist": [
+   8,
+   8
+  ],
+  "cur": [
+   "KRW",
+   "KRW"
+  ]
+ },
+ {
+  "id": "298040.KO",
+  "name": "Hyosung Heavy Industries Corp",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   377618.82653892785,
+   366488.37708981754
+  ],
+  "t": [
+   "FFPPP",
+   "FFPPP"
+  ],
+  "hist": [
+   8,
+   8
+  ],
+  "cur": [
+   "KRW",
+   "KRW"
+  ]
+ },
+ {
+  "id": "300347.SHE",
+  "name": "Hangzhou Tigermed Consulting",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   32.96137036631079,
+   33.11078617328112
+  ],
+  "t": [
+   "FFPPP",
+   "FFPPP"
+  ],
+  "hist": [
+   17,
+   17
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "300760.SHE",
+  "name": "Shenzhen Mindray Bio-Medical Electronics Co Ltd Class A",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   true,
+   true
+  ],
+  "v": [
+   198.68708479004582,
+   199.7210604703929
+  ],
+  "t": [
+   "PPPPP",
+   "PPPPP"
+  ],
+  "hist": [
+   12,
+   12
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "3017.TW",
+  "name": "Asia Vital Components Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   779.339064588513,
+   802.8973127608491
+  ],
+  "t": [
+   "FFPFP",
+   "FFPFP"
+  ],
+  "hist": [
+   24,
+   24
+  ],
+  "cur": [
+   "TWD",
+   "TWD"
+  ]
+ },
+ {
+  "id": "3231.TW",
+  "name": "Wistron Corp",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   237.24670504111262,
+   232.42928531690217
+  ],
+  "t": [
+   "FFFFF",
+   "FFFFF"
+  ],
+  "hist": [
+   24,
+   24
+  ],
+  "cur": [
+   "TWD",
+   "TWD"
+  ]
+ },
+ {
+  "id": "4938.TW",
+  "name": "Pegatron Corp",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   65.37388503164242,
+   71.59443053611062
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   18,
+   18
+  ],
+  "cur": [
+   "TWD",
+   "TWD"
+  ]
+ },
+ {
+  "id": "600010.SHG",
+  "name": "Inner Mongolia BaoTou Steel Union Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   0.8125836638996978,
+   0.8300365860184423
+  ],
+  "t": [
+   "FFFPP",
+   "FFFPP"
+  ],
+  "hist": [
+   29,
+   29
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "600018.SHG",
+  "name": "Shanghai International Port Group Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   9.847098095395157,
+   9.864106678764987
+  ],
+  "t": [
+   "PFPPP",
+   "PFPPP"
+  ],
+  "hist": [
+   23,
+   23
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "600023.SHG",
+  "name": "Zhejiang Zheneng Electric Power Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   4.108383225638416,
+   4.650541424685182
+  ],
+  "t": [
+   "FFFPP",
+   "FFFPP"
+  ],
+  "hist": [
+   16,
+   16
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "600048.SHG",
+  "name": "Poly Real Estate Group Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   17.57321570579815,
+   13.225468095975847
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   23,
+   23
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "600050.SHG",
+  "name": "China United Network Communications Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   2.2490153523972753,
+   2.8761185153840283
+  ],
+  "t": [
+   "FFFPP",
+   "FFFPP"
+  ],
+  "hist": [
+   27,
+   27
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "600085.SHG",
+  "name": "Beijing Tongrentang Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   17.65589132198954,
+   18.900700021719672
+  ],
+  "t": [
+   "PPFPP",
+   "PPFPP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "600104.SHG",
+  "name": "SAIC Motor Corp Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   23.37710610451879,
+   20.02227730340289
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "600111.SHG",
+  "name": "China Northern Rare Earth Group High-Tech Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   15.0125522883625,
+   15.449221103758022
+  ],
+  "t": [
+   "FFPPP",
+   "FFPPP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "600132.SHG",
+  "name": "Chongqing Brewery Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   true,
+   true
+  ],
+  "v": [
+   46.44395903107152,
+   50.77617994767305
+  ],
+  "t": [
+   "FPPPP",
+   "FPPPP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "600183.SHG",
+  "name": "Shengyi Technology Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   25.047278907278695,
+   25.011856154125308
+  ],
+  "t": [
+   "PFPPP",
+   "PFPPP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "600188.SHG",
+  "name": "Yankuang Energy Group Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   24.16649221121136,
+   24.374858702717464
+  ],
+  "t": [
+   "FFPPP",
+   "FFPPP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "600196.SHG",
+  "name": "Shanghai Fosun Pharmaceutical Group Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   11.706245352897161,
+   12.327702904333306
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "600219.SHG",
+  "name": "Shandong Nanshan Aluminium Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   8.424213667038826,
+   8.35157063939543
+  ],
+  "t": [
+   "PFPPP",
+   "PFPPP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "600362.SHG",
+  "name": "Jiangxi Copper Co Ltd Class A",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   64.01676882523641,
+   66.32445207727535
+  ],
+  "t": [
+   "PFPPF",
+   "PFPPF"
+  ],
+  "hist": [
+   28,
+   28
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "600489.SHG",
+  "name": "Zhongjin Gold Corp Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   15.835157036618046,
+   15.65943227749205
+  ],
+  "t": [
+   "FFPPP",
+   "FFPPP"
+  ],
+  "hist": [
+   26,
+   26
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "600515.SHG",
+  "name": "Hainan HNA Infrastructure Investment Group Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   0.8149391265366481,
+   0.8305027857869135
+  ],
+  "t": [
+   "FFFPP",
+   "FFFPP"
+  ],
+  "hist": [
+   8,
+   8
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "600547.SHG",
+  "name": "Shandong Gold Mining Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   14.294939733808603,
+   14.327911072791252
+  ],
+  "t": [
+   "FFPFP",
+   "FFPFP"
+  ],
+  "hist": [
+   26,
+   26
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "600803.SHG",
+  "name": "ENN Ecological Holdings Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   8.318654337178195,
+   17.0468818593153
+  ],
+  "t": [
+   "PFFFP",
+   "PFFFP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "600886.SHG",
+  "name": "SDIC Power Holdings Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   6.912031945649879,
+   6.810275983486545
+  ],
+  "t": [
+   "PFFFP",
+   "PFFFP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "600893.SHG",
+  "name": "AECC Aviation Power Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   11.25180895434119,
+   11.39855244721148
+  ],
+  "t": [
+   "PFFFF",
+   "PFFFF"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "600905.SHG",
+  "name": "China Three Gorges New Energy Group Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   2.162926086336623,
+   2.2401083728595865
+  ],
+  "t": [
+   "PFFPP",
+   "PFFPP"
+  ],
+  "hist": [
+   10,
+   10
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "601088.SHG",
+  "name": "China Shenhua Energy Co",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   39.40623425410428,
+   39.54317121129498
+  ],
+  "t": [
+   "PPPPP",
+   "PPPPP"
+  ],
+  "hist": [
+   22,
+   22
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "601225.SHG",
+  "name": "Shaanxi Coal Industry Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   31.297287481404517,
+   30.09918226210478
+  ],
+  "t": [
+   "PFPPP",
+   "PFPPP"
+  ],
+  "hist": [
+   18,
+   18
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "601600.SHG",
+  "name": "Aluminum Corp of China Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   7.718276415281121,
+   7.190782071788802
+  ],
+  "t": [
+   "FFPPP",
+   "FFPPP"
+  ],
+  "hist": [
+   26,
+   26
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "601607.SHG",
+  "name": "Shanghai Pharmaceuticals Holding Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   32.23924094082432,
+   31.861311035488637
+  ],
+  "t": [
+   "PFFFP",
+   "PFFFP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "601668.SHG",
+  "name": "China State Construction Engineering Corp Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   15.342562397527217,
+   17.098186355401637
+  ],
+  "t": [
+   "PFFPP",
+   "PFFPP"
+  ],
+  "hist": [
+   21,
+   21
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "601698.SHG",
+  "name": "China Satellite Communications Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   1.9740314093850506,
+   2.1694757509445393
+  ],
+  "t": [
+   "PFFFP",
+   "PFFFP"
+  ],
+  "hist": [
+   12,
+   12
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "601766.SHG",
+  "name": "CRRC Corp Ltd Class A",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   7.381059744018442,
+   7.375623053911877
+  ],
+  "t": [
+   "PFFPP",
+   "PFFPP"
+  ],
+  "hist": [
+   21,
+   21
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "601857.SHG",
+  "name": "PetroChina Co Ltd Class A",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   6.31772757244081,
+   6.8428449391903
+  ],
+  "t": [
+   "PFFPP",
+   "PFFPP"
+  ],
+  "hist": [
+   27,
+   27
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "601877.SHG",
+  "name": "Zhejiang Chint Electrics Co",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   22.357287093150877,
+   24.548611548082977
+  ],
+  "t": [
+   "PFFPP",
+   "PFFPP"
+  ],
+  "hist": [
+   20,
+   20
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "601899.SHG",
+  "name": "Zijin Mining Group Co Ltd Class A",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   21.785532053910448,
+   23.240468960220415
+  ],
+  "t": [
+   "FFPPP",
+   "FFPPP"
+  ],
+  "hist": [
+   23,
+   23
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "601919.SHG",
+  "name": "COSCO SHIPPING Holdings Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   39.082423487601396,
+   40.375232251041865
+  ],
+  "t": [
+   "FFPPP",
+   "FFPPP"
+  ],
+  "hist": [
+   24,
+   24
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "603799.SHG",
+  "name": "Zhejiang Huayou Cobalt Co Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   71.17259083679667,
+   71.72709306735467
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   18,
+   18
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "603993.SHG",
+  "name": "China Molybdenum Co Ltd Class A",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   7.0901386532702535,
+   7.131173027349532
+  ],
+  "t": [
+   "FFFPP",
+   "FFFPP"
+  ],
+  "hist": [
+   22,
+   22
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "688041.SHG",
+  "name": "Hygon Information Technology Co. Ltd. A",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   17.451124415725378,
+   16.941209453452224
+  ],
+  "t": [
+   "FFPPP",
+   "FFPPP"
+  ],
+  "hist": [
+   7,
+   7
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "ABI.BR",
+  "name": "Anheuser Busch Inbev SA NV",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   44.15185911230644,
+   44.95625957208741
+  ],
+  "t": [
+   "PPPFP",
+   "PPPFP"
+  ],
+  "hist": [
+   26,
+   26
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "ABX.TO",
+  "name": "Barrick Gold Corp",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   39.98248563532173,
+   39.778604589635314
+  ],
+  "t": [
+   "PFPPP",
+   "PFPPP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "AC.MX",
+  "name": "Arca Continental S.A.B. de C.V",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   159.40574154250646,
+   159.69245229535954
+  ],
+  "t": [
+   "PPPPP",
+   "PPPPP"
+  ],
+  "hist": [
+   26,
+   26
+  ],
+  "cur": [
+   "MXN",
+   "MXN"
+  ]
+ },
+ {
+  "id": "ACKB.BR",
+  "name": "Ackermans & Van Haaren NV",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   315.01105116073467,
+   313.72856698143335
+  ],
+  "t": [
+   "PFFPP",
+   "PFFPP"
+  ],
+  "hist": [
+   26,
+   26
+  ],
+  "cur": [
+   "EUR",
+   "EUR"
+  ]
+ },
+ {
+  "id": "ACP.WAR",
+  "name": "Asseco Poland S.A.",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   193.7263956235955,
+   144.5512436862047
+  ],
+  "t": [
+   "PFPPP",
+   "PFPPP"
+  ],
+  "hist": [
+   22,
+   22
+  ],
+  "cur": [
+   "PLN",
+   "PLN"
+  ]
+ },
+ {
+  "id": "ADNT.US",
+  "name": "Adient PLC",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   20.28368579282444,
+   11.42442172304237
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   13,
+   13
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "ADP.PA",
+  "name": "Aeroports de Paris SA",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   62.809687000410484,
+   66.53568500788724
+  ],
+  "t": [
+   "FFPFP",
+   "FFPFP"
+  ],
+  "hist": [
+   26,
+   26
+  ],
+  "cur": [
+   "EUR",
+   "EUR"
+  ]
+ },
+ {
+  "id": "AED.BR",
+  "name": "Aedifica",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   61.25336930669601,
+   61.31267573631004
+  ],
+  "t": [
+   "PFFFP",
+   "PFFFP"
+  ],
+  "hist": [
+   21,
+   21
+  ],
+  "cur": [
+   "EUR",
+   "EUR"
+  ]
+ },
+ {
+  "id": "AMG.US",
+  "name": "Affiliated Managers Group, Inc.",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   436.6441344597837,
+   430.18262156958065
+  ],
+  "t": [
+   "FPFPP",
+   "FPFPP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "AMT.US",
+  "name": "American Tower Corp",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   82.05388715739538,
+   84.04041330544432
+  ],
+  "t": [
+   "PFPPP",
+   "PFPPP"
+  ],
+  "hist": [
+   29,
+   29
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "AMXB.MX",
+  "name": "AMERICA MOVIL SAB DE CV",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   10.064872549553403,
+   10.392041508444455
+  ],
+  "t": [
+   "PFPPP",
+   "PFPPP"
+  ],
+  "hist": [
+   28,
+   28
+  ],
+  "cur": [
+   "MXN",
+   "MXN"
+  ]
+ },
+ {
+  "id": "ANA.MC",
+  "name": "Acciona",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   219.11306332875506,
+   223.62030574145595
+  ],
+  "t": [
+   "PFFPP",
+   "PFFPP"
+  ],
+  "hist": [
+   24,
+   24
+  ],
+  "cur": [
+   "EUR",
+   "EUR"
+  ]
+ },
+ {
+  "id": "ANTO.LSE",
+  "name": "Antofagasta PLC",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   1934.6627807361124,
+   2188.3291470278746
+  ],
+  "t": [
+   "PFFPP",
+   "PFPPP"
+  ],
+  "hist": [
+   24,
+   24
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "APA.US",
+  "name": "APA Corporation",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   54.93872353536373,
+   54.91102692057495
+  ],
+  "t": [
+   "FFPPP",
+   "FFPPP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "APO.US",
+  "name": "Apollo Global Management LLC Class A",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   271.4458394617901,
+   277.6394105056826
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   20,
+   20
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "ARES.US",
+  "name": "Ares Management LP",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   59.69211055514621,
+   49.27011435507686
+  ],
+  "t": [
+   "FFPFP",
+   "FFPFP"
+  ],
+  "hist": [
+   15,
+   15
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "ASURB.MX",
+  "name": "Grupo Aeroportuario del Sureste S. A. B. de C. V",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   637.875845622882,
+   645.248218091482
+  ],
+  "t": [
+   "PFPPP",
+   "PFPPP"
+  ],
+  "hist": [
+   26,
+   26
+  ],
+  "cur": [
+   "MXN",
+   "MXN"
+  ]
+ },
+ {
+  "id": "AT1.XETRA",
+  "name": "Aroundtown SA",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   5.417411131766289,
+   5.473095613407149
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   13,
+   13
+  ],
+  "cur": [
+   "EUR",
+   "EUR"
+  ]
+ },
+ {
+  "id": "ATHM.US",
+  "name": "Autohome Inc",
+  "causes": [
+   "other"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   null,
+   51.162478342936524
+  ],
+  "t": [
+   "UUUUU",
+   "FFFPP"
+  ],
+  "hist": [
+   5,
+   16
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "AU.US",
+  "name": "AngloGold Ashanti plc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   26.35881077248613,
+   26.3412594049382
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   29,
+   29
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "AUB.AU",
+  "name": "AUB Group Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   21.218620921140488,
+   20.053520508949298
+  ],
+  "t": [
+   "FFPFP",
+   "FFPFP"
+  ],
+  "hist": [
+   24,
+   24
+  ],
+  "cur": [
+   "AUD",
+   "AUD"
+  ]
+ },
+ {
+  "id": "BCO.US",
+  "name": "Brinks Company",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   true,
+   true
+  ],
+  "v": [
+   103.56359800363511,
+   111.38579953239179
+  ],
+  "t": [
+   "PPPPP",
+   "PPPPP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "BEEF3.SA",
+  "name": "Minerva S.A",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   15.63294870021079,
+   18.859843825046312
+  ],
+  "t": [
+   "FPFFP",
+   "FPFFP"
+  ],
+  "hist": [
+   22,
+   22
+  ],
+  "cur": [
+   "BRL",
+   "BRL"
+  ]
+ },
+ {
+  "id": "BELFB.US",
+  "name": "Bel Fuse B Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   87.84783413150943,
+   86.27645187207771
+  ],
+  "t": [
+   "FFPPP",
+   "FFPPP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "BEN.US",
+  "name": "Franklin Resources Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   40.02924702633744,
+   39.29806534065798
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "BHP.AU",
+  "name": "BHP Group Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   52.464750389074105,
+   52.766610580071294
+  ],
+  "t": [
+   "PPPPP",
+   "PPPPP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "BL.US",
+  "name": "Blackline Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   30.83220476527284,
+   29.481840721006318
+  ],
+  "t": [
+   "FFPFP",
+   "FFPFP"
+  ],
+  "hist": [
+   13,
+   13
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "BLK.US",
+  "name": "BlackRock Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   1421.3800261126446,
+   1428.1620941807682
+  ],
+  "t": [
+   "PFPPP",
+   "PFPPP"
+  ],
+  "hist": [
+   28,
+   28
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "BMA.US",
+  "name": "Banco Macro SA B ADR",
+  "causes": [
+   "other"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   null,
+   null
+  ],
+  "t": [
+   "UUUUU",
+   "UUUUU"
+  ],
+  "hist": [
+   1,
+   1
+  ],
+  "cur": [
+   "ARS",
+   "ARS"
+  ]
+ },
+ {
+  "id": "BN.TO",
+  "name": "Brookfield Corporation",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   16.33609179202958,
+   13.413331436571353
+  ],
+  "t": [
+   "PFFFP",
+   "PFFFP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "BP.LSE",
+  "name": "BP p.l.c",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   268.2154611173023,
+   16.649172069766195
+  ],
+  "t": [
+   "FFPPP",
+   "FFPPP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "BPT.LSE",
+  "name": "Bridgepoint Group Plc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   true,
+   true
+  ],
+  "v": [
+   453.63834904937437,
+   415.72884759814457
+  ],
+  "t": [
+   "FPPPP",
+   "FPPPP"
+  ],
+  "hist": [
+   8,
+   8
+  ],
+  "cur": [
+   "GBP",
+   "GBP"
+  ]
+ },
+ {
+  "id": "BXP.US",
+  "name": "BXP, Inc.",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   51.84330695853215,
+   44.17494570388685
+  ],
+  "t": [
+   "PFFFP",
+   "PFFFP"
+  ],
+  "hist": [
+   29,
+   29
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "CCK.US",
+  "name": "Crown Holdings Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   75.17085049456968,
+   73.41689997272739
+  ],
+  "t": [
+   "PPPPP",
+   "PPPPP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "CF.US",
+  "name": "CF Industries Holdings Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   184.00994263915126,
+   178.89573725694066
+  ],
+  "t": [
+   "FFPPP",
+   "FFPPP"
+  ],
+  "hist": [
+   25,
+   25
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "CG.US",
+  "name": "Carlyle Group Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   30.406776166306223,
+   30.409375555078963
+  ],
+  "t": [
+   "FFPPP",
+   "FFPPP"
+  ],
+  "hist": [
+   18,
+   18
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "CHTR.US",
+  "name": "Charter Communications Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   348.5038680709208,
+   385.11488916078144
+  ],
+  "t": [
+   "PFFPP",
+   "PFPPP"
+  ],
+  "hist": [
+   28,
+   28
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "CIGI.US",
+  "name": "Colliers International Group Inc Bats",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   64.1379145167857,
+   42.03479229659489
+  ],
+  "t": [
+   "FFPFP",
+   "FFPFP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "CL.US",
+  "name": "Colgate-Palmolive Company",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   39.310988843368925,
+   39.93720353766293
+  ],
+  "t": [
+   "PPFPP",
+   "PPFPP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "CLX.US",
+  "name": "The Clorox Company",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   42.32482963560932,
+   42.41905562044143
+  ],
+  "t": [
+   "PPPFP",
+   "PPPFP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "COL.MC",
+  "name": "Inmobiliaria Colonial SA",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   8.28940618680258,
+   8.283018746722671
+  ],
+  "t": [
+   "FFPFP",
+   "FFPFP"
+  ],
+  "hist": [
+   13,
+   13
+  ],
+  "cur": [
+   "EUR",
+   "EUR"
+  ]
+ },
+ {
+  "id": "COR.LS",
+  "name": "Corticeira Amorim",
+  "causes": [
+   "other"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   7.385567933100664,
+   7.383096402689132
+  ],
+  "t": [
+   "PFFFP",
+   "PFFFP"
+  ],
+  "hist": [
+   11,
+   11
+  ],
+  "cur": [
+   "EUR",
+   "EUR"
+  ]
+ },
+ {
+  "id": "COV.PA",
+  "name": "Covivio SA",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   31.288607889500547,
+   51.2897781820154
+  ],
+  "t": [
+   "PFFFP",
+   "PFFFP"
+  ],
+  "hist": [
+   22,
+   22
+  ],
+  "cur": [
+   "EUR",
+   "EUR"
+  ]
+ },
+ {
+  "id": "CPAC.US",
+  "name": "Cementos Pacasmayo SAA ADR",
+  "causes": [
+   "other"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   null,
+   15.444975365067958
+  ],
+  "t": [
+   "UUUUU",
+   "PFPPP"
+  ],
+  "hist": [
+   5,
+   17
+  ],
+  "cur": [
+   "PEN",
+   "PEN"
+  ]
+ },
+ {
+  "id": "CSAN3.SA",
+  "name": "Cosan S.A",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   null,
+   1.2441751210980414
+  ],
+  "t": [
+   "PFFFP",
+   "PFFFP"
+  ],
+  "hist": [
+   21,
+   21
+  ],
+  "cur": [
+   "BRL",
+   "BRL"
+  ]
+ },
+ {
+  "id": "CSC.AU",
+  "name": "Capstone Copper Corp",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   8.16273022288648,
+   8.323155690078849
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   25,
+   25
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "CTC-A.TO",
+  "name": "Canadian Tire Corporation Limited",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   156.82930354657708,
+   163.91882997095874
+  ],
+  "t": [
+   "PFFPP",
+   "PFFPP"
+  ],
+  "hist": [
+   29,
+   29
+  ],
+  "cur": [
+   "CAD",
+   "CAD"
+  ]
+ },
+ {
+  "id": "CTT.LS",
+  "name": "CTT Correios de Portugal SA",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   7.525249802046825,
+   7.019500447784894
+  ],
+  "t": [
+   "PFPFP",
+   "PFPFP"
+  ],
+  "hist": [
+   19,
+   19
+  ],
+  "cur": [
+   "EUR",
+   "EUR"
+  ]
+ },
+ {
+  "id": "CURY3.SA",
+  "name": "Cury Construtora e Incorporadora S.A",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   true,
+   true
+  ],
+  "v": [
+   38.72879505895915,
+   39.192147899871046
+  ],
+  "t": [
+   "PPPPP",
+   "PPPPP"
+  ],
+  "hist": [
+   14,
+   14
+  ],
+  "cur": [
+   "BRL",
+   "BRL"
+  ]
+ },
+ {
+  "id": "CVI.US",
+  "name": "CVR Energy Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   39.838449350242136,
+   15.2160100469742
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   21,
+   21
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "CVNA.US",
+  "name": "Carvana Co",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   23.826938455129945,
+   23.675346397596787
+  ],
+  "t": [
+   "FFPFP",
+   "FFPFP"
+  ],
+  "hist": [
+   11,
+   11
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "CYD.US",
+  "name": "China Yuchai International Limited",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   59.28235849570859,
+   57.34894286533903
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "CYRE3.SA",
+  "name": "Cyrela Brazil Realty S.A. Empreendimentos e Participa\u00e7\u00f5es",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   53.566786875676954,
+   54.92952113392659
+  ],
+  "t": [
+   "FFPPP",
+   "FFPPP"
+  ],
+  "hist": [
+   26,
+   26
+  ],
+  "cur": [
+   "BRL",
+   "BRL"
+  ]
+ },
+ {
+  "id": "DG.PA",
+  "name": "Vinci S.A.",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   129.98366550720652,
+   131.2039624081138
+  ],
+  "t": [
+   "PFPPP",
+   "PFPPP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "EUR",
+   "EUR"
+  ]
+ },
+ {
+  "id": "DGE.LSE",
+  "name": "Diageo PLC",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   1255.1229930276784,
+   1282.2350771683255
+  ],
+  "t": [
+   "PFFFP",
+   "PFFFP"
+  ],
+  "hist": [
+   11,
+   11
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "DIRR3.SA",
+  "name": "Direcional Engenharia S.A.",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   18.408046949461532,
+   18.206297087161804
+  ],
+  "t": [
+   "FFPFP",
+   "FFPFP"
+  ],
+  "hist": [
+   22,
+   22
+  ],
+  "cur": [
+   "BRL",
+   "BRL"
+  ]
+ },
+ {
+  "id": "DOC.US",
+  "name": "Healthpeak Properties Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   25.217324525321175,
+   24.945195249125856
+  ],
+  "t": [
+   "PFFFP",
+   "PFFFP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "DOLE.US",
+  "name": "Dole PLC",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   24.54787443340187,
+   23.921539910388276
+  ],
+  "t": [
+   "FFPFP",
+   "FFPFP"
+  ],
+  "hist": [
+   14,
+   14
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "DTE.XETRA",
+  "name": "Deutsche Telekom AG",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   22.200699586522497,
+   25.348083744536897
+  ],
+  "t": [
+   "FFFPP",
+   "FFFPP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "EUR",
+   "EUR"
+  ]
+ },
+ {
+  "id": "DVA.US",
+  "name": "DaVita HealthCare Partners Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   true,
+   true
+  ],
+  "v": [
+   201.8957258110096,
+   190.82252395115458
+  ],
+  "t": [
+   "PPPPP",
+   "PPPPP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "EFXT.US",
+  "name": "Enerflex Ltd.",
+  "causes": [
+   "other"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   null,
+   null
+  ],
+  "t": [
+   "UUUUU",
+   "UUUUU"
+  ],
+  "hist": [
+   2,
+   3
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "EGL.LS",
+  "name": "Mota-Engil SGPS S.A",
+  "causes": [
+   "other"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   1.6904497306584416,
+   3.57984878785827
+  ],
+  "t": [
+   "FFFPP",
+   "FFFPP"
+  ],
+  "hist": [
+   13,
+   13
+  ],
+  "cur": [
+   "EUR",
+   "EUR"
+  ]
+ },
+ {
+  "id": "EHC.US",
+  "name": "Encompass Health Corp",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   93.96111212235805,
+   99.71244006727696
+  ],
+  "t": [
+   "PFPPP",
+   "PFPPP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "ELE.MC",
+  "name": "Endesa SA",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   19.451603207238374,
+   19.52115495600654
+  ],
+  "t": [
+   "FFPPP",
+   "FFPPP"
+  ],
+  "hist": [
+   25,
+   25
+  ],
+  "cur": [
+   "EUR",
+   "EUR"
+  ]
+ },
+ {
+  "id": "EMBJ.US",
+  "name": "Embraer S.A.",
+  "causes": [
+   "other"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   null,
+   null
+  ],
+  "t": [
+   "UUUUU",
+   "FFNPP"
+  ],
+  "hist": [
+   2,
+   27
+  ],
+  "cur": [
+   "BRL",
+   "BRL"
+  ]
+ },
+ {
+  "id": "EN.PA",
+  "name": "Bouygues SA",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   49.23713201680813,
+   49.656223081303736
+  ],
+  "t": [
+   "PFFFP",
+   "PFFFP"
+  ],
+  "hist": [
+   24,
+   24
+  ],
+  "cur": [
+   "EUR",
+   "EUR"
+  ]
+ },
+ {
+  "id": "ENGI.PA",
+  "name": "Engie S.A.",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   8.769727759004558,
+   11.524377540035713
+  ],
+  "t": [
+   "FFFFF",
+   "FFFFF"
+  ],
+  "hist": [
+   24,
+   24
+  ],
+  "cur": [
+   "EUR",
+   "EUR"
+  ]
+ },
+ {
+  "id": "EOAN.XETRA",
+  "name": "E.ON SE",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   6.443161681145439,
+   6.445099219779924
+  ],
+  "t": [
+   "FFFPP",
+   "FFFPP"
+  ],
+  "hist": [
+   29,
+   29
+  ],
+  "cur": [
+   "EUR",
+   "EUR"
+  ]
+ },
+ {
+  "id": "EQTL3.SA",
+  "name": "Equatorial Energia S.A",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   50.650527217803315,
+   44.13063222533228
+  ],
+  "t": [
+   "PFPFP",
+   "PFPFP"
+  ],
+  "hist": [
+   23,
+   23
+  ],
+  "cur": [
+   "BRL",
+   "BRL"
+  ]
+ },
+ {
+  "id": "ESRT.US",
+  "name": "Empire State Realty Trust Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   10.753731092123154,
+   8.190253667869902
+  ],
+  "t": [
+   "PFFFP",
+   "PFFFP"
+  ],
+  "hist": [
+   18,
+   18
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "EVD.XETRA",
+  "name": "CTS Eventim AG & Co KgaA",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   74.00267580516015,
+   76.90828924034922
+  ],
+  "t": [
+   "FFPPP",
+   "FFPPP"
+  ],
+  "hist": [
+   24,
+   24
+  ],
+  "cur": [
+   "EUR",
+   "EUR"
+  ]
+ },
+ {
+  "id": "EVTC.US",
+  "name": "Evertec Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   41.90622020314087,
+   42.118591672752686
+  ],
+  "t": [
+   "PFPPP",
+   "PFPPP"
+  ],
+  "hist": [
+   15,
+   15
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "EXA.PA",
+  "name": "Exail Technologies S.A.",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   23.855796248302948,
+   14.94550596250222
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   17,
+   17
+  ],
+  "cur": [
+   "EUR",
+   "EUR"
+  ]
+ },
+ {
+  "id": "EXPE.US",
+  "name": "Expedia Group Inc.",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   194.4213206433309,
+   224.4907487379931
+  ],
+  "t": [
+   "FFPPP",
+   "FFPPP"
+  ],
+  "hist": [
+   27,
+   27
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "FCX.US",
+  "name": "Freeport-McMoran Copper & Gold Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   20.639963152833182,
+   20.40862212329192
+  ],
+  "t": [
+   "FFFPP",
+   "FFPPP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "FGR.PA",
+  "name": "Eiffage SA",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   252.8470128249366,
+   220.12876423837605
+  ],
+  "t": [
+   "PFPPP",
+   "PFPPP"
+  ],
+  "hist": [
+   28,
+   28
+  ],
+  "cur": [
+   "EUR",
+   "EUR"
+  ]
+ },
+ {
+  "id": "FMX.US",
+  "name": "Fomento Economico Mexicano",
+  "causes": [
+   "other"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   null,
+   null
+  ],
+  "t": [
+   "UUUUU",
+   "UUUUU"
+  ],
+  "hist": [
+   1,
+   1
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "FPH.US",
+  "name": "Five Point Holdings LLC",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   11.138335064146306,
+   5.49225734650551
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   13,
+   13
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "FSV.TO",
+  "name": "FirstService Corp",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   59.36906216464484,
+   46.15203102753732
+  ],
+  "t": [
+   "FFFPP",
+   "FFFPP"
+  ],
+  "hist": [
+   17,
+   17
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "GCARSOA1.MX",
+  "name": "Grupo Carso S.A.B. de C.V",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   79.07951370594007,
+   79.98857070073556
+  ],
+  "t": [
+   "PFPPP",
+   "PFPPP"
+  ],
+  "hist": [
+   26,
+   26
+  ],
+  "cur": [
+   "MXN",
+   "MXN"
+  ]
+ },
+ {
+  "id": "GCMG.US",
+  "name": "GCM Grosvenor Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   5.822609256873343,
+   6.058549461745908
+  ],
+  "t": [
+   "FFPFP",
+   "FFPFP"
+  ],
+  "hist": [
+   7,
+   7
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "GF.SW",
+  "name": "Georg Fischer AG",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   22.857924072354752,
+   23.103192777322175
+  ],
+  "t": [
+   "PPFFP",
+   "PPFFP"
+  ],
+  "hist": [
+   24,
+   24
+  ],
+  "cur": [
+   "CHF",
+   "CHF"
+  ]
+ },
+ {
+  "id": "GMEXICOB.MX",
+  "name": "Grupo M\u00e9xico S.A.B. de C.V",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   111.00570225058,
+   110.45693037694818
+  ],
+  "t": [
+   "PPPPP",
+   "PPPPP"
+  ],
+  "hist": [
+   9,
+   9
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "GOAU3.SA",
+  "name": "Metalurgica Gerdau S.A",
+  "causes": [
+   "other"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   null,
+   null
+  ],
+  "t": [
+   "FFFFP",
+   "FFPFP"
+  ],
+  "hist": [
+   11,
+   11
+  ],
+  "cur": [
+   "BRL",
+   "BRL"
+  ]
+ },
+ {
+  "id": "GPGI.US",
+  "name": "GPGI, Inc.",
+  "causes": [
+   "other"
+  ],
+  "buy": [
+   null,
+   false
+  ],
+  "v": [
+   null,
+   null
+  ],
+  "t": [
+   null,
+   "FFFNP"
+  ],
+  "hist": [
+   7,
+   7
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "GRF.MC",
+  "name": "Grifols SA",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   2.910340702981626,
+   3.0838348702985
+  ],
+  "t": [
+   "PFFFP",
+   "PFFFP"
+  ],
+  "hist": [
+   22,
+   22
+  ],
+  "cur": [
+   "EUR",
+   "EUR"
+  ]
+ },
+ {
+  "id": "H4W.F",
+  "name": "Jardine Matheson Holdings Limited",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   29.068336825546886,
+   27.68661983220658
+  ],
+  "t": [
+   "PFPPP",
+   "PFPPP"
+  ],
+  "hist": [
+   8,
+   8
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "HDB.US",
+  "name": "HDFC Bank Limited ADR",
+  "causes": [
+   "other"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   13.699616408215986,
+   13.699616408215986
+  ],
+  "t": [
+   "PPPFF",
+   "PPPFF"
+  ],
+  "hist": [
+   11,
+   27
+  ],
+  "cur": [
+   "INR",
+   "INR"
+  ]
+ },
+ {
+  "id": "HEIA.AS",
+  "name": "Heineken",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   46.63169569842046,
+   46.84965735036185
+  ],
+  "t": [
+   "PFPPP",
+   "PFPPP"
+  ],
+  "hist": [
+   27,
+   27
+  ],
+  "cur": [
+   "EUR",
+   "EUR"
+  ]
+ },
+ {
+  "id": "HEINY.US",
+  "name": "Heineken NV",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   33.604775574216255,
+   33.48786994004499
+  ],
+  "t": [
+   "PFPPP",
+   "PFPPP"
+  ],
+  "hist": [
+   10,
+   10
+  ],
+  "cur": [
+   "EUR",
+   "EUR"
+  ]
+ },
+ {
+  "id": "HGV.US",
+  "name": "Hilton Grand Vacations Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   132.66143271435394,
+   127.62962275423
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   13,
+   13
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "HPP.US",
+  "name": "Hudson Pacific Properties Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   41.40886854745882,
+   19.091683956291504
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   19,
+   19
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "HSIC.US",
+  "name": "Henry Schein Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   64.20496193144693,
+   63.23394353971899
+  ],
+  "t": [
+   "PPPPP",
+   "PPPPP"
+  ],
+  "hist": [
+   28,
+   28
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "IDR.MC",
+  "name": "Indra A",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   42.93648781631314,
+   44.622624268442
+  ],
+  "t": [
+   "PFPPP",
+   "PFPPP"
+  ],
+  "hist": [
+   25,
+   25
+  ],
+  "cur": [
+   "EUR",
+   "EUR"
+  ]
+ },
+ {
+  "id": "INF.LSE",
+  "name": "Informa PLC",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   727.1603497082551,
+   660.4759603155741
+  ],
+  "t": [
+   "FFPFP",
+   "FFPFP"
+  ],
+  "hist": [
+   22,
+   22
+  ],
+  "cur": [
+   "GBP",
+   "GBP"
+  ]
+ },
+ {
+  "id": "JBS.US",
+  "name": "JBS N.V.",
+  "causes": [
+   "20-F statements"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   null,
+   null
+  ],
+  "t": [
+   "UUUUU",
+   "UUUUU"
+  ],
+  "hist": [
+   1,
+   3
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "JD.LSE",
+  "name": "JD Sports Fashion PLC",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   67.08663782895269,
+   80.45083575296579
+  ],
+  "t": [
+   "PPFPP",
+   "PPFPP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "GBP",
+   "GBP"
+  ]
+ },
+ {
+  "id": "JOYY.US",
+  "name": "JOYY Inc",
+  "causes": [
+   "other"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   null,
+   null
+  ],
+  "t": [
+   "FFFPF",
+   "FFFPF"
+  ],
+  "hist": [
+   14,
+   17
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "KKR.US",
+  "name": "KKR & Co. Inc.",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   55.778989244454,
+   62.95554752971354
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   19,
+   19
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "KLBN3.SA",
+  "name": "Klabin S.A.",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   5.859446244979921,
+   5.788805127700071
+  ],
+  "t": [
+   "FFPFP",
+   "FFPFP"
+  ],
+  "hist": [
+   22,
+   22
+  ],
+  "cur": [
+   "BRL",
+   "BRL"
+  ]
+ },
+ {
+  "id": "LI.PA",
+  "name": "Klepierre SA",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   19.717013594479653,
+   19.80259864364812
+  ],
+  "t": [
+   "PFFPP",
+   "PFFPP"
+  ],
+  "hist": [
+   25,
+   25
+  ],
+  "cur": [
+   "EUR",
+   "EUR"
+  ]
+ },
+ {
+  "id": "LOMA.US",
+  "name": "Loma Negra Compania Industrial Argentina SA ADR",
+  "causes": [
+   "hyperinflation"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   5.680702164702935,
+   4.685284097743189
+  ],
+  "t": [
+   "PFFPP",
+   "FPFFP"
+  ],
+  "hist": [
+   12,
+   12
+  ],
+  "cur": [
+   "ARS",
+   "ARS"
+  ]
+ },
+ {
+  "id": "LTOD.LSE",
+  "name": "Larsen & Toubro Limited",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   19.77788660165701,
+   19.87507153557445
+  ],
+  "t": [
+   "PFPPP",
+   "PFPPP"
+  ],
+  "hist": [
+   25,
+   25
+  ],
+  "cur": [
+   "INR",
+   "INR"
+  ]
+ },
+ {
+  "id": "LUND-B.ST",
+  "name": "L E Lundbergf\u00f6retagen AB (publ)",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   324.85891952463766,
+   325.33728863247546
+  ],
+  "t": [
+   "FFFPP",
+   "FFFPP"
+  ],
+  "hist": [
+   24,
+   24
+  ],
+  "cur": [
+   "SEK",
+   "SEK"
+  ]
+ },
+ {
+  "id": "LVS.US",
+  "name": "Las Vegas Sands Corp",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   36.81801160470068,
+   37.89164777469472
+  ],
+  "t": [
+   "FFPFP",
+   "FFPFP"
+  ],
+  "hist": [
+   26,
+   26
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "LYV.US",
+  "name": "Live Nation Entertainment Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   32.194120342529374,
+   56.87588872818942
+  ],
+  "t": [
+   "FFPFP",
+   "FFPFP"
+  ],
+  "hist": [
+   25,
+   25
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "MBRF3.SA",
+  "name": "Marfrig Global Foods SA",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   38.93144471290521,
+   33.9287224970768
+  ],
+  "t": [
+   "FFPFP",
+   "FFPFP"
+  ],
+  "hist": [
+   22,
+   22
+  ],
+  "cur": [
+   "BRL",
+   "BRL"
+  ]
+ },
+ {
+  "id": "MCO.US",
+  "name": "Moodys Corporation",
+  "causes": [
+   "other"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   268.3311491187261,
+   268.2703667803497
+  ],
+  "t": [
+   "PPPPP",
+   "PPPPP"
+  ],
+  "hist": [
+   28,
+   28
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "MEOH.US",
+  "name": "Methanex Corporation",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   72.66423041593215,
+   53.76739583159458
+  ],
+  "t": [
+   "FFPPP",
+   "FFPPP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "MERY.PA",
+  "name": "Mercialys SA",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   13.94902837244776,
+   12.95894154813895
+  ],
+  "t": [
+   "PFFFP",
+   "PFFFP"
+  ],
+  "hist": [
+   24,
+   24
+  ],
+  "cur": [
+   "EUR",
+   "EUR"
+  ]
+ },
+ {
+  "id": "MHID.LSE",
+  "name": "Mahindra & Mahindra Limited",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   30.70741363080241,
+   31.12546769360292
+  ],
+  "t": [
+   "PFPPP",
+   "PFPPP"
+  ],
+  "hist": [
+   22,
+   22
+  ],
+  "cur": [
+   "INR",
+   "INR"
+  ]
+ },
+ {
+  "id": "MOMO.US",
+  "name": "Hello Group Inc",
+  "causes": [
+   "other"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   null,
+   null
+  ],
+  "t": [
+   "FFFPP",
+   "FFFPP"
+  ],
+  "hist": [
+   13,
+   13
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "MPC.US",
+  "name": "Marathon Petroleum Corp",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   522.3356778547526,
+   521.4470479073344
+  ],
+  "t": [
+   "FFPPP",
+   "FFPPP"
+  ],
+  "hist": [
+   18,
+   18
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "MTN.US",
+  "name": "Vail Resorts Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   107.70463209719185,
+   106.32337763638027
+  ],
+  "t": [
+   "PPPPP",
+   "PPPPP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "NEC.AU",
+  "name": "Nine Entertainment Co. Holdings Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   1.0868453542114358,
+   1.0246922756628536
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   20,
+   20
+  ],
+  "cur": [
+   "AUD",
+   "AUD"
+  ]
+ },
+ {
+  "id": "NIC.AU",
+  "name": "Nickel Industries Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   0.7374210017908195,
+   0.6766007335818713
+  ],
+  "t": [
+   "FFPFP",
+   "FFPFP"
+  ],
+  "hist": [
+   8,
+   8
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "NTGY.MC",
+  "name": "Naturgy Energy Group SA",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   17.72304102963214,
+   19.569377029398595
+  ],
+  "t": [
+   "FFFPP",
+   "FFPPP"
+  ],
+  "hist": [
+   26,
+   26
+  ],
+  "cur": [
+   "EUR",
+   "EUR"
+  ]
+ },
+ {
+  "id": "OMC.US",
+  "name": "Omnicom Group Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   108.55705633150795,
+   107.87563467055091
+  ],
+  "t": [
+   "PPFPP",
+   "PPFPP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "ORA.PA",
+  "name": "Orange S.A.",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   6.013967118482382,
+   7.108425056990496
+  ],
+  "t": [
+   "PFFFP",
+   "PFFFP"
+  ],
+  "hist": [
+   29,
+   29
+  ],
+  "cur": [
+   "EUR",
+   "EUR"
+  ]
+ },
+ {
+  "id": "ORBIA.MX",
+  "name": "Orbia Advance Corporation S.A.B. de C.V.",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   31.5838475174881,
+   26.82647092752492
+  ],
+  "t": [
+   "PFFFP",
+   "PFFFP"
+  ],
+  "hist": [
+   9,
+   9
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "PAGS.US",
+  "name": "PagSeguro Digital Ltd",
+  "causes": [
+   "other"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   null,
+   null
+  ],
+  "t": [
+   "UUUUU",
+   "PPFPP"
+  ],
+  "hist": [
+   4,
+   12
+  ],
+  "cur": [
+   "BRL",
+   "BRL"
+  ]
+ },
+ {
+  "id": "PBF.US",
+  "name": "PBF Energy Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   63.371203968621835,
+   55.05275904915636
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   17,
+   17
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "PDD.US",
+  "name": "PDD Holdings Inc.",
+  "causes": [
+   "other"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   null,
+   null
+  ],
+  "t": [
+   "UUUUU",
+   "FFNPP"
+  ],
+  "hist": [
+   3,
+   10
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "PE&OLES.MX",
+  "name": "Industrias Pe\u00f1oles S.A.B. de C.V",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   327.16934973649774,
+   222.3434775845583
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   13,
+   13
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "PETR3.SA",
+  "name": "Petroleo Brasileiro Petrobras SA ADR",
+  "causes": [
+   "20-F statements"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   null,
+   59.57303538039278
+  ],
+  "t": [
+   "UUUUU",
+   "FFPPP"
+  ],
+  "hist": [
+   2,
+   11
+  ],
+  "cur": [
+   "BRL",
+   "USD"
+  ]
+ },
+ {
+  "id": "PINFRA.MX",
+  "name": "Promotora y Operadora de Infraestructura S. A. B. de C. V",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   true,
+   true
+  ],
+  "v": [
+   395.83762190793084,
+   390.35602958239014
+  ],
+  "t": [
+   "PPPPP",
+   "PPPPP"
+  ],
+  "hist": [
+   24,
+   24
+  ],
+  "cur": [
+   "MXN",
+   "MXN"
+  ]
+ },
+ {
+  "id": "PLD.US",
+  "name": "Prologis Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   9.399335799903232,
+   9.686030678614607
+  ],
+  "t": [
+   "PFFFP",
+   "PFFFP"
+  ],
+  "hist": [
+   29,
+   29
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "RCI-B.TO",
+  "name": "Rogers Communications Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   47.891575041548435,
+   48.53684815064872
+  ],
+  "t": [
+   "PFPPP",
+   "PFPPP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "CAD",
+   "CAD"
+  ]
+ },
+ {
+  "id": "RIGD.LSE",
+  "name": "Reliance Industries Limited",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   55.45109307716306,
+   55.86000647123823
+  ],
+  "t": [
+   "PFFPP",
+   "PFFPP"
+  ],
+  "hist": [
+   22,
+   22
+  ],
+  "cur": [
+   "INR",
+   "INR"
+  ]
+ },
+ {
+  "id": "RMR.US",
+  "name": "RMR Group Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   21.037977768696024,
+   20.74442501218001
+  ],
+  "t": [
+   "FPFFP",
+   "FPFFP"
+  ],
+  "hist": [
+   13,
+   13
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "ROP.SW",
+  "name": "Roche Holding AG",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   195.24056936168654,
+   195.99761691075668
+  ],
+  "t": [
+   "PPPPP",
+   "PPPPP"
+  ],
+  "hist": [
+   28,
+   28
+  ],
+  "cur": [
+   "CHF",
+   "CHF"
+  ]
+ },
+ {
+  "id": "RPRX.US",
+  "name": "Royalty Pharma Plc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   62.329381181447815,
+   31.120876264856605
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   26,
+   26
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "RTHA.F",
+  "name": "Wilmar International Limited",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   4.366404782925345,
+   4.378335924161449
+  ],
+  "t": [
+   "PFFPP",
+   "PFFPP"
+  ],
+  "hist": [
+   10,
+   10
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "RYAN.US",
+  "name": "Ryan Specialty Group Holdings Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   29.509656775560874,
+   18.80770416077511
+  ],
+  "t": [
+   "FFPFP",
+   "FFPFP"
+  ],
+  "hist": [
+   7,
+   7
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "SALM.OL",
+  "name": "SalMar ASA",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   280.9190294601496,
+   281.1541999127744
+  ],
+  "t": [
+   "PFFFP",
+   "PFFFP"
+  ],
+  "hist": [
+   23,
+   23
+  ],
+  "cur": [
+   "NOK",
+   "NOK"
+  ]
+ },
+ {
+  "id": "SBMO.AS",
+  "name": "SBM Offshore N.V.",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   41.44211253926041,
+   41.54152081180909
+  ],
+  "t": [
+   "PFFPP",
+   "PFFPP"
+  ],
+  "hist": [
+   23,
+   23
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "SCYR.MC",
+  "name": "Sacyr SA",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   null,
+   1.396476564321946
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   25,
+   25
+  ],
+  "cur": [
+   "EUR",
+   "EUR"
+  ]
+ },
+ {
+  "id": "SEIC.US",
+  "name": "SEI Investments Company",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   true,
+   true
+  ],
+  "v": [
+   124.9625523634767,
+   125.33098219369428
+  ],
+  "t": [
+   "PPPPP",
+   "PPPPP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "SEM.LS",
+  "name": "Semapa",
+  "causes": [
+   "other"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   34.97571738082622,
+   37.02994082046858
+  ],
+  "t": [
+   "PFFPP",
+   "PFFPP"
+  ],
+  "hist": [
+   25,
+   25
+  ],
+  "cur": [
+   "EUR",
+   "EUR"
+  ]
+ },
+ {
+  "id": "SGSN.SW",
+  "name": "SGS SA",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   65.2342782136023,
+   65.30344469350244
+  ],
+  "t": [
+   "PPPPP",
+   "PPPPP"
+  ],
+  "hist": [
+   26,
+   26
+  ],
+  "cur": [
+   "CHF",
+   "CHF"
+  ]
+ },
+ {
+  "id": "SJX.F",
+  "name": "Singapore Technologies Engineering Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   1.6485996715270441,
+   1.6646059263531543
+  ],
+  "t": [
+   "PPFPP",
+   "PPFPP"
+  ],
+  "hist": [
+   10,
+   10
+  ],
+  "cur": [
+   "SGD",
+   "SGD"
+  ]
+ },
+ {
+  "id": "SON.LS",
+  "name": "Sonae SGPS SA",
+  "causes": [
+   "other"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   0.785099685331254,
+   0.7624476435707163
+  ],
+  "t": [
+   "FFFPP",
+   "FFFPP"
+  ],
+  "hist": [
+   11,
+   11
+  ],
+  "cur": [
+   "EUR",
+   "EUR"
+  ]
+ },
+ {
+  "id": "SPG.US",
+  "name": "Simon Property Group Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   171.72357266963115,
+   164.11918796520362
+  ],
+  "t": [
+   "PFFPP",
+   "PFFPP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "SPGI.US",
+  "name": "S&P Global Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   253.06268782869972,
+   250.77612932692122
+  ],
+  "t": [
+   "PPFFP",
+   "PPFFP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "SRT3.XETRA",
+  "name": "Sartorius AG VZO O.N.",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   23.093444062285577,
+   25.45417679956783
+  ],
+  "t": [
+   "PFFFP",
+   "PFPFP"
+  ],
+  "hist": [
+   24,
+   24
+  ],
+  "cur": [
+   "EUR",
+   "EUR"
+  ]
+ },
+ {
+  "id": "STGW.US",
+  "name": "Stagwell Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   11.314540428952897,
+   11.046572706129218
+  ],
+  "t": [
+   "PPFFP",
+   "PPFFP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "STNE.US",
+  "name": "StoneCo Ltd",
+  "causes": [
+   "other"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   null,
+   null
+  ],
+  "t": [
+   "UUUUU",
+   "FPPPP"
+  ],
+  "hist": [
+   6,
+   10
+  ],
+  "cur": [
+   "BRL",
+   "BRL"
+  ]
+ },
+ {
+  "id": "T.US",
+  "name": "AT&T Inc.",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   30.791996891934147,
+   30.822400476116375
+  ],
+  "t": [
+   "FFPPP",
+   "FFPPP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "T6W.F",
+  "name": "Thai Beverage Public Company Limited",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   true,
+   true
+  ],
+  "v": [
+   0.4390482582066471,
+   0.4466123405884792
+  ],
+  "t": [
+   "PPPPP",
+   "PPPPP"
+  ],
+  "hist": [
+   7,
+   7
+  ],
+  "cur": [
+   "THB",
+   "THB"
+  ]
+ },
+ {
+  "id": "TEO.US",
+  "name": "Telecom Argentina SA ADR",
+  "causes": [
+   "hyperinflation"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   10.130711900948327,
+   null
+  ],
+  "t": [
+   "FFPFP",
+   "FFNNP"
+  ],
+  "hist": [
+   28,
+   28
+  ],
+  "cur": [
+   "ARS",
+   "ARS"
+  ]
+ },
+ {
+  "id": "TGS.US",
+  "name": "Transportadora de Gas del Sur SA ADR",
+  "causes": [
+   "hyperinflation"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   44.769464831654304,
+   null
+  ],
+  "t": [
+   "PFFPP",
+   "PFPPP"
+  ],
+  "hist": [
+   27,
+   28
+  ],
+  "cur": [
+   "ARS",
+   "ARS"
+  ]
+ },
+ {
+  "id": "THC.US",
+  "name": "Tenet Healthcare Corporation",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   203.63250588971732,
+   191.91912263843614
+  ],
+  "t": [
+   "FPPPP",
+   "FPPPP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "TKO.US",
+  "name": "TKO Group Holdings, Inc.",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   128.96994338511493,
+   128.01530163397263
+  ],
+  "t": [
+   "FFPFP",
+   "FFPFP"
+  ],
+  "hist": [
+   11,
+   11
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "TLC.AU",
+  "name": "The Lottery Corporation Ltd",
+  "causes": [
+   "other"
+  ],
+  "buy": [
+   null,
+   false
+  ],
+  "v": [
+   null,
+   2.3186106024644473
+  ],
+  "t": [
+   null,
+   "PFPNP"
+  ],
+  "hist": [
+   8,
+   8
+  ],
+  "cur": [
+   "AUD",
+   "AUD"
+  ]
+ },
+ {
+  "id": "TLS.AU",
+  "name": "Telstra Group Ltd",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   2.793933876919335,
+   2.799222010450738
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "AUD",
+   "AUD"
+  ]
+ },
+ {
+  "id": "TME.US",
+  "name": "Tencent Music Entertainment Group",
+  "causes": [
+   "other"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   null,
+   null
+  ],
+  "t": [
+   "UUUUU",
+   "FPPPP"
+  ],
+  "hist": [
+   6,
+   10
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "TPG.US",
+  "name": "TPG Inc",
+  "causes": [
+   "other"
+  ],
+  "buy": [
+   null,
+   false
+  ],
+  "v": [
+   null,
+   null
+  ],
+  "t": [
+   null,
+   "FFPNP"
+  ],
+  "hist": [
+   8,
+   8
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "TRP.TO",
+  "name": "TC Energy Corp",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   41.96972901661895,
+   42.035914151769845
+  ],
+  "t": [
+   "PFFFP",
+   "PFFFP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "CAD",
+   "CAD"
+  ]
+ },
+ {
+  "id": "TUI1.XETRA",
+  "name": "TUI AG",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   null,
+   3.8429113663219168
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   23,
+   23
+  ],
+  "cur": [
+   "EUR",
+   "EUR"
+  ]
+ },
+ {
+  "id": "U1O.F",
+  "name": "UOL Group Limited",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   5.676064234056989,
+   5.74648353231544
+  ],
+  "t": [
+   "PFPPP",
+   "PFPPP"
+  ],
+  "hist": [
+   10,
+   10
+  ],
+  "cur": [
+   "SGD",
+   "SGD"
+  ]
+ },
+ {
+  "id": "UBER.US",
+  "name": "Uber Technologies Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   24.531740323318353,
+   23.856482540145397
+  ],
+  "t": [
+   "FFPPP",
+   "FFPPP"
+  ],
+  "hist": [
+   11,
+   11
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "UDR.US",
+  "name": "UDR Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   29.495493622959984,
+   28.528760185439225
+  ],
+  "t": [
+   "FFPFP",
+   "FFPFP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "UNH.US",
+  "name": "UnitedHealth Group Incorporated",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   385.4652844752079,
+   385.1410458614743
+  ],
+  "t": [
+   "PFPPP",
+   "PFPPP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "UTDI.XETRA",
+  "name": "United Internet AG NA",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   0.9854137013223649,
+   1.2103025905481928
+  ],
+  "t": [
+   "PFFFP",
+   "PFFFP"
+  ],
+  "hist": [
+   26,
+   26
+  ],
+  "cur": [
+   "EUR",
+   "EUR"
+  ]
+ },
+ {
+  "id": "VER.VI",
+  "name": "VERBUND AG",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   46.851017975877866,
+   46.94123885483875
+  ],
+  "t": [
+   "PFFPP",
+   "PFFPP"
+  ],
+  "hist": [
+   21,
+   21
+  ],
+  "cur": [
+   "EUR",
+   "EUR"
+  ]
+ },
+ {
+  "id": "VIPS.US",
+  "name": "Vipshop Holdings Limited",
+  "causes": [
+   "other"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   null,
+   null
+  ],
+  "t": [
+   "PPPPP",
+   "PPPPP"
+  ],
+  "hist": [
+   13,
+   13
+  ],
+  "cur": [
+   "CNY",
+   "CNY"
+  ]
+ },
+ {
+  "id": "VNO.US",
+  "name": "Vornado Realty Trust",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   8.01223149858088,
+   8.359058119722624
+  ],
+  "t": [
+   "PFFFP",
+   "PFFFP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "VNOM.US",
+  "name": "Viper Energy Ut",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   15.208876162521179,
+   22.979487087189604
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   13,
+   13
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "VOYA.US",
+  "name": "Voya Financial Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   161.0383567989383,
+   157.65527385404064
+  ],
+  "t": [
+   "FFFPP",
+   "FFFPP"
+  ],
+  "hist": [
+   17,
+   17
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "WBD.US",
+  "name": "Warner Bros Discovery Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   90.24103263551036,
+   80.5699569226914
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   26,
+   26
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "WMB.US",
+  "name": "Williams Companies Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   24.661829043206897,
+   24.461667878715513
+  ],
+  "t": [
+   "FFPPP",
+   "FFPPP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "WN.TO",
+  "name": "George Weston Limited",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   26.271855364545065,
+   36.088291028929966
+  ],
+  "t": [
+   "PFFPP",
+   "PFFPP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "CAD",
+   "CAD"
+  ]
+ },
+ {
+  "id": "WPP.LSE",
+  "name": "WPP PLC",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   768.8459196096346,
+   620.8378953563871
+  ],
+  "t": [
+   "FFFFP",
+   "FFFFP"
+  ],
+  "hist": [
+   30,
+   30
+  ],
+  "cur": [
+   "GBP",
+   "GBP"
+  ]
+ },
+ {
+  "id": "YOU.US",
+  "name": "Clear Secure Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   13.974675969103837,
+   12.064326543395385
+  ],
+  "t": [
+   "FFPPP",
+   "FFPPP"
+  ],
+  "hist": [
+   7,
+   7
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ },
+ {
+  "id": "YPF.US",
+  "name": "YPF Sociedad Anonima",
+  "causes": [
+   "20-F statements"
+  ],
+  "buy": [
+   false,
+   false
+  ],
+  "v": [
+   null,
+   null
+  ],
+  "t": [
+   "UUUUU",
+   "UUUUU"
+  ],
+  "hist": [
+   1,
+   6
+  ],
+  "cur": [
+   "ARS",
+   "USD"
+  ]
+ },
+ {
+  "id": "YUMC.US",
+  "name": "Yum China Holdings Inc",
+  "causes": [
+   "minority profit split"
+  ],
+  "buy": [
+   true,
+   true
+  ],
+  "v": [
+   60.270901493522295,
+   60.41055592728336
+  ],
+  "t": [
+   "PPPPP",
+   "PPPPP"
+  ],
+  "hist": [
+   13,
+   13
+  ],
+  "cur": [
+   "USD",
+   "USD"
+  ]
+ }
+]

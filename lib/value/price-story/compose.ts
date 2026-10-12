@@ -2,6 +2,7 @@ import {impliedAverageGrowth,numericMemo} from '../owner-memo';
 import type {Dossier,PriceMap,Series} from '../types';
 import type {MemoLine} from '../owner-memo';
 import type {Candidate} from './selection';
+import {analysisCurrency} from '../currency';
 export interface StoryFact {text:string;url:string;date:string;points:Series;label:string;unit:'percent'|'money'}
 export interface PriceStory {version:1;asOf:string;line:string;selected?:Candidate;events:Candidate[];needs:string|null;facts:StoryFact[];priceDate:string|null}
 const words=(s:string)=>s.trim().split(/\s+/).length;
@@ -26,7 +27,7 @@ export function filingFacts(d:Dossier):StoryFact[]{
   const profits=(d.series?.netIncome??d.tests?.understandable?.series?.netIncome??[]).filter((p):p is [number,number]=>finite(p[1]));
   const last=profits.at(-1),previous=last?profits.find(p=>p[0]===last[0]-1):undefined;
   if(last){const change=previous&&previous[1]>0?Number(((last[1]/previous[1]-1)*100).toFixed(1)):null;
-   out.push({text:change!==null?`net income ${change>=0?'+':''}${change}%`:`net income ${d.reportingCurrency??d.company.currency} ${new Intl.NumberFormat('en-US',{notation:'compact',maximumFractionDigits:1}).format(last[1])}`,url,date,points:profits,label:`Net income · FY${last[0]}`,unit:'money'});
+   out.push({text:change!==null?`net income ${change>=0?'+':''}${change}%`:`net income ${analysisCurrency(d)} ${new Intl.NumberFormat('en-US',{notation:'compact',maximumFractionDigits:1}).format(last[1])}`,url,date,points:profits,label:`Net income · FY${last[0]}`,unit:'money'});
   }
  }
  const margins=(d.tests?.moat?.series?.grossMargin??[]).filter((p):p is [number,number]=>finite(p[1])&&p[1]>0&&p[1]<1),m=margins.at(-1);

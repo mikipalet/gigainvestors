@@ -194,7 +194,10 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
         fundamentals.qualityQuarters=cachedQualityQuarters(company.id,readCorpusJson);
         // The vendor's trailing, interim and quarterly rows share the defect of its annual rows.
         if (filed) { fundamentals.ttm = null; fundamentals.balanceSheets = []; fundamentals.qualityQuarters = []; }
-        const shareInputs = company.source === 'esef' && !fundamentals.years.at(-1)?.dilutedShares
+        const shareInputs = filed
+          // The 20-F share count covers every class (Petrobras: common and preferred); one listing's count does not.
+          ? { currentShares: null, reportedShares: true, shareAssumptions: ['shares: the 20-F weighted diluted count of every share class, the basis of its whole-company statements'] }
+          : company.source === 'esef' && !fundamentals.years.at(-1)?.dilutedShares
           ? await esefShareInputs(company, usdRate)
           : currentShareInputs(raw, prices[company.id]?.[0] ?? null, company.currency);
         const sourceReport = readCorpusJson<ReportMeta>(`reports/${company.id}/meta.json`) ?? {
@@ -228,6 +231,7 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
               return typeof value==='number'&&Number.isFinite(value)&&provenance&&(field!=='buybacks'||provenance.method==='estimate')?[{fy:y.fy,field,value,provenance}]:[];
             }));
           } });
+        if (filed && result.valuation) result.valuation.shareBasis = 'filing-statements';
         const rejectedSources=[...(rejectedReport?.url?[rejectedReport.url]:[]),...(inDistinctIssuerGroup(company.id)?issuerAnnualSources(company,readCorpusJson).rejected:[])];
         if(rejectedSources.length)result.historyAssumptions=[...(result.historyAssumptions??[]),...[...new Set(rejectedSources)].map(url=>`Excluded another issuer's SEC filing ${url}; this company is analysed without it.`)];
         const yieldInfo = getBondYield === bondYield ? readCorpusJson<BondObservation>(`bonds/${company.country}.json`) : null;

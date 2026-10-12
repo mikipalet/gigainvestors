@@ -4,6 +4,7 @@ import {monthLabel,sourceQuote} from '@/lib/value/price-story/compose';
 import {formatMetric} from '@/lib/value/metric-labels';
 import {MiniPrice} from './viz/TileCharts';
 import styles from './PriceStory.module.css';
+import {analysisCurrency} from '@/lib/value/currency';
 export function PriceStoryPanel({dossier,quote}:{dossier:Dossier;quote:PriceMap[string]|null}){
  const story=dossier.priceStory!;
  const cutoff=String(Number(story.asOf.slice(0,4))-5)+story.asOf.slice(4,7);
@@ -13,7 +14,7 @@ export function PriceStoryPanel({dossier,quote}:{dossier:Dossier;quote:PriceMap[
  const actual=last&&first&&last[1]>0&&first[1]>0?Number((((last[1]/first[1])**.1-1)*100).toFixed(1)):null;
  const years=[...new Set(story.facts.flatMap(f=>f.points.map(p=>p[0])))].sort((a,b)=>a-b).slice(-10);
  const flags=(dossier.businessDepth?.flags??[]).filter(f=>f.basis==='computed'&&f.evidence.length>0).slice(0,2);
- const currency=dossier.reportingCurrency??dossier.company.currency;
+ const currency=analysisCurrency(dossier);
  return <article className={`${styles.panel} ${story.events.length?'':styles.noEvents}`} data-testid="price-story-panel">
   <section className={styles.price}><h3>{dossier.company.name}</h3><MiniPrice dossier={history} quote={quote} priceOnly events={story.events} height={115}/></section>
   {story.events.length>0&&<ol className={styles.events}>{story.events.map((event,i)=><li key={event.id}><b>{i+1}</b><a href={event.url} target="_blank" rel="noreferrer">{sourceQuote(event)}</a></li>)}</ol>}

@@ -1,0 +1,5 @@
+{"id":"BAP.US","before":{"years":1,"first":2025,"currency":"USD"},"relabelled":["2025-12-31 USD->PEN"],"after":{"years":29,"first":1997,"last":2025,"currency":"PEN","notes":[]}}
+{"id":"IFS.US","before":{"years":1,"first":2025,"currency":"USD"},"relabelled":["2025-12-31 USD->PEN"],"after":{"years":20,"first":2006,"last":2025,"currency":"PEN","notes":[]}}
+{"id":"DDL.US","before":{"years":1,"first":2025,"currency":"USD"},"relabelled":["2025-12-31 USD->CNY"],"after":{"years":7,"first":2019,"last":2025,"currency":"CNY","notes":[]}}
+{"id":"STN.US","before":{"years":2,"first":2024,"currency":"CAD"},"relabelled":["2023-12-31 USD->CAD"],"after":{"years":30,"first":1996,"last":2025,"currency":"CAD","notes":[]}}
+{"id":"BMA.US","before":{"years":1,"first":2025,"currency":"USD"},"relabelled":["2025-12-31 USD->ARS"],"after":{"years":1,"first":2025,"last":2025,"currency":"ARS","notes":["share count jumped 10x in 2024; history retained from 2024","share count jumped 0.1x in 2025; history retained from 2025"]}}

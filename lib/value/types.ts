@@ -209,7 +209,8 @@ export interface Valuation {
   shareReviewReasons?: string[];
   splitAfterReport?: number; // 3.8.1: share split after the annual report applied to the share count
   balanceSheet?: {end:string;filed:string|null;source:string;basis:string;filingDateAssumed?:boolean};
-  shareBasis?:'listing-ADS'|'effective-common';
+  /** filing-statements: a whole-company valuation from 20-F statements, on the 20-F's share count of every class. */
+  shareBasis?:'listing-ADS'|'effective-common'|'filing-statements';
   capitalReturns?: { excludingGoodwill: number | null; includingAcquisitions: number | null; observations: number; basis: "owner_earnings" };
   shareSources?: 2;
   method: "owner_earnings" | "book_value" | "nav";

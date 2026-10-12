@@ -1,0 +1,1151 @@
+{
+ "candidateStates": 493,
+ "baselineStates": 401,
+ "viewports": [
+  "1728x970",
+  "390x844"
+ ],
+ "paths": [
+  "/s/000651.she",
+  "/s/001800.ko",
+  "/s/009970.ko",
+  "/s/192080.ko",
+  "/s/2313.hk",
+  "/s/athm.us",
+  "/s/bap.us",
+  "/s/cpac.us",
+  "/s/embj.us",
+  "/s/gpgi.us",
+  "/s/jbs.us",
+  "/s/loma.us",
+  "/s/pags.us",
+  "/s/pdd.us",
+  "/s/petr3.sa",
+  "/s/stne.us",
+  "/s/teo.us",
+  "/s/tgs.us",
+  "/s/tme.us",
+  "/s/wln.pa",
+  "/s/ypf.us",
+  "/value",
+  "/value/method"
+ ],
+ "counts": {
+  "ownerChrome": 861,
+  "ownerWhitespace": 341,
+  "preExisting": 1228,
+  "new": 183
+ },
+ "newFindings": [
+  {
+   "path": "/s/tgs.us",
+   "state": "Open Capital allocation evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"In US dollars (ARS, IAS 29)\" / \"Historical market-dollar conte\""
+  },
+  {
+   "path": "/s/loma.us",
+   "state": "Open Capital allocation evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"In US dollars (ARS, IAS 29)\" / \"Historical market-dollar conte\""
+  },
+  {
+   "path": "/s/petr3.sa",
+   "state": "Open Lasting advantage evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"ROIC median below threshold\" / \"ROIC worst years below thresho\""
+  },
+  {
+   "path": "/s/petr3.sa",
+   "state": "Open Capital allocation evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"Historical market-dollar conte\" / \"Per-share earnings: 0.55 to 1.\""
+  },
+  {
+   "path": "/s/petr3.sa",
+   "state": "Open valuation",
+   "width": 1728,
+   "issue": "overlapping text: \"Price\" / \"79\""
+  },
+  {
+   "path": "/s/petr3.sa",
+   "state": "Open valuation",
+   "width": 1728,
+   "issue": "overlapping text: \"2016\" / \"per share \u00b7\""
+  },
+  {
+   "path": "/s/pdd.us",
+   "state": "Open Predictable profits evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"more than 2 net loss years\" / \"negative average operating mar\""
+  },
+  {
+   "path": "/s/pdd.us",
+   "state": "Open Lasting advantage evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"Years with nonpositive investe\" / \"ROIC median below threshold\""
+  },
+  {
+   "path": "/s/pdd.us",
+   "state": "Open Capital allocation evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"Historical market-dollar conte\" / \"Per-share earnings: -0.76 to 6\""
+  },
+  {
+   "path": "/s/athm.us",
+   "state": "Open Lasting advantage evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"Years with nonpositive investe\" / \"ROIC median below threshold\""
+  },
+  {
+   "path": "/s/athm.us",
+   "state": "Open valuation",
+   "width": 1728,
+   "issue": "overlapping text: \"Price\" / \"121\""
+  },
+  {
+   "path": "/s/athm.us",
+   "state": "Open valuation",
+   "width": 1728,
+   "issue": "overlapping text: \"2016\" / \"per share \u00b7\""
+  },
+  {
+   "path": "/s/embj.us",
+   "state": "Open Lasting advantage evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"ROIC median below threshold\" / \"ROIC worst years below thresho\""
+  },
+  {
+   "path": "/s/cpac.us",
+   "state": "Open Lasting advantage evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"ROIC median below threshold\" / \"ROIC worst years below thresho\""
+  },
+  {
+   "path": "/s/cpac.us",
+   "state": "Open Capital allocation evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"Historical market-dollar conte\" / \"Per-share earnings: 1.34 to 1.\""
+  },
+  {
+   "path": "/s/cpac.us",
+   "state": "Open valuation",
+   "width": 1728,
+   "issue": "overlapping text: \"Price\" / \"19\""
+  },
+  {
+   "path": "/s/cpac.us",
+   "state": "Open valuation",
+   "width": 1728,
+   "issue": "overlapping text: \"2016\" / \"per share \u00b7\""
+  },
+  {
+   "path": "/s/pags.us",
+   "state": "Open Cash for owners evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"incremental invested capital r\" / \"working capital as a share of \""
+  },
+  {
+   "path": "/s/stne.us",
+   "state": "Open Capital allocation evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"Historical market-dollar conte\" / \"Per-share earnings: -0.39 to 4\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Lasting advantage evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"Years with nonpositive investe\" / \"Recent gross margin fell 4.5pp\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Capital allocation evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"2019\" / \"Share growth\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Capital allocation evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"Diluted shares\" / \"Share growth\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Capital allocation evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"Diluted shares\" / \"\u2014\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Capital allocation evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"Diluted shares\" / \"\u00b7\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Capital allocation evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"2020\" / \"Share growth\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Capital allocation evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"2021\" / \"Share growth\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Capital allocation evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"Diluted shares\" / \"293.4%\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Capital allocation evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"114M\" / \"\u00d7\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Capital allocation evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"2022\" / \"Share growth\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Capital allocation evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"Diluted shares\" / \"-71.4%\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Capital allocation evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"33M\" / \"\u2713\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Capital allocation evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"2023\" / \"Share growth\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Capital allocation evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"Diluted shares\" / \"8.5%\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Capital allocation evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"Diluted shares\" / \"\u00d7\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Capital allocation evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"2024\" / \"Share growth\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Capital allocation evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"Diluted shares\" / \"24.6%\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Capital allocation evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"44M\" / \"\u00d7\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Capital allocation evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"2025\" / \"Share growth\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Capital allocation evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"Diluted shares\" / \"151.1%\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Capital allocation evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"111M\" / \"\u00d7\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Honest profits evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"Material weakness in internal \" / \"Auditor change within the past\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Honest profits evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"2%\" / \"Auditor change within the past\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Honest profits evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"Auditor change within the past\" / \"2%\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Honest profits evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"Auditor change within the past\" / \"Going-concern uncertainty\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Honest profits evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"Auditor change within the past\" / \"3%\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Honest profits evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"Auditor change within the past\" / \"Material related-party transac\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Honest profits evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"2%\" / \"Material related-party transac\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Honest profits evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"Going-concern uncertainty\" / \"Material related-party transac\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Honest profits evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"Going-concern uncertainty\" / \"49%\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Honest profits evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"\u2713\" / \"Receivables index 0.00 \u2264 1.47\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Honest profits evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"Accruals / assets -21.9% \u2264 10.\" / \"Receivables index 0.00 \u2264 1.47\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Honest profits evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"Accruals / assets -21.9% \u2264 10.\" / \"\u2713\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Honest profits evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"Accruals / assets -21.9% \u2264 10.\" / \"Charge years 0 \u2264 2\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Honest profits evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"\u2713\" / \"Charge years 0 \u2264 2\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Honest profits evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"Receivables index 0.00 \u2264 1.47\" / \"Charge years 0 \u2264 2\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Honest profits evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"Receivables index 0.00 \u2264 1.47\" / \"\u2713\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Honest profits evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"Receivables index 0.00 \u2264 1.47\" / \"Cash backing yes; required\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Honest profits evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"\u2713\" / \"Cash backing yes; required\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "Open Honest profits evidence",
+   "width": 1728,
+   "issue": "overlapping text: \"Charge years 0 \u2264 2\" / \"Cash backing yes; required\""
+  },
+  {
+   "path": "/s/tgs.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Quality tests\" (12px)"
+  },
+  {
+   "path": "/s/tgs.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Fail\" (12px)"
+  },
+  {
+   "path": "/s/tgs.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Annual history\" (12px)"
+  },
+  {
+   "path": "/s/tgs.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"28\" (12px)"
+  },
+  {
+   "path": "/s/tgs.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"years\" (12px)"
+  },
+  {
+   "path": "/s/tgs.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Market value\" (12px)"
+  },
+  {
+   "path": "/s/tgs.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"$3.9B\" (12px)"
+  },
+  {
+   "path": "/s/teo.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Quality tests\" (12px)"
+  },
+  {
+   "path": "/s/teo.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Fail\" (12px)"
+  },
+  {
+   "path": "/s/teo.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Annual history\" (12px)"
+  },
+  {
+   "path": "/s/teo.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"28\" (12px)"
+  },
+  {
+   "path": "/s/teo.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"years\" (12px)"
+  },
+  {
+   "path": "/s/teo.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Market value\" (12px)"
+  },
+  {
+   "path": "/s/teo.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"$5.5B\" (12px)"
+  },
+  {
+   "path": "/s/petr3.sa",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Share price\" (12px)"
+  },
+  {
+   "path": "/s/petr3.sa",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"BRL 63.06\" (12px)"
+  },
+  {
+   "path": "/s/petr3.sa",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Buy up to\" (12px)"
+  },
+  {
+   "path": "/s/petr3.sa",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"BRL 59.57\" (12px)"
+  },
+  {
+   "path": "/s/petr3.sa",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Expected / yr\" (12px)"
+  },
+  {
+   "path": "/s/petr3.sa",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"15.7%\" (12px)"
+  },
+  {
+   "path": "/s/petr3.sa",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"at today's price (\" (12px)"
+  },
+  {
+   "path": "/s/petr3.sa",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"16.5%\" (12px)"
+  },
+  {
+   "path": "/s/petr3.sa",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"at central value)\" (12px)"
+  },
+  {
+   "path": "/s/petr3.sa",
+   "state": "Open valuation",
+   "width": 390,
+   "issue": "overlapping text: \"Price\" / \"79\""
+  },
+  {
+   "path": "/s/petr3.sa",
+   "state": "Open valuation",
+   "width": 390,
+   "issue": "overlapping text: \"2016\" / \"per share \u00b7\""
+  },
+  {
+   "path": "/s/jbs.us",
+   "state": "page",
+   "width": 390,
+   "issue": "overlapping text: \"Down 28% since Mar 2026 \u00b7 \"JBS\" / \"3\""
+  },
+  {
+   "path": "/s/jbs.us",
+   "state": "page",
+   "width": 390,
+   "issue": "overlapping text: \"Down 28% since Mar 2026 \u00b7 \"JBS\" / \"annual periods on record.\""
+  },
+  {
+   "path": "/s/jbs.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text cut by container: \"\u2197\""
+  },
+  {
+   "path": "/s/pdd.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Share price\" (12px)"
+  },
+  {
+   "path": "/s/pdd.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"$81.35\" (12px)"
+  },
+  {
+   "path": "/s/pdd.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Quality tests\" (12px)"
+  },
+  {
+   "path": "/s/pdd.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Fail\" (12px)"
+  },
+  {
+   "path": "/s/pdd.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Annual history\" (12px)"
+  },
+  {
+   "path": "/s/pdd.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"10\" (12px)"
+  },
+  {
+   "path": "/s/pdd.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"years\" (12px)"
+  },
+  {
+   "path": "/s/pdd.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Market value\" (12px)"
+  },
+  {
+   "path": "/s/pdd.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"$116B\" (12px)"
+  },
+  {
+   "path": "/s/pdd.us",
+   "state": "page",
+   "width": 390,
+   "issue": "overlapping text: \"Down 46% since May 2024 \u00b7 \"U.S\" / \"Share price\""
+  },
+  {
+   "path": "/s/pdd.us",
+   "state": "page",
+   "width": 390,
+   "issue": "overlapping text: \"\u2197\" / \"$81.35\""
+  },
+  {
+   "path": "/s/pdd.us",
+   "state": "Open Predictable profits evidence",
+   "width": 390,
+   "issue": "overlapping chart labels: \"-100%\" / \"2017 \u2013 LTM to Jun 2026\""
+  },
+  {
+   "path": "/s/athm.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Share price\" (12px)"
+  },
+  {
+   "path": "/s/athm.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"$20.67\" (12px)"
+  },
+  {
+   "path": "/s/athm.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Buy up to\" (12px)"
+  },
+  {
+   "path": "/s/athm.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"$51.16\" (12px)"
+  },
+  {
+   "path": "/s/athm.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Expected / yr\" (12px)"
+  },
+  {
+   "path": "/s/athm.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Excess cash covers price \u00b7 no finite IRR\" (12px)"
+  },
+  {
+   "path": "/s/athm.us",
+   "state": "page",
+   "width": 390,
+   "issue": "overlapping text: \"Down 47% since Oct 2021 \u00b7 \"Aut\" / \"Share price\""
+  },
+  {
+   "path": "/s/athm.us",
+   "state": "page",
+   "width": 390,
+   "issue": "overlapping text: \"Down 47% since Oct 2021 \u00b7 \"Aut\" / \"$20.67\""
+  },
+  {
+   "path": "/s/athm.us",
+   "state": "page",
+   "width": 390,
+   "issue": "overlapping text: \"Down 47% since Oct 2021 \u00b7 \"Aut\" / \"Buy up to\""
+  },
+  {
+   "path": "/s/athm.us",
+   "state": "page",
+   "width": 390,
+   "issue": "overlapping text: \"Down 47% since Oct 2021 \u00b7 \"Aut\" / \"$51.16\""
+  },
+  {
+   "path": "/s/athm.us",
+   "state": "page",
+   "width": 390,
+   "issue": "overlapping text: \"Down 47% since Oct 2021 \u00b7 \"Aut\" / \"Expected / yr\""
+  },
+  {
+   "path": "/s/athm.us",
+   "state": "page",
+   "width": 390,
+   "issue": "overlapping text: \"\u2197\" / \"Share price\""
+  },
+  {
+   "path": "/s/athm.us",
+   "state": "page",
+   "width": 390,
+   "issue": "overlapping text: \"\u2197\" / \"Expected / yr\""
+  },
+  {
+   "path": "/s/athm.us",
+   "state": "Open valuation",
+   "width": 390,
+   "issue": "overlapping text: \"Price\" / \"121\""
+  },
+  {
+   "path": "/s/athm.us",
+   "state": "Open valuation",
+   "width": 390,
+   "issue": "overlapping text: \"2016\" / \"per share \u00b7\""
+  },
+  {
+   "path": "/s/embj.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Share price\" (12px)"
+  },
+  {
+   "path": "/s/embj.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"$71.16\" (12px)"
+  },
+  {
+   "path": "/s/embj.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Quality tests\" (12px)"
+  },
+  {
+   "path": "/s/embj.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Fail\" (12px)"
+  },
+  {
+   "path": "/s/embj.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Annual history\" (12px)"
+  },
+  {
+   "path": "/s/embj.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"27\" (12px)"
+  },
+  {
+   "path": "/s/embj.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"years\" (12px)"
+  },
+  {
+   "path": "/s/embj.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Market value\" (12px)"
+  },
+  {
+   "path": "/s/embj.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"$13B\" (12px)"
+  },
+  {
+   "path": "/s/embj.us",
+   "state": "page",
+   "width": 390,
+   "issue": "overlapping text: \"Up 410% since Oct 2023 \u00b7 \"Embr\" / \"Share price\""
+  },
+  {
+   "path": "/s/embj.us",
+   "state": "page",
+   "width": 390,
+   "issue": "overlapping text: \"Up 410% since Oct 2023 \u00b7 \"Embr\" / \"$71.16\""
+  },
+  {
+   "path": "/s/embj.us",
+   "state": "page",
+   "width": 390,
+   "issue": "overlapping text: \"Up 410% since Oct 2023 \u00b7 \"Embr\" / \"Quality tests\""
+  },
+  {
+   "path": "/s/embj.us",
+   "state": "page",
+   "width": 390,
+   "issue": "overlapping text: \"Up 410% since Oct 2023 \u00b7 \"Embr\" / \"Fail\""
+  },
+  {
+   "path": "/s/cpac.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Share price\" (12px)"
+  },
+  {
+   "path": "/s/cpac.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"$12.27\" (12px)"
+  },
+  {
+   "path": "/s/cpac.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Buy up to\" (12px)"
+  },
+  {
+   "path": "/s/cpac.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"$15.44\" (12px)"
+  },
+  {
+   "path": "/s/cpac.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Expected / yr\" (12px)"
+  },
+  {
+   "path": "/s/cpac.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"11.8%\" (12px)"
+  },
+  {
+   "path": "/s/cpac.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"at today's price (\" (12px)"
+  },
+  {
+   "path": "/s/cpac.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"10.0%\" (12px)"
+  },
+  {
+   "path": "/s/cpac.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"at central value)\" (12px)"
+  },
+  {
+   "path": "/s/cpac.us",
+   "state": "Open Predictable profits evidence",
+   "width": 390,
+   "issue": "overlapping chart labels: \"10%\" / \"2017 \u2013 LTM to Jun 2026\""
+  },
+  {
+   "path": "/s/cpac.us",
+   "state": "Open valuation",
+   "width": 390,
+   "issue": "overlapping text: \"Price\" / \"19\""
+  },
+  {
+   "path": "/s/cpac.us",
+   "state": "Open valuation",
+   "width": 390,
+   "issue": "overlapping text: \"2016\" / \"per share \u00b7\""
+  },
+  {
+   "path": "/s/pags.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Share price\" (12px)"
+  },
+  {
+   "path": "/s/pags.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"$11.16\" (12px)"
+  },
+  {
+   "path": "/s/pags.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Quality tests\" (12px)"
+  },
+  {
+   "path": "/s/pags.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Fail\" (12px)"
+  },
+  {
+   "path": "/s/pags.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Annual history\" (12px)"
+  },
+  {
+   "path": "/s/pags.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"12\" (12px)"
+  },
+  {
+   "path": "/s/pags.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"years\" (12px)"
+  },
+  {
+   "path": "/s/pags.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Market value\" (12px)"
+  },
+  {
+   "path": "/s/pags.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"$3.1B\" (12px)"
+  },
+  {
+   "path": "/s/pags.us",
+   "state": "page",
+   "width": 390,
+   "issue": "overlapping text: \"Down 69% since Oct 2021 \u00b7 \"Pag\" / \"Share price\""
+  },
+  {
+   "path": "/s/pags.us",
+   "state": "page",
+   "width": 390,
+   "issue": "overlapping text: \"Down 69% since Oct 2021 \u00b7 \"Pag\" / \"$11.16\""
+  },
+  {
+   "path": "/s/pags.us",
+   "state": "page",
+   "width": 390,
+   "issue": "overlapping text: \"Down 69% since Oct 2021 \u00b7 \"Pag\" / \"Quality tests\""
+  },
+  {
+   "path": "/s/pags.us",
+   "state": "page",
+   "width": 390,
+   "issue": "overlapping text: \"Down 69% since Oct 2021 \u00b7 \"Pag\" / \"Fail\""
+  },
+  {
+   "path": "/s/stne.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Share price\" (12px)"
+  },
+  {
+   "path": "/s/stne.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"$12.46\" (12px)"
+  },
+  {
+   "path": "/s/stne.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Quality tests\" (12px)"
+  },
+  {
+   "path": "/s/stne.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Fail\" (12px)"
+  },
+  {
+   "path": "/s/stne.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Annual history\" (12px)"
+  },
+  {
+   "path": "/s/stne.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"10\" (12px)"
+  },
+  {
+   "path": "/s/stne.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"years\" (12px)"
+  },
+  {
+   "path": "/s/stne.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Market value\" (12px)"
+  },
+  {
+   "path": "/s/stne.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"$2.9B\" (12px)"
+  },
+  {
+   "path": "/s/tme.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Share price\" (12px)"
+  },
+  {
+   "path": "/s/tme.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"$8.38\" (12px)"
+  },
+  {
+   "path": "/s/tme.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Quality tests\" (12px)"
+  },
+  {
+   "path": "/s/tme.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Pass\" (12px)"
+  },
+  {
+   "path": "/s/tme.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Annual history\" (12px)"
+  },
+  {
+   "path": "/s/tme.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"10\" (12px)"
+  },
+  {
+   "path": "/s/tme.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"years\" (12px)"
+  },
+  {
+   "path": "/s/tme.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Market value\" (12px)"
+  },
+  {
+   "path": "/s/tme.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"$14B\" (12px)"
+  },
+  {
+   "path": "/s/tme.us",
+   "state": "page",
+   "width": 390,
+   "issue": "overlapping text: \"Down 66% since Aug 2025 \u00b7 \"Ten\" / \"Share price\""
+  },
+  {
+   "path": "/s/tme.us",
+   "state": "page",
+   "width": 390,
+   "issue": "overlapping text: \"Down 66% since Aug 2025 \u00b7 \"Ten\" / \"$8.38\""
+  },
+  {
+   "path": "/s/tme.us",
+   "state": "page",
+   "width": 390,
+   "issue": "overlapping text: \"Down 66% since Aug 2025 \u00b7 \"Ten\" / \"Quality tests\""
+  },
+  {
+   "path": "/s/tme.us",
+   "state": "page",
+   "width": 390,
+   "issue": "overlapping text: \"Down 66% since Aug 2025 \u00b7 \"Ten\" / \"Pass\""
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Share price\" (12px)"
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"$12.60\" (12px)"
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Quality tests\" (12px)"
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Fail\" (12px)"
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Annual history\" (12px)"
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"7\" (12px)"
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"years\" (12px)"
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Market value\" (12px)"
+  },
+  {
+   "path": "/s/gpgi.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"$3.7B\" (12px)"
+  }
+ ],
+ "interactionFailures": [],
+ "preExistingInteractionFailures": [
+  [
+   "/value/method",
+   1728
+  ],
+  [
+   "/value/method",
+   390
+  ]
+ ],
+ "pass": false
+}

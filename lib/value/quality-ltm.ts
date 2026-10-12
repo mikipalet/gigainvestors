@@ -145,7 +145,9 @@ const financialOptional:Record<string,string[]>={understandable:['commonNetIncom
 export function qualityYears(years:Year[],ltm:Year|null|undefined,key:TestKey,kind:Kind):Year[]{
  if(!ltm?.provisional||!years.length||ltm.end<=years.at(-1)!.end)return years;
  const fin=kind==='bank'||kind==='insurer',optional=fin?financialOptional:operatingOptional;
- const required=[...(fin?financial:operating)[key]??[],...(optional[key]??[]).filter(k=>years.slice(-10).some(y=>(y as any)[k]!=null))];
+ // The profit split matters only where minorities are material (parentShare is 1 otherwise).
+ const material=years.slice(-10).some(y=>(y.minorityInterest??0)>0&&y.equity!=null&&y.minorityInterest!/(y.equity+y.minorityInterest!)>.1);
+ const required=[...(fin?financial:operating)[key]??[],...(optional[key]??[]).filter(k=>(k!=='totalNetIncome'||material)&&years.slice(-10).some(y=>(y as any)[k]!=null))];
  if(!fin&&key==='economics'&&years.some(y=>y.leaseDepreciationIncluded&&(y.leaseLiabilities??0)>0))required.push('leaseCash');
  if(fin&&key==='accounting'&&years.some(y=>y.restated!==undefined)&&ltm.restated===undefined)return years;
  if(required.some(k=>!finite((ltm as any)[k])))return years;

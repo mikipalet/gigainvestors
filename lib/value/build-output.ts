@@ -4,7 +4,7 @@ import {memoAtPrice} from './owner-memo';
 import {consistentValuation} from './return-model';
 import { METHOD_VERSION } from './method-version';
 import {indiaDepositarySymbols} from './india/symbols';
-import { isDecided, isFindable, shortHistory, missingInvestmentNav } from './publication-eligibility';
+import { hasPredecessorHistory, isDecided, isFindable, shortHistory, missingInvestmentNav } from './publication-eligibility';
 import { withAnalysisHistory } from './test-history';
 import { publicAnalysis } from './public-analysis';
 import { buyReturnInputs } from "./owner-return";
@@ -86,7 +86,10 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
   const westernFunnel: PublishedFunnel = { ...emptyFunnel(), byCountry: {} };
   const funnel: PublishedFunnel = { ...emptyFunnel(), byCountry: {} };
   for (const original of sorted) {
-    let analysis = isFindable(original) && shortHistory(original) ? {...original,status:"insufficient_data" as const,valuation:null} : original;
+    let analysis = isFindable(original) && shortHistory(original) && !isDecided(original) ? {...original,status:"insufficient_data" as const,valuation:null} : original;
+    // Decided by a failed test Buy requires: an unresolved test is published as not assessed, never as pending.
+    if (isDecided(analysis) && !hasPredecessorHistory(analysis) && QUALITY_TESTS.some(k => analysis.tests[k as keyof Analysis['tests']]?.result === 'unclear'))
+      analysis = {...analysis,tests:Object.fromEntries(Object.entries(analysis.tests).map(([k,t])=>[k,(QUALITY_TESTS as readonly string[]).includes(k)&&t.result==='unclear'?{key:t.key,result:'na' as const,numeric:'na' as const,metrics:{},series:{},reasons:[],jev:[]}:t])) as Analysis['tests']};
     if (!isFindable(analysis)) {
       if (shortHistory(analysis) && !missingInvestmentNav(analysis)) {
         const dossier: Dossier={...analysis,methodVersion:METHOD_VERSION,w:null,b:false,holders:[],series:analysis.series??{}};

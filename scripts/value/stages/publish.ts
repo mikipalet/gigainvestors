@@ -501,7 +501,8 @@ export function loadAnalyses(companies: Company[]): Analysis[] {
       const adjusted=years&&!memoYears?applyAdjustments(years,readCorpusJson(`judgement/${company.id}.json`),judgementTrust,analysis.reportingCurrency??company.currency).years:undefined;
       // 3.8.0 Buy eligibility (best-1): the profit record of exactly the statements the tests used.
       const statements=memoYears??adjusted;
-      if(statements)analysis.profitRecord=profitRecord({years:statements,kind:analysis.company.kind});
+      // A US-dollar measured analysis keeps the profit record of its measured statements.
+      if(statements&&!analysis.measure)analysis.profitRecord=profitRecord({years:statements,kind:analysis.company.kind});
       analyses.push(applyThesis(applyShareCheck(adjusted?withCapitalReturns(analysis,adjusted):analysis,shareCheck),readCorpusJson<ThesisResult>(`thesis/${company.id}.json`)));
     } catch (error) {
       console.warn(`publish: skipped analysis/${company.id}.json: ${error instanceof Error ? error.message : "unreadable analysis"}`);

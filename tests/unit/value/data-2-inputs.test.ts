@@ -39,7 +39,7 @@ describe('statements from the 20-F where the vendor rows mix its currencies (3.8
  const stock=(fy:number,val:number,filed:string)=>({end:`${fy}-12-31`,val,filed,form:'20-F',accn:`0001292814-${filed.slice(2,4)}-1`});
  const facts=(fys:number[],filed:string)=>({facts:{'ifrs-full':{
   Revenue:{units:{USD:fys.map(fy=>flow(fy,80e9+fy,filed))}},ProfitLossAttributableToOwnersOfParent:{units:{USD:fys.map(fy=>flow(fy,10e9,filed))}},
-  CashFlowsFromUsedInOperatingActivities:{units:{USD:fys.map(fy=>flow(fy,35e9,filed))}},PurchaseOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities:{units:{USD:fys.map(fy=>flow(fy,15e9,filed))}},
+  CashFlowsFromUsedInOperatingActivities:{units:{USD:fys.map(fy=>flow(fy,35e9,filed))}},PurchaseOfPropertyPlantAndEquipmentIntangibleAssetsOtherThanGoodwillInvestmentPropertyAndOtherNoncurrentAssets:{units:{USD:fys.map(fy=>flow(fy,15e9,filed))}},
   Assets:{units:{USD:fys.map(fy=>stock(fy,200e9,filed))}},EquityAttributableToOwnersOfParent:{units:{USD:fys.map(fy=>stock(fy,70e9,filed))}},CurrentTradeReceivables:{units:{USD:fys.map(fy=>stock(fy,5e9,filed))}},
   AdjustedWeightedAverageShares:{units:{shares:fys.map(fy=>flow(fy,13044496930,filed))}}}}});
  const files:Record<string,unknown>={
@@ -98,4 +98,21 @@ it('keeps Worldline’s share basis: FY2025 ESEF 280,073,277 weighted shares res
  const integrity=checkIntegrity(f);
  expect(integrity.notes.some(n=>/share count jumped|split/.test(n))).toBe(false);
  expect(f.years.at(-1)!.dilutedShares).toBe(280073277/40);
+});
+
+it('keeps a 20-F whole-company valuation on the 20-F share count of every class (Petrobras common and preferred)',async()=>{
+ const {applyShareCheck}=await import('@/lib/value/share-check');
+ const valuation={method:'owner_earnings',currency:'USD',shares:12917105263,shareBasis:'filing-statements',perShare:{low:11.2,mid:11.9,high:12.8},assumptions:[]} as never;
+ const analysis={id:'PETR3.SA',valuation} as never;
+ const check={status:'verified',shares:7442231382,observations:[{source:'eodhd:current',shares:7442231382,date:'2026-10-10'},{source:'sec',shares:7442231382,date:'2025-12-31'}],reason:''} as never;
+ expect(applyShareCheck(analysis,check)).toBe(analysis);
+});
+
+it('never re-values a 20-F or US-dollar measured analysis from a vendor balance sheet at publication',async()=>{
+ const {refreshBalanceValuation}=await import('@/lib/value/refresh-balance-valuation');
+ const read=()=>{throw Error('no vendor balance may be read');};
+ const filed={id:'PETR3.SA',company:{kind:'operating'},valuation:{method:'owner_earnings',shareBasis:'filing-statements'}} as never;
+ const measured={id:'TGS.US',company:{kind:'operating'},measure:{currency:'USD',reporting:'ARS',note:''},valuation:{method:'owner_earnings'}} as never;
+ expect(refreshBalanceValuation(filed,read,'2026-10-12')).toBe(filed);
+ expect(refreshBalanceValuation(measured,read,'2026-10-12')).toBe(measured);
 });

@@ -1,5 +1,5 @@
 /** data-2 browser gate: the Buy list, the method page and the companies whose
- * statement currency 3.8.2 corrected, at 1728×970 and 390×844, against a
+ * data 3.8.3 corrected, at 1728×970 and 390×844, against a
  * production build serving the candidate store. Every page must show the
  * corrected currency strings and none of the mislabelled ones.
  * Usage: node --conditions=react-server --import tsx browser-currency.ts <base> <store> <ids> <out> <forbidden.json> [required.json] */
@@ -74,12 +74,12 @@ async function main() {
         const overflow = await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1);
         record('list', { pass: !wrongBuys.length && !staleOnList.length && !overflow, buyCount: count, listedSample: listed.slice(0, 8), wrongBuys, staleOnList, overflow });
       } catch (e) { record('list', { pass: false, error: String(e) }); }
-      // The method page states the 3.8.2 currency rule.
+      // The method page states the 3.8.3 rules.
       try {
         const response = await page.goto(`${base}/value/method`, { waitUntil: 'networkidle', timeout: 120000 });
         expect(response?.ok()).toBe(true);
         const text = await page.locator('body').innerText();
-        for (const s of ['3.8.2', 'shown in the currency it was reported in', 'checked against the annual filing'])
+        for (const s of ['3.8.3', 'shown in the currency it was reported in', 'hyperinflationary currency (IAS 29) is analysed in US dollars', 'the statements come from the 20-F itself', 'only that statement is left out'])
           expect(text).toContain(s);
         await page.screenshot({ path: `${out}/method-${width}.png`, fullPage: false });
         record('method', { pass: true });

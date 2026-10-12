@@ -6,7 +6,7 @@ import type {Company,Year} from './types';
 /** IFRS concepts the general SEC mapping does not read. */
 const IFRS_TAGS:Record<string,string[]>={
  receivables:['CurrentTradeReceivables','TradeReceivables'],payables:['TradeAndOtherCurrentPayablesToTradeSuppliers','CurrentTradePayables'],
- capex:['PurchaseOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities'],interestExpense:['FinanceCosts'],
+ capex:['PurchaseOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities','PurchaseOfPropertyPlantAndEquipmentIntangibleAssetsOtherThanGoodwillInvestmentPropertyAndOtherNoncurrentAssets'],interestExpense:['FinanceCosts'],
  dividendsPaid:['DividendsPaidClassifiedAsFinancingActivities'],sbc:['ExpenseFromSharebasedPaymentTransactionsWithEmployees'],
 };
 type Issuer={facts:string[];cik:number;currency:string;reason:string;source:string;reviewed:string};

@@ -21,6 +21,8 @@ export function reconcileShares(observations:ShareObservation[]):ShareCheck {
 /** Re-denominate the existing enterprise valuation; do not recompute business economics. */
 export function applyShareCheck<T extends import('./types').Analysis>(analysis:T,check:ShareCheck|null):T {
  if(!analysis.valuation||!check)return analysis;
+ // Statements built from the 20-F cover every share class; one listing's count is not their denominator.
+ if(analysis.valuation.shareBasis==='filing-statements')return analysis;
  // Recheck stored provider evidence as well: deploying a reconciliation fix
  // must not keep trusting a previously accepted, now-invalid cached vote.
  const observations=analysis.valuation.shareBasis?check.observations.filter(o=>o.basis===analysis.valuation!.shareBasis):check.observations;

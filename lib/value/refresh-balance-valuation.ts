@@ -5,6 +5,7 @@ import {trailingInputs} from './valuation-inputs';
 import {valueCompany,valuationMargin} from './valuation';
 import {applyShareCheck,withShareDenominator,type ShareCheck} from './share-check';
 import {consistentValuation} from './return-model';
+import {cachedUsdRates,consistentBalanceSheets,homeCurrencies} from './statement-currency';
 import type {Analysis,Fundamentals,Year,PriceHistory} from './types';
 
 /** Refresh stock inputs without re-running quality judgements or changing the
@@ -12,6 +13,8 @@ import type {Analysis,Fundamentals,Year,PriceHistory} from './types';
 export function refreshBalanceValuation<T extends Analysis>(a:T,read:(file:string)=>unknown,cutoff:string):T {
  const old=a.valuation;
  if(!old||old.method==='nav')return a;
+ // Statements from the 20-F, or measured in US dollars, have no vendor balance sheet on their basis.
+ if(old.shareBasis==='filing-statements'||a.measure)return a;
  const fundamentals=read(`fundamentals/${a.id}.json`) as Fundamentals|null;
  const inputs=read(`analysis/inputs/${a.id}.json`) as {memoYears?:Year[]}|null;
  const years=inputs?.memoYears??fundamentals?.years;
@@ -19,7 +22,9 @@ export function refreshBalanceValuation<T extends Analysis>(a:T,read:(file:strin
  const annual=years.at(-1)!;
  const raw=read(`raw/eodhd/${a.id}.json`);
  const currentCommonBalance=(read(`raw/reviewed-common-balance/${a.id}.json`) as Fundamentals['currentCommonBalance'])??fundamentals?.currentCommonBalance;
- const balance=latestBalanceAt(a.company.kind==='operating'?balanceSheetsFor(a.id,raw):correctFinancialBalances(balanceSheetsFor(a.id,raw),read(`raw/sec-companyfacts/${a.id}.json`),cutoff),cutoff,old.currency,annual,a.company.kind);
+ // The same currency-scale rule as the analysis: a newer balance sheet on another currency scale is not used.
+ const sheets=consistentBalanceSheets(a.company.kind==='operating'?balanceSheetsFor(a.id,raw):correctFinancialBalances(balanceSheetsFor(a.id,raw),read(`raw/sec-companyfacts/${a.id}.json`),cutoff),years,homeCurrencies(a.company),cachedUsdRates(read as <T>(file:string)=>T|null,[...homeCurrencies(a.company),'USD',old.currency])).rows;
+ const balance=latestBalanceAt(sheets,cutoff,old.currency,annual,a.company.kind);
  if(!balance&&!currentCommonBalance&&(!old.balanceSheet?.end||old.balanceSheet.end===annual.end)&&(a.company.kind!=='operating'||!ownerCash(annual,a.company.industry).reason))return a;
  // TTM is constructed from the original annual row: annual capex judgements
  // must not leak into quarterly flows through the carried annual fields.

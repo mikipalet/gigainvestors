@@ -1,6 +1,6 @@
 import {researchCoverage} from './judgement/coverage';
 import {publicBusiness} from './flags/public';
-import { shortHistory } from './publication-eligibility';
+import { isDecided, shortHistory } from './publication-eligibility';
 import type { Analysis, TestOutcome } from './types';
 
 // Operational evidence and unresolved supporting measures stay in the private corpus.
@@ -10,7 +10,8 @@ const publicText=(s:string)=>!privateWording.test(s)&&!gapWording.test(s);
 export function publicAnalysis<T extends Analysis & {b?:boolean}>(analysis:T):T {
  const {dataQualityFlags,...rest}=analysis;
  const researched=researchCoverage(analysis);
- const short=shortHistory(analysis),hideValue=short||Boolean(dataQualityFlags?.length);
+ // A decided company (a failed test Buy requires) is published with its tests, not as a neutral dossier.
+ const short=shortHistory(analysis)&&!isDecided(analysis),hideValue=short||Boolean(dataQualityFlags?.length);
  const tests=Object.fromEntries(Object.entries(analysis.tests).flatMap(([key,test]):Array<[string,TestOutcome]>=>{
   if(key==='price'&&analysis.priceTestFreeze)return [[key,analysis.priceTestFreeze.test]];
   if(key==='price'&&(hideValue||test.result==='unclear'))return [];

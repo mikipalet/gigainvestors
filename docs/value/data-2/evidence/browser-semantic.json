@@ -1,0 +1,1141 @@
+[
+ {
+  "name": "list",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buyCount": 138,
+  "listedSample": [
+   "LIGHT.AS",
+   "LULU.US",
+   "EEFT.US",
+   "BLDR.US",
+   "OTEX.TO",
+   "DEVL.F",
+   "PRG.US",
+   "ATKR.US"
+  ],
+  "wrongBuys": [],
+  "staleOnList": [],
+  "overflow": false
+ },
+ {
+  "name": "method",
+  "width": 1728,
+  "height": 970,
+  "pass": true
+ },
+ {
+  "name": "TGS.US",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 25.71,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "LOMA.US",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Above value",
+  "mid": 4.685284097743189,
+  "price": 10.12,
+  "withheld": false,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "$10.12"
+   ],
+   [
+    "Estimated value",
+    "$4.69"
+   ],
+   [
+    "Buy at or below",
+    "$4.69"
+   ],
+   [
+    "Expected / yr",
+    "6.1%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "216.0%"
+   ]
+  ]
+ },
+ {
+  "name": "TEO.US",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 12.37,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "PETR3.SA",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Above value",
+  "mid": 59.57303538039278,
+  "price": 63.06,
+  "withheld": false,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "BRL 63.06"
+   ],
+   [
+    "Estimated value",
+    "BRL 59.57"
+   ],
+   [
+    "Buy at or below",
+    "BRL 59.57"
+   ],
+   [
+    "Expected / yr",
+    "15.7%"
+   ],
+   [
+    "Required",
+    "16.5%"
+   ],
+   [
+    "Price / value",
+    "105.9%"
+   ]
+  ]
+ },
+ {
+  "name": "YPF.US",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 50.04,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "JBS.US",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 12.98,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "PDD.US",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 81.35,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "ATHM.US",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Below value",
+  "mid": 51.162478342936524,
+  "price": 20.67,
+  "withheld": false,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "$20.67"
+   ],
+   [
+    "Estimated value",
+    "$51.16"
+   ],
+   [
+    "Buy at or below",
+    "$51.16"
+   ],
+   [
+    "Expected / yr",
+    "Cash covers price"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "40.4%"
+   ]
+  ]
+ },
+ {
+  "name": "EMBJ.US",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 71.16,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "CPAC.US",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Below value",
+  "mid": 15.444975365067958,
+  "price": 12.27,
+  "withheld": false,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "$12.27"
+   ],
+   [
+    "Estimated value",
+    "$15.44"
+   ],
+   [
+    "Buy at or below",
+    "$15.44"
+   ],
+   [
+    "Expected / yr",
+    "11.8%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "79.4%"
+   ]
+  ]
+ },
+ {
+  "name": "PAGS.US",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 11.16,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "STNE.US",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 12.46,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "TME.US",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 8.38,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "001800.KO",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": true,
+  "state": "At or below value",
+  "mid": 51365.13871531641,
+  "price": 22600,
+  "withheld": false,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "KRW 22,600.00"
+   ],
+   [
+    "Estimated value",
+    "KRW 51,365.14"
+   ],
+   [
+    "Buy at or below",
+    "KRW 51,365.14"
+   ],
+   [
+    "Expected / yr",
+    "25.4%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "44.0%"
+   ]
+  ]
+ },
+ {
+  "name": "192080.KO",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": true,
+  "state": "At or below value",
+  "mid": 160287.17572774817,
+  "price": 57700,
+  "withheld": false,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "KRW 57,700.00"
+   ],
+   [
+    "Estimated value",
+    "KRW 160,287.18"
+   ],
+   [
+    "Buy at or below",
+    "KRW 160,287.18"
+   ],
+   [
+    "Expected / yr",
+    "49.6%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "36.0%"
+   ]
+  ]
+ },
+ {
+  "name": "009970.KO",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": true,
+  "state": "At or below value",
+  "mid": 709699.3291707945,
+  "price": 174400,
+  "withheld": false,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "KRW 174,400.00"
+   ],
+   [
+    "Estimated value",
+    "KRW 709,699.33"
+   ],
+   [
+    "Buy at or below",
+    "KRW 709,699.33"
+   ],
+   [
+    "Expected / yr",
+    "53.3%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "24.6%"
+   ]
+  ]
+ },
+ {
+  "name": "2313.HK",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": true,
+  "state": "At or below value",
+  "mid": 113.50611451759657,
+  "price": 34.78,
+  "withheld": false,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "HKD 34.78"
+   ],
+   [
+    "Estimated value",
+    "HKD 113.51"
+   ],
+   [
+    "Buy at or below",
+    "HKD 113.51"
+   ],
+   [
+    "Expected / yr",
+    "44.8%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "30.6%"
+   ]
+  ]
+ },
+ {
+  "name": "000651.SHE",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": true,
+  "state": "At or below value",
+  "mid": 79.72546332088682,
+  "price": 38.83,
+  "withheld": false,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "CNY 38.83"
+   ],
+   [
+    "Estimated value",
+    "CNY 79.73"
+   ],
+   [
+    "Buy at or below",
+    "CNY 79.73"
+   ],
+   [
+    "Expected / yr",
+    "40.2%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "48.7%"
+   ]
+  ]
+ },
+ {
+  "name": "WLN.PA",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 10.562,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "GPGI.US",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 12.6,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "BAP.US",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 381.21,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "list",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buyCount": 138,
+  "listedSample": [
+   "LIGHT.AS",
+   "LULU.US",
+   "EEFT.US",
+   "BLDR.US",
+   "OTEX.TO",
+   "DEVL.F",
+   "PRG.US",
+   "ATKR.US"
+  ],
+  "wrongBuys": [],
+  "staleOnList": [],
+  "overflow": false
+ },
+ {
+  "name": "method",
+  "width": 390,
+  "height": 844,
+  "pass": true
+ },
+ {
+  "name": "TGS.US",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 25.71,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "LOMA.US",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Above value",
+  "mid": 4.685284097743189,
+  "price": 10.12,
+  "withheld": false,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "$10.12"
+   ],
+   [
+    "Estimated value",
+    "$4.69"
+   ],
+   [
+    "Buy at or below",
+    "$4.69"
+   ],
+   [
+    "Expected / yr",
+    "6.1%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "216.0%"
+   ]
+  ]
+ },
+ {
+  "name": "TEO.US",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 12.37,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "PETR3.SA",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Above value",
+  "mid": 59.57303538039278,
+  "price": 63.06,
+  "withheld": false,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "BRL 63.06"
+   ],
+   [
+    "Estimated value",
+    "BRL 59.57"
+   ],
+   [
+    "Buy at or below",
+    "BRL 59.57"
+   ],
+   [
+    "Expected / yr",
+    "15.7%"
+   ],
+   [
+    "Required",
+    "16.5%"
+   ],
+   [
+    "Price / value",
+    "105.9%"
+   ]
+  ]
+ },
+ {
+  "name": "YPF.US",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 50.04,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "JBS.US",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 12.98,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "PDD.US",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 81.35,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "ATHM.US",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Below value",
+  "mid": 51.162478342936524,
+  "price": 20.67,
+  "withheld": false,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "$20.67"
+   ],
+   [
+    "Estimated value",
+    "$51.16"
+   ],
+   [
+    "Buy at or below",
+    "$51.16"
+   ],
+   [
+    "Expected / yr",
+    "Cash covers price"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "40.4%"
+   ]
+  ]
+ },
+ {
+  "name": "EMBJ.US",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 71.16,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "CPAC.US",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Below value",
+  "mid": 15.444975365067958,
+  "price": 12.27,
+  "withheld": false,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "$12.27"
+   ],
+   [
+    "Estimated value",
+    "$15.44"
+   ],
+   [
+    "Buy at or below",
+    "$15.44"
+   ],
+   [
+    "Expected / yr",
+    "11.8%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "79.4%"
+   ]
+  ]
+ },
+ {
+  "name": "PAGS.US",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 11.16,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "STNE.US",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 12.46,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "TME.US",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 8.38,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "001800.KO",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": true,
+  "state": "At or below value",
+  "mid": 51365.13871531641,
+  "price": 22600,
+  "withheld": false,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "KRW 22,600.00"
+   ],
+   [
+    "Estimated value",
+    "KRW 51,365.14"
+   ],
+   [
+    "Buy at or below",
+    "KRW 51,365.14"
+   ],
+   [
+    "Expected / yr",
+    "25.4%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "44.0%"
+   ]
+  ]
+ },
+ {
+  "name": "192080.KO",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": true,
+  "state": "At or below value",
+  "mid": 160287.17572774817,
+  "price": 57700,
+  "withheld": false,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "KRW 57,700.00"
+   ],
+   [
+    "Estimated value",
+    "KRW 160,287.18"
+   ],
+   [
+    "Buy at or below",
+    "KRW 160,287.18"
+   ],
+   [
+    "Expected / yr",
+    "49.6%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "36.0%"
+   ]
+  ]
+ },
+ {
+  "name": "009970.KO",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": true,
+  "state": "At or below value",
+  "mid": 709699.3291707945,
+  "price": 174400,
+  "withheld": false,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "KRW 174,400.00"
+   ],
+   [
+    "Estimated value",
+    "KRW 709,699.33"
+   ],
+   [
+    "Buy at or below",
+    "KRW 709,699.33"
+   ],
+   [
+    "Expected / yr",
+    "53.3%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "24.6%"
+   ]
+  ]
+ },
+ {
+  "name": "2313.HK",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": true,
+  "state": "At or below value",
+  "mid": 113.50611451759657,
+  "price": 34.78,
+  "withheld": false,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "HKD 34.78"
+   ],
+   [
+    "Estimated value",
+    "HKD 113.51"
+   ],
+   [
+    "Buy at or below",
+    "HKD 113.51"
+   ],
+   [
+    "Expected / yr",
+    "44.8%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "30.6%"
+   ]
+  ]
+ },
+ {
+  "name": "000651.SHE-price-reread",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "firstError": "AssertionError [ERR_ASSERTION]: 000651.SHE share price: expected CNY 38.83"
+ },
+ {
+  "name": "000651.SHE",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": true,
+  "state": "At or below value",
+  "mid": 79.72546332088682,
+  "price": 38.83,
+  "withheld": false,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "CNY 38.83"
+   ],
+   [
+    "Estimated value",
+    "CNY 79.73"
+   ],
+   [
+    "Buy at or below",
+    "CNY 79.73"
+   ],
+   [
+    "Expected / yr",
+    "40.2%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "48.7%"
+   ]
+  ]
+ },
+ {
+  "name": "WLN.PA",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 10.562,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "GPGI.US",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 12.6,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "BAP.US",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 381.21,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ }
+]

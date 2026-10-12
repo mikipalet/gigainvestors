@@ -137,6 +137,16 @@ it('does not publish an unresolved core metric to any index or dossier',()=>{
  expect(Object.keys(files).some(k=>k.startsWith('dossiers/'))).toBe(false);
  expect(files['index/default.json']).toEqual([]);
 });
+it('publishes a company that fails a test Buy requires as not a Buy, even with another test unclear (3.8.3)',()=>{
+ const a=analysisFixture();a.tests.economics.result='unclear';a.tests.moat.result='fail';
+ expect(isDecided(a)).toBe(true);
+ const {files}=buildOutput({analyses:[a],holdersByTicker:{},investorNames:{},fx:{}});
+ const row=(files['index/US.json'] as Array<{id:string;b?:boolean;t:string}>|undefined)?.find(r=>r.id==='TEST.US');
+ expect(row).toBeDefined();expect(row!.b).not.toBe(true);expect(row!.t[1]).toBe('F');expect(row!.t[2]).toBe('N');
+ // A failed earnings-resilience test is evidence only: it decides nothing.
+ const b=analysisFixture();b.tests.economics.result='unclear';b.tests.understandable.result='fail';
+ expect(isDecided(b)).toBe(false);
+});
 it('short history stays findable with a neutral dossier without per-test gap strings',()=>{
  const a=analysisFixture(4);expect(shortHistory(a)).toBe(true);
  const {files}=buildOutput({analyses:[a],holdersByTicker:{},investorNames:{},fx:{}});

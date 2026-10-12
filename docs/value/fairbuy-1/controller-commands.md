@@ -4,7 +4,7 @@ Future controller procedure only; none of these commands has been executed. The 
 
 Method 3.8.0 changes code only. There is no corpus overlay and no verdict-freeze change: the reviewed data-error freeze (41 ids) stays as it is and keeps those companies' last published records. Publisher and post-publisher read the publish token with `--env-file` and never print it. Any failure leaves the runner paused for inspection.
 
-Run after a nightly has published and while the runner sleeps (between about 10:00 and 03:00 UTC). If it is run on a later day than 2026-10-12, the `verify` step will show that the published Buy list differs from the committed snapshot; in that case follow the note at the end instead of editing the committed file.
+Run after a nightly has published and while the runner sleeps (between about 10:00 and 03:00 UTC). The agent's proof bound the live archive 529eb5eb (nightly of 2026-10-12, live check passed): 73 Buys under 3.7.1 become 175 under 3.8.0 (Western 51 -> 140), 102 added, none removed. On 2026-10-12 the published 3.8.0 Buy list must equal `docs/value/forward-test/2026-10-12-buy-list.json` (175 ids); the `verify` step checks that. If it is run on a later day than 2026-10-12, the `verify` step will show that the published Buy list differs from the committed snapshot; in that case follow the note at the end instead of editing the committed file.
 
 ```bash
 set -euo pipefail
@@ -88,6 +88,8 @@ test "$(git -C "$live/publish-repo" rev-parse HEAD)" = \
 test ! -e "$live/publish-repo/.git/value-publish-pending.json"
 # Keep the publication's own verdict-change attribution log with the live corpus.
 cp "$stage/staging/verdict-changes.json" "$live/staging/verdict-changes-3.8.0-release.json"
+# Score once now so the log starts on release day (appends to forward-test/scores.jsonl only).
+VALUE_CORPUS_DIR="$live" node --import tsx scripts/value/forward-test.ts score || :
 
 cd ~/data/value-fairbuy
 python3 docs/value/regress-2/harness/controller-runner.py resume "$paused"

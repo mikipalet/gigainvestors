@@ -69,6 +69,10 @@ check_publication() {
   }
   awk '/^coverage:/' "$verify_log"
 }
+score_forward_test() {
+  # Method 3.8.0 forward test: score the frozen Buy list against SPY and EFA. Log only; never fatal.
+  node --import tsx scripts/value/forward-test.ts score >> "$VALUE_CORPUS_DIR/logs/$cycle_date-forward-test.log" 2>&1 || :
+}
 publish_available() {
   local code
   # Public logo sources do not consume the financial-data budget.
@@ -120,6 +124,7 @@ while true; do
     VALUE_NO_EODHD=1 run_stage yields || :
     VALUE_NO_EODHD=1 run_analysis
     publish_available || :
+    score_forward_test
     run_stage status || :
     if [[ "${1:-}" == "--once" ]]; then exit 1; fi
     wait_until_next_run
@@ -146,6 +151,7 @@ while true; do
   STORY_DISK_LEDGER="disk-budget-nightly-$cycle_date.json" run_stage price-story --limit=400 || :
   run_stage share-checks || :
   publish_available || :
+  score_forward_test
   # Residual IDs and evidence are private and must never enter the data repository.
   node -e 'const fs=require("fs"),path=require("path");const file=path.join(process.env.VALUE_CORPUS_DIR,"staging/unresolved-shares.json");if(fs.existsSync(file)){const d=JSON.parse(fs.readFileSync(file));console.log(JSON.stringify({privateShareResidual:d.companies.length,qualityPassResidual:d.companies.filter(r=>r.qualityPass).length,file}))}' >> "$VALUE_CORPUS_DIR/logs/$cycle_date-share-checks.log"
   run_stage status || :

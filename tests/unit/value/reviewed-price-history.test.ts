@@ -46,9 +46,10 @@ it('fetching raw EOD history seeks a compatible Yahoo series before replacing re
  try{expect(await fetchPriceHistory({company,from:'2016-01-01'})).toEqual(previous);expect(requests).toEqual(['eodhd.com','query1.finance.yahoo.com']);}
  finally{vi.unstubAllGlobals();}
 });
-it('rejects a second source that also conflicts rather than installing another unreviewed basis',async()=>{
+it('keeps the released older months when a second source also conflicts, rather than installing another unreviewed basis (3.8.3: newer months still refresh)',async()=>{
  const {fetchPriceHistory}=await import('@/lib/value/price-history');seed(raw);
  vi.stubGlobal('fetch',async()=>Response.json({chart:{result:[{meta:{gmtoffset:0},timestamp:raw.map(([m])=>Date.parse(m+'-01')/1000),indicators:{quote:[{close:raw.map(([,p])=>p)}]}}]}}));
- try{await expect(fetchPriceHistory({company:{id,code:'SPLIT',exchange:'US'} as any,from:'2016-01-01',useYahoo:true})).rejects.toThrow('conflicts with the released share basis');}
+ let conflicts=0;
+ try{expect(await fetchPriceHistory({company:{id,code:'SPLIT',exchange:'US'} as any,from:'2016-01-01',useYahoo:true,onConflict:()=>{conflicts++;}})).toEqual(previous);expect(conflicts).toBe(1);}
  finally{vi.unstubAllGlobals();}
 });

@@ -39,10 +39,13 @@ describe('Petrobras (PETR3.SA): BRL statements labelled USD, against the USD 20-
   expect(fy2025.provenance?.currency?.inputs?.[1]).toContain('revenue 5.58× filing USD');
   expect(years.find(y=>y.fy===2024)!.currency).toBe('BRL');
  });
- it('drops FY2023, whose income statement is in dollars and balance sheet in reais',()=>{
-  expect(years.some(y=>y.fy===2023)).toBe(false);
+ it('keeps only the FY2023 income statement the 20-F confirms in dollars; its balance sheet and cash flow (reais) are left out',()=>{
+  const fy2023=years.find(y=>y.fy===2023)!;
+  expect([fy2023.currency,fy2023.revenue,fy2023.netIncome]).toEqual(['USD',102409000000,24884000000]);
+  expect([fy2023.equity,fy2023.totalAssets,fy2023.ocf,fy2023.statementCoverage?.balance,fy2023.statementCoverage?.cashFlow]).toEqual([null,null,null,false,false]);
   expect(dropped).toHaveLength(1);
-  expect(dropped[0].reason).toMatch(/^Statement currency changed in 2023: FY2023 mixes currencies under one USD label \(revenue = filing USD, netIncome = filing USD, .*equity 4\.89× filing USD/);
+  expect(dropped[0].blanked).toEqual(['cash-flow statement','balance sheet']);
+  expect(dropped[0].reason).toMatch(/^Statement currency changed in 2023: FY2023 mixes currencies under one USD label \(revenue = filing USD, netIncome = filing USD, .*equity 4\.89× filing USD.*\); the FY2023 cash-flow statement and balance sheet are not used, the income statement \(USD, as the filing confirms\) is kept$/);
  });
  it('leaves years without a filing to the series checks (the label change then ends the history)',()=>{
   expect(years.find(y=>y.fy===2022)!.currency).toBe('USD');
@@ -79,6 +82,58 @@ it('drops a YPF year whose cash-flow statement is in dollars inside peso stateme
  const vendor=[year('2024-12-31','ARS',{revenue:17895031000000,ocf:5869000000,totalAssets:30272730000000})];
  const r=verifyStatementCurrency(vendor,[sec],homeCurrencies({currency:'USD',country:'US'}),rates,'2026-10-12');
  expect(r.years).toEqual([]);expect(r.dropped[0].reason).toContain('ocf = filing USD');
+});
+
+describe('one older year mixing currencies keeps its confirmed statements (3.8.3)',()=>{
+ // PDD Holdings FY2022 (20-F, RMB with a US-dollar convenience translation): the vendor
+ // cash-flow total is the dollar figure; income statement and balance sheet are the RMB statements.
+ const unit=(cny:Fact[],usd:Fact[])=>({units:{CNY:cny,USD:usd}});
+ const sec={facts:{facts:{'us-gaap':{
+  Revenues:unit([flow(2022,130557589e3)],[flow(2022,18929e6)]),NetIncomeLoss:unit([flow(2022,31538062e3)],[flow(2022,4572e6)]),
+  NetCashProvidedByUsedInOperatingActivities:unit([flow(2022,48785640e3)],[flow(2022,7073e6)]),
+  Assets:unit([stock(2022,247645218e3)],[stock(2022,35905e6)]),StockholdersEquity:unit([stock(2022,125219802e3)],[stock(2022,18155e6)])}}},source:'https://www.sec.gov/Archives/edgar/data/1737806/pdd-20221231x20f.htm'};
+ const vendor=[
+  year('2021-12-31','CNY',{revenue:93949939e3,netIncome:7768670e3,ocf:24689812e3,totalAssets:197908030e3,equity:89212178e3}),
+  year('2022-12-31','CNY',{revenue:130557589e3,netIncome:31538062e3,ocf:7073e6,capex:52e6,dividendsPaid:0,totalAssets:247645218e3,equity:125219802e3,cash:34326192e3}),
+  year('2023-12-31','CNY',{revenue:247639077e3,netIncome:60026544e3,ocf:94162135e3,totalAssets:347991250e3,equity:183375565e3}),
+ ];
+ const r=verifyStatementCurrency(vendor,[sec],homeCurrencies({currency:'USD',country:'CN'}),rates,'2026-10-12');
+ it('keeps FY2022 so the history stays continuous; only its dollar cash-flow statement is blank',()=>{
+  expect(r.years.map(y=>y.fy)).toEqual([2021,2022,2023]);
+  const y=r.years[1];
+  expect([y.revenue,y.netIncome,y.totalAssets,y.equity,y.cash]).toEqual([130557589e3,31538062e3,247645218e3,125219802e3,34326192e3]);
+  expect([y.ocf,y.capex,y.dividendsPaid,y.statementCoverage?.cashFlow]).toEqual([null,null,null,false]);
+  expect(y.sourceWarnings).toContain('FY2022 cash-flow statement: vendor amounts are not in the CNY label of the filing; not used');
+  expect(r.dropped.map(d=>[d.fy,d.blanked])).toEqual([[2022,['cash-flow statement']]]);
+ });
+ it('still records a statement-currency change, so no published figure from the mislabelled rows is retained',()=>{
+  const events=companyEvents({id:'PDD.US',currency:'CNY',years:r.years,integrity:{ok:true,reasons:[],notes:r.dropped.map(d=>d.reason)},fetchedAt:'',splits:[]});
+  expect(statementCurrencyChanged({events})).toBe(true);
+ });
+ it('blanks a balance sheet in dollars inside a soles year (Cementos Pacasmayo FY2019)',()=>{
+  const pen=filing('PEN',{Revenue:[flow(2019,1392709e3)],ProfitLossAttributableToOwnersOfParent:[flow(2019,152558e3)],CashFlowsFromUsedInOperatingActivities:[flow(2019,277466e3)],Assets:[stock(2019,3116383e3)],Equity:[stock(2019,1572098e3)]});
+  const v=[year('2019-12-31','PEN',{revenue:1392709e3,netIncome:152558e3,ocf:277466e3,totalAssets:940376e3,equity:474380e3,cash:20e6})];
+  const out=verifyStatementCurrency(v,[pen],homeCurrencies({currency:'USD',country:'PE'}),{...rates,PEN:.2655},'2026-10-12');
+  expect(out.years[0].revenue).toBe(1392709e3);expect([out.years[0].totalAssets,out.years[0].cash]).toEqual([null,null]);
+  expect(out.dropped[0].blanked).toEqual(['balance sheet']);
+ });
+ it('confirms a label the dated exchange rate explains (Embraer FY2023: BRL accounts beside a USD 20-F)',()=>{
+  const usd=filing('USD',{Revenue:[flow(2023,5269e6)],ProfitLossAttributableToOwnersOfParent:[flow(2023,148e6)],CashFlowsFromUsedInOperatingActivities:[flow(2023,1083e6)],Equity:[stock(2023,2531e6)]});
+  const v=[year('2023-12-31','BRL',{revenue:5269e6*4.92,netIncome:148e6*4.91,ocf:1083e6,equity:2531e6*4.51,cash:9e9})];
+  const out=verifyStatementCurrency(v,[usd],homeCurrencies({currency:'USD',country:'US'}),rates,'2026-10-12',['BRL']);
+  expect(out.years).toHaveLength(1);expect([out.years[0].ocf,out.years[0].revenue]).toEqual([null,5269e6*4.92]);
+  expect(out.dropped[0].blanked).toEqual(['cash-flow statement']);
+ });
+ it('relabels amounts on the home-currency filing scale when no filing states the label currency (a USD label on peso rows)',()=>{
+  const pen=filing('PEN',{Revenue:[flow(2025,28.0e9)],ProfitLossAttributableToOwnersOfParent:[flow(2025,6.6e9)],Assets:[stock(2025,268e9)]});
+  const v=[year('2025-12-31','USD',{revenue:28.9e9,netIncome:6.93e9,totalAssets:262.1e9})];
+  const out=verifyStatementCurrency(v,[pen],homeCurrencies({currency:'USD',country:'PE'}),{...rates,PEN:.2655},'2026-10-12');
+  expect(out.years[0].currency).toBe('PEN');expect(out.years[0].provenance?.currency?.inputs?.[0]).toBe('Vendor label USD; amounts are PEN');
+ });
+ it('drops the year when no statement is confirmed in its label (YPF)',()=>{
+  const sec2=filing('USD',{Revenue:[flow(2024,19293e6)],CashFlowsFromUsedInOperatingActivities:[flow(2024,5869e6)],Assets:[stock(2024,29391e6)]});
+  expect(verifyStatementCurrency([year('2024-12-31','ARS',{revenue:17895031000000,ocf:5869000000,totalAssets:30272730000000})],[sec2],homeCurrencies({currency:'USD',country:'US'}),rates,'2026-10-12').years).toEqual([]);
+ });
 });
 
 describe('series checks without a filing (Budweiser APAC, 1876.HK)',()=>{

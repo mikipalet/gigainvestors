@@ -35,6 +35,7 @@ export default async function priceHistory({ only, limit, force = false }: { onl
   let written = 0;
   const failures = new CompanyFailures();
   let attempted = 0;
+  const kept: string[] = [];
   for (const company of companies) {
     const yahooOnly = usesYahooHistory(company);
     if (!preparationErrors.has(company.id) && !yahooOnly && budgetUsage().history >= T.budget.priceHistoryCalls) {
@@ -48,7 +49,7 @@ export default async function priceHistory({ only, limit, force = false }: { onl
       const useYahoo = yahooOnly || Math.max(used!, budgetUsage().used) + T.budget.historyCost > T.budget.dailyCalls;
       let prices: PriceHistory;
       try {
-        prices = await fetchPriceHistory({ company, from: from.toISOString().slice(0, 10), useYahoo });
+        prices = await fetchPriceHistory({ company, from: from.toISOString().slice(0, 10), useYahoo, onConflict: () => { kept.push(company.id); } });
       } finally {
         // Failed requests can still consume the shared provider budget.
         if (!useYahoo) {
@@ -73,5 +74,7 @@ export default async function priceHistory({ only, limit, force = false }: { onl
     }
   }
   console.log(`price-history: ${written} written`);
+  // Not a failure: newer months refreshed, older released months kept on their share basis.
+  if (kept.length) console.log(`price-history: ${kept.length} kept released older months (refresh conflicts with the released share basis): ${kept.join(", ")}`);
   failures.finish("price-history", attempted);
 }

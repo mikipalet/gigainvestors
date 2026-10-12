@@ -68,6 +68,17 @@ function loanAssets(balance: RecordValue): number | null {
   return components.length ? components.reduce((sum, value) => sum + value, 0) : null;
 }
 
+/** Consolidated profit before non-controlling interests, only when the row
+ * reconciles: parent profit plus the minority share equals profit from
+ * continuing operations (within 1%). Without it, consolidated cash-flow
+ * adjustments cannot be allocated to the parent. */
+function consolidatedProfit(income:Record<string,unknown>):{totalNetIncome?:number} {
+  const parent=number(income.netIncome),minority=number(income.minorityInterest),total=number(income.netIncomeFromContinuingOps);
+  // Only a minority share of profit (total above parent profit) is allocated.
+  if(parent===null||minority===null||minority===0||total===null||!(total>0)||parent<0||parent>total)return {};
+  return Math.abs(parent+Math.abs(minority)-total)<=.01*total?{totalNetIncome:total}:{};
+}
+
 export function normalizeEodhd(raw: unknown, id: Id, {corroboratingYears=[],currencyTranslations=[],onSourceYears}: {corroboratingYears?:Year[];currencyTranslations?:CurrencyTranslation[];onSourceYears?:(years:Year[])=>void} = {}): { fundamentals: Fundamentals; patch: Partial<Company>; marketCap: { value: number | null; currency: string | null } } {
   const data = record(raw);
   const general = record(data.General);
@@ -140,6 +151,7 @@ export function normalizeEodhd(raw: unknown, id: Id, {corroboratingYears=[],curr
       revenue: number(income.totalRevenue), grossProfit: number(income.grossProfit),
       operatingIncome: number(income.operatingIncome) ?? number(income.ebit), preTaxIncome: number(income.incomeBeforeTax),
       taxExpense: number(income.incomeTaxExpense), netIncome: number(income.netIncome),
+      ...consolidatedProfit(income),
       interestExpense: number(income.interestExpense),
       da: number(income.depreciationAndAmortization) ?? number(income.reconciledDepreciation) ?? number(cash.depreciationAndAmortization) ?? number(cash.depreciation),
       sbc: number(cash.stockBasedCompensation ?? cash.shareBasedCompensation ?? cash.stockBasedCompensationExpense), nonRecurring: number(income.nonRecurring ?? income.restructuringCharges ?? income.restructuringExpense),

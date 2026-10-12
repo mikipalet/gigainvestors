@@ -17,11 +17,12 @@ import {FilingSignals} from './DossierNumbers';
 import {JudgementLine} from './BusinessSection';
 import {FilingEvidence} from './FilingEvidence';
 import {AnnualValueBar} from './AnnualValueBar';
+import {analysisCurrency} from '@/lib/value/currency';
 
 function yearLabel(label:string){return label.replace('Earnings','Profit').replace('Cash / earnings','Cash / profit').replace('Working capital / sales','WC / sales');}
 function Numbers({items}:{items:Array<[string,string]>}){return <dl className="drawer-numbers">{items.map(([label,value])=><div key={label}><dt>{label}</dt><dd>{value}</dd>{' '}</div>)}</dl>}
 function QualityChart({dossier,test}:{dossier:Dossier;test:TestOutcome}){
- const {ref,width,height}=useWidth(),currency=dossier.reportingCurrency??dossier.company.currency;
+ const {ref,width,height}=useWidth(),currency=analysisCurrency(dossier);
  const metric=primaryTileMetric(test,dossier.company.kind,dossier.tests.understandable.series.netIncome??dossier.series.netIncome),warnings=metric.id==='financialRedFlags',series=metric.series;
  const book=(test.series.bookPerShare??dossier.tests.economics?.series.bookPerShare??dossier.series.bookPerShare??[]).filter(([fy])=>fy<=(test.provisional?.fy??dossier.historyCoverage?.last??Infinity));
  const bookContext=test.key==='accounting'&&'financialRedFlags' in test.metrics&&!series.some(p=>p[1]!=null)&&!test.jev.some(a=>a.probability!==null&&Number.isFinite(a.probability))&&book.some(p=>p[1]!=null);
@@ -51,7 +52,7 @@ function evidenceYears(dossier:Dossier,test:TestOutcome){
  return table;
 }
 export function EvidencePanel({dossier,test}:{dossier:Dossier;test:TestOutcome}){
- const currency=dossier.reportingCurrency??dossier.valuation?.currency??dossier.company.currency;
+ const currency=analysisCurrency(dossier);
  const metric=primaryTileMetric(test,dossier.company.kind,dossier.tests.understandable.series.netIncome??dossier.series.netIncome),table=evidenceYears(dossier,test),window=retainedWindow(test);
  const values=metric.series.flatMap(([,n])=>n!=null&&Number.isFinite(n)?[n]:[]).sort((a,b)=>a-b),mid=Math.floor(values.length/2);
  const fmt=(value:number|null)=>formatMetric({value,format:metric.chartFormat==='money'?'money':metric.chartFormat==='index'?'count':metric.chartFormat==='pct'||metric.id==='opMarginCv'?'pct':metric.format,currency,returnRatio: /roic|roe|rote/i.test(metric.chart)});

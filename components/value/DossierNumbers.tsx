@@ -6,6 +6,7 @@ import {ChartInteraction} from './viz/ChartInteraction';
 import {useWidth} from '@/lib/value/viz/use-width';
 import {MiniSeries} from './viz/MiniSeries';
 import {retainedWindow} from '@/lib/value/drawer-data';
+import {analysisCurrency} from '@/lib/value/currency';
 
 export function TileNumbers({metric,test,currency}:{metric:TileMetric;test:TestOutcome;currency:string}) {
  const format:MetricFormat=metric.chartFormat==='index'?'count':metric.chartFormat==='ratio'?'x':metric.chartFormat??(test.key==='understandable'&&metric.id==='opMarginCv'?'pct':metric.format);
@@ -20,7 +21,7 @@ export function TileNumbers({metric,test,currency}:{metric:TileMetric;test:TestO
 }
 
 export function FinancialHighlights({dossier:d}:{dossier:Dossier}) {
- const currency=d.reportingCurrency??d.valuation?.currency??d.company.currency;
+ const currency=analysisCurrency(d);
  const short=d.status==='insufficient_data';
  const candidates:Array<[string,string,MetricFormat]>=short?
  [['revenuePerShare','Revenue / share','money'],['ownerEarningsPerShare','Owner earnings / share','money'],['tangibleBookValuePerShare','Tangible book / share','money'],['bookValuePerShare','Book value / share','money']]:d.company.kind==='operating'?

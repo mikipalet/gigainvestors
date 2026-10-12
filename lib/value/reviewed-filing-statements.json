@@ -1,0 +1,15 @@
+{
+ "version": 1,
+ "rule": "When the vendor's annual rows mix the currencies of the issuer's 20-F in more than one year or in the latest year, the annual statements are built from the 20-F XBRL facts, in the 20-F reporting currency, for every consecutive year the filings cover; vendor annual, trailing, interim and quarterly rows are not used.",
+ "issuers": {
+  "PETR3.SA": {"facts": ["raw/sec-companyfacts/PBR.US.json", "raw/sec-annual/PETR3.SA.json"], "cik": 1119639, "currency": "USD", "reviewed": "2026-10-12",
+   "reason": "Vendor rows mix the reais accounts filed in Brazil with the US-dollar 20-F under USD labels (FY2023 income in dollars, equity and cash flow in reais; FY2024-FY2025 reais labelled USD).",
+   "source": "https://www.sec.gov/Archives/edgar/data/1119639/000129281426002168/pbrform20f_2025.htm"},
+  "YPF.US": {"facts": ["raw/sec-companyfacts/YPF.US.json", "raw/sec-annual/YPF.US.json"], "cik": 904851, "currency": "USD", "reviewed": "2026-10-12",
+   "reason": "YPF presents its 20-F in US dollars (its functional currency) from FY2020 comparatives; the vendor rows are pesos with dollar cash flows inside (FY2021-FY2024).",
+   "source": "https://www.sec.gov/Archives/edgar/data/904851/000119312526126363/d95578d20f.htm"},
+  "JBS.US": {"facts": ["raw/sec-companyfacts/JBS.US.json", "raw/sec-annual/JBS.US.json"], "cik": 1791942, "currency": "USD", "reviewed": "2026-10-12",
+   "reason": "JBS N.V. reports in US dollars; the vendor's FY2025 row is the reais accounts of JBS S.A. under a USD label (sales 471.1bn against US$86.2bn in the 20-F).",
+   "source": "https://www.sec.gov/Archives/edgar/data/1791942/000121390026034213/ea0282342-20f_jbsnv.htm"}
+ }
+}

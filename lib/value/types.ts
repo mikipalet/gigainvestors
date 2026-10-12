@@ -161,6 +161,8 @@ export interface Fundamentals {
   qualityQuarters?: import('./quality-ltm').QualityQuarter[];
   id: Id;
   currency: string; // reporting currency
+  /** US-dollar measuring rates of a hyperinflationary reporter's statements (lib/value/hyperinflation). */
+  measure?: import('./hyperinflation').Measure;
   ttm?: Year | null; // four quarters, or annual + current H1 - comparative H1
   years: Year[]; // ascending fy, one per fy
   integrity: { ok: boolean; reasons: string[]; notes?: string[] }; // Optional for older corpus files.
@@ -266,6 +268,8 @@ export interface Analysis {
   judgement?: PublicJudgement;
   thesis?: import("./thesis/types").PublicThesis;
   reportingCurrency?: string;
+  /** Hyperinflationary reporter: tests, valuation, value history and series are measured in this currency (IAS 29 / IAS 21.42). */
+  measure?: { currency: string; reporting: string; note: string };
   author?: string;
   dataQualityFlags?: string[];
   shareCount?: { value: number; source: "yahoo-shares" };

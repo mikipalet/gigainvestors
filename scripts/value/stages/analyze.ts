@@ -1,6 +1,6 @@
 import {assertFilingIssuer,inDistinctIssuerGroup} from '../../../lib/value/issuer-separation';
 import {balanceSheetsFor,correctFinancialBalances} from '../../../lib/value/latest-balance';
-import {correctCachedAnnualSources,correctCachedTrailingSources,issuerAnnualSources,verifyCachedStatementCurrency} from '../../../lib/value/annual-source-corrections';
+import {cachedHyperinflationMeasure,filingLabels,correctCachedAnnualSources,correctCachedTrailingSources,issuerAnnualSources,verifyCachedStatementCurrency} from '../../../lib/value/annual-source-corrections';
 import {consistentBalanceSheets,consistentTrailing} from '../../../lib/value/statement-currency';
 import {METHOD_VERSION} from '../../../lib/value/method-version';
 import {publicBusiness} from '../../../lib/value/flags/public';
@@ -16,6 +16,7 @@ import { universeCompanies } from '../../../lib/value/companies';
 import { supplementFinancialFacts, withFinancialPeers, type CompanyFacts } from '../../../lib/value/financial-facts';
 import { esefShareInputs } from "../../../lib/value/italy/shares";
 import { normalizeEodhd, refreshEodhdBalance } from "../../../lib/value/normalize-eodhd";
+import { filingStatements } from "../../../lib/value/filing-statements";
 import { checkIntegrity } from "../../../lib/value/integrity";
 import { currentShareInputs, trailingInputs } from "../../../lib/value/valuation-inputs";
 import { readPrices } from "../../../lib/value/price-files";
@@ -128,7 +129,21 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
         if (!cachedFundamentals) throw new Error('Selected fundamentals disappeared');
         const priceHistory = readPriceHistory(company.id);
         const raw = readCorpusJson<unknown>(`raw/eodhd/${company.id}.json`);
-        const normalized = raw ? normalizeEodhd(raw, company.id).fundamentals : null;
+        let sourceYears: Year[] = [];
+        let normalized = raw ? normalizeEodhd(raw, company.id, { onSourceYears: years => { sourceYears = years; } }).fundamentals : null;
+        // A vendor label that flips for one year cuts the normalized (and cached)
+        // history at the flip. When the annual filing restores that year's label,
+        // apply it to the vendor rows before the cut, so the history survives.
+        const relabelled = raw && normalized?.integrity.notes?.some(note => note.startsWith('reporting currency changed'))
+          ? filingLabels(company, sourceYears, raw, readCorpusJson) : new Map<string, Year>();
+        if (normalized && relabelled.size) {
+          const relabel = (y: Year) => { const r = relabelled.get(y.end); return r && r.currency !== y.currency ? { ...y, currency: r.currency, provenance: { ...y.provenance, currency: r.provenance!.currency } } : y; };
+          const restored: Fundamentals = { ...normalized, years: deriveYears(sourceYears.map(relabel)), integrity: { ok: true, reasons: [] } };
+          restored.integrity = checkIntegrity(restored, { source: "eodhd" });
+          normalized = restored;
+          cachedFundamentals.years = cachedFundamentals.years.map(relabel);
+          cachedFundamentals.integrity = { ...cachedFundamentals.integrity, notes: (cachedFundamentals.integrity.notes ?? []).filter(note => !note.startsWith('reporting currency changed')) };
+        }
         const mapped = new Map(normalized?.years.map(year => [year.end, year]));
         const fundamentals = { ...cachedFundamentals, years: deriveYears(normalized
           ? fillYears(cachedFundamentals.years, normalized.years) : cachedFundamentals.years) };
@@ -151,6 +166,13 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
         fundamentals.splits = completeCachedSplits(company.id,fundamentals.splits,readCorpusJson);
         fundamentals.years = completeCachedYears(company,fundamentals.years,readCorpusJson);
         fundamentals.years = correctCachedAnnualSources(company,fundamentals.years,raw,readCorpusJson,fundamentals.splits);
+        // Reviewed issuers whose vendor rows mix their 20-F currencies: statements come from the 20-F.
+        const filed = filingStatements(company,readCorpusJson);
+        if (filed) {
+          fundamentals.years = filed.years;
+          fundamentals.currency = filed.currency;
+          fundamentals.integrity = { ...fundamentals.integrity, notes: [filed.note] };
+        }
         // Amounts must be in the currency they are labelled with (filings, then the series itself).
         const statementCurrency = verifyCachedStatementCurrency(company,fundamentals.years,readCorpusJson,raw);
         fundamentals.years = statementCurrency.years;
@@ -158,6 +180,9 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
         if (currencyNotes.length) fundamentals.integrity = { ...fundamentals.integrity, notes: [...new Set([...(fundamentals.integrity.notes ?? []), ...currencyNotes])] };
         fundamentals.integrity = checkIntegrity(fundamentals,{source:company.source,priceHistory});
         fundamentals.years = fundamentals.years.map(y=>({...y,peerCreditLossRate:peers.get(company.id)?.get(y.end)??y.peerCreditLossRate}));
+        // Nominal amounts of a hyperinflationary currency are not comparable across years.
+        const measured = cachedHyperinflationMeasure(company,fundamentals.years,readCorpusJson);
+        if (measured) { fundamentals.years = measured.years; fundamentals.measure = measured.measure; } else delete fundamentals.measure;
         if(!raw)fundamentals.balanceSheets=[...(fundamentals.balanceSheets??[]),...balanceSheetsFor(company.id,null)];
         if(company.kind!=='operating')fundamentals.balanceSheets=correctFinancialBalances(fundamentals.balanceSheets??[],sectorFacts,new Date().toISOString().slice(0,10));
         fundamentals.ttm=correctCachedTrailingSources(company.id,fundamentals.ttm,readCorpusJson);
@@ -167,6 +192,8 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
         if(balances.rejected.length||trailing.rejected)fundamentals.integrity={...fundamentals.integrity,notes:[...new Set([...(fundamentals.integrity.notes??[]),...balances.rejected,...(trailing.rejected?[trailing.rejected]:[])])]};
         fundamentals.currentCommonBalance=readCorpusJson<import('../../../lib/value/types').CurrentCommonBalance>(`raw/reviewed-common-balance/${company.id}.json`)??undefined;
         fundamentals.qualityQuarters=cachedQualityQuarters(company.id,readCorpusJson);
+        // The vendor's trailing, interim and quarterly rows share the defect of its annual rows.
+        if (filed) { fundamentals.ttm = null; fundamentals.balanceSheets = []; fundamentals.qualityQuarters = []; }
         const shareInputs = company.source === 'esef' && !fundamentals.years.at(-1)?.dilutedShares
           ? await esefShareInputs(company, usdRate)
           : currentShareInputs(raw, prices[company.id]?.[0] ?? null, company.currency);

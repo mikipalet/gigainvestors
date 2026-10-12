@@ -33,7 +33,7 @@ const annualFiling=(f:Fact)=>['10-K','10-K/A','20-F','20-F/A','40-F','40-F/A'].i
  || ['6-K','6-K/A'].includes(f.form??'')&&f.fp==='FY';
 export type CompanyFacts = {facts:Record<string,Record<string,{units:Record<string,Fact[]>}>>};
 /** Match annual duration and currency, never sum duplicate comparative or quarterly facts. */
-export function yearsFromCompanyFacts(raw:CompanyFacts,currency:string,source:string):Year[] {
+export function yearsFromCompanyFacts(raw:CompanyFacts,currency:string,source:string,extraTags:Record<string,string[]>={}):Year[] {
  const namespaces=Object.values(raw.facts??{}), byEnd=new Map<string,Year>();
  if(!currency){
   const units=namespaces.flatMap(ns=>[...FIELD_TAGS.netIncome,...FIELD_TAGS.revenue].flatMap(tag=>Object.entries(ns[tag]?.units??{}).filter(([u])=>/^[A-Z]{3}$/.test(u)).flatMap(([unit,fs])=>fs.filter(f=>f.start&&annualFiling(f)).map(f=>({unit,end:f.end}))))).sort((a,b)=>b.end.localeCompare(a.end));
@@ -51,7 +51,7 @@ export function yearsFromCompanyFacts(raw:CompanyFacts,currency:string,source:st
   }
   return selected;
  };
- for(const [field,tags] of Object.entries(FIELD_TAGS)) {
+ for(const [field,tags] of Object.entries(FIELD_TAGS).map(([f,t]):[string,string[]]=>[f,[...t,...(extraTags[f]??[])]])) {
   const unit=field==='dilutedShares'?'shares':/Eps$/.test(field)?`${currency}/shares`:currency;
   for(const [end,{fact,tag}] of pick(tags,INSTANT.has(field),unit)){
    const y=byEnd.get(end)??emptyYear(end,currency);byEnd.set(end,y);

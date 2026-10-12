@@ -5,7 +5,10 @@ import type {Company,Year} from './types';
 
 /** USD per major currency unit, from dated observations (never inferred from the data under test). */
 export type UsdRates=Readonly<Record<string,number>>;
-export interface CurrencyDrop {fy:number;end:string;reason:string;source:string}
+export interface CurrencyDrop {fy:number;end:string;reason:string;source:string;
+ /** Set when only these statements of the year were left out; the year itself is kept. */
+ blanked?:Statement[]}
+export type Statement='income statement'|'cash-flow statement'|'balance sheet';
 export interface FactSet {facts:CompanyFacts;source:string}
 
 // Listing exchanges are not reporting currencies, but a company's statements are
@@ -118,6 +121,7 @@ export function verifyStatementCurrency(years:Year[],sets:FactSet[],home:string[
   // Only units in which the filing states at least one compared amount at par
   // or in which the vendor label claims the amounts can test the label.
   const testUnits=new Set([...equal.map(c=>major(c.unit)),label]);
+  const everyUnit=compared;
   compared=compared.filter(c=>testUnits.has(major(c.unit)));
   const gross=compared.filter(c=>Math.abs(Math.log(Math.abs(c.ratio)))>=SCALE);
   const describe=(cs:typeof compared)=>cs.map(c=>`${c.field} ${Math.abs(c.ratio-1)<EQUAL?'=':`${Number(Math.abs(c.ratio).toFixed(2))}×`} filing ${c.unit}`).join(', ');
@@ -133,10 +137,33 @@ export function verifyStatementCurrency(years:Year[],sets:FactSet[],home:string[
    :equal.length&&gross.length&&explains(gross,label).length?gross:[];
   if(mixed.length){
    const at=foreign.length?foreign:equal;
+   // Statements the filing confirms in the label currency stay; only the
+   // statement whose amounts are in another currency is left out of the year.
+   // An amount the label currency's exchange rate explains (within 30%) is in the label currency.
+   const inLabelAtRate=(c:Observation&{ratio:number})=>major(c.unit)!==label&&explains([c],major(c.unit)).includes(label);
+   const kept=withoutMislabelledStatements(year,compared,label,inLabelAtRate);
+   if(kept){
+    out.push(kept.year);
+    dropped.push({fy:year.fy,end:year.end,source:mixed[0].source,blanked:kept.blanked,reason:`Statement currency changed in ${year.fy}: FY${year.fy} mixes currencies under one ${year.currency??'unlabelled'} label (${describe([...at,...mixed])}); the FY${year.fy} ${kept.blanked.join(' and ')} ${kept.blanked.length>1?'are':'is'} not used, the ${kept.confirmed.join(' and ')} (${year.currency}, as the filing confirms) ${kept.confirmed.length>1?'are':'is'} kept`});
+    continue;
+   }
    dropped.push({fy:year.fy,end:year.end,source:mixed[0].source,reason:`Statement currency changed in ${year.fy}: FY${year.fy} mixes currencies under one ${year.currency??'unlabelled'} label (${describe([...at,...mixed])}); year not used`});
    continue;
   }
   const labelled=compared.filter(c=>major(c.unit)===label);
+  // No filing amount in the labelled currency, while at least two are within 25%
+  // of the home-currency filing that the label is an exchange rate away from:
+  // the amounts are in the filing currency (restated or redefined, not translated).
+  if(!labelled.length&&!equal.length){
+   const scale=[...new Set(everyUnit.map(c=>major(c.unit)))].filter(u=>home.includes(u)&&u!==label&&(()=>{const k=factor(label,u,rates);return k!==null&&Math.abs(Math.log(k))>=SCALE;})())
+    .filter(u=>{const cs=everyUnit.filter(c=>major(c.unit)===u);return cs.length>=2&&cs.every(c=>c.ratio>0&&Math.abs(Math.log(c.ratio))<=Math.log(1.25));});
+   if(scale.length===1){
+    const cs=everyUnit.filter(c=>major(c.unit)===scale[0]);
+    out.push({...year,currency:scale[0],provenance:{...year.provenance,currency:{source:cs[0].source,field:'currency',method:'derived',
+     inputs:[`Vendor label ${year.currency}; amounts are ${scale[0]}`,`${describe(cs)}: on the filing's ${scale[0]} scale, no ${label} filing amount`,'Amounts unchanged']}}});
+    continue;
+   }
+  }
   if(equal.length||labelled.length<2||gross.length<labelled.length){out.push(year);continue;}
   // Every amount the filing states in the labelled currency is grossly
   // different, by one exchange rate: the amounts are in that other currency.
@@ -152,6 +179,41 @@ export function verifyStatementCurrency(years:Year[],sets:FactSet[],home:string[
   dropped.push({fy:year.fy,end:year.end,source:labelled[0].source,reason:`Statement currency changed in ${year.fy}: FY${year.fy} amounts are not in their ${year.currency} label (${describe(labelled)}, the ${label}/${fits.join(' or ')} rate) and ${fits.join(' or ')} is not the company's home currency; year not used`});
  }
  return withoutScaleBreaks(out,home,rates,dropped);
+}
+
+/** Year fields by the vendor statement they come from. */
+export const STATEMENT_FIELDS:Record<Statement,Array<keyof Year>>={
+ 'income statement':['revenue','grossProfit','costOfSales','operatingIncome','operatingExpenses','preTaxIncome','taxExpense','netIncome','totalNetIncome','commonNetIncome','interestExpense','interestIncome','nonRecurring','dilutedEps','basicEps','dividendsPerShare','fairValueGains','totalIncome','creditLossProvision','nonInterestExpense','netRevenue','da','marginOperatingIncomeJudgement'],
+ 'cash-flow statement':['ocf','capex','sbc','dividendsPaid','commonDividendsPaid','buybacks','issuance','acquisitions','leaseCash','maintenanceCapexJudgement','disclosedMaintenanceCapex'],
+ 'balance sheet':['receivables','loans','inventory','payables','cash','cashAndDeposits','cashAndCashEquivalents','shortTermInvestments','clientAssets','totalDebt','shortTermDebt','leaseLiabilities','equity','netAssets','subscriptionRights','tangibleEquity','preferredEquity','minorityInterest','retainedEarnings','goodwill','intangibles','ppe','totalAssets','totalLiabilities','liabilitiesAndStockholdersEquity','currentAssets','currentLiabilities','deposits','insuranceFloat','insuranceReserves','navPerShare','investmentNav'],
+};
+const ANCHOR_STATEMENT:Record<Anchor,Statement>={revenue:'income statement',netIncome:'income statement',ocf:'cash-flow statement',totalAssets:'balance sheet',equity:'balance sheet'};
+const COVERAGE:Record<Statement,'income'|'cashFlow'|'balance'>={'income statement':'income','cash-flow statement':'cashFlow','balance sheet':'balance'};
+/** A mixed year keeps each statement the filing confirms in the label currency
+ * (an amount equal to the filing in that currency, none contradicting it) and
+ * leaves out each statement with an amount equal to the filing in another
+ * currency or an exchange rate off it. Null when no statement is confirmed. */
+function withoutMislabelledStatements(year:Year,compared:Array<Observation&{ratio:number}>,label:string,inLabelAtRate:(c:Observation&{ratio:number})=>boolean):{year:Year;blanked:Statement[];confirmed:Statement[]}|null {
+ const status=new Map<Statement,'confirmed'|'mislabelled'>();
+ for(const c of compared){
+  const statement=ANCHOR_STATEMENT[c.field],equal=Math.abs(c.ratio-1)<EQUAL,inLabel=major(c.unit)===label;
+  const wrong=equal?!inLabel:inLabel&&Math.abs(Math.log(Math.abs(c.ratio)))>=SCALE;
+  if(wrong)status.set(statement,'mislabelled');
+  else if((equal||inLabelAtRate(c))&&status.get(statement)!=='mislabelled')status.set(statement,'confirmed');
+ }
+ const blanked=[...status].filter(([,s])=>s==='mislabelled').map(([k])=>k),confirmed=[...status].filter(([,s])=>s==='confirmed').map(([k])=>k);
+ if(!blanked.length||!confirmed.length)return null;
+ const y:Year={...year,provenance:{...year.provenance},statementCoverage:{...year.statementCoverage},sourceWarnings:[...(year.sourceWarnings??[])]};
+ for(const statement of blanked){
+  for(const field of STATEMENT_FIELDS[statement]){
+   if(field in y)(y as unknown as Record<string,unknown>)[field]=null;
+   delete y.provenance![field];
+  }
+  if(statement==='balance sheet')delete y.cashExclusion;
+  y.statementCoverage![COVERAGE[statement]]=false;
+  y.sourceWarnings!.push(`FY${year.fy} ${statement}: vendor amounts are not in the ${year.currency} label of the filing; not used`);
+ }
+ return {year:y,blanked,confirmed};
 }
 
 const median=(xs:number[])=>{const s=[...xs].sort((a,b)=>a-b),m=s.length>>1;return s.length%2?s[m]:(s[m-1]+s[m])/2;};
@@ -222,7 +284,8 @@ export function consistentTrailing(ttm:Year|null|undefined,years:Year[],home:str
 
 /** An analysis that dropped years because their amounts were not in their label
  * cannot inherit a previously published valuation or price result: those were
- * computed from the mislabelled amounts. */
-export function statementCurrencyChanged(analysis:{events?:Array<{kind:string;note:string}>}):boolean {
- return Boolean(analysis.events?.some(e=>e.kind==='currency_change'&&e.note.startsWith('Statement currency changed')));
+ * computed from the mislabelled amounts. Neither can a hyperinflationary
+ * reporter's US-dollar measured analysis inherit nominal published figures. */
+export function statementCurrencyChanged(analysis:{events?:Array<{kind:string;note:string}>;measure?:unknown}):boolean {
+ return Boolean(analysis.measure)||Boolean(analysis.events?.some(e=>e.kind==='currency_change'&&e.note.startsWith('Statement currency changed')));
 }

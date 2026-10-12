@@ -9,6 +9,7 @@ import {comparableValuation} from './site-valuation';
 import {ownerReturn,returnModelCopy,cashCoveredReturnCopy} from './owner-return';
 import {ruleReading} from './rule-reading';
 import type {Dossier,IndexRow,Series,PriceMap,TestOutcome} from './types';
+import {analysisCurrency} from './currency';
 type ChartSnapshot={label:string;series:Series;format:string;currency:string};
 export type SurfaceSnapshot={accountingContext?:string;signals?:unknown[];text:string;numbers:string[];charts:ChartSnapshot[];stats:Array<[string,string]>;table:string[][];tableHeaders?:string[];windows:unknown[];priceCharts:unknown[]};
 const normalizedText=(s:string)=>s.replace(/−/g,'-').replace(/\s+/g,' ').trim();
@@ -31,7 +32,7 @@ export function auditPriceChartWindows(tile:unknown[],drawer:unknown[],where:str
  * Source series retain full precision; visible scalar values use their actual display formatter.
  */
 export function auditTestSurfaces(d:Dossier,t:TestOutcome,tile:SurfaceSnapshot,drawer:SurfaceSnapshot){
- const currency=d.reportingCurrency??d.valuation?.currency??d.company.currency;
+ const currency=analysisCurrency(d);
  const m=primaryTileMetric(t,d.company.kind,d.tests.understandable.series.netIncome??d.series.netIncome);
  const where=`${d.id} ${t.key}`;
  const yearLabel=(fy:number|null|undefined)=>t.provisional?.fy===fy?'LTM':String(fy);

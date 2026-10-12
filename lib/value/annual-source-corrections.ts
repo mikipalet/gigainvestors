@@ -3,7 +3,10 @@ import {shareUnitScale,resolveShareScale,retainShareContinuity} from './share-fa
 import {applyReportedFacts,type ReportedFacts} from './completeness/reported-facts';
 import type {Company,Year} from './types';
 import type {CompanyFacts} from './completeness/second-sources';
-import {cachedUsdRates,homeCurrencies,verifyStatementCurrency,type FactSet} from './statement-currency';
+import {cachedUsdRates,homeCurrencies,verifyStatementCurrency,STATEMENT_FIELDS,type FactSet} from './statement-currency';
+import {yearsFromCompanyFacts} from './completeness/second-sources';
+import {HYPERINFLATIONARY,fxSeries,hyperinflationary,measureYears,measuringUnits,type Measure} from './hyperinflation';
+import {currencyCode,marketCapCurrency} from './currency';
 
 type Options={source:string;financial?:boolean;revenueConcept?:string;revenueComponents?:string[];adr?:boolean;ordinaryPerAds?:number;shareBasisSource?:string;shareBasisDate?:string;splits?:Array<{date:string;factor:number}>};
 /** Source selection is by accounting concept, annual period, currency and share
@@ -213,4 +216,54 @@ export function correctCachedTrailingSources(id:string,trailing:Year|null|undefi
  const facts=read<ReportedFacts[]>(`raw/reviewed-trailing/${id}.json`)??[];
  const matching=facts.filter(f=>f.end===trailing.end&&f.currency===trailing.currency);
  return matching.length?applyReportedFacts([trailing],matching)[0]:trailing;
+}
+
+/** A hyperinflationary reporter's statements, placed in their measuring units by
+ * the issuer's annual filings and the cached dated FX observations (no requests).
+ * A vendor statement no filing places is replaced by the IAS 29 restated figures
+ * of the latest annual filing that states that period, in that filing's year-end unit. */
+export function cachedHyperinflationMeasure(company:Company,years:Year[],read:<T>(file:string)=>T|null):{measure:Measure;years:Year[]}|null {
+ const major=(c:string|null|undefined)=>c?marketCapCurrency(currencyCode(c)):'';
+ const reporting=major(years.at(-1)?.currency);
+ if(!HYPERINFLATIONARY[reporting]||!years.some(y=>hyperinflationary(y.currency,y.end)))return null;
+ const {evidence,reviewed,facts}=issuerAnnualSources(company,read);
+ const sets:FactSet[]=[
+  ...(facts?[{facts,source:`https://data.sec.gov/api/xbrl/companyfacts/CIK${String(company.cik??(facts as {cik?:unknown}).cik??'').padStart(10,'0')}.json`}]:[]),
+  ...(evidence?[{facts:evidence.facts,source:evidence.source}]:[]),
+  ...(reviewed?[{facts:reviewed.facts,source:reviewed.source}]:[]),
+ ];
+ const fx=(c:string)=>fxSeries(read<{data?:Array<{date?:string;close?:number}>}>(`raw/eodhd/universe/fx-${c}.json`));
+ const trading=major(company.currency);
+ let units=measuringUnits(years,sets);
+ // The latest annual filing (one document, one year-end unit) states its periods as restated.
+ const latest=evidence?yearsFromCompanyFacts(evidence.facts,reporting,evidence.source):[];
+ const latestEnd=latest.at(-1)?.end;
+ if(latestEnd&&hyperinflationary(reporting,latestEnd)){
+  const statementOf={income:'income statement',cashFlow:'cash-flow statement',balance:'balance sheet'} as const;
+  years=years.map((y,i)=>{
+   const filed=latest.find(f=>Math.abs(Date.parse(f.end)-Date.parse(y.end))<=7*86400000);
+   const unknown=(Object.keys(statementOf) as Array<keyof typeof statementOf>).filter(k=>units[i].statements[k].basis==='unknown');
+   if(!filed||!unknown.length)return y;
+   const out:Year={...y,provenance:{...y.provenance},sourceWarnings:[...(y.sourceWarnings??[])]};
+   for(const k of unknown){
+    for(const field of STATEMENT_FIELDS[statementOf[k]]){
+     const v=(filed as unknown as Record<string,unknown>)[field];
+     (out as unknown as Record<string,unknown>)[field]=typeof v==='number'?v:null;
+     if(filed.provenance?.[field])out.provenance![field]=filed.provenance[field];else delete out.provenance![field];
+    }
+    out.sourceWarnings!.push(`FY${y.fy} ${statementOf[k]}: vendor amounts are in no filed IAS 29 unit; the restated figures of the ${latestEnd.slice(0,4)} annual filing are used (${evidence!.source})`);
+   }
+   return out;
+  });
+  units=measuringUnits(years,sets);
+ }
+ return {years,measure:{currency:'USD',reporting,basis:HYPERINFLATIONARY[reporting].basis,years:measureYears(units,fx(reporting),trading==='USD'?null:fx(trading))}};
+}
+
+/** The vendor rows whose currency label the issuer's annual filing corrects
+ * (the same corrections the analysis applies later), keyed by fiscal end. */
+export function filingLabels(company:Company,years:Year[],raw:unknown,read:<T>(file:string)=>T|null):Map<string,Year> {
+ const corrected=verifyCachedStatementCurrency(company,correctCachedAnnualSources(company,years,raw,read),read,raw).years;
+ const before=new Map(years.map(y=>[y.end,y.currency]));
+ return new Map(corrected.filter(y=>before.has(y.end)&&before.get(y.end)!==y.currency&&y.provenance?.currency).map(y=>[y.end,y]));
 }

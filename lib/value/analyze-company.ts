@@ -21,6 +21,7 @@ import { QUESTIONS, QUESTIONS_VERSION } from "./jev/questions";
 import { runNumericTests } from "./tests";
 import { profitRecord } from "./fair-buy";
 import { valueCompany, valuationMargin } from "./valuation";
+import { measuredYears, measureNote } from "./hyperinflation";
 import type { Analysis, Company, Fundamentals, JevAnswer, ReportMeta, SectionKey, PriceHistory, Year } from "./types";
 
 export const PIPELINE_VERSION = "29";
@@ -41,6 +42,10 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
   // One reporting-to-trading FX rate serves both valuation and historical caps.
   const rate = fundamentals.integrity.ok
     ? await tradingRate({ reporting: fundamentals.currency, trading: company.currency, usdRate }) : null;
+  // A hyperinflationary reporter is analysed in US dollars, each statement at the
+  // rate of the year-end currency it is stated in; nominal amounts are not comparable.
+  const measure = fundamentals.integrity.ok ? fundamentals.measure ?? null : null;
+  const measuredRate = measure ? await tradingRate({ reporting: measure.currency, trading: company.currency, usdRate }) : null;
   const monthly = new Map(priceHistory?.map(([month, close]) => [month.slice(0, 7), close]));
   let years = deriveYears(fundamentals.years.map(year => {
     const priceMonth = fiscalPriceMonth(year.end);
@@ -65,20 +70,23 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
   const qualityLtm=qualityLtmAt(fundamentals.qualityQuarters??[],years,cutoff,fundamentals.splits);
   const qualityLtmHistory=qualityLtmHistoryAt(fundamentals.qualityQuarters??[],years,cutoff,fundamentals.splits,qualityLtm);
   for(const ltm of qualityLtmHistory)if(rate&&ltm.dilutedShares&&monthly.get(fiscalPriceMonth(ltm.end)))ltm.marketCap=monthly.get(fiscalPriceMonth(ltm.end))!*ltm.dilutedShares/rate;
-  const rawNumeric = runNumericTests({ years, qualityLtm, qualityLtmHistory, kind: company.kind, industry: company.industry, priceHistoryPending: priceHistoryPending && rate !== null });
+  // Trailing quarters are stated in a later, unidentified currency unit.
+  const testInput = (ys: Year[]) => measure ? { years: measuredYears(ys, measure, rate), qualityLtm: null, qualityLtmHistory: [] } : { years: ys, qualityLtm, qualityLtmHistory };
+  const rawNumeric = runNumericTests({ ...testInput(years), kind: company.kind, industry: company.industry, priceHistoryPending: priceHistoryPending && rate !== null });
   const adjusted = applyAdjustments(years, fundamentals.integrity.ok && company.kind==='operating' ? judgement : null, judgementTrust, fundamentals.currency);
   years = adjusted.years;
   // Persist precisely the split-normalized, price-derived and judgement-adjusted
   // rows used by the tests. Publication must not rebuild a different statement.
   onMemoYears?.(years);
-  const numeric = runNumericTests({ years, qualityLtm, qualityLtmHistory, kind: company.kind, industry: company.industry, priceHistoryPending: priceHistoryPending && rate !== null });
+  const numeric = runNumericTests({ ...testInput(years), kind: company.kind, industry: company.industry, priceHistoryPending: priceHistoryPending && rate !== null });
+  const measuredNote = measure ? measureNote(measure) : null;
   let tests = {} as Analysis["tests"];
   const answers = fundamentals.integrity.ok ? await ask({ id: company.id, sections }) : [];
   for (const key of Object.keys(numeric) as Array<keyof typeof numeric>) {
     const jev = answers.filter(answer => QUESTIONS.find(q => q.id === answer.q)?.test === key);
     tests[key] = fundamentals.integrity.ok
       ? { ...numeric[key], result: combine({ numeric: numeric[key].numeric, jev, kind: company.kind }), jev,
-          reasons: [...(numeric[key].numeric === 'pass' ? trustedContradictions(jev, company.kind).map(a => `${a.label}: ${a.probability! >= .5 ? 'yes' : 'no'} (filing evidence)`) : []), ...numeric[key].reasons] }
+          reasons: [...(measuredNote ? [`Measured in US dollars: ${measure!.reporting} is hyperinflationary (IAS 29)`] : []), ...(numeric[key].numeric === 'pass' ? trustedContradictions(jev, company.kind).map(a => `${a.label}: ${a.probability! >= .5 ? 'yes' : 'no'} (filing evidence)`) : []), ...numeric[key].reasons] }
       : { key, numeric: "unclear", result: "unclear", metrics: {}, series: {}, jev: [], reasons: [...fundamentals.integrity.reasons] };
   }
   const human = attachJudgements({tests} as Analysis, fundamentals.integrity.ok ? judgement : null, judgementTrust, adjusted.adjustments, rawNumeric as Analysis["tests"]);
@@ -93,22 +101,29 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
     ? { valuation: null, reason: fundamentals.integrity.reasons.join("; ") }
     : resolvedBondYield === null && !company.investmentHolding
       ? { valuation: null, reason: "Local government bond yield unavailable" }
-      : valueCompany({ currentCommonBalance:fundamentals.currentCommonBalance, cutoff, investmentHolding: company.investmentHolding, years, kind: company.kind, industry:company.industry, currency: fundamentals.currency, bondYield: resolvedBondYield, cyclical, currentShares, reportedShares, shareAssumptions, shareSource, priceHistory, ttm: fundamentals.ttm, balance: years.length ? latestBalanceAt(fundamentals.balanceSheets??[],cutoff,fundamentals.currency,years.at(-1)!,company.kind) : null, qualityPass: Object.values(tests).every(test => test.result === "pass") });
+      : measure
+        // US-dollar valuation from the measured annual statements; trailing and interim statements are in unidentified units.
+        ? measuredRate === null ? { valuation: null, reason: "US-dollar trading conversion unavailable for a hyperinflationary reporter" }
+          : valueCompany({ cutoff, investmentHolding: company.investmentHolding, years: measuredYears(years, measure, rate), kind: company.kind, industry:company.industry, currency: measure.currency, bondYield: resolvedBondYield, cyclical, currentShares, reportedShares, shareAssumptions: [...shareAssumptions, measuredNote!], shareSource, priceHistory, ttm: null, balance: null, qualityPass: Object.values(tests).every(test => test.result === "pass") })
+        : valueCompany({ currentCommonBalance:fundamentals.currentCommonBalance, cutoff, investmentHolding: company.investmentHolding, years, kind: company.kind, industry:company.industry, currency: fundamentals.currency, bondYield: resolvedBondYield, cyclical, currentShares, reportedShares, shareAssumptions, shareSource, priceHistory, ttm: fundamentals.ttm, balance: years.length ? latestBalanceAt(fundamentals.balanceSheets??[],cutoff,fundamentals.currency,years.at(-1)!,company.kind) : null, qualityPass: Object.values(tests).every(test => test.result === "pass") });
+  const valuationRate = measure ? measuredRate : rate;
   const requiredMos = valuationMargin(valuation, volatility);
   if (valuation) {
     if(adjusted.adjustments.length) valuation.assumptions.push(...adjusted.adjustments.map(a=>a.reason));
     if (company.source === "edinet" && !years.at(-1)?.edinetShares) valuation.assumptions.push("Unverified JP share count unreconciled: EDINET share facts unavailable");
-    if (rate !== null) valuation.perShareTrading = {
-      currency: company.currency, fxRate: rate,
-      low: valuation.perShare.low * rate, mid: valuation.perShare.mid * rate, high: valuation.perShare.high * rate,
+    if (valuationRate !== null) valuation.perShareTrading = {
+      currency: company.currency, fxRate: valuationRate,
+      low: valuation.perShare.low * valuationRate, mid: valuation.perShare.mid * valuationRate, high: valuation.perShare.high * valuationRate,
     };
     else valuation.assumptions.push("Trading currency conversion unavailable");
   }
-  return withCapitalReturns({ profitRecord: profitRecord({ years, kind: company.kind }), predecessorHistory: fundamentals.years.flatMap(y=>y.predecessor?[{fy:y.fy,...y.predecessor}]:[]), judgement: human.judgement, reportingCurrency: fundamentals.currency, ...(shareSource && currentShares ? { shareCount: {value:currentShares,source:shareSource} } : {}), requiredMos, volatility, historyCoverage: {years: fundamentals.years.length, first: fundamentals.years[0]?.fy ?? null, last: fundamentals.years.at(-1)?.fy ?? null, source: company.source},
-    valueHistory: valueHistory({ investmentHolding: company.investmentHolding, fundamentals, kind: company.kind, industry: company.industry, bondYield: resolvedBondYield, fxRate: rate, commodity: isCommodity }),
+  // Charts, value history and capital returns use the same measured statements as the tests.
+  const shown = (f: Fundamentals): Fundamentals => measure ? { ...f, currency: measure.currency, years: measuredYears(f.years, measure, rate), ttm: null, balanceSheets: [] } : f;
+  return withCapitalReturns({ ...(measure ? { measure: { currency: measure.currency, reporting: measure.reporting, note: measuredNote! } } : {}), profitRecord: profitRecord({ years, kind: company.kind }), predecessorHistory: fundamentals.years.flatMap(y=>y.predecessor?[{fy:y.fy,...y.predecessor}]:[]), judgement: human.judgement, reportingCurrency: fundamentals.currency, ...(shareSource && currentShares ? { shareCount: {value:currentShares,source:shareSource} } : {}), requiredMos, volatility, historyCoverage: {years: fundamentals.years.length, first: fundamentals.years[0]?.fy ?? null, last: fundamentals.years.at(-1)?.fy ?? null, source: company.source},
+    valueHistory: valueHistory({ investmentHolding: company.investmentHolding, fundamentals: shown(fundamentals), kind: company.kind, industry: company.industry, bondYield: resolvedBondYield, fxRate: measure ? measuredRate : rate, commodity: isCommodity }),
     historyAssumptions: ["Historical values use today's bond yield for every fiscal year", "Historical values use today's FX rate into trading currency for every fiscal year", "Historical values use current restated fundamentals and current commodity classification; they are not point-in-time estimates", ...(adjusted.adjustments.length?["Historical value ranges retain the original capex calculation; the current filing judgement is not backfilled into historical valuations"]:[])],
-    events: companyEvents(fundamentals), series: company.investmentHolding ? { netCash: netCashSeries(years), navPerShare: years.map(y => [y.fy, navPerShare(y)]) } : perShareSeries(adjusted.adjustments.length ? {...fundamentals,years} : fundamentals),
+    events: companyEvents(fundamentals), series: company.investmentHolding ? { netCash: netCashSeries(years), navPerShare: years.map(y => [y.fy, navPerShare(y)]) } : perShareSeries(shown(adjusted.adjustments.length ? {...fundamentals,years} : fundamentals)),
     id: company.id, company, asOf: new Date().toISOString(),
     status: fundamentals.integrity.ok ? "scored" : "insufficient_data", report, tests,
-    valuation, valuationReason: reason, versions: { pipeline: PIPELINE_VERSION, questions: QUESTIONS_VERSION } }, years);
+    valuation, valuationReason: reason, versions: { pipeline: PIPELINE_VERSION, questions: QUESTIONS_VERSION } }, measure ? measuredYears(years, measure, rate) : years);
 }

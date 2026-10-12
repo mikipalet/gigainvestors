@@ -1,35 +1,33 @@
-import {expect,it} from 'vitest';
-import {reconcilePriceSplits} from '@/lib/value/price-history';
-import type {Fundamentals,PriceHistory} from '@/lib/value/types';
+import {describe,expect,it} from 'vitest';
+import {historyBasisConflict,retainReviewedPriceHistory,splitAdjustedRefresh} from '@/lib/value/price-history-basis';
+import type {PriceHistory} from '@/lib/value/types';
 
-const facts=(factor=10,shares=[940,900])=>({splits:[{date:'2018-08-31',factor}],years:[
- {end:'2017-12-31',dilutedShares:shares[0]}, {end:'2018-12-31',dilutedShares:shares[1]},
-]} as Fundamentals);
-it('reconciles an original-close split against restated annual shares without mutating the cache',()=>{
- const prices:PriceHistory=[['2017-12',4500],['2018-07',4871],['2018-08',492.05],['2018-12',432.25]];
- expect(reconcilePriceSplits(prices,facts())).toEqual([['2017-12',450],['2018-07',487.1],['2018-08',492.05],['2018-12',432.25]]);
- expect(prices[0][1]).toBe(4500);
-});
-it('leaves already split-adjusted prices unchanged',()=>{
- const prices:PriceHistory=[['2018-07',487.1],['2018-08',492.05]];
- expect(reconcilePriceSplits(prices,facts())).toEqual(prices);
-});
-it('does not reconcile a price drop without a declared split or without restated shares',()=>{
- const prices:PriceHistory=[['2018-07',4871],['2018-08',492.05]];
- expect(reconcilePriceSplits(prices,{...facts(),splits:[]})).toEqual(prices);
- expect(reconcilePriceSplits(prices,facts(10,[94,900]))).toEqual(prices);
-});
-it('reconciles a reverse split only when adjacent closes corroborate its factor',()=>{
- const prices:PriceHistory=[['2018-07',5],['2018-08',49]];
- expect(reconcilePriceSplits(prices,facts(.1))).toEqual([['2018-07',50],['2018-08',49]]);
- expect(reconcilePriceSplits([['2018-07',5],['2018-08',20]],facts(.1))).toEqual([['2018-07',5],['2018-08',20]]);
-});
-it('does not infer a split across missing monthly or annual observations',()=>{
- expect(reconcilePriceSplits([['2018-06',4871],['2018-08',492.05]],facts())).toEqual([['2018-06',4871],['2018-08',492.05]]);
- const sparse={...facts(),years:[{end:'2016-12-31',dilutedShares:940},{end:'2018-12-31',dilutedShares:900}]} as Fundamentals;
- expect(reconcilePriceSplits([['2018-07',4871],['2018-08',492.05]],sparse)).toEqual([['2018-07',4871],['2018-08',492.05]]);
-});
-it('matches the exchange ex-date in the prior month for first-of-month legal splits',()=>{
- const f={...facts(5),splits:[{date:'2021-10-01',factor:5}],years:[{end:'2021-03-31',dilutedShares:15},{end:'2022-03-31',dilutedShares:14.8}]} as Fundamentals;
- expect(reconcilePriceSplits([['2021-08',10000],['2021-09',2000],['2021-10',2100]],f)).toEqual([['2021-08',2000],['2021-09',2000],['2021-10',2100]]);
+// Copart (CPRT.US): 2:1 splits in April 2017, November 2022 and August 2023. The vendor lists
+// only its last split, so the released history applied that one; Yahoo applies all three.
+const months=(from:string,n:number)=>Array.from({length:n},(_,i)=>{const d=new Date(Date.UTC(Number(from.slice(0,4)),Number(from.slice(5,7))-1+i,1));return d.toISOString().slice(0,7);});
+const all=months('2016-11',118);
+const adjusted:PriceHistory=all.map((m,i)=>[m,Number((6.5*1.02**i).toFixed(4))]);
+const missed=(m:string)=>(m<'2017-04'?4:m<'2022-11'?2:1);
+const released:PriceHistory=adjusted.map(([m,p])=>[m,p*missed(m)]);
+const shares=(restated:boolean)=>[2016,2017,2018,2019,2020,2021,2022,2023,2024,2025].map(fy=>({end:`${fy}-07-31`,dilutedShares:(restated?951e6:fy<2017?237.75e6:fy<2023?475.5e6:951e6)+fy*1e5}));
+
+describe('a refresh that applies splits the released history missed (3.8.3)',()=>{
+ it('is the same share basis when the annual share counts are already restated (CPRT)',()=>{
+  expect(historyBasisConflict(adjusted,released)).toBe(true);
+  expect(splitAdjustedRefresh(adjusted,released,shares(true))).toBe(true);
+  expect(historyBasisConflict(adjusted,released,shares(true))).toBe(false);
+  expect(retainReviewedPriceHistory(adjusted,released,shares(true))).toEqual(adjusted);
+ });
+ it('stays a conflict when the annual share counts are not restated (the released prices match them)',()=>{
+  expect(historyBasisConflict(adjusted,released,shares(false))).toBe(true);
+  expect(retainReviewedPriceHistory(adjusted,released,shares(false)).slice(0,3)).toEqual(released.slice(0,3));
+ });
+ it('never accepts the unadjusted side: raw closes that jump at the split are not a refresh',()=>{
+  const raw:PriceHistory=adjusted.map(([m,p])=>[m,p*(m<'2017-04'?8:m<'2022-11'?4:m<'2023-08'?2:1)]);
+  expect(splitAdjustedRefresh(raw,adjusted,shares(true))).toBe(false);
+ });
+ it('stays a conflict for a ratio that drifts or a distribution adjustment that is not a share split (BIP 2020)',()=>{
+  const drift:PriceHistory=adjusted.map(([m,p],i)=>[m,p*(m<'2020-04'?1/(0.83+i*.002):1)]);
+  expect(historyBasisConflict(drift.map(([m,p])=>[m,p]) as PriceHistory,adjusted,shares(true))).toBe(true);
+ });
 });

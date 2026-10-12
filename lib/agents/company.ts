@@ -13,6 +13,7 @@ import {sharePrice} from '@/lib/value/listing-details';
 import {T} from '@/lib/value/config';
 import {companyUrl,investorUrl} from './urls';
 import {percent} from './format';
+import {analysisCurrency} from '@/lib/value/currency';
 export {cell,number,percent} from './format';
 const money = (n: number,currency: string) => `${sharePrice(n,currency)} per share`;
 export function companyMarkdown(d: Dossier, quote: PriceMap[string]|null, summary=false): string {
@@ -20,7 +21,7 @@ export function companyMarkdown(d: Dossier, quote: PriceMap[string]|null, summar
  const owner=ownerReturn(d.valuation,d.company.currency,d.company.marketCapUsd,quote?.[0]??null);
  const verdict=d.historyCoverage&&d.historyCoverage.years<T.minYears?'Not enough history yet':humanVerdict(d,Boolean(d.b),Boolean(range&&quote),ratio);
  const fiscal=Object.values(d.tests).flatMap(t=>Object.values(t.series).flatMap(s=>s.map(p=>p[0])));
- const lines=[`# ${companyName(d.company)} (${d.id})`,`Canonical: ${companyUrl(d.id)}`,`Analysis as of: ${d.asOf}. ${fiscal.length?`Financial observations: FY${Math.min(...fiscal)}–FY${Math.max(...fiscal)}.`:''}`,`Listing currency: ${d.company.currency}. Reporting currency: ${d.reportingCurrency??d.valuation?.currency??d.company.currency}.`,
+ const lines=[`# ${companyName(d.company)} (${d.id})`,`Canonical: ${companyUrl(d.id)}`,`Analysis as of: ${d.asOf}. ${fiscal.length?`Financial observations: FY${Math.min(...fiscal)}–FY${Math.max(...fiscal)}.`:''}`,`Listing currency: ${d.company.currency}. Reporting currency: ${d.reportingCurrency??d.valuation?.currency??d.company.currency}.${d.measure?` ${d.measure.note}.`:''}`,
  `## Verdict`,verdict,
  `Quality tests for Buy: ${dossierQualityPass(d)?'pass':'not passed'}${d.profitRecord?` (profit record: ${d.profitRecord.pass?'pass':'fail'}; earnings resilience is evidence only)`:''}. Published buy qualification: ${d.b===true?'yes':'no'}.`,
  ...(quote?[`Share price: ${money(quote[0],d.company.currency)}; ${quote[2]==='seed'?'derived reference':'close'} as of ${quote[1]}.`]:[]),
@@ -29,8 +30,8 @@ export function companyMarkdown(d: Dossier, quote: PriceMap[string]|null, summar
  `## Checklist`,...QUALITY_TESTS.flatMap(k=>{
   const test=d.tests[k]!,metric=primaryTileMetric(test,d.company.kind,d.tests.understandable.series.netIncome??d.series.netIncome);
   return [`### ${k}: ${test.result}`, ...test.reasons.map(r=>`- ${r}`),
-   ...(!summary?Object.entries(test.metrics).flatMap(([id,v])=>{const label=metricLabels[id];return v!==null&&Number.isFinite(v)&&label?[`- ${label.label}: ${formatMetric({value:v,format:label.format,currency:d.reportingCurrency??d.company.currency,returnRatio:isCapitalReturn(id)})}`]:[];}):[]),
-   ...(!summary&&metric.series.length?[`Chart: ${metric.chart}; fiscal year observations.`,...metric.series.flatMap(([fy,v])=>v!==null&&Number.isFinite(v)?[`- ${observationLabel(fy,test.provisional)}: ${formatMetric({value:v,format:metric.chartFormat==='index'?'count':metric.chartFormat==='ratio'?'x':metric.chartFormat??metric.format,currency:d.reportingCurrency??d.company.currency,returnRatio:isCapitalReturn(metric.chart)})}`]:[])]:[])];
+   ...(!summary?Object.entries(test.metrics).flatMap(([id,v])=>{const label=metricLabels[id];return v!==null&&Number.isFinite(v)&&label?[`- ${label.label}: ${formatMetric({value:v,format:label.format,currency:analysisCurrency(d),returnRatio:isCapitalReturn(id)})}`]:[];}):[]),
+   ...(!summary&&metric.series.length?[`Chart: ${metric.chart}; fiscal year observations.`,...metric.series.flatMap(([fy,v])=>v!==null&&Number.isFinite(v)?[`- ${observationLabel(fy,test.provisional)}: ${formatMetric({value:v,format:metric.chartFormat==='index'?'count':metric.chartFormat==='ratio'?'x':metric.chartFormat??metric.format,currency:analysisCurrency(d),returnRatio:isCapitalReturn(metric.chart)})}`]:[])]:[])];
  }),
  `## Holders`,...d.holders.map(h=>`- [${h.name}](${investorUrl(h.code)}): tracked 13F investor; follow the investor page for holding quarter and amounts.`),
  `## Price story`,...(d.priceStory?[d.priceStory.line,`Story as of ${d.priceStory.asOf}; price observation ${d.priceStory.priceDate??d.priceStory.asOf}.`,...(d.priceStory.needs?[d.priceStory.needs]:[]),...d.priceStory.events.map(e=>`- ${e.date}: ${e.text} ([${e.source}](${e.url}))`),...(!summary?d.priceStory.facts?.flatMap(f=>[`### ${f.label}`,`${f.text}; source ${f.url}; observed ${f.date}.`,...f.points.flatMap(([fy,v])=>v===null?[]:[`- FY${fy}: ${formatMetric({value:v,format:f.unit==='percent'?'pct':'money',currency:d.reportingCurrency??d.company.currency})} `])])??[]:[])]:[]),

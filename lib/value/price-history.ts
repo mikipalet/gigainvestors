@@ -49,10 +49,11 @@ export function readPriceHistory(id: string): PriceHistory | null {
   if(!prices)return null;
   const valid=prices.filter(row => Array.isArray(row) && typeof row[0] === "string"
     && /^\d{4}-\d{2}$/.test(row[0]) && typeof row[1] === "number" && Number.isFinite(row[1]) && row[1] > 0);
-  const fundamentals=readCorpusJson<Fundamentals>(`fundamentals/${id}.json`);
+  const stored=readCorpusJson<Fundamentals>(`fundamentals/${id}.json`);
+  const fundamentals=Array.isArray(stored?.years)?stored:null;
   if(fundamentals)fundamentals.splits=completeCachedSplits(id,fundamentals.splits,readCorpusJson);
   const reconciled=fundamentals?reconcilePriceSplits(valid,alignHistoryShares(fundamentals,valid)):valid;
-  return retainReviewedPriceHistory(reconciled,releasedPriceHistory(id));
+  return retainReviewedPriceHistory(reconciled,releasedPriceHistory(id),fundamentals?.years??[]);
 }
 
 function monthlyCloses(rows: Array<{ date: unknown; close: unknown }>): PriceHistory {
@@ -114,13 +115,23 @@ export function usesYahooHistory(company: Pick<Company, "id" | "exchange" | "sou
 }
 
 const yahooLimit = createLimiter({ perSecond: T.yahoo.perSecond });
-export async function fetchPriceHistory({ company, from, useYahoo = false }: { company: Company; from: string; useYahoo?: boolean }): Promise<PriceHistory> {
+/** A genuine basis conflict keeps the released older months (the guard) and
+ * still takes the newer months from the refresh; `onConflict` reports it. */
+export async function fetchPriceHistory({ company, from, useYahoo = false, onConflict }: { company: Company; from: string; useYahoo?: boolean; onConflict?: () => void }): Promise<PriceHistory> {
   const cached=readCorpusJson<PriceHistory|CachedPriceHistory>(`prices-history/${company.id}.json`);
   const released=releasedPriceHistory(company.id);
-  const previous=cached?retainReviewedPriceHistory(Array.isArray(cached)?cached:cached.prices,released):released;
+  // Compare like with like: the cache holds provider closes, which readers
+  // reconcile to the share basis; the refresh is reconciled the same way, and
+  // the annual share basis decides whether applying missed splits is compatible.
+  const stored=readCorpusJson<Fundamentals>(`fundamentals/${company.id}.json`);
+  const fundamentals=Array.isArray(stored?.years)?stored:null;
+  if(fundamentals)fundamentals.splits=completeCachedSplits(company.id,fundamentals.splits,readCorpusJson);
+  const years=fundamentals?.years??[];
+  const basis=(prices:PriceHistory)=>fundamentals?reconcilePriceSplits(prices,alignHistoryShares(fundamentals,prices)):prices;
+  const previous=(cached?readPriceHistory(company.id):null)??released;
   if (!useYahoo && !usesYahooHistory(company)) {
     const prices=parseEodHistory(await eodhd(`eod/${encodeURIComponent(company.id)}`, { period: "m", from }));
-    if(!historyBasisConflict(prices,previous))return prices;
+    if(!historyBasisConflict(basis(prices),previous,years))return prices;
     // EOD close is raw; adjusted_close includes dividends and is not a substitute.
     // Recover a compatible split-adjusted source before overwriting the cache.
   }
@@ -130,7 +141,8 @@ export async function fetchPriceHistory({ company, from, useYahoo = false }: { c
     if (response.status === 404) throw new PriceHistoryUnavailableError("Yahoo has no history for this symbol");
     if (!response.ok) throw new Error(`Yahoo price history HTTP ${response.status}`);
     const prices=parseYahooHistory(await response.json());
-    if(historyBasisConflict(prices,previous))throw new Error('Refreshed price history conflicts with the released share basis');
+    const adjusted=basis(prices);
+    if(historyBasisConflict(adjusted,previous,years)){onConflict?.();return retainReviewedPriceHistory(adjusted,previous,years);}
     return prices;
   });
 }

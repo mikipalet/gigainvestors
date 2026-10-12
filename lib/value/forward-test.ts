@@ -12,7 +12,9 @@ export interface ForwardTestCompany {
 export interface ForwardTestSnapshot {
   version: 1; date: string; methodVersion: string;
   rule: string; weighting: 'equal'; rebalancing: 'none';
-  archive: { publishCommit: string | null; publishedAsOf: string | null };
+  /** publishCommit: the data archive this list was published as (null when frozen from a local
+   * candidate); baselineCommit: the live archive the candidate was computed from. */
+  archive: { publishCommit: string | null; publishedAsOf: string | null; baselineCommit?: string | null };
   benchmarks: string[];
   companies: ForwardTestCompany[];
 }
@@ -21,8 +23,8 @@ export const FORWARD_BENCHMARKS = ['SPY', 'EFA'];
 const positive = (n: unknown): n is number => typeof n === 'number' && Number.isFinite(n) && n > 0;
 
 /** Exactly the published Buy rows (b === true) with their published quote and central value. */
-export function buyListSnapshot({ date, rows, prices, methodVersion, publishCommit, publishedAsOf }: {
-  date: string; rows: IndexRow[]; prices: PriceMap; methodVersion: string; publishCommit: string | null; publishedAsOf: string | null;
+export function buyListSnapshot({ date, rows, prices, methodVersion, publishCommit, publishedAsOf, baselineCommit }: {
+  date: string; rows: IndexRow[]; prices: PriceMap; methodVersion: string; publishCommit: string | null; publishedAsOf: string | null; baselineCommit?: string | null;
 }): ForwardTestSnapshot {
   const companies = rows.filter(r => r.b === true).sort((a, b) => a.id.localeCompare(b.id)).map(r => {
     const quote = prices[r.id], mid = r.v?.[1];
@@ -35,7 +37,7 @@ export function buyListSnapshot({ date, rows, prices, methodVersion, publishComm
   });
   if (!companies.length) throw new Error('Forward test: no published Buy rows');
   return { version: 1, date, methodVersion, rule: FORWARD_TEST_RULE, weighting: 'equal', rebalancing: 'none',
-    archive: { publishCommit, publishedAsOf }, benchmarks: FORWARD_BENCHMARKS, companies };
+    archive: { publishCommit, publishedAsOf, ...(baselineCommit !== undefined ? { baselineCommit } : {}) }, benchmarks: FORWARD_BENCHMARKS, companies };
 }
 
 export type Series = Array<[date: string, close: number]>;

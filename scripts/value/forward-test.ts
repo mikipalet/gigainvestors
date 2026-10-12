@@ -1,5 +1,5 @@
 /** Method 3.8.0 forward test (not shown on the site).
- *   freeze --repo=<published repo> --out=<file> [--date=YYYY-MM-DD]
+ *   freeze --repo=<published repo> --out=<file> [--date=YYYY-MM-DD] [--baseline=<live archive commit>]
  *       Write the published Buy list once. Refuses to overwrite an existing file.
  *   verify --repo=<published repo> --snapshot=<file>
  *       Exit 1 unless the published Buy ids equal the frozen list (controller check at release).
@@ -44,7 +44,7 @@ async function main() {
     const repo = args.repo, out = args.out;
     if (!repo || !out) throw new Error('freeze needs --repo and --out');
     const { rows, prices, meta, commit } = published(repo);
-    const snapshot = buyListSnapshot({ date: args.date ?? new Date().toISOString().slice(0, 10), rows, prices, methodVersion: METHOD_VERSION, publishCommit: commit, publishedAsOf: meta.asOf ?? null });
+    const snapshot = buyListSnapshot({ date: args.date ?? new Date().toISOString().slice(0, 10), rows, prices, methodVersion: METHOD_VERSION, publishCommit: commit, publishedAsOf: meta.asOf ?? null, ...(args.baseline ? { baselineCommit: args.baseline } : {}) });
     mkdirSync(path.dirname(out), { recursive: true });
     writeFileSync(out, JSON.stringify(snapshot, null, 1) + '\n', { flag: 'wx' }); // written once, never edited
     console.log(`forward-test: froze ${snapshot.companies.length} Buys (${snapshot.companies.filter(c => c.western).length} Western) at ${commit ?? 'unknown commit'} -> ${out}`);

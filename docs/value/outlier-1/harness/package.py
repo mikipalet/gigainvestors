@@ -13,11 +13,12 @@ files = {}
 for p in sorted(evidence.glob('*.json')):
     files[p.name] = sha(p)
 manifest = {
-    'status': status, 'method': '3.8.0', 'codeCommit': commit, 'baseCommit': '94ab355',
-    'corpusOverlay': None, 'approvalManifest': None, 'verdictFreeze': 'unchanged (41 reviewed data-error ids)',
+    'status': status, 'method': '3.8.1', 'codeCommit': commit, 'baseCommit': '66a2839',
+    'corpusOverlay': None, 'approvalManifest': None, 'verdictFreeze': 'unchanged (41 reviewed data-error ids)', 'releaseSteps': 'renormalize-edinet (published EDINET ids) + analyze (published ids), offline, then publish',
     'forwardTest': {'path': str(snapshot.relative_to(repo)), 'sha256': sha(snapshot), 'companies': len(snap['companies']),
                     'western': sum(1 for c in snap['companies'] if c['western']), 'publishCommitAtFreeze': snap['archive']['publishCommit'],
-                    'note': 'Frozen from the bound post-nightly proof; the controller verifies it equals the real publication.'},
+                    'note': 'Frozen 3.8.0 list, unchanged; the controller verifies the publication equals it less the names corrections.jsonl removes.'},
+    'corrections': {'path': 'docs/value/forward-test/corrections.jsonl', 'sha256': sha(repo / 'docs/value/forward-test/corrections.jsonl'), 'lines': len((repo / 'docs/value/forward-test/corrections.jsonl').read_text().splitlines())},
     'evidence': files,
 }
 (bundle / 'manifest.json').write_text(json.dumps(manifest, indent=1) + '\n')

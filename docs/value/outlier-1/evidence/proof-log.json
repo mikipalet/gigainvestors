@@ -1,0 +1,15 @@
+{
+ "boundLiveArchive": "ebacfc75d08b6d6b4ec3e916c8ce7d6271dff6c3",
+ "boundAt": "2026-10-12T11:06Z (corpus copy), live rechecked 2026-10-12T13:49Z: unchanged, method 3.8.0",
+ "renormalizeEdinet": "231 published EDINET companies, offline, exit 0",
+ "analyze": "3910 published companies, offline (VALUE_NO_EODHD, cached readings), 3910 written, 0 failed",
+ "publishOut": "exit 0, 3910 companies; value outliers logged 75, Buys among them 009970.KO, 2313.HK, 001800.KO, 192080.KO, 000651.SHE",
+ "realPublication": "exit 0, local bare remote 73c34a9e, stub Blob 6273 files, rendered coverage 20/20",
+ "postPublish": "exit 0, live-check 73c34a9e passed coverage, company pages, quarter-back and 2018Q3",
+ "forwardVerifyCorrected": "174 = 174 (frozen 175 less NFLX.US removed by corrections.jsonl)",
+ "build": "next build --webpack exit 0 (offline fonts)",
+ "browserSemantic": "21/21 (list, method, PRG.US, NFLX.US, PRVA.US, UPBD.US, PETR3.SA, 8766.JP, 5706.JP, EDEN.PA at 1728x970 and 390x844)",
+ "browserLayout": "0 findings introduced by code; 12 state-driven findings classified against live pages with the same states",
+ "unit": "268 files, 2576 passed, 1 skipped",
+ "typecheck": "tsc --noEmit exit 0"
+}

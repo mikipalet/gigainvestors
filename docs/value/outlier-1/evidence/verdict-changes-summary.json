@@ -1,0 +1,451 @@
+{
+ "transitions": 22,
+ "buyChanges": [
+  {
+   "id": "NFLX.US",
+   "attribution": "quality-inputs-or-method",
+   "changedFields": [
+    "b",
+    "t",
+    "v",
+    "buyReturnInputs",
+    "methodVersion"
+   ],
+   "before": {
+    "b": true,
+    "t": "PPPPP",
+    "pr": "P"
+   },
+   "after": {
+    "b": false,
+    "t": "PPFPP",
+    "pr": "P"
+   }
+  }
+ ],
+ "changes": [
+  {
+   "id": "NFLX.US",
+   "attribution": "quality-inputs-or-method",
+   "changedFields": [
+    "b",
+    "t",
+    "v",
+    "buyReturnInputs",
+    "methodVersion"
+   ],
+   "before": {
+    "b": true,
+    "t": "PPPPP",
+    "pr": "P"
+   },
+   "after": {
+    "b": false,
+    "t": "PPFPP",
+    "pr": "P"
+   }
+  },
+  {
+   "id": "COIN.US",
+   "attribution": "quality-inputs-or-method",
+   "changedFields": [
+    "t",
+    "v",
+    "buyReturnInputs",
+    "methodVersion"
+   ],
+   "before": {
+    "b": false,
+    "t": "FFPPF",
+    "pr": "P"
+   },
+   "after": {
+    "b": false,
+    "t": "FFFPF",
+    "pr": "P"
+   }
+  },
+  {
+   "id": "SLM.US",
+   "attribution": "quality-inputs-or-method",
+   "changedFields": [
+    "t",
+    "pr",
+    "v",
+    "buyReturnInputs",
+    "methodVersion"
+   ],
+   "before": {
+    "b": false,
+    "t": "PFPPP",
+    "pr": "P"
+   },
+   "after": {
+    "b": false,
+    "t": "PFFPP",
+    "pr": "F"
+   }
+  },
+  {
+   "id": "SCSC.US",
+   "attribution": "quality-inputs-or-method",
+   "changedFields": [
+    "t",
+    "v",
+    "buyReturnInputs",
+    "methodVersion"
+   ],
+   "before": {
+    "b": false,
+    "t": "FFPPP",
+    "pr": "P"
+   },
+   "after": {
+    "b": false,
+    "t": "FFFPP",
+    "pr": "P"
+   }
+  },
+  {
+   "id": "BUR.US",
+   "attribution": "profit-record-inputs",
+   "changedFields": [
+    "pr",
+    "methodVersion"
+   ],
+   "before": {
+    "b": false,
+    "t": "FFFPF",
+    "pr": "P"
+   },
+   "after": {
+    "b": false,
+    "t": "FFFPF",
+    "pr": "F"
+   }
+  },
+  {
+   "id": "BXC.US",
+   "attribution": "quality-inputs-or-method",
+   "changedFields": [
+    "t",
+    "methodVersion"
+   ],
+   "before": {
+    "b": false,
+    "t": "FFPPP",
+    "pr": "P"
+   },
+   "after": {
+    "b": false,
+    "t": "FFFPP",
+    "pr": "P"
+   }
+  },
+  {
+   "id": "138040.KO",
+   "attribution": "quality-inputs-or-method",
+   "changedFields": [
+    "t",
+    "methodVersion"
+   ],
+   "before": {
+    "b": false,
+    "t": "PFPFF",
+    "pr": "P"
+   },
+   "after": {
+    "b": false,
+    "t": "PFFFF",
+    "pr": "P"
+   }
+  },
+  {
+   "id": "016360.KO",
+   "attribution": "profit-record-inputs",
+   "changedFields": [
+    "pr",
+    "methodVersion"
+   ],
+   "before": {
+    "b": false,
+    "t": "FFPPF",
+    "pr": "P"
+   },
+   "after": {
+    "b": false,
+    "t": "FFPPF",
+    "pr": "F"
+   }
+  },
+  {
+   "id": "029780.KO",
+   "attribution": "quality-inputs-or-method",
+   "changedFields": [
+    "t",
+    "methodVersion"
+   ],
+   "before": {
+    "b": false,
+    "t": "FFPPF",
+    "pr": "P"
+   },
+   "after": {
+    "b": false,
+    "t": "FFFPF",
+    "pr": "P"
+   }
+  },
+  {
+   "id": "300413.SHE",
+   "attribution": "quality-inputs-or-method",
+   "changedFields": [
+    "t",
+    "v",
+    "buyReturnInputs",
+    "methodVersion"
+   ],
+   "before": {
+    "b": false,
+    "t": "FFPFP",
+    "pr": "P"
+   },
+   "after": {
+    "b": false,
+    "t": "FFFFP",
+    "pr": "P"
+   }
+  },
+  {
+   "id": "FSV.TO",
+   "attribution": "quality-inputs-or-method",
+   "changedFields": [
+    "t",
+    "v",
+    "buyReturnInputs",
+    "methodVersion"
+   ],
+   "before": {
+    "b": false,
+    "t": "FFPPP",
+    "pr": "P"
+   },
+   "after": {
+    "b": false,
+    "t": "FFFPP",
+    "pr": "P"
+   }
+  },
+  {
+   "id": "4901.JP",
+   "attribution": "profit-record-inputs",
+   "changedFields": [
+    "pr",
+    "v",
+    "buyReturnInputs",
+    "methodVersion"
+   ],
+   "before": {
+    "b": false,
+    "t": "PFFPP",
+    "pr": "F"
+   },
+   "after": {
+    "b": false,
+    "t": "PFFPP",
+    "pr": "P"
+   }
+  },
+  {
+   "id": "5411.JP",
+   "attribution": "quality-inputs-or-method",
+   "changedFields": [
+    "t",
+    "v",
+    "buyReturnInputs",
+    "methodVersion"
+   ],
+   "before": {
+    "b": false,
+    "t": "FFPPP",
+    "pr": "P"
+   },
+   "after": {
+    "b": false,
+    "t": "FFFPP",
+    "pr": "P"
+   }
+  },
+  {
+   "id": "8604.JP",
+   "attribution": "profit-record-inputs",
+   "changedFields": [
+    "pr",
+    "methodVersion"
+   ],
+   "before": {
+    "b": false,
+    "t": "FFFPF",
+    "pr": "P"
+   },
+   "after": {
+    "b": false,
+    "t": "FFFPF",
+    "pr": "F"
+   }
+  },
+  {
+   "id": "9766.JP",
+   "attribution": "quality-inputs-or-method",
+   "changedFields": [
+    "t",
+    "v",
+    "buyReturnInputs",
+    "methodVersion"
+   ],
+   "before": {
+    "b": false,
+    "t": "PPPPP",
+    "pr": "P"
+   },
+   "after": {
+    "b": false,
+    "t": "PPFPP",
+    "pr": "P"
+   }
+  },
+  {
+   "id": "LEG.XETRA",
+   "attribution": "profit-record-inputs",
+   "changedFields": [
+    "pr",
+    "v",
+    "buyReturnInputs",
+    "methodVersion"
+   ],
+   "before": {
+    "b": false,
+    "t": "FFFFP",
+    "pr": "F"
+   },
+   "after": {
+    "b": false,
+    "t": "FFFFP",
+    "pr": "P"
+   }
+  },
+  {
+   "id": "PNI.AU",
+   "attribution": "quality-inputs-or-method",
+   "changedFields": [
+    "t",
+    "v",
+    "buyReturnInputs",
+    "methodVersion"
+   ],
+   "before": {
+    "b": false,
+    "t": "FFPFP",
+    "pr": "P"
+   },
+   "after": {
+    "b": false,
+    "t": "FFFFP",
+    "pr": "P"
+   }
+  },
+  {
+   "id": "WPR.AU",
+   "attribution": "quality-inputs-or-method",
+   "changedFields": [
+    "t",
+    "v",
+    "buyReturnInputs",
+    "methodVersion"
+   ],
+   "before": {
+    "b": false,
+    "t": "FFPFP",
+    "pr": "P"
+   },
+   "after": {
+    "b": false,
+    "t": "FFFFP",
+    "pr": "P"
+   }
+  },
+  {
+   "id": "KCN.AU",
+   "attribution": "quality-inputs-or-method",
+   "changedFields": [
+    "t",
+    "methodVersion"
+   ],
+   "before": {
+    "b": false,
+    "t": "FFPFP",
+    "pr": "F"
+   },
+   "after": {
+    "b": false,
+    "t": "FFFFP",
+    "pr": "F"
+   }
+  },
+  {
+   "id": "THL.AU",
+   "attribution": "quality-inputs-or-method",
+   "changedFields": [
+    "t",
+    "methodVersion"
+   ],
+   "before": {
+    "b": false,
+    "t": "FFPFP",
+    "pr": "F"
+   },
+   "after": {
+    "b": false,
+    "t": "FFFFP",
+    "pr": "F"
+   }
+  },
+  {
+   "id": "RENT3.SA",
+   "attribution": "quality-inputs-or-method",
+   "changedFields": [
+    "t",
+    "pr",
+    "methodVersion"
+   ],
+   "before": {
+    "b": false,
+    "t": "PFPFP",
+    "pr": "P"
+   },
+   "after": {
+    "b": false,
+    "t": "PFFFP",
+    "pr": "F"
+   }
+  },
+  {
+   "id": "VAMO3.SA",
+   "attribution": "profit-record-inputs",
+   "changedFields": [
+    "pr",
+    "methodVersion"
+   ],
+   "before": {
+    "b": false,
+    "t": "PFFPF",
+    "pr": "P"
+   },
+   "after": {
+    "b": false,
+    "t": "PFFPF",
+    "pr": "F"
+   }
+  }
+ ]
+}

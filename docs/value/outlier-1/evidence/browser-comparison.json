@@ -1,0 +1,118 @@
+{
+ "candidateStates": 221,
+ "baselineStates": 223,
+ "viewports": [
+  "1728x970",
+  "390x844"
+ ],
+ "paths": [
+  "/s/5706.jp",
+  "/s/8766.jp",
+  "/s/eden.pa",
+  "/s/nflx.us",
+  "/s/petr3.sa",
+  "/s/prg.us",
+  "/s/prva.us",
+  "/s/upbd.us",
+  "/value",
+  "/value/method"
+ ],
+ "counts": {
+  "ownerChrome": 389,
+  "ownerWhitespace": 133,
+  "preExisting": 714,
+  "new": 12
+ },
+ "newFindings": [
+  {
+   "path": "/s/prva.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"3.8%\" (12px)"
+  },
+  {
+   "path": "/s/prva.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"at today's price (\" (12px)"
+  },
+  {
+   "path": "/s/prva.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"10.0%\" (12px)"
+  },
+  {
+   "path": "/s/prva.us",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"at central value)\" (12px)"
+  },
+  {
+   "path": "/s/upbd.us",
+   "state": "Open Cash for owners evidence",
+   "width": 390,
+   "issue": "overlapping chart labels: \"0\" / \"2022 – LTM to Jun 2026\""
+  },
+  {
+   "path": "/s/petr3.sa",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Quality tests\" (12px)"
+  },
+  {
+   "path": "/s/petr3.sa",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Fail\" (12px)"
+  },
+  {
+   "path": "/s/petr3.sa",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Annual history\" (12px)"
+  },
+  {
+   "path": "/s/petr3.sa",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"27\" (12px)"
+  },
+  {
+   "path": "/s/petr3.sa",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"years\" (12px)"
+  },
+  {
+   "path": "/s/petr3.sa",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"Market value\" (12px)"
+  },
+  {
+   "path": "/s/petr3.sa",
+   "state": "page",
+   "width": 390,
+   "issue": "text below 13px: \"$163B\" (12px)"
+  }
+ ],
+ "interactionFailures": [],
+ "preExistingInteractionFailures": [
+  [
+   "/value/method",
+   1728
+  ],
+  [
+   "/value/method",
+   390
+  ]
+ ],
+ "pass": false,
+ "newFindingsReviewed": {
+  "prva.us (4)": "Reference row \"Expected / yr … at today’s price (… at central value)\" at 12px: PRVA had no expected return in the live archive (value 154× price), so the row is new for this page; the identical strings are pre-existing on EDEN.PA in both arms.",
+  "petr3.sa (7)": "Withheld-value layout (\"Quality tests\", \"Fail\", \"Annual history\", \"years\", \"Market value\") at 12px: PETR3 is newly withheld; the same findings appear on a company already withheld in the live archive (EDP.LS, evidence/browser-baseline-withheld).",
+  "upbd.us (1)": "Chart axis tick overlapping the period caption at 390px in a drawer chart: the corrected (cash-basis) series puts a 0 tick there; the same chart-label overlap class is pre-existing on the live archive (CMS.US \"10%\" / \"2017 – LTM to Jun 2026\", evidence/browser-baseline-negative). Cosmetic, not introduced by code."
+ },
+ "verdict": "0 findings introduced by code; 12 state-driven findings classified above"
+}

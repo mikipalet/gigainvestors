@@ -1,0 +1,779 @@
+{
+ "asOf": "2026-10-12T13:46:43.315Z",
+ "companies": [
+  {
+   "id": "009970.KO",
+   "buy": true,
+   "valueToPrice": 3.720297728866793,
+   "expectedReturn": 0.4582413178958743,
+   "ownerEarningsYield": 0.176706687227699,
+   "reasons": [
+    "expected return 46% a year"
+   ]
+  },
+  {
+   "id": "2313.HK",
+   "buy": true,
+   "valueToPrice": 3.2635455582977735,
+   "expectedReturn": 0.4484508936883044,
+   "ownerEarningsYield": 0.14000712106078525,
+   "reasons": [
+    "expected return 45% a year"
+   ]
+  },
+  {
+   "id": "001800.KO",
+   "buy": true,
+   "valueToPrice": 2.996580934503706,
+   "expectedReturn": 0.40450566748241557,
+   "ownerEarningsYield": 0.20093619486582226,
+   "reasons": [
+    "expected return 40% a year"
+   ]
+  },
+  {
+   "id": "192080.KO",
+   "buy": true,
+   "valueToPrice": 2.765433147395741,
+   "expectedReturn": 0.4789536302496882,
+   "ownerEarningsYield": 0.17083706859571776,
+   "reasons": [
+    "expected return 48% a year"
+   ]
+  },
+  {
+   "id": "000651.SHE",
+   "buy": true,
+   "valueToPrice": 2.053192462551811,
+   "expectedReturn": 0.4021092515181425,
+   "ownerEarningsYield": 0.10615752593422165,
+   "reasons": [
+    "expected return 40% a year"
+   ]
+  },
+  {
+   "id": "CABO.US",
+   "buy": false,
+   "valueToPrice": 37.59878366153044,
+   "expectedReturn": null,
+   "ownerEarningsYield": 2.8483415753479395,
+   "reasons": [
+    "central value 37.6\u00d7 price",
+    "owner earnings 285% of price"
+   ]
+  },
+  {
+   "id": "STLAM.MI",
+   "buy": false,
+   "valueToPrice": 17.71063967212992,
+   "expectedReturn": null,
+   "ownerEarningsYield": 1.2365250892585995,
+   "reasons": [
+    "central value 17.7\u00d7 price",
+    "owner earnings 124% of price"
+   ]
+  },
+  {
+   "id": "CRMT.US",
+   "buy": false,
+   "valueToPrice": 17.093023518627604,
+   "expectedReturn": 3.521917563422556,
+   "ownerEarningsYield": 1.3241632974119684,
+   "reasons": [
+    "central value 17.1\u00d7 price",
+    "expected return 352% a year",
+    "owner earnings 132% of price"
+   ]
+  },
+  {
+   "id": "0881.HK",
+   "buy": false,
+   "valueToPrice": 15.819923223943386,
+   "expectedReturn": null,
+   "ownerEarningsYield": 0.9926642948083741,
+   "reasons": [
+    "central value 15.8\u00d7 price",
+    "owner earnings 99% of price"
+   ]
+  },
+  {
+   "id": "OPTU.US",
+   "buy": false,
+   "valueToPrice": 8.641803450478218,
+   "expectedReturn": null,
+   "ownerEarningsYield": 0.33682689226167545,
+   "reasons": [
+    "central value 8.6\u00d7 price"
+   ]
+  },
+  {
+   "id": "ZIM.US",
+   "buy": false,
+   "valueToPrice": 8.505497365743866,
+   "expectedReturn": 1.1170910267539855,
+   "ownerEarningsYield": 0.6502964201810985,
+   "reasons": [
+    "central value 8.5\u00d7 price",
+    "expected return 112% a year",
+    "owner earnings 65% of price"
+   ]
+  },
+  {
+   "id": "PLAY.US",
+   "buy": false,
+   "valueToPrice": 6.542686156200238,
+   "expectedReturn": 0.5149155809120309,
+   "ownerEarningsYield": 0.5030958397412592,
+   "reasons": [
+    "central value 6.5\u00d7 price",
+    "expected return 51% a year",
+    "owner earnings 50% of price"
+   ]
+  },
+  {
+   "id": "ALIT.US",
+   "buy": false,
+   "valueToPrice": 6.31868050923236,
+   "expectedReturn": 1.4557333494987907,
+   "ownerEarningsYield": 0.4526452033174739,
+   "reasons": [
+    "central value 6.3\u00d7 price",
+    "expected return 146% a year"
+   ]
+  },
+  {
+   "id": "BHC.US",
+   "buy": false,
+   "valueToPrice": 6.200018270510953,
+   "expectedReturn": 1.5314887935834718,
+   "ownerEarningsYield": 0.4412693366991397,
+   "reasons": [
+    "central value 6.2\u00d7 price",
+    "expected return 153% a year"
+   ]
+  },
+  {
+   "id": "JELD.US",
+   "buy": false,
+   "valueToPrice": 6.085570691955841,
+   "expectedReturn": 0.4926345103717594,
+   "ownerEarningsYield": 0.48930036284104933,
+   "reasons": [
+    "central value 6.1\u00d7 price",
+    "expected return 49% a year"
+   ]
+  },
+  {
+   "id": "CE.US",
+   "buy": false,
+   "valueToPrice": 6.0715144995084245,
+   "expectedReturn": 0.5519457567337993,
+   "ownerEarningsYield": 0.39245806505694125,
+   "reasons": [
+    "central value 6.1\u00d7 price",
+    "expected return 55% a year"
+   ]
+  },
+  {
+   "id": "GDG.AU",
+   "buy": false,
+   "valueToPrice": 6.067964561470719,
+   "expectedReturn": null,
+   "ownerEarningsYield": 0.027640771299573152,
+   "reasons": [
+    "central value 6.1\u00d7 price"
+   ]
+  },
+  {
+   "id": "DCGO.US",
+   "buy": false,
+   "valueToPrice": 5.919546900147101,
+   "expectedReturn": 1.0192235507682015,
+   "ownerEarningsYield": 0.42944969193885585,
+   "reasons": [
+    "central value 5.9\u00d7 price",
+    "expected return 102% a year"
+   ]
+  },
+  {
+   "id": "CNXC.US",
+   "buy": false,
+   "valueToPrice": 5.867872270633934,
+   "expectedReturn": 0.48671401617791366,
+   "ownerEarningsYield": 0.46949957400547376,
+   "reasons": [
+    "central value 5.9\u00d7 price",
+    "expected return 49% a year"
+   ]
+  },
+  {
+   "id": "EMBC.US",
+   "buy": false,
+   "valueToPrice": 5.5983159552936534,
+   "expectedReturn": 1.0130923882248575,
+   "ownerEarningsYield": 0.4016168046197933,
+   "reasons": [
+    "central value 5.6\u00d7 price",
+    "expected return 101% a year"
+   ]
+  },
+  {
+   "id": "FMC.US",
+   "buy": false,
+   "valueToPrice": 5.482830975594309,
+   "expectedReturn": 0.6766029887249212,
+   "ownerEarningsYield": 0.4091904909093238,
+   "reasons": [
+    "central value 5.5\u00d7 price",
+    "expected return 68% a year"
+   ]
+  },
+  {
+   "id": "OLN.US",
+   "buy": false,
+   "valueToPrice": 5.471860150124763,
+   "expectedReturn": 0.4532321683286148,
+   "ownerEarningsYield": 0.4379029640513121,
+   "reasons": [
+    "central value 5.5\u00d7 price",
+    "expected return 45% a year"
+   ]
+  },
+  {
+   "id": "COLL.US",
+   "buy": false,
+   "valueToPrice": 5.300444881513849,
+   "expectedReturn": 0.49415354834676994,
+   "ownerEarningsYield": 0.41350603218656196,
+   "reasons": [
+    "central value 5.3\u00d7 price",
+    "expected return 49% a year"
+   ]
+  },
+  {
+   "id": "GPI.US",
+   "buy": false,
+   "valueToPrice": 5.2355771027234255,
+   "expectedReturn": 0.35938004414822877,
+   "ownerEarningsYield": 0.2911527757306547,
+   "reasons": [
+    "central value 5.2\u00d7 price"
+   ]
+  },
+  {
+   "id": "JKS.US",
+   "buy": false,
+   "valueToPrice": 5.006029312218934,
+   "expectedReturn": null,
+   "ownerEarningsYield": 0.08108621671324283,
+   "reasons": [
+    "central value 5.0\u00d7 price"
+   ]
+  },
+  {
+   "id": "000270.KO",
+   "buy": false,
+   "valueToPrice": 4.990477374532338,
+   "expectedReturn": 0.5829485266444403,
+   "ownerEarningsYield": 0.2491711027472996,
+   "reasons": [
+    "central value 5.0\u00d7 price",
+    "expected return 58% a year"
+   ]
+  },
+  {
+   "id": "CYH.US",
+   "buy": false,
+   "valueToPrice": 4.692534847844513,
+   "expectedReturn": 0.38237356460217986,
+   "ownerEarningsYield": 0.3772955931199048,
+   "reasons": [
+    "central value 4.7\u00d7 price"
+   ]
+  },
+  {
+   "id": "161390.KO",
+   "buy": false,
+   "valueToPrice": 4.686544187485177,
+   "expectedReturn": 0.4334461930395094,
+   "ownerEarningsYield": 0.2487183416884509,
+   "reasons": [
+    "central value 4.7\u00d7 price",
+    "expected return 43% a year"
+   ]
+  },
+  {
+   "id": "NAS.OL",
+   "buy": false,
+   "valueToPrice": 4.505855070206239,
+   "expectedReturn": null,
+   "ownerEarningsYield": 0.2756799959538825,
+   "reasons": [
+    "central value 4.5\u00d7 price"
+   ]
+  },
+  {
+   "id": "NXST.US",
+   "buy": false,
+   "valueToPrice": 4.475572724456581,
+   "expectedReturn": 0.3696921651891253,
+   "ownerEarningsYield": 0.3585782975157256,
+   "reasons": [
+    "central value 4.5\u00d7 price"
+   ]
+  },
+  {
+   "id": "003240.KO",
+   "buy": false,
+   "valueToPrice": 4.461815955728584,
+   "expectedReturn": null,
+   "ownerEarningsYield": 0.22454380396843995,
+   "reasons": [
+    "central value 4.5\u00d7 price"
+   ]
+  },
+  {
+   "id": "1099.HK",
+   "buy": false,
+   "valueToPrice": 4.407830339045025,
+   "expectedReturn": 1.2151836856709868,
+   "ownerEarningsYield": 0.24491280592440887,
+   "reasons": [
+    "central value 4.4\u00d7 price",
+    "expected return 122% a year"
+   ]
+  },
+  {
+   "id": "KMR.IR",
+   "buy": false,
+   "valueToPrice": 4.333718634470571,
+   "expectedReturn": 0.3800623769586343,
+   "ownerEarningsYield": 0.34121383413081807,
+   "reasons": [
+    "central value 4.3\u00d7 price"
+   ]
+  },
+  {
+   "id": "WU.US",
+   "buy": false,
+   "valueToPrice": 4.177618198499314,
+   "expectedReturn": 0.3418939419847339,
+   "ownerEarningsYield": 0.33589456171120896,
+   "reasons": [
+    "central value 4.2\u00d7 price"
+   ]
+  },
+  {
+   "id": "MBG.XETRA",
+   "buy": false,
+   "valueToPrice": 4.117863784622236,
+   "expectedReturn": 0.5019941442255595,
+   "ownerEarningsYield": 0.2988646662645554,
+   "reasons": [
+    "central value 4.1\u00d7 price",
+    "expected return 50% a year"
+   ]
+  },
+  {
+   "id": "WB.US",
+   "buy": false,
+   "valueToPrice": 4.081811181234555,
+   "expectedReturn": null,
+   "ownerEarningsYield": 0.19792013494142144,
+   "reasons": [
+    "central value 4.1\u00d7 price"
+   ]
+  },
+  {
+   "id": "RNO.PA",
+   "buy": false,
+   "valueToPrice": 4.052307709081665,
+   "expectedReturn": null,
+   "ownerEarningsYield": 0.11484399009741672,
+   "reasons": [
+    "central value 4.1\u00d7 price"
+   ]
+  },
+  {
+   "id": "WAF.AU",
+   "buy": false,
+   "valueToPrice": 4.048201229563579,
+   "expectedReturn": 0.33210675646734666,
+   "ownerEarningsYield": 0.2144906130095325,
+   "reasons": [
+    "central value 4.0\u00d7 price"
+   ]
+  },
+  {
+   "id": "SESG.PA",
+   "buy": false,
+   "valueToPrice": 4.0378166110307765,
+   "expectedReturn": 0.6111909844598375,
+   "ownerEarningsYield": 0.2814050681163152,
+   "reasons": [
+    "central value 4.0\u00d7 price",
+    "expected return 61% a year"
+   ]
+  },
+  {
+   "id": "ABG.US",
+   "buy": false,
+   "valueToPrice": 4.021078891189576,
+   "expectedReturn": 0.29012245680677073,
+   "ownerEarningsYield": 0.22899431007906423,
+   "reasons": [
+    "central value 4.0\u00d7 price"
+   ]
+  },
+  {
+   "id": "004020.KO",
+   "buy": false,
+   "valueToPrice": 3.9828794550353996,
+   "expectedReturn": 0.7003815710268928,
+   "ownerEarningsYield": 0.2710213969212946,
+   "reasons": [
+    "expected return 70% a year"
+   ]
+  },
+  {
+   "id": "BMW.XETRA",
+   "buy": false,
+   "valueToPrice": 3.9689576877208834,
+   "expectedReturn": 0.6228868331741866,
+   "ownerEarningsYield": 0.2742348642679244,
+   "reasons": [
+    "expected return 62% a year"
+   ]
+  },
+  {
+   "id": "2609.TW",
+   "buy": false,
+   "valueToPrice": 3.9470280869506347,
+   "expectedReturn": 1.4671151915112328,
+   "ownerEarningsYield": 0.2506924121906727,
+   "reasons": [
+    "expected return 147% a year"
+   ]
+  },
+  {
+   "id": "027410.KO",
+   "buy": false,
+   "valueToPrice": 3.901980231969712,
+   "expectedReturn": 0.7494020061577242,
+   "ownerEarningsYield": 0.2614325181797468,
+   "reasons": [
+    "expected return 75% a year"
+   ]
+  },
+  {
+   "id": "FGP.LSE",
+   "buy": false,
+   "valueToPrice": 3.8806147548933776,
+   "expectedReturn": 0.4361339643826777,
+   "ownerEarningsYield": 0.28457289521165974,
+   "reasons": [
+    "expected return 44% a year"
+   ]
+  },
+  {
+   "id": "036460.KO",
+   "buy": false,
+   "valueToPrice": 3.8323161181571357,
+   "expectedReturn": 0.40830490913059136,
+   "ownerEarningsYield": 0.2843589695897076,
+   "reasons": [
+    "expected return 41% a year"
+   ]
+  },
+  {
+   "id": "DCH.US",
+   "buy": false,
+   "valueToPrice": 3.7398331604055626,
+   "expectedReturn": 0.5535102154905285,
+   "ownerEarningsYield": 0.25794409697820553,
+   "reasons": [
+    "expected return 55% a year"
+   ]
+  },
+  {
+   "id": "USNA.US",
+   "buy": false,
+   "valueToPrice": 3.7067326475935714,
+   "expectedReturn": 0.5495636167808635,
+   "ownerEarningsYield": 0.25514547746957855,
+   "reasons": [
+    "expected return 55% a year"
+   ]
+  },
+  {
+   "id": "7211.JP",
+   "buy": false,
+   "valueToPrice": 3.5637229840667297,
+   "expectedReturn": 1.1313640483598353,
+   "ownerEarningsYield": 0.221910209059212,
+   "reasons": [
+    "expected return 113% a year"
+   ]
+  },
+  {
+   "id": "0762.HK",
+   "buy": false,
+   "valueToPrice": 3.377851367793264,
+   "expectedReturn": 0.4210403516310731,
+   "ownerEarningsYield": 0.23689964037115477,
+   "reasons": [
+    "expected return 42% a year"
+   ]
+  },
+  {
+   "id": "005380.KO",
+   "buy": false,
+   "valueToPrice": 3.255215165963582,
+   "expectedReturn": 13.704145794130145,
+   "ownerEarningsYield": 0.13554998552930456,
+   "reasons": [
+    "expected return 1370% a year"
+   ]
+  },
+  {
+   "id": "601117.SHG",
+   "buy": false,
+   "valueToPrice": 3.239485633433569,
+   "expectedReturn": 0.6605248347226216,
+   "ownerEarningsYield": 0.13898310919457818,
+   "reasons": [
+    "expected return 66% a year"
+   ]
+  },
+  {
+   "id": "011210.KO",
+   "buy": false,
+   "valueToPrice": 3.0690769714609236,
+   "expectedReturn": 1.4040797219789192,
+   "ownerEarningsYield": 0.17646826945131408,
+   "reasons": [
+    "expected return 140% a year"
+   ]
+  },
+  {
+   "id": "CRI.US",
+   "buy": false,
+   "valueToPrice": 3.0077681256756454,
+   "expectedReturn": 0.40784704766676605,
+   "ownerEarningsYield": 0.2016339286561716,
+   "reasons": [
+    "expected return 41% a year"
+   ]
+  },
+  {
+   "id": "0960.HK",
+   "buy": false,
+   "valueToPrice": 2.9559790677642077,
+   "expectedReturn": 0.4800813883719811,
+   "ownerEarningsYield": 0.18918349780666774,
+   "reasons": [
+    "expected return 48% a year"
+   ]
+  },
+  {
+   "id": "007310.KO",
+   "buy": false,
+   "valueToPrice": 2.9541724262486424,
+   "expectedReturn": 0.43257730461026844,
+   "ownerEarningsYield": 0.18099340248783077,
+   "reasons": [
+    "expected return 43% a year"
+   ]
+  },
+  {
+   "id": "0688.HK",
+   "buy": false,
+   "valueToPrice": 2.9430989614408047,
+   "expectedReturn": 0.9016701044000415,
+   "ownerEarningsYield": 0.17154482504650836,
+   "reasons": [
+    "expected return 90% a year"
+   ]
+  },
+  {
+   "id": "INMD.US",
+   "buy": false,
+   "valueToPrice": 2.895630376264273,
+   "expectedReturn": 0.46860956548295685,
+   "ownerEarningsYield": 0.18428133497344262,
+   "reasons": [
+    "expected return 47% a year"
+   ]
+  },
+  {
+   "id": "LXS.XETRA",
+   "buy": false,
+   "valueToPrice": 2.761219713254354,
+   "expectedReturn": 1.2506913567499516,
+   "ownerEarningsYield": 0.15134051686053837,
+   "reasons": [
+    "expected return 125% a year"
+   ]
+  },
+  {
+   "id": "DSX.US",
+   "buy": false,
+   "valueToPrice": 2.7490775857724126,
+   "expectedReturn": 0.6838608951955647,
+   "ownerEarningsYield": 0.15942417052856128,
+   "reasons": [
+    "expected return 68% a year"
+   ]
+  },
+  {
+   "id": "HOG.US",
+   "buy": false,
+   "valueToPrice": 2.744510611476098,
+   "expectedReturn": 0.48211396941982165,
+   "ownerEarningsYield": 0.16858300931677486,
+   "reasons": [
+    "expected return 48% a year"
+   ]
+  },
+  {
+   "id": "RAT.LSE",
+   "buy": false,
+   "valueToPrice": 2.674525449318509,
+   "expectedReturn": 1.3133507019646058,
+   "ownerEarningsYield": 0.10548062781260109,
+   "reasons": [
+    "expected return 131% a year"
+   ]
+  },
+  {
+   "id": "600741.SHG",
+   "buy": false,
+   "valueToPrice": 2.5890154500131275,
+   "expectedReturn": 0.48040763972197,
+   "ownerEarningsYield": 0.15366894541866002,
+   "reasons": [
+    "expected return 48% a year"
+   ]
+  },
+  {
+   "id": "000210.KO",
+   "buy": false,
+   "valueToPrice": 2.510502421794618,
+   "expectedReturn": 4.0081080063735115,
+   "ownerEarningsYield": 0.12393565678163918,
+   "reasons": [
+    "expected return 401% a year"
+   ]
+  },
+  {
+   "id": "9202.JP",
+   "buy": false,
+   "valueToPrice": 2.4478965539493815,
+   "expectedReturn": 1.0097951643312535,
+   "ownerEarningsYield": 0.12365937079167805,
+   "reasons": [
+    "expected return 101% a year"
+   ]
+  },
+  {
+   "id": "1044.HK",
+   "buy": false,
+   "valueToPrice": 2.4312600639445674,
+   "expectedReturn": 0.6320653494889987,
+   "ownerEarningsYield": 0.1319138408684167,
+   "reasons": [
+    "expected return 63% a year"
+   ]
+  },
+  {
+   "id": "FR.PA",
+   "buy": false,
+   "valueToPrice": 2.375466945826013,
+   "expectedReturn": 0.6987654167352704,
+   "ownerEarningsYield": 0.12501141136033894,
+   "reasons": [
+    "expected return 70% a year"
+   ]
+  },
+  {
+   "id": "GGBR3.SA",
+   "buy": false,
+   "valueToPrice": 2.355853448514399,
+   "expectedReturn": 0.43277018337134876,
+   "ownerEarningsYield": 0.318193114302434,
+   "reasons": [
+    "expected return 43% a year"
+   ]
+  },
+  {
+   "id": "TE.PA",
+   "buy": false,
+   "valueToPrice": 2.1826562151895326,
+   "expectedReturn": 0.7002845583929671,
+   "ownerEarningsYield": 0.10745689255307868,
+   "reasons": [
+    "expected return 70% a year"
+   ]
+  },
+  {
+   "id": "MBRF3.SA",
+   "buy": false,
+   "valueToPrice": 2.076343718021611,
+   "expectedReturn": 0.5822898388874991,
+   "ownerEarningsYield": 0.22103036863671344,
+   "reasons": [
+    "expected return 58% a year"
+   ]
+  },
+  {
+   "id": "ZD.US",
+   "buy": false,
+   "valueToPrice": 1.8731550736540419,
+   "expectedReturn": 0.4638228241751755,
+   "ownerEarningsYield": 0.08507023104660077,
+   "reasons": [
+    "expected return 46% a year"
+   ]
+  },
+  {
+   "id": "QLT.LSE",
+   "buy": false,
+   "valueToPrice": 1.7437723133571648,
+   "expectedReturn": 0.6021144713735478,
+   "ownerEarningsYield": 0.05616073374109996,
+   "reasons": [
+    "expected return 60% a year"
+   ]
+  },
+  {
+   "id": "UOB.F",
+   "buy": false,
+   "valueToPrice": 1.726136907178744,
+   "expectedReturn": 1.1117772715566425,
+   "ownerEarningsYield": 0.06293783435909736,
+   "reasons": [
+    "expected return 111% a year"
+   ]
+  },
+  {
+   "id": "000800.SHE",
+   "buy": false,
+   "valueToPrice": 1.522299623217997,
+   "expectedReturn": 10.029108998712562,
+   "ownerEarningsYield": 0.04233403935502558,
+   "reasons": [
+    "expected return 1003% a year"
+   ]
+  },
+  {
+   "id": "TRS.US",
+   "buy": false,
+   "valueToPrice": 1.4313527177345835,
+   "expectedReturn": 0.42031419848570606,
+   "ownerEarningsYield": 0.04299288833126338,
+   "reasons": [
+    "expected return 42% a year"
+   ]
+  }
+ ]
+}

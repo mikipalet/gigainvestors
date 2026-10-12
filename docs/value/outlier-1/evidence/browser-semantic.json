@@ -1,0 +1,635 @@
+[
+ {
+  "name": "list",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buyCount": 139,
+  "listedSample": [
+   "LIGHT.AS",
+   "LULU.US",
+   "EEFT.US",
+   "BLDR.US",
+   "OTEX.TO",
+   "DEVL.F",
+   "TGS.US",
+   "PRG.US"
+  ],
+  "wrongBuys": [],
+  "staleOnList": [],
+  "overflow": false
+ },
+ {
+  "name": "method",
+  "width": 1728,
+  "height": 970,
+  "pass": true
+ },
+ {
+  "name": "PRG.US",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": true,
+  "state": "At or below value",
+  "mid": 66.17465235870091,
+  "price": 30.48,
+  "withheld": false,
+  "staleSeen": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "$30.48"
+   ],
+   [
+    "Estimated value",
+    "$66.17"
+   ],
+   [
+    "Buy at or below",
+    "$66.17"
+   ],
+   [
+    "Expected / yr",
+    "18.9%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "46.1%"
+   ]
+  ]
+ },
+ {
+  "name": "NFLX.US",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Above value",
+  "mid": 26.59186546751827,
+  "price": 70.3,
+  "withheld": false,
+  "staleSeen": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "$70.30"
+   ],
+   [
+    "Estimated value",
+    "$26.59"
+   ],
+   [
+    "Buy at or below",
+    "$26.59"
+   ],
+   [
+    "Expected / yr",
+    "5.5%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "264.4%"
+   ]
+  ]
+ },
+ {
+  "name": "PRVA.US",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Above value",
+  "mid": 5.114374454305036,
+  "price": 20.85,
+  "withheld": false,
+  "staleSeen": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "$20.85"
+   ],
+   [
+    "Estimated value",
+    "$5.11"
+   ],
+   [
+    "Buy at or below",
+    "$5.11"
+   ],
+   [
+    "Expected / yr",
+    "3.8%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "407.7%"
+   ]
+  ]
+ },
+ {
+  "name": "UPBD.US",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Below value",
+  "mid": 41.85751755014704,
+  "price": 15.4,
+  "withheld": false,
+  "staleSeen": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "$15.40"
+   ],
+   [
+    "Estimated value",
+    "$41.86"
+   ],
+   [
+    "Buy at or below",
+    "$41.86"
+   ],
+   [
+    "Expected / yr",
+    "23.0%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "36.8%"
+   ]
+  ]
+ },
+ {
+  "name": "PETR3.SA",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 63.06,
+  "withheld": true,
+  "staleSeen": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "8766.JP",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Above value",
+  "mid": 206.59537711284295,
+  "price": 525.7,
+  "withheld": false,
+  "staleSeen": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "JPY 525.70"
+   ],
+   [
+    "Estimated value",
+    "JPY 206.60"
+   ],
+   [
+    "Buy at or below",
+    "JPY 206.60"
+   ],
+   [
+    "Expected / yr",
+    "6.6%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "254.5%"
+   ]
+  ]
+ },
+ {
+  "name": "5706.JP",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Above value",
+  "mid": 2106.2105860380393,
+  "price": 2659,
+  "withheld": false,
+  "staleSeen": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "JPY 2,659.00"
+   ],
+   [
+    "Estimated value",
+    "JPY 2,106.21"
+   ],
+   [
+    "Buy at or below",
+    "JPY 2,106.21"
+   ],
+   [
+    "Expected / yr",
+    "8.5%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "126.2%"
+   ]
+  ]
+ },
+ {
+  "name": "EDEN.PA",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": true,
+  "state": "At or below value",
+  "mid": 39.35500028443978,
+  "price": 28.25,
+  "withheld": false,
+  "staleSeen": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "EUR 28.25"
+   ],
+   [
+    "Estimated value",
+    "EUR 39.36"
+   ],
+   [
+    "Buy at or below",
+    "EUR 39.36"
+   ],
+   [
+    "Expected / yr",
+    "12.6%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "71.8%"
+   ]
+  ]
+ },
+ {
+  "name": "list",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buyCount": 139,
+  "listedSample": [
+   "LIGHT.AS",
+   "LULU.US",
+   "EEFT.US",
+   "BLDR.US",
+   "OTEX.TO",
+   "DEVL.F",
+   "TGS.US",
+   "PRG.US"
+  ],
+  "wrongBuys": [],
+  "staleOnList": [],
+  "overflow": false
+ },
+ {
+  "name": "method",
+  "width": 390,
+  "height": 844,
+  "pass": true
+ },
+ {
+  "name": "PRG.US",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": true,
+  "state": "At or below value",
+  "mid": 66.17465235870091,
+  "price": 30.48,
+  "withheld": false,
+  "staleSeen": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "$30.48"
+   ],
+   [
+    "Estimated value",
+    "$66.17"
+   ],
+   [
+    "Buy at or below",
+    "$66.17"
+   ],
+   [
+    "Expected / yr",
+    "18.9%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "46.1%"
+   ]
+  ]
+ },
+ {
+  "name": "NFLX.US",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Above value",
+  "mid": 26.59186546751827,
+  "price": 70.3,
+  "withheld": false,
+  "staleSeen": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "$70.30"
+   ],
+   [
+    "Estimated value",
+    "$26.59"
+   ],
+   [
+    "Buy at or below",
+    "$26.59"
+   ],
+   [
+    "Expected / yr",
+    "5.5%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "264.4%"
+   ]
+  ]
+ },
+ {
+  "name": "PRVA.US",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Above value",
+  "mid": 5.114374454305036,
+  "price": 20.85,
+  "withheld": false,
+  "staleSeen": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "$20.85"
+   ],
+   [
+    "Estimated value",
+    "$5.11"
+   ],
+   [
+    "Buy at or below",
+    "$5.11"
+   ],
+   [
+    "Expected / yr",
+    "3.8%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "407.7%"
+   ]
+  ]
+ },
+ {
+  "name": "UPBD.US",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Below value",
+  "mid": 41.85751755014704,
+  "price": 15.4,
+  "withheld": false,
+  "staleSeen": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "$15.40"
+   ],
+   [
+    "Estimated value",
+    "$41.86"
+   ],
+   [
+    "Buy at or below",
+    "$41.86"
+   ],
+   [
+    "Expected / yr",
+    "23.0%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "36.8%"
+   ]
+  ]
+ },
+ {
+  "name": "PETR3.SA",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 63.06,
+  "withheld": true,
+  "staleSeen": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "8766.JP",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Above value",
+  "mid": 206.59537711284295,
+  "price": 525.7,
+  "withheld": false,
+  "staleSeen": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "JPY 525.70"
+   ],
+   [
+    "Estimated value",
+    "JPY 206.60"
+   ],
+   [
+    "Buy at or below",
+    "JPY 206.60"
+   ],
+   [
+    "Expected / yr",
+    "6.6%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "254.5%"
+   ]
+  ]
+ },
+ {
+  "name": "5706.JP-price-reread",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "firstError": "AssertionError [ERR_ASSERTION]: 5706.JP share price: expected JPY 2,659.00"
+ },
+ {
+  "name": "5706.JP",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Above value",
+  "mid": 2106.2105860380393,
+  "price": 2659,
+  "withheld": false,
+  "staleSeen": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "JPY 2,659.00"
+   ],
+   [
+    "Estimated value",
+    "JPY 2,106.21"
+   ],
+   [
+    "Buy at or below",
+    "JPY 2,106.21"
+   ],
+   [
+    "Expected / yr",
+    "8.5%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "126.2%"
+   ]
+  ]
+ },
+ {
+  "name": "EDEN.PA",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": true,
+  "state": "At or below value",
+  "mid": 39.35500028443978,
+  "price": 28.25,
+  "withheld": false,
+  "staleSeen": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "EUR 28.25"
+   ],
+   [
+    "Estimated value",
+    "EUR 39.36"
+   ],
+   [
+    "Buy at or below",
+    "EUR 39.36"
+   ],
+   [
+    "Expected / yr",
+    "12.6%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "71.8%"
+   ]
+  ]
+ }
+]

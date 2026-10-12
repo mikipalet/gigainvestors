@@ -1,0 +1,4703 @@
+[
+ {
+  "liveHit": true,
+  "candHit": false,
+  "id": "PRVA.US",
+  "name": "Privia Health Group Inc",
+  "industry": "Health Information Services",
+  "k": "operating",
+  "tests": "FFFPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 154.86,
+   "er": null,
+   "oey": 0.01
+  },
+  "cand": {
+   "pv": 0.25,
+   "er": 0.038,
+   "oey": 0.01
+  },
+  "liveV": 3228.843441798028,
+  "candV": 5.114374454305036,
+  "price": 20.85,
+  "cur": "USD",
+  "rules": [
+   "E2 balance 2026-06-30->2026-03-31"
+  ],
+  "sec": {
+   "netIncome": 1.0,
+   "ocf": 1.0,
+   "da": 1.0
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   24.3
+  ],
+  "priceTo": [
+   "2026-10",
+   20.3
+  ],
+  "flags": null,
+  "decision": "Data error, fixed",
+  "why": "10-Q balance sheet 2026-06-30 delivered in thousands-as-units (cash US$412.2bn vs US$412.2m in the 10-Q); rejected by the new unit-scale check, previous balance used."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "CABO.US",
+  "name": "Cable One Inc",
+  "industry": "Telecom Services",
+  "k": "operating",
+  "tests": "PFPFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 37.6,
+   "er": null,
+   "oey": 2.87
+  },
+  "cand": {
+   "pv": 37.6,
+   "er": null,
+   "oey": 2.87
+  },
+  "liveV": 418.8504499894491,
+  "candV": 418.8504499894491,
+  "price": 11.14,
+  "cur": "USD",
+  "rules": [],
+  "sec": {
+   "netIncome": 1.0,
+   "ocf": 1.0,
+   "capex": 1.013,
+   "da": 1.0
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   148.55
+  ],
+  "priceTo": [
+   "2026-10",
+   13.21
+  ],
+  "flags": null,
+  "decision": "Real (inputs match 10-K/20-F)",
+  "why": "Revenue, net income and operating cash flow equal the filing; the extreme ratio comes from a depressed price against a five-year median margin."
+ },
+ {
+  "liveHit": true,
+  "candHit": false,
+  "id": "UPBD.US",
+  "name": "Upbound Group Inc.",
+  "industry": "Software - Application",
+  "k": "operating",
+  "tests": "FFPFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 20.35,
+   "er": 1.655,
+   "oey": 1.63
+  },
+  "cand": {
+   "pv": 2.72,
+   "er": 0.23,
+   "oey": 0.22
+  },
+  "liveV": 313.4389275189056,
+  "candV": 41.85751755014704,
+  "price": 15.4,
+  "cur": "USD",
+  "rules": [
+   "E1 replenished D&A"
+  ],
+  "sec": {
+   "revenue": 1.0,
+   "netIncome": 1.0,
+   "ocf": 1.0,
+   "capex": 1.0,
+   "da": 29.153
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   19.38
+  ],
+  "priceTo": [
+   "2026-10",
+   15.62
+  ],
+  "flags": null,
+  "decision": "Data error, fixed",
+  "why": "Vendor D&A includes depreciation of rental merchandise (US$1.38bn, FY2025 10-K) whose purchases (US$1.45bn) are operating cash flows; same rule as PRG."
+ },
+ {
+  "liveHit": true,
+  "candHit": false,
+  "id": "PRG.US",
+  "name": "PROG Holdings Inc",
+  "industry": "Rental & Leasing Services",
+  "k": "operating",
+  "tests": "PPPPP",
+  "liveBuy": true,
+  "candBuy": true,
+  "live": {
+   "pv": 18.68,
+   "er": 1.544,
+   "oey": 1.46
+  },
+  "cand": {
+   "pv": 2.17,
+   "er": 0.189,
+   "oey": 0.17
+  },
+  "liveV": 569.417092409436,
+  "candV": 66.17465235870091,
+  "price": 30.48,
+  "cur": "USD",
+  "rules": [
+   "E1 replenished D&A"
+  ],
+  "sec": {
+   "revenue": 1.0,
+   "netIncome": 1.0,
+   "ocf": 1.0,
+   "capex": 1.0,
+   "da": 17.608
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   28.93
+  ],
+  "priceTo": [
+   "2026-10",
+   30.26
+  ],
+  "flags": null,
+  "decision": "Data error, fixed",
+  "why": "Vendor D&A includes depreciation of lease merchandise (US$1.59bn in the FY2025 10-K; other D&A US$24m) while merchandise purchases (US$1.70bn) are operating cash flows; owner earnings now operating cash flow less capex and SBC. Still a Buy at the corrected value."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "STLAM.MI",
+  "name": "Stellantis NV",
+  "industry": "Auto Manufacturers",
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 17.71,
+   "er": null,
+   "oey": 1.24
+  },
+  "cand": {
+   "pv": 17.71,
+   "er": null,
+   "oey": 1.24
+  },
+  "liveV": 70.89569060753607,
+  "candV": 70.89569060753607,
+  "price": 4.003,
+  "cur": "EUR",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "filings.xbrl.org",
+   "query2.finance.yahoo.com"
+  ],
+  "priceFrom": [
+   "2025-10",
+   8.778
+  ],
+  "priceTo": [
+   "2026-10",
+   4.124
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "ABR.US",
+  "name": "Arbor Realty Trust",
+  "industry": "REIT - Mortgage",
+  "k": "operating",
+  "tests": "PFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 17.28,
+   "er": 2.659,
+   "oey": 1.35
+  },
+  "cand": {
+   "pv": null,
+   "er": null,
+   "oey": 0.7
+  },
+  "liveV": 49.605882298977065,
+  "candV": null,
+  "price": 2.87,
+  "cur": "USD",
+  "rules": [
+   "E1 replenished D&A",
+   "E5 lender cash"
+  ],
+  "sec": {
+   "netIncome": 0.943,
+   "ocf": 1.064,
+   "da": 1.0
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   10.09
+  ],
+  "priceTo": [
+   "2026-10",
+   3.25
+  ],
+  "flags": null,
+  "decision": "Data error, flagged",
+  "why": "A mortgage-loan REIT valued as an operating company: its balance sheet is a loan book funded by securitisations and borrowings (US$14.5bn assets, 2025 10-K), so owner earnings, excess cash and the operating-company value do not apply; it needs the financial-company model."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "CRMT.US",
+  "name": "Americas Car-Mart Inc",
+  "industry": "Auto & Truck Dealerships",
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 17.09,
+   "er": 3.522,
+   "oey": 1.33
+  },
+  "cand": {
+   "pv": 17.09,
+   "er": 3.522,
+   "oey": 1.33
+  },
+  "liveV": 23.07558175014727,
+  "candV": 23.07558175014727,
+  "price": 1.35,
+  "cur": "USD",
+  "rules": [],
+  "sec": {
+   "revenue": 1.0,
+   "netIncome": 1.0,
+   "ocf": 1.0,
+   "capex": 1.0,
+   "da": 1.0
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   22.24
+  ],
+  "priceTo": [
+   "2026-10",
+   1.12
+  ],
+  "flags": null,
+  "decision": "Real (inputs match 10-K/20-F)",
+  "why": "Revenue, net income and operating cash flow equal the filing; the extreme ratio comes from a depressed price against a five-year median margin."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "0881.HK",
+  "name": "Zhongsheng Group Holdings Ltd",
+  "industry": "Auto & Truck Dealerships",
+  "k": "operating",
+  "tests": "FFFPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 15.82,
+   "er": null,
+   "oey": 0.99
+  },
+  "cand": {
+   "pv": 15.82,
+   "er": null,
+   "oey": 0.99
+  },
+  "liveV": 38.996110747020445,
+  "candV": 38.996110747020445,
+  "price": 2.465,
+  "cur": "HKD",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   12.28
+  ],
+  "priceTo": [
+   "2026-10",
+   2.465
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "QFIN.US",
+  "name": "Qfin Holdings, Inc.",
+  "industry": "Credit Services",
+  "k": "operating",
+  "tests": "FFPPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 14.06,
+   "er": null,
+   "oey": 0.97
+  },
+  "cand": {
+   "pv": null,
+   "er": null,
+   "oey": 0.97
+  },
+  "liveV": 87.19222127363146,
+  "candV": null,
+  "price": 6.2,
+  "cur": "USD",
+  "rules": [
+   "E5 lender cash"
+  ],
+  "sec": {
+   "revenue": 0.837,
+   "netIncome": 7.01,
+   "ocf": 6.993,
+   "da": 6.993
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   24.15
+  ],
+  "priceTo": [
+   "2026-10",
+   6.18
+  ],
+  "flags": null,
+  "decision": "Data error, flagged",
+  "why": "A consumer lender valued as an operating company: its balance sheet is a loan book funded by partner banks and securitisations (2025 20-F), so owner earnings, excess cash and the operating-company value do not apply; it needs the financial-company model."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "NAVI.US",
+  "name": "Navient Corp",
+  "industry": "Credit Services",
+  "k": "operating",
+  "tests": "FFFFF",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 12.72,
+   "er": null,
+   "oey": 0.78
+  },
+  "cand": {
+   "pv": null,
+   "er": null,
+   "oey": 0.78
+  },
+  "liveV": 115.86769821354461,
+  "candV": null,
+  "price": 9.11,
+  "cur": "USD",
+  "rules": [
+   "E5 lender cash"
+  ],
+  "sec": {
+   "netIncome": 1.0,
+   "ocf": 1.0
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   12.23
+  ],
+  "priceTo": [
+   "2026-10",
+   9.04
+  ],
+  "flags": null,
+  "decision": "Data error, flagged",
+  "why": "A student-loan lender valued as an operating company: its balance sheet is a loan book funded by asset-backed securitisations (US$48.7bn assets, 2025 10-K), so owner earnings, excess cash and the operating-company value do not apply; it needs the financial-company model."
+ },
+ {
+  "liveHit": true,
+  "candHit": false,
+  "id": "5871.TW",
+  "name": "Chailease Holding Co Ltd",
+  "industry": "Credit Services",
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 11.28,
+   "er": 1.279,
+   "oey": 0.57
+  },
+  "cand": {
+   "pv": null,
+   "er": null,
+   "oey": 0.27
+  },
+  "liveV": 1189.724412811983,
+  "candV": null,
+  "price": 105.5,
+  "cur": "TWD",
+  "rules": [
+   "E1 replenished D&A",
+   "E5 lender cash"
+  ],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   103
+  ],
+  "priceTo": [
+   "2026-10",
+   105
+  ],
+  "flags": null,
+  "decision": "Data error, flagged",
+  "why": "A leasing and lending company valued as an operating company: its balance sheet is a loan book funded by borrowings (NT$976bn assets at end-2025), so owner earnings, excess cash and the operating-company value do not apply; it needs the financial-company model."
+ },
+ {
+  "liveHit": true,
+  "candHit": false,
+  "id": "FINV.US",
+  "name": "FinVolution Group",
+  "industry": "Credit Services",
+  "k": "operating",
+  "tests": "FFPPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 10.74,
+   "er": null,
+   "oey": 0.45
+  },
+  "cand": {
+   "pv": null,
+   "er": null,
+   "oey": 0.45
+  },
+  "liveV": 32.858260967265515,
+  "candV": null,
+  "price": 3.06,
+  "cur": "USD",
+  "rules": [
+   "E5 lender cash"
+  ],
+  "sec": {
+   "revenue": 972.755,
+   "netIncome": 0.973,
+   "ocf": 6.993,
+   "capex": 7.754,
+   "da": 1.337
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   6.11
+  ],
+  "priceTo": [
+   "2026-10",
+   2.93
+  ],
+  "flags": null,
+  "decision": "Data error, flagged",
+  "why": "A consumer lender valued as an operating company: its balance sheet is a loan book funded by partner banks and securitisations (2025 20-F), so owner earnings, excess cash and the operating-company value do not apply; it needs the financial-company model."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "JKS.US",
+  "name": "JinkoSolar Holding Company Limited",
+  "industry": "Solar",
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 8.88,
+   "er": null,
+   "oey": 0.08
+  },
+  "cand": {
+   "pv": 5.01,
+   "er": null,
+   "oey": 0.08
+  },
+  "liveV": 78.89291128110013,
+  "candV": 44.45354029250414,
+  "price": 8.88,
+  "cur": "USD",
+  "rules": [
+   "E3 minority cash"
+  ],
+  "sec": {
+   "netIncome": 6.993,
+   "ocf": 6.993,
+   "capex": 7.245
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   25.11
+  ],
+  "priceTo": [
+   "2026-10",
+   8.9
+  ],
+  "flags": null,
+  "decision": "Perimeter corrected; otherwise real",
+  "why": "Material minority interests: consolidated cash now allocated to the parent by its share of equity (rule E3). Other inputs internally consistent; vendor figures not reconciled to a filing in the corpus."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "OPTU.US",
+  "name": "Optimum Communications, Inc.",
+  "industry": "Telecom Services",
+  "k": "operating",
+  "tests": "FFPFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 8.64,
+   "er": null,
+   "oey": 0.34
+  },
+  "cand": {
+   "pv": 8.64,
+   "er": null,
+   "oey": 0.34
+  },
+  "liveV": 8.036877208944743,
+  "candV": 8.036877208944743,
+  "price": 0.93,
+  "cur": "USD",
+  "rules": [],
+  "sec": {
+   "revenue": 1.0,
+   "netIncome": 1.0,
+   "ocf": 1.0,
+   "capex": 1.0,
+   "da": 1.0
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   2.23
+  ],
+  "priceTo": [
+   "2026-10",
+   1
+  ],
+  "flags": null,
+  "decision": "Real (inputs match 10-K/20-F)",
+  "why": "Revenue, net income and operating cash flow equal the filing; the extreme ratio comes from a depressed price against a five-year median margin."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "ZIM.US",
+  "name": "ZIM Integrated Shipping Services Ltd",
+  "industry": "Marine Shipping",
+  "k": "operating",
+  "tests": "FFPFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 8.51,
+   "er": 1.117,
+   "oey": 0.65
+  },
+  "cand": {
+   "pv": 8.51,
+   "er": 1.117,
+   "oey": 0.65
+  },
+  "liveV": 255.07986599865853,
+  "candV": 255.07986599865853,
+  "price": 29.99,
+  "cur": "USD",
+  "rules": [],
+  "sec": {
+   "netIncome": 1.0,
+   "ocf": 0.794
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   15.38
+  ],
+  "priceTo": [
+   "2026-10",
+   29.99
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": false,
+  "id": "5706.JP",
+  "name": "Mitsui Kinzoku Company, Limited",
+  "industry": null,
+  "k": "operating",
+  "tests": "FFPPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 7.92,
+   "er": 0.725,
+   "oey": 0.46
+  },
+  "cand": {
+   "pv": 0.79,
+   "er": 0.085,
+   "oey": 0.05
+  },
+  "liveV": 21062.105860380394,
+  "candV": 2106.2105860380393,
+  "price": 2659,
+  "cur": "JPY",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "EDINET XBRL"
+  ],
+  "priceFrom": [
+   "2025-10",
+   1576
+  ],
+  "priceTo": [
+   "2026-10",
+   2736
+  ],
+  "flags": null,
+  "decision": "Data error, fixed",
+  "why": "Share split after the annual report not applied to the share count (price on the post-split basis); now applied from the report\u2019s own year-end price (P/E \u00d7 EPS) against the split-restated history."
+ },
+ {
+  "liveHit": true,
+  "candHit": false,
+  "id": "UBI.PA",
+  "name": "Ubisoft Entertainment",
+  "industry": "Electronic Gaming & Multimedia",
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 7.79,
+   "er": null,
+   "oey": 0.5
+  },
+  "cand": {
+   "pv": null,
+   "er": null,
+   "oey": 0.5
+  },
+  "liveV": 39.08394016197209,
+  "candV": null,
+  "price": 5.016,
+  "cur": "EUR",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   7.746
+  ],
+  "priceTo": [
+   "2026-10",
+   5.126
+  ],
+  "flags": null,
+  "decision": "Data error, flagged",
+  "why": "Vendor capital spending (\u20ac42m in FY2025, \u20ac35m in FY2026) omits game-development payments of \u20ac797m and \u20ac644m that Ubisoft capitalises and amortises through D&A, so net income plus D&A counts development amortisation as free cash."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "PETR3.SA",
+  "name": "Petroleo Brasileiro Petrobras SA ADR",
+  "industry": "Oil & Gas Integrated",
+  "k": "operating",
+  "tests": "PFFPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 6.78,
+   "er": 1.79,
+   "oey": 0.55
+  },
+  "cand": {
+   "pv": null,
+   "er": null,
+   "oey": 0.55
+  },
+  "liveV": 427.84925341373065,
+  "candV": null,
+  "price": 63.06,
+  "cur": "BRL",
+  "rules": [],
+  "sec": {
+   "revenue": 5.578,
+   "netIncome": 5.609,
+   "ocf": 5.555
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   31.51
+  ],
+  "priceTo": [
+   "2026-10",
+   60.05
+  ],
+  "flags": null,
+  "decision": "Data error, flagged",
+  "why": "Vendor statements label Brazilian-real amounts as US dollars: FY2025 revenue 497.5bn and net income 110.1bn 'USD' against US$89.2bn and US$19.6bn attributable in the 20-F, a 5.6\u00d7 overstatement."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "PLAY.US",
+  "name": "Dave & Buster's Entertainment",
+  "industry": "Entertainment",
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 6.54,
+   "er": 0.515,
+   "oey": 0.5
+  },
+  "cand": {
+   "pv": 6.54,
+   "er": 0.515,
+   "oey": 0.5
+  },
+  "liveV": 45.14453447778165,
+  "candV": 45.14453447778165,
+  "price": 6.9,
+  "cur": "USD",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   14.69
+  ],
+  "priceTo": [
+   "2026-10",
+   6.56
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "ALIT.US",
+  "name": "Alight Inc",
+  "industry": "Software - Application",
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 6.32,
+   "er": 1.456,
+   "oey": 0.02
+  },
+  "cand": {
+   "pv": 6.32,
+   "er": 1.456,
+   "oey": 0.02
+  },
+  "liveV": 59.14284956641488,
+  "candV": 59.14284956641488,
+  "price": 9.36,
+  "cur": "USD",
+  "rules": [],
+  "sec": {
+   "revenue": 1.0,
+   "netIncome": 1.0,
+   "ocf": 1.0,
+   "capex": 1.0,
+   "da": 1.375
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   2.88
+  ],
+  "priceTo": [
+   "2026-10",
+   9.93
+  ],
+  "flags": null,
+  "decision": "Real (inputs match 10-K/20-F)",
+  "why": "Revenue, net income and operating cash flow equal the filing; the extreme ratio comes from a depressed price against a five-year median margin."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "BHC.US",
+  "name": "Bausch Health Companies Inc",
+  "industry": "Drug Manufacturers - Specialty & Generic",
+  "k": "operating",
+  "tests": "FFPFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 6.2,
+   "er": 1.531,
+   "oey": 0.44
+  },
+  "cand": {
+   "pv": 6.2,
+   "er": 1.531,
+   "oey": 0.44
+  },
+  "liveV": 37.44811035388616,
+  "candV": 37.44811035388616,
+  "price": 6.04,
+  "cur": "USD",
+  "rules": [],
+  "sec": {
+   "revenue": 1.0,
+   "netIncome": 1.0,
+   "ocf": 1.0,
+   "capex": 1.0,
+   "da": 1.0
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   7.02
+  ],
+  "priceTo": [
+   "2026-10",
+   6.04
+  ],
+  "flags": null,
+  "decision": "Real (inputs match 10-K/20-F)",
+  "why": "Revenue, net income and operating cash flow equal the filing; the extreme ratio comes from a depressed price against a five-year median margin."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "JELD.US",
+  "name": "Jeld-Wen Holding Inc",
+  "industry": "Building Products & Equipment",
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 6.09,
+   "er": 0.493,
+   "oey": 0.5
+  },
+  "cand": {
+   "pv": 6.09,
+   "er": 0.493,
+   "oey": 0.5
+  },
+  "liveV": 9.371778865611995,
+  "candV": 9.371778865611995,
+  "price": 1.54,
+  "cur": "USD",
+  "rules": [],
+  "sec": {
+   "revenue": 1.0,
+   "netIncome": 1.0,
+   "ocf": 1.008,
+   "capex": 1.0,
+   "da": 1.0
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   4.34
+  ],
+  "priceTo": [
+   "2026-10",
+   1.77
+  ],
+  "flags": null,
+  "decision": "Real (inputs match 10-K/20-F)",
+  "why": "Revenue, net income and operating cash flow equal the filing; the extreme ratio comes from a depressed price against a five-year median margin."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "CE.US",
+  "name": "Celanese Corporation",
+  "industry": "Chemicals",
+  "k": "operating",
+  "tests": "FFPFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 6.07,
+   "er": 0.552,
+   "oey": 0.38
+  },
+  "cand": {
+   "pv": 6.07,
+   "er": 0.552,
+   "oey": 0.38
+  },
+  "liveV": 273.3395827678693,
+  "candV": 273.3395827678693,
+  "price": 45.02,
+  "cur": "USD",
+  "rules": [],
+  "sec": {
+   "revenue": 1.0,
+   "netIncome": 1.0,
+   "ocf": 1.0,
+   "capex": 1.0,
+   "da": 1.034
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   38.44
+  ],
+  "priceTo": [
+   "2026-10",
+   43.86
+  ],
+  "flags": null,
+  "decision": "Real (inputs match 10-K/20-F)",
+  "why": "Revenue, net income and operating cash flow equal the filing; the extreme ratio comes from a depressed price against a five-year median margin."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "GDG.AU",
+  "name": "Generation Development Group Ltd",
+  "industry": "Asset Management",
+  "k": "operating",
+  "tests": "FFPFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 6.07,
+   "er": null,
+   "oey": 0.03
+  },
+  "cand": {
+   "pv": 6.07,
+   "er": null,
+   "oey": 0.03
+  },
+  "liveV": 16.929621126503307,
+  "candV": 16.929621126503307,
+  "price": 2.79,
+  "cur": "AUD",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   7.16
+  ],
+  "priceTo": [
+   "2026-10",
+   2.67
+  ],
+  "flags": null,
+  "decision": "Not confirmed (follow-up)",
+  "why": "Suspected: consolidated cash includes A$6.05bn of benefit-fund investments held for investment-bond policyholders (vendor short-term investments) against A$6.4bn non-current liabilities; not flagged because the audited FY2026 balance sheet was not retrieved. Not a Buy (fails quality)."
+ },
+ {
+  "liveHit": true,
+  "candHit": false,
+  "id": "PAG.LSE",
+  "name": "Paragon Banking Group PLC",
+  "industry": "Mortgage Finance",
+  "k": "operating",
+  "tests": "PFPPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 5.99,
+   "er": null,
+   "oey": 0.38
+  },
+  "cand": {
+   "pv": null,
+   "er": null,
+   "oey": 0.38
+  },
+  "liveV": 4202.314319086017,
+  "candV": null,
+  "price": 701,
+  "cur": "GBX",
+  "rules": [
+   "E5 lender cash"
+  ],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   829
+  ],
+  "priceTo": [
+   "2026-10",
+   705
+  ],
+  "flags": null,
+  "decision": "Data error, flagged",
+  "why": "A bank valued as an operating company: its balance sheet is a loan book funded by retail savings deposits (annual report), so owner earnings, excess cash and the operating-company value do not apply; it needs the financial-company model."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "DCGO.US",
+  "name": "DocGo Inc",
+  "industry": "Medical Care Facilities",
+  "k": "operating",
+  "tests": "FFFPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 5.92,
+   "er": 1.019,
+   "oey": 0.43
+  },
+  "cand": {
+   "pv": 5.92,
+   "er": 1.019,
+   "oey": 0.43
+  },
+  "liveV": 2.0008068522497204,
+  "candV": 2.0008068522497204,
+  "price": 0.338,
+  "cur": "USD",
+  "rules": [],
+  "sec": {
+   "revenue": 1.0,
+   "netIncome": 1.0,
+   "ocf": 1.0,
+   "capex": 1.636,
+   "da": 1.0
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   1.09
+  ],
+  "priceTo": [
+   "2026-10",
+   0.345
+  ],
+  "flags": null,
+  "decision": "Real (inputs match 10-K/20-F)",
+  "why": "Revenue, net income and operating cash flow equal the filing; the extreme ratio comes from a depressed price against a five-year median margin."
+ },
+ {
+  "liveHit": true,
+  "candHit": false,
+  "id": "8766.JP",
+  "name": "Tokio Marine Holdings, Inc.",
+  "industry": "Insurance - Property & Casualty",
+  "k": "insurer",
+  "tests": "PFPPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 5.89,
+   "er": 0.371,
+   "oey": null
+  },
+  "cand": {
+   "pv": 0.39,
+   "er": 0.066,
+   "oey": null
+  },
+  "liveV": 3098.930656692644,
+  "candV": 206.59537711284295,
+  "price": 525.7,
+  "cur": "JPY",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "EDINET XBRL"
+  ],
+  "priceFrom": [
+   "2025-10",
+   385.467
+  ],
+  "priceTo": [
+   "2026-10",
+   519.7
+  ],
+  "flags": null,
+  "decision": "Data error, fixed",
+  "why": "Share split after the annual report not applied to the share count (price on the post-split basis); now applied from the report\u2019s own year-end price (P/E \u00d7 EPS) against the split-restated history."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "CNXC.US",
+  "name": "Concentrix Corporation",
+  "industry": "Information Technology Services",
+  "k": "operating",
+  "tests": "PFPPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 5.87,
+   "er": 0.487,
+   "oey": 0.46
+  },
+  "cand": {
+   "pv": 5.87,
+   "er": 0.487,
+   "oey": 0.46
+  },
+  "liveV": 152.2712854229506,
+  "candV": 152.2712854229506,
+  "price": 25.95,
+  "cur": "USD",
+  "rules": [],
+  "sec": {
+   "revenue": 1.0,
+   "netIncome": 1.0,
+   "ocf": 1.0,
+   "capex": 1.0
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   40.31
+  ],
+  "priceTo": [
+   "2026-10",
+   26.16
+  ],
+  "flags": null,
+  "decision": "Real (inputs match 10-K/20-F)",
+  "why": "Revenue, net income and operating cash flow equal the filing; the extreme ratio comes from a depressed price against a five-year median margin."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "EMBC.US",
+  "name": "Embecta Corp",
+  "industry": "Medical Instruments & Supplies",
+  "k": "operating",
+  "tests": "PFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 5.6,
+   "er": 1.013,
+   "oey": 0.39
+  },
+  "cand": {
+   "pv": 5.6,
+   "er": 1.013,
+   "oey": 0.39
+  },
+  "liveV": 31.826426205844417,
+  "candV": 31.826426205844417,
+  "price": 5.685,
+  "cur": "USD",
+  "rules": [],
+  "sec": {
+   "revenue": 1.0,
+   "netIncome": 1.0,
+   "ocf": 1.0,
+   "capex": 1.0,
+   "da": 1.256
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   13.34
+  ],
+  "priceTo": [
+   "2026-10",
+   5.91
+  ],
+  "flags": null,
+  "decision": "Real (inputs match 10-K/20-F)",
+  "why": "Revenue, net income and operating cash flow equal the filing; the extreme ratio comes from a depressed price against a five-year median margin."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "FMC.US",
+  "name": "FMC Corporation",
+  "industry": "Agricultural Inputs",
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 5.48,
+   "er": 0.677,
+   "oey": 0.33
+  },
+  "cand": {
+   "pv": 5.48,
+   "er": 0.677,
+   "oey": 0.33
+  },
+  "liveV": 45.78163864621248,
+  "candV": 45.78163864621248,
+  "price": 8.35,
+  "cur": "USD",
+  "rules": [],
+  "sec": {
+   "revenue": 1.0,
+   "netIncome": 1.0,
+   "capex": 1.0,
+   "da": 1.0
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   15.17
+  ],
+  "priceTo": [
+   "2026-10",
+   9.09
+  ],
+  "flags": null,
+  "decision": "Real (inputs match 10-K/20-F)",
+  "why": "Revenue, net income and operating cash flow equal the filing; the extreme ratio comes from a depressed price against a five-year median margin."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "OLN.US",
+  "name": "Olin Corporation",
+  "industry": "Chemicals",
+  "k": "operating",
+  "tests": "FFPPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 5.47,
+   "er": 0.453,
+   "oey": 0.44
+  },
+  "cand": {
+   "pv": 5.47,
+   "er": 0.453,
+   "oey": 0.44
+  },
+  "liveV": 81.47599763535771,
+  "candV": 81.47599763535771,
+  "price": 14.89,
+  "cur": "USD",
+  "rules": [],
+  "sec": {
+   "revenue": 1.0,
+   "netIncome": 0.423,
+   "ocf": 1.0,
+   "capex": 1.0,
+   "da": 1.0
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   20.7
+  ],
+  "priceTo": [
+   "2026-10",
+   15.92
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "COLL.US",
+  "name": "Collegium Pharmaceutical Inc",
+  "industry": "Drug Manufacturers - Specialty & Generic",
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 5.3,
+   "er": 0.494,
+   "oey": 0.43
+  },
+  "cand": {
+   "pv": 5.3,
+   "er": 0.494,
+   "oey": 0.43
+  },
+  "liveV": 117.08682743264093,
+  "candV": 117.08682743264093,
+  "price": 22.09,
+  "cur": "USD",
+  "rules": [],
+  "sec": {
+   "revenue": 1.0,
+   "netIncome": 1.0,
+   "ocf": 1.0,
+   "capex": 1.0
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   36
+  ],
+  "priceTo": [
+   "2026-10",
+   21.93
+  ],
+  "flags": null,
+  "decision": "Real (inputs match 10-K/20-F)",
+  "why": "Revenue, net income and operating cash flow equal the filing; the extreme ratio comes from a depressed price against a five-year median margin."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "GPI.US",
+  "name": "Group 1 Automotive Inc",
+  "industry": "Auto & Truck Dealerships",
+  "k": "operating",
+  "tests": "PFPPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 5.24,
+   "er": 0.359,
+   "oey": 0.25
+  },
+  "cand": {
+   "pv": 5.24,
+   "er": 0.359,
+   "oey": 0.25
+  },
+  "liveV": 1214.7062436028618,
+  "candV": 1214.7062436028618,
+  "price": 232.01,
+  "cur": "USD",
+  "rules": [],
+  "sec": {
+   "revenue": 1.0,
+   "netIncome": 0.995,
+   "ocf": 0.929,
+   "capex": 1.0
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   397.54
+  ],
+  "priceTo": [
+   "2026-10",
+   232.61
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": false,
+  "id": "VTY.LSE",
+  "name": "Vistry Group PLC",
+  "industry": "Residential Construction",
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 5.24,
+   "er": 0.655,
+   "oey": 0.38
+  },
+  "cand": {
+   "pv": 1.4,
+   "er": 0.149,
+   "oey": 0.08
+  },
+  "liveV": 1146.3141857318637,
+  "candV": 305.6046360842435,
+  "price": 218.8,
+  "cur": "GBX",
+  "rules": [
+   "E1 replenished D&A"
+  ],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   644.2
+  ],
+  "priceTo": [
+   "2026-10",
+   224.6
+  ],
+  "flags": null,
+  "decision": "Data error, fixed",
+  "why": "D&A replenished inside operating cash flow (rule E1); owner earnings now operating cash flow less capex and SBC."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "000270.KO",
+  "name": "Kia Corp",
+  "industry": "Auto Manufacturers",
+  "k": "operating",
+  "tests": "FFPPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 4.99,
+   "er": 0.583,
+   "oey": 0.23
+  },
+  "cand": {
+   "pv": 4.99,
+   "er": 0.583,
+   "oey": 0.23
+  },
+  "liveV": 532982.9836000537,
+  "candV": 532982.9836000537,
+  "price": 106800,
+  "cur": "KRW",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   119900
+  ],
+  "priceTo": [
+   "2026-10",
+   112600
+  ],
+  "flags": null,
+  "decision": "Not confirmed (follow-up)",
+  "why": "Inputs internally consistent; consolidated cash may include finance-subsidiary balances; not verified against DART. Not a Buy."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "1099.HK",
+  "name": "Sinopharm Group Co Ltd",
+  "industry": "Medical Distribution",
+  "k": "operating",
+  "tests": "PPFPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 4.88,
+   "er": null,
+   "oey": 0.24
+  },
+  "cand": {
+   "pv": 4.41,
+   "er": 1.215,
+   "oey": 0.24
+  },
+  "liveV": 72.5855346539669,
+  "candV": 65.54443714159952,
+  "price": 14.87,
+  "cur": "HKD",
+  "rules": [
+   "E3 minority cash"
+  ],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   19.37
+  ],
+  "priceTo": [
+   "2026-10",
+   14.85
+  ],
+  "flags": null,
+  "decision": "Perimeter corrected; otherwise real",
+  "why": "Material minority interests: consolidated cash now allocated to the parent by its share of equity (rule E3). Other inputs internally consistent; vendor figures not reconciled to a filing in the corpus."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "161390.KO",
+  "name": "Hankook Tire Co.",
+  "industry": "Auto Parts",
+  "k": "operating",
+  "tests": "PFPPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 4.74,
+   "er": 0.466,
+   "oey": 0.23
+  },
+  "cand": {
+   "pv": 4.69,
+   "er": 0.433,
+   "oey": 0.23
+  },
+  "liveV": 294363.22000987956,
+  "candV": 291034.3940428295,
+  "price": 62100,
+  "cur": "KRW",
+  "rules": [
+   "E3 minority cash"
+  ],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   46350
+  ],
+  "priceTo": [
+   "2026-10",
+   60400
+  ],
+  "flags": null,
+  "decision": "Perimeter corrected; otherwise real",
+  "why": "Material minority interests: consolidated cash now allocated to the parent by its share of equity (rule E3). Other inputs internally consistent; vendor figures not reconciled to a filing in the corpus."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "CYH.US",
+  "name": "Community Health Systems Inc",
+  "industry": "Medical Care Facilities",
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 4.69,
+   "er": 0.382,
+   "oey": 0.39
+  },
+  "cand": {
+   "pv": 4.69,
+   "er": 0.382,
+   "oey": 0.39
+  },
+  "liveV": 12.951396180050855,
+  "candV": 12.951396180050855,
+  "price": 2.76,
+  "cur": "USD",
+  "rules": [],
+  "sec": {
+   "revenue": 1.0,
+   "netIncome": 1.0,
+   "ocf": 1.0,
+   "capex": 1.0,
+   "da": 1.0
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   3.88
+  ],
+  "priceTo": [
+   "2026-10",
+   2.72
+  ],
+  "flags": null,
+  "decision": "Real (inputs match 10-K/20-F)",
+  "why": "Revenue, net income and operating cash flow equal the filing; the extreme ratio comes from a depressed price against a five-year median margin."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "NAS.OL",
+  "name": "Norwegian Air Shuttle ASA",
+  "industry": "Airlines",
+  "k": "operating",
+  "tests": "FFPFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 4.51,
+   "er": null,
+   "oey": 0.28
+  },
+  "cand": {
+   "pv": 4.51,
+   "er": null,
+   "oey": 0.28
+  },
+  "liveV": 49.83475707648101,
+  "candV": 49.83475707648101,
+  "price": 11.06,
+  "cur": "NOK",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   15.735
+  ],
+  "priceTo": [
+   "2026-10",
+   11.74
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "NXST.US",
+  "name": "Nexstar Broadcasting Group Inc",
+  "industry": "Broadcasting",
+  "k": "operating",
+  "tests": "PFPPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 4.48,
+   "er": 0.37,
+   "oey": 0.36
+  },
+  "cand": {
+   "pv": 4.48,
+   "er": 0.37,
+   "oey": 0.36
+  },
+  "liveV": 722.581216363515,
+  "candV": 722.581216363515,
+  "price": 161.45,
+  "cur": "USD",
+  "rules": [],
+  "sec": {
+   "revenue": 1.0,
+   "netIncome": 1.0,
+   "ocf": 1.0,
+   "capex": 1.0,
+   "da": 1.667
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   195.73
+  ],
+  "priceTo": [
+   "2026-10",
+   158.05
+  ],
+  "flags": null,
+  "decision": "Real (inputs match 10-K/20-F)",
+  "why": "Revenue, net income and operating cash flow equal the filing; the extreme ratio comes from a depressed price against a five-year median margin."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "003240.KO",
+  "name": "Taekwang Ind",
+  "industry": "Chemicals",
+  "k": "operating",
+  "tests": "FFFFF",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 4.46,
+   "er": null,
+   "oey": 0.22
+  },
+  "cand": {
+   "pv": 4.46,
+   "er": null,
+   "oey": 0.22
+  },
+  "liveV": 4060252.5197130116,
+  "candV": 4060252.5197130116,
+  "price": 910000,
+  "cur": "KRW",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   802000
+  ],
+  "priceTo": [
+   "2026-10",
+   915000
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": false,
+  "id": "5411.JP",
+  "name": "JFE Holdings,Inc.",
+  "industry": null,
+  "k": "operating",
+  "tests": "FFFPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 4.4,
+   "er": 0.38,
+   "oey": 0.35
+  },
+  "cand": {
+   "pv": 1.52,
+   "er": 0.141,
+   "oey": 0.12
+  },
+  "liveV": 7401.582178380125,
+  "candV": 2551.226129212597,
+  "price": 1683.5,
+  "cur": "JPY",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "EDINET XBRL",
+   "statements"
+  ],
+  "priceFrom": [
+   "2025-10",
+   1768.5
+  ],
+  "priceTo": [
+   "2026-10",
+   1705.5
+  ],
+  "flags": null,
+  "decision": "Data error, fixed",
+  "why": "Capital spending tagged with an issuer extension concept (or only in the capex overview) was read as zero; EDINET extraction now reads it."
+ },
+ {
+  "liveHit": true,
+  "candHit": false,
+  "id": "BEEF3.SA",
+  "name": "Minerva S.A",
+  "industry": "Packaged Foods",
+  "k": "operating",
+  "tests": "FPFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 4.33,
+   "er": null,
+   "oey": 0.19
+  },
+  "cand": {
+   "pv": 3.47,
+   "er": null,
+   "oey": 0.19
+  },
+  "liveV": 19.476647502259183,
+  "candV": 15.63294870021079,
+  "price": 4.5,
+  "cur": "BRL",
+  "rules": [
+   "E3 minority cash"
+  ],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   7.18
+  ],
+  "priceTo": [
+   "2026-10",
+   4.5
+  ],
+  "flags": null,
+  "decision": "Perimeter corrected; otherwise real",
+  "why": "Material minority interests: consolidated cash now allocated to the parent by its share of equity (rule E3). Other inputs internally consistent; vendor figures not reconciled to a filing in the corpus."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "KMR.IR",
+  "name": "Kenmare Resources PLC",
+  "industry": "Other Industrial Metals & Mining",
+  "k": "operating",
+  "tests": "FFFPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 4.33,
+   "er": 0.38,
+   "oey": 0.34
+  },
+  "cand": {
+   "pv": 4.33,
+   "er": 0.38,
+   "oey": 0.34
+  },
+  "liveV": 11.874389058449367,
+  "candV": 11.874389058449367,
+  "price": 2.74,
+  "cur": "EUR",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   2.9
+  ],
+  "priceTo": [
+   "2026-10",
+   2.68
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": false,
+  "id": "601668.SHG",
+  "name": "China State Construction Engineering Corp Ltd",
+  "industry": "Engineering & Construction",
+  "k": "operating",
+  "tests": "PFFPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 4.32,
+   "er": null,
+   "oey": 0.19
+  },
+  "cand": {
+   "pv": 3.53,
+   "er": null,
+   "oey": 0.19
+  },
+  "liveV": 18.775846897685653,
+  "candV": 15.342562397527217,
+  "price": 4.35,
+  "cur": "CNY",
+  "rules": [
+   "E3 minority cash"
+  ],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-09",
+   5.45
+  ],
+  "priceTo": [
+   "2026-09",
+   4.34
+  ],
+  "flags": null,
+  "decision": "Perimeter corrected; otherwise real",
+  "why": "Material minority interests: consolidated cash now allocated to the parent by its share of equity (rule E3). Other inputs internally consistent; vendor figures not reconciled to a filing in the corpus."
+ },
+ {
+  "liveHit": true,
+  "candHit": false,
+  "id": "8053.JP",
+  "name": "SUMITOMO CORPORATION",
+  "industry": "Conglomerates",
+  "k": "operating",
+  "tests": "FFPPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 4.32,
+   "er": 0.542,
+   "oey": 0.31
+  },
+  "cand": {
+   "pv": 1.08,
+   "er": 0.106,
+   "oey": 0.08
+  },
+  "liveV": 7379.116107101216,
+  "candV": 1844.779026775304,
+  "price": 1708,
+  "cur": "JPY",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "EDINET XBRL"
+  ],
+  "priceFrom": [
+   "2025-10",
+   1121.5
+  ],
+  "priceTo": [
+   "2026-10",
+   1725.5
+  ],
+  "flags": null,
+  "decision": "Data error, fixed",
+  "why": "Share split after the annual report not applied to the share count (price on the post-split basis); now applied from the report\u2019s own year-end price (P/E \u00d7 EPS) against the split-restated history."
+ },
+ {
+  "liveHit": true,
+  "candHit": false,
+  "id": "OSB.LSE",
+  "name": "OneSavings Bank PLC",
+  "industry": "Mortgage Finance",
+  "k": "operating",
+  "tests": "FFPPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 4.26,
+   "er": 0.662,
+   "oey": 0.19
+  },
+  "cand": {
+   "pv": null,
+   "er": null,
+   "oey": 0.19
+  },
+  "liveV": 2071.211967114062,
+  "candV": null,
+  "price": 486.6,
+  "cur": "GBX",
+  "rules": [
+   "E5 lender cash"
+  ],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   539
+  ],
+  "priceTo": [
+   "2026-10",
+   485.4
+  ],
+  "flags": null,
+  "decision": "Data error, flagged",
+  "why": "A bank valued as an operating company: its balance sheet is a loan book funded by \u00a324.3bn of retail deposits (2025 annual report), so owner earnings, excess cash and the operating-company value do not apply; it needs the financial-company model."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "WU.US",
+  "name": "Western Union Co",
+  "industry": "Credit Services",
+  "k": "operating",
+  "tests": "FFFPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 4.18,
+   "er": 0.342,
+   "oey": 0.32
+  },
+  "cand": {
+   "pv": 4.18,
+   "er": 0.342,
+   "oey": 0.32
+  },
+  "liveV": 25.5670233748158,
+  "candV": 25.5670233748158,
+  "price": 6.12,
+  "cur": "USD",
+  "rules": [],
+  "sec": {
+   "revenue": 0.998,
+   "netIncome": 1.0,
+   "ocf": 1.0,
+   "capex": 3.917
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   9.33
+  ],
+  "priceTo": [
+   "2026-10",
+   6.11
+  ],
+  "flags": null,
+  "decision": "Real (inputs match 10-K/20-F)",
+  "why": "Revenue, net income and operating cash flow equal the filing; the extreme ratio comes from a depressed price against a five-year median margin."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "009970.KO",
+  "name": "Youngone Holdi",
+  "industry": "Apparel Manufacturing",
+  "k": "operating",
+  "tests": "PPPPP",
+  "liveBuy": true,
+  "candBuy": true,
+  "live": {
+   "pv": 4.13,
+   "er": 3.74,
+   "oey": 0.16
+  },
+  "cand": {
+   "pv": 3.72,
+   "er": 0.458,
+   "oey": 0.16
+  },
+  "liveV": 720150.4460905568,
+  "candV": 648819.9239143687,
+  "price": 174400,
+  "cur": "KRW",
+  "rules": [
+   "E3 minority cash"
+  ],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   142100
+  ],
+  "priceTo": [
+   "2026-10",
+   162400
+  ],
+  "flags": null,
+  "decision": "Perimeter corrected; otherwise real",
+  "why": "Material minority interests: consolidated cash now allocated to the parent by its share of equity (rule E3). Other inputs internally consistent; vendor figures not reconciled to a filing in the corpus."
+ },
+ {
+  "liveHit": true,
+  "candHit": false,
+  "id": "SLM.US",
+  "name": "SLM Corp",
+  "industry": "Credit Services",
+  "k": "operating",
+  "tests": "PFFPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 4.13,
+   "er": null,
+   "oey": 0.25
+  },
+  "cand": {
+   "pv": null,
+   "er": null,
+   "oey": null
+  },
+  "liveV": 93.09668095048958,
+  "candV": null,
+  "price": 22.52,
+  "cur": "USD",
+  "rules": [],
+  "sec": {
+   "netIncome": 1.0,
+   "ocf": -1.444
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   26.85
+  ],
+  "priceTo": [
+   "2026-10",
+   22.6
+  ],
+  "flags": null,
+  "decision": "Data error, flagged",
+  "why": "A bank valued as an operating company: its balance sheet is a loan book funded by US$21.1bn of deposits (2025 10-K), so owner earnings, excess cash and the operating-company value do not apply; it needs the financial-company model."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "MBG.XETRA",
+  "name": "Mercedes-Benz Group AG",
+  "industry": "Auto Manufacturers",
+  "k": "operating",
+  "tests": "FFFPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 4.12,
+   "er": 0.502,
+   "oey": 0.28
+  },
+  "cand": {
+   "pv": 4.12,
+   "er": 0.502,
+   "oey": 0.28
+  },
+  "liveV": 163.02622723319433,
+  "candV": 163.02622723319433,
+  "price": 39.59,
+  "cur": "EUR",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   56.21
+  ],
+  "priceTo": [
+   "2026-10",
+   40.7
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": false,
+  "id": "AT1.XETRA",
+  "name": "Aroundtown SA",
+  "industry": "Real Estate Services",
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 4.09,
+   "er": null,
+   "oey": 0.17
+  },
+  "cand": {
+   "pv": 3.66,
+   "er": null,
+   "oey": 0.17
+  },
+  "liveV": 6.047276741093618,
+  "candV": 5.417411131766289,
+  "price": 1.48,
+  "cur": "EUR",
+  "rules": [
+   "E3 minority cash"
+  ],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   3.096
+  ],
+  "priceTo": [
+   "2026-10",
+   1.571
+  ],
+  "flags": null,
+  "decision": "Perimeter corrected; otherwise real",
+  "why": "Material minority interests: consolidated cash now allocated to the parent by its share of equity (rule E3). Other inputs internally consistent; vendor figures not reconciled to a filing in the corpus."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "WB.US",
+  "name": "Weibo Corp",
+  "industry": "Internet Content & Information",
+  "k": "operating",
+  "tests": "PPFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 4.08,
+   "er": null,
+   "oey": 0.18
+  },
+  "cand": {
+   "pv": 4.08,
+   "er": null,
+   "oey": 0.18
+  },
+  "liveV": 26.695045125273992,
+  "candV": 26.695045125273992,
+  "price": 6.54,
+  "cur": "USD",
+  "rules": [],
+  "sec": {
+   "netIncome": 1.003,
+   "ocf": 1.0,
+   "capex": 1.0,
+   "da": 1.239
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   10.88
+  ],
+  "priceTo": [
+   "2026-10",
+   6.48
+  ],
+  "flags": null,
+  "decision": "Real (inputs match 10-K/20-F)",
+  "why": "Revenue, net income and operating cash flow equal the filing; the extreme ratio comes from a depressed price against a five-year median margin."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "RNO.PA",
+  "name": "Renault SA",
+  "industry": "Auto Manufacturers",
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 4.05,
+   "er": null,
+   "oey": 0.12
+  },
+  "cand": {
+   "pv": 4.05,
+   "er": null,
+   "oey": 0.12
+  },
+  "liveV": 107.38615429066414,
+  "candV": 107.38615429066414,
+  "price": 26.5,
+  "cur": "EUR",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   33.7
+  ],
+  "priceTo": [
+   "2026-10",
+   25.8
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "WAF.AU",
+  "name": "West African Resources Ltd",
+  "industry": "Gold",
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 4.05,
+   "er": 0.332,
+   "oey": 0.2
+  },
+  "cand": {
+   "pv": 4.05,
+   "er": 0.332,
+   "oey": 0.2
+  },
+  "liveV": 14.937862537089607,
+  "candV": 14.937862537089607,
+  "price": 3.69,
+  "cur": "AUD",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   3.04
+  ],
+  "priceTo": [
+   "2026-10",
+   3.43
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "SESG.PA",
+  "name": "SES S. A.",
+  "industry": "Broadcasting",
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 4.04,
+   "er": 0.611,
+   "oey": 0.32
+  },
+  "cand": {
+   "pv": 4.04,
+   "er": 0.611,
+   "oey": 0.32
+  },
+  "liveV": 15.133736658143352,
+  "candV": 15.133736658143352,
+  "price": 3.748,
+  "cur": "EUR",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   6.645
+  ],
+  "priceTo": [
+   "2026-10",
+   4.094
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "ABG.US",
+  "name": "Asbury Automotive Group Inc",
+  "industry": "Auto & Truck Dealerships",
+  "k": "operating",
+  "tests": "PFPPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 4.02,
+   "er": 0.29,
+   "oey": 0.2
+  },
+  "cand": {
+   "pv": 4.02,
+   "er": 0.29,
+   "oey": 0.2
+  },
+  "liveV": 673.9328221633729,
+  "candV": 673.9328221633729,
+  "price": 167.6,
+  "cur": "USD",
+  "rules": [],
+  "sec": {
+   "revenue": 1.0,
+   "netIncome": 1.0,
+   "ocf": 1.0,
+   "da": 1.0
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   234.6
+  ],
+  "priceTo": [
+   "2026-10",
+   167.77
+  ],
+  "flags": null,
+  "decision": "Real (inputs match 10-K/20-F)",
+  "why": "Revenue, net income and operating cash flow equal the filing; the extreme ratio comes from a depressed price against a five-year median margin."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "027410.KO",
+  "name": "BGF Retail Co Ltd",
+  "industry": "Specialty Chemicals",
+  "k": "operating",
+  "tests": "PFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 3.99,
+   "er": 0.984,
+   "oey": 0.26
+  },
+  "cand": {
+   "pv": 3.9,
+   "er": 0.749,
+   "oey": 0.26
+  },
+  "liveV": 15145.176334049604,
+  "candV": 14827.524881484906,
+  "price": 3800,
+  "cur": "KRW",
+  "rules": [
+   "E3 minority cash"
+  ],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   3805
+  ],
+  "priceTo": [
+   "2026-10",
+   3740
+  ],
+  "flags": null,
+  "decision": "Perimeter corrected; otherwise real",
+  "why": "Material minority interests: consolidated cash now allocated to the parent by its share of equity (rule E3). Other inputs internally consistent; vendor figures not reconciled to a filing in the corpus."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "004020.KO",
+  "name": "Hyundai Steel",
+  "industry": "Steel",
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 3.98,
+   "er": 0.7,
+   "oey": 0.27
+  },
+  "cand": {
+   "pv": 3.98,
+   "er": 0.7,
+   "oey": 0.27
+  },
+  "liveV": 112317.20063199828,
+  "candV": 112317.20063199828,
+  "price": 28200,
+  "cur": "KRW",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   33000
+  ],
+  "priceTo": [
+   "2026-10",
+   29950
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "BMW.XETRA",
+  "name": "Bayerische Motoren Werke Aktiengesellschaft",
+  "industry": "Auto Manufacturers",
+  "k": "operating",
+  "tests": "PFFPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 3.97,
+   "er": 0.623,
+   "oey": 0.27
+  },
+  "cand": {
+   "pv": 3.97,
+   "er": 0.623,
+   "oey": 0.27
+  },
+  "liveV": 211.38668644801425,
+  "candV": 211.38668644801425,
+  "price": 53.26,
+  "cur": "EUR",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   80.72
+  ],
+  "priceTo": [
+   "2026-10",
+   54.64
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "2609.TW",
+  "name": "Yang Ming Marine Transport Corp",
+  "industry": "Marine Shipping",
+  "k": "operating",
+  "tests": "FFPFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 3.95,
+   "er": 1.467,
+   "oey": 0.25
+  },
+  "cand": {
+   "pv": 3.95,
+   "er": 1.467,
+   "oey": 0.25
+  },
+  "liveV": 235.6375767909529,
+  "candV": 235.6375767909529,
+  "price": 59.7,
+  "cur": "TWD",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   57.5
+  ],
+  "priceTo": [
+   "2026-10",
+   58.9
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "FGP.LSE",
+  "name": "FirstGroup PLC",
+  "industry": "Railroads",
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 3.88,
+   "er": 0.436,
+   "oey": 0.27
+  },
+  "cand": {
+   "pv": 3.88,
+   "er": 0.436,
+   "oey": 0.27
+  },
+  "liveV": 740.4212952336565,
+  "candV": 740.4212952336565,
+  "price": 190.8,
+  "cur": "GBX",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   210
+  ],
+  "priceTo": [
+   "2026-10",
+   186.6
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "036460.KO",
+  "name": "Korea Gas Corporation",
+  "industry": "Utilities - Regulated Gas",
+  "k": "operating",
+  "tests": "FFPPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 3.83,
+   "er": 0.408,
+   "oey": 0.28
+  },
+  "cand": {
+   "pv": 3.83,
+   "er": 0.408,
+   "oey": 0.28
+  },
+  "liveV": 138346.6118654726,
+  "candV": 138346.6118654726,
+  "price": 36100,
+  "cur": "KRW",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   41700
+  ],
+  "priceTo": [
+   "2026-10",
+   35950
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "DCH.US",
+  "name": "Dauch Corporation",
+  "industry": "Auto Parts",
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 3.74,
+   "er": 0.554,
+   "oey": 0.26
+  },
+  "cand": {
+   "pv": 3.74,
+   "er": 0.554,
+   "oey": 0.26
+  },
+  "liveV": 21.20485401949954,
+  "candV": 21.20485401949954,
+  "price": 5.67,
+  "cur": "USD",
+  "rules": [],
+  "sec": {
+   "revenue": 1.0,
+   "netIncome": 1.0,
+   "ocf": 1.0,
+   "capex": 1.023,
+   "da": 1.0
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   6.2
+  ],
+  "priceTo": [
+   "2026-10",
+   5.79
+  ],
+  "flags": null,
+  "decision": "Real (inputs match 10-K/20-F)",
+  "why": "Revenue, net income and operating cash flow equal the filing; the extreme ratio comes from a depressed price against a five-year median margin."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "USNA.US",
+  "name": "USANA Health Sciences Inc",
+  "industry": "Packaged Foods",
+  "k": "operating",
+  "tests": "PPFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 3.71,
+   "er": 0.55,
+   "oey": 0.25
+  },
+  "cand": {
+   "pv": 3.71,
+   "er": 0.55,
+   "oey": 0.25
+  },
+  "liveV": 54.34070061372176,
+  "candV": 54.34070061372176,
+  "price": 14.66,
+  "cur": "USD",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   21.15
+  ],
+  "priceTo": [
+   "2026-10",
+   14.67
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": false,
+  "candHit": true,
+  "id": "001800.KO",
+  "name": "ORION Holdings Corp",
+  "industry": "Confectioners",
+  "k": "operating",
+  "tests": "PPPPP",
+  "liveBuy": true,
+  "candBuy": true,
+  "live": {
+   "pv": 3.56,
+   "er": null,
+   "oey": 0.2
+  },
+  "cand": {
+   "pv": 3,
+   "er": 0.405,
+   "oey": 0.2
+  },
+  "liveV": 80378.20036248943,
+  "candV": 67722.72911978376,
+  "price": 22600,
+  "cur": "KRW",
+  "rules": [
+   "E3 minority cash"
+  ],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   19010
+  ],
+  "priceTo": [
+   "2026-10",
+   22700
+  ],
+  "flags": null,
+  "decision": "Perimeter corrected; otherwise real",
+  "why": "Material minority interests: consolidated cash now allocated to the parent by its share of equity (rule E3). Other inputs internally consistent; vendor figures not reconciled to a filing in the corpus."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "7211.JP",
+  "name": "MITSUBISHI MOTORS CORPORATION",
+  "industry": null,
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 3.56,
+   "er": 1.131,
+   "oey": 0.22
+  },
+  "cand": {
+   "pv": 3.56,
+   "er": 1.131,
+   "oey": 0.22
+  },
+  "liveV": 1261.5579363596223,
+  "candV": 1261.5579363596223,
+  "price": 354,
+  "cur": "JPY",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "EDINET XBRL"
+  ],
+  "priceFrom": [
+   "2025-10",
+   377.1
+  ],
+  "priceTo": [
+   "2026-10",
+   344.6
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": false,
+  "id": "9201.JP",
+  "name": "Japan Airlines Co., Ltd.",
+  "industry": null,
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 3.39,
+   "er": 0.709,
+   "oey": 0.19
+  },
+  "cand": {
+   "pv": 1.63,
+   "er": 0.258,
+   "oey": 0.07
+  },
+  "liveV": 10264.448489946495,
+  "candV": 4932.322591484575,
+  "price": 3027,
+  "cur": "JPY",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "EDINET XBRL"
+  ],
+  "priceFrom": [
+   "2025-10",
+   2778
+  ],
+  "priceTo": [
+   "2026-10",
+   3019
+  ],
+  "flags": null,
+  "decision": "Data error, fixed",
+  "why": "Capital spending tagged with an issuer extension concept (or only in the capex overview) was read as zero; EDINET extraction now reads it."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "0762.HK",
+  "name": "China Unicom Hong Kong Ltd",
+  "industry": "Telecom Services",
+  "k": "operating",
+  "tests": "FFPPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 3.38,
+   "er": 0.421,
+   "oey": 0.24
+  },
+  "cand": {
+   "pv": 3.38,
+   "er": 0.421,
+   "oey": 0.24
+  },
+  "liveV": 19.13552799854884,
+  "candV": 19.13552799854884,
+  "price": 5.665,
+  "cur": "HKD",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   9.35
+  ],
+  "priceTo": [
+   "2026-10",
+   5.555
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": false,
+  "id": "1109.HK",
+  "name": "China Resources Land Ltd",
+  "industry": "Other",
+  "k": "operating",
+  "tests": "PFFPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 3.32,
+   "er": 0.529,
+   "oey": 0.18
+  },
+  "cand": {
+   "pv": 3.13,
+   "er": 0.36,
+   "oey": 0.18
+  },
+  "liveV": 101.05438862175785,
+  "candV": 95.17555166388652,
+  "price": 30.44,
+  "cur": "HKD",
+  "rules": [
+   "E3 minority cash"
+  ],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   28.06
+  ],
+  "priceTo": [
+   "2026-10",
+   29.76
+  ],
+  "flags": null,
+  "decision": "Perimeter corrected; otherwise real",
+  "why": "Material minority interests: consolidated cash now allocated to the parent by its share of equity (rule E3). Other inputs internally consistent; vendor figures not reconciled to a filing in the corpus."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "005380.KO",
+  "name": "Hyundai Motor Co. Ltd.",
+  "industry": "Auto Manufacturers",
+  "k": "operating",
+  "tests": "FFPPF",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 3.26,
+   "er": 13.704,
+   "oey": 0.16
+  },
+  "cand": {
+   "pv": 3.26,
+   "er": 13.704,
+   "oey": 0.16
+  },
+  "liveV": 1056317.3213551824,
+  "candV": 1056317.3213551824,
+  "price": 324500,
+  "cur": "KRW",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   290000
+  ],
+  "priceTo": [
+   "2026-10",
+   348000
+  ],
+  "flags": null,
+  "decision": "Not confirmed (follow-up)",
+  "why": "Suspected: consolidated cash includes the captive-finance arm (Hyundai Capital/Card), so cash at time zero exceeds the price and the IRR is not meaningful; not verified against DART. Not a Buy (fails quality)."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "2313.HK",
+  "name": "Shenzhou International Group Holdings Ltd",
+  "industry": "Textile Manufacturing",
+  "k": "operating",
+  "tests": "PPPPP",
+  "liveBuy": true,
+  "candBuy": true,
+  "live": {
+   "pv": 3.26,
+   "er": 0.448,
+   "oey": 0.12
+  },
+  "cand": {
+   "pv": 3.26,
+   "er": 0.448,
+   "oey": 0.12
+  },
+  "liveV": 113.50611451759657,
+  "candV": 113.50611451759657,
+  "price": 34.78,
+  "cur": "HKD",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   67.1
+  ],
+  "priceTo": [
+   "2026-10",
+   33.96
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "601117.SHG",
+  "name": "China Natl Chem Engineering Co",
+  "industry": "Engineering & Construction",
+  "k": "operating",
+  "tests": "PPPFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 3.24,
+   "er": 0.661,
+   "oey": 0.13
+  },
+  "cand": {
+   "pv": 3.24,
+   "er": 0.661,
+   "oey": 0.13
+  },
+  "liveV": 23.486270842393374,
+  "candV": 23.486270842393374,
+  "price": 7.25,
+  "cur": "CNY",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-09",
+   7.44
+  ],
+  "priceTo": [
+   "2026-09",
+   7.17
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "0960.HK",
+  "name": "Longfor Properties Co Ltd",
+  "industry": "Real Estate - Development",
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 3.23,
+   "er": 1.548,
+   "oey": 0.19
+  },
+  "cand": {
+   "pv": 2.96,
+   "er": 0.48,
+   "oey": 0.19
+  },
+  "liveV": 17.267941212276575,
+  "candV": 15.799708117199689,
+  "price": 5.345,
+  "cur": "HKD",
+  "rules": [
+   "E3 minority cash"
+  ],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   9.61
+  ],
+  "priceTo": [
+   "2026-10",
+   5.27
+  ],
+  "flags": null,
+  "decision": "Perimeter corrected; otherwise real",
+  "why": "Material minority interests: consolidated cash now allocated to the parent by its share of equity (rule E3). Other inputs internally consistent; vendor figures not reconciled to a filing in the corpus."
+ },
+ {
+  "liveHit": true,
+  "candHit": false,
+  "id": "BFH.US",
+  "name": "Bread Financial Holdings, Inc.",
+  "industry": "Credit Services",
+  "k": "operating",
+  "tests": "FFFPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 3.21,
+   "er": 2.569,
+   "oey": 0.18
+  },
+  "cand": {
+   "pv": null,
+   "er": null,
+   "oey": 0.18
+  },
+  "liveV": 323.13638458525077,
+  "candV": null,
+  "price": 100.58,
+  "cur": "USD",
+  "rules": [
+   "E5 lender cash"
+  ],
+  "sec": {
+   "netIncome": 1.0,
+   "ocf": 1.0,
+   "da": 1.0
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   62.65
+  ],
+  "priceTo": [
+   "2026-10",
+   97.64
+  ],
+  "flags": null,
+  "decision": "Data error, flagged",
+  "why": "A bank valued as an operating company: its balance sheet is a loan book funded by US$13.9bn of deposits (2025 10-K), so owner earnings, excess cash and the operating-company value do not apply; it needs the financial-company model."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "011210.KO",
+  "name": "Hyundai Wia",
+  "industry": "Auto Parts",
+  "k": "operating",
+  "tests": "FFFPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 3.19,
+   "er": 30.637,
+   "oey": 0.18
+  },
+  "cand": {
+   "pv": 3.07,
+   "er": 1.404,
+   "oey": 0.18
+  },
+  "liveV": 162002.57934775864,
+  "candV": 155909.11015021492,
+  "price": 50800,
+  "cur": "KRW",
+  "rules": [
+   "E3 minority cash"
+  ],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   58600
+  ],
+  "priceTo": [
+   "2026-10",
+   53800
+  ],
+  "flags": null,
+  "decision": "Perimeter corrected; otherwise real",
+  "why": "Material minority interests: consolidated cash now allocated to the parent by its share of equity (rule E3). Other inputs internally consistent; vendor figures not reconciled to a filing in the corpus."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "192080.KO",
+  "name": "DoubleU Games Co Ltd",
+  "industry": "Electronic Gaming & Multimedia",
+  "k": "operating",
+  "tests": "PPPPP",
+  "liveBuy": true,
+  "candBuy": true,
+  "live": {
+   "pv": 3.02,
+   "er": 1.625,
+   "oey": 0.17
+  },
+  "cand": {
+   "pv": 2.77,
+   "er": 0.479,
+   "oey": 0.17
+  },
+  "liveV": 174229.83661872402,
+  "candV": 159565.49260473426,
+  "price": 57700,
+  "cur": "KRW",
+  "rules": [
+   "E3 minority cash"
+  ],
+  "sec": {},
+  "hosts": [
+   "eodhd",
+   "statements"
+  ],
+  "priceFrom": [
+   "2025-10",
+   50200
+  ],
+  "priceTo": [
+   "2026-10",
+   57000
+  ],
+  "flags": null,
+  "decision": "Perimeter corrected; otherwise real",
+  "why": "Material minority interests: consolidated cash now allocated to the parent by its share of equity (rule E3). Other inputs internally consistent; vendor figures not reconciled to a filing in the corpus."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "CRI.US",
+  "name": "Carter's Inc",
+  "industry": "Apparel Retail",
+  "k": "operating",
+  "tests": "PPFPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 3.01,
+   "er": 0.408,
+   "oey": 0.21
+  },
+  "cand": {
+   "pv": 3.01,
+   "er": 0.408,
+   "oey": 0.21
+  },
+  "liveV": 97.33137654686388,
+  "candV": 97.33137654686388,
+  "price": 32.36,
+  "cur": "USD",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   31.4
+  ],
+  "priceTo": [
+   "2026-10",
+   32.45
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "007310.KO",
+  "name": "Ottogi",
+  "industry": "Packaged Foods",
+  "k": "operating",
+  "tests": "PFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 2.95,
+   "er": 0.433,
+   "oey": 0.18
+  },
+  "cand": {
+   "pv": 2.95,
+   "er": 0.433,
+   "oey": 0.18
+  },
+  "liveV": 927610.1418420738,
+  "candV": 927610.1418420738,
+  "price": 314000,
+  "cur": "KRW",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   388500
+  ],
+  "priceTo": [
+   "2026-10",
+   315500
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "0688.HK",
+  "name": "China Overseas",
+  "industry": "Other",
+  "k": "operating",
+  "tests": "PFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 2.94,
+   "er": 0.902,
+   "oey": 0.17
+  },
+  "cand": {
+   "pv": 2.94,
+   "er": 0.902,
+   "oey": 0.17
+  },
+  "liveV": 39.05492321831948,
+  "candV": 39.05492321831948,
+  "price": 13.27,
+  "cur": "HKD",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd",
+   "www1.hkexnews.hk"
+  ],
+  "priceFrom": [
+   "2025-10",
+   13.03
+  ],
+  "priceTo": [
+   "2026-10",
+   13.06
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "INMD.US",
+  "name": "InMode Ltd",
+  "industry": "Medical Devices",
+  "k": "operating",
+  "tests": "PFPPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 2.9,
+   "er": 0.469,
+   "oey": 0.18
+  },
+  "cand": {
+   "pv": 2.9,
+   "er": 0.469,
+   "oey": 0.18
+  },
+  "liveV": 41.14690764671533,
+  "candV": 41.14690764671533,
+  "price": 14.21,
+  "cur": "USD",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   14.77
+  ],
+  "priceTo": [
+   "2026-10",
+   14.01
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": false,
+  "id": "SYF.US",
+  "name": "Synchrony Financial",
+  "industry": "Credit Services",
+  "k": "operating",
+  "tests": "PFPPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 2.8,
+   "er": 0.519,
+   "oey": 0.17
+  },
+  "cand": {
+   "pv": null,
+   "er": null,
+   "oey": 0.17
+  },
+  "liveV": 203.8041485210143,
+  "candV": null,
+  "price": 72.8,
+  "cur": "USD",
+  "rules": [
+   "E5 lender cash"
+  ],
+  "sec": {
+   "netIncome": 1.0,
+   "ocf": 1.0,
+   "da": 1.0
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   74.38
+  ],
+  "priceTo": [
+   "2026-10",
+   71.93
+  ],
+  "flags": null,
+  "decision": "Data error, flagged",
+  "why": "A bank valued as an operating company: its balance sheet is a loan book funded by US$81.1bn of deposits (2025 10-K), so owner earnings, excess cash and the operating-company value do not apply; it needs the financial-company model."
+ },
+ {
+  "liveHit": true,
+  "candHit": false,
+  "id": "CNA.LSE",
+  "name": "Centrica PLC",
+  "industry": "Utilities - Independent Power Producers",
+  "k": "operating",
+  "tests": "FPPPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 2.79,
+   "er": 0.432,
+   "oey": 0.18
+  },
+  "cand": {
+   "pv": 2.72,
+   "er": 0.372,
+   "oey": 0.18
+  },
+  "liveV": 410.4381488041832,
+  "candV": 400.26507564535444,
+  "price": 147.35,
+  "cur": "GBX",
+  "rules": [
+   "E3 minority cash"
+  ],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   179.3
+  ],
+  "priceTo": [
+   "2026-10",
+   145.8
+  ],
+  "flags": null,
+  "decision": "Perimeter corrected; otherwise real",
+  "why": "Material minority interests: consolidated cash now allocated to the parent by its share of equity (rule E3). Other inputs internally consistent; vendor figures not reconciled to a filing in the corpus."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "LXS.XETRA",
+  "name": "LANXESS Aktiengesellschaft",
+  "industry": "Specialty Chemicals",
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 2.76,
+   "er": 1.251,
+   "oey": 0.15
+  },
+  "cand": {
+   "pv": 2.76,
+   "er": 1.251,
+   "oey": 0.15
+  },
+  "liveV": 35.03987816119775,
+  "candV": 35.03987816119775,
+  "price": 12.69,
+  "cur": "EUR",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   20.64
+  ],
+  "priceTo": [
+   "2026-10",
+   12.74
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "DSX.US",
+  "name": "Diana Shipping Inc.",
+  "industry": "Marine Shipping",
+  "k": "operating",
+  "tests": "FFPFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 2.75,
+   "er": 0.684,
+   "oey": 0.16
+  },
+  "cand": {
+   "pv": 2.75,
+   "er": 0.684,
+   "oey": 0.16
+  },
+  "liveV": 7.7523987918782025,
+  "candV": 7.7523987918782025,
+  "price": 2.82,
+  "cur": "USD",
+  "rules": [],
+  "sec": {
+   "revenue": 1.0,
+   "netIncome": 1.0,
+   "ocf": 1.0,
+   "da": 0.847
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   1.75
+  ],
+  "priceTo": [
+   "2026-10",
+   2.83
+  ],
+  "flags": null,
+  "decision": "Real (inputs match 10-K/20-F)",
+  "why": "Revenue, net income and operating cash flow equal the filing; the extreme ratio comes from a depressed price against a five-year median margin."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "HOG.US",
+  "name": "Harley-Davidson Inc",
+  "industry": "Recreational Vehicles",
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 2.74,
+   "er": 0.482,
+   "oey": 0.17
+  },
+  "cand": {
+   "pv": 2.74,
+   "er": 0.482,
+   "oey": 0.17
+  },
+  "liveV": 73.82733544870703,
+  "candV": 73.82733544870703,
+  "price": 26.9,
+  "cur": "USD",
+  "rules": [],
+  "sec": {
+   "revenue": 1.0,
+   "netIncome": 1.0,
+   "ocf": 1.0,
+   "capex": 1.0,
+   "da": 1.0
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   26.98
+  ],
+  "priceTo": [
+   "2026-10",
+   26.95
+  ],
+  "flags": null,
+  "decision": "Real (inputs match 10-K/20-F)",
+  "why": "Revenue, net income and operating cash flow equal the filing; the extreme ratio comes from a depressed price against a five-year median margin."
+ },
+ {
+  "liveHit": false,
+  "candHit": true,
+  "id": "000210.KO",
+  "name": "DL Holdings CO. LTD.",
+  "industry": "Specialty Chemicals",
+  "k": "operating",
+  "tests": "FFPFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 2.72,
+   "er": null,
+   "oey": 0.12
+  },
+  "cand": {
+   "pv": 2.51,
+   "er": 4.008,
+   "oey": 0.12
+  },
+  "liveV": 131879.6531699028,
+  "candV": 121633.84233594924,
+  "price": 48450,
+  "cur": "KRW",
+  "rules": [
+   "E3 minority cash"
+  ],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   38950
+  ],
+  "priceTo": [
+   "2026-10",
+   49350
+  ],
+  "flags": null,
+  "decision": "Perimeter corrected; otherwise real",
+  "why": "Material minority interests: consolidated cash now allocated to the parent by its share of equity (rule E3). Other inputs internally consistent; vendor figures not reconciled to a filing in the corpus."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "RAT.LSE",
+  "name": "Rathbone Brothers PLC",
+  "industry": "Asset Management",
+  "k": "operating",
+  "tests": "PFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 2.67,
+   "er": 1.313,
+   "oey": 0.12
+  },
+  "cand": {
+   "pv": 2.67,
+   "er": 1.313,
+   "oey": 0.12
+  },
+  "liveV": 4118.769191950504,
+  "candV": 4118.769191950504,
+  "price": 1540,
+  "cur": "GBX",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   1784
+  ],
+  "priceTo": [
+   "2026-10",
+   1532
+  ],
+  "flags": null,
+  "decision": "Not confirmed (follow-up)",
+  "why": "Suspected: wealth manager with a banking subsidiary; consolidated cash may back client deposits; not verified. Not a Buy."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "600741.SHG",
+  "name": "HUAYU Automotive Systems Co Ltd",
+  "industry": "Auto Parts",
+  "k": "operating",
+  "tests": "PPFPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 2.59,
+   "er": 0.48,
+   "oey": 0.15
+  },
+  "cand": {
+   "pv": 2.59,
+   "er": 0.48,
+   "oey": 0.15
+  },
+  "liveV": 40.25919024770413,
+  "candV": 40.25919024770413,
+  "price": 15.55,
+  "cur": "CNY",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-09",
+   20.5
+  ],
+  "priceTo": [
+   "2026-09",
+   15.38
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "9202.JP",
+  "name": "ANA HOLDINGSINC.",
+  "industry": null,
+  "k": "operating",
+  "tests": "FFPFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 2.45,
+   "er": 1.01,
+   "oey": 0.12
+  },
+  "cand": {
+   "pv": 2.45,
+   "er": 1.01,
+   "oey": 0.12
+  },
+  "liveV": 7136.842403039422,
+  "candV": 7136.842403039422,
+  "price": 2915.5,
+  "cur": "JPY",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "EDINET XBRL"
+  ],
+  "priceFrom": [
+   "2025-10",
+   2889
+  ],
+  "priceTo": [
+   "2026-10",
+   2914
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "1044.HK",
+  "name": "Hengan Intl Group Ltd-H",
+  "industry": "Household & Personal Products",
+  "k": "operating",
+  "tests": "PFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 2.43,
+   "er": 0.632,
+   "oey": 0.13
+  },
+  "cand": {
+   "pv": 2.43,
+   "er": 0.632,
+   "oey": 0.13
+  },
+  "liveV": 47.531134250116295,
+  "candV": 47.531134250116295,
+  "price": 19.55,
+  "cur": "HKD",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   27.22
+  ],
+  "priceTo": [
+   "2026-10",
+   19.39
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "FR.PA",
+  "name": "Valeo SA",
+  "industry": "Auto Parts",
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 2.38,
+   "er": 0.699,
+   "oey": 0.12
+  },
+  "cand": {
+   "pv": 2.38,
+   "er": 0.699,
+   "oey": 0.12
+  },
+  "liveV": 32.10443577283856,
+  "candV": 32.10443577283856,
+  "price": 13.515,
+  "cur": "EUR",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   11.985
+  ],
+  "priceTo": [
+   "2026-10",
+   15.135
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": false,
+  "id": "002790.KO",
+  "name": "Amore Group",
+  "industry": "Household & Personal Products",
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 2.37,
+   "er": 0.641,
+   "oey": 0.15
+  },
+  "cand": {
+   "pv": 1.95,
+   "er": 0.215,
+   "oey": 0.15
+  },
+  "liveV": 61287.323175746045,
+  "candV": 50453.252079735175,
+  "price": 25900,
+  "cur": "KRW",
+  "rules": [
+   "E3 minority cash"
+  ],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   25400
+  ],
+  "priceTo": [
+   "2026-10",
+   25350
+  ],
+  "flags": null,
+  "decision": "Perimeter corrected; otherwise real",
+  "why": "Material minority interests: consolidated cash now allocated to the parent by its share of equity (rule E3). Other inputs internally consistent; vendor figures not reconciled to a filing in the corpus."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "GGBR3.SA",
+  "name": "Gerdau S.A",
+  "industry": "Steel",
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 2.36,
+   "er": 0.433,
+   "oey": 0.12
+  },
+  "cand": {
+   "pv": 2.36,
+   "er": 0.433,
+   "oey": 0.12
+  },
+  "liveV": 51.66386612592078,
+  "candV": 51.66386612592078,
+  "price": 21.93,
+  "cur": "BRL",
+  "rules": [],
+  "sec": {
+   "revenue": 1.0,
+   "netIncome": 1.0,
+   "ocf": 0.968,
+   "capex": 1.0
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   16.06
+  ],
+  "priceTo": [
+   "2026-10",
+   22.08
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "MBRF3.SA",
+  "name": "Marfrig Global Foods SA",
+  "industry": "Packaged Foods",
+  "k": "operating",
+  "tests": "FFPFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 2.21,
+   "er": 0.883,
+   "oey": 0.22
+  },
+  "cand": {
+   "pv": 2.08,
+   "er": 0.582,
+   "oey": 0.22
+  },
+  "liveV": 41.38028178533226,
+  "candV": 38.93144471290521,
+  "price": 18.75,
+  "cur": "BRL",
+  "rules": [
+   "E3 minority cash"
+  ],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   17.87
+  ],
+  "priceTo": [
+   "2026-10",
+   17.8
+  ],
+  "flags": null,
+  "decision": "Perimeter corrected; otherwise real",
+  "why": "Material minority interests: consolidated cash now allocated to the parent by its share of equity (rule E3). Other inputs internally consistent; vendor figures not reconciled to a filing in the corpus."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "TE.PA",
+  "name": "Technip Energies BV",
+  "industry": "Oil & Gas Equipment & Services",
+  "k": "operating",
+  "tests": "PFFPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 2.18,
+   "er": 0.7,
+   "oey": 0.1
+  },
+  "cand": {
+   "pv": 2.18,
+   "er": 0.7,
+   "oey": 0.1
+  },
+  "liveV": 63.602602110622975,
+  "candV": 63.602602110622975,
+  "price": 29.14,
+  "cur": "EUR",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   35.22
+  ],
+  "priceTo": [
+   "2026-10",
+   28.32
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "000651.SHE",
+  "name": "Gree Electric Appliances Inc of Zhuhai",
+  "industry": "Furnishings, Fixtures & Appliances",
+  "k": "operating",
+  "tests": "PPPPP",
+  "liveBuy": true,
+  "candBuy": true,
+  "live": {
+   "pv": 2.05,
+   "er": 0.402,
+   "oey": 0.11
+  },
+  "cand": {
+   "pv": 2.05,
+   "er": 0.402,
+   "oey": 0.11
+  },
+  "liveV": 79.72546332088682,
+  "candV": 79.72546332088682,
+  "price": 38.83,
+  "cur": "CNY",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-09",
+   39.72
+  ],
+  "priceTo": [
+   "2026-09",
+   38.28
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": false,
+  "id": "SEM.LS",
+  "name": "Semapa",
+  "industry": "Paper & Paper Products",
+  "k": "operating",
+  "tests": "PFFPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 1.93,
+   "er": 0.412,
+   "oey": 0.09
+  },
+  "cand": {
+   "pv": 1.83,
+   "er": 0.288,
+   "oey": 0.09
+  },
+  "liveV": 36.96279526992654,
+  "candV": 34.97571738082622,
+  "price": 19.14,
+  "cur": "EUR",
+  "rules": [
+   "E3 minority cash"
+  ],
+  "sec": {},
+  "hosts": [
+   "cdnm.heyzine.com",
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   18.1
+  ],
+  "priceTo": [
+   "2026-10",
+   19.28
+  ],
+  "flags": null,
+  "decision": "Perimeter corrected; otherwise real",
+  "why": "Material minority interests: consolidated cash now allocated to the parent by its share of equity (rule E3). Other inputs internally consistent; vendor figures not reconciled to a filing in the corpus."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "ZD.US",
+  "name": "Ziff Davis Inc",
+  "industry": "Advertising Agencies",
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 1.87,
+   "er": 0.464,
+   "oey": 0.09
+  },
+  "cand": {
+   "pv": 1.87,
+   "er": 0.464,
+   "oey": 0.09
+  },
+  "liveV": 105.87072476292646,
+  "candV": 105.87072476292646,
+  "price": 56.52,
+  "cur": "USD",
+  "rules": [],
+  "sec": {
+   "revenue": 1.0,
+   "netIncome": 1.0,
+   "ocf": 1.0,
+   "capex": 1.0,
+   "da": 1.0
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   33.9
+  ],
+  "priceTo": [
+   "2026-10",
+   54.9
+  ],
+  "flags": null,
+  "decision": "Real (inputs match 10-K/20-F)",
+  "why": "Revenue, net income and operating cash flow equal the filing; the extreme ratio comes from a depressed price against a five-year median margin."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "QLT.LSE",
+  "name": "Quilter PLC",
+  "industry": "Asset Management",
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 1.74,
+   "er": 0.602,
+   "oey": null
+  },
+  "cand": {
+   "pv": 1.74,
+   "er": 0.602,
+   "oey": null
+  },
+  "liveV": 307.60143607620387,
+  "candV": 307.60143607620387,
+  "price": 176.4,
+  "cur": "GBX",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   181.8
+  ],
+  "priceTo": [
+   "2026-10",
+   175.3
+  ],
+  "flags": null,
+  "decision": "Not confirmed (follow-up)",
+  "why": "Suspected: wealth platform whose consolidated cash may include policyholder funds; not verified. Not a Buy."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "UOB.F",
+  "name": "United Overseas Bank Limited",
+  "industry": "Other",
+  "k": "operating",
+  "tests": "FFPPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 1.73,
+   "er": 1.112,
+   "oey": 0.09
+  },
+  "cand": {
+   "pv": 1.73,
+   "er": 1.112,
+   "oey": 0.09
+  },
+  "liveV": 47.48602631648725,
+  "candV": 47.48602631648725,
+  "price": 27.51,
+  "cur": "EUR",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd",
+   "statements"
+  ],
+  "priceFrom": [
+   "2025-10",
+   22.806
+  ],
+  "priceTo": [
+   "2026-10",
+   29.353
+  ],
+  "flags": null,
+  "decision": "Data error, flagged",
+  "why": "A bank valued as an operating company: its balance sheet is a loan book funded by about S$426bn of customer deposits (2025 annual report), so owner earnings, excess cash and the operating-company value do not apply; it needs the financial-company model."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "000800.SHE",
+  "name": "Faw Car Co Ltd",
+  "industry": "Farm & Heavy Construction Machinery",
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 1.52,
+   "er": 10.029,
+   "oey": 0.04
+  },
+  "cand": {
+   "pv": 1.52,
+   "er": 10.029,
+   "oey": 0.04
+  },
+  "liveV": 8.875006803360924,
+  "candV": 8.875006803360924,
+  "price": 5.83,
+  "cur": "CNY",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-09",
+   7.01
+  ],
+  "priceTo": [
+   "2026-09",
+   5.88
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "TRS.US",
+  "name": "TriMas Corporation",
+  "industry": "Packaging & Containers",
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 1.43,
+   "er": 0.42,
+   "oey": 0.04
+  },
+  "cand": {
+   "pv": 1.43,
+   "er": 0.42,
+   "oey": 0.04
+  },
+  "liveV": 54.60610618157436,
+  "candV": 54.60610618157436,
+  "price": 38.15,
+  "cur": "USD",
+  "rules": [],
+  "sec": {
+   "revenue": 1.0,
+   "netIncome": 1.0,
+   "ocf": 1.0
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   35.53
+  ],
+  "priceTo": [
+   "2026-10",
+   38.25
+  ],
+  "flags": null,
+  "decision": "Real (inputs match 10-K/20-F)",
+  "why": "Revenue, net income and operating cash flow equal the filing; the extreme ratio comes from a depressed price against a five-year median margin."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "LGEN.LSE",
+  "name": "Legal & General Group PLC",
+  "industry": "Asset Management",
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 1.36,
+   "er": 0.412,
+   "oey": 0.04
+  },
+  "cand": {
+   "pv": 1.36,
+   "er": 0.412,
+   "oey": 0.04
+  },
+  "liveV": 389.79128355788987,
+  "candV": 389.79128355788987,
+  "price": 287,
+  "cur": "GBX",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   237.8
+  ],
+  "priceTo": [
+   "2026-10",
+   290.4
+  ],
+  "flags": null,
+  "decision": "Data error, flagged",
+  "why": "An insurer valued as an operating company: Legal & General is a life insurer and annuity provider regulated under Solvency II (2025 annual report), so the consolidated cash credited to owners backs policyholder liabilities; it needs the insurer model."
+ },
+ {
+  "liveHit": true,
+  "candHit": false,
+  "id": "035720.KO",
+  "name": "Kakao Corp",
+  "industry": "Internet Content & Information",
+  "k": "operating",
+  "tests": "PPFPP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": 1.29,
+   "er": 2.064,
+   "oey": 0.02
+  },
+  "cand": {
+   "pv": 1.07,
+   "er": 0.124,
+   "oey": 0.02
+  },
+  "liveV": 41666.29043521657,
+  "candV": 34696.72507414902,
+  "price": 32300,
+  "cur": "KRW",
+  "rules": [
+   "E3 minority cash"
+  ],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   65100
+  ],
+  "priceTo": [
+   "2026-10",
+   33500
+  ],
+  "flags": null,
+  "decision": "Perimeter corrected; otherwise real",
+  "why": "Material minority interests: consolidated cash now allocated to the parent by its share of equity (rule E3). Other inputs internally consistent; vendor figures not reconciled to a filing in the corpus."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "0H2Z.LSE",
+  "name": "Fastighets AB Balder Series B",
+  "industry": "Real Estate - Diversified",
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": null,
+   "er": null,
+   "oey": 0.9
+  },
+  "cand": {
+   "pv": null,
+   "er": null,
+   "oey": 0.9
+  },
+  "liveV": null,
+  "candV": null,
+  "price": 44.33,
+  "cur": "SEK",
+  "rules": [
+   "E3 minority cash"
+  ],
+  "sec": {},
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   70.17
+  ],
+  "priceTo": [
+   "2026-10",
+   45.12
+  ],
+  "flags": null,
+  "decision": "Perimeter corrected; otherwise real",
+  "why": "Material minority interests: consolidated cash now allocated to the parent by its share of equity (rule E3). Other inputs internally consistent; vendor figures not reconciled to a filing in the corpus."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "7201.JP",
+  "name": "NISSAN MOTOR CO., LTD.",
+  "industry": null,
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": null,
+   "er": null,
+   "oey": 0.51
+  },
+  "cand": {
+   "pv": null,
+   "er": null,
+   "oey": 0.51
+  },
+  "liveV": null,
+  "candV": null,
+  "price": 284,
+  "cur": "JPY",
+  "rules": [],
+  "sec": {},
+  "hosts": [
+   "EDINET XBRL"
+  ],
+  "priceFrom": [
+   "2025-10",
+   353.5
+  ],
+  "priceTo": [
+   "2026-10",
+   285.9
+  ],
+  "flags": null,
+  "decision": "Real (vendor inputs, not reconciled)",
+  "why": "Inputs internally consistent; price history shows a genuine decline or a cash-rich balance sheet; no primary filing in the corpus to reconcile."
+ },
+ {
+  "liveHit": true,
+  "candHit": true,
+  "id": "LBTYA.US",
+  "name": "Liberty Global PLC Class A",
+  "industry": "Telecom Services",
+  "k": "operating",
+  "tests": "FFFFP",
+  "liveBuy": false,
+  "candBuy": false,
+  "live": {
+   "pv": null,
+   "er": null,
+   "oey": 0.64
+  },
+  "cand": {
+   "pv": null,
+   "er": null,
+   "oey": 0.64
+  },
+  "liveV": null,
+  "candV": null,
+  "price": 8.66,
+  "cur": "USD",
+  "rules": [],
+  "sec": {
+   "revenue": 1.0,
+   "netIncome": 1.0,
+   "ocf": 1.0,
+   "da": 1.0
+  },
+  "hosts": [
+   "eodhd"
+  ],
+  "priceFrom": [
+   "2025-10",
+   11
+  ],
+  "priceTo": [
+   "2026-10",
+   9.1
+  ],
+  "flags": null,
+  "decision": "Real (inputs match 10-K/20-F)",
+  "why": "Revenue, net income and operating cash flow equal the filing; the extreme ratio comes from a depressed price against a five-year median margin."
+ }
+]

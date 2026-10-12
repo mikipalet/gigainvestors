@@ -88,7 +88,8 @@ async function main() {
           const response = await page.goto(`${base}/s/${id.toLowerCase()}`, { waitUntil: 'networkidle', timeout: 120000 });
           expect(response?.ok()).toBe(true);
           const mid = row.v?.[1] ?? null, state = priceState({ price: quote?.[0] ?? null, mid, b: row.b });
-          await expect(page.locator('[data-testid=tile-price]')).toContainText(state.label);
+          // A withheld value (reviewed input error) has no price tile, or an unavailable one.
+          if (mid !== null || await page.locator('[data-testid=tile-price]').count()) await expect(page.locator('[data-testid=tile-price]')).toContainText(state.label);
           if (row.b === true) await expect(page.locator('[data-testid=verdict] .plain-verdict')).toHaveText('A wonderful business at a fair price');
           else await expect(page.locator('[data-testid=verdict] .plain-verdict')).not.toHaveText('A wonderful business at a fair price');
           const texts: string[] = [await page.locator('body').innerText()];

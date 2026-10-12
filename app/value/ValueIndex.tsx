@@ -23,7 +23,7 @@ import { QUALITY_TESTS,type StoreMeta } from "@/lib/value/types";
 
 import { columns,type Sort } from '@/lib/value/list-sort';
 import { priceValue, dateLabel } from '@/lib/value/presentation';
-import { qualityPass } from '@/lib/value/fair-buy';
+import { gateCode, qualityPass } from '@/lib/value/fair-buy';
 import { type FilterState } from './_components/Filters';
 
 import { fetchValueData as fetchRows } from '@/lib/value/data-source';
@@ -159,7 +159,7 @@ export default function ValueIndex({ rows, todayRows, initialFilter, tags, meta,
       if (a.row.st !== b.row.st) return a.row.st === "i" ? 1 : -1;
       const av = sort === "name" ? a.row.nameEn??a.row.n : sort === "country" ? a.row.c : sort === "cap" ? a.row.mc : sort === "holders" ? a.row.h : sort === "return" ? a.expected??a.row.returnInfo?.sort : sort === "flags" ? Number(a.seed) : a.mos;
       const bv = sort === "name" ? b.row.nameEn??b.row.n : sort === "country" ? b.row.c : sort === "cap" ? b.row.mc : sort === "holders" ? b.row.h : sort === "return" ? b.expected??b.row.returnInfo?.sort : sort === "flags" ? Number(b.seed) : b.mos;
-      if (av == null || bv == null) return av == null && bv == null ? (b.row.t.match(/P/g)?.length??0)-(a.row.t.match(/P/g)?.length??0)||a.row.id.localeCompare(b.row.id) : av == null ? 1 : -1;
+      if (av == null || bv == null) return av == null && bv == null ? (gateCode(b.row).match(/P/g)?.length??0)-(gateCode(a.row).match(/P/g)?.length??0)||a.row.id.localeCompare(b.row.id) : av == null ? 1 : -1;
       return (typeof av === "string" && typeof bv === "string" ? av.localeCompare(bv) : Number(av) - Number(bv)) * direction || a.row.id.localeCompare(b.row.id);
     });
   }, [allEntries, filter.q, filter.search, filter.markets, filter.sector, filter.held, filter.tags, filter.awaiting, filter.near, filter.understandable, filter.moat, filter.economics, filter.management, filter.accounting, sort, direction, country, gate, historical, allMarkets]);

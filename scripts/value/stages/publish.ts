@@ -28,6 +28,7 @@ import {applyStory,trustedStory,type StoryReading,type StoryGrade} from '../../.
 import historyReturns from './history-returns';
 import {numericMemo} from '../../../lib/value/owner-memo';
 import {memoStatementYears} from '../../../lib/value/memo-inputs';
+import {profitRecord} from '../../../lib/value/fair-buy';
 import {alignHistoryShares} from '../../../lib/value/history-split-basis';
 import {completeCachedSplits,completeCachedYears} from '../../../lib/value/completeness/cached-years';
 import { forwardFiles } from './forward';
@@ -489,7 +490,11 @@ export function loadAnalyses(companies: Company[]): Analysis[] {
       const recordedShareCheck=readCorpusJson<ShareCheck>(`enrichment-v7/share-checks/${company.id}.json`);
       const shareCheck=company.exchange==='US'&&company.country==='US'&&!analysis.valuation?.shareBasis
         ? cachedPublicationShares(readCorpusJson(`raw/eodhd/${company.id}.json`),readCorpusJson(`raw/sec-companyfacts/${company.id}.json`),recordedShareCheck,new Date().toISOString().slice(0,10)) : recordedShareCheck;
-      analyses.push(applyThesis(applyShareCheck(years&&!memoYears?withCapitalReturns(analysis,applyAdjustments(years,readCorpusJson(`judgement/${company.id}.json`),judgementTrust,analysis.reportingCurrency??company.currency).years):analysis,shareCheck),readCorpusJson<ThesisResult>(`thesis/${company.id}.json`)));
+      const adjusted=years&&!memoYears?applyAdjustments(years,readCorpusJson(`judgement/${company.id}.json`),judgementTrust,analysis.reportingCurrency??company.currency).years:undefined;
+      // 3.8.0 Buy eligibility (best-1): the profit record of exactly the statements the tests used.
+      const statements=memoYears??adjusted;
+      if(statements)analysis.profitRecord=profitRecord({years:statements,kind:analysis.company.kind});
+      analyses.push(applyThesis(applyShareCheck(adjusted?withCapitalReturns(analysis,adjusted):analysis,shareCheck),readCorpusJson<ThesisResult>(`thesis/${company.id}.json`)));
     } catch (error) {
       console.warn(`publish: skipped analysis/${company.id}.json: ${error instanceof Error ? error.message : "unreadable analysis"}`);
     }

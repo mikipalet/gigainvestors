@@ -3,11 +3,13 @@ import {ownerReturn,buyReturnInputs} from './owner-return';
 import {valuationReturnModel,modelValue,cashCoversPrice} from './return-model';
 import type {Dossier,PriceMap} from './types';
 import type { IndexRow, StoreMeta } from './types';
+import { gateCode, qualityPass } from './fair-buy';
+import { qualityGate } from './story';
 /** Runs while rendering/building the index. A published contradiction must not ship. */
 export function assertIndexConsistency({meta,rows}:{meta:StoreMeta|null;rows:IndexRow[]}) {
   if (meta?.western) {
     const {story,funnel}=meta.western;
-    if (story.analysed!==funnel.analysed || story.qualityPasses!==funnel.gates.find(g=>g.key==='accounting')?.passing || story.atBuy!==funnel.gates.find(g=>g.key==='price')?.passing) throw new Error('Value consistency: Western story and funnel disagree');
+    if (story.analysed!==funnel.analysed || story.qualityPasses!==qualityGate(funnel)?.passing || story.atBuy!==funnel.gates.find(g=>g.key==='price')?.passing) throw new Error('Value consistency: Western story and funnel disagree');
     assertIndexConsistency({meta:{...meta,western:undefined,funnel,story,counts:{...meta.counts,analysed:funnel.analysed}},rows:rows.filter(row=>row.w!=null)});
   }
   if (!meta?.funnel) return;
@@ -16,11 +18,11 @@ export function assertIndexConsistency({meta,rows}:{meta:StoreMeta|null;rows:Ind
   if (f.analysed!==(meta.counts.analysed??meta.counts.scored+meta.counts.insufficient)) throw new Error('Value consistency: analysis counts disagree');
   if (f.gates.every(g=>g.fail !== undefined)) {
     f.gates.forEach((gate,i)=>{if (gate.pass !== undefined && gate.pass !== gate.passing) throw new Error('Value consistency: pass counts disagree');if (gate.passing + gate.fail! + (gate.checking??0) + (gate.unclear??0) !== counts[i]) throw new Error('Value consistency: gate partition disagrees');});
-    if (rows.filter(r=>/^P*FP*$/.test(r.t)&&r.st==='s').length !== f.gates.filter(g=>g.key!=='price').reduce((n,g)=>n+g.failsOnlyThis,0)) throw new Error('Value consistency: near-miss list and funnel disagree');
+    if (rows.filter(r=>/^P*FP*$/.test(gateCode(r))&&r.st==='s').length !== f.gates.filter(g=>g.key!=='price').reduce((n,g)=>n+g.failsOnlyThis,0)) throw new Error('Value consistency: near-miss list and funnel disagree');
   }
   if (rows.some(r=>r.b !== undefined) && f.gates.find(g=>g.key==='price')?.passing !== rows.filter(r=>r.b === true).length) throw new Error('Value consistency: price gate and published buy flags disagree');
-  if (rows.some(r=>r.b === true && (r.t !== 'PPPPP' || r.st !== 's' || r.dataQualityFlags?.length))) throw new Error('Value consistency: invalid published buy flag');
-  if (f.gates.find(g=>g.key==='accounting')?.passing!==rows.filter(r=>r.t==='PPPPP').length) throw new Error('Value consistency: headline, Accounting gate and default rows disagree');
+  if (rows.some(r=>r.b === true && (!qualityPass(r) || r.st !== 's' || r.dataQualityFlags?.length))) throw new Error('Value consistency: invalid published buy flag');
+  if (qualityGate(f)?.passing!==rows.filter(qualityPass).length) throw new Error('Value consistency: headline, last quality gate and default rows disagree');
 }
 
 /** Independently derive verdicts and reprice each model at its solved IRR. */

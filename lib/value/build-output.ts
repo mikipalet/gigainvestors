@@ -2,7 +2,6 @@ import {withShareDenominator} from './share-check';
 import {composePriceStory,retainStoryTimestamp} from './price-story/compose';
 import {memoAtPrice} from './owner-memo';
 import {consistentValuation} from './return-model';
-import {valuationMargin} from './valuation';
 import { METHOD_VERSION } from './method-version';
 import {indiaDepositarySymbols} from './india/symbols';
 import { isDecided, isFindable, shortHistory, missingInvestmentNav } from './publication-eligibility';
@@ -19,7 +18,9 @@ import { createUsdRate } from "./fx";
 import { T } from "./config";
 import { QUESTIONS } from "./jev/questions";
 import { publishedBuyPrice } from "./buy-price";
+import { gateCode, profitLetter, qualityPass } from "./fair-buy";
 import { shardOf } from "./shard";
+import { NAV_BUY } from "./investment-nav";
 import { QUALITY_TESTS, type FunnelCounts, type PublishedFunnel, type Analysis, type Dossier, type IndexRow, type PriceMap, type PriceHistory, type Valuation } from "./types";
 
 function tradingValuation(analysis: Analysis, usdRate: (currency: string) => number | null): Valuation | null {
@@ -38,16 +39,24 @@ function tradingValuation(analysis: Analysis, usdRate: (currency: string) => num
   return { ...valuation, currency, perShare: { low: range.low, mid: range.mid, high: range.high } };
 }
 
+const LEGACY_NAV_BUY = 'Buy requires price at or below 85% of both reported NAV and discounted NAV realization value';
+/** Analyses written before 3.8.0 carry the old NAV buy assumption; the valuation is unchanged. */
+function navBuyCopy(valuation: Valuation | null): Valuation | null {
+  return valuation?.assumptions.includes(LEGACY_NAV_BUY) ? { ...valuation, assumptions: valuation.assumptions.map(a => a === LEGACY_NAV_BUY ? NAV_BUY : a) } : valuation;
+}
+
 function emptyFunnel(): FunnelCounts {
   return {
     asOf: null, analysed: 0,
+    // 3.8.0 Buy gates. Earnings resilience is evidence, not a gate; the profit
+    // record is best-1's loss and owner-earnings eligibility (fair-buy.ts).
     gates: ([
-      { key: "understandable", label: "Earnings resilience" },
       { key: "moat", label: "Moat" },
       { key: "economics", label: "Economics" },
       { key: "management", label: "Management" },
       { key: "accounting", label: "Accounting" },
-      { key: "price", label: "Required margin of safety" },
+      { key: "record", label: "Profit record" },
+      { key: "price", label: "At or below value" },
     ] satisfies Array<Pick<FunnelCounts["gates"][number], "key" | "label">>).map(gate => ({ ...gate, passing: 0, pass: 0, fail: 0, checking: 0, unclear: 0, failsOnlyThis: 0 })),
   };
 }
@@ -103,8 +112,10 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
       if (applies) { g.add(question.tag); tags[question.tag] = question.id === "revenue_model" ? "Recurring revenue" : question.label; }
     }
     let valuation = tradingValuation(analysis, usdRate);
-    const requiredMos = analysis.valuation?.method === 'nav' ? valuationMargin(analysis.valuation,'stable') : analysis.requiredMos ?? T.price.requiredMos.stable;
+    // 3.8.0: Buy at or below central value; no margin-of-safety discount.
+    const requiredMos = T.price.buyMos;
     const t = analysis.status !== "scored" ? "UUUUU" : outcomes.map(test => test.result === "unclear" && test.pending ? "C" : test.result[0].toUpperCase()).join("");
+    const pr = analysis.status !== "scored" ? "U" : profitLetter(analysis.profitRecord);
     let dataQualityFlags = valuationFlags({price:prices[analysis.id]?.[0]??null, mid:valuation?.perShare.mid??null, assumptions:analysis.valuation?.assumptions??[], cap:company.marketCapUsd, shares:capShares[analysis.id]??analysis.valuation?.shares, usdRate:usdRate(company.currency),corroborated:analysis.valuation?.shareSources===2});
     const contradiction=dataQualityFlags.length?(issuerContradictions[analysis.id]??[]):[];
     if(contradiction.length)dataQualityFlags.push(...contradiction.map(o=>`Issuer filing contradicts valuation shares by more than 2%: ${o.url} (${o.date}: ${o.shares})`));
@@ -116,16 +127,17 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
       dataQualityFlags=[];
     }
     const returnInputs = buyReturnInputs(analysis.valuation, company.currency);
-    let price = publishedBuyPrice({ businessChanged: analysis.thesis?.changed, st: analysis.status === 'scored' ? 's' : 'i', t, m: requiredMos, buyReturnInputs: returnInputs, shareSources:analysis.valuation?.shareSources, publishedShareReview:analysis.valuation?.publishedShareReview,
+    let price = publishedBuyPrice({ businessChanged: analysis.thesis?.changed, st: analysis.status === 'scored' ? 's' : 'i', t, pr, shareSources:analysis.valuation?.shareSources, publishedShareReview:analysis.valuation?.publishedShareReview,
       v: valuation ? [valuation.perShare.low, valuation.perShare.mid, valuation.perShare.high] : null, dataQualityFlags }, prices[analysis.id]);
     const prior=previousDossiers[analysis.id];
     const priceTestFreeze=price.result==='unclear'&&prior?.tests.price&&['pass','fail'].includes(prior.tests.price.result)
       ? prior.priceTestFreeze??{asOf:prior.asOf,test:prior.tests.price} : undefined;
-    if(priceTestFreeze)price={...price,...publishedBuyPrice({st:analysis.status==='scored'?'s':'i',t,v:null,priceTestFreeze,businessChanged:analysis.thesis?.changed},prices[analysis.id]),dataQualityFlags:price.dataQualityFlags};
-    const passes = [...outcomes.map(test => analysis.status === "scored" && test.result === "pass"), price.b];
-    // Price below its required MOS is a failed funnel gate even when priceTest
-    // calls a positive but inadequate discount "unclear". Missing data is not a failure.
-    const failures = [...outcomes.map(test => test.result === "fail"), analysis.thesis?.changed === true || price.result === "fail" || price.mos !== null && price.result !== "pass"];
+    if(priceTestFreeze)price={...price,...publishedBuyPrice({st:analysis.status==='scored'?'s':'i',t,pr,v:null,priceTestFreeze,businessChanged:analysis.thesis?.changed},prices[analysis.id]),dataQualityFlags:price.dataQualityFlags};
+    // Funnel order: moat, economics, management, accounting, profit record, price.
+    const gated = outcomes.slice(1);
+    const passes = [...gated.map(test => analysis.status === "scored" && test.result === "pass"), pr === "P", price.b];
+    // Price above central value is a failed funnel gate. Missing data is not a failure.
+    const failures = [...gated.map(test => test.result === "fail"), pr === "F", analysis.thesis?.changed === true || price.result === "fail" || price.mos !== null && price.result !== "pass"];
     const countryFunnel = funnel.byCountry[company.country] ??= emptyFunnel();
     for (const population of [funnel, countryFunnel, ...(w ? [westernFunnel, westernFunnel.byCountry[company.country] ??= emptyFunnel()] : [])]) {
       population.analysed++;
@@ -135,7 +147,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
         if (cumulative) {
           if (passes[i]) { gate.passing++; gate.pass!++; }
           else if (failures[i]) gate.fail!++;
-          else if (outcomes[i]?.pending && outcomes[i]?.result === 'unclear') gate.checking!++;
+          else if (gated[i]?.pending && gated[i]?.result === 'unclear') gate.checking!++;
           else gate.unclear!++;
         }
         cumulative = cumulative && passes[i];
@@ -143,7 +155,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
       });
     }
     const dossier: Dossier = {
-      ...analysis, priceTestFreeze, methodVersion: METHOD_VERSION, w, b: price.b, dataQualityFlags: price.dataQualityFlags, requiredMos, holders,
+      ...analysis, valuation: navBuyCopy(analysis.valuation), priceTestFreeze, methodVersion: METHOD_VERSION, w, b: price.b, dataQualityFlags: price.dataQualityFlags, requiredMos, holders,
       ...(priceHistories[analysis.id] ? { priceHistory: priceHistories[analysis.id] } : {}),
       series: Object.assign({}, ...outcomes.map((test) => test.series), analysis.series),
       tests: { ...analysis.tests, price: priceTestFreeze?.test ?? { key: "price", result: price.result, numeric: price.result, reasons: price.mos === null ? ["Valuation or price unavailable in trading currency"] : [], metrics: { mos: price.mos }, series: {}, jev: [] } },
@@ -153,7 +165,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
     visible.priceStory=composePriceStory(visible,prices[analysis.id]??null,analysis.priceStory?.selected??null,analysis.priceStory?.events??[],analysis.priceStory?.asOf??new Date().toISOString());
     visible.priceStory=retainStoryTimestamp(visible.priceStory,previousDossiers[analysis.id]?.priceStory);
     (shards[shard] ??= {})[analysis.id] = visible;
-    if (price.dataQualityFlags.length) unresolved.push({id:analysis.id,qualityPass:t==='PPPPP',reasons:price.dataQualityFlags});
+    if (price.dataQualityFlags.length) unresolved.push({id:analysis.id,qualityPass:qualityPass({t,pr}),reasons:price.dataQualityFlags});
     const roic = (analysis.tests.moat.series.totalRoic ?? []).slice(-T.history.years)
       .map(([, value]) => value === null || !Number.isFinite(value) ? null : Number(value.toPrecision(3)));
     const returns=dossierReturn(analysis);
@@ -168,7 +180,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
       m: requiredMos, r: [...Array<number | null>(T.history.years - roic.length).fill(null), ...roic],
       id: analysis.id, n: company.nameEn ?? company.name, lg: company.logo ?? null, c: company.country, s: company.sector, k: company.kind,
       mc: company.marketCapUsd, v: valuation && !price.dataQualityFlags.length ? [valuation.perShare.low, valuation.perShare.mid, valuation.perShare.high] : null,
-      cur: company.currency, t,
+      cur: company.currency, t, pr,
       g: [...g].sort(), h: holders.length, st: analysis.status === "scored" ? "s" : "i",
     };
     rows.push(row);
@@ -189,7 +201,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
     files[`prices/${country}.json`] = Object.fromEntries(countryRows.filter((row) => prices[row.id]).map((row) => [row.id, prices[row.id]]));
   }
   for (const [shard, dossiers] of Object.entries(shards)) files[`dossiers/${shard}.json`] = dossiers;
-  files["index/default.json"] = rows.filter((row) => row.st === "s" && (row.t === "PPPPP" || /^P*FP*$/.test(row.t) || /^[PCU]+$/.test(row.t)));
+  files["index/default.json"] = rows.filter((row) => row.st === "s" && (qualityPass(row) || /^P*FP*$/.test(gateCode(row)) || /^[PCU]+$/.test(gateCode(row))));
   files["top.json"] = rows.slice(0, 2000).map((row) => row.id);
   const versionCounts = new Map<string, { versions: Analysis["versions"]; count: number }>();
   for (const { versions } of analyses) {

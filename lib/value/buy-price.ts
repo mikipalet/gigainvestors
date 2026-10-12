@@ -1,32 +1,33 @@
-import {modelReturn,cashCoversPrice} from './return-model';
 import { valuationFlags } from './data-quality';
+import { qualityPass } from './fair-buy';
 import { priceTest } from './price-test';
+import { T } from './config';
 import type { IndexRow, PriceMap, Valuation } from './types';
 
 /** Publication only. Quotes and v must both use the listing's trading currency.
+ * Method 3.8.0: Buy = passes the quality tests Buy requires (fair-buy.ts: moat,
+ * economics, management, accounting and the profit record) and the price is at
+ * or below the central (mid) value. There is no margin-of-safety discount and no
+ * separate return hurdle: at the central value the expected return equals the
+ * required return by construction, so a price at or below it meets that return.
  * Seeds remain eligible (and labeled); unverified comparisons wait for review.
- * b includes all five quality gates, so its count is the final funnel count.
+ * b requires every quality gate, so its count is the final funnel count.
  */
-export function publishedBuyPrice(row: Pick<IndexRow, 'businessChanged' | 'st' | 't' | 'v' | 'm' | 'dataQualityFlags' | 'buyReturnInputs' | 'shareSources' | 'priceTestFreeze' | 'publishedShareReview'>, quote: PriceMap[string] | undefined) {
+// m and buyReturnInputs are accepted for older callers and ignored from 3.8.0.
+export function publishedBuyPrice(row: Pick<IndexRow, 'businessChanged' | 'st' | 't' | 'pr' | 'v' | 'dataQualityFlags' | 'shareSources' | 'priceTestFreeze' | 'publishedShareReview'> & Partial<Pick<IndexRow, 'm' | 'buyReturnInputs'>>, quote: PriceMap[string] | undefined) {
+  const quality = qualityPass(row);
   if(row.priceTestFreeze){
     const test=row.priceTestFreeze.test;
-    return {result:test.result,mos:test.metrics.mos??null,dataQualityFlags:[],b:!row.businessChanged&&row.st==='s'&&row.t==='PPPPP'&&test.result==='pass'};
+    return {result:test.result,mos:test.metrics.mos??null,dataQualityFlags:[],b:!row.businessChanged&&row.st==='s'&&quality&&test.result==='pass'};
   }
   const dataQualityFlags = [...new Set([...(row.dataQualityFlags ?? []).filter(flag => !flag.startsWith('Unverified ratio:')), ...valuationFlags({ price: quote?.[0] ?? null, mid: row.v?.[1] ?? null, assumptions: [], corroborated:row.shareSources===2||row.publishedShareReview===true })])];
   const price = priceTest({
     valuation: row.v ? { perShare: { low: row.v[0], mid: row.v[1], high: row.v[2] } } as Valuation : null,
     price: quote?.[0] ?? null,
-    requiredMos: row.m ?? NaN,
+    requiredMos: T.price.buyMos,
   });
-  const eligible = row.st === 's' && !dataQualityFlags.length && row.m !== undefined && Number.isFinite(row.m) && row.m >= 0 && row.m <= 1;
-  const inputs = row.buyReturnInputs;
-  const expectedReturn = inputs?.model && quote && quote[0] > 0 ? modelReturn(inputs.model, quote[0]) : null;
-  const covered = !!(inputs?.model && Number.isFinite(inputs.requiredReturn) && quote && cashCoversPrice(inputs.model,quote[0]));
-  const legacyKnown = inputs && !inputs.model && [inputs.cashPerShare, inputs.growth, inputs.requiredReturn].every(Number.isFinite) && row.v && quote;
-  const returnKnown = covered || expectedReturn !== null && Number.isFinite(expectedReturn) && inputs && Number.isFinite(inputs.requiredReturn) || legacyKnown;
-  // Legacy snapshots lack cash flows; their value at the required rate still establishes this inequality.
-  const returnPass = !!returnKnown && (covered || (legacyKnown ? quote![0] <= row.v![1] : expectedReturn! >= inputs!.requiredReturn - 1e-12));
-  const result = !eligible ? { result: 'unclear' as const, mos: null }
-    : price.result === 'pass' && !returnPass ? { ...price, result: returnKnown ? 'fail' as const : 'unclear' as const } : price;
-  return { ...result, dataQualityFlags, b: !row.businessChanged && row.t === 'PPPPP' && result.result === 'pass' };
+  const eligible = row.st === 's' && !dataQualityFlags.length;
+  const result = eligible ? price : { result: 'unclear' as const, mos: null };
+  return { ...result, dataQualityFlags, b: !row.businessChanged && quality && result.result === 'pass' };
 }
+

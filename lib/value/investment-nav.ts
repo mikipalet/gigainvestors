@@ -20,6 +20,8 @@ export function navPerShare(y: Year): number | null {
   const nav = y.navPerShare ?? ratio(y.investmentNav ?? null, y.sharesOutstanding ?? y.dilutedShares);
   return nav !== null && Number.isFinite(nav) && nav > 0 ? nav : null;
 }
+/** 3.8.0: the central value of an investment holding is the discounted ten-year NAV realization. */
+export const NAV_BUY = 'Buy requires the quality tests and a price at or below the central value, the ten-year NAV realization discounted at 10%';
 export function navHistory(years: Year[]): { nav: number; cagr: number; uncappedCagr: number; years: number; series: Array<[number, number]> } | null {
   const available = last(years, 11);
   let start=available.length;
@@ -59,7 +61,7 @@ export function valueInvestmentHolding(years: Year[], currency: string): { valua
       'NAV and dividends must use a consistent currency and split-adjusted per-share basis',
       'Value discounts ten-year NAV realization at 10%; NAV compounds at the historical total-return CAGR capped at 12%, with dividends reinvested',
       'Expected return is the IRR of that same ten-year NAV realization at today’s price',
-      'Buy requires price at or below 85% of both reported NAV and discounted NAV realization value',
+      NAV_BUY,
       'Reported NAV includes portfolio liabilities; cash and debt are not added or deducted again',
     ],
   } };

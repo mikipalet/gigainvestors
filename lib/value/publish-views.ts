@@ -1,4 +1,5 @@
 import { qualityMetric } from './quality-metric';
+import { qualityPass } from './fair-buy';
 import { createHash } from 'node:crypto';
 import { gzipSync } from 'node:zlib';
 import { browserRow,historyView,packView,type BrowserRow,type ViewManifest } from './browser-view';
@@ -37,7 +38,7 @@ export function publishViews(files: Record<string, unknown>): ViewManifest {
   // Partial writers (notably prices) supply no history. Omission must not
   // retract released frames; supplied periods below replace both view halves.
   const prior = (files['meta.json'] as StoreMeta).views;
-  const manifest: ViewManifest = {current:bounded(rows.filter(r=>r.t==='PPPPP')),deferred:chunks(rows.filter(r=>r.t!=='PPPPP')),
+  const manifest: ViewManifest = {current:bounded(rows.filter(qualityPass)),deferred:chunks(rows.filter(r=>!qualityPass(r))),
     years:{...prior?.years},yearDeferred:{...prior?.yearDeferred},quarters:{...prior?.quarters},quarterDeferred:{...prior?.quarterDeferred}};
   const currentById=new Map(source.map(row=>[row.id,row]));
   const identities=((files['history/companies.json'] as IndexRow[] | undefined)??Object.entries(files).filter(([f])=>/^index\/[A-Z]{2}\.json$/.test(f)).flatMap(([,data])=>data as IndexRow[])).map(row=>({...row,lg:currentById.get(row.id)?.lg??row.lg}));
@@ -46,12 +47,12 @@ export function publishViews(files: Record<string, unknown>): ViewManifest {
     if (!year) continue;
     const rows=historyView(data as SnapshotRow[],identities);
     if(year.includes('Q')){
-      manifest.quarters![year]=bounded(rows.filter(r=>r.t==='PPPPP'),60_000);
-      manifest.quarterDeferred![year]=chunks(rows.filter(r=>r.t!=='PPPPP'));
+      manifest.quarters![year]=bounded(rows.filter(qualityPass),60_000);
+      manifest.quarterDeferred![year]=chunks(rows.filter(r=>!qualityPass(r)));
       if(year.endsWith('Q4')){manifest.years[year.slice(0,4)]=manifest.quarters![year];manifest.yearDeferred![year.slice(0,4)]=manifest.quarterDeferred![year];}
     }else{
-      manifest.years[year]=bounded(rows.filter(r=>r.t==='PPPPP'));
-      manifest.yearDeferred![year]=chunks(rows.filter(r=>r.t!=='PPPPP'));
+      manifest.years[year]=bounded(rows.filter(qualityPass));
+      manifest.yearDeferred![year]=chunks(rows.filter(r=>!qualityPass(r)));
     }
   }
   (files['meta.json'] as StoreMeta).views=manifest;

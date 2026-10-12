@@ -4,6 +4,7 @@ import { publicAnalysis } from './public-analysis';
 import { publishViews } from './publish-views';
 import path from 'node:path';
 import { publishedBuyPrice } from './buy-price';
+import { qualityPass } from './fair-buy';
 import { assertIndexConsistency } from './consistency';
 import { readPrices } from './price-files';
 import { shardOf } from './shard';
@@ -24,7 +25,7 @@ export function refreshPublishedBuyPrices(repo: string): void {
   const updateGate = (population: FunnelCounts, rows: IndexRow[]) => {
     const gate = population.gates.find(g => g.key === 'price');
     if (!gate) throw new Error('Published price gate missing');
-    const quality = rows.filter(r => r.st === 's' && r.t === 'PPPPP');
+    const quality = rows.filter(r => r.st === 's' && qualityPass(r));
     gate.passing = gate.pass = quality.filter(r => r.b).length;
     gate.fail = gate.failsOnlyThis = quality.filter(r => {
       const p = decisions.get(r.id)!;

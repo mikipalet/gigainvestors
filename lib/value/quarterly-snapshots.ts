@@ -3,13 +3,15 @@ import { isInvestmentHolding } from './investment-nav';
 import {qualityLtmAt,qualityLtmHistoryAt} from './quality-ltm';
 import { qualityMetric } from './quality-metric';
 import { publishedBuyPrice } from './buy-price';
+import { profitLetter, profitRecord } from './fair-buy';
+import { T } from './config';
 import { valuationFlags } from './data-quality';
 import { earningsVolatility } from './history';
 import { checkIntegrity } from './integrity';
-import { buyReturnInputs, ownerReturn } from './owner-return';
+import { ownerReturn } from './owner-return';
 import { runNumericTests } from './tests';
 import { QUALITY_TESTS,type Company,type Fundamentals,type PriceHistory,type SnapshotRow } from './types';
-import { valueCompany, valuationMargin } from './valuation';
+import { valueCompany } from './valuation';
 import { availableOn, trailingAt, type Interim } from './quarterly-inputs';
 import { quarterEnd } from './time-travel';
 import { applyAdjustments } from './judgement/apply';
@@ -60,12 +62,14 @@ export function snapshotForQuarter({company,fundamentals,quarter,prices,latestPr
   ?valueCompany({investmentHolding,years:prefix.years,ttm:trailing?.year,balance:latestBalanceAt(fundamentals.balanceSheets??[],cutoff,currency,target,company.kind),kind:company.kind,industry:company.industry,currency,bondYield,cyclical:volatility==='volatile',priceHistory:pastPrices,qualityPass:t5==='PPPPP'}).valuation:null;
  const v:[number,number,number]|null=valuation?[valuation.perShare.low*fxRate!,valuation.perShare.mid*fxRate!,valuation.perShare.high*fxRate!]:null;
  if(valuation&&fxRate)valuation.perShareTrading={currency:company.currency,fxRate,low:v![0],mid:v![1],high:v![2]};
- const flags=valuationFlags({price,mid:v?.[1]??null,assumptions:valuation?.assumptions??[]}),mos=valuationMargin(valuation,volatility);
- const buy=publishedBuyPrice({buyReturnInputs:buyReturnInputs(valuation,company.currency),st:prefix.integrity.ok?'s':'i',t:t5,v,m:mos,dataQualityFlags:flags},[price,cutoff]);
+ const flags=valuationFlags({price,mid:v?.[1]??null,assumptions:valuation?.assumptions??[]}),mos=T.price.buyMos;
+ // 3.8.0 Buy: best-1 eligibility on the statements filed before quarter end, price at or below central value.
+ const pr=profitLetter(profitRecord({years:prefix.years,kind:company.kind}));
+ const buy=publishedBuyPrice({st:prefix.integrity.ok?'s':'i',t:t5,pr,v,dataQualityFlags:flags},[price,cutoff]);
  const expected=flags.length?null:ownerReturn(valuation,company.currency,null,price)?.expected??null;
  const gain=latestPrice&&positive(latestPrice[0])&&latestPrice[1]>=cutoff&&latestPrice[1]<=asOf?compact(latestPrice[0]/price-1):null;
  const basis:QuarterBasis={balanceSheet:valuation?.balanceSheet,priceDate:cutoff,annual:target.fy,annualEnd:target.end,annualFiled:availableOn(target.end,filedByPeriod[target.end]),ttmEnd:trailing?.year.end??target.end,periods:trailing?.periods.map(({end,filed,source})=>({end,filed,source}))??[]};
  const provisional=Object.fromEntries(Object.entries(numeric).flatMap(([key,test])=>test.provisional?[[key,test.provisional]]:[]));
- const row:SnapshotRow=[company.id,t5,v&&positive(v[1])?compact(price/v[1]):null,buy.b,gain,{discount:mos,price,buyPrice:v&&positive(v[1])?v[1]*(1-mos):null},qualityMetric(company.kind,numeric.moat.metrics),{annual:basis.annual,ttm:basis.ttmEnd,expected:compact(expected),...(Object.keys(provisional).length?{qualityLtm:provisional}:{})}];
+ const row:SnapshotRow=[company.id,t5,v&&positive(v[1])?compact(price/v[1]):null,buy.b,gain,{discount:mos,price,buyPrice:v&&positive(v[1])?v[1]*(1-mos):null},qualityMetric(company.kind,numeric.moat.metrics),{annual:basis.annual,ttm:basis.ttmEnd,expected:compact(expected),pr,...(Object.keys(provisional).length?{qualityLtm:provisional}:{})}];
  return {row,basis,valuation,ttm:trailing?.year??null,integrity:prefix.integrity,numeric,qualityLtm};
 }

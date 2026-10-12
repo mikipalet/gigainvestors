@@ -1,0 +1,37 @@
+{
+ "identical": true,
+ "result": {
+  "US_train": {
+   "quarters": 43,
+   "companyQuarters": 12063,
+   "eligible": 3353,
+   "identicalQuarters": 43,
+   "onlyBest1": [],
+   "onlyProduction": []
+  },
+  "intl_train": {
+   "quarters": 43,
+   "companyQuarters": 14768,
+   "eligible": 2295,
+   "identicalQuarters": 43,
+   "onlyBest1": [],
+   "onlyProduction": []
+  },
+  "intl_later": {
+   "quarters": 42,
+   "companyQuarters": 33623,
+   "eligible": 5178,
+   "identicalQuarters": 42,
+   "onlyBest1": [],
+   "onlyProduction": []
+  },
+  "US_later": {
+   "quarters": 42,
+   "companyQuarters": 19360,
+   "eligible": 6074,
+   "identicalQuarters": 42,
+   "onlyBest1": [],
+   "onlyProduction": []
+  }
+ }
+}

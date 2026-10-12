@@ -271,6 +271,7 @@ export interface Analysis {
   predecessorHistory?: Array<PredecessorBasis & {fy:number}>;
   historyCoverage?: { years: number; first: number | null; last: number | null; source: string };
   requiredMos?: number; // Optional only for pre-history corpus compatibility.
+  profitRecord?: import('./fair-buy').ProfitRecord; // 3.8.0 Buy eligibility: no recurring losses, positive owner earnings.
   volatility?: Volatility;
   valueHistory?: ValueHistory; // Trading currency, using today's bond yield and FX.
   historyAssumptions?: string[];
@@ -292,7 +293,7 @@ export interface PriceTestFreeze { asOf: string; test: TestOutcome }
 export interface Dossier extends Analysis {
   methodVersion?: string; // Absent only in legacy publications.
   w: string | null; // Best Western trading listing; null means not easily buyable.
-  b?: boolean; // Published all-five-pass, verified at-buy-price decision.
+  b?: boolean; // Published Buy: passes the quality tests Buy requires and trades at or below central value.
   priceHistory?: PriceHistory;
   tests: Analysis["tests"] & { price?: TestOutcome };
   holders: Array<{ code: string; name: string }>; // superinvestors, from data/store
@@ -316,11 +317,12 @@ export interface IndexRow {
   nameEn?: string;
   nameLocal?: string;
   lg?: string | null;
-  b?: boolean; // Published all-five-pass, verified at-buy-price decision; absent in legacy snapshots.
+  b?: boolean; // Published Buy (3.8.0: moat, economics, management, accounting and profit record pass; price at or below central value); absent in legacy snapshots.
+  pr?: 'P' | 'F' | 'U'; // 3.8.0 profit record (no recurring losses, positive owner earnings); absent before 3.8.0.
   dataQualityFlags?: string[];
   returnInfo?: { label: string; note: string; sort: number };
   fy?: number;
-  m?: number; // Required margin of safety; absent only in legacy snapshots.
+  m?: number; // Required margin of safety below central value (0 from 3.8.0); absent only in legacy snapshots.
   r?: Array<number | null>; // Last ten annual owner-earnings returns on capital including acquisitions, three significant digits.
   id: Id;
   n: string;
@@ -355,7 +357,7 @@ export interface FunnelCounts {
   asOf: string | null; // Latest analysis date in this population.
   analysed: number;
   gates: Array<{
-    key: TestKey;
+    key: TestKey | 'record';
     label: string;
     pass?: number; // Same cumulative survivor count as passing; optional for legacy snapshots.
     fail?: number;
@@ -393,7 +395,7 @@ export interface SearchShard {
 }
 
 /** Historical snapshot; r is realized cumulative price return, expected is the contemporary model IRR. */
-export type SnapshotRow = [id: Id, t5: string, pm: number | null, b: boolean, r: number | null, price?: HistoricalPrice, quality?: import('./quality-metric').QualityMetric, basis?: {annual:number;ttm:string;expected:number|null;qualityLtm?:Partial<Record<TestKey,import('./quality-ltm').ProvisionalYear>>}, outcome?: {date:string;lastTraded?:boolean}];
+export type SnapshotRow = [id: Id, t5: string, pm: number | null, b: boolean, r: number | null, price?: HistoricalPrice, quality?: import('./quality-metric').QualityMetric, basis?: {annual:number;ttm:string;expected:number|null;pr?:'P'|'F'|'U';qualityLtm?:Partial<Record<TestKey,import('./quality-ltm').ProvisionalYear>>}, outcome?: {date:string;lastTraded?:boolean}];
 export interface HistorySummary {
   analysed: number;
   qualityPasses: number;

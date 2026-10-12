@@ -1,18 +1,18 @@
 import { isInvestmentHolding } from './investment-nav';
 import { qualityMetric } from './quality-metric';
 import { publishedBuyPrice } from './buy-price';
+import { profitLetter, profitRecord, qualityPass } from './fair-buy';
 import { T } from './config';
 import { valuationFlags } from './data-quality';
 import { earningsVolatility } from './history';
 import { checkIntegrity } from './integrity';
-import { buyReturnInputs } from "./owner-return";
 import { runNumericTests } from './tests';
 import { QUALITY_TESTS,type Company,type Fundamentals,type HistorySummary,type PriceHistory,type SnapshotRow } from './types';
-import { valueCompany, valuationMargin } from './valuation';
+import { valueCompany } from './valuation';
 
 export const HISTORY_CAVEATS = [
   'numbers-only checklist (no report reading)',
-  'buy requires both the margin of safety and expected return at least the required return',
+  'buy requires the quality tests Buy requires and a price at or below the central value (method 3.8.0; earlier frames used the rule of their method)',
   'restated financials',
   'survivorship: delisted companies missing',
   'price returns without dividends',
@@ -71,8 +71,8 @@ export function snapshotForYear({ company, fundamentals, fy, prices, latestPrice
   const v: [number,number,number] | null = valuation ? [valuation.perShare.low*fxRate!, valuation.perShare.mid*fxRate!, valuation.perShare.high*fxRate!] : null;
   const flags = valuationFlags({ price, mid:v?.[1]??null, assumptions:valuation?.assumptions??[] });
   if (valuation && fxRate) valuation.perShareTrading = {currency:company.currency,fxRate,low:v![0],mid:v![1],high:v![2]};
-  const mos = valuationMargin(valuation, volatility);
-  const buy = publishedBuyPrice({buyReturnInputs:buyReturnInputs(valuation,company.currency),st:prefix.integrity.ok?'s':'i', t:t5, v, m:mos, dataQualityFlags:flags}, positive(price) ? [price,`${month}-01`] : undefined);
+  const mos = T.price.buyMos, pr = profitLetter(profitRecord({years:prefix.years,kind:company.kind}));
+  const buy = publishedBuyPrice({st:prefix.integrity.ok?'s':'i', t:t5, pr, v, dataQualityFlags:flags}, positive(price) ? [price,`${month}-01`] : undefined);
   const pm = positive(price) && v && positive(v[1]) ? compact(price/v[1]) : null;
   const r = positive(price) && latestPrice && positive(latestPrice[0]) && latestPrice[1].slice(0,7) >= month && latestPrice[1] <= asOf
     ? compact(latestPrice[0]/price-1) : null;
@@ -80,7 +80,7 @@ export function snapshotForYear({ company, fundamentals, fy, prices, latestPrice
 }
 
 export function summarizeSnapshots(rows: SnapshotRow[]): HistorySummary {
-  const quality = rows.filter(r => r[1] === 'PPPPP'), buy = rows.filter(r => r[3]);
+  const quality = rows.filter(r => qualityPass({t:r[1],pr:r[7]?.pr})), buy = rows.filter(r => r[3]);
   const returns = (items: SnapshotRow[]) => items.map(r => r[4])
     .filter((r): r is number => r !== null && Number.isFinite(r)).sort((a,b) => a-b);
   const median = (values: number[]): number | null => {

@@ -23,6 +23,7 @@ import { QUALITY_TESTS,type StoreMeta } from "@/lib/value/types";
 
 import { columns,type Sort } from '@/lib/value/list-sort';
 import { priceValue, dateLabel } from '@/lib/value/presentation';
+import { qualityPass } from '@/lib/value/fair-buy';
 import { type FilterState } from './_components/Filters';
 
 import { fetchValueData as fetchRows } from '@/lib/value/data-source';
@@ -151,10 +152,10 @@ export default function ValueIndex({ rows, todayRows, initialFilter, tags, meta,
   }),[source,historical]);
   const gate = filter.gate !== undefined && /^[0-6]$/.test(filter.gate) ? Number(filter.gate) : null;
   const population = allMarkets ? meta?.funnel : meta?.western?.funnel;
-  const counts = population ? [population.analysed, ...population.gates.map(g=>g.passing)] : [meta?.counts.analysed ?? rows.length, ...Array(4).fill(0),rows.filter(r=>r.t==='PPPPP').length,0];
+  const counts = population ? [population.analysed, ...population.gates.map(g=>g.passing)] : [meta?.counts.analysed ?? rows.length, ...Array(4).fill(0),rows.filter(qualityPass).length,0];
   const displayed = useMemo(() => {
     return allEntries.filter(({row})=>matchesView(row,filter)).sort((a, b) => {
-      if ((a.row.t==='PPPPP')!==(b.row.t==='PPPPP')) return (a.row.t==='PPPPP'?-1:1)*(filter.near==='1'?-1:1);
+      if (qualityPass(a.row)!==qualityPass(b.row)) return (qualityPass(a.row)?-1:1)*(filter.near==='1'?-1:1);
       if (a.row.st !== b.row.st) return a.row.st === "i" ? 1 : -1;
       const av = sort === "name" ? a.row.nameEn??a.row.n : sort === "country" ? a.row.c : sort === "cap" ? a.row.mc : sort === "holders" ? a.row.h : sort === "return" ? a.expected??a.row.returnInfo?.sort : sort === "flags" ? Number(a.seed) : a.mos;
       const bv = sort === "name" ? b.row.nameEn??b.row.n : sort === "country" ? b.row.c : sort === "cap" ? b.row.mc : sort === "holders" ? b.row.h : sort === "return" ? b.expected??b.row.returnInfo?.sort : sort === "flags" ? Number(b.seed) : b.mos;

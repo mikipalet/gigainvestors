@@ -19,6 +19,7 @@ import { askCompany } from "./jev/run";
 import { combine, trustedContradictions } from "./jev/combine";
 import { QUESTIONS, QUESTIONS_VERSION } from "./jev/questions";
 import { runNumericTests } from "./tests";
+import { profitRecord } from "./fair-buy";
 import { valueCompany, valuationMargin } from "./valuation";
 import type { Analysis, Company, Fundamentals, JevAnswer, ReportMeta, SectionKey, PriceHistory, Year } from "./types";
 
@@ -103,7 +104,7 @@ export async function analyzeCompany({ company, fundamentals, sections, report, 
     };
     else valuation.assumptions.push("Trading currency conversion unavailable");
   }
-  return withCapitalReturns({ predecessorHistory: fundamentals.years.flatMap(y=>y.predecessor?[{fy:y.fy,...y.predecessor}]:[]), judgement: human.judgement, reportingCurrency: fundamentals.currency, ...(shareSource && currentShares ? { shareCount: {value:currentShares,source:shareSource} } : {}), requiredMos, volatility, historyCoverage: {years: fundamentals.years.length, first: fundamentals.years[0]?.fy ?? null, last: fundamentals.years.at(-1)?.fy ?? null, source: company.source},
+  return withCapitalReturns({ profitRecord: profitRecord({ years, kind: company.kind }), predecessorHistory: fundamentals.years.flatMap(y=>y.predecessor?[{fy:y.fy,...y.predecessor}]:[]), judgement: human.judgement, reportingCurrency: fundamentals.currency, ...(shareSource && currentShares ? { shareCount: {value:currentShares,source:shareSource} } : {}), requiredMos, volatility, historyCoverage: {years: fundamentals.years.length, first: fundamentals.years[0]?.fy ?? null, last: fundamentals.years.at(-1)?.fy ?? null, source: company.source},
     valueHistory: valueHistory({ investmentHolding: company.investmentHolding, fundamentals, kind: company.kind, industry: company.industry, bondYield: resolvedBondYield, fxRate: rate, commodity: isCommodity }),
     historyAssumptions: ["Historical values use today's bond yield for every fiscal year", "Historical values use today's FX rate into trading currency for every fiscal year", "Historical values use current restated fundamentals and current commodity classification; they are not point-in-time estimates", ...(adjusted.adjustments.length?["Historical value ranges retain the original capex calculation; the current filing judgement is not backfilled into historical valuations"]:[])],
     events: companyEvents(fundamentals), series: company.investmentHolding ? { netCash: netCashSeries(years), navPerShare: years.map(y => [y.fy, navPerShare(y)]) } : perShareSeries(adjusted.adjustments.length ? {...fundamentals,years} : fundamentals),

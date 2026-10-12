@@ -29,7 +29,8 @@ export const T = {
     acquisitionYears: 10, acquisitionToNetIncome: 0.5, roicEndpointYears: 3, roicRetention: 2 / 3,
   },
   accounting: { maxAccruals: 0.10, maxDsri: 1.465, minRedFlags: 2, maxRestructYears: 2, maxSbcToOcf: 0.15 },
-  price: { requiredMos: { stable: 0.25, moderate: 0.35, volatile: 0.50 }, cvStable: 0.20 },
+  // 3.8.0: Buy at or below central value (buyMos 0). requiredMos keeps the pre-3.8.0 discounts for history and legacy snapshots only.
+  price: { buyMos: 0, requiredMos: { stable: 0.25, moderate: 0.35, volatile: 0.50 }, cvStable: 0.20 },
   history: { years: 10, refreshMs: 7 * 24 * 60 * 60 * 1000, acquisitionToAssets: 0.10, impairmentDrop: 0.20 },
   valuation: {
     version: 2 as 1 | 2, // v1 retained only for before/after evaluation.

@@ -1,3 +1,4 @@
+import { qualityPass } from '../fair-buy';
 import { publishedBuyPrice } from '../buy-price';
 import type { IndexRow, PriceMap } from '../types';
 import { createHash } from 'node:crypto';
@@ -14,7 +15,7 @@ export function thesisNeedsRefresh(prior:ThesisResult|null,fingerprint:string,as
 
 /** Use today's numeric eligibility, before applying a previous thesis veto. */
 export function thesisZone(row:IndexRow|undefined,quote:PriceMap[string]|undefined):'buy'|'next_closest'|null {
- if(!row||row.t!=='PPPPP'||!row.v||!quote||quote[0]<=0||!row.buyReturnInputs)return null;
+ if(!row||!qualityPass(row)||!row.v||!quote||quote[0]<=0||!row.buyReturnInputs)return null;
  const result=publishedBuyPrice({...row,businessChanged:false},quote);
  if(result.dataQualityFlags.length||row.st!=='s')return null;
  return result.b?'buy':'next_closest';

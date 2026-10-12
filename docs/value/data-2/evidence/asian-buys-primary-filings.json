@@ -1,0 +1,186 @@
+[
+ {
+  "id": "192080.KO",
+  "name": "DoubleU Games",
+  "filing": "DART 반기보고서 2026.06 rcpNo 20260814003909; 사업보고서 2025 rcpNo 20260318001244",
+  "checks": {
+   "cash 2026-06-30": [
+    "733,015,444,161",
+    "vendor 733,015,444,160"
+   ],
+   "short-term deposits+FVPL": [
+    "279,377,637,983 + 8,209,979,084",
+    "vendor 287,587,617,080"
+   ],
+   "parent equity": [
+    "1,341,069,055,280",
+    "vendor 1,341,069,055,280"
+   ],
+   "non-controlling interests": [
+    "531,979,409,459",
+    "vendor 531,979,409,460"
+   ],
+   "shares outstanding": [
+    "19,456,465 (21,173,468 issued − 1,717,003 treasury)",
+    "valuation 19,456,465"
+   ],
+   "FY2025 profit parent / total": [
+    "131,254,556,348 / 179,810,727,076",
+    "vendor 131,254,556,340 / 179,810,727,070"
+   ]
+  },
+  "error": null,
+  "valueBefore": 159565.49,
+  "valueAfter": 160287.18,
+  "expectedReturnBefore": 0.479,
+  "expectedReturnAfter": 0.496,
+  "buy": [
+   true,
+   true
+  ]
+ },
+ {
+  "id": "009970.KO",
+  "name": "Youngone Holdings",
+  "filing": "DART 반기보고서 2026.06 rcpNo 20260814003190; 사업보고서 2025 rcpNo 20260319001240",
+  "checks": {
+   "cash 2026-06-30": [
+    "1,041,646,790,885",
+    "vendor 1,041,646,790,890"
+   ],
+   "short-term financial instruments": [
+    "987,907,163,943",
+    "vendor 988,046,827,380"
+   ],
+   "non-controlling interests": [
+    "2,453,501,140,715",
+    "vendor 2,453,501,140,720"
+   ],
+   "shares outstanding": [
+    "11,604,898 after the 2026-05-20 cancellation",
+    "valuation 11,604,898"
+   ],
+   "FY2025 profit parent / total": [
+    "367,684,364,214 / 606,455,450,562",
+    "vendor 367,684,364,210 / 606,455,450,560"
+   ],
+   "FY2025 revenue": [
+    "4,895,010,142,962",
+    "vendor 4,895,010,142,960"
+   ]
+  },
+  "error": "model, not data: minority share of subsidiary cash now allocated by profit share (60.6%) instead of equity share (57.0%)",
+  "valueBefore": 648819.92,
+  "valueAfter": 709699.33,
+  "expectedReturnBefore": 0.458,
+  "expectedReturnAfter": 0.533,
+  "buy": [
+   true,
+   true
+  ]
+ },
+ {
+  "id": "001800.KO",
+  "name": "Orion Holdings",
+  "filing": "DART 반기보고서 2026.06 rcpNo 20260814000993; 사업보고서 2025 rcpNo 20260318000838",
+  "checks": {
+   "cash 2026-06-30": [
+    "691,788,597,224",
+    "vendor 691,788,597,220"
+   ],
+   "short-term deposits + current FVPL": [
+    "701,918,719,361 + 115,579,890,408",
+    "vendor 820,939,663,000"
+   ],
+   "parent equity / NCI": [
+    "2,548,132,600,726 / 2,868,250,235,661",
+    "vendor same"
+   ],
+   "shares": [
+    "60,156,652 (no treasury)",
+    "valuation 60,156,652"
+   ],
+   "FY2025 profit parent / total": [
+    "120,991,845,518 / 337,777,860,270",
+    "vendor 120,991,845,510 / netIncomeFromContinuingOps 337,777,860,270"
+   ]
+  },
+  "error": "data error, fixed: consolidated D&A (265.1bn) and capex were credited to the parent in full although minorities receive 64% of profit; the vendor profit split now allocates them (and the cash) by the parent share 35.8%",
+  "valueBefore": 67722.73,
+  "valueAfter": 51365.14,
+  "expectedReturnBefore": 0.405,
+  "expectedReturnAfter": null,
+  "buy": [
+   true,
+   true
+  ]
+ },
+ {
+  "id": "2313.HK",
+  "name": "Shenzhou International",
+  "filing": "HKEX annual results 2025 (2026033000295.pdf), interim 2026 (2026082500356.pdf)",
+  "checks": {
+   "FY2025 profit attributable": [
+    "5,825,262 (RMB000)",
+    "bridge 5,825,262,000"
+   ],
+   "cash + current bank deposits + FVPL": [
+    "15,410,854 + 10,934,131 + 1,702,816 (RMB000)",
+    "valuation excess cash 27,439,925,889 after 2% of revenue"
+   ],
+   "shares": [
+    "1,503,222,397 weighted",
+    "valuation 1,502,835,997"
+   ],
+   "bank borrowings": [
+    "14,601,497 + 198,000 (RMB000)",
+    "not deducted by design (owner earnings after interest)"
+   ]
+  },
+  "error": null,
+  "valueBefore": 113.51,
+  "valueAfter": 113.51,
+  "expectedReturnBefore": 0.448,
+  "expectedReturnAfter": 0.448,
+  "buy": [
+   true,
+   true
+  ]
+ },
+ {
+  "id": "000651.SHE",
+  "name": "Gree Electric Appliances (Zhuhai)",
+  "filing": "CNINFO 2025 annual report (English, 1225374514.PDF); 2026 interim summary (1225515003.PDF). Not EDINET: this Gree is the Shenzhen-listed appliance maker",
+  "checks": {
+   "monetary funds FY2025": [
+    "110,553,006,650.89",
+    "vendor 110,553,006,650.89"
+   ],
+   "trading financial assets": [
+    "31,336,448,103.06",
+    "vendor 31,336,448,103.06"
+   ],
+   "total share capital": [
+    "5,601,405,741 (incl. 16,267,000 repurchased)",
+    "valuation 5,601,405,741"
+   ],
+   "H1 2026 profit attributable": [
+    "13,277,590,882.57",
+    "—"
+   ],
+   "short-term borrowings": [
+    "67,956,629,538.51",
+    "vendor shortTermDebt missing (not used in value; leverage flag only)"
+   ]
+  },
+  "error": "flag, not changed: RMB 10.58bn of monetary funds are pledged and 16.27m repurchased shares are counted (0.3%); both overstate value slightly; the vendor omits RMB 68bn of short-term borrowings (no effect on value by design, but no leverage flag)",
+  "valueBefore": 79.73,
+  "valueAfter": 79.73,
+  "expectedReturnBefore": 0.402,
+  "expectedReturnAfter": 0.402,
+  "buy": [
+   true,
+   true
+  ]
+ }
+]

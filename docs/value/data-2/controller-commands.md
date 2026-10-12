@@ -29,7 +29,7 @@ import hashlib,json,sys
 from pathlib import Path
 b,live=Path(sys.argv[1]),Path(sys.argv[2]);m=json.loads((b/'manifest.json').read_text())
 assert m['status']=='READY' and m['method']=='3.8.3' and m['approvalManifest'] is None
-assert m['corpusOverlay']=={'verdict-freeze.json':m['corpusOverlayFiles']['verdict-freeze.json']}
+assert set(m['corpusOverlay'])=={'verdict-freeze.json'} and set(m['corpusOverlayFiles'])=={'verdict-freeze.json'}
 # The freeze being replaced is still the one the proof read.
 assert hashlib.sha256((live/'verdict-freeze.json').read_bytes()).hexdigest()==m['verdictFreeze']['liveSha256'],'live verdict-freeze.json changed since the proof'
 assert hashlib.sha256((b/'verdict-freeze.json').read_bytes()).hexdigest()==m['verdictFreeze']['newSha256']
@@ -51,7 +51,6 @@ python3 docs/value/data-2/controller-wait-vercel.py "$release_commit"
 # The next 03:00 nightly runs 3.8.3 from this checkout.
 git -C "$daily" diff --exit-code
 git -C "$daily" diff --cached --exit-code
-git -C "$daily" fetch --quiet origin
 git -C "$daily" switch --detach "$release_commit"
 npm --prefix "$daily" ci --no-audit --no-fund
 

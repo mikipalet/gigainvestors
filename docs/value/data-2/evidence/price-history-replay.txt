@@ -1,0 +1,60 @@
+001440.KO fails -> fails (guard)
+002271.SHE fails -> fails (guard)
+002493.SHE fails -> fails (guard)
+002709.SHE fails -> fails (guard)
+017670.KO fails -> fails (guard)
+025750.KO fails -> fails (guard)
+042700.KO fails -> refreshes
+092220.KO fails -> fails (guard)
+118000.KO fails -> fails (guard)
+2327.TW fails -> fails (guard)
+267260.KO fails -> fails (guard)
+300450.SHE fails -> fails (guard)
+300751.SHE fails -> fails (guard)
+300759.SHE fails -> fails (guard)
+300782.SHE fails -> refreshes
+900310.KQ fails -> fails (guard)
+AIXC.US refreshes -> refreshes
+AZR.V fails -> fails (guard)
+BAG.V fails -> refreshes
+BARU.V fails -> fails (guard)
+BEA.V fails -> fails (guard)
+BIP.US fails -> fails (guard)
+BOLT.BA fails -> fails (guard)
+BOX.JSE fails -> fails (guard)
+CISO.US fails -> refreshes
+CLDN.LSE fails -> fails (guard)
+CPRT.US fails -> refreshes
+CTO.US fails -> fails (guard)
+CTRM.US fails -> fails (guard)
+DAR.V fails -> fails (guard)
+DBRG.US fails -> refreshes
+EDU.US fails -> refreshes
+ELBM.V fails -> fails (guard)
+GSK.US fails -> fails (guard)
+HAWK.V fails -> fails (guard)
+HMSO.LSE fails -> refreshes
+HPQ.V fails -> fails (guard)
+ICM.V fails -> fails (guard)
+ITP.US fails -> fails (guard)
+JADE.V fails -> fails (guard)
+LNAI.US fails -> fails (guard)
+MKT.V fails -> fails (guard)
+MNDR.US fails -> fails (guard)
+MRO.LSE fails -> refreshes
+NEXT.TO fails -> fails (guard)
+NUTX.US fails -> refreshes
+OBT.US fails -> fails (guard)
+OKAI.V fails -> fails (guard)
+OPTG.V fails -> fails (guard)
+PATK.US fails -> fails (guard)
+PDL.LSE fails -> fails (guard)
+RFA.TO fails -> fails (guard)
+ROL.US fails -> refreshes
+ROSE.LSE fails -> fails (guard)
+SOLR.V fails -> fails (guard)
+TGR.LSE fails -> fails (guard)
+TPL.US fails -> refreshes
+TREX.US fails -> refreshes
+WIT.US fails -> refreshes
+{"total":59,"beforeFails":58,"afterFails":44}

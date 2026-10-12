@@ -1,0 +1,18 @@
+{
+ "codeCommitProven": "ab6d6e0 (final code; the last publication proof ran on 54673f1 + the restored price-history-splits test and the 3.8.3 changelog copy, both re-checked: full suite, typecheck, final webpack build and the method page)",
+ "boundLiveArchive": "578f097405490892dbc8ee1320914cd8514975d2 (3.8.2, published 2026-10-12 18:52 UTC)",
+ "checks": {
+  "unitSuite": "272 files, 2622 passed, 1 skipped (npx vitest run, 2026-10-12 23:35 UTC)",
+  "typecheck": "tsc --noEmit clean",
+  "build": "next build --webpack exit 0 (isolated, offline font), final code",
+  "reanalysis": "renormalize-edinet 231 published EDINET companies; analyze 3910 published companies offline: 3906 written; BAP.US, IFS.US, DDL.US, STN.US need filing readings that are not cached (their 3.8.3 history is longer) and keep their released record",
+  "publishOut": "publish --out exit 0, 3913 companies (3910 + GPGI.US, TLC.AU, TPG.US decided by a failed Buy test)",
+  "publicationDiff": "275 companies change vs live 578f0974: 244 minority profit split, 25 statement/currency rules, 3 20-F statements, 3 hyperinflation; Buys 173 -> 173 (Western 138 -> 138), none added or removed",
+  "realPublication": "publish exit 0: rendered coverage 20/20, Blob 6273 files, commit d7c69ef6 pushed to the local bare remote",
+  "localPostPublish": "verifyPublication + time travel 2026Q3 and 2018Q3 passed, no page errors (d7c69ef6)",
+  "forwardVerifyCorrected": "frozen 173 = published 173 (175 less NFLX.US, TGS.US)",
+  "browserSemantic": "47/47 at 1728x970 and 390x844 (list, method, 21 companies incl. markdown agent copy)",
+  "browserLayout": "0 interaction failures; 183 findings not on the same live page, all 183 the same pattern on another live page (12px chrome, drawer reason-list overlap, the 390px clamped price-story line)",
+  "priceHistoryReplay": "2026-10-12 nightly comparison replayed on today Yahoo histories: 58 of 59 fail before; after: 15 refresh, 44 keep the released older months (no failure)"
+ }
+}

@@ -1,0 +1,70 @@
+{
+ "id": "JBS.US",
+ "reportingCurrency": "USD",
+ "historyCoverage": {
+  "years": 3,
+  "first": 2023,
+  "last": 2025,
+  "source": "eodhd"
+ },
+ "status": "insufficient_data",
+ "report": {
+  "id": "JBS.US",
+  "kind": "20-F",
+  "url": "https://www.sec.gov/Archives/edgar/data/1791942/000121390026034213/ea0282342-20f_jbsnv.htm",
+  "filed": "2026-03-25",
+  "period": "2025-12-31",
+  "sections": [
+   "business",
+   "mdna",
+   "capital",
+   "compensation",
+   "notes"
+  ]
+ },
+ "businessLine": "Operates in packaged foods; annual sales are USD 86.2 billion.",
+ "years": [
+  {
+   "fy": 2023,
+   "end": "2023-12-31",
+   "currency": "USD",
+   "revenue": 72918123000,
+   "netIncome": -198869000,
+   "ocf": 2378774000,
+   "totalAssets": null,
+   "equity": 9707786000,
+   "dilutedShares": 1046678947.3684211
+  },
+  {
+   "fy": 2024,
+   "end": "2024-12-31",
+   "currency": "USD",
+   "revenue": 77182547000,
+   "netIncome": 1766870000,
+   "ocf": 4229549000,
+   "totalAssets": 40685373000,
+   "equity": 7094465000,
+   "dilutedShares": 1070830303.0303031
+  },
+  {
+   "fy": 2025,
+   "end": "2025-12-31",
+   "currency": "USD",
+   "revenue": 86184182000,
+   "netIncome": 2024333000,
+   "ocf": 2931953000,
+   "totalAssets": 45156486000,
+   "equity": 8703580000,
+   "dilutedShares": 1071075661.3756614
+  }
+ ],
+ "statementsSource": [
+  "Annual statements from the USD 20-F XBRL (reviewed 2026-10-12); vendor rows not used: JBS N.V. reports in US dollars; the vendor's FY2025 row is the reais accounts of JBS S.A. under a USD label (sales 471.1bn against US$86.2bn in the 20-F)."
+ ],
+ "live": {
+  "businessLine": "Operates in packaged foods; annual sales are USD 471.1 billion.",
+  "heldBy": "verdict-freeze.json (2026-10-08 replay: undecided record)"
+ },
+ "publishedInProof": true,
+ "note": "A three-year US-dollar record from the JBS N.V. 20-F (FY2023-FY2025) is a neutral financial-history dossier: findable, no quality verdict, so no management evidence is required for it; lifting the freeze no longer removes JBS from the site."
+}

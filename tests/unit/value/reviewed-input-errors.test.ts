@@ -20,7 +20,7 @@ describe('reviewed input errors',()=>{
   expect(flagged.b).toBe(false);
   expect(flagged.result).toBe('unclear');
   expect(flagged.dataQualityFlags).toEqual(reviewedInputFlags('UBI.PA'));
-  const frozen=publishedBuyPrice({...row,id:'PETR3.SA',priceTestFreeze:{asOf:'2026-10-01',test:{key:'price',result:'pass',numeric:'pass',reasons:[],metrics:{mos:.5},series:{},jev:[]}}} as any,[300,'2026-10-09']);
+  const frozen=publishedBuyPrice({...row,id:'UBI.PA',priceTestFreeze:{asOf:'2026-10-01',test:{key:'price',result:'pass',numeric:'pass',reasons:[],metrics:{mos:.5},series:{},jev:[]}}} as any,[300,'2026-10-09']);
   expect(frozen.b).toBe(false);
  });
  it('leaves other companies untouched',()=>{

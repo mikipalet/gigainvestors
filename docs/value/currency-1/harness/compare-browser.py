@@ -1,5 +1,5 @@
-"""outlier-1: classify every candidate release-gate finding against the same production build serving
-the bound live (3.8.0) archive. New findings fail, as in rules-7; owner-accepted 12px chrome and
+"""currency-1: classify every candidate release-gate finding against the same production build serving
+the bound live (63fad7cb, 3.8.1) archive. New findings fail, as in rules-7; owner-accepted 12px chrome and
 whitespace measurements are listed separately. Usage: compare-browser.py <candidate dir> <baseline dir> <out.json>"""
 import json, re, sys
 from pathlib import Path
@@ -11,7 +11,7 @@ allowed = {i for row in owner for i in row.get('issues', []) if i.startswith('te
 key = lambda row: (row['path'], re.sub(r'\d+', '<n>', row['state'].split(':')[0] if row['state'].startswith('Price story:') else row['state']), row['width'], row['height'])
 lookup = {key(row): set(row.get('issues', [])) for row in live}
 shape = lambda issue: re.sub(r'\d[\d,.]*', '<n>', issue)
-# 3.8.1 adds no interface copy outside the method page; every finding is classified against the baseline arm.
+# 3.8.2 adds no interface copy outside the method page; every finding is classified against the baseline arm.
 NEW_COPY = re.compile(r'(?!)')
 # The Buy zone's list button keeps its control style; only its words changed ("+N more" -> "See all N").
 SAME_CONTROL = {'text below 13px: "See all" (12px)': 'text below 13px: "more ↗" (12px)'}

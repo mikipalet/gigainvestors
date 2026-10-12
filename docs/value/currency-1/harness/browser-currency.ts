@@ -93,9 +93,15 @@ async function main() {
           const mid = row.v?.[1] ?? null, state = priceState({ price: quote?.[0] ?? null, mid, b: row.b });
           // A withheld value (reviewed input error) has no price tile, or an unavailable one.
           if (mid !== null || await page.locator('[data-testid=tile-price]').count()) await expect(page.locator('[data-testid=tile-price]')).toContainText(state.label);
-          if (row.b === true) await expect(page.locator('[data-testid=verdict] .plain-verdict')).toHaveText('A wonderful business at a fair price');
-          else await expect(page.locator('[data-testid=verdict] .plain-verdict')).not.toHaveText('A wonderful business at a fair price');
+          // A neutral dossier (too few years in one currency) has no verdict line at all.
+          const verdict = page.locator('[data-testid=verdict] .plain-verdict');
+          if (row.b === true) await expect(verdict).toHaveText('A wonderful business at a fair price');
+          else if (await verdict.count()) await expect(verdict).not.toHaveText('A wonderful business at a fair price');
           const texts: string[] = [await page.locator('body').innerText()];
+          // The agent (markdown) copy of the same company page.
+          const md = await page.request.get(`${base}/s/${id.toLowerCase()}.md`);
+          expect(md.ok()).toBe(true);
+          texts.push(await md.text());
           await page.screenshot({ path: `${out}/${id}-${width}.png` });
           let surfaceError: string | undefined, stats: Array<[string, string]> = [];
           if (mid !== null) {

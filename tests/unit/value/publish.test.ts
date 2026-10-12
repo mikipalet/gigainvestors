@@ -1089,6 +1089,23 @@ it('keeps unresolved ADR or class-share capitalization conflicts guarded',()=>{
  }
 });
 
+it('carries no valuation or price result forward from years dropped as mislabelled (3.8.2)',()=>{
+ const a=analysis();a.company.marketCapUsd=null;
+ const repo=directory();mkdirSync(path.join(repo,'prices'));writeFileSync(path.join(repo,'prices/US.json'),JSON.stringify({[a.id]:[50,'2026-10-01']}));
+ const run=(x:typeof a)=>publishSnapshot({repo,analyses:[x],universe:[x.company],partial:false,commit:false,holdersByTicker:{},investorNames:{}});
+ const read=()=>JSON.parse(readFileSync(path.join(repo,`dossiers/${shardOf(a.id)}.json`),'utf8'))[a.id];
+ run(a);expect(read().tests.price.result).toBe('pass');expect(read().b).toBe(true);
+ // An ordinary missing refresh keeps the published valuation; a currency correction does not.
+ const unavailable={...structuredClone(a),valuation:null,valuationReason:'fewer than 7 annual periods'};
+ run(unavailable);expect(read().valuation).not.toBeNull();
+ const relabelled={...structuredClone(unavailable),events:[{fy:2025,kind:'currency_change' as const,note:'Statement currency changed in 2025: FY2025 amounts are not in their USD label (revenue 5.47× filing USD, the USD/BRL rate) and BRL is not the company\'s home currency'}]};
+ run(relabelled);expect(read().valuation).toBeNull();expect(read().priceTestFreeze).toBeUndefined();expect(read().b).toBe(false);
+ const reported={...structuredClone(unavailable),reportingCurrency:'BRL'};
+ // A changed reporting currency: neither the old valuation nor its price result carries over.
+ run({...structuredClone(a),reportingCurrency:'USD'});expect(read().b).toBe(true);
+ run(reported);expect(read().valuation).toBeNull();expect(read().priceTestFreeze).toBeUndefined();expect(read().b).toBe(false);
+});
+
 it('freezes the last live price test when a quote refresh introduces an unresolved ratio',async()=>{
  const a=analysis();a.company.marketCapUsd=null;
  const repo=directory();mkdirSync(path.join(repo,'prices'));writeFileSync(path.join(repo,'prices/US.json'),JSON.stringify({[a.id]:[50,'2026-10-01']}));

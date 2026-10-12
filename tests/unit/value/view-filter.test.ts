@@ -23,6 +23,9 @@ it('preserves country-only neutral dossiers and all advanced filters',()=>{
  expect(matchesView(row({t:'PPFPP'}),{economics:'fail'})).toBe(true);
  expect(matchesView(row({t:'PPUPP'}),{awaiting:'1'})).toBe(true);
  expect(matchesView(row(),{awaiting:'1'})).toBe(false);
- expect(matchesView(row({t:'PPFFF'}),{gate:'2'})).toBe(true);
- expect(matchesView(row({t:'PPFFF'}),{gate:'3'})).toBe(false);
+ // 3.8.0 gates: moat, economics, management, accounting, profit record (earnings resilience is not a gate).
+ expect(matchesView(row({t:'FPPFF',pr:'P'}),{gate:'2'})).toBe(true);
+ expect(matchesView(row({t:'FPPFF',pr:'P'}),{gate:'3'})).toBe(false);
+ expect(matchesView(row({t:'FPPPP',pr:'P'}),{})).toBe(true);
+ expect(matchesView(row({t:'PPPPP',pr:'F'}),{})).toBe(false);
 });

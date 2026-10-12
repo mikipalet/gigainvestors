@@ -1,3 +1,5 @@
+import { T } from '@/lib/value/config';
+import { dossierQualityPass } from '@/lib/value/fair-buy';
 import type { Dossier, TestOutcome, Series, PriceMap } from '@/lib/value/types';
 import type { InvestorData } from '@/lib/types';
 import { QUALITY_TESTS } from '@/lib/value/types';
@@ -19,7 +21,7 @@ export function projectDossier(d:Dossier,quote:PriceMap[string]|null) {
  const owner=ownerReturn(v,d.company.currency,d.company.marketCapUsd,quote?.[0]??null);
  const price=priceState({price:quote?.[0]??null,mid:comparable?.perShare.mid??null,b:d.b});
  const short=d.status==='insufficient_data'||!!d.historyCoverage&&d.historyCoverage.years<7;
- const verdict={id:d.id,asOf:d.asOf,verdict:short?'Not enough history yet':humanVerdict(d,Boolean(d.b),Boolean(comparable&&quote),ratio),buyNow:!short&&!d.thesis?.changed&&Boolean(d.b),qualityPasses:QUALITY_TESTS.filter(k=>d.tests[k]?.result==='pass').length,tests:QUALITY_TESTS.map(k=>({id:k,result:d.tests[k]!.result})),priceCheck:{state:price.state,priceToValue:ratio,buyBelow:comparable?comparable.perShare.mid*(1-(d.requiredMos??.25)):null,requiredDiscount:d.requiredMos??.25,expectedReturn:owner?.expected??null,requiredReturn:v?.discountRate??null,currency:d.company.currency,asOf:quote?.[1]??null}};
+ const verdict={id:d.id,asOf:d.asOf,verdict:short?'Not enough history yet':humanVerdict(d,Boolean(d.b),Boolean(comparable&&quote),ratio),buyNow:!short&&!d.thesis?.changed&&Boolean(d.b),qualityPasses:QUALITY_TESTS.filter(k=>d.tests[k]?.result==='pass').length,buyQuality:dossierQualityPass(d),tests:QUALITY_TESTS.map(k=>({id:k,result:d.tests[k]!.result})),priceCheck:{state:price.state,priceToValue:ratio,buyBelow:comparable?comparable.perShare.mid:null,requiredDiscount:T.price.buyMos,expectedReturn:owner?.expected??null,requiredReturn:v?.discountRate??null,currency:d.company.currency,asOf:quote?.[1]??null}};
  const memo=d.ownerMemo?{asOf:d.ownerMemo.asOf,lines:d.ownerMemo.lines.map(l=>({question:l.question,answer:l.answer,basis:l.basis,sources:l.evidence.map(source),chart:l.chart&&l.chart.unit!=='money'?l.chart:null,...(l.capitalAllocation?{capitalAllocation:l.capitalAllocation.map(y=>({fy:y.fy,reinvestmentRate:y.reinvestmentRate??null,incrementalReturn:y.incrementalReturn??null,repurchasePremium:y.repurchase?.premium??null}))}:{})}))}:null;
  const story=d.priceStory;
  const event=(e:NonNullable<typeof story>['events'][number])=>({id:e.id,text:e.text,source:e.source,date:e.date,url:e.url});

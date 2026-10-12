@@ -11,7 +11,7 @@ export function checklistMarkdown(rows: BrowserRow[],meta:StoreMeta|null,frame?:
  const url=frame?siteUrl('value',`/?q=${frame}`):siteUrl('value');
  const shown=rows.filter(r=>matchesView(r,filter));
  return [`# ${VALUE_PRODUCT_NAME}${frame?` — ${frame}`:''}`,`Canonical: ${url}`,`Published as of: ${meta?.asOf??'see each company'}. ${frame?`Quarter end: ${quarterEnd(frame)}.`:''}`,
- 'Quality code order: understandable, moat, economics, management, accounting. P = pass; F = fail; C/U = unresolved; N = not applicable. Five passes alone do not establish a Buy now verdict.',
+ 'Quality code order: understandable (earnings resilience, evidence only), moat, economics, management, accounting. P = pass; F = fail; C/U = unresolved; N = not applicable. Buy now needs moat, economics, management and accounting passes, a profit record (no recurring losses, positive owner earnings) and a price at or below central value.',
  ...(frame?[HISTORY_POPULATION_COPY,HISTORY_RETURN_COPY]:[]),
  `Market scope: ${filter.markets==='all'?'all covered markets':'Western-accessible listings'}. ${shown.length} matching companies.`,
  ['| Company | Quality code | Buy qualified | Price per share | Price as of | Expected return per year | Subsequent price change |',

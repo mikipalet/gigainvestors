@@ -7,7 +7,7 @@ import { StatusGlyph } from './StatusGlyph';
 export function BulletRow({ metricId, label, value, threshold, better, strict, format, currency, resultOverride, nonNegative = false }: { metricId?:string; label: string; value: number | null; threshold: number; better: 'higher' | 'lower'; strict?: boolean; format: MetricFormat; currency: string; resultOverride?: Result | 'checking'; nonNegative?: boolean }) {
   const result = resultOverride ?? (value === null ? 'unclear' : (better === 'higher' ? strict ? value > threshold : value >= threshold : strict ? value < threshold : value <= threshold) ? 'pass' : 'fail');
   if(value===null)return null;
-  const displayResult=result==='unclear'||result==='checking'?'wait':result;
+  const displayResult=result==='unclear'||result==='checking'?'pending':result;
   const lo = Math.min(0, value ?? 0, threshold), hi = Math.max(0, value ?? 0, threshold);
   const pad = (hi - lo) * .15 || 1;
   const x = scale({ domain: [lo < 0 ? lo - pad : lo, hi + pad], range: [2, 118] });

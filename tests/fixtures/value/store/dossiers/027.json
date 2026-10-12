@@ -507,11 +507,11 @@
           "value": 1600000000.0
         },
         {
-          "label": "\u2212 maintenance capex",
+          "label": "− maintenance capex",
           "value": -2100000000.0
         },
         {
-          "label": "\u2212 stock compensation",
+          "label": "− stock compensation",
           "value": -300000000.0
         },
         {
@@ -519,7 +519,7 @@
           "value": 10000000000.0
         },
         {
-          "label": "\u00d7 PV factor",
+          "label": "× PV factor",
           "value": 16.449148735782163
         },
         {
@@ -527,7 +527,7 @@
           "value": -10000000000.0
         },
         {
-          "label": "\u00f7 shares",
+          "label": "÷ shares",
           "value": 4200000000.0
         }
       ],
@@ -1231,6 +1231,16 @@
         "kind": "share_change",
         "note": "Share count changed after repurchases."
       }
-    ]
+    ],
+    "profitRecord": {
+      "pass": true,
+      "fy": 2025,
+      "lossYears": 0,
+      "netIncomeYears": 10,
+      "meanOperatingMargin": 0.29,
+      "operatingMarginYears": 10,
+      "ownerEarningsPerShare": 2.4,
+      "reasons": []
+    }
   }
 }

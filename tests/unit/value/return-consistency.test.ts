@@ -37,7 +37,8 @@ describe('return is the inverse of valuation',()=>{
   const v={...value(),netCash:1000} as Valuation;
   expect(ownerReturn(v,'USD',null,1)).toBeNull();
   expect(cashCoveredReturnCopy(v,'USD',1)).toContain('no finite annual IRR');
-  expect(publishedBuyPrice({st:'s',t:'PPPPP',v:[100,100,100],m:.25,shareSources:2,buyReturnInputs:{...buyReturnInputs(v,'USD')!,requiredReturn:NaN}},[1,'2026-10-01']).b).toBe(false);
+  // 3.8.0: no separate return hurdle; a price at or below central value is a Buy even when the hurdle inputs are unknown.
+  expect(publishedBuyPrice({st:'s',t:'PPPPP',v:[100,100,100],m:.25,shareSources:2,buyReturnInputs:{...buyReturnInputs(v,'USD')!,requiredReturn:NaN}},[1,'2026-10-01']).b).toBe(true);
   expect(publishedBuyPrice({st:'s',t:'PPPPP',v:[100,100,100],m:.25,shareSources:2,buyReturnInputs:buyReturnInputs(v,'USD')},[1,'2026-10-01']).b).toBe(true);
  });
 });

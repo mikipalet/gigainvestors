@@ -1,4 +1,5 @@
 import {resolveManualLogo,type ManualLogo} from '../../../lib/value/logo-manual';
+import {qualityPass} from '../../../lib/value/fair-buy';
 import {restoredPublishedLogo} from '../../../lib/value/logo-restoration';
 import {existsSync,readdirSync,mkdirSync,writeFileSync} from 'node:fs';
 import reviewedOverrides from '../../../lib/value/logo-overrides.json';
@@ -66,7 +67,7 @@ export default async function logos(options:{only?:string[];limit?:number;force?
  const nextIds=new Set(visible?.next.map(c=>c.id));
  const targetIds=options.only??[...new Set([...published.map(r=>r.id),...universeCompanies().filter(inPublicationScope).map(c=>c.id)])];
  const companies=loadCompanies({only:targetIds}).sort((a,b)=>{
-  const rank=(id:string)=>{const r=byId.get(id);return r?.b?0:nextIds.has(id)?1:r?.t==='PPPPP'?2:3;};return rank(a.id)-rank(b.id)||a.id.localeCompare(b.id);
+  const rank=(id:string)=>{const r=byId.get(id);return r?.b?0:nextIds.has(id)?1:r&&qualityPass(r)?2:3;};return rank(a.id)-rank(b.id)||a.id.localeCompare(b.id);
  }).slice(0,options.limit);
  const stats={total:companies.length,checked:0,cached:0,recovered:0,unavailable:0,sources:{} as Record<string,number>};
  const due=companies.filter(company=>{

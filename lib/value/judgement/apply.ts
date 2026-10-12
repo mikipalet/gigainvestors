@@ -1,5 +1,6 @@
+import { dossierQualityPass, failedGates } from '../fair-buy';
 import {ownerEarningsBridge} from '../owner-earnings';
-import { QUALITY_TESTS, type Analysis, type Year, type TestOutcome } from '../types';
+import type { Analysis, Year, TestOutcome } from '../types';
 import type { Adjustment, JudgementRecord, Reading, Trust } from './types';
 import { BUSINESS_TOPICS, questionVersion } from './questions';
 export function trustedReading(r:Reading,trust:Trust):boolean {
@@ -97,9 +98,9 @@ export function returnRange(value:number):string {
 }
 export function humanVerdict(analysis:Analysis,buy:boolean,priceKnown=true,priceToValue:number|null=null):string {
  if(analysis.thesis?.changed)return 'Good past, but the business is changing';
- const tests=QUALITY_TESTS.map(key=>analysis.tests[key as keyof Analysis['tests']]);
- if(analysis.predecessorHistory?.length&&!tests.some(t=>t.result==='fail')&&!tests.every(t=>t.result==='pass'))return 'Wait';
- if(!tests.every(t=>t.result==='pass'))return 'Not a wonderful business';
+ const quality=dossierQualityPass(analysis);
+ if(analysis.predecessorHistory?.length&&!failedGates(analysis).length&&!quality)return 'Record still being completed';
+ if(!quality)return 'Not a wonderful business';
  if(buy)return 'A wonderful business at a fair price';
  if(!priceKnown||priceToValue===null)return 'A wonderful business';
  return priceToValue<=1?'A wonderful business, almost at a fair price':'A wonderful business at too high a price';

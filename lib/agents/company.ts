@@ -1,3 +1,4 @@
+import {dossierQualityPass} from '@/lib/value/fair-buy';
 import {observationLabel} from '@/lib/value/observation-label';
 import type {Dossier,PriceMap} from '@/lib/value/types';
 import {QUALITY_TESTS} from '@/lib/value/types';
@@ -21,9 +22,9 @@ export function companyMarkdown(d: Dossier, quote: PriceMap[string]|null, summar
  const fiscal=Object.values(d.tests).flatMap(t=>Object.values(t.series).flatMap(s=>s.map(p=>p[0])));
  const lines=[`# ${companyName(d.company)} (${d.id})`,`Canonical: ${companyUrl(d.id)}`,`Analysis as of: ${d.asOf}. ${fiscal.length?`Financial observations: FY${Math.min(...fiscal)}–FY${Math.max(...fiscal)}.`:''}`,`Listing currency: ${d.company.currency}. Reporting currency: ${d.reportingCurrency??d.valuation?.currency??d.company.currency}.`,
  `## Verdict`,verdict,
- `${QUALITY_TESTS.filter(k=>d.tests[k]?.result==='pass').length} of 5 business quality tests pass. Published buy qualification: ${d.b===true?'yes':'no'}.`,
+ `Quality tests for Buy: ${dossierQualityPass(d)?'pass':'not passed'}${d.profitRecord?` (profit record: ${d.profitRecord.pass?'pass':'fail'}; earnings resilience is evidence only)`:''}. Published buy qualification: ${d.b===true?'yes':'no'}.`,
  ...(quote?[`Share price: ${money(quote[0],d.company.currency)}; ${quote[2]==='seed'?'derived reference':'close'} as of ${quote[1]}.`]:[]),
- ...(range?[`Estimated value: low ${money(range.perShare.low,d.company.currency)}, central ${money(range.perShare.mid,d.company.currency)}, high ${money(range.perShare.high,d.company.currency)}. Buy below ${money(range.perShare.mid*(1-(d.requiredMos??T.price.requiredMos.stable)),d.company.currency)}. Valuation as of ${d.asOf}; scenarios are not confidence intervals.`]:[]),
+ ...(range?[`Estimated value: low ${money(range.perShare.low,d.company.currency)}, central ${money(range.perShare.mid,d.company.currency)}, high ${money(range.perShare.high,d.company.currency)}. Buy at or below the central value ${money(range.perShare.mid,d.company.currency)}. Valuation as of ${d.asOf}; scenarios are not confidence intervals.`]:[]),
  ...(owner?[`Expected annual return: ${percent(owner.expected)} at the stated quote. ${expectedReturnCopy(owner,d.valuation,d.company.country)}. ${requiredReturnCopy(d.valuation,d.company.country)}.`]:[]),
  `## Checklist`,...QUALITY_TESTS.flatMap(k=>{
   const test=d.tests[k]!,metric=primaryTileMetric(test,d.company.kind,d.tests.understandable.series.netIncome??d.series.netIncome);

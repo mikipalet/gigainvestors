@@ -7,7 +7,7 @@ import type {Dossier,TestOutcome} from '@/lib/value/types';
 import {humanVerdict} from '@/lib/value/judgement/apply';
 it('does not turn an undecided predecessor-backed checklist into a negative business verdict',()=>{
  const dossier={predecessorHistory:[{fy:2019}],tests:Object.fromEntries(['understandable','moat','economics','management','accounting'].map(key=>[key,{result:key==='management'?'unclear':'pass'}]))} as Dossier;
- expect(humanVerdict(dossier,false,false)).toBe('Wait');
+ expect(humanVerdict(dossier,false,false)).toBe('Record still being completed');
  dossier.tests.moat.result='fail';expect(humanVerdict(dossier,false,false)).toBe('Not a wonderful business');
 });
 it('keeps confirmed observations but omits gap sentences for an undecided test',()=>{

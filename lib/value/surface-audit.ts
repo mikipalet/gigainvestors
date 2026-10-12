@@ -107,22 +107,21 @@ export function auditTestSurfaces(d:Dossier,t:TestOutcome,tile:SurfaceSnapshot,d
 export function auditPriceSurfaces(d:Dossier,row:IndexRow|undefined,quote:PriceMap[string]|null,top:SurfaceSnapshot,price:SurfaceSnapshot,drawer:SurfaceSnapshot){
  const v=comparableValuation(d.valuation,d.company.currency),currency=d.company.currency;
  if(!v||!quote)return;
- const buy=v.perShare.mid*(1-(d.requiredMos??.25)),owner=ownerReturn(d.valuation,currency,d.company.marketCapUsd,quote[0]);
+ const buy=v.perShare.mid,owner=ownerReturn(d.valuation,currency,d.company.marketCapUsd,quote[0]);
  for(const s of [top,drawer]){contains(s,sharePrice(quote[0],currency),`${d.id} share price`);contains(s,sharePrice(buy,currency),`${d.id} buy price`);if(owner)contains(s,formatMetric({value:owner.expected,format:'pct'}),`${d.id} expected return`);}
  contains(price,sharePrice(buy,currency),`${d.id} price math`);
  for(const value of [v.perShare.low,v.perShare.mid,v.perShare.high])contains(price,sharePrice(value,currency),`${d.id} value range / midpoint`);
- contains(price,formatMetric({value:d.requiredMos??.25,format:'pct'}),`${d.id} safety margin`);
  contains(price,formatMetric({value:1-quote[0]/v.perShare.mid,format:'pct'}),`${d.id} discount`);
  if(owner){contains(price,formatMetric({value:owner.expected,format:'pct'}),`${d.id} IRR`);for(const surface of [price,drawer])contains(surface,returnModelCopy(d.valuation!,currency),`${d.id} shared IRR inputs`);}
- same(drawer.stats,[['Share price',sharePrice(quote[0],currency)],['Estimated value',sharePrice(v.perShare.mid,currency)],['Buy price',sharePrice(buy,currency)],['Expected / yr',owner?formatRate(owner.expected):cashCoveredReturnCopy(d.valuation,currency,quote[0])?'Cash covers price':'—'],['Required',formatRate(d.valuation!.discountRate)],['Safety discount',formatRate(d.requiredMos??.25)],['Price / value',formatRate(quote[0]/v.perShare.mid)]],`${d.id} valuation key numbers`);
- const years=(d.valueHistory??[]).map(([fy,,mid])=>{const p=(d.priceHistory??[]).filter(p=>Number(p[0].slice(0,4))===fy).at(-1)?.[1];const buy=mid*(1-(d.requiredMos??.25));return [String(fy),sharePrice(p??null,currency).replace(`${currency} `,''),sharePrice(mid,currency).replace(`${currency} `,''),sharePrice(buy,currency).replace(`${currency} `,''),p!=null&&mid>0?formatRate(p/mid):'—',p==null?'·':p<=buy?'✓':'×'];});
+ same(drawer.stats,[['Share price',sharePrice(quote[0],currency)],['Estimated value',sharePrice(v.perShare.mid,currency)],['Buy at or below',sharePrice(buy,currency)],['Expected / yr',owner?formatRate(owner.expected):cashCoveredReturnCopy(d.valuation,currency,quote[0])?'Cash covers price':'—'],['Required',formatRate(d.valuation!.discountRate)],['Price / value',formatRate(quote[0]/v.perShare.mid)]],`${d.id} valuation key numbers`);
+ const years=(d.valueHistory??[]).map(([fy,,mid])=>{const p=(d.priceHistory??[]).filter(p=>Number(p[0].slice(0,4))===fy).at(-1)?.[1];return [String(fy),sharePrice(p??null,currency).replace(`${currency} `,''),sharePrice(mid,currency).replace(`${currency} `,''),p!=null&&mid>0?formatRate(p/mid):'—',p==null?'·':p<=mid?'✓':'×'];});
  same(drawer.table,years,`${d.id} valuation annual table`);
  for(const r of d.valuation!.bridge.slice(0,5))contains(drawer,formatMetric({value:r.value,format:/shares/i.test(r.label)?'count':/return|CAGR/i.test(r.label)?'pct':/factor|price to book/i.test(r.label)?'x':'money',currency:d.valuation!.currency}),`${d.id} valuation input ${r.label}`);
  auditPriceChartWindows(price.priceCharts,drawer.priceCharts,d.id);
  for(const chart of [...price.priceCharts,...drawer.priceCharts] as PriceChartSnapshot[]){
-  same(chart.currency,currency,`${d.id} price chart currency`);same(chart.mos,d.requiredMos??.25,`${d.id} chart safety margin`);
+  same(chart.currency,currency,`${d.id} price chart currency`);same(chart.mos,d.requiredMos??0,`${d.id} chart buy line`);
   same(chart.prices,[...(d.priceHistory??[]).filter(p=>p[0]<quote[1]),[quote[1],quote[0]]],`${d.id} published quote history`);
   for(const segment of chart.values){const source=(d.valueHistory??[]).find(([fy,low,mid,high])=>segment.from>=fy&&segment.to<=fy+1&&low===segment.low&&mid===segment.mid&&high===segment.high);assert.ok(source||segment.low===v.perShare.low&&segment.mid===v.perShare.mid&&segment.high===v.perShare.high,`${d.id} value band has no published observation`);}
  }
- if(row?.v){same(row.v,[v.perShare.low,v.perShare.mid,v.perShare.high],`${d.id} index value range`);same(row.m,d.requiredMos,`${d.id} safety discount`);same(row.cur,currency,`${d.id} index currency`);}
+ if(row?.v){same(row.v,[v.perShare.low,v.perShare.mid,v.perShare.high],`${d.id} index value range`);same(row.m,d.requiredMos,`${d.id} buy discount`);same(row.cur,currency,`${d.id} index currency`);}
 }

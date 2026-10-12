@@ -32,7 +32,7 @@ it('uses converted trading values for both the headline and margin', async () =>
   const html = renderToStaticMarkup(await DossierPage({ params: Promise.resolve({ ticker: 'KO' }) }));
   expect(html).toContain('40% below its estimated value');
   expect(html).not.toContain('99% below');
-  expect(html).toContain('Price: pass');
+  expect(html).toContain('Price: At or below value');
   expect(html).not.toContain('not compared');
 });
 it('does not label newer monthly prices as a new fiscal year', async () => {

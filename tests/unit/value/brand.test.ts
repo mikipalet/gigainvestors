@@ -5,9 +5,9 @@ import { VALUE_PRODUCT_NAME, VALUE_PRODUCT_DESCRIPTION } from '@/lib/value/brand
 import { MetricHelp } from '@/components/value/MetricHelp';
 import { MethodRules } from '@/components/value/MethodRules';
 
-it('names the product and describes five quality tests plus a separate price check', () => {
+it('names the product and describes quality tests plus a price check against central value', () => {
   expect(VALUE_PRODUCT_NAME).toBe('GigaValue');
-  expect(VALUE_PRODUCT_DESCRIPTION).toBe(`${VALUE_PRODUCT_NAME}: five quality tests plus a price check, with financial history and report evidence.`);
+  expect(VALUE_PRODUCT_DESCRIPTION).toBe(`${VALUE_PRODUCT_NAME}: business quality tests plus a price check against a central estimate of value, with financial history and report evidence.`);
 });
 it('uses neutral metric labels while retaining honest method attribution', () => {
   const metric = renderToStaticMarkup(createElement(MetricHelp, { id: 'retainedDollar', technical: 'Retained earnings' }));

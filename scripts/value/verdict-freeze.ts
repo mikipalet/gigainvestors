@@ -8,6 +8,7 @@ import {validCompanyId} from '../../lib/value/companies';
 import {shardOf} from '../../lib/value/shard';
 import {summarizeSnapshots} from '../../lib/value/snapshots';
 import {storyFromFunnel} from '../../lib/value/story';
+import {gateCode} from '../../lib/value/fair-buy';
 import {assertIndexConsistency} from '../../lib/value/consistency';
 import type {Dossier, IndexRow, StoreMeta, SnapshotRow, PublishedFunnel, FunnelCounts} from '../../lib/value/types';
 
@@ -130,12 +131,14 @@ export function refreshPublishedSummaries(files:Files):void {
   const funnel:PublishedFunnel={...empty(),byCountry:{}},western:PublishedFunnel={...empty(),byCountry:{}};
   for(const row of rows){
     const d=allDossiers[row.id],price=d.tests.price;
-    const pass=[...row.t].map(c=>row.st==='s'&&c==='P').concat(row.b===true);
-    const fail=[...row.t].map(c=>c==='F').concat(row.businessChanged===true||price?.result==='fail'||price?.metrics.mos!=null&&price.result!=='pass');
+    // 3.8.0 gate order (fair-buy.ts gateCode): moat, economics, management, accounting, profit record.
+    const code=gateCode(row);
+    const pass=[...code].map(c=>row.st==='s'&&c==='P').concat(row.b===true);
+    const fail=[...code].map(c=>c==='F').concat(row.businessChanged===true||price?.result==='fail'||price?.metrics.mos!=null&&price.result!=='pass');
     for(const f of [funnel,funnel.byCountry[row.c]??=empty(),...(row.w?[western,western.byCountry[row.c]??=empty()]:[])]){
       f.analysed++;if(f.asOf===null||d.asOf>f.asOf)f.asOf=d.asOf;
       let cumulative=true;
-      f.gates.forEach((g,i)=>{if(cumulative){if(pass[i]){g.passing++;g.pass!++;}else if(fail[i])g.fail!++;else if(row.t[i]==='C')g.checking!++;else g.unclear!++;}cumulative&&=pass[i];if(row.st==='s'&&fail[i]&&pass.slice(0,5).every((p,j)=>j===i||p))g.failsOnlyThis++;});
+      f.gates.forEach((g,i)=>{if(cumulative){if(pass[i]){g.passing++;g.pass!++;}else if(fail[i])g.fail!++;else if(code[i]==='C')g.checking!++;else g.unclear!++;}cumulative&&=pass[i];if(row.st==='s'&&fail[i]&&pass.slice(0,5).every((p,j)=>j===i||p))g.failsOnlyThis++;});
     }
   }
   meta.funnel=funnel;meta.story=storyFromFunnel(funnel);meta.western={funnel:western,story:storyFromFunnel(western)};

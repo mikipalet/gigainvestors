@@ -26,7 +26,8 @@ it('requires priced quality candidates and recomputes buy status after a quote m
  const {thesisZone}=await import('@/lib/value/thesis/refresh');
  const row:any={st:'s',t:'PPPPP',v:[80,100,120],m:.25,b:true,buyReturnInputs:{cashPerShare:8,growth:.02,requiredReturn:.1},shareSources:2};
  expect(thesisZone(row,[70,'2026-10-01'])).toBe('buy');
- expect(thesisZone(row,[90,'2026-10-01'])).toBe('next_closest');
+ expect(thesisZone(row,[90,'2026-10-01'])).toBe('buy'); // 3.8.0: at or below central value
+ expect(thesisZone(row,[110,'2026-10-01'])).toBe('next_closest');
  expect(thesisZone({...row,t:'FPPPP'},[70,'2026-10-01'])).toBeNull();
  expect(thesisZone(row,undefined)).toBeNull();
 });

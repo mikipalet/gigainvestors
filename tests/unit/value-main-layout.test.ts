@@ -21,6 +21,6 @@ describe('Shelf+ companies',()=>{
  });
  it('uses one 0..60% premium scale and a true price-drop chip',()=>{
   expect(distancePosition(1)).toBe(0);expect(distancePosition(1.3)).toBeCloseTo(.5);expect(distancePosition(1.6)).toBe(1);expect(distancePosition(3)).toBe(1);
-  expect(dropToBuy(1.1)).toBe('needs −9%');expect(dropToBuy(2)).toBe('needs −50%');expect(dropToBuy(.9)).toBe('At buy price');
+  expect(dropToBuy(1.1)).toBe('needs −9%');expect(dropToBuy(2)).toBe('needs −50%');expect(dropToBuy(.9)).toBe('At or below value');
  });
 });

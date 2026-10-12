@@ -9,8 +9,8 @@ describe('round eight: plain price and identity',()=>{
   expect(companyName({id:'IBM.US',nameEn:'IBM CORPORATION'})).toBe('IBM');
  });
  it('uses value as the common denominator, with fall measured from current price',()=>{
-  expect(priceFraming(.73,.25)).toEqual({headline:'27% below its estimated value',fall:'At or below the buy price',drop:0});
-  expect(priceFraming(4.24,.25)).toEqual({headline:'Costs 4.2× its estimated value',fall:'Price would need to drop 82% to reach the buy price',drop:82});
+  expect(priceFraming(.73)).toEqual({headline:'27% below its estimated value',fall:'At or below its central value',drop:0});
+  expect(priceFraming(4.24)).toEqual({headline:'Costs 4.2× its estimated value',fall:'Price would need to drop 76% to reach its central value',drop:76});
   expect(priceFraming(null,.25).headline).toBe('');
  });
  it('uses oldest published cohort medians and counts only comparable years',()=>{

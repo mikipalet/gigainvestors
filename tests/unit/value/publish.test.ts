@@ -16,6 +16,7 @@ import { parseBulkPrices, refreshPrices, commitPrices } from "@/scripts/value/st
 function analysis(id = "KO.US"): Analysis {
   return {
     id, company: { id, indexes: ["S&P 500"], name: id, code: id.split(".")[0], exchange: id.split(".").at(-1)!, country: "US", currency: "USD", isin: null, cik: null, lei: null, edinetCode: null, sector: "Consumer", industry: null, kind: "operating", listings: [id], marketCapUsd: 100, description: null, source: "eodhd" },
+    profitRecord: { pass: true, fy: 2025, lossYears: 0, netIncomeYears: 10, meanOperatingMargin: .2, operatingMarginYears: 10, ownerEarningsPerShare: 10, reasons: [] },
     historyCoverage: {years:11,first:2015,last:2025,source:"fixture"}, asOf: "2026-09-29", status: "scored", report: { id, kind: "description", url: null, filed: null, period: null, sections: [] },
     tests: {
       understandable: { key: "understandable", result: "pass", numeric: "pass", reasons: [], metrics: {}, series: { revenue: [[2025, 100]] }, jev: [] },
@@ -438,7 +439,8 @@ describe("publish repository", () => {
     expect(existsSync(path.join(repo, "search/a.json"))).toBe(false);
     const funnel = (JSON.parse(readFileSync(path.join(repo, "meta.json"), "utf8")) as StoreMeta).funnel!;
     expect(funnel.analysed).toBe(2);
-    expect(funnel.gates.map(g => g.passing)).toEqual([2, 1, 1, 1, 1, 1]);
+    // 3.8.0 gate order: KO fails the moat, the first gate.
+    expect(funnel.gates.map(g => g.passing)).toEqual([1, 1, 1, 1, 1, 1]);
     expect(git(repo, ["rev-list", "--count", "HEAD"])).toBe("1");
   });
   it("loads only active latest-quarter holders from stock shards and resolves investor names", () => {
@@ -511,7 +513,9 @@ describe("prices", () => {
   });
   it("refreshes selected companies while preserving newer prices and other countries; repeat is a no-op", async () => {
     const repo = repository();
-    writeOutput({ repo, files: output([analysis()]) }); commitOutput({ repo, asOf: "2026-09-29" });
+    // The refreshed quote (87.18) stays above this central value, so no published verdict changes.
+    const ko = analysis(); ko.valuation!.perShare = { low: 60, mid: 80, high: 100 };
+    writeOutput({ repo, files: output([ko]) }); commitOutput({ repo, asOf: "2026-09-29" });
     mkdirSync(path.join(repo, "prices"), { recursive: true });
     writeFileSync(path.join(repo, "prices/US.json"), JSON.stringify({ "OTHER.US": [5, "2026-09-28"], "BRK-B.US": [999, "2026-09-29"] }));
     writeFileSync(path.join(repo, "prices/JP.json"), '{"8058.JP":[1,"2026-09-28"]}\n');
@@ -524,7 +528,8 @@ describe("prices", () => {
     expect(commitPrices({ repo, asOf: "2026-09-29" })).toBe(true);
     expect(git(repo, ["rev-list", "--count", "HEAD"])).toBe("3");
     const paths = git(repo, ["diff-tree", "--no-commit-id", "--name-only", "-r", "HEAD"]);
-    expect(paths.split("\n")).toEqual(["meta.json", "prices/US.json"]);
+    // 3.8.0 has no "between buy price and value" zone: the first quote records a failed price check in the dossier.
+    expect(paths.split("\n")).toEqual(["dossiers/027.json", "meta.json", "prices/US.json"]);
     await refreshPrices({ now, repo, companies: [analysis().company], bulk: async () => raw });
     expect(commitPrices({ repo, asOf: "2026-09-29" })).toBe(false);
   });
@@ -641,14 +646,14 @@ describe("Yahoo rate limiting", () => {
   });
 });
 
-it("publishes volatility discount, compact ROIC and the added dossier data", () => {
+it("publishes no buy discount from 3.8.0, compact ROIC and the added dossier data", () => {
   const row = analysis(); row.requiredMos = 0.5; row.volatility = 'volatile';
   row.valueHistory = [[2025,80,100,120]];
   row.series = { revenuePerShare: [[2025,10]] };
   row.events = [{ fy:2025, kind:'acquisition', note:'Acquisition spending exceeded 10% of assets' }];
   row.tests.moat.series.totalRoic = Array.from({length:12}, (_, i) => [2014+i, i === 10 ? null : 0.123456]);
   const { files } = buildOutput({ analyses:[row], holdersByTicker:{}, investorNames:{}, fx:{}, prices:{'KO.US':[70,'2026-09-29']}, priceHistories:{'KO.US':[['2025-01',70]]} });
-  expect((files['index/US.json'] as IndexRow[])[0]).toMatchObject({m:0.5,r:[0.123,0.123,0.123,0.123,0.123,0.123,0.123,0.123,null,0.123]});
+  expect((files['index/US.json'] as IndexRow[])[0]).toMatchObject({m:0,r:[0.123,0.123,0.123,0.123,0.123,0.123,0.123,0.123,null,0.123]});
   const dossier = (files[`dossiers/${shardOf(row.id)}.json`] as Record<string,Dossier>)[row.id];
   expect(dossier).toMatchObject({valuation:null,valueHistory:[],priceHistory:[['2025-01',70]],events:row.events,series:row.series});
 });
@@ -732,7 +737,7 @@ describe("published funnel", () => {
       return row;
     });
     const pass = analysis("PASS.US");
-    const multi = analysis("MULTI.US"); multi.tests.understandable.result = "fail"; multi.tests.moat.result = "fail";
+    const multi = analysis("MULTI.US"); multi.tests.economics.result = "fail"; multi.tests.moat.result = "fail";
     const unclear = analysis("UNCLEAR.US"); unclear.tests.moat.result = "unclear";
     const na = analysis("NA.US"); na.tests.economics.result = "na";
     const insufficient = analysis("INSUFFICIENT.US"); insufficient.status = "insufficient_data";
@@ -740,23 +745,26 @@ describe("published funnel", () => {
     const seed = analysis("SEED.JP"); seed.company.country = "JP"; seed.requiredMos = 0.5;
     const missing = analysis("MISSING.JP"); missing.company.country = "JP";
     const noValue = analysis("NOVALUE.JP"); noValue.company.country = "JP"; noValue.valuation = null;
-    const all = [...rows, pass, multi, unclear, na, insufficient, costly, seed, missing, noValue];
+    const record = analysis("RECORD.US"); record.profitRecord = { ...record.profitRecord!, pass: false, lossYears: 3, reasons: ["3 loss years in the last 10; at most 2 allowed"] };
+    const all = [...rows, pass, multi, unclear, na, insufficient, costly, seed, missing, noValue, record];
     const prices: PriceMap = Object.fromEntries(all.filter(row => row !== missing).map(row => [row.id, [50, "2026-09-29"]]));
     prices[costly.id] = [60, "2026-09-29"];
     prices[seed.id] = [50, "2026-09-29", "seed"];
     for (const row of all) row.company.marketCapUsd = null; // This fixture tests gates, not cap/share reconciliation.
     const files = buildOutput({ analyses: all, prices, holdersByTicker: {}, investorNames: {}, fx: {} }).files;
     const funnel = (files["meta.json"] as StoreMeta).funnel!;
-    expect(funnel).toMatchObject({ asOf: "2026-09-29", analysed: 11 });
+    // 3.8.0: earnings resilience is evidence, not a gate (FAIL0 is a Buy);
+    // the profit record is the last quality gate; Buy is price at or below central value (COSTLY at 60 of 100).
+    expect(funnel).toMatchObject({ asOf: "2026-09-29", analysed: 12 });
     expect(funnel.gates.map(g => [g.key, g.passing, g.failsOnlyThis])).toEqual([
-      ["understandable", 9, 1], ["moat", 8, 1], ["economics", 7, 1],
-      ["management", 6, 1], ["accounting", 5, 1], ["price", 2, 1],
+      ["moat", 10, 1], ["economics", 9, 1], ["management", 8, 1],
+      ["accounting", 7, 1], ["record", 6, 1], ["price", 4, 0],
     ]);
     expect(funnel.gates.every(g => g.label.length > 0)).toBe(true);
-    expect(funnel.byCountry.US).toMatchObject({ asOf: "2026-09-29", analysed: 7 });
-    expect(funnel.byCountry.US.gates.map(g => g.passing)).toEqual([5, 4, 3, 2, 1, 1]);
+    expect(funnel.byCountry.US).toMatchObject({ asOf: "2026-09-29", analysed: 8 });
+    expect(funnel.byCountry.US.gates.map(g => g.passing)).toEqual([6, 5, 4, 3, 2, 2]);
     expect(funnel.byCountry.JP).toMatchObject({ asOf: "2026-09-29", analysed: 4 });
-    expect(funnel.byCountry.JP.gates.map(g => [g.passing, g.failsOnlyThis])).toEqual([[4,0],[4,0],[4,0],[4,0],[4,0],[1,1]]);
+    expect(funnel.byCountry.JP.gates.map(g => [g.passing, g.failsOnlyThis])).toEqual([[4,0],[4,0],[4,0],[4,0],[4,0],[2,0]]);
     expect((files["index/default.json"] as IndexRow[]).length).toBeLessThan(funnel.analysed);
     expect((buildOutput({ analyses: all.reverse(), prices, holdersByTicker: {}, investorNames: {}, fx: {} }).files["meta.json"] as StoreMeta).funnel).toEqual(funnel);
   });
@@ -886,8 +894,8 @@ it('stamps every published dossier and index row with the live method',()=>{
  const full=analysis(), short=analysis('SHORT.US');short.historyCoverage!.years=5;
  const files=output([full,short]);
  for(const [file,data] of Object.entries(files)){
-  if(file.startsWith('dossiers/'))for(const d of Object.values(data as Record<string,Dossier>))expect(d.methodVersion).toBe('3.7.1');
-  if(file.startsWith('index/'))for(const row of data as IndexRow[])expect(row.methodVersion).toBe('3.7.1');
+  if(file.startsWith('dossiers/'))for(const d of Object.values(data as Record<string,Dossier>))expect(d.methodVersion).toBe('3.8.0');
+  if(file.startsWith('index/'))for(const row of data as IndexRow[])expect(row.methodVersion).toBe('3.8.0');
  }
 });
 

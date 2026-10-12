@@ -34,8 +34,11 @@ describe('NAV valuation',()=>{
   expect(ownerReturn(v,'GBP',null,v.perShare.mid*.8)?.expected).toBeCloseTo(1.1*(1/.8)**.1-1);
   const inputs=buyReturnInputs(v,'GBP');
   const row={st:'s' as const,t:'PPPPP',v:[v.perShare.mid,v.perShare.mid,v.perShare.mid] as [number,number,number],m:.15,buyReturnInputs:inputs};
+  // 3.8.0: Buy at or below the central value (the discounted ten-year NAV realization), no 15% discount.
   expect(publishedBuyPrice(row,[v.perShare.mid*.85,'2026-09-30']).b).toBe(true);
-  expect(publishedBuyPrice(row,[v.perShare.mid*.9,'2026-09-30']).b).toBe(false);
+  expect(publishedBuyPrice(row,[v.perShare.mid*.9,'2026-09-30']).b).toBe(true);
+  expect(publishedBuyPrice(row,[v.perShare.mid,'2026-09-30']).b).toBe(true);
+  expect(publishedBuyPrice(row,[v.perShare.mid*1.01,'2026-09-30']).b).toBe(false);
   const low=value(years().map((y,i)=>({...y,navPerShare:100*1.04**i,dividendsPerShare:0}))).valuation!;
   expect(publishedBuyPrice({...row,v:[low.perShare.mid,low.perShare.mid,low.perShare.mid],buyReturnInputs:buyReturnInputs(low,'GBP')},[low.perShare.mid*.85,'2026-09-30']).b).toBe(true);
  });

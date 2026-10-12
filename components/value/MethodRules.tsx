@@ -14,7 +14,7 @@ const ruleNames:Record<string,string>={
  nonAcquisitionShareCagr:'10y ordinary dilution',nonAcquisitionShareCagr5:'5y ordinary dilution',
  accruals:'Sloan accruals',dsri:'Receivables / sales',redFlags:'Accounting flags',
  restructuringYears:'Restructuring years',sbcToOcf:'Stock pay / cash flow',
- marginOfSafety:'Safety discount',mos:'Safety discount',
+ marginOfSafety:'Price vs central value',mos:'Price vs central value',
 };
 export function MethodRules(){
  return <section className="method-rules"><h3>Every numerical cutoff</h3><p>{METHOD_RULE_COPY[0]}</p><dl>{Object.entries(metricLabels).filter(([,m])=>m.threshold!==undefined&&m.better).map(([id,m])=>{

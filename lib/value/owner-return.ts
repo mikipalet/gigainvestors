@@ -33,7 +33,7 @@ export function requiredReturnCopy(v: Valuation | null, country: string) {
   : `${rate} (${v.discountRate === T.valuation.minDiscount ? '10% floor; ' : ''}${country} 10-year bond ${(v.bondYield * 100).toFixed(1)}% + 4 points)`;
 }
 export function expectedReturnCopy(owner: NonNullable<ReturnType<typeof ownerReturn>>, valuation: Valuation | null, _country: string) {
- return `About ${(owner.expected*100).toFixed(1)}% a year at today's price (needs ${((valuation?.discountRate??.1)*100).toFixed(1)}%)`;
+ return `About ${(owner.expected*100).toFixed(1)}% a year at today's price (required return ${((valuation?.discountRate??.1)*100).toFixed(1)}%)`;
 }
 
 const observations=(series:Series=[])=>series.filter((p):p is [number,number]=>p[1]!==null&&Number.isFinite(p[1])).sort((a,b)=>a[0]-b[0]);
@@ -72,5 +72,5 @@ export function returnModelCopy(v:Valuation,trading:string):string {
 
 export function cashCoveredReturnCopy(v:Valuation|null,trading:string,price:number|null):string{
  const model=buyReturnInputs(v,trading)?.model;
- return model&&price!==null&&cashCoversPrice(model,price)?"Modelled excess cash covers today’s price; no finite annual IRR. The return hurdle is met.":"";
+ return model&&price!==null&&cashCoversPrice(model,price)?"Modelled excess cash covers today’s price; no finite annual IRR.":"";
 }

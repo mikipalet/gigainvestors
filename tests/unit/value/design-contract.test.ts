@@ -8,8 +8,9 @@ describe('one display contract', () => {
     expect(compactMoney(4e9, 'USD')).toBe('$4.0B');
   });
   it('uses Sep everywhere', () => expect(dateLabel('2026-09-29')).toBe('29 Sep 2026'));
-  it('names a known discount above the buy line Wait', () => {
-    expect(priceState({price:80,mid:100,b:false}).state).toBe('wait');
+  it('names a price below value that is not a Buy without the word Wait', () => {
+    expect(priceState({price:80,mid:100,b:false}).state).toBe('below');
+    expect(priceState({price:80,mid:100,b:false}).label).toBe('Below value');
     expect(priceState({price:null,mid:100,b:false}).state).toBe('unclear');
   });
   it('does not print artefact returns or call negative capital insufficient', () => {

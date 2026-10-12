@@ -22,10 +22,11 @@ export function earningsYieldAtMid(value: import('./types').Valuation) {
   return value.method === 'owner_earnings' && value.perShare.mid > 0 && value.shares > 0 ? value.normalized / (value.perShare.mid * value.shares) : null;
 }
 
+/** 3.8.0: the price check compares today's price with the central estimate of value. */
 export function priceState({ price, mid, b }: { price: number | null; mid: number | null; b?: boolean }) {
   const ratio = priceValue({price, mid});
-  const state = b === true ? 'pass' : ratio === null ? 'unclear' : ratio <= 1 ? 'wait' : 'fail';
-  return { state, label: {pass:'Pass',wait:'Wait',fail:'Fail',unclear:'Wait'}[state], description: {pass:'At or below the buy line',wait:'Not qualified at a buy price in the published snapshot',fail:'Above mid value',unclear:''}[state], ratio } as const;
+  const state = b === true ? 'pass' : ratio === null ? 'unclear' : ratio <= 1 ? 'below' : 'fail';
+  return { state, label: {pass:'At or below value',below:'Below value',fail:'Above value',unclear:'Unavailable'}[state], description: {pass:'Passes the quality tests and trades at or below our central estimate of value',below:'At or below our central estimate of value, but not a Buy: a quality test fails or the price check is unconfirmed',fail:'Above our central estimate of value',unclear:''}[state], ratio } as const;
 }
 export function returnDisplay({value, years, unlimited = false, financial = false}: {value: number | null; years: number; unlimited?: boolean; financial?: boolean}) {
   if (unlimited) return {label:'Positive earnings, nonpositive capital', note:financial?'Tangible equity (equity − goodwill − intangibles) is nonpositive with positive net income; ROE has no finite denominator':'Invested capital (equity + debt + leases − cash − goodwill) is nonpositive with positive operating earnings; ROIC has no finite denominator', sort:Infinity};
@@ -92,8 +93,8 @@ export function buyColour(priceToBuy: number | null) {
 }
 
 /** Price/value everywhere; the fall is a percentage of today's price, not value. */
-export function priceFraming(ratio:number|null,discount=.25) {
+export function priceFraming(ratio:number|null,discount=0) {
  if(ratio===null||!Number.isFinite(ratio)||ratio<=0)return {headline:'',fall:'',drop:null};
  const drop=Math.max(0,Math.round((1-(1-discount)/ratio)*100));
- return {headline:ratio<1?`${Math.round((1-ratio)*100)}% below its estimated value`:`Costs ${ratio.toFixed(1)}× its estimated value`,fall:ratio<=1-discount?'At or below the buy price':`Price would need to drop ${drop||'<1'}% to reach the buy price`,drop};
+ return {headline:ratio<1?`${Math.round((1-ratio)*100)}% below its estimated value`:`Costs ${ratio.toFixed(1)}× its estimated value`,fall:ratio<=1-discount?'At or below its central value':`Price would need to drop ${drop||'<1'}% to reach its central value`,drop};
 }

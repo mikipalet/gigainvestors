@@ -112,8 +112,8 @@ describe('rendered financial formats across surfaces',()=>{
   const api=projectDossier(d,quote),md=companyMarkdown(d,quote);
   expect(md).toContain('Share price: $25.12 per share');
   expect(api.valuation!.perShare).toEqual(d.valuation!.perShare);
-  expect(api.priceCheck.buyBelow).toBe(d.valuation!.perShare.mid*(1-(d.requiredMos??.25)));
-  expect(md).toContain(`Buy below ${drawer.stats[2][1]} per share`);
+  expect(api.priceCheck.buyBelow).toBe(d.valuation!.perShare.mid); // 3.8.0: Buy at or below central value
+  expect(md).toContain(`Buy at or below the central value ${drawer.stats[2][1]} per share`);
   expect(md).toContain(`Expected annual return: ${drawer.stats[3][1]}`);
   expect(sharePrice(api.priceCheck.buyBelow,'USD')).toBe(drawer.stats[2][1]);
   expect(formatMetric({value:api.priceCheck.expectedReturn,format:'pct'})).toBe(drawer.stats[3][1]);

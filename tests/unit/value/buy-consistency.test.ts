@@ -14,6 +14,7 @@ function company(id: string, requiredMos = .25): Analysis {
   const a = structuredClone(base);
   a.id = id; a.company = { ...a.company, id, code: id.replace(/\.US$/, ''), country: 'US', currency: 'USD', marketCapUsd: null };
   a.requiredMos = requiredMos;
+  a.profitRecord = { pass: true, fy: 2025, lossYears: 0, netIncomeYears: 10, meanOperatingMargin: .2, operatingMarginYears: 10, ownerEarningsPerShare: 10, reasons: [] };
   a.valuation = { ...a.valuation!, currency: 'USD', normalized: 1000, shares: 100, netCash: 0, terminalGrowth: 0, growth: 0, discountRate: .1, perShare: { low: 80, mid: 100, high: 120 }, perShareTrading: undefined, assumptions: [] };
   return a;
 }
@@ -31,11 +32,12 @@ function buyCount(rows: IndexRow[], prices: PriceMap) {
  return mainZones(mainCompanies(rows.map(row=>({row,quote:prices[row.id]?.[0]??null,mos:null})))).buy.length;
 }
 describe('published buy-price contract', () => {
-  it('uses own margin, quality, trading currency and review status for the same funnel, rows and main view buys', () => {
+  it('uses quality, central value, trading currency and review status for the same funnel, rows and main view buys', () => {
     const files = snapshot(), rows = files['index/default.json'] as IndexRow[], prices = files['prices/US.json'] as PriceMap;
     const count = (files['meta.json'] as StoreMeta).funnel!.gates[5].passing;
-    expect(count).toBe(3);
-    expect(rows.filter(r => r.b).map(r => r.id).sort()).toEqual(['BOUNDARY.US', 'BUY.US', 'SEED.US']);
+    // 3.8.0: no margin-of-safety discount, so WAIT.US (60 against a central value of 100) is a Buy.
+    expect(count).toBe(4);
+    expect(rows.filter(r => r.b).map(r => r.id).sort()).toEqual(['BOUNDARY.US', 'BUY.US', 'SEED.US', 'WAIT.US']);
     expect(rows.filter(r => r.b)).toHaveLength(count);
     expect(buyCount(rows, prices)).toBe(count);
     expect(() => assertIndexConsistency({ meta: files['meta.json'] as StoreMeta, rows: rows.map(r => ({ ...r, b: false })) })).toThrow(/buy|price/i);
@@ -44,7 +46,7 @@ describe('published buy-price contract', () => {
     const files = snapshot(), rows = files['index/default.json'] as IndexRow[];
     const prices = files['prices/US.json'] as PriceMap;
     prices['BUY.US'] = [110, '2026-09-30'];
-    expect(buyCount(rows, prices)).toBe(3);
+    expect(buyCount(rows, prices)).toBe(4);
   });
   it('never invents buy decisions for legacy rows without b', () => {
     const files = snapshot();
@@ -69,17 +71,17 @@ it('refreshes the published flags and funnel in the same price snapshot', async 
     const prices = JSON.parse(readFileSync(path.join(repo, 'prices/US.json'), 'utf8')) as PriceMap;
     const meta = JSON.parse(readFileSync(path.join(repo, 'meta.json'), 'utf8')) as StoreMeta;
     expect(prices['BUY.US'][0]).toBe(110);
-    expect(meta.funnel!.gates[5].passing).toBe(2);
-    expect(meta.story).toMatchObject({analysed:8,qualityPasses:7,qualityShare:7/8,atBuy:2,countriesCovered:1});
-    expect(meta.western?.story).toMatchObject({analysed:8,qualityPasses:7,atBuy:2});
-    expect(meta.western?.funnel.byCountry.US.gates[5].passing).toBe(2);
-    expect(rows.filter(r => r.b)).toHaveLength(2);
-    expect(buyCount(rows, prices)).toBe(2);
-    expect(meta.funnel!.byCountry.US.gates[5].passing).toBe(2);
+    expect(meta.funnel!.gates[5].passing).toBe(3);
+    expect(meta.story).toMatchObject({analysed:8,qualityPasses:7,qualityShare:7/8,atBuy:3,countriesCovered:1});
+    expect(meta.western?.story).toMatchObject({analysed:8,qualityPasses:7,atBuy:3});
+    expect(meta.western?.funnel.byCountry.US.gates[5].passing).toBe(3);
+    expect(rows.filter(r => r.b)).toHaveLength(3);
+    expect(buyCount(rows, prices)).toBe(3);
+    expect(meta.funnel!.byCountry.US.gates[5].passing).toBe(3);
     expect(() => assertIndexConsistency({ rows, meta })).not.toThrow();
     expect(commitPrices({ repo, asOf: '2026-10-08' })).toBe(true);
     expect(git('status', '--porcelain')).toBe('');
-    expect(JSON.parse(git('show', 'HEAD:index/default.json')).filter((r: IndexRow) => r.b)).toHaveLength(2);
+    expect(JSON.parse(git('show', 'HEAD:index/default.json')).filter((r: IndexRow) => r.b)).toHaveLength(3);
   } finally { rmSync(repo, { recursive: true, force: true }); }
 });
 
@@ -89,7 +91,7 @@ it('holds a newly implausible quote for review during a price refresh', async ()
   expect(publishedBuyPrice(row, [10, '2026-09-30']).b).toBe(false);
 });
 
-it('uses the same cash flows for the return hurdle and buy price across publication and refresh', async () => {
+it('buys at or below central value with the same valuation across publication and refresh', async () => {
   const { publishedBuyPrice } = await import('@/lib/value/buy-price');
   const a = company('TGHN.XETRA');
   a.company.currency = 'EUR';
@@ -98,16 +100,19 @@ it('uses the same cash flows for the return hurdle and buy price across publicat
   a.requiredMos = .35;
   const files = buildOutput({analyses:[a],prices:{[a.id]:[276,'2026-09-29']},holdersByTicker:{},investorNames:{},fx:{EUR:1.17}}).files;
   const row = (files['index/default.json'] as IndexRow[])[0];
-  expect(row.b).toBe(true); // The old 9.5% shortcut omitted excess cash; IRR clears 10%.
+  expect(row.b).toBe(true);
   expect((files['meta.json'] as StoreMeta).story?.atBuy).toBe(1);
   expect(publishedBuyPrice(row,[262.2,'2026-09-30']).b).toBe(true); // Surplus cash is included in the same cash flows
   expect(publishedBuyPrice(row,[280,'2026-09-30']).b).toBe(true);
-  expect(publishedBuyPrice(row,[300,'2026-09-30']).b).toBe(false);
+  expect(publishedBuyPrice(row,[300,'2026-09-30']).b).toBe(true); // 3.8.0: no 35% discount
+  expect(publishedBuyPrice(row,[438.44,'2026-09-30']).b).toBe(true);
+  expect(publishedBuyPrice(row,[438.45,'2026-09-30']).b).toBe(false);
 });
 
-it('fails closed when expected return is missing or nonfinite', async () => {
+it('does not need return inputs: there is no separate return hurdle from 3.8.0', async () => {
   const { publishedBuyPrice } = await import('@/lib/value/buy-price');
   const row = (snapshot()['index/default.json'] as IndexRow[]).find(r => r.id === 'BUY.US')!;
-  expect(publishedBuyPrice({...row,buyReturnInputs:null},[60,'2026-09-30']).b).toBe(false);
-  expect(publishedBuyPrice({...row,buyReturnInputs:{cashPerShare:NaN,growth:0,requiredReturn:.1}},[60,'2026-09-30']).b).toBe(false);
+  expect(publishedBuyPrice({...row,buyReturnInputs:null},[60,'2026-09-30']).b).toBe(true);
+  expect(publishedBuyPrice({...row,buyReturnInputs:{cashPerShare:NaN,growth:0,requiredReturn:.1}},[60,'2026-09-30']).b).toBe(true);
+  expect(publishedBuyPrice({...row,pr:'F'},[60,'2026-09-30']).b).toBe(false);
 });

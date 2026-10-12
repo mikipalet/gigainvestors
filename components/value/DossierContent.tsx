@@ -25,6 +25,7 @@ import { retainedWindow } from '@/lib/value/drawer-data';
 import { primaryTileMetric, tileSentence } from '@/lib/value/tile-metric';
 import { priceFraming } from '@/lib/value/presentation';
 import { CompanyLogo } from './CompanyLogo';
+import { dossierQualityPass, failedGates } from '@/lib/value/fair-buy';
 import { ownerReturn, cashCoveredReturnCopy, expectedReturnCopy, requiredReturnCopy, returnModelCopy } from '@/lib/value/owner-return';
 import { bestWesternListing, westernTradingLabel } from '@/lib/value/western';
 import { sharePrice } from '@/lib/value/listing-details';
@@ -48,7 +49,7 @@ const DossierBody=memo(function DossierBody({dossier,quote=null,children,holders
  const {company,valuation,report}=dossier;
  const comparable=comparableValuation(valuation,company.currency);
  const canShowPrice=Boolean(comparable&&quote);
- const requiredMos=dossier.requiredMos??T.price.requiredMos.stable;
+ const requiredMos=T.price.buyMos;
  const state=priceState({price:quote?.[0]??null,mid:comparable?.perShare.mid??null,b:dossier.b});
  const ratio=priceValue({price:quote?.[0]??null,mid:comparable?.perShare.mid??null});
  const price:TestOutcome={key:'price',result:state.state==='pass'?'pass':state.state==='fail'?'fail':'unclear',numeric:'unclear',metrics:{},series:{},reasons:[],jev:[]};
@@ -64,26 +65,27 @@ const DossierBody=memo(function DossierBody({dossier,quote=null,children,holders
  const pct=(n:number|null|undefined)=>formatMetric({value:n??null,format:'pct'});
  const m=(key:Exclude<TestKey,'price'>,metric:string)=>dossier.tests[key].metrics[metric]??null;
  const deciding=Object.fromEntries(tests.map(test=>{const metric=primaryTileMetric(test,company.kind,dossier.tests.understandable.series.netIncome??dossier.series.netIncome);if(test.key==='price'){metric.value=ratio;metric.threshold=1-requiredMos;}return [test.key,metric];})) as Record<TestKey,ReturnType<typeof primaryTileMetric>>;
- const glyph=(test:TestOutcome)=>test.key==='price'?state.state:test.result;
+ const glyph=(test:TestOutcome)=>test.key==='price'?(state.state==='below'?'wait':state.state):test.result;
  const name=companyName(company);
  const w=dossier.w===undefined?bestWesternListing(company):dossier.w;
  const tradingLabel=westernTradingLabel(w,company.id,company.exchange);
- const qualityPass=QUALITY_TESTS.every(key=>dossier.tests[key as keyof typeof dossier.tests]?.result==='pass');
+ const qualityPass=dossierQualityPass(dossier);
+ const record=dossier.profitRecord;
  const framing=priceFraming(ratio,requiredMos);
  const owner=ownerReturn(valuation,company.currency,company.marketCapUsd,quote?.[0]??null);
  const coveredCopy=cashCoveredReturnCopy(valuation,company.currency,quote?.[0]??null);
  const ownerCopy=owner?expectedReturnCopy(owner,valuation,company.country):coveredCopy|| (valuation?.method==='book_value'?`This financial business uses a book-value estimate; ${requiredReturnCopy(valuation,company.country)}.`:'');
  const referenceRow=comparable?<dl className="reference-metrics" aria-label="Key numbers">
   {quote&&<div><dt>Share price</dt><dd><b>{sharePrice(quote[0],company.currency)}</b></dd></div>}
-  <div><dt>Buy below</dt><dd><b>{sharePrice(comparable.perShare.mid*(1-requiredMos),company.currency)}</b></dd></div>
-  <div title={ownerCopy}><dt>Expected / yr</dt><dd>{coveredCopy?<>Excess cash covers price · no finite IRR</>:<><b>{owner?pct(owner.expected):'—'}</b> at today's price (needs {pct(valuation!.discountRate)})</>}</dd></div>
+  <div><dt>Buy at or below</dt><dd><b>{sharePrice(comparable.perShare.mid,company.currency)}</b></dd></div>
+  <div title={ownerCopy}><dt>Expected / yr</dt><dd>{coveredCopy?<>Excess cash covers price · no finite IRR</>:<><b>{owner?pct(owner.expected):'—'}</b> at today's price ({pct(valuation!.discountRate)} at central value)</>}</dd></div>
  </dl>:<dl className="reference-metrics" aria-label="Key numbers">
   {quote&&<div><dt>Share price</dt><dd><b>{sharePrice(quote[0],company.currency)}</b></dd></div>}
-  <div><dt>Quality tests</dt><dd><b>{QUALITY_TESTS.filter(key=>dossier.tests[key]?.result==='pass').length} / 5 pass</b></dd></div>
+  <div><dt>Quality tests</dt><dd><b>{qualityPass?'Pass':failedGates(dossier).length?'Fail':'Incomplete'}</b></dd></div>
   <div><dt>Annual history</dt><dd><b>{dossier.historyCoverage?.years??'—'} years</b></dd></div>
   {company.marketCapUsd!=null&&<div><dt>Market value</dt><dd><b>{formatMetric({value:company.marketCapUsd,format:'money',currency:'USD'})}</b></dd></div>}
  </dl>;
- const failed=QUALITY_TESTS.filter(key=>dossier.tests[key]?.result==='fail');
+ const failed=failedGates(dossier);
 
  const shortHistory=dossier.historyCoverage && dossier.historyCoverage.years<T.minYears;
  const verdict=shortHistory?'Financial history':humanVerdict(dossier,Boolean(dossier.b),canShowPrice,ratio);
@@ -96,7 +98,7 @@ const DossierBody=memo(function DossierBody({dossier,quote=null,children,holders
 
  return <div onPointerOver={warm} onFocus={warm} className="one-dossier locks-scroll" data-quality={qualityPass?'pass':failed.length?'fail':'unclear'}>
   <section className="dossier-band">{identity}
-   <div className="one-verdict" data-testid="verdict"><p className="plain-verdict" data-verdict={dossier.thesis?.changed?'Thesis disclosure':verdict}>{verdict}</p><PriceStory dossier={dossier} quote={quote}/>{<p className="verdict-explanation">{dossier.thesis?.changed?dossier.thesis.reason:qualityPass?'Passes all 5 quality tests.':failed.length?`${failed.length} quality ${failed.length===1?'test fails':'tests fail'}. A lower price would not fix the business.`:shortHistory?`Only ${dossier.historyCoverage!.years} years of filings; the checklist needs 7.`:''}</p>}
+   <div className="one-verdict" data-testid="verdict"><p className="plain-verdict" data-verdict={dossier.thesis?.changed?'Thesis disclosure':verdict}>{verdict}</p><PriceStory dossier={dossier} quote={quote}/>{<p className="verdict-explanation">{dossier.thesis?.changed?dossier.thesis.reason:qualityPass?'Passes the quality tests.':failed.length?`${failed.length} quality ${failed.length===1?'test fails':'tests fail'}. A lower price would not fix the business.`:shortHistory?`Only ${dossier.historyCoverage!.years} years of filings; the checklist needs 7.`:''}</p>}
     {dossier.thesis?.liabilities?.filter(l=>l.marketValueRatio>.1).sort((a,b)=>b.marketValueRatio-a.marketValueRatio).slice(0,1).map((l,i)=><p key={i} className="thesis-guidance">{(l.marketValueRatio*100).toFixed(1)}% of market value{l.ownerEarningsRatio!==null?`; ${l.ownerEarningsRatio.toFixed(1)} years of owner earnings`:''}{l.basis==='claimed'?'. Claimed damages; not an established loss.':''}</p>)}
     {dossier.thesis?.guidance&&<p className="thesis-guidance">Owner earnings: {dossier.thesis.guidance.before.toLocaleString('en-US',{maximumFractionDigits:0})} → {dossier.thesis.guidance.after.toLocaleString('en-US',{maximumFractionDigits:0})} {valuation?.currency}, reflecting current-year guidance.</p>}
     {dossier.thesis&&<button className="thesis-source-button" onClick={()=>setThesisOpen(true)}>Read the disclosure ↗</button>}
@@ -106,17 +108,18 @@ const DossierBody=memo(function DossierBody({dossier,quote=null,children,holders
   <BusinessSection analysis={dossier} price={quote?.[0]??null}/>
   <div className="dossier-checks">
    <section className="quality-section" aria-label="Five business quality tests"><h2>1. Is this a good business? </h2>
-    <div className="test-tiles">{tests.filter(test=>test.key!=='price').map((test,i)=>{const d=deciding[test.key];return <article key={test.key} className={`test-tile ${glyph(test)}`} data-testid={`tile-${test.key}`} data-metric={d.id}><button className="tile-open" aria-label={`Open ${testLabels[test.key]} evidence`} onClick={()=>setPanel(test.key)}><header><span><small>{i+1}</small> {testLabels[test.key]}</span><span><StatusGlyph result={glyph(test)} label={`${testLabels[test.key]}: ${glyph(test)}`}/>{test.result==='unclear'?'Wait':test.result==='na'?'—':test.result}</span></header></button><p className="tile-sentence">{tileSentence(test,d,company.kind)}</p>{test.key==='management'&&retainedWindow(test)?<MiniDollar provisional={test.provisional} currency={dossier.reportingCurrency??valuation?.currency??company.currency} fluid retained={m('management','retainedEarnings')} created={m('management','marketCapGain')} first={m('management','retainedStartFy')} last={m('management','retainedEndFy')}/>:d.series.filter(p=>p[1]!==null).length===0?<FilingSignals test={test}/>:<MiniSeries provisional={test.provisional} currency={dossier.reportingCurrency??valuation?.currency??company.currency} fluid height={135} series={d.series} label={d.chart} format={d.chartFormat==='index'?'count':d.chartFormat==='ratio'?'x':d.chartFormat??(test.key==='understandable'?'pct':d.format)} threshold={d.chartThreshold===null?undefined:d.chartThreshold??(test.key==='understandable'?undefined:d.threshold)} better={d.chartBetter??d.better}/>}<TileNumbers metric={d} test={test} currency={dossier.reportingCurrency??valuation?.currency??company.currency}/>{test.judgement?.override&&<div className="tile-assessment"><JudgementLine test={test} adjustments={dossier.judgement?.adjustments} currency={dossier.reportingCurrency??company.currency} onExplain={()=>setPanel(test.key)}/></div>}</article>;})}</div>
+    <div className="test-tiles">{tests.filter(test=>test.key!=='price').map((test,i)=>{const d=deciding[test.key];return <article key={test.key} className={`test-tile ${glyph(test)}`} data-testid={`tile-${test.key}`} data-metric={d.id}><button className="tile-open" aria-label={`Open ${testLabels[test.key]} evidence`} onClick={()=>setPanel(test.key)}><header><span><small>{i+1}</small> {testLabels[test.key]}</span><span><StatusGlyph result={glyph(test)} label={`${testLabels[test.key]}: ${glyph(test)}`}/>{test.result==='unclear'?'Pending':test.result==='na'?'—':test.result}</span></header></button>{test.key==='understandable'&&record&&<small className="tile-evidence-note">Evidence only; not required for Buy</small>}<p className="tile-sentence">{tileSentence(test,d,company.kind)}</p>{test.key==='management'&&retainedWindow(test)?<MiniDollar provisional={test.provisional} currency={dossier.reportingCurrency??valuation?.currency??company.currency} fluid retained={m('management','retainedEarnings')} created={m('management','marketCapGain')} first={m('management','retainedStartFy')} last={m('management','retainedEndFy')}/>:d.series.filter(p=>p[1]!==null).length===0?<FilingSignals test={test}/>:<MiniSeries provisional={test.provisional} currency={dossier.reportingCurrency??valuation?.currency??company.currency} fluid height={135} series={d.series} label={d.chart} format={d.chartFormat==='index'?'count':d.chartFormat==='ratio'?'x':d.chartFormat??(test.key==='understandable'?'pct':d.format)} threshold={d.chartThreshold===null?undefined:d.chartThreshold??(test.key==='understandable'?undefined:d.threshold)} better={d.chartBetter??d.better}/>}<TileNumbers metric={d} test={test} currency={dossier.reportingCurrency??valuation?.currency??company.currency}/>{test.judgement?.override&&<div className="tile-assessment"><JudgementLine test={test} adjustments={dossier.judgement?.adjustments} currency={dossier.reportingCurrency??company.currency} onExplain={()=>setPanel(test.key)}/></div>}</article>;})}</div>
+    {record&&<p className="profit-record" data-testid="profit-record" data-pass={record.pass}><b>Profit record · {record.pass?'pass':'fail'}</b> {record.lossYears} loss {record.lossYears===1?'year':'years'} in {record.netIncomeYears} (at most 2){record.meanOperatingMargin!==null&&company.kind!=='bank'&&company.kind!=='insurer'?`, mean operating margin ${pct(record.meanOperatingMargin)}`:''}, three-year average {company.kind==='bank'||company.kind==='insurer'?'earnings':'owner earnings'} per share {record.ownerEarningsPerShare===null?'unavailable':record.ownerEarningsPerShare.toLocaleString('en-US',{maximumFractionDigits:2})} {dossier.reportingCurrency??valuation?.currency??''}{record.pass?'.':`. ${record.reasons.join('. ')}.`}</p>}
    </section>
-   {comparable&&quote&&<section className="price-section" aria-label="Separate price check"><h2>2. Is the price low enough?</h2><article className={`test-tile price-card ${glyph(price)}`} data-testid="tile-price" data-metric="priceToMid" title={[framing.headline,valuation&&!comparable?`Price is in ${company.currency}, value in ${valuation.currency}, not compared`:'',quote?.[2]==='seed'?`Price estimated from market value on ${dateLabel(quote[1])}`:''].filter(Boolean).join(' · ')}><button className="tile-open" aria-label="Open valuation" onClick={()=>setPanel('valuation')}><header><span>Price · separate check</span><span><StatusGlyph result={glyph(price)} label={`Price: ${glyph(price)}`}/>{state.label}</span></header></button>
+   {comparable&&quote&&<section className="price-section" aria-label="Separate price check"><h2>2. Is the price low enough?</h2><article className={`test-tile price-card ${glyph(price)}`} data-testid="tile-price" data-metric="priceToMid" title={[framing.headline,valuation&&!comparable?`Price is in ${company.currency}, value in ${valuation.currency}, not compared`:'',quote?.[2]==='seed'?`Price estimated from market value on ${dateLabel(quote[1])}`:''].filter(Boolean).join(' · ')}><button className="tile-open" aria-label="Open valuation" onClick={()=>setPanel('valuation')}><header><span>Price · separate check</span><span><StatusGlyph result={glyph(price)} label={`Price: ${state.label}`}/>{state.label}</span></header></button>
     {comparable&&<MiniPrice dossier={dossier} quote={quote} fluid height={240} minimumHeight={110}/>}
     <table className="valuation-math"><caption>Price &amp; return math</caption><tbody>
      <tr><th>Value range</th><td>{sharePrice(comparable.perShare.low,company.currency)} – {sharePrice(comparable.perShare.high,company.currency)}</td></tr>
-     <tr><th>Buy price</th><td>{sharePrice(comparable.perShare.mid,company.currency)} × (1 − {pct(requiredMos)}) = {sharePrice(comparable.perShare.mid*(1-requiredMos),company.currency)}</td></tr>
+     <tr><th>Buy at or below</th><td>Central value {sharePrice(comparable.perShare.mid,company.currency)}</td></tr>
      <tr><th>Discount to value</th><td>1 − {quote[0].toFixed(2)} / {comparable.perShare.mid.toFixed(2)} = {pct(1-quote[0]/comparable.perShare.mid)}</td></tr>
      {(owner||coveredCopy)&&<tr><th>Return / year</th><td title={ownerCopy}>{ownerCopy}</td></tr>}
      {valuation&&<tr><th>Cash-flow inputs</th><td>{returnModelCopy(valuation,company.currency)}</td></tr>}
-     {valuation&&<tr><th>Required return</th><td>{pct(valuation.discountRate)} / year</td></tr>}
+     {valuation&&<tr><th>Required return</th><td>{pct(valuation.discountRate)} / year, earned by construction at the central value</td></tr>}
     </tbody></table>
    </article></section>}
   </div>

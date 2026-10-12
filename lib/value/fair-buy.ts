@@ -77,11 +77,23 @@ export function fairBuyEligible(t: string, record: Pick<ProfitRecord, 'pass'> | 
 }
 
 /** The five 3.8.0 quality gates in funnel order: moat, economics, management,
- * accounting, profit record. Legacy rows without a profit record keep their
- * published five-test code (earnings resilience first). */
+ * accounting, profit record. Rows published before 3.8.0 (no profit record, all
+ * five tests required) put earnings resilience in the last slot, so their
+ * pass/fail pattern is unchanged and their other gates line up. */
 export function gateCode(row: { t: string; pr?: string | null }): string {
-  return row.pr ? `${row.t.slice(1)}${row.pr}` : row.t;
+  return `${row.t.slice(1)}${row.pr ?? row.t.slice(0, 1)}`;
 }
 /** Passes the quality tests that Buy requires. */
 export const qualityPass = (row: { t: string; pr?: string | null }) => gateCode(row) === 'PPPPP';
+/** A published dossier's Buy quality: the four gate tests plus the profit record.
+ * Dossiers published before 3.8.0 (no profit record) keep all five tests. */
+export function dossierQualityPass(d: { tests: Partial<Record<string, { result: string } | undefined>>; profitRecord?: Pick<ProfitRecord, 'pass'> }): boolean {
+  const gates = ['moat', 'economics', 'management', 'accounting'].every(k => d.tests[k]?.result === 'pass');
+  return gates && (d.profitRecord ? d.profitRecord.pass : d.tests.understandable?.result === 'pass');
+}
+/** Buy gate tests that fail, earnings resilience excluded from 3.8.0. */
+export function failedGates(d: { tests: Partial<Record<string, { result: string } | undefined>>; profitRecord?: Pick<ProfitRecord, 'pass'> }): string[] {
+  const keys = d.profitRecord ? ['moat', 'economics', 'management', 'accounting'] : ['understandable', 'moat', 'economics', 'management', 'accounting'];
+  return [...keys.filter(k => d.tests[k]?.result === 'fail'), ...(d.profitRecord && !d.profitRecord.pass ? ['record'] : [])];
+}
 export const profitLetter = (record: ProfitRecord | null | undefined): 'P' | 'F' | 'U' => !record ? 'U' : record.pass ? 'P' : 'F';

@@ -22,12 +22,12 @@ it('uses the same return sentence in dossiers and buy cards', () => {
  dossier.company.currency='USD';
  dossier.company.marketCapUsd=1000;
  const html=renderToStaticMarkup(createElement(DossierContent,{dossier,quote:[100,"2026-09-30"]}));
- expect(html).toContain("About 12.3% a year at today&#x27;s price (needs 10.0%)");
+ expect(html).toContain("About 12.3% a year at today&#x27;s price (required return 10.0%)");
 });
 
 it('rounds the solved IRR once without presenting an additive shortcut', () => {
  const owner=ownerReturn({...valuation,normalized:85.79418,growth:.06951090},'USD',1000,100)!;
- expect(expectedReturnCopy(owner,valuation,'US')).toBe(`About ${(owner.expected*100).toFixed(1)}% a year at today's price (needs 10.0%)`);
+ expect(expectedReturnCopy(owner,valuation,'US')).toBe(`About ${(owner.expected*100).toFixed(1)}% a year at today's price (required return 10.0%)`);
 });
 
 it('shows the actual required return above the floor',()=>{

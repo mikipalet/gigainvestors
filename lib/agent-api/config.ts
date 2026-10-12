@@ -7,7 +7,7 @@ export const ROUTES = [
   { id:'ownership', path:'/stocks/{id}/ownership', price:'detail', description:'Derived stock ownership by tracked investors and quarter' },
   { id:'companies', path:'/companies', price:'basic', description:'Company directory' },
   { id:'dossier', path:'/companies/{id}', price:'detail', description:'Company research dossier' },
-  { id:'verdict', path:'/companies/{id}/verdict', price:'basic', description:'Five-test verdict and price decision' },
+  { id:'verdict', path:'/companies/{id}/verdict', price:'basic', description:'Quality verdict and price decision against central value' },
   { id:'memo', path:'/companies/{id}/memo', price:'detail', description:'Business memo' },
   { id:'priceStory', path:'/companies/{id}/price-story', price:'detail', description:'Price story and computed metrics' },
   { id:'checklists', path:'/checklists', price:'basic', description:'Buy now, next closest, or all companies with filters' },

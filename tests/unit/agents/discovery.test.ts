@@ -20,7 +20,7 @@ describe('agent discovery contracts',()=>{
   expect(policy.sitemap).toBe('https://gigainvestors.com/sitemap.xml');
  });
  it('exports the method and its live numerical cutoffs',()=>{
-  expect(methodSummary).toHaveLength(10);
+  expect(methodSummary).toHaveLength(11);
   expect(methodMarkdown()).toContain('Every numerical cutoff');
   expect(methodMarkdown()).toContain('survivorship');
  });

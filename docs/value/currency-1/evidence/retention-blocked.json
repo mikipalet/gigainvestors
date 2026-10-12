@@ -1,0 +1,114 @@
+[
+ {
+  "id": "1876.HK",
+  "asOf": "2026-10-12T14:35:31.080Z",
+  "retained": [],
+  "rejectedSource": "2026-10-12T14:35:31.080Z",
+  "reason": "statement currency corrected"
+ },
+ {
+  "id": "VIPS.US",
+  "asOf": "2026-10-12T14:33:12.543Z",
+  "retained": [],
+  "rejectedSource": "2026-10-12T14:33:12.543Z",
+  "reason": "statement currency corrected"
+ },
+ {
+  "id": "EMBJ.US",
+  "asOf": "2026-10-12T14:29:05.759Z",
+  "retained": [],
+  "rejectedSource": "2026-10-12T14:29:05.759Z",
+  "reason": "statement currency corrected"
+ },
+ {
+  "id": "ATHM.US",
+  "asOf": "2026-10-12T14:27:43.685Z",
+  "retained": [],
+  "rejectedSource": "2026-10-12T14:27:43.685Z",
+  "reason": "statement currency corrected"
+ },
+ {
+  "id": "ZKH.US",
+  "asOf": "2026-10-12T14:33:40.722Z",
+  "retained": [],
+  "rejectedSource": "2026-10-12T14:33:40.722Z",
+  "reason": "statement currency corrected"
+ },
+ {
+  "id": "PAGS.US",
+  "asOf": "2026-10-12T14:31:34.020Z",
+  "retained": [],
+  "rejectedSource": "2026-10-12T14:31:34.020Z",
+  "reason": "statement currency corrected"
+ },
+ {
+  "id": "PDD.US",
+  "asOf": "2026-10-12T14:31:38.351Z",
+  "retained": [],
+  "rejectedSource": "2026-10-12T14:31:38.351Z",
+  "reason": "statement currency corrected"
+ },
+ {
+  "id": "PETR3.SA",
+  "asOf": "2026-10-12T14:33:52.844Z",
+  "retained": [],
+  "rejectedSource": "2026-10-12T14:33:52.844Z",
+  "reason": "statement currency corrected"
+ },
+ {
+  "id": "HDB.US",
+  "asOf": "2026-10-12T14:29:44.348Z",
+  "retained": [],
+  "rejectedSource": "2026-10-12T14:29:44.348Z",
+  "reason": "statement currency corrected"
+ },
+ {
+  "id": "FMX.US",
+  "asOf": "2026-10-12T14:29:23.093Z",
+  "retained": [],
+  "rejectedSource": "2026-10-12T14:29:23.093Z",
+  "reason": "statement currency corrected"
+ },
+ {
+  "id": "TME.US",
+  "asOf": "2026-10-12T14:32:49.337Z",
+  "retained": [],
+  "rejectedSource": "2026-10-12T14:32:49.337Z",
+  "reason": "statement currency corrected"
+ },
+ {
+  "id": "STNE.US",
+  "asOf": "2026-10-12T14:32:34.039Z",
+  "retained": [],
+  "rejectedSource": "2026-10-12T14:32:34.039Z",
+  "reason": "statement currency corrected"
+ },
+ {
+  "id": "MOMO.US",
+  "asOf": "2026-10-12T14:30:56.726Z",
+  "retained": [],
+  "rejectedSource": "2026-10-12T14:30:56.726Z",
+  "reason": "statement currency corrected"
+ },
+ {
+  "id": "YPF.US",
+  "asOf": "2026-10-12T14:33:37.880Z",
+  "retained": [],
+  "rejectedSource": "2026-10-12T14:33:37.880Z",
+  "reason": "statement currency corrected"
+ },
+ {
+  "id": "TGS.US",
+  "asOf": "2026-10-12T14:32:46.056Z",
+  "retained": [],
+  "rejectedSource": "2026-10-12T14:32:46.056Z",
+  "reason": "statement currency corrected"
+ },
+ {
+  "id": "CPAC.US",
+  "asOf": "2026-10-12T14:28:34.237Z",
+  "retained": [],
+  "rejectedSource": "2026-10-12T14:28:34.237Z",
+  "reason": "statement currency corrected"
+ }
+]

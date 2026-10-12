@@ -1,0 +1,9 @@
+{
+ "command": "forward-test.ts verify --repo=<real publication> --snapshot=docs/value/forward-test/2026-10-12-buy-list.json --corrected",
+ "result": {
+  "frozen": 173,
+  "live": 173,
+  "added": [],
+  "removed": []
+ }
+}

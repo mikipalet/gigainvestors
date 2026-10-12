@@ -1,0 +1,1633 @@
+[
+ {
+  "id": "0322.HK",
+  "name": "Tingyi",
+  "label": "CNY",
+  "listing": "HKD",
+  "filing": "description",
+  "signals": [
+   "3 balance sheets off-scale"
+  ],
+  "decision": "Vendor balance sheets in another currency; now rejected (no published figure used them)",
+  "evidence": "2009-06-30 balance sheet (https://eodhd.com/api/fundamentals/0322.HK#Financials.Balance_Sheet.quarterly.2009-06-30) is 0.16\u00d7 the FY2008 CNY statement \u2014 CNY/USD scale; not used",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "0881.HK",
+  "name": "Zhongsheng Group Holdings Ltd",
+  "label": "CNY",
+  "listing": "HKD",
+  "filing": "description",
+  "signals": [
+   "market B/P>8,S/P>30"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "CNY statements match the CNY label; the extreme ratios come from the HK$2.47 price (vendor and Yahoo agree).",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "0H2Z.LSE",
+  "name": "Fastighets AB Balder Series B",
+  "label": "SEK",
+  "listing": "SEK",
+  "filing": "description",
+  "signals": [
+   "market E/P>0.6,B/P>8"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "SEK statements and SEK quote; share basis (180m) differs from the issuer count (outlier-1 follow-up).",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "1876.HK",
+  "name": "Budweiser Brewing Company",
+  "label": "USD",
+  "listing": "HKD",
+  "filing": "description",
+  "signals": [
+   "market B/P>8",
+   "mixed/contradicted FY2025",
+   "12 balance sheets off-scale"
+  ],
+  "decision": "Data error, fixed",
+  "evidence": "Statement currency changed in 2025: the FY2025 balance sheet changes scale 8.41\u00d7 against FY2024 while the other statement is continuous (the USD/HKD rate), so its amounts are not all in USD",
+  "buy": [
+   false,
+   false
+  ],
+  "value": [
+   [
+    17.91949041411671,
+    18.708229333971964,
+    19.758208137643663
+   ],
+   null
+  ],
+  "currencyShown": [
+   "USD",
+   "USD"
+  ],
+  "memo1": [
+   "Operates in beverages brewers; annual sales are USD 5.8 billion.",
+   "Operates in beverages brewers; annual sales are USD 6.2 billion."
+  ]
+ },
+ {
+  "id": "1T5.MU",
+  "name": "TAURON",
+  "label": "PLN",
+  "listing": "EUR",
+  "filing": "description",
+  "signals": [
+   "market E/P>0.6"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "PLN statements under a PLN label; the Munich share basis (482m of 1.75bn shares) inflates the yields.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "300223.SHE",
+  "name": "Ingenic Semiconductor",
+  "label": "CNY",
+  "listing": "CNY",
+  "filing": "description",
+  "signals": [
+   "1 balance sheets off-scale"
+  ],
+  "decision": "Vendor balance sheets in another currency; now rejected (no published figure used them)",
+  "evidence": "2020-09-30 balance sheet (https://eodhd.com/api/fundamentals/300223.SHE#Financials.Balance_Sheet.quarterly.2020-09-30) is 6.71\u00d7 the FY2019 CNY statement \u2014 CNY/USD scale; not used",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "300896.SHE",
+  "name": "Imeik Technology Development\u00a0Co",
+  "label": "CNY",
+  "listing": "CNY",
+  "filing": "description",
+  "signals": [
+   "1 balance sheets off-scale"
+  ],
+  "decision": "Vendor balance sheets in another currency; now rejected (no published figure used them)",
+  "evidence": "2020-09-30 balance sheet (https://eodhd.com/api/fundamentals/300896.SHE#Financials.Balance_Sheet.quarterly.2020-09-30) is 6.35\u00d7 the FY2019 CNY statement \u2014 CNY/USD scale; not used",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "543A.JP",
+  "name": "\uff21\uff32\uff23\uff28\uff29\uff2f\uff2e\u682a\u5f0f\u4f1a\u793e",
+  "label": "JPY",
+  "listing": "JPY",
+  "filing": "EDINET",
+  "signals": [
+   "market S/P,B/P<0.02"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "JPY statements; broken share count (0.999 shares), value already unavailable.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "5706.JP",
+  "name": "\u4e09\u4e95\u91d1\u5c5e\u682a\u5f0f\u4f1a\u793e",
+  "label": "JPY",
+  "listing": "JPY",
+  "filing": "EDINET",
+  "signals": [
+   "market E/P>0.6"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "JPY statements; post-report split handled in 3.8.1.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "600233.SHG",
+  "name": "YTO Express Group Co Ltd",
+  "label": "CNY",
+  "listing": "CNY",
+  "filing": "description",
+  "signals": [
+   "1 balance sheets off-scale"
+  ],
+  "decision": "Vendor balance sheets in another currency; now rejected (no published figure used them)",
+  "evidence": "2016-09-30 balance sheet (https://eodhd.com/api/fundamentals/600233.SHG#Financials.Balance_Sheet.quarterly.2016-09-30) is 7.02\u00d7 the FY2015 CNY statement \u2014 CNY/USD scale; not used",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "6919.TW",
+  "name": "CALIWAY BIOPHARMACEUTICALS CO L",
+  "label": "TWD",
+  "listing": "TWD",
+  "filing": "description",
+  "signals": [
+   "market S/P,B/P<0.02",
+   "3 balance sheets off-scale"
+  ],
+  "decision": "Vendor balance sheets in another currency; now rejected (no published figure used them)",
+  "evidence": "2026 quarterly balance sheets are 31\u00d7 the FY2025 TWD statement (US-dollar amounts under a TWD label); not used. No value was published (pre-revenue).",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "ACH.US",
+  "name": "Accendra Health Inc",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "10-K",
+  "signals": [
+   "filing facts in USD",
+   "market S/P>30"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "Statements match their label; the market screen hit reflects price, share basis or losses.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "AERO.US",
+  "name": "Grupo Aerom\u00c3\u00a9xico, S.A.B. de C.V.",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "20-F",
+  "signals": [
+   "filing facts in USD",
+   "market E/P>0.6"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "USD statements equal the 20-F.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "AFYA.US",
+  "name": "Afya Ltd",
+  "label": "BRL",
+  "listing": "USD",
+  "filing": "20-F",
+  "signals": [
+   "filing facts in BRL",
+   "report text BRL",
+   "5 balance sheets off-scale"
+  ],
+  "decision": "Vendor balance sheets in another currency; now rejected (no published figure used them)",
+  "evidence": "2023-03-31 balance sheet (https://eodhd.com/api/fundamentals/AFYA.US#Financials.Balance_Sheet.quarterly.2023-03-31) is 0.21\u00d7 the FY2022 BRL statement \u2014 BRL/USD scale; not used",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "AKTS.US",
+  "name": "Aktis Oncology, Inc. Common stock",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "10-K",
+  "signals": [
+   "market S/P,B/P<0.02"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "Statements match their label; the market screen hit reflects price, share basis or losses.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "ATHM.US",
+  "name": "Autohome Inc",
+  "label": "CNY",
+  "listing": "USD",
+  "filing": "20-F",
+  "signals": [
+   "filing facts in CNY/USD",
+   "mixed/contradicted FY2019,2020",
+   "7 balance sheets off-scale"
+  ],
+  "decision": "Data error, fixed",
+  "evidence": "Statement currency changed in 2019: FY2019 mixes currencies under one CNY label (totalAssets = filing USD, equity = filing USD, revenue 6.96\u00d7 filing USD, netIncome 6.96\u00d7 filing USD, ocf 6.96\u00d7 filing USD) Statement currency changed in 2020: FY2020 mixes currencies under one CNY label (totalAssets = filing USD, revenue 6.53\u00d7 filing USD, netIncome 6.52\u00d7 filing USD, ocf 6.53\u00d7 filing USD, equity 6.48\u00d7 filing USD)",
+  "buy": [
+   false,
+   false
+  ],
+  "value": [
+   [
+    47.78517806134191,
+    51.162478342936524,
+    55.65838138517452
+   ],
+   null
+  ],
+  "currencyShown": [
+   "CNY",
+   "CNY"
+  ],
+  "memo1": [
+   "Operates in internet content & information; annual sales are CNY 6.3 billion.",
+   "Operates in internet content & information; annual sales are CNY 6.3 billion."
+  ]
+ },
+ {
+  "id": "BABA.US",
+  "name": "Alibaba Group Holding Ltd",
+  "label": "CNY",
+  "listing": "USD",
+  "filing": "20-F",
+  "signals": [
+   "filing facts in CNY",
+   "1 balance sheets off-scale"
+  ],
+  "decision": "Vendor balance sheets in another currency; now rejected (no published figure used them)",
+  "evidence": "2012-03-31 balance sheet (https://eodhd.com/api/fundamentals/BABA.US#Financials.Balance_Sheet.quarterly.2012-03-31) is 0.15\u00d7 the FY2012 CNY statement \u2014 CNY/USD scale; not used",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "BATL.US",
+  "name": "Battalion Oil Corp",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "10-K",
+  "signals": [
+   "filing facts in USD",
+   "market E/P>0.6,B/P>8"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "Statements match their label; the market screen hit reflects price, share basis or losses.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "BIDU.US",
+  "name": "Baidu Inc",
+  "label": "CNY",
+  "listing": "USD",
+  "filing": "20-F",
+  "signals": [
+   "filing facts in CNY",
+   "1 balance sheets off-scale"
+  ],
+  "decision": "Vendor balance sheets in another currency; now rejected (no published figure used them)",
+  "evidence": "2026-03-31 balance sheet (https://eodhd.com/api/fundamentals/BIDU.US#Financials.Balance_Sheet.quarterly.2026-03-31) is 0.15\u00d7 the FY2025 CNY statement \u2014 CNY/USD scale; not used",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "BILI.US",
+  "name": "Bilibili Inc",
+  "label": "CNY",
+  "listing": "USD",
+  "filing": "20-F",
+  "signals": [
+   "filing facts in CNY",
+   "1 balance sheets off-scale"
+  ],
+  "decision": "Vendor balance sheets in another currency; now rejected (no published figure used them)",
+  "evidence": "2016-12-31 balance sheet (https://eodhd.com/api/fundamentals/BILI.US#Financials.Balance_Sheet.quarterly.2016-12-31) is 0.14\u00d7 the FY2016 CNY statement \u2014 CNY/USD scale; not used",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "BLSH.US",
+  "name": "Bullish",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "20-F",
+  "signals": [
+   "filing facts in USD",
+   "market S/P>30"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "USD statements equal the 20-F; revenue is gross digital-asset sales.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "CABO.US",
+  "name": "Cable One Inc",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "10-K",
+  "signals": [
+   "filing facts in USD",
+   "market B/P>8"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "Statements match their label; the market screen hit reflects price, share basis or losses.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "CEMEXCPO.MX",
+  "name": "CEMEX S.A.B. de C.V.",
+  "label": "USD",
+  "listing": "MXN",
+  "filing": "20-F",
+  "signals": [
+   "filing facts in USD",
+   "3 balance sheets off-scale"
+  ],
+  "decision": "Vendor balance sheets in another currency; now rejected (no published figure used them)",
+  "evidence": "2018-12-31 balance sheet (https://eodhd.com/api/fundamentals/CEMEXCPO.MX#Financials.Balance_Sheet.quarterly.2018-12-31) is 19.65\u00d7 the FY2018 USD statement \u2014 USD/MXN scale; not used",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "CPAC.US",
+  "name": "Cementos Pacasmayo SAA ADR",
+  "label": "PEN",
+  "listing": "USD",
+  "filing": "20-F",
+  "signals": [
+   "filing facts in PEN",
+   "mixed/contradicted FY2019,2020",
+   "3 balance sheets off-scale"
+  ],
+  "decision": "Data error, fixed",
+  "evidence": "Statement currency changed in 2019: FY2019 mixes currencies under one PEN label (revenue = filing PEN, netIncome = filing PEN, ocf = filing PEN, totalAssets 0.3\u00d7 filing PEN, equity 0.3\u00d7 filing PEN) Statement currency changed in 2020: FY2020 mixes currencies under one PEN label (ocf = filing PEN, totalAssets 0.28\u00d7 filing PEN, equity 0.28\u00d7 filing PEN)",
+  "buy": [
+   false,
+   false
+  ],
+  "value": [
+   [
+    9.489441104789403,
+    11.376476291669432,
+    13.168310209293221
+   ],
+   null
+  ],
+  "currencyShown": [
+   "PEN",
+   "PEN"
+  ],
+  "memo1": [
+   "Operates in building materials; annual sales are PEN 2.1 billion.",
+   "Operates in building materials; annual sales are PEN 2.1 billion."
+  ]
+ },
+ {
+  "id": "CRMT.US",
+  "name": "Americas Car-Mart Inc",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "10-K",
+  "signals": [
+   "filing facts in USD",
+   "market B/P>8,S/P>30"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "Statements match their label; the market screen hit reflects price, share basis or losses.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "CRWD.US",
+  "name": "Crowdstrike Holdings Inc",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "10-K",
+  "signals": [
+   "filing facts in USD",
+   "market S/P,B/P<0.02"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "Statements match their label; the market screen hit reflects price, share basis or losses.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "CYH.US",
+  "name": "Community Health Systems Inc",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "10-K",
+  "signals": [
+   "filing facts in USD",
+   "market E/P>0.6,S/P>30"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "Statements match their label; the market screen hit reflects price, share basis or losses.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "DMRA.US",
+  "name": "Damora Therapeutics, Inc.",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "10-K",
+  "signals": [
+   "filing facts in USD",
+   "report text USD",
+   "market B/P>8"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "Statements match their label; the market screen hit reflects price, share basis or losses.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "EIKN.US",
+  "name": "Eikon Therapeutics, Inc. Common Stock",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "10-K",
+  "signals": [
+   "market S/P,B/P<0.02"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "Statements match their label; the market screen hit reflects price, share basis or losses.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "EMBJ.US",
+  "name": "Embraer S.A.",
+  "label": "BRL",
+  "listing": "USD",
+  "filing": "20-F",
+  "signals": [
+   "mixed/contradicted FY2023",
+   "2 balance sheets off-scale"
+  ],
+  "decision": "Data error, fixed",
+  "evidence": "Statement currency changed in 2023: FY2023 mixes currencies under one BRL label (ocf = filing USD, revenue 4.92\u00d7 filing USD, netIncome 4.91\u00d7 filing USD, equity 4.51\u00d7 filing USD)",
+  "buy": [
+   false,
+   false
+  ],
+  "value": [
+   [
+    30.835183575417716,
+    36.665120807695445,
+    40.95365591032868
+   ],
+   null
+  ],
+  "currencyShown": [
+   "BRL",
+   "BRL"
+  ],
+  "memo1": [
+   "Operates in aerospace & defense; annual sales are BRL 41.5 billion.",
+   "Operates in aerospace & defense; annual sales are BRL 41.5 billion."
+  ]
+ },
+ {
+  "id": "EOG.US",
+  "name": "EOG Resources Inc",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "10-K",
+  "signals": [
+   "filing facts in USD",
+   "report text CAD"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "Report text cites C$ amounts (Canadian operations); statements equal the USD 10-K.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "ET.US",
+  "name": "Energy Transfer LP",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "10-K",
+  "signals": [
+   "filing facts in USD",
+   "report text CAD"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "Report text cites C$ amounts; statements equal the USD 10-K.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "EXO.AS",
+  "name": "Exor N.V.",
+  "label": "EUR",
+  "listing": "EUR",
+  "filing": "ESEF",
+  "signals": [
+   "report text USD"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "EUR statements (ESEF); the report text cites dollar amounts of subsidiaries.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "FMX.US",
+  "name": "Fomento Economico Mexicano",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "20-F",
+  "signals": [
+   "filing facts in USD",
+   "report text MXN"
+  ],
+  "decision": "Data error, fixed",
+  "evidence": "FY2024 mixes currencies (balance sheet = the MXN 20-F, income 0.05\u00d7 it, i.e. dollars) and is left out; FY2025 amounts are the 20-F US-dollar convenience translation under a USD label. One-year record before and after.",
+  "buy": [
+   false,
+   false
+  ],
+  "value": [
+   null,
+   null
+  ],
+  "currencyShown": [
+   "USD",
+   "USD"
+  ],
+  "memo1": [
+   "Operates in beverages brewers; annual sales are USD 46.6 billion.",
+   "Operates in beverages brewers; annual sales are USD 46.6 billion."
+  ]
+ },
+ {
+  "id": "GUTS.US",
+  "name": "Fractyl Health, Inc. Common Stock",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "10-K",
+  "signals": [
+   "filing facts in USD",
+   "market S/P,B/P<0.02"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "Statements match their label; the market screen hit reflects price, share basis or losses.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "HAPV3.SA",
+  "name": "Hapvida Participa\u00e7\u00f5es e Investimentos S.A.",
+  "label": "BRL",
+  "listing": "BRL",
+  "filing": "description",
+  "signals": [
+   "market B/P>8"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "BRL statements and BRL listing; ratios reflect the depressed price and share basis.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "HDB.US",
+  "name": "HDFC Bank Limited ADR",
+  "label": "INR",
+  "listing": "USD",
+  "filing": "20-F",
+  "signals": [
+   "filing facts in INR",
+   "mixed/contradicted FY2015"
+  ],
+  "decision": "Data error, fixed",
+  "evidence": "Statement currency changed in 2015: FY2015 mixes currencies under one INR label (equity = filing USD, revenue 65.85\u00d7 filing USD, netIncome 62.14\u00d7 filing USD, totalAssets 62.31\u00d7 filing USD)",
+  "buy": [
+   false,
+   false
+  ],
+  "value": [
+   [
+    10.959693126572791,
+    13.699616408215986,
+    18.266155210954643
+   ],
+   [
+    10.959693126572791,
+    13.699616408215986,
+    18.266155210954643
+   ]
+  ],
+  "currencyShown": [
+   "INR",
+   "INR"
+  ],
+  "memo1": [
+   "Operates in regional banking; annual sales are INR 2.5 trillion.",
+   "Operates in regional banking; annual sales are INR 2.5 trillion."
+  ]
+ },
+ {
+  "id": "IFS.US",
+  "name": "Intercorp Financial Services Inc",
+  "label": "PEN",
+  "listing": "USD",
+  "filing": "20-F",
+  "signals": [
+   "filing facts in PEN",
+   "report text USD"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "Statements equal the PEN 20-F; the text cites dollar amounts.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "INBX.US",
+  "name": "Inhibrx Biosciences, Inc.",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "10-K",
+  "signals": [
+   "filing facts in USD",
+   "market S/P,B/P<0.02"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "Statements match their label; the market screen hit reflects price, share basis or losses.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "IVA.PA",
+  "name": "Inventiva S.A",
+  "label": "EUR",
+  "listing": "EUR",
+  "filing": "20-F",
+  "signals": [
+   "filing facts in EUR",
+   "report text EUR",
+   "market S/P,B/P<0.02"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "EUR statements equal the 20-F; pre-revenue biotech.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "JBS.US",
+  "name": "JBS N.V.",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "20-F",
+  "signals": [
+   "filing facts in USD",
+   "report text USD",
+   "market E/P>0.6,S/P>30",
+   "mixed/contradicted FY2025"
+  ],
+  "decision": "Data error, analysis fixed; page frozen",
+  "evidence": "FY2025 vendor amounts are reais under a USD label (revenue 471.1bn vs US$86.2bn in the 2025 20-F, 5.47\u00d7; assets 5.5\u00d7). The rule drops FY2025 (reais are not JBS N.V.'s home currency); the analysis now ends at FY2024 (USD 77.2bn). The published page is held at its 2026-10-08 bytes by the corpus verdict freeze (undecided record), so it still reads USD 471.1 billion until the owner lifts the freeze, which would remove JBS from the site.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "KZIA.US",
+  "name": "Kazia Therapeutics Ltd ADR",
+  "label": "AUD",
+  "listing": "USD",
+  "filing": "description",
+  "signals": [
+   "market S/P,B/P<0.02"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "AUD statements of a pre-revenue biotech.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "LESL.US",
+  "name": "Leslies Inc",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "10-K",
+  "signals": [
+   "filing facts in USD",
+   "market S/P>30"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "Statements match their label; the market screen hit reflects price, share basis or losses.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "LOAR.US",
+  "name": "Loar Holdings Inc.",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "10-K",
+  "signals": [
+   "filing facts in USD",
+   "market E/P>0.6,B/P>8,S/P>30"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "Statements match their label; the market screen hit reflects price, share basis or losses.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "MANE.US",
+  "name": "Veradermics, Incorporated",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "10-K",
+  "signals": [
+   "filing facts in USD",
+   "market S/P,B/P<0.02"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "Statements match their label; the market screen hit reflects price, share basis or losses.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "MEDCL.PA",
+  "name": "Medincell SA",
+  "label": "EUR",
+  "listing": "EUR",
+  "filing": "description",
+  "signals": [
+   "market S/P,B/P<0.02"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "EUR statements of a pre-revenue biotech.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "MOMO.US",
+  "name": "Hello Group Inc",
+  "label": "CNY",
+  "listing": "USD",
+  "filing": "20-F",
+  "signals": [
+   "filing facts in CNY"
+  ],
+  "decision": "Data error, fixed",
+  "evidence": "Statement currency changed in 2012: FY2012 mixes currencies under one CNY label (equity = filing USD, netIncome 4.62\u00d7 filing USD)",
+  "buy": [
+   false,
+   false
+  ],
+  "value": [
+   null,
+   null
+  ],
+  "currencyShown": [
+   "CNY",
+   "CNY"
+  ],
+  "memo1": [
+   "Operates in internet content & information; annual sales are CNY 10.4 billion.",
+   "Operates in internet content & information; annual sales are CNY 10.4 billion."
+  ]
+ },
+ {
+  "id": "MSB.AU",
+  "name": "Mesoblast Ltd",
+  "label": "USD",
+  "listing": "AUD",
+  "filing": "20-F",
+  "signals": [
+   "filing facts in USD",
+   "report text AUD"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "Statements equal the USD 20-F; the text cites A$ amounts.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "NFE.US",
+  "name": "New Fortress Energy LLC",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "10-K",
+  "signals": [
+   "filing facts in USD",
+   "market S/P>30"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "Statements match their label; the market screen hit reflects price, share basis or losses.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "NKT.CO",
+  "name": "NKT A/S",
+  "label": "EUR",
+  "listing": "DKK",
+  "filing": "ESEF",
+  "signals": [
+   "21 balance sheets off-scale"
+  ],
+  "decision": "Vendor balance sheets in another currency; now rejected (no published figure used them)",
+  "evidence": "2009-09-30 balance sheet (https://eodhd.com/api/fundamentals/NKT.CO#Financials.Balance_Sheet.quarterly.2009-09-30) is 7.63\u00d7 the FY2008 EUR statement \u2014 EUR/DKK scale; not used",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "NOD.OL",
+  "name": "Nordic Semiconductor ASA",
+  "label": "USD",
+  "listing": "NOK",
+  "filing": "description",
+  "signals": [
+   "1 balance sheets off-scale"
+  ],
+  "decision": "Vendor balance sheets in another currency; now rejected (no published figure used them)",
+  "evidence": "2004-09-30 balance sheet (https://eodhd.com/api/fundamentals/NOD.OL#Financials.Balance_Sheet.quarterly.2004-09-30) is 8.71\u00d7 the FY2003 USD statement \u2014 USD/NOK scale; not used",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "NTES.US",
+  "name": "NetEase Inc",
+  "label": "CNY",
+  "listing": "USD",
+  "filing": "20-F",
+  "signals": [
+   "filing facts in CNY",
+   "2 balance sheets off-scale"
+  ],
+  "decision": "Vendor balance sheets in another currency; now rejected (no published figure used them)",
+  "evidence": "2000-09-30 balance sheet (https://eodhd.com/api/fundamentals/NTES.US#Financials.Balance_Sheet.quarterly.2000-09-30) is 6.66\u00d7 the FY1999 CNY statement \u2014 CNY/USD scale; not used",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "OM.US",
+  "name": "Outset Medical Inc",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "10-K",
+  "signals": [
+   "filing facts in USD",
+   "market B/P>8,S/P>30"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "Statements match their label; the market screen hit reflects price, share basis or losses.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "ONIT.US",
+  "name": "Onity Group Inc.",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "10-K",
+  "signals": [
+   "filing facts in USD",
+   "market E/P>0.6"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "Statements match their label; the market screen hit reflects price, share basis or losses.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "OPTU.US",
+  "name": "Optimum Communications, Inc.",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "10-K",
+  "signals": [
+   "filing facts in USD",
+   "market S/P>30"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "Statements match their label; the market screen hit reflects price, share basis or losses.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "PAGS.US",
+  "name": "PagSeguro Digital Ltd",
+  "label": "BRL",
+  "listing": "USD",
+  "filing": "20-F",
+  "signals": [
+   "filing facts in BRL",
+   "mixed/contradicted FY2019,2020,2021",
+   "5 balance sheets off-scale"
+  ],
+  "decision": "Data error, fixed",
+  "evidence": "Statement currency changed in 2019: FY2019 mixes currencies under one BRL label (netIncome = filing BRL, ocf = filing BRL, totalAssets 0.25\u00d7 filing BRL, equity 0.25\u00d7 filing BRL) Statement currency changed in 2020: FY2020 mixes currencies under one BRL label (netIncome = filing BRL, ocf = filing BRL, totalAssets 0.19\u00d7 filing BRL, equity 0.19\u00d7 filing BRL) Statement currency changed in 2021: FY2021 mixes currencies under one BRL label (netIncome = filing BRL, ocf = filing BRL, totalAssets 0.18\u00d7 filing BRL, equity 0.18\u00d7 filing BRL)",
+  "buy": [
+   false,
+   false
+  ],
+  "value": [
+   null,
+   null
+  ],
+  "currencyShown": [
+   "BRL",
+   "BRL"
+  ],
+  "memo1": [
+   "Operates in software infrastructure; annual sales are BRL 19.4 billion.",
+   "Operates in software infrastructure; annual sales are BRL 19.4 billion."
+  ]
+ },
+ {
+  "id": "PAH3.XETRA",
+  "name": "Porsche Automobil Holding SE",
+  "label": "EUR",
+  "listing": "EUR",
+  "filing": "description",
+  "signals": [
+   "market E/P>0.6,B/P>8"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "EUR statements; share basis counts preference shares only.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "PDD.US",
+  "name": "PDD Holdings Inc.",
+  "label": "CNY",
+  "listing": "USD",
+  "filing": "20-F",
+  "signals": [
+   "filing facts in CNY",
+   "report text CNY",
+   "mixed/contradicted FY2022",
+   "1 balance sheets off-scale"
+  ],
+  "decision": "Data error, fixed",
+  "evidence": "Statement currency changed in 2022: FY2022 mixes currencies under one CNY label (ocf = filing USD, revenue 6.9\u00d7 filing USD, netIncome 6.9\u00d7 filing USD, totalAssets 6.9\u00d7 filing USD, equity 6.9\u00d7 filing USD)",
+  "buy": [
+   false,
+   false
+  ],
+  "value": [
+   [
+    174.5781950038172,
+    192.17272520739056,
+    215.59477692724684
+   ],
+   null
+  ],
+  "currencyShown": [
+   "CNY",
+   "CNY"
+  ],
+  "memo1": [
+   "Operates in internet retail; annual sales are CNY 431.8 billion.",
+   "Operates in internet retail; annual sales are CNY 431.8 billion."
+  ]
+ },
+ {
+  "id": "PE&OLES.MX",
+  "name": "Industrias Pe\u00f1oles S.A.B. de C.V",
+  "label": "USD",
+  "listing": "MXN",
+  "filing": "description",
+  "signals": [
+   "3 balance sheets off-scale"
+  ],
+  "decision": "Vendor balance sheets in another currency; now rejected (no published figure used them)",
+  "evidence": "2018-03-31 balance sheet (https://eodhd.com/api/fundamentals/PE&OLES.MX#Financials.Balance_Sheet.quarterly.2018-03-31) is 18.95\u00d7 the FY2017 USD statement \u2014 USD/MXN scale; not used",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "PETR3.SA",
+  "name": "Petroleo Brasileiro Petrobras SA ADR",
+  "label": "USD",
+  "listing": "BRL",
+  "filing": "20-F",
+  "signals": [
+   "filing facts in USD",
+   "market E/P>0.6",
+   "relabel FY2024\u2192BRL, FY2025\u2192BRL",
+   "mixed/contradicted FY2023"
+  ],
+  "decision": "Data error, fixed",
+  "evidence": "Statement currency changed in 2023: FY2023 mixes currencies under one USD label (revenue = filing USD, netIncome = filing USD, ocf 4.92\u00d7 filing USD, equity 4.89\u00d7 filing USD)",
+  "buy": [
+   false,
+   false
+  ],
+  "value": [
+   null,
+   null
+  ],
+  "currencyShown": [
+   "USD",
+   "BRL"
+  ],
+  "memo1": [
+   "Operates in oil & gas integrated; annual sales are USD 497.5 billion.",
+   "Operates in oil & gas integrated; annual sales are BRL 497.5 billion."
+  ]
+ },
+ {
+  "id": "PGEN.US",
+  "name": "Precigen Inc",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "10-K",
+  "signals": [
+   "filing facts in USD",
+   "market S/P,B/P<0.02"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "Statements match their label; the market screen hit reflects price, share basis or losses.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "PLTR.US",
+  "name": "Palantir Technologies Inc.",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "10-K",
+  "signals": [
+   "filing facts in USD",
+   "market S/P,B/P<0.02"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "Statements match their label; the market screen hit reflects price, share basis or losses.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "PTEC.LSE",
+  "name": "Playtech Plc",
+  "label": "EUR",
+  "listing": "GBX",
+  "filing": "ESEF",
+  "signals": [
+   "market E/P>0.6"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "EUR statements under a EUR label, GBX quote converted; FY2025 profit includes the Snaitech disposal gain.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "QFIN.US",
+  "name": "Qfin Holdings, Inc.",
+  "label": "CNY",
+  "listing": "USD",
+  "filing": "20-F",
+  "signals": [
+   "filing facts in CNY",
+   "report text CNY",
+   "market E/P>0.6"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "CNY statements equal the 20-F; lender already flagged in 3.8.1.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "QRVO.US",
+  "name": "Qorvo Inc",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "10-K",
+  "signals": [
+   "filing facts in USD",
+   "market S/P,B/P<0.02"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "Statements match their label; the market screen hit reflects price, share basis or losses.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "SABR.US",
+  "name": "Sabre Corpo",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "10-K",
+  "signals": [
+   "filing facts in USD",
+   "market E/P>0.6"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "Statements match their label; the market screen hit reflects price, share basis or losses.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "SHAZ.US",
+  "name": "SharonAI Holdings, Inc. Class A Common Stock",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "10-K",
+  "signals": [
+   "filing facts in USD",
+   "market S/P,B/P<0.02"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "Statements match their label; the market screen hit reflects price, share basis or losses.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "SLQT.US",
+  "name": "Selectquote Inc",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "10-K",
+  "signals": [
+   "filing facts in USD",
+   "market E/P>0.6,B/P>8"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "Statements match their label; the market screen hit reflects price, share basis or losses.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "STNE.US",
+  "name": "StoneCo Ltd",
+  "label": "BRL",
+  "listing": "USD",
+  "filing": "20-F",
+  "signals": [
+   "filing facts in BRL",
+   "mixed/contradicted FY2019"
+  ],
+  "decision": "Data error, fixed",
+  "evidence": "Statement currency changed in 2019: FY2019 mixes currencies under one BRL label (netIncome = filing BRL, ocf = filing BRL, totalAssets 0.25\u00d7 filing BRL, equity 0.25\u00d7 filing BRL)",
+  "buy": [
+   false,
+   false
+  ],
+  "value": [
+   null,
+   null
+  ],
+  "currencyShown": [
+   "BRL",
+   "BRL"
+  ],
+  "memo1": [
+   "Operates in software infrastructure; annual sales are BRL 14.2 billion.",
+   "Operates in software infrastructure; annual sales are BRL 14.2 billion."
+  ]
+ },
+ {
+  "id": "SUN.US",
+  "name": "Sunoco LP",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "10-K",
+  "signals": [
+   "filing facts in USD",
+   "report text CAD"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "Report text cites C$ amounts; statements equal the USD 10-K.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "TBN.US",
+  "name": "Tamboran Resources Corporation",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "10-K",
+  "signals": [
+   "filing facts in USD",
+   "report text AUD"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "Statements equal the USD 10-K; the text cites A$ amounts.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "TGS.US",
+  "name": "Transportadora de Gas del Sur SA ADR",
+  "label": "ARS",
+  "listing": "USD",
+  "filing": "20-F",
+  "signals": [
+   "filing facts in ARS",
+   "mixed/contradicted FY2025"
+  ],
+  "decision": "Data error, fixed",
+  "evidence": "Statement currency changed in 2025: FY2025 mixes currencies under one ARS label (totalAssets = filing ARS, equity = filing ARS, ocf 0\u00d7 filing ARS)",
+  "buy": [
+   true,
+   false
+  ],
+  "value": [
+   [
+    38.81569129324982,
+    51.347793216258836,
+    58.64525865588702
+   ],
+   [
+    34.21071047378443,
+    44.769464831654304,
+    50.917846442771804
+   ]
+  ],
+  "currencyShown": [
+   "ARS",
+   "ARS"
+  ],
+  "memo1": [
+   "Operates in oil & gas integrated; annual sales are ARS 2 trillion.",
+   "Operates in oil & gas integrated; annual sales are ARS 1.2 trillion."
+  ]
+ },
+ {
+  "id": "TME.US",
+  "name": "Tencent Music Entertainment Group",
+  "label": "CNY",
+  "listing": "USD",
+  "filing": "20-F",
+  "signals": [
+   "filing facts in CNY",
+   "mixed/contradicted FY2019",
+   "1 balance sheets off-scale"
+  ],
+  "decision": "Data error, fixed",
+  "evidence": "Statement currency changed in 2019: FY2019 mixes currencies under one CNY label (revenue = filing CNY, netIncome = filing CNY, ocf = filing CNY, totalAssets 0.14\u00d7 filing CNY, equity 0.14\u00d7 filing CNY)",
+  "buy": [
+   false,
+   false
+  ],
+  "value": [
+   null,
+   null
+  ],
+  "currencyShown": [
+   "CNY",
+   "CNY"
+  ],
+  "memo1": [
+   "Operates in internet content & information; annual sales are CNY 32.9 billion.",
+   "Operates in internet content & information; annual sales are CNY 32.9 billion."
+  ]
+ },
+ {
+  "id": "TMPV.NSE",
+  "name": "Tata Motors Passenger Vehicles Ltd.",
+  "label": "INR",
+  "listing": "INR",
+  "filing": "description",
+  "signals": [
+   "market E/P>0.6"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "INR statements; demerger year profit.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "TPRO.MI",
+  "name": "TECHNOPROBE",
+  "label": "EUR",
+  "listing": "EUR",
+  "filing": "ESEF",
+  "signals": [],
+  "decision": "Not a currency error",
+  "evidence": "EUR statements; the screen used an unscaled share count.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "UNIT.US",
+  "name": "Uniti Group Inc",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "10-K",
+  "signals": [
+   "filing facts in USD",
+   "market E/P>0.6"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "Statements match their label; the market screen hit reflects price, share basis or losses.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "VIPS.US",
+  "name": "Vipshop Holdings Limited",
+  "label": "CNY",
+  "listing": "USD",
+  "filing": "20-F",
+  "signals": [
+   "filing facts in CNY"
+  ],
+  "decision": "Data error, fixed",
+  "evidence": "Statement currency changed in 2012: FY2012 mixes currencies under one USD label (totalAssets = filing USD, equity = filing USD, netIncome 6.24\u00d7 filing USD)",
+  "buy": [
+   false,
+   false
+  ],
+  "value": [
+   null,
+   null
+  ],
+  "currencyShown": [
+   "CNY",
+   "CNY"
+  ],
+  "memo1": [
+   "Operates in internet retail; annual sales are CNY 105.9 billion.",
+   "Operates in internet retail; annual sales are CNY 105.9 billion."
+  ]
+ },
+ {
+  "id": "VISN.US",
+  "name": "Vistance Networks, Inc.",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "10-K",
+  "signals": [
+   "filing facts in USD",
+   "market E/P>0.6"
+  ],
+  "decision": "Not a currency error",
+  "evidence": "Statements match their label; the market screen hit reflects price, share basis or losses.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "WIT.US",
+  "name": "Wipro Limited ADR",
+  "label": "INR",
+  "listing": "USD",
+  "filing": "20-F",
+  "signals": [
+   "filing facts in INR",
+   "1 balance sheets off-scale"
+  ],
+  "decision": "Vendor balance sheets in another currency; now rejected (no published figure used them)",
+  "evidence": "2023-09-30 balance sheet (https://eodhd.com/api/fundamentals/WIT.US#Financials.Balance_Sheet.quarterly.2023-09-30) is 0.01\u00d7 the FY2023 INR statement \u2014 INR/USD scale; not used",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "WLN.PA",
+  "name": "Worldline SA",
+  "label": "EUR",
+  "listing": "EUR",
+  "filing": "ESEF",
+  "signals": [
+   "market B/P>8,S/P>30"
+  ],
+  "decision": "Not a currency error (share count follow-up)",
+  "evidence": "EUR statements; valuation share count 7.0m against about 283m issued shares \u2014 a share-basis issue, not currency.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "XNDU.US",
+  "name": "Xanadu Quantum Technologies Limited Class B Subordinate Voting Shares",
+  "label": "CAD",
+  "listing": "USD",
+  "filing": "20-F",
+  "signals": [
+   "report text USD"
+  ],
+  "decision": "Unclear (flagged)",
+  "evidence": "CAD label (sales CAD 4.6m); the 20-F XBRL facts in the corpus (assets US$1.8m) belong to the pre-merger listing shell, so no filing can confirm the currency. Not valued (one year), not a Buy.",
+  "buy": null,
+  "value": null,
+  "currencyShown": null,
+  "memo1": null
+ },
+ {
+  "id": "YPF.US",
+  "name": "YPF Sociedad Anonima",
+  "label": "ARS",
+  "listing": "USD",
+  "filing": "20-F",
+  "signals": [
+   "filing facts in ARS",
+   "mixed/contradicted FY2021,2022,2023,2024",
+   "3 balance sheets off-scale"
+  ],
+  "decision": "Data error, fixed",
+  "evidence": "Statement currency changed in 2021: FY2021 mixes currencies under one ARS label (ocf = filing USD, revenue 92.92\u00d7 filing USD) Statement currency changed in 2022: FY2022 mixes currencies under one ARS label (ocf = filing USD, revenue 134.69\u00d7 filing USD, netIncome 129.39\u00d7 filing USD, totalAssets 177.07\u00d7 filing USD, equity 175.42\u00d7 filing USD) Statement currency changed in 2023: FY2023 mixes currencies under one ARS label (ocf = filing USD, revenue 316.82\u00d7 filing USD, netIncome 1189.95\u00d7 filing USD, totalAssets 717.59\u00d7 filing USD, equity 709.5\u00d7 filing USD) Statement currency changed in 2024: FY2024",
+  "buy": [
+   false,
+   false
+  ],
+  "value": [
+   [
+    2.2058020709421826,
+    2.282887213289846,
+    2.3277740300143486
+   ],
+   null
+  ],
+  "currencyShown": [
+   "ARS",
+   "ARS"
+  ],
+  "memo1": [
+   "Operates in oil & gas integrated; annual sales are ARS 26.5 trillion.",
+   "Operates in oil & gas integrated; annual sales are ARS 26.5 trillion."
+  ]
+ },
+ {
+  "id": "ZKH.US",
+  "name": "ZKH Group Limited",
+  "label": "USD",
+  "listing": "USD",
+  "filing": "20-F",
+  "signals": [
+   "market B/P>8",
+   "relabel FY2024\u2192CNY"
+  ],
+  "decision": "Data error, fixed",
+  "evidence": "Reporting currency USD \u2192 CNY",
+  "buy": [
+   false,
+   false
+  ],
+  "value": [
+   null,
+   null
+  ],
+  "currencyShown": [
+   "USD",
+   "CNY"
+  ],
+  "memo1": [
+   "Operates in internet retail; annual sales are USD 9 billion.",
+   "Operates in internet retail; annual sales are CNY 9 billion."
+  ]
+ }
+]

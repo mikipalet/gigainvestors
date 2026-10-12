@@ -28,9 +28,18 @@ REVIEWED = {
  'KZIA.US': ('Not a currency error', 'AUD statements of a pre-revenue biotech.'),
  'MEDCL.PA': ('Not a currency error', 'EUR statements of a pre-revenue biotech.'),
  'IVA.PA': ('Not a currency error', 'EUR statements equal the 20-F; pre-revenue biotech.'),
+ 'EOG.US': ('Not a currency error', 'Report text cites C$ amounts (Canadian operations); statements equal the USD 10-K.'),
+ 'ET.US': ('Not a currency error', 'Report text cites C$ amounts; statements equal the USD 10-K.'),
+ 'SUN.US': ('Not a currency error', 'Report text cites C$ amounts; statements equal the USD 10-K.'),
+ 'IFS.US': ('Not a currency error', 'Statements equal the PEN 20-F; the text cites dollar amounts.'),
+ 'MSB.AU': ('Not a currency error', 'Statements equal the USD 20-F; the text cites A$ amounts.'),
+ 'TBN.US': ('Not a currency error', 'Statements equal the USD 10-K; the text cites A$ amounts.'),
+ 'FMX.US': ('Data error, fixed', 'FY2024 mixes currencies (balance sheet = the MXN 20-F, income 0.05× it, i.e. dollars) and is left out; FY2025 amounts are the 20-F US-dollar convenience translation under a USD label. One-year record before and after.'),
+ 'EXO.AS': ('Not a currency error', 'EUR statements (ESEF); the report text cites dollar amounts of subsidiaries.'),
+ 'XNDU.US': ('Unclear (flagged)', 'CAD label (sales CAD 4.6m); the 20-F XBRL facts in the corpus (assets US$1.8m) belong to the pre-merger listing shell, so no filing can confirm the currency. Not valued (one year), not a Buy.'),
 }
 rows = []
-for i in sorted(set(D) | set(P) | {k for k, r in S.items() if r.get('mktFlags')} | set(REVIEWED)):
+for i in sorted(set(D) | set(P) | {k for k, r in S.items() if r.get('mktFlags')} | set(REVIEWED) & set(S)):
     s, p, d = S.get(i, {}), P.get(i, {}), D.get(i)
     sec = sorted({m['unit'] for m in (s.get('signals', {}).get('sec') or []) if m['kind'] == 'equal'})
     signals = []

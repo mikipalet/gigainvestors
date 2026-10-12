@@ -1,0 +1,111 @@
+{
+ "candidateStates": 225,
+ "baselineStates": 307,
+ "viewports": [
+  "1728x970",
+  "390x844"
+ ],
+ "paths": [
+  "/s/1876.hk",
+  "/s/6919.tw",
+  "/s/athm.us",
+  "/s/bap.us",
+  "/s/cpac.us",
+  "/s/ddl.us",
+  "/s/embj.us",
+  "/s/hdb.us",
+  "/s/pdd.us",
+  "/s/petr3.sa",
+  "/s/tgs.us",
+  "/s/ypf.us",
+  "/s/zkh.us",
+  "/value",
+  "/value/method"
+ ],
+ "counts": {
+  "ownerChrome": 426,
+  "ownerWhitespace": 143,
+  "preExisting": 757,
+  "new": 11
+ },
+ "newFindings": [
+  {
+   "path": "/s/1876.hk",
+   "state": "page",
+   "width": 390,
+   "issue": "overlapping text: \"Down 76% since Jan 2023 \u00b7 \"Chi\" / \"6\""
+  },
+  {
+   "path": "/s/1876.hk",
+   "state": "page",
+   "width": 390,
+   "issue": "overlapping text: \"Down 76% since Jan 2023 \u00b7 \"Chi\" / \"annual periods on record.\""
+  },
+  {
+   "path": "/s/ypf.us",
+   "state": "page",
+   "width": 390,
+   "issue": "overlapping text: \"Up 404% since Oct 2023 \u00b7 \"YPF \" / \"1\""
+  },
+  {
+   "path": "/s/ypf.us",
+   "state": "page",
+   "width": 390,
+   "issue": "overlapping text: \"Up 404% since Oct 2023 \u00b7 \"YPF \" / \"annual periods on record.\""
+  },
+  {
+   "path": "/s/pdd.us",
+   "state": "page",
+   "width": 390,
+   "issue": "overlapping text: \"Down 46% since May 2024 \u00b7 \"U.S\" / \"3\""
+  },
+  {
+   "path": "/s/pdd.us",
+   "state": "page",
+   "width": 390,
+   "issue": "overlapping text: \"Down 46% since May 2024 \u00b7 \"U.S\" / \"annual periods on record.\""
+  },
+  {
+   "path": "/s/pdd.us",
+   "state": "page",
+   "width": 390,
+   "issue": "overlapping text: \"\u2197\" / \"annual periods on record.\""
+  },
+  {
+   "path": "/s/athm.us",
+   "state": "page",
+   "width": 390,
+   "issue": "overlapping text: \"Down 47% since Oct 2021 \u00b7 \"Aut\" / \"5\""
+  },
+  {
+   "path": "/s/athm.us",
+   "state": "page",
+   "width": 390,
+   "issue": "overlapping text: \"Down 47% since Oct 2021 \u00b7 \"Aut\" / \"annual periods on record.\""
+  },
+  {
+   "path": "/s/embj.us",
+   "state": "page",
+   "width": 390,
+   "issue": "overlapping text: \"Up 410% since Oct 2023 \u00b7 \"Embr\" / \"2\""
+  },
+  {
+   "path": "/s/embj.us",
+   "state": "page",
+   "width": 390,
+   "issue": "overlapping text: \"Up 410% since Oct 2023 \u00b7 \"Embr\" / \"annual periods on record.\""
+  }
+ ],
+ "interactionFailures": [],
+ "preExistingInteractionFailures": [
+  [
+   "/value/method",
+   1728
+  ],
+  [
+   "/value/method",
+   390
+  ]
+ ],
+ "pass": false
+}

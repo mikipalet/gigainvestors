@@ -1,0 +1,590 @@
+[
+ {
+  "id": "0322.HK",
+  "label": "CNY",
+  "home": [
+   "HKD"
+  ],
+  "relabelled": [],
+  "dropped": [],
+  "balanceRejected": [
+   "2009-06-30 balance sheet (https://eodhd.com/api/fundamentals/0322.HK#Financials.Balance_Sheet.quarterly.2009-06-30) is 0.16× the FY2008 CNY statement — CNY/USD scale; not used",
+   "2008-12-31 balance sheet (https://eodhd.com/api/fundamentals/0322.HK#Financials.Balance_Sheet.quarterly.2008-12-31) is 0.15× the FY2008 CNY statement — CNY/USD scale; not used",
+   "2007-12-31 balance sheet (https://eodhd.com/api/fundamentals/0322.HK#Financials.Balance_Sheet.quarterly.2007-12-31) is 0.14× the FY2007 CNY statement — CNY/USD scale; not used"
+  ],
+  "trailingRejected": null
+ },
+ {
+  "id": "1876.HK",
+  "label": "USD",
+  "home": [
+   "HKD"
+  ],
+  "relabelled": [],
+  "dropped": [
+   {
+    "fy": 2025,
+    "end": "2025-12-31",
+    "source": "raw/eodhd/1876.HK.json#2025-12-31",
+    "reason": "Statement currency changed in 2025: the FY2025 balance sheet changes scale 8.41× against FY2024 while the other statement is continuous (the USD/HKD rate), so its amounts are not all in USD; year not used"
+   }
+  ],
+  "balanceRejected": [
+   "2025-12-31 balance sheet (https://eodhd.com/api/fundamentals/1876.HK#Financials.Balance_Sheet.yearly.2025-12-31) is 7.81× the FY2024 USD statement — USD/HKD scale; not used",
+   "2024-12-31 balance sheet (https://eodhd.com/api/fundamentals/1876.HK#Financials.Balance_Sheet.yearly.2024-12-31) is 7.77× the FY2024 USD statement — USD/HKD scale; not used",
+   "2023-12-31 balance sheet (https://eodhd.com/api/fundamentals/1876.HK#Financials.Balance_Sheet.yearly.2023-12-31) is 7.81× the FY2023 USD statement — USD/HKD scale; not used",
+   "2022-12-31 balance sheet (https://eodhd.com/api/fundamentals/1876.HK#Financials.Balance_Sheet.yearly.2022-12-31) is 7.8× the FY2022 USD statement — USD/HKD scale; not used",
+   "2021-12-31 balance sheet (https://eodhd.com/api/fundamentals/1876.HK#Financials.Balance_Sheet.yearly.2021-12-31) is 7.8× the FY2021 USD statement — USD/HKD scale; not used",
+   "2026-06-30 balance sheet (https://eodhd.com/api/fundamentals/1876.HK#Financials.Balance_Sheet.quarterly.2026-06-30) is 7.64× the FY2024 USD statement — USD/HKD scale; not used",
+   "2025-12-31 balance sheet (https://eodhd.com/api/fundamentals/1876.HK#Financials.Balance_Sheet.quarterly.2025-12-31) is 7.81× the FY2024 USD statement — USD/HKD scale; not used",
+   "2025-06-30 balance sheet (https://eodhd.com/api/fundamentals/1876.HK#Financials.Balance_Sheet.quarterly.2025-06-30) is 7.9× the FY2024 USD statement — USD/HKD scale; not used",
+   "2023-06-30 balance sheet (https://eodhd.com/api/fundamentals/1876.HK#Financials.Balance_Sheet.quarterly.2023-06-30) is 7.59× the FY2022 USD statement — USD/HKD scale; not used",
+   "2022-12-31 balance sheet (https://eodhd.com/api/fundamentals/1876.HK#Financials.Balance_Sheet.quarterly.2022-12-31) is 7.8× the FY2022 USD statement — USD/HKD scale; not used",
+   "2022-06-30 balance sheet (https://eodhd.com/api/fundamentals/1876.HK#Financials.Balance_Sheet.quarterly.2022-06-30) is 7.43× the FY2021 USD statement — USD/HKD scale; not used",
+   "2021-12-31 balance sheet (https://eodhd.com/api/fundamentals/1876.HK#Financials.Balance_Sheet.quarterly.2021-12-31) is 7.8× the FY2021 USD statement — USD/HKD scale; not used"
+  ],
+  "trailingRejected": null
+ },
+ {
+  "id": "300223.SHE",
+  "label": "CNY",
+  "home": [
+   "CNY"
+  ],
+  "relabelled": [],
+  "dropped": [],
+  "balanceRejected": [
+   "2020-09-30 balance sheet (https://eodhd.com/api/fundamentals/300223.SHE#Financials.Balance_Sheet.quarterly.2020-09-30) is 6.71× the FY2019 CNY statement — CNY/USD scale; not used"
+  ],
+  "trailingRejected": null
+ },
+ {
+  "id": "300896.SHE",
+  "label": "CNY",
+  "home": [
+   "CNY"
+  ],
+  "relabelled": [],
+  "dropped": [],
+  "balanceRejected": [
+   "2020-09-30 balance sheet (https://eodhd.com/api/fundamentals/300896.SHE#Financials.Balance_Sheet.quarterly.2020-09-30) is 6.35× the FY2019 CNY statement — CNY/USD scale; not used"
+  ],
+  "trailingRejected": null
+ },
+ {
+  "id": "600233.SHG",
+  "label": "CNY",
+  "home": [
+   "CNY"
+  ],
+  "relabelled": [],
+  "dropped": [],
+  "balanceRejected": [
+   "2016-09-30 balance sheet (https://eodhd.com/api/fundamentals/600233.SHG#Financials.Balance_Sheet.quarterly.2016-09-30) is 7.02× the FY2015 CNY statement — CNY/USD scale; not used"
+  ],
+  "trailingRejected": null
+ },
+ {
+  "id": "6919.TW",
+  "label": "TWD",
+  "home": [
+   "TWD"
+  ],
+  "relabelled": [],
+  "dropped": [],
+  "balanceRejected": [
+   "2026-06-30 balance sheet (https://eodhd.com/api/fundamentals/6919.TW#Financials.Balance_Sheet.quarterly.2026-06-30) is 30.97× the FY2025 TWD statement — TWD/USD scale; not used",
+   "2026-03-31 balance sheet (https://eodhd.com/api/fundamentals/6919.TW#Financials.Balance_Sheet.quarterly.2026-03-31) is 31.41× the FY2025 TWD statement — TWD/USD scale; not used",
+   "2025-09-30 balance sheet (https://eodhd.com/api/fundamentals/6919.TW#Financials.Balance_Sheet.quarterly.2025-09-30) is 0.03× the FY2024 TWD statement — TWD/USD scale; not used"
+  ],
+  "trailingRejected": null
+ },
+ {
+  "id": "AFYA.US",
+  "label": "BRL",
+  "home": [
+   "USD"
+  ],
+  "relabelled": [],
+  "dropped": [],
+  "balanceRejected": [
+   "2023-03-31 balance sheet (https://eodhd.com/api/fundamentals/AFYA.US#Financials.Balance_Sheet.quarterly.2023-03-31) is 0.21× the FY2022 BRL statement — BRL/USD scale; not used",
+   "2022-09-30 balance sheet (https://eodhd.com/api/fundamentals/AFYA.US#Financials.Balance_Sheet.quarterly.2022-09-30) is 0.19× the FY2021 BRL statement — BRL/USD scale; not used",
+   "2022-06-30 balance sheet (https://eodhd.com/api/fundamentals/AFYA.US#Financials.Balance_Sheet.quarterly.2022-06-30) is 0.2× the FY2021 BRL statement — BRL/USD scale; not used",
+   "2022-03-31 balance sheet (https://eodhd.com/api/fundamentals/AFYA.US#Financials.Balance_Sheet.quarterly.2022-03-31) is 0.21× the FY2021 BRL statement — BRL/USD scale; not used",
+   "2021-03-31 balance sheet (https://eodhd.com/api/fundamentals/AFYA.US#Financials.Balance_Sheet.quarterly.2021-03-31) is 0.18× the FY2020 BRL statement — BRL/USD scale; not used"
+  ],
+  "trailingRejected": null
+ },
+ {
+  "id": "ATHM.US",
+  "label": "CNY",
+  "home": [
+   "USD"
+  ],
+  "relabelled": [],
+  "dropped": [
+   {
+    "fy": 2019,
+    "end": "2019-12-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001527636.json#0001193125-20-098105",
+    "reason": "Statement currency changed in 2019: FY2019 mixes currencies under one CNY label (totalAssets = filing USD, equity = filing USD, revenue 6.96× filing USD, netIncome 6.96× filing USD, ocf 6.96× filing USD); year not used"
+   },
+   {
+    "fy": 2020,
+    "end": "2020-12-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001527636.json#0001193125-21-065446",
+    "reason": "Statement currency changed in 2020: FY2020 mixes currencies under one CNY label (totalAssets = filing USD, revenue 6.53× filing USD, netIncome 6.52× filing USD, ocf 6.53× filing USD, equity 6.48× filing USD); year not used"
+   }
+  ],
+  "balanceRejected": [
+   "2023-09-30 balance sheet (https://eodhd.com/api/fundamentals/ATHM.US#Financials.Balance_Sheet.quarterly.2023-09-30) is 0.14× the FY2022 CNY statement — CNY/USD scale; not used",
+   "2023-06-30 balance sheet (https://eodhd.com/api/fundamentals/ATHM.US#Financials.Balance_Sheet.quarterly.2023-06-30) is 0.14× the FY2022 CNY statement — CNY/USD scale; not used",
+   "2023-03-31 balance sheet (https://eodhd.com/api/fundamentals/ATHM.US#Financials.Balance_Sheet.quarterly.2023-03-31) is 0.15× the FY2022 CNY statement — CNY/USD scale; not used",
+   "2022-09-30 balance sheet (https://eodhd.com/api/fundamentals/ATHM.US#Financials.Balance_Sheet.quarterly.2022-09-30) is 0.15× the FY2021 CNY statement — CNY/USD scale; not used",
+   "2022-06-30 balance sheet (https://eodhd.com/api/fundamentals/ATHM.US#Financials.Balance_Sheet.quarterly.2022-06-30) is 0.15× the FY2021 CNY statement — CNY/USD scale; not used",
+   "2022-03-31 balance sheet (https://eodhd.com/api/fundamentals/ATHM.US#Financials.Balance_Sheet.quarterly.2022-03-31) is 0.16× the FY2021 CNY statement — CNY/USD scale; not used",
+   "2011-12-31 balance sheet (https://eodhd.com/api/fundamentals/ATHM.US#Financials.Balance_Sheet.quarterly.2011-12-31) is 0.16× the FY2011 CNY statement — CNY/USD scale; not used"
+  ],
+  "trailingRejected": null
+ },
+ {
+  "id": "BABA.US",
+  "label": "CNY",
+  "home": [
+   "USD"
+  ],
+  "relabelled": [],
+  "dropped": [],
+  "balanceRejected": [
+   "2012-03-31 balance sheet (https://eodhd.com/api/fundamentals/BABA.US#Financials.Balance_Sheet.quarterly.2012-03-31) is 0.15× the FY2012 CNY statement — CNY/USD scale; not used"
+  ],
+  "trailingRejected": null
+ },
+ {
+  "id": "BIDU.US",
+  "label": "CNY",
+  "home": [
+   "USD"
+  ],
+  "relabelled": [],
+  "dropped": [],
+  "balanceRejected": [
+   "2026-03-31 balance sheet (https://eodhd.com/api/fundamentals/BIDU.US#Financials.Balance_Sheet.quarterly.2026-03-31) is 0.15× the FY2025 CNY statement — CNY/USD scale; not used"
+  ],
+  "trailingRejected": null
+ },
+ {
+  "id": "BILI.US",
+  "label": "CNY",
+  "home": [
+   "USD"
+  ],
+  "relabelled": [],
+  "dropped": [],
+  "balanceRejected": [
+   "2016-12-31 balance sheet (https://eodhd.com/api/fundamentals/BILI.US#Financials.Balance_Sheet.quarterly.2016-12-31) is 0.14× the FY2016 CNY statement — CNY/USD scale; not used"
+  ],
+  "trailingRejected": null
+ },
+ {
+  "id": "CEMEXCPO.MX",
+  "label": "USD",
+  "home": [
+   "MXN"
+  ],
+  "relabelled": [],
+  "dropped": [],
+  "balanceRejected": [
+   "2018-12-31 balance sheet (https://eodhd.com/api/fundamentals/CEMEXCPO.MX#Financials.Balance_Sheet.quarterly.2018-12-31) is 19.65× the FY2018 USD statement — USD/MXN scale; not used",
+   "2018-09-30 balance sheet (https://eodhd.com/api/fundamentals/CEMEXCPO.MX#Financials.Balance_Sheet.quarterly.2018-09-30) is 19.34× the FY2017 USD statement — USD/MXN scale; not used",
+   "2018-06-30 balance sheet (https://eodhd.com/api/fundamentals/CEMEXCPO.MX#Financials.Balance_Sheet.quarterly.2018-06-30) is 20.22× the FY2017 USD statement — USD/MXN scale; not used"
+  ],
+  "trailingRejected": null
+ },
+ {
+  "id": "CPAC.US",
+  "label": "PEN",
+  "home": [
+   "USD"
+  ],
+  "relabelled": [],
+  "dropped": [
+   {
+    "fy": 2019,
+    "end": "2019-12-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001221029.json#0001213900-20-010732",
+    "reason": "Statement currency changed in 2019: FY2019 mixes currencies under one PEN label (revenue = filing PEN, netIncome = filing PEN, ocf = filing PEN, totalAssets 0.3× filing PEN, equity 0.3× filing PEN); year not used"
+   },
+   {
+    "fy": 2020,
+    "end": "2020-12-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001221029.json#0001213900-21-023749",
+    "reason": "Statement currency changed in 2020: FY2020 mixes currencies under one PEN label (ocf = filing PEN, totalAssets 0.28× filing PEN, equity 0.28× filing PEN); year not used"
+   }
+  ],
+  "balanceRejected": [
+   "2020-12-31 balance sheet (https://eodhd.com/api/fundamentals/CPAC.US#Financials.Balance_Sheet.yearly.2020-12-31) is 0.28× the FY2018 PEN statement — PEN/USD scale; not used",
+   "2019-12-31 balance sheet (https://eodhd.com/api/fundamentals/CPAC.US#Financials.Balance_Sheet.yearly.2019-12-31) is 0.3× the FY2018 PEN statement — PEN/USD scale; not used",
+   "2022-09-30 balance sheet (https://eodhd.com/api/fundamentals/CPAC.US#Financials.Balance_Sheet.quarterly.2022-09-30) is 0.27× the FY2021 PEN statement — PEN/USD scale; not used"
+  ],
+  "trailingRejected": null
+ },
+ {
+  "id": "EMBJ.US",
+  "label": "BRL",
+  "home": [
+   "USD"
+  ],
+  "relabelled": [],
+  "dropped": [
+   {
+    "fy": 2023,
+    "end": "2023-12-31",
+    "source": "https://www.sec.gov/Archives/edgar/data/1355444/000162828026021824/erj-20251231.htm#000162828026021824",
+    "reason": "Statement currency changed in 2023: FY2023 mixes currencies under one BRL label (ocf = filing USD, revenue 4.92× filing USD, netIncome 4.91× filing USD, equity 4.51× filing USD); year not used"
+   }
+  ],
+  "balanceRejected": [
+   "2023-12-31 balance sheet (https://eodhd.com/api/fundamentals/EMBJ.US#Financials.Balance_Sheet.quarterly.2023-12-31) is 0.2× the FY2022 BRL statement — BRL/USD scale; not used",
+   "2020-12-31 balance sheet (https://eodhd.com/api/fundamentals/EMBJ.US#Financials.Balance_Sheet.quarterly.2020-12-31) is 0.19× the FY2020 BRL statement — BRL/USD scale; not used"
+  ],
+  "trailingRejected": null
+ },
+ {
+  "id": "HDB.US",
+  "label": "INR",
+  "home": [
+   "USD"
+  ],
+  "relabelled": [],
+  "dropped": [
+   {
+    "fy": 2015,
+    "end": "2015-03-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001144967.json#0001193125-15-272714",
+    "reason": "Statement currency changed in 2015: FY2015 mixes currencies under one INR label (equity = filing USD, revenue 65.85× filing USD, netIncome 62.14× filing USD, totalAssets 62.31× filing USD); year not used"
+   }
+  ],
+  "balanceRejected": [],
+  "trailingRejected": null
+ },
+ {
+  "id": "JBS.US",
+  "label": "USD",
+  "home": [
+   "USD"
+  ],
+  "relabelled": [],
+  "dropped": [
+   {
+    "fy": 2025,
+    "end": "2025-12-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001791942.json#0001213900-26-034213",
+    "reason": "Statement currency changed in 2025: FY2025 amounts are not in their USD label (revenue 5.47× filing USD, netIncome 4.98× filing USD, ocf 5.28× filing USD, totalAssets 5.5× filing USD, equity 5.03× filing USD, the USD/BRL rate) and BRL is not the company's home currency; year not used"
+   }
+  ],
+  "balanceRejected": [],
+  "trailingRejected": null
+ },
+ {
+  "id": "NKT.CO",
+  "label": "EUR",
+  "home": [
+   "DKK"
+  ],
+  "relabelled": [],
+  "dropped": [],
+  "balanceRejected": [
+   "2009-09-30 balance sheet (https://eodhd.com/api/fundamentals/NKT.CO#Financials.Balance_Sheet.quarterly.2009-09-30) is 7.63× the FY2008 EUR statement — EUR/DKK scale; not used",
+   "2009-06-30 balance sheet (https://eodhd.com/api/fundamentals/NKT.CO#Financials.Balance_Sheet.quarterly.2009-06-30) is 7.52× the FY2008 EUR statement — EUR/DKK scale; not used",
+   "2009-03-31 balance sheet (https://eodhd.com/api/fundamentals/NKT.CO#Financials.Balance_Sheet.quarterly.2009-03-31) is 7.4× the FY2008 EUR statement — EUR/DKK scale; not used",
+   "2008-12-31 balance sheet (https://eodhd.com/api/fundamentals/NKT.CO#Financials.Balance_Sheet.quarterly.2008-12-31) is 7.45× the FY2008 EUR statement — EUR/DKK scale; not used",
+   "2008-06-30 balance sheet (https://eodhd.com/api/fundamentals/NKT.CO#Financials.Balance_Sheet.quarterly.2008-06-30) is 8.05× the FY2007 EUR statement — EUR/DKK scale; not used",
+   "2008-03-31 balance sheet (https://eodhd.com/api/fundamentals/NKT.CO#Financials.Balance_Sheet.quarterly.2008-03-31) is 7.79× the FY2007 EUR statement — EUR/DKK scale; not used",
+   "2007-12-31 balance sheet (https://eodhd.com/api/fundamentals/NKT.CO#Financials.Balance_Sheet.quarterly.2007-12-31) is 7.46× the FY2007 EUR statement — EUR/DKK scale; not used",
+   "2007-06-30 balance sheet (https://eodhd.com/api/fundamentals/NKT.CO#Financials.Balance_Sheet.quarterly.2007-06-30) is 8.17× the FY2006 EUR statement — EUR/DKK scale; not used",
+   "2007-03-31 balance sheet (https://eodhd.com/api/fundamentals/NKT.CO#Financials.Balance_Sheet.quarterly.2007-03-31) is 7.92× the FY2006 EUR statement — EUR/DKK scale; not used",
+   "2006-12-31 balance sheet (https://eodhd.com/api/fundamentals/NKT.CO#Financials.Balance_Sheet.quarterly.2006-12-31) is 7.46× the FY2006 EUR statement — EUR/DKK scale; not used",
+   "2006-09-30 balance sheet (https://eodhd.com/api/fundamentals/NKT.CO#Financials.Balance_Sheet.quarterly.2006-09-30) is 7.89× the FY2005 EUR statement — EUR/DKK scale; not used",
+   "2006-03-31 balance sheet (https://eodhd.com/api/fundamentals/NKT.CO#Financials.Balance_Sheet.quarterly.2006-03-31) is 7.69× the FY2005 EUR statement — EUR/DKK scale; not used",
+   "2005-12-31 balance sheet (https://eodhd.com/api/fundamentals/NKT.CO#Financials.Balance_Sheet.quarterly.2005-12-31) is 7.47× the FY2005 EUR statement — EUR/DKK scale; not used",
+   "2005-09-30 balance sheet (https://eodhd.com/api/fundamentals/NKT.CO#Financials.Balance_Sheet.quarterly.2005-09-30) is 7.46× the FY2004 EUR statement — EUR/DKK scale; not used",
+   "2005-06-30 balance sheet (https://eodhd.com/api/fundamentals/NKT.CO#Financials.Balance_Sheet.quarterly.2005-06-30) is 7.59× the FY2004 EUR statement — EUR/DKK scale; not used",
+   "2005-03-31 balance sheet (https://eodhd.com/api/fundamentals/NKT.CO#Financials.Balance_Sheet.quarterly.2005-03-31) is 7.58× the FY2004 EUR statement — EUR/DKK scale; not used",
+   "2004-12-31 balance sheet (https://eodhd.com/api/fundamentals/NKT.CO#Financials.Balance_Sheet.quarterly.2004-12-31) is 7.85× the FY2004 EUR statement — EUR/DKK scale; not used",
+   "2004-03-31 balance sheet (https://eodhd.com/api/fundamentals/NKT.CO#Financials.Balance_Sheet.quarterly.2004-03-31) is 7.8× the FY2003 EUR statement — EUR/DKK scale; not used",
+   "2003-12-31 balance sheet (https://eodhd.com/api/fundamentals/NKT.CO#Financials.Balance_Sheet.quarterly.2003-12-31) is 7.72× the FY2003 EUR statement — EUR/DKK scale; not used",
+   "2003-06-30 balance sheet (https://eodhd.com/api/fundamentals/NKT.CO#Financials.Balance_Sheet.quarterly.2003-06-30) is 7.36× the FY2002 EUR statement — EUR/DKK scale; not used",
+   "2002-12-31 balance sheet (https://eodhd.com/api/fundamentals/NKT.CO#Financials.Balance_Sheet.quarterly.2002-12-31) is 7.71× the FY2002 EUR statement — EUR/DKK scale; not used"
+  ],
+  "trailingRejected": null
+ },
+ {
+  "id": "NOD.OL",
+  "label": "USD",
+  "home": [
+   "NOK"
+  ],
+  "relabelled": [],
+  "dropped": [],
+  "balanceRejected": [
+   "2004-09-30 balance sheet (https://eodhd.com/api/fundamentals/NOD.OL#Financials.Balance_Sheet.quarterly.2004-09-30) is 8.71× the FY2003 USD statement — USD/NOK scale; not used"
+  ],
+  "trailingRejected": null
+ },
+ {
+  "id": "NTES.US",
+  "label": "CNY",
+  "home": [
+   "USD"
+  ],
+  "relabelled": [],
+  "dropped": [],
+  "balanceRejected": [
+   "2000-09-30 balance sheet (https://eodhd.com/api/fundamentals/NTES.US#Financials.Balance_Sheet.quarterly.2000-09-30) is 6.66× the FY1999 CNY statement — CNY/USD scale; not used",
+   "2000-06-30 balance sheet (https://eodhd.com/api/fundamentals/NTES.US#Financials.Balance_Sheet.quarterly.2000-06-30) is 6.82× the FY1999 CNY statement — CNY/USD scale; not used"
+  ],
+  "trailingRejected": null
+ },
+ {
+  "id": "PAGS.US",
+  "label": "BRL",
+  "home": [
+   "USD"
+  ],
+  "relabelled": [],
+  "dropped": [
+   {
+    "fy": 2019,
+    "end": "2019-12-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001712807.json#0001193125-20-115076",
+    "reason": "Statement currency changed in 2019: FY2019 mixes currencies under one BRL label (netIncome = filing BRL, ocf = filing BRL, totalAssets 0.25× filing BRL, equity 0.25× filing BRL); year not used"
+   },
+   {
+    "fy": 2020,
+    "end": "2020-12-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001712807.json#0001628280-21-007622",
+    "reason": "Statement currency changed in 2020: FY2020 mixes currencies under one BRL label (netIncome = filing BRL, ocf = filing BRL, totalAssets 0.19× filing BRL, equity 0.19× filing BRL); year not used"
+   },
+   {
+    "fy": 2021,
+    "end": "2021-12-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001712807.json#0001628280-22-011586",
+    "reason": "Statement currency changed in 2021: FY2021 mixes currencies under one BRL label (netIncome = filing BRL, ocf = filing BRL, totalAssets 0.18× filing BRL, equity 0.18× filing BRL); year not used"
+   }
+  ],
+  "balanceRejected": [
+   "2024-06-30 balance sheet (https://eodhd.com/api/fundamentals/PAGS.US#Financials.Balance_Sheet.quarterly.2024-06-30) is 0.21× the FY2023 BRL statement — BRL/USD scale; not used",
+   "2024-03-31 balance sheet (https://eodhd.com/api/fundamentals/PAGS.US#Financials.Balance_Sheet.quarterly.2024-03-31) is 0.21× the FY2023 BRL statement — BRL/USD scale; not used",
+   "2023-09-30 balance sheet (https://eodhd.com/api/fundamentals/PAGS.US#Financials.Balance_Sheet.quarterly.2023-09-30) is 0.21× the FY2022 BRL statement — BRL/USD scale; not used",
+   "2023-06-30 balance sheet (https://eodhd.com/api/fundamentals/PAGS.US#Financials.Balance_Sheet.quarterly.2023-06-30) is 0.21× the FY2022 BRL statement — BRL/USD scale; not used",
+   "2023-03-31 balance sheet (https://eodhd.com/api/fundamentals/PAGS.US#Financials.Balance_Sheet.quarterly.2023-03-31) is 0.2× the FY2022 BRL statement — BRL/USD scale; not used"
+  ],
+  "trailingRejected": null
+ },
+ {
+  "id": "PDD.US",
+  "label": "CNY",
+  "home": [
+   "USD"
+  ],
+  "relabelled": [],
+  "dropped": [
+   {
+    "fy": 2022,
+    "end": "2022-12-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001737806.json#0001104659-23-049927",
+    "reason": "Statement currency changed in 2022: FY2022 mixes currencies under one CNY label (ocf = filing USD, revenue 6.9× filing USD, netIncome 6.9× filing USD, totalAssets 6.9× filing USD, equity 6.9× filing USD); year not used"
+   }
+  ],
+  "balanceRejected": [
+   "2016-12-31 balance sheet (https://eodhd.com/api/fundamentals/PDD.US#Financials.Balance_Sheet.quarterly.2016-12-31) is 0.14× the FY2016 CNY statement — CNY/USD scale; not used"
+  ],
+  "trailingRejected": null
+ },
+ {
+  "id": "PE&OLES.MX",
+  "label": "USD",
+  "home": [
+   "MXN"
+  ],
+  "relabelled": [],
+  "dropped": [],
+  "balanceRejected": [
+   "2018-03-31 balance sheet (https://eodhd.com/api/fundamentals/PE&OLES.MX#Financials.Balance_Sheet.quarterly.2018-03-31) is 18.95× the FY2017 USD statement — USD/MXN scale; not used",
+   "2017-09-30 balance sheet (https://eodhd.com/api/fundamentals/PE&OLES.MX#Financials.Balance_Sheet.quarterly.2017-09-30) is 20.06× the FY2016 USD statement — USD/MXN scale; not used",
+   "2017-06-30 balance sheet (https://eodhd.com/api/fundamentals/PE&OLES.MX#Financials.Balance_Sheet.quarterly.2017-06-30) is 18.93× the FY2016 USD statement — USD/MXN scale; not used"
+  ],
+  "trailingRejected": null
+ },
+ {
+  "id": "PETR3.SA",
+  "label": "USD",
+  "home": [
+   "BRL"
+  ],
+  "relabelled": [
+   {
+    "fy": 2024,
+    "end": "2024-12-31",
+    "currency": "BRL",
+    "inputs": [
+     "Vendor label USD; amounts are BRL",
+     "revenue 5.37× filing USD, netIncome 4.81× filing USD, ocf 6.18× filing USD, totalAssets 6.18× filing USD, equity 6.16× filing USD; USD/BRL observed rate 4.987 (within 30%)",
+     "Amounts unchanged"
+    ]
+   },
+   {
+    "fy": 2025,
+    "end": "2025-12-31",
+    "currency": "BRL",
+    "inputs": [
+     "Vendor label USD; amounts are BRL",
+     "revenue 5.58× filing USD, netIncome 5.58× filing USD, ocf 5.56× filing USD, totalAssets 5.5× filing USD, equity 5.48× filing USD; USD/BRL observed rate 4.987 (within 30%)",
+     "Amounts unchanged"
+    ]
+   }
+  ],
+  "dropped": [
+   {
+    "fy": 2023,
+    "end": "2023-12-31",
+    "source": "https://www.sec.gov/Archives/edgar/data/1119639/000129281426002168/pbrform20f_2025.htm#000129281426002168",
+    "reason": "Statement currency changed in 2023: FY2023 mixes currencies under one USD label (revenue = filing USD, netIncome = filing USD, ocf 4.92× filing USD, equity 4.89× filing USD); year not used"
+   }
+  ],
+  "balanceRejected": [],
+  "trailingRejected": null
+ },
+ {
+  "id": "STNE.US",
+  "label": "BRL",
+  "home": [
+   "USD"
+  ],
+  "relabelled": [],
+  "dropped": [
+   {
+    "fy": 2019,
+    "end": "2019-12-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001745431.json#0000950103-20-008435",
+    "reason": "Statement currency changed in 2019: FY2019 mixes currencies under one BRL label (netIncome = filing BRL, ocf = filing BRL, totalAssets 0.25× filing BRL, equity 0.25× filing BRL); year not used"
+   }
+  ],
+  "balanceRejected": [],
+  "trailingRejected": null
+ },
+ {
+  "id": "TGS.US",
+  "label": "ARS",
+  "home": [
+   "USD"
+  ],
+  "relabelled": [],
+  "dropped": [
+   {
+    "fy": 2025,
+    "end": "2025-12-31",
+    "source": "https://www.sec.gov/Archives/edgar/data/931427/000114036126016167/ef20060824_20f.htm#000114036126016167",
+    "reason": "Statement currency changed in 2025: FY2025 mixes currencies under one ARS label (totalAssets = filing ARS, equity = filing ARS, ocf 0× filing ARS); year not used"
+   }
+  ],
+  "balanceRejected": [],
+  "trailingRejected": null
+ },
+ {
+  "id": "TME.US",
+  "label": "CNY",
+  "home": [
+   "USD"
+  ],
+  "relabelled": [],
+  "dropped": [
+   {
+    "fy": 2019,
+    "end": "2019-12-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001744676.json#0001564590-20-012674",
+    "reason": "Statement currency changed in 2019: FY2019 mixes currencies under one CNY label (revenue = filing CNY, netIncome = filing CNY, ocf = filing CNY, totalAssets 0.14× filing CNY, equity 0.14× filing CNY); year not used"
+   }
+  ],
+  "balanceRejected": [
+   "2022-06-30 balance sheet (https://eodhd.com/api/fundamentals/TME.US#Financials.Balance_Sheet.quarterly.2022-06-30) is 0.14× the FY2021 CNY statement — CNY/USD scale; not used"
+  ],
+  "trailingRejected": null
+ },
+ {
+  "id": "WIT.US",
+  "label": "INR",
+  "home": [
+   "USD"
+  ],
+  "relabelled": [],
+  "dropped": [],
+  "balanceRejected": [
+   "2023-09-30 balance sheet (https://eodhd.com/api/fundamentals/WIT.US#Financials.Balance_Sheet.quarterly.2023-09-30) is 0.01× the FY2023 INR statement — INR/USD scale; not used"
+  ],
+  "trailingRejected": null
+ },
+ {
+  "id": "YPF.US",
+  "label": "ARS",
+  "home": [
+   "USD"
+  ],
+  "relabelled": [],
+  "dropped": [
+   {
+    "fy": 2021,
+    "end": "2021-12-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000904851.json#0001193125-23-097822",
+    "reason": "Statement currency changed in 2021: FY2021 mixes currencies under one ARS label (ocf = filing USD, revenue 92.92× filing USD); year not used"
+   },
+   {
+    "fy": 2022,
+    "end": "2022-12-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000904851.json#0001193125-23-097822",
+    "reason": "Statement currency changed in 2022: FY2022 mixes currencies under one ARS label (ocf = filing USD, revenue 134.69× filing USD, netIncome 129.39× filing USD, totalAssets 177.07× filing USD, equity 175.42× filing USD); year not used"
+   },
+   {
+    "fy": 2023,
+    "end": "2023-12-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000904851.json#0001193125-24-114066",
+    "reason": "Statement currency changed in 2023: FY2023 mixes currencies under one ARS label (ocf = filing USD, revenue 316.82× filing USD, netIncome 1189.95× filing USD, totalAssets 717.59× filing USD, equity 709.5× filing USD); year not used"
+   },
+   {
+    "fy": 2024,
+    "end": "2024-12-31",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000904851.json#0001193125-25-067155",
+    "reason": "Statement currency changed in 2024: FY2024 mixes currencies under one ARS label (ocf = filing USD, revenue 927.54× filing USD, netIncome 868.15× filing USD, totalAssets 1030× filing USD, equity 1011.08× filing USD); year not used"
+   }
+  ],
+  "balanceRejected": [
+   "2024-12-31 balance sheet (https://eodhd.com/api/fundamentals/YPF.US#Financials.Balance_Sheet.yearly.2024-12-31) is 1460.59× the FY2020 ARS statement — ARS/USD scale; not used",
+   "2025-03-31 balance sheet (https://eodhd.com/api/fundamentals/YPF.US#Financials.Balance_Sheet.quarterly.2025-03-31) is 1538.97× the FY2020 ARS statement — ARS/USD scale; not used",
+   "2024-12-31 balance sheet (https://eodhd.com/api/fundamentals/YPF.US#Financials.Balance_Sheet.quarterly.2024-12-31) is 1460.59× the FY2020 ARS statement — ARS/USD scale; not used"
+  ],
+  "trailingRejected": null
+ },
+ {
+  "id": "ZKH.US",
+  "label": null,
+  "home": [
+   "USD"
+  ],
+  "relabelled": [
+   {
+    "fy": 2024,
+    "end": "2024-12-31",
+    "currency": "CNY",
+    "inputs": [
+     "Vendor label USD; filing currency CNY",
+     "revenue, netIncome, ocf, totalAssets, equity equal the filing; amounts unchanged"
+    ]
+   }
+  ],
+  "dropped": [],
+  "balanceRejected": [],
+  "trailingRejected": null
+ }
+]

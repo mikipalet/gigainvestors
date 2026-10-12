@@ -1,0 +1,544 @@
+[
+ {
+  "name": "list",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buyCount": 138,
+  "listedSample": [
+   "LIGHT.AS",
+   "LULU.US",
+   "EEFT.US",
+   "BLDR.US",
+   "OTEX.TO",
+   "DEVL.F",
+   "PRG.US",
+   "ATKR.US"
+  ],
+  "wrongBuys": [],
+  "staleOnList": [],
+  "overflow": false
+ },
+ {
+  "name": "method",
+  "width": 1728,
+  "height": 970,
+  "pass": true
+ },
+ {
+  "name": "PETR3.SA",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 63.06,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "ZKH.US",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 2.03,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "1876.HK",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 5.845,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "TGS.US",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Below value",
+  "mid": 44.769464831654304,
+  "price": 25.71,
+  "withheld": false,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "$25.71"
+   ],
+   [
+    "Estimated value",
+    "$44.77"
+   ],
+   [
+    "Buy at or below",
+    "$44.77"
+   ],
+   [
+    "Expected / yr",
+    "17.6%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "57.4%"
+   ]
+  ]
+ },
+ {
+  "name": "YPF.US",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 50.04,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "PDD.US",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 81.35,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "ATHM.US",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 20.67,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "EMBJ.US",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 71.16,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "CPAC.US",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 12.27,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "HDB.US",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Above value",
+  "mid": 13.699616408215986,
+  "price": 22.28,
+  "withheld": false,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "$22.28"
+   ],
+   [
+    "Estimated value",
+    "$13.70"
+   ],
+   [
+    "Buy at or below",
+    "$13.70"
+   ],
+   [
+    "Expected / yr",
+    "8.5%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "162.6%"
+   ]
+  ]
+ },
+ {
+  "name": "6919.TW",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 77.5,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "BAP.US",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 381.21,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "DDL.US",
+  "width": 1728,
+  "height": 970,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 2.15,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "list",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buyCount": 138,
+  "listedSample": [
+   "LIGHT.AS",
+   "LULU.US",
+   "EEFT.US",
+   "BLDR.US",
+   "OTEX.TO",
+   "DEVL.F",
+   "PRG.US",
+   "ATKR.US"
+  ],
+  "wrongBuys": [],
+  "staleOnList": [],
+  "overflow": false
+ },
+ {
+  "name": "method",
+  "width": 390,
+  "height": 844,
+  "pass": true
+ },
+ {
+  "name": "PETR3.SA",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 63.06,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "ZKH.US",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 2.03,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "1876.HK",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 5.845,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "TGS.US",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Below value",
+  "mid": 44.769464831654304,
+  "price": 25.71,
+  "withheld": false,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "$25.71"
+   ],
+   [
+    "Estimated value",
+    "$44.77"
+   ],
+   [
+    "Buy at or below",
+    "$44.77"
+   ],
+   [
+    "Expected / yr",
+    "17.6%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "57.4%"
+   ]
+  ]
+ },
+ {
+  "name": "YPF.US",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 50.04,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "PDD.US",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 81.35,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "ATHM.US",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 20.67,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "EMBJ.US",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 71.16,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "CPAC.US",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 12.27,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "HDB.US",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Above value",
+  "mid": 13.699616408215986,
+  "price": 22.28,
+  "withheld": false,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": [
+   [
+    "Share price",
+    "$22.28"
+   ],
+   [
+    "Estimated value",
+    "$13.70"
+   ],
+   [
+    "Buy at or below",
+    "$13.70"
+   ],
+   [
+    "Expected / yr",
+    "8.5%"
+   ],
+   [
+    "Required",
+    "10.0%"
+   ],
+   [
+    "Price / value",
+    "162.6%"
+   ]
+  ]
+ },
+ {
+  "name": "6919.TW",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 77.5,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "BAP.US",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 381.21,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ },
+ {
+  "name": "DDL.US",
+  "width": 390,
+  "height": 844,
+  "pass": true,
+  "buy": false,
+  "state": "Unavailable",
+  "mid": null,
+  "price": 2.15,
+  "withheld": true,
+  "staleSeen": [],
+  "missing": [],
+  "overflow": false,
+  "drawerStats": []
+ }
+]

@@ -1,0 +1,16 @@
+{
+ "codeCommitProven": "9d8b74c",
+ "checks": {
+  "unitSuite": "269 files, 2593 passed, 1 skipped (npx vitest run, 2026-10-12 17:50 UTC)",
+  "typecheck": "tsc --noEmit clean",
+  "build": "next build --webpack exit 0 (isolated, offline fonts)",
+  "reanalysis": "renormalize-edinet 231 published EDINET companies; analyze 3910 published companies: 3910 written, 0 failed (offline, VALUE_NO_EODHD=1)",
+  "publishOut": "publish --out exit 0, 3910 companies",
+  "publicationDiff": "16 companies change vs live 63fad7cb, all from the statement-currency rule; Buys 174 -> 173 (Western 139 -> 138), TGS.US removed, none added",
+  "realPublication": "publish exit 0: rendered coverage 20/20, Blob 6273 files, commit 402e8fbf pushed to the local bare remote",
+  "localPostPublish": "verifyPublication + time travel 2026Q3 and 2018Q3 passed, no page errors",
+  "forwardVerifyCorrected": "frozen 173 = published 173 (175 less NFLX.US, TGS.US)",
+  "browserSemantic": "30/30 at 1728x970 and 390x844 (list, method, 13 companies incl. markdown agent copy)",
+  "browserLayout": "0 interaction failures; 11 findings on 5 pages that became neutral dossiers, identical to the live neutral dossier BAP.US (pre-existing)"
+ }
+}

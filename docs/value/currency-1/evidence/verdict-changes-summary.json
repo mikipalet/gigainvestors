@@ -1,0 +1,345 @@
+[
+ {
+  "id": "PDD.US",
+  "at": "2026-10-12T17:47:23.374Z",
+  "attribution": "quality-inputs-or-method",
+  "changedFields": [
+   "t",
+   "pr",
+   "v",
+   "buyReturnInputs",
+   "methodVersion"
+  ],
+  "priceChanged": false,
+  "before": {
+   "b": false,
+   "t": "FFPPP",
+   "pr": "F",
+   "v": [
+    174.5781950038172,
+    192.17272520739056,
+    215.59477692724684
+   ],
+   "m": 0,
+   "methodVersion": "3.8.1"
+  },
+  "after": {
+   "b": false,
+   "t": "UUUUU",
+   "pr": "U",
+   "v": null,
+   "m": 0,
+   "methodVersion": "3.8.2"
+  }
+ },
+ {
+  "id": "YPF.US",
+  "at": "2026-10-12T17:47:23.374Z",
+  "attribution": "quality-inputs-or-method",
+  "changedFields": [
+   "t",
+   "pr",
+   "v",
+   "buyReturnInputs",
+   "methodVersion"
+  ],
+  "priceChanged": false,
+  "before": {
+   "b": false,
+   "t": "FFFFP",
+   "pr": "F",
+   "v": [
+    2.2058020709421826,
+    2.282887213289846,
+    2.3277740300143486
+   ],
+   "m": 0,
+   "methodVersion": "3.8.1"
+  },
+  "after": {
+   "b": false,
+   "t": "UUUUU",
+   "pr": "U",
+   "v": null,
+   "m": 0,
+   "methodVersion": "3.8.2"
+  }
+ },
+ {
+  "id": "TME.US",
+  "at": "2026-10-12T17:47:23.374Z",
+  "attribution": "quality-inputs-or-method",
+  "changedFields": [
+   "t",
+   "pr",
+   "methodVersion"
+  ],
+  "priceChanged": false,
+  "before": {
+   "b": false,
+   "t": "FPPPP",
+   "pr": "P",
+   "v": null,
+   "m": 0,
+   "methodVersion": "3.8.1"
+  },
+  "after": {
+   "b": false,
+   "t": "UUUUU",
+   "pr": "U",
+   "v": null,
+   "m": 0,
+   "methodVersion": "3.8.2"
+  }
+ },
+ {
+  "id": "EMBJ.US",
+  "at": "2026-10-12T17:47:23.375Z",
+  "attribution": "quality-inputs-or-method",
+  "changedFields": [
+   "t",
+   "pr",
+   "v",
+   "buyReturnInputs",
+   "methodVersion"
+  ],
+  "priceChanged": false,
+  "before": {
+   "b": false,
+   "t": "FFPPP",
+   "pr": "F",
+   "v": [
+    30.835183575417716,
+    36.665120807695445,
+    40.95365591032868
+   ],
+   "m": 0,
+   "methodVersion": "3.8.1"
+  },
+  "after": {
+   "b": false,
+   "t": "UUUUU",
+   "pr": "U",
+   "v": null,
+   "m": 0,
+   "methodVersion": "3.8.2"
+  }
+ },
+ {
+  "id": "TGS.US",
+  "at": "2026-10-12T17:47:23.375Z",
+  "attribution": "quality-inputs-or-method",
+  "changedFields": [
+   "b",
+   "t",
+   "v",
+   "buyReturnInputs",
+   "methodVersion"
+  ],
+  "priceChanged": false,
+  "before": {
+   "b": true,
+   "t": "PPPPP",
+   "pr": "P",
+   "v": [
+    38.81569129324982,
+    51.347793216258836,
+    58.64525865588702
+   ],
+   "m": 0,
+   "methodVersion": "3.8.1"
+  },
+  "after": {
+   "b": false,
+   "t": "PFFPP",
+   "pr": "P",
+   "v": [
+    34.21071047378443,
+    44.769464831654304,
+    50.917846442771804
+   ],
+   "m": 0,
+   "methodVersion": "3.8.2"
+  }
+ },
+ {
+  "id": "PAGS.US",
+  "at": "2026-10-12T17:47:23.375Z",
+  "attribution": "quality-inputs-or-method",
+  "changedFields": [
+   "t",
+   "pr",
+   "methodVersion"
+  ],
+  "priceChanged": false,
+  "before": {
+   "b": false,
+   "t": "PPFPP",
+   "pr": "P",
+   "v": null,
+   "m": 0,
+   "methodVersion": "3.8.1"
+  },
+  "after": {
+   "b": false,
+   "t": "UUUUU",
+   "pr": "U",
+   "v": null,
+   "m": 0,
+   "methodVersion": "3.8.2"
+  }
+ },
+ {
+  "id": "STNE.US",
+  "at": "2026-10-12T17:47:23.375Z",
+  "attribution": "quality-inputs-or-method",
+  "changedFields": [
+   "t",
+   "pr",
+   "methodVersion"
+  ],
+  "priceChanged": false,
+  "before": {
+   "b": false,
+   "t": "FPFPP",
+   "pr": "F",
+   "v": null,
+   "m": 0,
+   "methodVersion": "3.8.1"
+  },
+  "after": {
+   "b": false,
+   "t": "UUUUU",
+   "pr": "U",
+   "v": null,
+   "m": 0,
+   "methodVersion": "3.8.2"
+  }
+ },
+ {
+  "id": "ATHM.US",
+  "at": "2026-10-12T17:47:23.375Z",
+  "attribution": "quality-inputs-or-method",
+  "changedFields": [
+   "t",
+   "pr",
+   "v",
+   "buyReturnInputs",
+   "methodVersion"
+  ],
+  "priceChanged": false,
+  "before": {
+   "b": false,
+   "t": "FFFPP",
+   "pr": "P",
+   "v": [
+    47.78517806134191,
+    51.162478342936524,
+    55.65838138517452
+   ],
+   "m": 0,
+   "methodVersion": "3.8.1"
+  },
+  "after": {
+   "b": false,
+   "t": "UUUUU",
+   "pr": "U",
+   "v": null,
+   "m": 0,
+   "methodVersion": "3.8.2"
+  }
+ },
+ {
+  "id": "CPAC.US",
+  "at": "2026-10-12T17:47:23.376Z",
+  "attribution": "quality-inputs-or-method",
+  "changedFields": [
+   "t",
+   "pr",
+   "v",
+   "buyReturnInputs",
+   "methodVersion"
+  ],
+  "priceChanged": false,
+  "before": {
+   "b": false,
+   "t": "PFPPP",
+   "pr": "P",
+   "v": [
+    9.489441104789403,
+    11.376476291669432,
+    13.168310209293221
+   ],
+   "m": 0,
+   "methodVersion": "3.8.1"
+  },
+  "after": {
+   "b": false,
+   "t": "UUUUU",
+   "pr": "U",
+   "v": null,
+   "m": 0,
+   "methodVersion": "3.8.2"
+  }
+ },
+ {
+  "id": "1876.HK",
+  "at": "2026-10-12T17:47:23.376Z",
+  "attribution": "quality-inputs-or-method",
+  "changedFields": [
+   "t",
+   "pr",
+   "v",
+   "buyReturnInputs",
+   "methodVersion"
+  ],
+  "priceChanged": false,
+  "before": {
+   "b": false,
+   "t": "PPFFP",
+   "pr": "P",
+   "v": [
+    17.91949041411671,
+    18.708229333971964,
+    19.758208137643663
+   ],
+   "m": 0,
+   "methodVersion": "3.8.1"
+  },
+  "after": {
+   "b": false,
+   "t": "UUUUU",
+   "pr": "U",
+   "v": null,
+   "m": 0,
+   "methodVersion": "3.8.2"
+  }
+ },
+ {
+  "id": "PETR3.SA",
+  "at": "2026-10-12T17:47:23.377Z",
+  "attribution": "quality-inputs-or-method",
+  "changedFields": [
+   "t",
+   "pr",
+   "methodVersion"
+  ],
+  "priceChanged": false,
+  "before": {
+   "b": false,
+   "t": "PFFPP",
+   "pr": "P",
+   "v": null,
+   "m": 0,
+   "methodVersion": "3.8.1"
+  },
+  "after": {
+   "b": false,
+   "t": "UUUUU",
+   "pr": "U",
+   "v": null,
+   "m": 0,
+   "methodVersion": "3.8.2"
+  }
+ }
+]

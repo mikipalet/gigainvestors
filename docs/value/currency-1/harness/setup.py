@@ -1,5 +1,5 @@
-"""outlier-1: bind an independent corpus copy and its released archive for the isolated
-publication proof. 3.8.0 changes only code: there is no corpus overlay to install.
+"""currency-1: bind an independent corpus copy and its released archive for the isolated
+publication proof. 3.8.2 changes only code: there is no corpus overlay to install.
 Usage: python3 setup.py <root>   (root/corpus is an rsync -aL copy of ~/value-corpus without
 runner lock, publish hold, secrets, backups or logs)."""
 import hashlib, json, os, shutil, subprocess, sys

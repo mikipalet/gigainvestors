@@ -894,8 +894,8 @@ it('stamps every published dossier and index row with the live method',()=>{
  const full=analysis(), short=analysis('SHORT.US');short.historyCoverage!.years=5;
  const files=output([full,short]);
  for(const [file,data] of Object.entries(files)){
-  if(file.startsWith('dossiers/'))for(const d of Object.values(data as Record<string,Dossier>))expect(d.methodVersion).toBe('3.8.1');
-  if(file.startsWith('index/'))for(const row of data as IndexRow[])expect(row.methodVersion).toBe('3.8.1');
+  if(file.startsWith('dossiers/'))for(const d of Object.values(data as Record<string,Dossier>))expect(d.methodVersion).toBe('3.8.2');
+  if(file.startsWith('index/'))for(const row of data as IndexRow[])expect(row.methodVersion).toBe('3.8.2');
  }
 });
 

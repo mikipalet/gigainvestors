@@ -1,6 +1,7 @@
 import {assertFilingIssuer,inDistinctIssuerGroup} from '../../../lib/value/issuer-separation';
 import {balanceSheetsFor,correctFinancialBalances} from '../../../lib/value/latest-balance';
-import {correctCachedAnnualSources,correctCachedTrailingSources,issuerAnnualSources} from '../../../lib/value/annual-source-corrections';
+import {correctCachedAnnualSources,correctCachedTrailingSources,issuerAnnualSources,verifyCachedStatementCurrency} from '../../../lib/value/annual-source-corrections';
+import {consistentBalanceSheets,consistentTrailing} from '../../../lib/value/statement-currency';
 import {METHOD_VERSION} from '../../../lib/value/method-version';
 import {publicBusiness} from '../../../lib/value/flags/public';
 import {inPublicationScope} from '../../../lib/value/held-universe';
@@ -150,11 +151,20 @@ export default async function analyze({ only, limit, force, ask, getBondYield = 
         fundamentals.splits = completeCachedSplits(company.id,fundamentals.splits,readCorpusJson);
         fundamentals.years = completeCachedYears(company,fundamentals.years,readCorpusJson);
         fundamentals.years = correctCachedAnnualSources(company,fundamentals.years,raw,readCorpusJson,fundamentals.splits);
+        // Amounts must be in the currency they are labelled with (filings, then the series itself).
+        const statementCurrency = verifyCachedStatementCurrency(company,fundamentals.years,readCorpusJson,raw);
+        fundamentals.years = statementCurrency.years;
+        const currencyNotes = statementCurrency.dropped.map(d=>d.reason);
+        if (currencyNotes.length) fundamentals.integrity = { ...fundamentals.integrity, notes: [...new Set([...(fundamentals.integrity.notes ?? []), ...currencyNotes])] };
         fundamentals.integrity = checkIntegrity(fundamentals,{source:company.source,priceHistory});
         fundamentals.years = fundamentals.years.map(y=>({...y,peerCreditLossRate:peers.get(company.id)?.get(y.end)??y.peerCreditLossRate}));
         if(!raw)fundamentals.balanceSheets=[...(fundamentals.balanceSheets??[]),...balanceSheetsFor(company.id,null)];
         if(company.kind!=='operating')fundamentals.balanceSheets=correctFinancialBalances(fundamentals.balanceSheets??[],sectorFacts,new Date().toISOString().slice(0,10));
         fundamentals.ttm=correctCachedTrailingSources(company.id,fundamentals.ttm,readCorpusJson);
+        const balances=consistentBalanceSheets(fundamentals.balanceSheets??[],fundamentals.years,statementCurrency.home,statementCurrency.rates);
+        const trailing=consistentTrailing(fundamentals.ttm,fundamentals.years,statementCurrency.home,statementCurrency.rates);
+        fundamentals.balanceSheets=balances.rows;fundamentals.ttm=trailing.ttm;
+        if(balances.rejected.length||trailing.rejected)fundamentals.integrity={...fundamentals.integrity,notes:[...new Set([...(fundamentals.integrity.notes??[]),...balances.rejected,...(trailing.rejected?[trailing.rejected]:[])])]};
         fundamentals.currentCommonBalance=readCorpusJson<import('../../../lib/value/types').CurrentCommonBalance>(`raw/reviewed-common-balance/${company.id}.json`)??undefined;
         fundamentals.qualityQuarters=cachedQualityQuarters(company.id,readCorpusJson);
         const shareInputs = company.source === 'esef' && !fundamentals.years.at(-1)?.dilutedShares

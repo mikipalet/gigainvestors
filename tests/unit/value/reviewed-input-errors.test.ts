@@ -16,10 +16,10 @@ describe('reviewed input errors',()=>{
  it('withholds the Buy and flags the row, even over a frozen price result',()=>{
   const free=publishedBuyPrice({...row},[300,'2026-10-09']);
   expect(free.b).toBe(true);
-  const flagged=publishedBuyPrice({...row,id:'PETR3.SA'},[300,'2026-10-09']);
+  const flagged=publishedBuyPrice({...row,id:'UBI.PA'},[300,'2026-10-09']);
   expect(flagged.b).toBe(false);
   expect(flagged.result).toBe('unclear');
-  expect(flagged.dataQualityFlags).toEqual(reviewedInputFlags('PETR3.SA'));
+  expect(flagged.dataQualityFlags).toEqual(reviewedInputFlags('UBI.PA'));
   const frozen=publishedBuyPrice({...row,id:'PETR3.SA',priceTestFreeze:{asOf:'2026-10-01',test:{key:'price',result:'pass',numeric:'pass',reasons:[],metrics:{mos:.5},series:{},jev:[]}}} as any,[300,'2026-10-09']);
   expect(frozen.b).toBe(false);
  });

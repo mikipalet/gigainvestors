@@ -3,6 +3,7 @@ import {shareUnitScale,resolveShareScale,retainShareContinuity} from './share-fa
 import {applyReportedFacts,type ReportedFacts} from './completeness/reported-facts';
 import type {Company,Year} from './types';
 import type {CompanyFacts} from './completeness/second-sources';
+import {cachedUsdRates,homeCurrencies,verifyStatementCurrency,type FactSet} from './statement-currency';
 
 type Options={source:string;financial?:boolean;revenueConcept?:string;revenueComponents?:string[];adr?:boolean;ordinaryPerAds?:number;shareBasisSource?:string;shareBasisDate?:string;splits?:Array<{date:string;factor:number}>};
 /** Source selection is by accounting concept, annual period, currency and share
@@ -188,6 +189,22 @@ export function correctCachedAnnualSources(company:Company,years:Year[],raw:unkn
  if(reviewed)result=correctAnnualSources(result,reviewed.facts,{...options,...reviewed,adr:adr||reviewed.ordinaryPerAds!==undefined,
   ordinaryPerAds:reviewed.ordinaryPerAds??options.ordinaryPerAds,shareBasisSource:reviewed.shareBasisSource??options.shareBasisSource});
  return reviewed?.reportedFacts?applyReportedFacts(result,reviewed.reportedFacts):result;
+}
+
+/** Statement currency against the issuer's annual filings and the vendor series itself. */
+export function verifyCachedStatementCurrency(company:Company,years:Year[],read:<T>(file:string)=>T|null,raw:unknown=read(`raw/eodhd/${company.id}.json`)){
+ const {evidence,reviewed,facts}=issuerAnnualSources(company,read);
+ const sets:FactSet[]=[
+  ...(facts?[{facts,source:`https://data.sec.gov/api/xbrl/companyfacts/CIK${String(company.cik??(facts as {cik?:unknown}).cik??'').padStart(10,'0')}.json`}]:[]),
+  ...(evidence?[{facts:evidence.facts,source:evidence.source}]:[]),
+  ...(reviewed?[{facts:reviewed.facts,source:reviewed.source}]:[]),
+ ];
+ const home=homeCurrencies(company);
+ // Currencies the vendor itself attached to this company's statements are candidates too.
+ const fin=(raw as {Financials?:Record<string,{yearly?:Record<string,{currency_symbol?:unknown}>}>}|null)?.Financials??{};
+ const labels=Object.values(fin).flatMap(s=>Object.values(s?.yearly??{}).map(r=>String(r?.currency_symbol??'')));
+ const rates=cachedUsdRates(read,[...home,'USD',...years.map(y=>y.currency??''),...labels]);
+ return {...verifyStatementCurrency(years,sets,home,rates,undefined,labels),home,rates};
 }
 
 /** Trailing statements are a separate observation, never a new annual row. */

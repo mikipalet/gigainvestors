@@ -12,6 +12,7 @@ import { bestWesternListing } from "./western";
 import { storyFromFunnel } from "./story";
 import { valuationFlags } from "./data-quality";
 import { reviewedInputError } from "./reviewed-input-errors";
+import { statementCurrencyChanged } from "./statement-currency";
 import { assertIndexConsistency } from "./consistency";
 import { dossierReturn } from "./presentation";
 import { sameCurrency } from "./currency";
@@ -134,7 +135,7 @@ export function buildOutput({ analyses, holdersByTicker, investorNames, fx, pric
     let price = publishedBuyPrice({ id: analysis.id, businessChanged: analysis.thesis?.changed, st: analysis.status === 'scored' ? 's' : 'i', t, pr, shareSources:analysis.valuation?.shareSources, publishedShareReview:analysis.valuation?.publishedShareReview,
       v: valuation ? [valuation.perShare.low, valuation.perShare.mid, valuation.perShare.high] : null, dataQualityFlags }, prices[analysis.id]);
     const prior=previousDossiers[analysis.id];
-    const priceTestFreeze=price.result==='unclear'&&!reviewedInputError(analysis.id)&&prior?.tests.price&&['pass','fail'].includes(prior.tests.price.result)
+    const priceTestFreeze=price.result==='unclear'&&!reviewedInputError(analysis.id)&&!statementCurrencyChanged(analysis)&&prior?.tests.price&&['pass','fail'].includes(prior.tests.price.result)
       ? prior.priceTestFreeze??{asOf:prior.asOf,test:prior.tests.price} : undefined;
     if(priceTestFreeze)price={...price,...publishedBuyPrice({st:analysis.status==='scored'?'s':'i',t,pr,v:null,priceTestFreeze,businessChanged:analysis.thesis?.changed},prices[analysis.id]),dataQualityFlags:price.dataQualityFlags};
     // Funnel order: moat, economics, management, accounting, profit record, price.

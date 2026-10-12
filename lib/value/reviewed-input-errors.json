@@ -39,11 +39,6 @@
   "reason": "A bank valued as an operating company: its balance sheet is a loan book funded by retail savings deposits (annual report), so owner earnings, excess cash and the operating-company value do not apply; it needs the financial-company model.",
   "source": "https://paragonbankinggroup.co.uk/resources/paragon-group/documents/reports-presentations/2023/2023-annual-report-full"
  },
- "PETR3.SA": {
-  "reviewed": "2026-10-12",
-  "reason": "Vendor statements label Brazilian-real amounts as US dollars: FY2025 revenue 497.5bn and net income 110.1bn 'USD' against US$89.2bn and US$19.6bn attributable in the 20-F, a 5.6× overstatement.",
-  "source": "https://www.sec.gov/Archives/edgar/data/1119639/000129281426002168/pbrform20f_2025.htm"
- },
  "QFIN.US": {
   "reviewed": "2026-10-12",
   "reason": "A consumer lender valued as an operating company: its balance sheet is a loan book funded by partner banks and securitisations (2025 20-F), so owner earnings, excess cash and the operating-company value do not apply; it needs the financial-company model.",

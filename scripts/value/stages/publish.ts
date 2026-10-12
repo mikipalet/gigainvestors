@@ -1,3 +1,5 @@
+import {sameCurrency} from '../../../lib/value/currency';
+import {statementCurrencyChanged} from '../../../lib/value/statement-currency';
 import {assertFilingIssuer} from '../../../lib/value/issuer-separation';
 import {cachedPublicationShares} from '../../../lib/value/cached-publication-shares';
 import {retainPublicationObservations} from '../publication-continuity';
@@ -305,7 +307,9 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
     const f=readCorpusJson<import('../../../lib/value/types').Fundamentals>(`fundamentals/${a.id}.json`);
     const issuerShares=issuerShareObservations.filter(observation=>observation.id===a.id);
     const prior=priorDossiers[a.id];
-    if(!a.valuation&&prior?.valuation){
+    // A valuation in another currency than the refreshed statements, or computed from
+    // years now dropped as mislabelled, is not this company's value.
+    if(!a.valuation&&prior?.valuation&&sameCurrency(prior.valuation.currency,a.reportingCurrency??prior.valuation.currency)&&!statementCurrencyChanged(a)){
       const reason=a.valuationReason;
       a=refreshBalanceValuation({...a,valuation:prior.valuation},readCorpusJson,new Date().toISOString().slice(0,10));
       if(!a.valuation)a={...a,valuation:{...prior.valuation,retainedPublishedAt:prior.valuation.retainedPublishedAt??prior.asOf,retainedPublishedReason:reason??'Refreshed valuation unavailable',assumptions:[...prior.valuation.assumptions,`Previously published valuation from ${prior.asOf} retained pending review of refreshed inputs.`]}};

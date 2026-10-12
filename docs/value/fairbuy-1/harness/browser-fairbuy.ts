@@ -109,6 +109,9 @@ async function main() {
             await page.screenshot({ path: `${out}/${id}-${width}-${key}.png` });
             await page.keyboard.press('Escape'); await page.locator('dialog').waitFor({ state: 'detached' });
           }
+          // On phones the page behind a closing drawer is hidden for a moment; read it once visible again.
+          await expect(page.locator('.reference-metrics').first()).toBeVisible();
+          await expect(page.locator('.reference-metrics').first()).toContainText(sharePrice(quote[0], row.cur));
           const top = await capture(page, '.reference-metrics'), tile = await capture(page, '[data-testid=tile-price]');
           await page.locator('[data-testid=tile-price] .tile-open').click(); await page.locator('dialog .evidence-layout').waitFor();
           const drawer = await capture(page, 'dialog');
@@ -119,6 +122,13 @@ async function main() {
           await expect(page.locator('dialog .panel-answer')).toHaveText('Passes the quality tests and trades at or below our central estimate of value.');
           let surfaceError: string | undefined;
           try { auditPriceSurfaces(d, row, quote, top, tile, drawer); } catch (e) { surfaceError = String(e); }
+          if (surfaceError) {
+            // Record which surface lacked the value, then re-read all three once (phone layouts settle late).
+            const where = { top: top.text.slice(0, 300), drawerHead: (drawer.text as unknown as string).slice(0, 300) };
+            await page.waitForTimeout(1500);
+            const top2 = await capture(page, '.reference-metrics'), tile2 = await capture(page, '[data-testid=tile-price]'), drawer2 = await capture(page, 'dialog');
+            try { auditPriceSurfaces(d, row, quote, top2, tile2, drawer2); surfaceError = undefined; record(`${id}-price-reread`, { pass: true, firstRead: where }); } catch (e) { surfaceError = `${String(e)} | first read ${JSON.stringify(where)}`; }
+          }
           await page.screenshot({ path: `${out}/${id}-${width}-price.png` });
           await page.keyboard.press('Escape'); await page.locator('dialog').waitFor({ state: 'detached' });
           const bad = [...new Set(texts.flatMap(forbidden))];

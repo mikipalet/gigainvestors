@@ -86,7 +86,7 @@
  body .company-page.company-page .price-section .price-card {min-height:118px}
  body .company-page.company-page .price-section .mini-price {min-height:56px}
  .value-page .shelf-buy-grid {display:block;flex:none}
- .value-page .main-buy-row:not(.shelf-hero) {display:none}
+ .value-page .main-buy-row:nth-child(n+3) {display:none}
  .value-page .shelf-hero {padding:8px;gap:4px}
  .value-page .shelf-hero .company-logo {width:30px;height:30px}
  .value-page .shelf-hero .main-return {font-size:28px}

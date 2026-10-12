@@ -11,7 +11,9 @@ for(const [width,height] of [[1728,970],[2056,1180],[390,844]])for(const route o
   await page.setViewportSize({width,height});await page.goto(route,{waitUntil:'networkidle'});
   const view=page.locator('.main-view');await expect(view).toBeVisible();
   const buys=Number(await view.getAttribute('data-buy-count'));
-  await expect(page.locator('.shelf-hero')).toHaveCount(buys?1:0);
+  // 3.8.0: no Buy card is enlarged as a pick.
+  await expect(page.locator('.shelf-hero')).toHaveCount(0);
+  if(buys)await expect(page.locator('.main-buy-row').first()).toBeVisible();
   if(buys===0)await expect(page.locator('.main-empty-buy')).toBeVisible();
   if(buys===1)await expect(page.locator('.main-buy-row')).toHaveCount(1);
   await expect(page.getByRole('navigation',{name:'Visualization'})).toHaveCount(0);
@@ -19,7 +21,7 @@ for(const [width,height] of [[1728,970],[2056,1180],[390,844]])for(const route o
   const ratios=await page.locator('.main-next-row').evaluateAll(nodes=>nodes.map(n=>Number((n as HTMLElement).dataset.ratio)));
   expect(ratios).toEqual([...ratios].sort((a,b)=>a-b));
   expect(await page.locator('.main-next-row .main-return').allTextContents()).not.toContain('—');
-  expect(await view.locator('[data-priority=true]').count()).toBeLessThanOrEqual(1);
+  expect(await view.locator('[data-priority=true]').count()).toBe(0);
   expect((await page.evaluate(audit)).issues).toEqual([]);expect(errors).toEqual([]);
   expect(await page.evaluate(()=>document.documentElement.scrollHeight<=innerHeight&&document.documentElement.scrollWidth<=innerWidth)).toBe(true);
   const layout=await page.locator('.shelf-near-grid').evaluate(el=>({columns:getComputedStyle(el).gridTemplateColumns.split(' ').length,rows:getComputedStyle(el).gridTemplateRows.split(' ').length}));
@@ -71,7 +73,7 @@ test('phone tap opens the dossier and controls do not intersect the slider',asyn
  const context=await browser.newContext({viewport:{width:390,height:844},hasTouch:true});const page=await context.newPage();await page.goto(process.env.BASE_URL!+'/',{waitUntil:'networkidle'});
  const slider=(await page.getByRole('slider',{name:'Fiscal year'}).boundingBox())!,controls=(await page.locator('.dock-tools').boundingBox())!;
  expect(controls.x+controls.width<=slider.x||slider.x+slider.width<=controls.x||controls.y+controls.height<=slider.y||slider.y+slider.height<=controls.y).toBe(true);
- await page.locator('.shelf-hero').tap();await expect(page.locator('.one-dossier')).toBeVisible();await context.close();
+ await page.locator('.main-buy-row').first().tap();await expect(page.locator('.one-dossier')).toBeVisible();await context.close();
 });
 test('failed rest logos leave no blank slots',async({page})=>{
  await page.route('**/*',route=>route.request().resourceType()==='image'?route.fulfill({status:404,body:''}):route.continue());await page.goto('/',{waitUntil:'networkidle'});

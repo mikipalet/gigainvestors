@@ -10,7 +10,9 @@ allowed = {i for row in owner for i in row.get('issues', []) if i.startswith('te
 key = lambda row: (row['path'], row['state'].split(':')[0] if row['state'].startswith('Price story:') else row['state'], row['width'], row['height'])
 lookup = {key(row): set(row.get('issues', [])) for row in live}
 shape = lambda issue: re.sub(r'\d[\d,.]*', '<n>', issue)
-NEW_COPY = re.compile(r'Evidence only|Profit record|at or below|Buy up to|not ranked|Below value|Above value|Pending|Disclosure under review')
+# "Buy up to" replaces "Buy below" in the same reference-row label, styled 12px on phones by app/devices.css
+# (devices-1); its findings are classified against the same-code baseline arm like any other label.
+NEW_COPY = re.compile(r'Evidence only|Profit record|at or below|not ranked|Below value|Above value|Pending|Disclosure under review')
 # The Buy zone's list button keeps its control style; only its words changed ("+N more" -> "See all N").
 SAME_CONTROL = {'text below 13px: "See all" (12px)': 'text below 13px: "more ↗" (12px)'}
 counts = {'ownerChrome': 0, 'ownerWhitespace': 0, 'preExisting': 0, 'new': 0}; new = []
@@ -24,8 +26,11 @@ for row in cand:
         else: d = 'new'
         counts[d] += 1
         if d == 'new': new.append({'path': row['path'], 'state': row['state'], 'width': row['width'], 'issue': issue})
-interactions = [v for v in cand if v['state'] == 'interaction failure']
+# The release gate waits for a dossier or list container; the method page has neither, on both arms.
+base_interactions = {(v['path'], v['width']) for v in live if v['state'] == 'interaction failure'}
+interactions = [v for v in cand if v['state'] == 'interaction failure' and (v['path'], v['width']) not in base_interactions]
+preexisting_interactions = [(v['path'], v['width']) for v in cand if v['state'] == 'interaction failure' and (v['path'], v['width']) in base_interactions]
 summary = {'candidateStates': len(cand), 'baselineStates': len(live), 'viewports': sorted({f"{v['width']}x{v['height']}" for v in cand}),
-           'paths': sorted({v['path'] for v in cand}), 'counts': counts, 'newFindings': new, 'interactionFailures': interactions, 'pass': not new and not interactions}
+           'paths': sorted({v['path'] for v in cand}), 'counts': counts, 'newFindings': new, 'interactionFailures': interactions, 'preExistingInteractionFailures': preexisting_interactions, 'pass': not new and not interactions}
 Path(sys.argv[3]).write_text(json.dumps(summary, indent=1) + '\n')
 print(json.dumps({k: v for k, v in summary.items() if k != 'newFindings'}), '\nnew:', json.dumps(new[:40], indent=0))

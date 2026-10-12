@@ -26,5 +26,5 @@ export function mainZones(companies:MainCompany[]){
 }
 /** Shared premium scale: central value at zero, +60% at the right edge. */
 export function distancePosition(ratio:number){return Math.max(0,Math.min(1,(ratio-1)/.6));}
-export const dropToBuy=(ratio:number|null)=>ratio===null?'':ratio<=1?'At or below value':`needs −${Math.round((1-1/ratio)*100)}%`;
+export const dropToBuy=(ratio:number|null)=>ratio===null?'':ratio<=1?'At or below value':`needs −${Math.round((1-1/ratio)*100)||'<1'}%`;
 export const returnLabel=(value:number|null)=>value===null?'':`${value<0?'−':''}${formatRate(Math.abs(value))}`;

@@ -4,4 +4,5 @@ set -euo pipefail
 export VALUE_STORE_DIR="${VALUE_BUILD_STORE:-/Users/miki/data/value-fairbuy/.audit/fairbuy-1/candidate-final}"
 export NEXT_FONT_GOOGLE_MOCKED_RESPONSES="$PWD/docs/value/pubfix-2/harness/fonts.cjs"
 export NODE_OPTIONS="$NODE_OPTIONS --max-old-space-size=3072"
+rm -rf .next  # an incremental webpack cache fails hashing here; always build clean
 node node_modules/next/dist/bin/next build --webpack

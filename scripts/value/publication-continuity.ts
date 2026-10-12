@@ -56,7 +56,7 @@ export function retainPublicationObservations(files:Record<string,any>,baseline:
   const oldPrice=baseline.previous[`prices/${before.c}.json`]?.[id];
   const changedFields=['b','t','pr','v','m','buyReturnInputs','methodVersion'].filter(key=>!isDeepStrictEqual(before[key as keyof IndexRow],after[key as keyof IndexRow]));
   const priceChanged=!isDeepStrictEqual(oldPrice,prices[id]);
-  const attribution=before.t!==after.t?'quality-inputs-or-method':before.pr!==after.pr?'profit-record-inputs-or-method':!isDeepStrictEqual(before.v,after.v)||!isDeepStrictEqual(before.buyReturnInputs,after.buyReturnInputs)?'valuation-inputs-or-method':before.m!==after.m||before.methodVersion!==after.methodVersion?'buy-rule-method':priceChanged?'quote':'other-published-inputs';
+  const attribution=before.t!==after.t?'quality-inputs-or-method':before.methodVersion!==after.methodVersion&&(before.pr===undefined||before.m!==after.m)?'buy-rule-method':before.pr!==after.pr?'profit-record-inputs':!isDeepStrictEqual(before.v,after.v)||!isDeepStrictEqual(before.buyReturnInputs,after.buyReturnInputs)?'valuation-inputs-or-method':before.m!==after.m?'required-discount':priceChanged?'quote':'other-published-inputs';
   const dossierFile=`dossiers/${shardOf(id)}.json`;
   transitions.push({id,at:new Date().toISOString(),attribution,changedFields,priceChanged,
    before:{b:before.b,t:before.t,pr:before.pr,v:before.v,m:before.m,methodVersion:before.methodVersion},after:{b:after.b,t:after.t,pr:after.pr,v:after.v,m:after.m,methodVersion:after.methodVersion},

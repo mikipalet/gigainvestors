@@ -22,13 +22,27 @@ describe('3.8.0 forward test', () => {
   it('scores the equal-weight basket since the snapshot against the same-dated benchmark', () => {
     const later: PriceMap = { 'A.US': [99, '2026-11-12'], 'B.L': [20, '2026-11-12'] };
     const score = scoreForwardTest({ snapshot, prices: later, splitFactors: { 'B.L': 2 }, asOf: '2026-11-12',
-      benchmarks: { SPY: [['2026-10-09', 100], ['2026-11-12', 105]], EFA: [['2026-10-12', 50], ['2026-11-11', 49]] } });
+      benchmarks: { SPY: [['2026-10-09', 100], ['2026-11-12', 105]], EFA: [['2026-10-09', 50], ['2026-11-11', 49]] } });
     expect(score.basketReturn).toBeCloseTo((0.1 + 0) / 2);
     expect(score.westernBasketReturn).toBeCloseTo(0.1);
     expect(score.benchmarks.SPY).toMatchObject({ start: '2026-10-09', end: '2026-11-12' });
     expect(score.benchmarks.SPY!.return).toBeCloseTo(.05);
     expect(score.vs.EFA).toBeCloseTo(.05 + .02);
     expect(score.staleQuotes).toEqual([]);
+  });
+  it('measures the benchmark over each holding\'s own quote dates, not from the snapshot date', () => {
+    // Frozen at Friday 10-09 / 10-10 closes, snapshot dated Monday 10-12: the benchmark's Friday-to-Monday move counts too.
+    const score = scoreForwardTest({ snapshot, prices: { 'A.US': [90, '2026-10-12'], 'B.L': [40, '2026-10-12'] }, asOf: '2026-10-12',
+      benchmarks: { SPY: [['2026-10-09', 100], ['2026-10-12', 102]], EFA: [['2026-10-09', 50], ['2026-10-12', 50]] } });
+    expect(score.basketReturn).toBeCloseTo(0);
+    expect(score.benchmarks.SPY).toMatchObject({ start: '2026-10-09', end: '2026-10-12' });
+    expect(score.benchmarks.SPY!.return).toBeCloseTo(.02);
+    expect(score.vs.SPY).toBeCloseTo(-.02);
+  });
+  it('reports no benchmark when its history does not cover a holding\'s quote dates', () => {
+    const score = scoreForwardTest({ snapshot, prices: { 'A.US': [99, '2026-11-12'], 'B.L': [40, '2026-11-12'] }, asOf: '2026-11-12',
+      benchmarks: { SPY: [['2026-10-12', 100], ['2026-11-12', 105]] } });
+    expect(score.benchmarks.SPY).toBeNull();
   });
   it('keeps a company without a newer quote at its frozen price rather than dropping it', () => {
     const score = scoreForwardTest({ snapshot, prices: { 'A.US': [110, '2026-11-12'] }, asOf: '2026-11-12', benchmarks: {} });

@@ -64,9 +64,18 @@ export function scoreForwardTest({ snapshot, prices, splitFactors = {}, benchmar
   });
   const mean = (xs: number[]) => xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : null;
   const basket = (rows: typeof held) => mean(rows.map(r => r.return));
+  // Each holding's benchmark leg spans the same dates as its own quotes, so a move between a frozen
+  // quote date (e.g. Friday's close) and the snapshot date counts on both sides.
   const bench = Object.fromEntries(snapshot.benchmarks.map(symbol => {
-    const series = benchmarks[symbol] ?? [], start = closeOn(series, snapshot.date), end = closeOn(series, asOf);
-    return [symbol, start && end && end[0] >= start[0] ? { start: start[0], end: end[0], return: end[1] / start[1] - 1 } : null];
+    const series = benchmarks[symbol] ?? [];
+    const legs = snapshot.companies.map((c, i) => {
+      const start = closeOn(series, c.priceDate), end = closeOn(series, held[i].priceDate);
+      return start && end && end[0] >= start[0] ? { start, end } : null;
+    });
+    if (!legs.length || legs.some(leg => !leg)) return [symbol, null];
+    const valid = legs as Array<{ start: [string, number]; end: [string, number] }>;
+    return [symbol, { start: valid.map(l => l.start[0]).sort()[0], end: valid.map(l => l.end[0]).sort().at(-1)!,
+      return: mean(valid.map(l => l.end[1] / l.start[1] - 1))! }];
   }));
   const all = basket(held), western = basket(held.filter(r => r.western));
   return { asOf, snapshotDate: snapshot.date, methodVersion: snapshot.methodVersion, companies: held.length,

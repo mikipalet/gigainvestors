@@ -48,7 +48,8 @@ it('drops a vendor dividend that the filed cash-flow statement contradicts, but 
  const {supplementFinancialFacts}=await import('@/lib/value/financial-facts');
  const y={...years()[10],currency:'USD',dividendsPaid:6030000};
  const financing={NetCashProvidedByUsedInFinancingActivities:{units:{USD:[{start:'2010-01-01',end:y.end,val:-5,filed:'2011-02-20',form:'10-K'}]}}};
- expect(supplementFinancialFacts([y],{facts:{'us-gaap':{...financing,ProceedsFromStockPlans:{units:{USD:[{start:'2010-01-01',end:y.end,val:6030000,filed:'2011-02-20',form:'10-K'}]}}}}},'2011-03-01')[0].dividendsPaid).toBeNull();
+ const cleared=supplementFinancialFacts([y],{facts:{'us-gaap':{...financing,ProceedsFromStockPlans:{units:{USD:[{start:'2010-01-01',end:y.end,val:6030000,filed:'2011-02-20',form:'10-K'}]}}}}},'2011-03-01')[0];
+ expect(cleared.dividendsPaid).toBe(0);expect(cleared.provenance?.dividendsPaid).toMatchObject({method:'reported',source:'raw/sec-companyfacts'});
  expect(supplementFinancialFacts([y],{facts:{'us-gaap':{...financing,DividendsCommonStockCash:{units:{USD:[{start:'2010-01-01',end:y.end,val:6030000,filed:'2011-02-20',form:'10-K'}]}}}}},'2011-03-01')[0].dividendsPaid).toBe(6030000);
  expect(supplementFinancialFacts([y],{facts:{'us-gaap':{}}},'2011-03-01')[0].dividendsPaid).toBe(6030000);
 });

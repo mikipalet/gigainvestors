@@ -41,9 +41,14 @@ export function supplementFinancialFacts(years:Year[],facts:CompanyFacts,cutoff=
   const interest=value(['InterestIncomeExpenseNet']),other=value(['NoninterestIncome']);
   if(interest!==null&&other!==null)next.netRevenue=interest+other;
   // EODHD files stock-plan proceeds or debt repayments under dividendsPaid for issuers that never paid one
-  // (Cloudflare FY2019-21). A filed cash-flow statement with no dividend concept at all proves absence; the
-  // vendor value yields to the complete-statement zero that derive applies to a null.
-  if((next.dividendsPaid??0)>0&&value(['NetCashProvidedByUsedInFinancingActivities'])!==null&&!reportsAnyDividend(facts,y,cutoff))next.dividendsPaid=null;
+  // (Cloudflare FY2019-21). A filed cash-flow statement with no dividend concept at all proves absence. The zero
+  // carries method 'reported', not 'absent-in-complete-statement': fillYears lets any vendor 'reported' value
+  // replace an absence-derived zero when completeCachedYears re-merges the raw EODHD years, and a null is
+  // refilled the same way. The filed statement outranks the vendor, so its zero is the reported value.
+  if((next.dividendsPaid??0)>0&&value(['NetCashProvidedByUsedInFinancingActivities'])!==null&&!reportsAnyDividend(facts,y,cutoff)){
+   next.dividendsPaid=0;
+   next.provenance={...next.provenance,dividendsPaid:{source:'raw/sec-companyfacts',field:'dividendsPaid',method:'reported',inputs:['filed cash-flow statement reports no dividend concept']}};
+  }
   return next;
  });
 }

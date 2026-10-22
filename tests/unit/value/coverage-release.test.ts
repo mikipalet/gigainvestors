@@ -49,6 +49,8 @@ it('treats previously released additions as baseline on a later coverage batch',
  write('prices/US.json',{'NEW.US':[10,new Date().toISOString().slice(0,10)]});
  write('staging/review/dossiers/001.json',{'OLD.US':{...a,id:'OLD.US'},'NEW.US':a});
  write('held-membership/additions.json',['OLD.US','NEW.US']);
+ // Publication refuses to grow the missing-logo set, so an addition needs an approved logo to be released.
+ write('enrichment-v7/logos/NEW.US.json',{logo:'/api/value/logo?asset=abc',asset:'abc',validated:true,identityReview:'approved'});
  execFileSync(process.execPath,['--import','tsx','scripts/value/prepare-coverage-release.ts',path.join(root,'staging/review')],{env:{...process.env,VALUE_CORPUS_DIR:root},stdio:'pipe'});
  const release=JSON.parse(readFileSync(path.join(root,'held-membership/release.json'),'utf8'));
  expect(release.baselineIds).toEqual(['OLD.US']);

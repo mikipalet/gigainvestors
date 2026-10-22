@@ -44,6 +44,14 @@ it('selects annual SEC facts in the reporting currency and before the historical
  const f={facts:{'us-gaap':{Deposits:{units:{USD:[{end:y.end,val:500,filed:'2011-02-20',form:'10-K'},{end:y.end,val:999,filed:'2012-02-20',form:'10-K'}],EUR:[{end:y.end,val:9999,filed:'2011-02-20',form:'10-K'}]}},ProvisionForLoanAndLeaseLosses:{units:{USD:[{start:'2010-10-01',end:y.end,val:999,filed:'2011-02-20',form:'10-K'},{start:'2010-01-01',end:y.end,val:5,filed:'2011-02-20',form:'10-K'}]}}}}};
  expect(supplementFinancialFacts([y],f,'2011-03-01')[0]).toMatchObject({deposits:500,creditLossProvision:5});
 });
+it('drops a vendor dividend that the filed cash-flow statement contradicts, but keeps one any dividend concept supports', async()=>{
+ const {supplementFinancialFacts}=await import('@/lib/value/financial-facts');
+ const y={...years()[10],currency:'USD',dividendsPaid:6030000};
+ const financing={NetCashProvidedByUsedInFinancingActivities:{units:{USD:[{start:'2010-01-01',end:y.end,val:-5,filed:'2011-02-20',form:'10-K'}]}}};
+ expect(supplementFinancialFacts([y],{facts:{'us-gaap':{...financing,ProceedsFromStockPlans:{units:{USD:[{start:'2010-01-01',end:y.end,val:6030000,filed:'2011-02-20',form:'10-K'}]}}}}},'2011-03-01')[0].dividendsPaid).toBeNull();
+ expect(supplementFinancialFacts([y],{facts:{'us-gaap':{...financing,DividendsCommonStockCash:{units:{USD:[{start:'2010-01-01',end:y.end,val:6030000,filed:'2011-02-20',form:'10-K'}]}}}}},'2011-03-01')[0].dividendsPaid).toBe(6030000);
+ expect(supplementFinancialFacts([y],{facts:{'us-gaap':{}}},'2011-03-01')[0].dividendsPaid).toBe(6030000);
+});
 it('counts insolvent historical years as weak returns and cannot hide them as missing observations',()=>{
  const ys=years();ys[2].goodwill=1000;ys[3].goodwill=1000;expect(run(ys).moat.numeric).toBe('fail');
 });

@@ -40,8 +40,17 @@ export function supplementFinancialFacts(years:Year[],facts:CompanyFacts,cutoff=
   }
   const interest=value(['InterestIncomeExpenseNet']),other=value(['NoninterestIncome']);
   if(interest!==null&&other!==null)next.netRevenue=interest+other;
+  // EODHD files stock-plan proceeds or debt repayments under dividendsPaid for issuers that never paid one
+  // (Cloudflare FY2019-21). A filed cash-flow statement with no dividend concept at all proves absence; the
+  // vendor value yields to the complete-statement zero that derive applies to a null.
+  if((next.dividendsPaid??0)>0&&value(['NetCashProvidedByUsedInFinancingActivities'])!==null&&!reportsAnyDividend(facts,y,cutoff))next.dividendsPaid=null;
   return next;
  });
+}
+
+const annualDuration=(f:{start?:string;end:string;filed:string;form:string;val:number},end:string,cutoff:string)=>f.end===end&&f.filed<cutoff&&/^(10-K|20-F|40-F)(\/A)?$/.test(f.form)&&!!f.start&&(Date.parse(f.end)-Date.parse(f.start))/86400000>=330&&(Date.parse(f.end)-Date.parse(f.start))/86400000<=380;
+function reportsAnyDividend(facts:CompanyFacts,y:Year,cutoff:string):boolean{
+ return Object.entries(facts.facts['us-gaap']??{}).some(([name,concept])=>/Dividend/.test(name)&&Object.values(concept.units).some(rows=>rows.some(f=>annualDuration(f,y.end,cutoff))));
 }
 
 /** Same country/industry/fiscal-year peers, excluding the issuer; at least five.

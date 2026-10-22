@@ -19,7 +19,7 @@ describe('Western retail access',()=>{
  it.each(['SHG','SHE','JP','HK','NSE','TWO'])('excludes %s without a Western listing',venue=>expect(bestWesternListing(company(`X.${venue}`))).toBeNull());
  it('uses listings rather than domicile or an unlisted home id',()=>expect(bestWesternListing(company('X.US',['X.JP']))).toBeNull());
  it('prioritizes Western companies then cap even when recently fetched',()=>{
-  const input=[company('X.JP',undefined,1e12),company('SMALL.US',undefined,10),company('ADR.JP',['ADR.JP','ADRYY.US'],100)];
+  const input=[company('X.JP',undefined,9e9),company('SMALL.US',undefined,10),company('ADR.JP',['ADR.JP','ADRYY.US'],100)];
   expect([...input].sort(compareWesternPriority).map(c=>c.id)).toEqual(['ADR.JP','SMALL.US','X.JP']);
   expect(orderFundamentals(input,new Map([['ADR.JP','2026-09-30']])).map(c=>c.id)).toEqual(['ADR.JP','SMALL.US','X.JP']);
  });

@@ -1,5 +1,6 @@
 import {describe,expect,it} from 'vitest';
-import {heldStocks,mapHeldSecurity,securityExclusion} from '@/lib/value/held-universe';
+import {heldStocks,inPublicationScope,mapHeldSecurity,securityExclusion} from '@/lib/value/held-universe';
+import type {Company} from '@/lib/value/types';
 
 describe('held universe',()=>{
  it('uses eight global quarters and only positive tracked positions',()=>{
@@ -35,4 +36,13 @@ it('accepts a reviewed rename with public evidence and never guesses a reused sy
  expect(mapHeldSecurity({ticker:'OLD-OLD',name:'Original company'},[],evidence)).toMatchObject({id:'NEW.US',status:'mapped'});
  expect(()=>mapHeldSecurity({ticker:'OLD-OLD',name:'Original company'},[],{...evidence,evidence:[]})).toThrow(/evidence/);
  expect(()=>mapHeldSecurity({ticker:'OLD-OLD',name:'Different issuer'},[],evidence)).toThrow(/identity/);
+});
+
+it('publishes index members, tracked holdings and companies at or above the market-cap floor',()=>{
+ const company=(extra:Partial<Company>):Company=>({id:'X.US',name:'X',code:'X',exchange:'US',country:'US',currency:'USD',isin:null,cik:null,lei:null,edinetCode:null,sector:null,industry:null,kind:'operating',listings:['X.US'],marketCapUsd:null,description:null,...extra} as Company);
+ expect(inPublicationScope(company({indexes:['S&P 500']}))).toBe(true);
+ expect(inPublicationScope(company({heldBySuperinvestors:true}))).toBe(true);
+ expect(inPublicationScope(company({marketCapUsd:10_000_000_000}))).toBe(true);
+ expect(inPublicationScope(company({marketCapUsd:9_999_999_999}))).toBe(false);
+ expect(inPublicationScope(company({indexes:[],marketCapUsd:null}))).toBe(false);
 });

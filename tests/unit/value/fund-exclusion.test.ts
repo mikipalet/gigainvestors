@@ -19,3 +19,8 @@ it('uses a corroborated fund directory without removing operating asset managers
  for(const name of ['3i Infrastructure','BH Macro','RIT Capital Partners','Baillie Gifford US Growth Trust','Personal Assets Trust','Worldwide Healthcare Trust','Vietnam Enterprise Investments']) expect(nonOperatingReason({name})).toBeTruthy();
  for(const name of ['Jupiter Fund Management plc','Foresight Group','Ashmore Group','Man Group','Supermarket Income REIT']) expect(nonOperatingReason({name})).toBeNull();
 });
+it('excludes bullion trusts by name or description without touching miners',()=>{
+ expect(nonOperatingReason({name:'Sprott Physical Gold Trust'})).toBe('commodity trust');
+ expect(nonOperatingReason({name:'Sprott Physical Silver'},{Description:'Sprott Physical Silver Trust is an exchange traded commodity launched and managed by Sprott Asset Management LP.'})).toBe('commodity trust');
+ expect(nonOperatingReason({name:'Harmony Gold Mining Company Limited'},{Description:'Harmony Gold Mining Company Limited engages in the exploration, extraction, and processing of gold.'})).toBeNull();
+});

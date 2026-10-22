@@ -1,8 +1,14 @@
 # Held-company coverage and controller resume
 
-The publication scope is selected index members plus operating-company listings
-held by tracked investors during the latest eight global quarters. Holdings do
-not acquire an index label. Country filters, search, and the full agent catalogue
+The publication scope is selected index members, operating-company listings
+held by tracked investors during the latest eight global quarters, and any
+company at or above the market-cap floor (`T.publish.marketCapFloorUsd`, 10B USD).
+Holdings do not acquire an index label. Cap-floor companies enter through the
+same reviewed release as held additions: `prepare-coverage-release.ts` lists
+them next to `held-membership/additions.json`, holds a second listing of a
+published issuer (shared CIK) or a pooled vehicle, and applies the same input
+checks. Stage them with `publish --additions-only --out=...`, which ignores the
+previous release manifest for that local render only. Country filters, search, and the full agent catalogue
 include every public analyzed row; Western remains the default market filter.
 
 `held-membership/latest.json` contains the input quarters, company identities,

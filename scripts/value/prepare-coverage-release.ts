@@ -4,8 +4,11 @@ import path from 'node:path';
 import {corpusPath,readCorpusJson,writeCorpusJson} from '../../lib/value/corpus';
 import {mergeSeed} from '../../lib/value/price-seed';
 import {readPrices} from '../../lib/value/price-files';
+import {preservedLogo} from './stages/logos';
 import {additionInputProblems,assertAdditionBinding,baselineAnalysisHash,type CoverageRelease} from './coverage-release';
 import type {Analysis} from '../../lib/value/types';
+import {universeCompanies} from '../../lib/value/companies';
+import {capFloorCandidates} from '../../lib/value/release-candidates';
 const baselineIds=readdirSync(corpusPath('publish-repo/dossiers')).filter(f=>f.endsWith('.json')).flatMap(f=>Object.keys(JSON.parse(readFileSync(corpusPath('publish-repo/dossiers',f),'utf8')))).sort();
 const stage=process.argv[2]??corpusPath('staging/coverage');
 const dossiers=Object.assign({},...readdirSync(path.join(stage,'dossiers')).filter(f=>f.endsWith('.json')).map(f=>JSON.parse(readFileSync(path.join(stage,'dossiers',f),'utf8'))));
@@ -14,8 +17,11 @@ for(const [id,quote]of Object.entries(readPrices(corpusPath('prices'))))prices[i
 const layoutHolds=new Map((readCorpusJson<Array<{id:string;reasons:string[]}>>('held-membership/layout-holds.json')??[]).map(row=>[row.id,row.reasons]));
 const release:CoverageRelease={version:1,baselineIds,baselineAnalysisHashes:Object.fromEntries(baselineIds.map(id=>[id,baselineAnalysisHash(id)])),additionIds:[],held:[]};
 const baselineSet=new Set(baselineIds);
-for(const id of readCorpusJson<string[]>('held-membership/additions.json')!.filter(id=>!baselineSet.has(id)).sort()){
- const reasons=[...additionInputProblems(id,prices[id]),...(layoutHolds.get(id)??[])];
+const candidates=new Map<string,string[]>((readCorpusJson<string[]>('held-membership/additions.json')??[]).map(id=>[id,[]]));
+for(const candidate of capFloorCandidates({companies:universeCompanies(),baselineIds}))if(!candidates.has(candidate.id))candidates.set(candidate.id,candidate.reasons);
+for(const [id,scopeReasons] of [...candidates].filter(([id])=>!baselineSet.has(id)).sort(([a],[b])=>a.localeCompare(b))){
+ // Publication refuses to grow the missing-logo set, so an addition waits for an approved logo.
+ const reasons=[...scopeReasons,...additionInputProblems(id,prices[id]),...(layoutHolds.get(id)??[]),...(preservedLogo(readCorpusJson(`enrichment-v7/logos/${id}.json`))?[]:['logo'])];
  const a=readCorpusJson<Analysis>(`analysis/${id}.json`);
  if(a&&reasons.length===0){if(!dossiers[id])reasons.push('publication-eligibility');else try{assertAdditionBinding(a,dossiers[id]);}catch{reasons.push('analysis-to-publication-binding');}}
  if(reasons.length)release.held.push({id,reasons});else release.additionIds.push(id);

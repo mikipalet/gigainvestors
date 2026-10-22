@@ -16,6 +16,7 @@ export function nonOperatingReason(company: {name:string;industry?:string|null},
  if (/\bfund(?:s)? (?:management|manager|services|administration)\b/i.test(name)) return null;
  if(closedEndNames.has(fundName(name))) return 'AIC closed-ended investment company directory';
  if (!property && /\b(?:investment trust|capital trust|income trust|fund(?:s)?|ETF)\b/i.test(name)) return 'pooled investment vehicle name';
+ if (/\bphysical (?:gold|silver|platinum|palladium|uranium|bullion|copper)\b/i.test(name)||/\b(?:is|operates as) an? (?:closed[- ]end(?:ed)? trust|exchange[- ]traded commodity)\b/i.test(general.Description??'')) return 'commodity trust';
  const sector=[general.GicIndustry,general.GicSubIndustry,company.industry].join(' ');
  if (/closed[- ]?end funds|asset management/i.test(sector) && /\b(?:investment|income|portfolio)\b.*\btrust\b/i.test(name)) return 'fund classification corroborated by trust name';
  if (/^.{0,130}?\b(?:is|operates as) (?:an? )?(?:(?:self-managed|closed?[- ]ended|open[- ]ended|equity|mutual|feeder|infrastructure|investment|private equity|and|venture capital)\s+){0,6}(?:fund\b|investment trust\b)/i.test(general.Description??'')) return 'provider description identifies a pooled investment vehicle';

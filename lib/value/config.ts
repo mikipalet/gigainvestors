@@ -18,7 +18,7 @@ export const T = {
   integrity: { maxShareRatio: 5, minShareRatio: 0.2, splitTolerance: 0.03, splitPriceTolerance: 0.20, balanceTolerance: 0.10, balanceYears: 5, balanceMinFailures: 2 },
   fundamentals: { maxYears: 30, usageSyncCompanies: 200 },
   eodhd: { perSecond: 5, timeoutMs: 180_000, screenerPageSize: 100, screenerMaxOffset: 999 },
-  publish: { indexMembersOnly: true, maxCountDrop: 0.20, lockMaxAgeMs: 6 * 60 * 60 * 1000 },
+  publish: { indexMembersOnly: true, marketCapFloorUsd: 10_000_000_000, maxCountDrop: 0.20, lockMaxAgeMs: 6 * 60 * 60 * 1000 },
   understandable: { years: 10, maxRevenueDeclines: 5, maxLossYears: 2, maxOpMarginCv: 0.35, minImprovementR2: 0.90 },
   moat: { badYearsAllowed: 1, roicMedian: 0.15, roicSecondLowest: 0.10, gmDropPp: 0.04, roeMedianFin: 0.12, roeSecondLowestFin: 0.08 },
   economics: { oeToNi: 0.8, roiic: 0.12, maxNwcRise: 0.10 },

@@ -3,6 +3,7 @@ import { assertPublishInvariants } from '../publish-invariants';
 import { validForwardDate, type ForwardSnapshot } from '../../../lib/value/forward';
 import { companyExclusion } from '../../../lib/value/fund-exclusion';
 import { universeCompanies } from '../../../lib/value/companies';
+import { inPublicationScope } from '../../../lib/value/held-universe';
 import { refreshPublishedBuyPrices } from '../../../lib/value/refresh-buy-prices';
 import { existsSync, mkdirSync, readFileSync, readdirSync, statfsSync, renameSync, writeFileSync } from "node:fs";
 import path from "node:path";
@@ -50,7 +51,7 @@ function checkDisk(): void {
 
 /** Refresh published analyses, the full index benchmark and archived forward identities. */
 export function publishedPriceCompanies(repo: string, universe: Company[]): Company[] {
-  const ids = new Set(universe.filter(c=>c.indexes?.length && !companyExclusion(c)).map(c=>c.id));
+  const ids = new Set(universe.filter(c=>inPublicationScope(c) && !companyExclusion(c)).map(c=>c.id));
   for (const file of readdirSync(path.join(repo, 'index')).filter(f => /^[A-Z]{2}\.json$/.test(f))) {
     const rows = JSON.parse(readFileSync(path.join(repo, 'index', file), 'utf8')) as Array<{ id: string }>;
     for (const row of rows) ids.add(row.id);

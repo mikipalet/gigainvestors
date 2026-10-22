@@ -383,7 +383,8 @@ export function publishSnapshot({ repo, analyses, universe, partial, force = fal
   if(preserveBaseline)preserveAdditionBaseline(files,freeze);
   // Validate the snapshot that will actually ship, including first-time retirements.
   reconcileIssuers(files,holdersByTicker,investorNames);
-  if(release){
+  // Additions-only staging renders the candidates the next release review will judge; the previous manifest cannot vet them.
+  if(release&&!additionsOnly){
     const aliases=files['aliases.json'] as Record<string,string>??{};
     const emitted=Object.assign({},...Object.entries(files).filter(([file])=>file.startsWith('dossiers/')).map(([,data])=>data));
     const checked=new Set<string>();
@@ -542,7 +543,7 @@ export default async function publish(options: { only?: string[]; limit?: number
   const release=readCoverageRelease();
   const retired=readRetiredIssuerAliases(corpusPath('publish-repo'));
   const releasedIds=release?releaseCanonicalIds([...release.baselineIds,...release.additionIds],retired):null;
-  const companies = universeCompanies().filter(c=>!retired[c.id]&&!reviewedIssuerAliases[c.id]).filter(c=>!releasedIds||releasedIds.has(c.id)).map(company=>({...mergeCompany(company,readCorpusJson<Partial<Company>>(`companies/${company.id}.json`)??{}),indexes:company.indexes,heldBySuperinvestors:company.heldBySuperinvestors})).filter(company => inPublicationScope(company) && !companyExclusion(company));
+  const companies = universeCompanies().filter(c=>!retired[c.id]&&!reviewedIssuerAliases[c.id]).filter(c=>!releasedIds||options.additionsOnly||releasedIds.has(c.id)).map(company=>({...mergeCompany(company,readCorpusJson<Partial<Company>>(`companies/${company.id}.json`)??{}),indexes:company.indexes,heldBySuperinvestors:company.heldBySuperinvestors})).filter(company => inPublicationScope(company) && !companyExclusion(company));
   if (!companies.length) throw new Error("Run the universe stage before publish");
   // Selection only needs IDs; do not retain a second full baseline while building output.
   const frozenIds=options.additionsOnly?new Set(readdirSync(corpusPath('publish-repo/dossiers')).filter(f=>/^\d{3}\.json$/.test(f)).flatMap(f=>Object.keys(JSON.parse(readFileSync(corpusPath('publish-repo/dossiers',f),'utf8'))))):readVerdictFreeze(corpusPath('publish-repo')).ids;

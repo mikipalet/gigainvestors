@@ -55,7 +55,7 @@ export function publishedLogoRows():IndexRow[]{
 }
 /** Approval is durable: validator/matcher upgrades and --force must not revoke it.
  * Legacy validated records predate identityReview and validationVersion. */
-function preservedLogo(record:{logo?:string|null;validated?:boolean;identityReview?:string}|null):boolean {
+export function preservedLogo(record:{logo?:string|null;validated?:boolean;identityReview?:string}|null):boolean {
  return Boolean(record?.logo&&record.validated&&(record.identityReview===undefined||['approved','passed'].includes(record.identityReview)));
 }
 /** Only fill missing logos. Explicit reviewed installation owns approved replacements. */

@@ -5,6 +5,7 @@ import { fetchYahooFundamentals, normalizeYahooFundamentals } from '../../../lib
 import { mergeIndiaYahoo } from '../../../lib/value/india/filings';
 import { statfsSync } from 'node:fs';
 import { universeCompanies } from '../../../lib/value/companies';
+import { inPublicationScope } from '../../../lib/value/held-universe';
 import { companyExclusion } from '../../../lib/value/fund-exclusion';
 import { checkIntegrity } from '../../../lib/value/integrity';
 import { fetchEdgar } from '../../../lib/value/reports/edgar';
@@ -32,7 +33,7 @@ export function orderFundamentals(companies: Company[], fetchedAt: ReadonlyMap<s
     const timestamp = Date.parse(fetchedAt.get(id) ?? "");
     return Number.isFinite(timestamp) ? timestamp : -Infinity;
   };
-  return [...companies].sort((a, b) => Number(Boolean(b.indexes?.length))-Number(Boolean(a.indexes?.length)) || compareDownloads(a, b) || fetchedTime(a.id) - fetchedTime(b.id));
+  return [...companies].sort((a, b) => Number(inPublicationScope(b))-Number(inPublicationScope(a)) || compareDownloads(a, b) || fetchedTime(a.id) - fetchedTime(b.id));
 }
 
 export default async function fundamentals(options: Options): Promise<void> {
@@ -45,12 +46,12 @@ export default async function fundamentals(options: Options): Promise<void> {
   const ceiling = eodhdCeiling();
   if (!universe.length) throw new Error("Run the universe stage before fundamentals");
   const eligible = universe.filter((company) => (!options.only || options.only.includes(company.id))
-    && (!options.membersFirst || company.indexes?.length) && !companyExclusion(company));
+    && (!options.membersFirst || inPublicationScope(company)) && !companyExclusion(company));
   const fetchedAt = new Map<string, string>();
   const overdue = new Set<string>();
   for (const company of eligible) {
     const existing = readCorpusJson<Fundamentals>(`fundamentals/${company.id}.json`);
-    if (company.indexes?.length && needsMemberFundamentals(existing)) overdue.add(company.id);
+    if (inPublicationScope(company) && needsMemberFundamentals(existing)) overdue.add(company.id);
     if (existing?.fetchedAt) fetchedAt.set(company.id, existing.fetchedAt);
   }
   // Rolling refresh always refetches selected companies, including with --force.

@@ -193,7 +193,7 @@ it('records unavailable Japanese symbols without starving later history or repla
 });
 
 it('limits price-history requests after ranking Western access then market cap',async()=>{
- for(const c of [{...company('BIG.TW'),marketCapUsd:1e12},{...company('SMALL.AS'),marketCapUsd:10},{...company('ADR.TW'),listings:['ADR.TW','ADRYY.US'],marketCapUsd:100}]) appendJsonl('universe.jsonl',c);
+ for(const c of [{...company('BIG.TW'),marketCapUsd:9e9},{...company('SMALL.AS'),marketCapUsd:10},{...company('ADR.TW'),listings:['ADR.TW','ADRYY.US'],marketCapUsd:100}]) appendJsonl('universe.jsonl',c);
  const urls:string[]=[];
  vi.stubGlobal('fetch',async(url:string)=>{const p=new URL(url);urls.push(p.pathname);return Response.json(p.pathname.endsWith('/user')?{apiRequests:2}:eod);});
  await run({limit:1});

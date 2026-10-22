@@ -1,3 +1,4 @@
+import {T} from './config';
 import {nonOperatingReason,type SecurityClassification} from './fund-exclusion';
 import type {Company} from './types';
 
@@ -47,4 +48,6 @@ export function mapHeldSecurity(stock:HeldStock,symbols:HeldSymbol[],resolution?
  return {...base,id:`${symbol.Code}.US`,status:reason?'excluded':'mapped',reason:reason??(byCusip.length?'US CUSIP/ISIN match':'exact US ticker (share-class punctuation normalized)'),evidence:[`EODHD exchange-symbol-list/US:${symbol.Code}`,...(symbol.Isin?[`ISIN:${symbol.Isin}`]:[])]};
 }
 
-export const inPublicationScope=(company:Company):boolean=>Boolean(company.indexes?.length||company.heldBySuperinvestors);
+/** Cloudflare-class companies sit in no tracked index and left every 13F window; size alone keeps them on the site. */
+export const meetsCapFloor=(company:Pick<Company,'marketCapUsd'>):boolean=>(company.marketCapUsd??0)>=T.publish.marketCapFloorUsd;
+export const inPublicationScope=(company:Company):boolean=>Boolean(company.indexes?.length||company.heldBySuperinvestors||meetsCapFloor(company));
